@@ -142,8 +142,7 @@ void TBgo::AddFragment(const std::shared_ptr<const TFragment>& frag, TChannel* c
       return;
    }
 
-	TBgoHit* hit = new TBgoHit(*frag);
-	fHits.push_back(std::move(hit));
+	fHits.push_back(std::make_shared<TBgoHit>(*frag));
 }
 
 TVector3 TBgo::GetPosition(int DetNbr, int CryNbr, double dist)

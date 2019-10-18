@@ -52,7 +52,7 @@ void TDetector::ClearTransients()
 TDetectorHit* TDetector::GetHit(const int& i) const
 {
 	try {
-		return fHits.at(i);
+		return fHits.at(i).get();
 	} catch(const std::out_of_range& oor) {
 		std::cerr<<ClassName()<<" is out of range: "<<oor.what()<<std::endl;
 		throw grsi::exit_exception(1);

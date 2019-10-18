@@ -60,13 +60,13 @@ public:
 
 	virtual Short_t GetMultiplicity() const { return fHits.size(); }
 	virtual TDetectorHit* GetHit(const int&) const;
-	virtual const std::vector<TDetectorHit*>& GetHitVector() const { return fHits; }
+	virtual const std::vector<std::shared_ptr<TDetectorHit> >& GetHitVector() const { return fHits; }
 
 protected:
-	std::vector<TDetectorHit*> fHits;
+	std::vector<std::shared_ptr<TDetectorHit> > fHits;
 
    /// \cond CLASSIMP
-   ClassDefOverride(TDetector, 1) // Abstract class for detector systems
+   ClassDefOverride(TDetector, 2) // Abstract class for detector systems
    /// \endcond
 };
 /*! @} */

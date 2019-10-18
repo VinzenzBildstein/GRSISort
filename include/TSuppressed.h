@@ -31,7 +31,7 @@ public:
    
 protected:
 	template<class T>
-	void CreateAddback(const std::vector<T*>& hits, std::vector<T*>& addbacks, std::vector<UShort_t>& nofFragments)
+	void CreateAddback(const std::vector<std::shared_ptr<T>>& hits, std::vector<std::shared_ptr<T>>& addbacks, std::vector<UShort_t>& nofFragments)
 	{
 		/// This funxtion always(!) re-creates the vectors of addback hits and number of fragments per addback hit based on the provided vector of hits
 		addbacks.clear();
@@ -40,8 +40,8 @@ protected:
 		for(auto hit : hits) {
 			//check for each existing addback hit if this hit should be added to it
 			for(j = 0; j < addbacks.size(); ++j) {
-				if(AddbackCriterion(addbacks[j], hit)) {
-					addbacks[j]->Add(hit);
+				if(AddbackCriterion(addbacks[j].get(), hit.get())) {
+					addbacks[j]->Add(hit.get());
 					// copy constructor does not copy the bit field, so we need to set it
 					addbacks[j]->SetHitBit(TDetectorHit::EBitFlag::kIsEnergySet); // this must be set for summed hits
 					addbacks[j]->SetHitBit(TDetectorHit::EBitFlag::kIsTimeSet);   // this must be set for summed hits
@@ -51,18 +51,18 @@ protected:
 			}
 			// if we haven't found an addback hit to add this hit to, or if there are no addback hits yet we create a new addback hit
 			if(j == addbacks.size()) {
-				/// Because the functions to return hit vectors etc. are almost always returning vectors of TDetectorHits, T is most likely TDetectorHit.
-				/// This means we can't use T directly to create a new hit, we need to use TClass::New().
-				T* tmpT = static_cast<T*>(hit->IsA()->New());
+				// Because the functions to return hit vectors etc. are almost always returning vectors of TDetectorHits, T is most likely TDetectorHit.
+				// This means we can't use T directly to create a new hit, we need to use TClass::New().
+				auto tmpT = static_cast<T*>(hit->IsA()->New());
 				*tmpT = *hit;
-				addbacks.push_back(tmpT);
+				addbacks.push_back(std::shared_ptr<T>(tmpT));
 				nofFragments.push_back(1);
 			}
 		}
 	}
 
 	template<class T>
-	void CreateSuppressed(const TBgo* bgo, const std::vector<T*>& hits, std::vector<T*>& suppressedHits)
+	void CreateSuppressed(const TBgo* bgo, const std::vector<std::shared_ptr<T>>& hits, std::vector<std::shared_ptr<T>>& suppressedHits)
 	{
 		/// This function always(!) re-creates the vector of suppressed hits based on the provided TBgo and vector of hits
 		suppressedHits.clear();
@@ -70,7 +70,7 @@ protected:
 			bool suppress = false;
          if(bgo != nullptr) {
             for(auto b : bgo->GetHitVector()) {
-               if(SuppressionCriterion(hit, b)) {
+               if(SuppressionCriterion(hit.get(), b.get())) {
                   suppress = true;
                   break;
                }
@@ -79,15 +79,15 @@ protected:
 			/// Because the functions to return hit vectors etc. are almost always returning vectors of TDetectorHits, T is most likely TDetectorHit.
 			/// This means we can't use T directly to create a new hit, we need to use TClass::New().
 			if(!suppress) {
-				T* tmpT = static_cast<T*>(hit->IsA()->New());
+				auto tmpT = static_cast<T*>(hit->IsA()->New());
 				*tmpT = *hit;
-				suppressedHits.push_back(tmpT);
+				suppressedHits.push_back(std::shared_ptr<T>(tmpT));
 			}
 		}
 	}
 
 	template<class T>
-	void CreateSuppressedAddback(const TBgo* bgo, const std::vector<T*>& hits, std::vector<T*>& addbacks, std::vector<UShort_t>& nofFragments)
+	void CreateSuppressedAddback(const TBgo* bgo, const std::vector<std::shared_ptr<T>>& hits, std::vector<std::shared_ptr<T>>& addbacks, std::vector<UShort_t>& nofFragments)
 	{
 		/// This funxtion always(!) re-creates the vectors of suppressed addback hits and number of fragments per suppressed addback hit based on the provided TBgo and vector of hits
 		addbacks.clear();
@@ -99,7 +99,7 @@ protected:
 			bool suppress = false;
          if(bgo != nullptr){
 			   for(auto b : bgo->GetHitVector()) {
-				   if(SuppressionCriterion(hit, b)) {
+				   if(SuppressionCriterion(hit.get(), b.get())) {
 					   suppress = true;
 					   break;
 				   }
@@ -107,8 +107,8 @@ protected:
          }
 			//check for each existing addback hit if this hit should be added to it
 			for(j = 0; j < addbacks.size(); ++j) {
-				if(AddbackCriterion(addbacks[j], hit)) {
-					addbacks[j]->Add(hit);
+				if(AddbackCriterion(addbacks[j].get(), hit.get())) {
+					addbacks[j]->Add(hit.get());
 					// copy constructor does not copy the bit field, so we need to set it
 					addbacks[j]->SetHitBit(TDetectorHit::EBitFlag::kIsEnergySet); // this must be set for summed hits
 					addbacks[j]->SetHitBit(TDetectorHit::EBitFlag::kIsTimeSet);   // this must be set for summed hits
@@ -123,9 +123,9 @@ protected:
 			if(j == addbacks.size()) {
 				/// Because the functions to return hit vectors etc. are almost always returning vectors of TDetectorHits, T is most likely TDetectorHit.
 				/// This means we can't use T directly to create a new hit, we need to use TClass::New().
-				T* tmpT = static_cast<T*>(hit->IsA()->New());
+				auto tmpT = static_cast<T*>(hit->IsA()->New());
 				*tmpT = *hit;
-				addbacks.push_back(tmpT);
+				addbacks.push_back(std::shared_ptr<T>(tmpT));
 				nofFragments.push_back(1);
 				suppressed.push_back(suppress);
 			}
