@@ -1,5 +1,6 @@
 var NAVTREEINDEX61 =
 {
+"functions_l.html":[9,3,0,12],
 "functions_m.html":[9,3,0,13],
 "functions_n.html":[9,3,0,14],
 "functions_o.html":[9,3,0,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX61 =
 "group___fitting.html#gafd8550a970eb6841ad85dfcd4c356dcd":[7,3,127],
 "group___framing.html":[7,4],
 "group___g_r_o_o_t.html":[7,5],
-"group___g_r_s_i_proof.html":[7,6],
-"group___g_u_i.html":[7,7]
+"group___g_r_s_i_proof.html":[7,6]
 };

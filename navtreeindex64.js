@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"struct_t_pulse_analyzer_1_1_wave_form_par.html#acb5477d7ed831fd968b9c1ea19cfa5c7":[7,3,19,4,35],
 "struct_t_pulse_analyzer_1_1_wave_form_par.html#ad01a7e794dcf90d7444a8a1930cf2482":[7,3,19,4,32],
 "struct_t_pulse_analyzer_1_1_wave_form_par.html#ad96bfbd38c4749a7eca0eef02b95d59c":[7,3,19,4,8],
 "struct_t_tdr_event_header.html":[7,11,58],
