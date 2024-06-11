@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="triumflogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">GRSISort<span id="projectnumber">&#160;v4.0.0.5</span>
+   <div id="projectname">GRSISort<span id="projectnumber">&#160;&quot;v4.0.0.5&quot;</span>
    </div>
    <div id="projectbrief">An extension of the ROOT analysis Framework</div>
   </td>
@@ -214,7 +214,7 @@ $(document).ready(function(){initNavTree('grsisort_8cxx_source.html',''); initRe
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>   FILE*       utmp;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>   <span class="keyword">struct </span>stat file_stats;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>   <span class="keywordtype">size_t</span> n_read, size;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>   <span class="keywordtype">size_t</span>      n_read, size;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>   <a class="code hl_variable" href="grsisort_8cxx.html#a4fae8cc24254d1b4cb8136df73c0e4bf">gUtmpContents</a> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
@@ -271,15 +271,15 @@ $(document).ready(function(){initNavTree('grsisort_8cxx_source.html',''); initRe
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>   <span class="comment">// Set DISPLAY environment variable.</span></div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>   <span class="keywordflow">if</span>(getenv(<span class="stringliteral">&quot;DISPLAY&quot;</span>) == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keywordtype">char</span>* tty = ttyname(0); <span class="comment">// device user is logged in on</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keywordtype">char</span>* tty = ttyname(0);   <span class="comment">// device user is logged in on</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="keywordflow">if</span>(tty != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>         tty += 5; <span class="comment">// remove &quot;/dev/&quot;</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>         tty += 5;   <span class="comment">// remove &quot;/dev/&quot;</span></div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>         <a class="code hl_define" href="grsisort_8cxx.html#a5c3ce11223ebbe626fea7d78c387137c">STRUCT_UTMP</a>* utmp_entry = <a class="code hl_function" href="grsisort_8cxx.html#a24a7be85440ebef4f06a2f25647f2a44">SearchEntry</a>(<a class="code hl_function" href="grsisort_8cxx.html#aa7e408ba1ba473ef3414809e37f08825">ReadUtmp</a>(), tty);</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>         <span class="keywordflow">if</span>(utmp_entry != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordtype">size_t</span> length = <span class="keyword">sizeof</span>(utmp_entry-&gt;ut_host);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordtype">size_t</span>      length = <span class="keyword">sizeof</span>(utmp_entry-&gt;ut_host);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            std::string display;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keyword">auto</span>* host    = <span class="keyword">new</span> <span class="keywordtype">char</span>[length + 1];</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            strncpy(host, utmp_entry-&gt;ut_host, length); <span class="comment">// instead of using size of utmp_entry-&gt;ut_host to prevent warning from gcc 9.1</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keyword">auto</span>*       host = <span class="keyword">new</span> <span class="keywordtype">char</span>[length + 1];</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            strncpy(host, utmp_entry-&gt;ut_host, length);   <span class="comment">// instead of using size of utmp_entry-&gt;ut_host to prevent warning from gcc 9.1</span></div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            host[<span class="keyword">sizeof</span>(utmp_entry-&gt;ut_host)] = 0;</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">if</span>(host[0] != 0) {</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>               display = host;</div>
@@ -336,7 +336,7 @@ $(document).ready(function(){initNavTree('grsisort_8cxx_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="grsisort_8cxx.html">grsisort.cxx</a></li>
-    <li class="footer">GRSISort (v4.0.0.5) Reference Guide Generated on Tue Jun 11 2024 13:58:23.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 18:29:30.</li>
   </ul>
 </div>
 </body>
