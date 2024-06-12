@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('_t_g_r_s_i_map_8h_source.html',''); in
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_t_g_r_s_i_map.html#ae759c68c3332ed3db513ff6cbe57d5d9">   31</a></span>   <span class="keywordtype">void</span> <a class="code hl_function" href="class_t_g_r_s_i_map.html#ae759c68c3332ed3db513ff6cbe57d5d9">Print</a>()</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>   {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <span class="keywordflow">for</span>(<span class="keyword">auto</span> it : <a class="code hl_variable" href="class_t_g_r_s_i_map.html#a8f9dc6b73a4a795f73fed2d25fad3fff">fMap</a>) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>         std::cout&lt;&lt;it.first&lt;&lt;<span class="stringliteral">&quot; - &quot;</span>&lt;&lt;it.second&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>         std::cout &lt;&lt; it.first &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; it.second &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>   }</div>
 </div>
@@ -225,14 +225,14 @@ $(document).ready(function(){initNavTree('_t_g_r_s_i_map_8h_source.html',''); in
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_t_g_r_s_i_map_exception.html#aea5487d5d59432872a4d7a9896052530">  107</a></span>   std::string <a class="code hl_function" href="class_t_g_r_s_i_map_exception.html#aea5487d5d59432872a4d7a9896052530">detail</a>() const noexcept</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>   {</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      std::ostringstream str;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      str&lt;&lt;<span class="stringliteral">&quot;Key &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_t_g_r_s_i_map_exception.html#adc65022bd2901a6275a52894b678435e">fKey</a>&lt;&lt;<span class="stringliteral">&quot; not found in &#39;&quot;</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      str &lt;&lt; <span class="stringliteral">&quot;Key &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_t_g_r_s_i_map_exception.html#adc65022bd2901a6275a52894b678435e">fKey</a> &lt;&lt; <span class="stringliteral">&quot; not found in &#39;&quot;</span>;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keywordflow">for</span>(<span class="keyword">auto</span> key = <a class="code hl_variable" href="class_t_g_r_s_i_map_exception.html#aa2557cf02c995dd3c2d2a92c2069903c">fKeys</a>.begin(); key != <a class="code hl_variable" href="class_t_g_r_s_i_map_exception.html#aa2557cf02c995dd3c2d2a92c2069903c">fKeys</a>.end(); ++key) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>         str&lt;&lt;*key;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>         str &lt;&lt; *key;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>         <span class="keywordflow">if</span>(std::next(key) != <a class="code hl_variable" href="class_t_g_r_s_i_map_exception.html#aa2557cf02c995dd3c2d2a92c2069903c">fKeys</a>.end()) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            str&lt;&lt;<span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            str &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>         }</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      str&lt;&lt;<span class="stringliteral">&quot;&#39;&quot;</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      str &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="keywordflow">return</span> str.str();</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>   }</div>
 </div>
@@ -285,7 +285,7 @@ $(document).ready(function(){initNavTree('_t_g_r_s_i_map_8h_source.html',''); in
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_t_g_r_s_i_map_8h.html">TGRSIMap.h</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:49.</li>
   </ul>
 </div>
 </body>

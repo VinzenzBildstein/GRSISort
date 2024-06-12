@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('_t_energy_cal_8cxx_source.html',''); i
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>         TGraphErrors::SetPointError(i, 0.0, <a class="code hl_function" href="class_t_cal.html#afcdadcfd2191729d71be0331c44ffa21">GetNucleus</a>()-&gt;GetTransition(i)-&gt;GetEnergyUncertainty());</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>   } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="class_t_cal.html#afcdadcfd2191729d71be0331c44ffa21">GetNucleus</a>() != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Nucleus already exists. Use \&quot;F\&quot; option to overwrite&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Nucleus already exists. Use \&quot;F\&quot; option to overwrite&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>   }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>   <a class="code hl_function" href="class_t_energy_cal.html#a7d11e6623033d10a8bfffef042e48928">SetDefaultTitles</a>();</div>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('_t_energy_cal_8cxx_source.html',''); i
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   <span class="comment">// Sets the data point at index idx.</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_t_cal.html#afcdadcfd2191729d71be0331c44ffa21">GetNucleus</a>() == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;No nucleus set yet...&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;No nucleus set yet...&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   }</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('_t_energy_cal_8cxx_source.html',''); i
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>   <span class="comment">// Sets the data point at index idx using the centroid, and sigma of a fitted TPeak.</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>   <span class="keywordflow">if</span>(peak == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;No Peak, pointer is null&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;No Peak, pointer is null&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>   }</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>   Double_t centroid  = peak-&gt;<a class="code hl_function" href="class_t_peak.html#ae71437ddab1693069e618edc7d1a3efa">GetCentroid</a>();</div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('_t_energy_cal_8cxx_source.html',''); i
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>   <span class="comment">// Sets the measured Error of the data point at index idx.</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_t_cal.html#afcdadcfd2191729d71be0331c44ffa21">GetNucleus</a>() == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;No nucleus set yet...&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;No nucleus set yet...&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>   }</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
@@ -251,8 +251,8 @@ $(document).ready(function(){initNavTree('_t_energy_cal_8cxx_source.html',''); i
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>   }</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>   <a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>()-&gt;<a class="code hl_function" href="class_t_channel.html#a60b91b0b97d0ab2172184e9a6b8a7437">DestroyENGCal</a>();</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Writing to channel &quot;</span>&lt;&lt;<a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>()-&gt;<a class="code hl_function" href="class_t_channel.html#ac33ac3f89678743363d1923f64766e2d">GetNumber</a>()&lt;&lt;std::endl;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;p0 = &quot;</span>&lt;&lt;<a class="code hl_function" href="class_t_energy_cal.html#a296ec258b047a54a2d8fee562edd5b86">GetParameter</a>(0)&lt;&lt;<span class="stringliteral">&quot; \t p1 = &quot;</span>&lt;&lt;<a class="code hl_function" href="class_t_energy_cal.html#a296ec258b047a54a2d8fee562edd5b86">GetParameter</a>(1)&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Writing to channel &quot;</span> &lt;&lt; <a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>()-&gt;<a class="code hl_function" href="class_t_channel.html#ac33ac3f89678743363d1923f64766e2d">GetNumber</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;p0 = &quot;</span> &lt;&lt; <a class="code hl_function" href="class_t_energy_cal.html#a296ec258b047a54a2d8fee562edd5b86">GetParameter</a>(0) &lt;&lt; <span class="stringliteral">&quot; \t p1 = &quot;</span> &lt;&lt; <a class="code hl_function" href="class_t_energy_cal.html#a296ec258b047a54a2d8fee562edd5b86">GetParameter</a>(1) &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>   <span class="comment">// Set the energy parameters based on the fitted calibration.</span></div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>   <a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>()-&gt;<a class="code hl_function" href="class_t_channel.html#ac9a44294b3c194f7c08398769b26bda0">AddENGCoefficient</a>(<a class="code hl_function" href="class_t_energy_cal.html#a296ec258b047a54a2d8fee562edd5b86">GetParameter</a>(0));</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>   <a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>()-&gt;<a class="code hl_function" href="class_t_channel.html#ac9a44294b3c194f7c08398769b26bda0">AddENGCoefficient</a>(<a class="code hl_function" href="class_t_energy_cal.html#a296ec258b047a54a2d8fee562edd5b86">GetParameter</a>(1));</div>
@@ -310,7 +310,7 @@ $(document).ready(function(){initNavTree('_t_energy_cal_8cxx_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_4d17f409fb020449a7716dffae2b2761.html">TCal</a></li><li class="navelem"><a class="el" href="_t_energy_cal_8cxx.html">TEnergyCal.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>

@@ -154,11 +154,11 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_t_scaler_data.html#a664ae88a4e5b7a91dc42772b932c5a38">   42</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_t_scaler_data.html#a664ae88a4e5b7a91dc42772b932c5a38">TScalerData::Print</a>(Option_t*)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;time: &quot;</span>&lt;&lt;std::setw(16)&lt;&lt;<a class="code hl_function" href="class_t_scaler_data.html#a1b4bc9ad30f6964f306f97b9e07c1f1a">GetTimeStamp</a>()&lt;&lt;<span class="stringliteral">&quot;, address: &quot;</span>&lt;&lt;<a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(<a class="code hl_variable" href="class_t_scaler_data.html#a2bbb329dbb8c6bf180c225f41436058e">fAddress</a>, 4);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;time: &quot;</span> &lt;&lt; std::setw(16) &lt;&lt; <a class="code hl_function" href="class_t_scaler_data.html#a1b4bc9ad30f6964f306f97b9e07c1f1a">GetTimeStamp</a>() &lt;&lt; <span class="stringliteral">&quot;, address: &quot;</span> &lt;&lt; <a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(<a class="code hl_variable" href="class_t_scaler_data.html#a2bbb329dbb8c6bf180c225f41436058e">fAddress</a>, 4);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="class_t_scaler_data.html#a0d517fc765541dfea323cc93811e46f2">fScaler</a>.size(); ++i) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;\t Scaler[&quot;</span>&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;]: &quot;</span>&lt;&lt;<a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(<a class="code hl_variable" href="class_t_scaler_data.html#a0d517fc765541dfea323cc93811e46f2">fScaler</a>[i], 8);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;\t Scaler[&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;]: &quot;</span> &lt;&lt; <a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(<a class="code hl_variable" href="class_t_scaler_data.html#a0d517fc765541dfea323cc93811e46f2">fScaler</a>[i], 8);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>   }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
@@ -245,7 +245,7 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">   /// If the time is after the last entry, we return the last entry, otherwise we return the following entry (or the</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">   /// current entry if the time is an exact match).</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"></span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_scaler.html#a51d4cbeca03c670173a855d6299be260">fTree</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> == 0) {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Empty&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Empty&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <span class="keywordflow">return</span> std::vector&lt;UInt_t&gt;(0);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>   }</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>   <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_t_scaler.html#ac318b191fb9c17c2047dd068a40fda29">fScalerMap</a>.empty()) {</div>
@@ -306,7 +306,7 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">   /// if this is before the first scaler, we just return the first scaler, otherwise we return the scaler minus the</span></div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">   /// previous scaler.</span></div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment"></span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_scaler.html#a51d4cbeca03c670173a855d6299be260">fTree</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> == 0) {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Empty&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Empty&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>   }</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>   <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_t_scaler.html#ac318b191fb9c17c2047dd068a40fda29">fScalerMap</a>.empty()) {</div>
@@ -399,7 +399,7 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="comment">   /// Draw scaler differences (i.e. current scaler minus last scaler) vs. time in cycle.</span></div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">   /// Passing &quot;redraw&quot; as option forces re-drawing of the histogram (e.g. for a different index).</span></div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment"></span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_scaler.html#a51d4cbeca03c670173a855d6299be260">fTree</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> == 0) {</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Empty&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Empty&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>   }</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
@@ -447,10 +447,10 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            previousValue = <a class="code hl_variable" href="class_t_scaler.html#a98a1cc9d7e0b7ffead4b193288217918">fScalerData</a>-&gt;<a class="code hl_function" href="class_t_scaler_data.html#a618c9091f6ad13b84e401fe73e465660">GetScaler</a>(index);</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>         }</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>         <span class="keywordflow">if</span>(entry % 1000 == 0) {</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            std::cout&lt;&lt;std::setw(3)&lt;&lt;(100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a>&lt;&lt;<span class="stringliteral">&quot; % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            std::cout &lt;&lt; std::setw(3) &lt;&lt; (100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> &lt;&lt; <span class="stringliteral">&quot; % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>         }</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      }</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;100 % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;100 % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>   }</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>   <span class="comment">// if redraw was part of the original options, remove it from the options passed on</span></div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>   <span class="keywordflow">if</span>(opt_index &gt;= 0) {</div>
@@ -471,7 +471,7 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="comment">   /// The &quot;single&quot; options creates spectra for all single addresses in the given range (instead of one accumulative</span></div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="comment">   /// spectrum).</span></div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="comment"></span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_scaler.html#a51d4cbeca03c670173a855d6299be260">fTree</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> == 0) {</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Empty&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Empty&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>   }</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
@@ -523,10 +523,10 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>               previousValue[<a class="code hl_variable" href="class_t_scaler.html#a98a1cc9d7e0b7ffead4b193288217918">fScalerData</a>-&gt;<a class="code hl_function" href="class_t_scaler_data.html#a9fd4774f75572c9de31ea691d68899ad">GetAddress</a>()] = <a class="code hl_variable" href="class_t_scaler.html#a98a1cc9d7e0b7ffead4b193288217918">fScalerData</a>-&gt;<a class="code hl_function" href="class_t_scaler_data.html#a618c9091f6ad13b84e401fe73e465660">GetScaler</a>(index);</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>            }</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>            <span class="keywordflow">if</span>(entry % 1000 == 0) {</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>               std::cout&lt;&lt;std::setw(3)&lt;&lt;(100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a>&lt;&lt;<span class="stringliteral">&quot; % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>               std::cout &lt;&lt; std::setw(3) &lt;&lt; (100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> &lt;&lt; <span class="stringliteral">&quot; % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            }</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>         }</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>         std::cout&lt;&lt;<span class="stringliteral">&quot;100 % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>         std::cout &lt;&lt; <span class="stringliteral">&quot;100 % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>      }</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>      <span class="comment">// if &quot;redraw&quot; was part of the original options, remove it from the options passed on</span></div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>      <span class="keywordflow">if</span>(draw_index &gt;= 0) {</div>
@@ -574,10 +574,10 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>         previousValue[<a class="code hl_variable" href="class_t_scaler.html#a98a1cc9d7e0b7ffead4b193288217918">fScalerData</a>-&gt;<a class="code hl_function" href="class_t_scaler_data.html#a9fd4774f75572c9de31ea691d68899ad">GetAddress</a>()] = <a class="code hl_variable" href="class_t_scaler.html#a98a1cc9d7e0b7ffead4b193288217918">fScalerData</a>-&gt;<a class="code hl_function" href="class_t_scaler_data.html#a618c9091f6ad13b84e401fe73e465660">GetScaler</a>(index);</div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>      }</div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>      <span class="keywordflow">if</span>(entry % 1000 == 0) {</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>         std::cout&lt;&lt;std::setw(3)&lt;&lt;(100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a>&lt;&lt;<span class="stringliteral">&quot; % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>         std::cout &lt;&lt; std::setw(3) &lt;&lt; (100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> &lt;&lt; <span class="stringliteral">&quot; % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>      }</div>
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>   }</div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;100 % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;100 % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>   Double_t max = <a class="code hl_variable" href="class_t_scaler.html#a9e2210169ad25eb179192c4875114f28">fHist</a>[lowAddress]-&gt;GetMaximum();</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>   <span class="keywordflow">for</span>(UInt_t address = lowAddress + 1; address &lt;= highAddress; ++address) {</div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>      <span class="keywordflow">if</span>(max &lt; <a class="code hl_variable" href="class_t_scaler.html#a9e2210169ad25eb179192c4875114f28">fHist</a>[address]-&gt;GetMaximum()) {</div>
@@ -599,14 +599,14 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>{<span class="comment"></span></div>
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span><span class="comment">   /// Draw scaler differences (i.e. current scaler minus last scaler) vs. time.</span></div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span><span class="comment"></span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_scaler.html#a51d4cbeca03c670173a855d6299be260">fTree</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> == 0) {</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Empty&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Empty&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>   }</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>   TString opt = option;</div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>   opt.ToLower();</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>   <span class="keywordtype">int</span> nofBins = std::abs(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(1e9 * (hightime - lowtime) / <a class="code hl_function" href="class_t_scaler.html#acea271746a1283dce61ef7465980334e">GetTimePeriod</a>(address)));</div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>   std::cout&lt;&lt;nofBins&lt;&lt;<span class="stringliteral">&quot;nofbins&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>   std::cout &lt;&lt; nofBins &lt;&lt; <span class="stringliteral">&quot;nofbins&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>   <span class="comment">// This scHist could be leaky as the outside user has ownership of it.</span></div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>   <span class="keyword">auto</span>* scHist =</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>      <span class="keyword">new</span> TH1D(Form(<span class="stringliteral">&quot;TScalerHistRaw_%04x&quot;</span>, address),</div>
@@ -626,10 +626,10 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>         previousValue = <a class="code hl_variable" href="class_t_scaler.html#a98a1cc9d7e0b7ffead4b193288217918">fScalerData</a>-&gt;<a class="code hl_function" href="class_t_scaler_data.html#a618c9091f6ad13b84e401fe73e465660">GetScaler</a>(index);</div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>      }</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>      <span class="keywordflow">if</span>(entry % 1000 == 0) {</div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>         std::cout&lt;&lt;std::setw(3)&lt;&lt;(100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a>&lt;&lt;<span class="stringliteral">&quot; % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>         std::cout &lt;&lt; std::setw(3) &lt;&lt; (100 * entry) / <a class="code hl_variable" href="class_t_scaler.html#ab127496da557b05b026e028bbde2f56b">fEntries</a> &lt;&lt; <span class="stringliteral">&quot; % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>      }</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>   }</div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;100 % done\r&quot;</span>&lt;&lt;std::flush;</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;100 % done\r&quot;</span> &lt;&lt; std::flush;</div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>   scHist-&gt;Draw(opt);</div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span> </div>
@@ -674,14 +674,14 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div class="foldopen" id="foldopen00532" data-start="{" data-end="}">
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno"><a class="line" href="class_t_scaler.html#a8c585dda1200020d4260aaf7e5ebab63">  532</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_t_scaler.html#a8c585dda1200020d4260aaf7e5ebab63">TScaler::ListHistograms</a>()</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>{</div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;single address histograms:&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;single address histograms:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>   <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; it : <a class="code hl_variable" href="class_t_scaler.html#a9e2210169ad25eb179192c4875114f28">fHist</a>) {</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;<a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(it.first, 4)&lt;&lt;<span class="stringliteral">&quot;: &quot;</span>&lt;&lt;it.second-&gt;GetName()&lt;&lt;<span class="stringliteral">&quot;, &quot;</span>&lt;&lt;it.second-&gt;GetTitle()&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(it.first, 4) &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; it.second-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; it.second-&gt;GetTitle() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>   }</div>
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span> </div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;range histograms:&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;range histograms:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>   <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; it : <a class="code hl_variable" href="class_t_scaler.html#a91d56282e9ecd03e00860acd97dc965c">fHistRange</a>) {</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;<a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(it.first.first, 4)&lt;&lt;<span class="stringliteral">&quot;, &quot;</span>&lt;&lt;it.first.second&lt;&lt;<span class="stringliteral">&quot;: &quot;</span>&lt;&lt;it.second-&gt;GetName()&lt;&lt;<span class="stringliteral">&quot;, &quot;</span>&lt;&lt;it.second-&gt;GetTitle()&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code hl_function" href="_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4">hex</a>(it.first.first, 4) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; it.first.second &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; it.second-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; it.second-&gt;GetTitle() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>   }</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>}</div>
 </div>
@@ -734,7 +734,7 @@ $(document).ready(function(){initNavTree('_t_scaler_8cxx_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_2b08b36851fcb6a7439555c8d93f536c.html">TFormat</a></li><li class="navelem"><a class="el" href="_t_scaler_8cxx.html">TScaler.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:16.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>

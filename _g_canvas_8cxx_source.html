@@ -459,7 +459,7 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="foldopen" id="foldopen00321" data-start="{" data-end="}">
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="class_g_canvas.html#ab26865f0bf8cf2ed4664cbea1eebbc01">  321</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_canvas.html#ab26865f0bf8cf2ed4664cbea1eebbc01">GCanvas::Draw</a>(Option_t* opt)</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>{</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;GCanvas Draw was called.&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;GCanvas Draw was called.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>   TCanvas::Draw(opt);</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>   <span class="keywordflow">if</span>(FindObject(<span class="stringliteral">&quot;TFrame&quot;</span>) != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      FindObject(<span class="stringliteral">&quot;TFrame&quot;</span>)-&gt;SetBit(TBox::kCannotMove);</div>
@@ -696,7 +696,7 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>      width *= 1.1;</div>
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>      height *= 1.1;</div>
 <div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>   } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Don&#39;t know what to do, got event &quot;</span>&lt;&lt;<span class="keyword">event</span>&lt;&lt;<span class="stringliteral">&quot; which isn&#39;t kWheelUp (&quot;</span>&lt;&lt;kWheelUp&lt;&lt;<span class="stringliteral">&quot;) or kWheelDown (&quot;</span>&lt;&lt;kWheelDown&lt;&lt;<span class="stringliteral">&quot;)&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Don&#39;t know what to do, got event &quot;</span> &lt;&lt; <span class="keyword">event</span> &lt;&lt; <span class="stringliteral">&quot; which isn&#39;t kWheelUp (&quot;</span> &lt;&lt; kWheelUp &lt;&lt; <span class="stringliteral">&quot;) or kWheelDown (&quot;</span> &lt;&lt; kWheelDown &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>   }</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span> </div>
@@ -835,7 +835,7 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>         }</div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>      }</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>   } <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>   <span class="keywordflow">default</span>: std::cout&lt;&lt;<span class="stringliteral">&quot;keysym = &quot;</span>&lt;&lt;*keysym&lt;&lt;std::endl; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>   <span class="keywordflow">default</span>: std::cout &lt;&lt; <span class="stringliteral">&quot;keysym = &quot;</span> &lt;&lt; *keysym &lt;&lt; std::endl; <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>   }</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>   <span class="keywordflow">return</span> edited;</div>
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>}</div>
@@ -937,7 +937,7 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>   <span class="keywordflow">case</span> kKey_f:</div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>      <span class="keywordflow">if</span>(!hists.empty() &amp;&amp; <a class="code hl_function" href="class_g_canvas.html#ae0dea9053a16be721fbfaed1530077b2">GetNMarkers</a>() &gt; 1) {</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>         std::cout&lt;&lt;<span class="stringliteral">&quot;x low = &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.at(<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.size() - 2)-&gt;GetLocalX()&lt;&lt;<span class="stringliteral">&quot;\t\txhigh = &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.back()-&gt;GetLocalX()&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>         std::cout &lt;&lt; <span class="stringliteral">&quot;x low = &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.at(<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.size() - 2)-&gt;GetLocalX() &lt;&lt; <span class="stringliteral">&quot;\t\txhigh = &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.back()-&gt;GetLocalX() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>         <span class="keywordflow">if</span>(<a class="code hl_function" href="_g_root_commands_8h.html#aae831a0a49f7a5f37c12550e9da46e46">PhotoPeakFit</a>(hists.back(), <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.at(<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.size() - 2)-&gt;GetLocalX(), <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.back()-&gt;GetLocalX()) != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>            edited = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>         }</div>
@@ -946,7 +946,7 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span> </div>
 <div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>   <span class="keywordflow">case</span> kKey_F:</div>
 <div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>      <span class="keywordflow">if</span>(!hists.empty() &amp;&amp; <a class="code hl_function" href="class_g_canvas.html#ae0dea9053a16be721fbfaed1530077b2">GetNMarkers</a>() &gt; 1) {</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>         std::cout&lt;&lt;<span class="stringliteral">&quot;x low = &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.at(<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.size() - 2)-&gt;GetLocalX()&lt;&lt;<span class="stringliteral">&quot;\t\txhigh = &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.back()-&gt;GetLocalX()&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>         std::cout &lt;&lt; <span class="stringliteral">&quot;x low = &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.at(<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.size() - 2)-&gt;GetLocalX() &lt;&lt; <span class="stringliteral">&quot;\t\txhigh = &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.back()-&gt;GetLocalX() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>         <span class="keywordflow">if</span>(<a class="code hl_function" href="_g_root_commands_8h.html#aafc938be463f7394113319d7a7117259">AltPhotoPeakFit</a>(hists.back(), <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.at(<a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.size() - 2)-&gt;GetLocalX(), <a class="code hl_variable" href="class_g_canvas.html#ace44e770f7df18b8e5eae5644c420521">fMarkers</a>.back()-&gt;GetLocalX(), <span class="stringliteral">&quot;+&quot;</span>) !=</div>
 <div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>            <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>            edited = <span class="keyword">true</span>;</div>
@@ -982,8 +982,8 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span> </div>
 <div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>         <span class="keywordtype">double</span> sum =</div>
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>            hists.back()-&gt;Integral(hists.back()-&gt;GetXaxis()-&gt;FindBin(xlow), hists.back()-&gt;GetXaxis()-&gt;FindBin(xhigh));</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>         std::cout&lt;&lt;<a class="code hl_define" href="_globals_8h.html#a79d10e672abb49ad63eeaa8aaef57c38">BLUE</a>&lt;&lt;std::endl</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                  &lt;&lt;<span class="stringliteral">&quot;\tSum [&quot;</span>&lt;&lt;xlow&lt;&lt;<span class="stringliteral">&quot; : &quot;</span>&lt;&lt;xhigh&lt;&lt;<span class="stringliteral">&quot;] = &quot;</span>&lt;&lt;sum&lt;&lt;<a class="code hl_define" href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>         std::cout &lt;&lt; <a class="code hl_define" href="_globals_8h.html#a79d10e672abb49ad63eeaa8aaef57c38">BLUE</a> &lt;&lt; std::endl</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                   &lt;&lt; <span class="stringliteral">&quot;\tSum [&quot;</span> &lt;&lt; xlow &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; xhigh &lt;&lt; <span class="stringliteral">&quot;] = &quot;</span> &lt;&lt; sum &lt;&lt; <a class="code hl_define" href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>      }</div>
 <div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>   <span class="keywordflow">case</span> kKey_I:</div>
@@ -1369,7 +1369,7 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span> </div>
 <div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>      edited = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>   } <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>   <span class="keywordflow">default</span>: std::cout&lt;&lt;<span class="stringliteral">&quot;keysym = &quot;</span>&lt;&lt;*keysym&lt;&lt;std::endl; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>   <span class="keywordflow">default</span>: std::cout &lt;&lt; <span class="stringliteral">&quot;keysym = &quot;</span> &lt;&lt; *keysym &lt;&lt; std::endl; <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>   }</div>
 <div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>   <span class="keywordflow">return</span> edited;</div>
 <div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>}</div>
@@ -1387,22 +1387,22 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>   <span class="keywordflow">case</span> kKey_c: {</div>
 <div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>      TString defaultName = <span class="stringliteral">&quot;cut&quot;</span>;</div>
 <div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>      <span class="keywordflow">if</span>(gROOT-&gt;FindObject(<span class="stringliteral">&quot;CUTG&quot;</span>) == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>         std::cout&lt;&lt;<span class="stringliteral">&quot;Something went wrong, can&#39;t find &#39;CUTG&#39;, did you initialize the cut beforehand? Or maybe you already pressed c?&quot;</span>&lt;&lt;std::endl</div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>                  &lt;&lt;<span class="stringliteral">&quot;Current list of cuts is &quot;</span>;</div>
-<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>         <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_g_canvas.html#a29218126392fbea3333c288004d0726f">fCuts</a>.empty()) std::cout&lt;&lt;<span class="stringliteral">&quot;empty&quot;</span>;</div>
+<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>         std::cout &lt;&lt; <span class="stringliteral">&quot;Something went wrong, can&#39;t find &#39;CUTG&#39;, did you initialize the cut beforehand? Or maybe you already pressed c?&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>                   &lt;&lt; <span class="stringliteral">&quot;Current list of cuts is &quot;</span>;</div>
+<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>         <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_g_canvas.html#a29218126392fbea3333c288004d0726f">fCuts</a>.empty()) std::cout &lt;&lt; <span class="stringliteral">&quot;empty&quot;</span>;</div>
 <div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>         <span class="keywordflow">for</span>(<span class="keyword">auto</span> cut : <a class="code hl_variable" href="class_g_canvas.html#a29218126392fbea3333c288004d0726f">fCuts</a>) {</div>
-<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>            std::cout&lt;&lt;cut-&gt;GetName()&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>            std::cout &lt;&lt; cut-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>         }</div>
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>         std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>         std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>         <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>      }</div>
 <div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>      <a class="code hl_variable" href="class_g_canvas.html#a29218126392fbea3333c288004d0726f">fCuts</a>.push_back(<span class="keyword">static_cast&lt;</span>TCutG*<span class="keyword">&gt;</span>(gROOT-&gt;FindObject(<span class="stringliteral">&quot;CUTG&quot;</span>)));</div>
 <div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>      <a class="code hl_variable" href="class_g_canvas.html#a29218126392fbea3333c288004d0726f">fCuts</a>.back()-&gt;SetName(<a class="code hl_variable" href="class_g_canvas.html#a69c7a85c2d7c2ec47911166fa77a308c">fCutName</a>);</div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Added cut to list of cuts: &quot;</span>;</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Added cut to list of cuts: &quot;</span>;</div>
 <div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>      <span class="keywordflow">for</span>(<span class="keyword">auto</span> cut : <a class="code hl_variable" href="class_g_canvas.html#a29218126392fbea3333c288004d0726f">fCuts</a>) {</div>
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>         std::cout&lt;&lt;cut-&gt;GetName()&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>         std::cout &lt;&lt; cut-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>      }</div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>      std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>      std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>   } <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span> </div>
 <div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span>   <span class="keywordflow">case</span> kKey_e:</div>
@@ -1602,12 +1602,12 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>      }</div>
 <div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>      TFile f(fileName, <span class="stringliteral">&quot;update&quot;</span>);</div>
 <div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>      <span class="keywordflow">if</span>(!f.IsOpen()) {</div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>         std::cout&lt;&lt;<a class="code hl_define" href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a>&lt;&lt;<span class="stringliteral">&quot;Failed to open file &#39;&quot;</span>&lt;&lt;fileName&lt;&lt;<span class="stringliteral">&quot;&#39;, not saving cuts!&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>         std::cout &lt;&lt; <a class="code hl_define" href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Failed to open file &#39;&quot;</span> &lt;&lt; fileName &lt;&lt; <span class="stringliteral">&quot;&#39;, not saving cuts!&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>         <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>      }</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>      std::cout&lt;&lt;<a class="code hl_define" href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a>&lt;&lt;<span class="stringliteral">&quot;Writing the following cuts to &#39;&quot;</span>&lt;&lt;fileName&lt;&lt;<span class="stringliteral">&quot;&#39;:&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>      std::cout &lt;&lt; <a class="code hl_define" href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Writing the following cuts to &#39;&quot;</span> &lt;&lt; fileName &lt;&lt; <span class="stringliteral">&quot;&#39;:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>      <span class="keywordflow">for</span>(<span class="keyword">auto</span> cut : <a class="code hl_variable" href="class_g_canvas.html#a29218126392fbea3333c288004d0726f">fCuts</a>) {</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>         std::cout&lt;&lt;cut-&gt;GetName()&lt;&lt;std::endl;</div>
+<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>         std::cout &lt;&lt; cut-&gt;GetName() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>         cut-&gt;Write();</div>
 <div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>      }</div>
 <div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>      f.Close();</div>
@@ -1833,7 +1833,7 @@ $(document).ready(function(){initNavTree('_g_canvas_8cxx_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_g_canvas_8cxx.html">GCanvas.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>

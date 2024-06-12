@@ -140,14 +140,14 @@ $(document).ready(function(){initNavTree('_g_root_commands_8cxx_source.html','')
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_g_root_commands_8h.html#a54d17a6d0bb758f26b9dda4c6d8e8da8">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_g_root_commands_8cxx.html#a54d17a6d0bb758f26b9dda4c6d8e8da8">Help</a>()</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;This is helpful information.&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;This is helpful information.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_g_root_commands_8h.html#a966ba00178025d0e04598c7a61ad54fe">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_g_root_commands_8cxx.html#a966ba00178025d0e04598c7a61ad54fe">Commands</a>()</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;this is a list of useful commands.&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;this is a list of useful commands.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('_g_root_commands_8cxx_source.html','')
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>   <span class="keywordtype">int</span> ret = system(Form(<span class="stringliteral">&quot;%s/bin/grsi-config --version&quot;</span>, getenv(<span class="stringliteral">&quot;GRSISYS&quot;</span>)));</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>   <span class="keywordflow">if</span>(ret == -1) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Failed to call grsi-config!&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Failed to call grsi-config!&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>   }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 </div>
@@ -445,12 +445,12 @@ $(document).ready(function(){initNavTree('_g_root_commands_8cxx_source.html','')
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>{</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>   std::stringstream ss;</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>   <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = strings.begin(); it != strings.end(); it++) {</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>      ss&lt;&lt;*it;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>      ss &lt;&lt; *it;</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>      <span class="keyword">auto</span> next = it;</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>      next++;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>      <span class="keywordflow">if</span>(next != strings.end()) {</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>         ss&lt;&lt;split;</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>         ss &lt;&lt; split;</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>      }</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>   }</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>   <span class="keywordflow">return</span> ss.str();</div>
@@ -538,7 +538,7 @@ $(document).ready(function(){initNavTree('_g_root_commands_8cxx_source.html','')
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="stringliteral"></span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><span class="keywordtype">void</span> <a class="code hl_function" href="_g_root_commands_8cxx.html#abd9b9bf20e6408d2c5d9e8729d262201">StartGUI</a>()</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>{</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Cannot start gui, requires ROOT compiled against python 2.7&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Cannot start gui, requires ROOT compiled against python 2.7&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>}</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
@@ -660,7 +660,7 @@ $(document).ready(function(){initNavTree('_g_root_commands_8cxx_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_g_root_commands_8cxx.html">GRootCommands.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>

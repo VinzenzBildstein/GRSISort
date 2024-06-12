@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('_t_single_peak_8cxx_source.html',''); 
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>   <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="class_t_single_peak.html#a4d1b56cf1a113770bee6aaf2c0905198">fListOfBGPars</a>.at(par);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>   } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::out_of_range&amp; oor) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      std::cerr&lt;&lt;<span class="stringliteral">&quot;Parameter not in list: &quot;</span>&lt;&lt;par&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      std::cerr &lt;&lt; <span class="stringliteral">&quot;Parameter not in list: &quot;</span> &lt;&lt; par &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>   }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>   <span class="keywordflow">return</span> <span class="keyword">true</span>;   <span class="comment">// never gets here...appeals to some compilers.</span></div>
@@ -159,10 +159,10 @@ $(document).ready(function(){initNavTree('_t_single_peak_8cxx_source.html',''); 
 <div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_t_single_peak.html#aee205c5dd7fe2bb86f9531c744d9a4c6">   45</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_t_single_peak.html#aee205c5dd7fe2bb86f9531c744d9a4c6">TSinglePeak::Print</a>(Option_t*)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>   std::cout&lt;&lt;IsA()-&gt;GetName()&lt;&lt;<span class="stringliteral">&quot;:&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Centroid = &quot;</span>&lt;&lt;std::fixed&lt;&lt;<a class="code hl_function" href="class_t_single_peak.html#a5b0c6aa41dd77df5d10d0ce1e4dcc3b5">Centroid</a>()&lt;&lt;<span class="stringliteral">&quot; +/- &quot;</span>&lt;&lt;<a class="code hl_function" href="class_t_single_peak.html#a0d79cc9dc119dea7ade7c9d27262dab9">CentroidErr</a>()&lt;&lt;std::endl;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Area = &quot;</span>&lt;&lt;<a class="code hl_function" href="class_t_single_peak.html#afdc64b7a8d5315d282201cd3950c43b9">Area</a>()&lt;&lt;<span class="stringliteral">&quot; +/- &quot;</span>&lt;&lt;<a class="code hl_function" href="class_t_single_peak.html#a51b186071d30bb318455325d85d48649">AreaErr</a>()&lt;&lt;std::endl;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>   std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>   std::cout &lt;&lt; IsA()-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Centroid = &quot;</span> &lt;&lt; std::fixed &lt;&lt; <a class="code hl_function" href="class_t_single_peak.html#a5b0c6aa41dd77df5d10d0ce1e4dcc3b5">Centroid</a>() &lt;&lt; <span class="stringliteral">&quot; +/- &quot;</span> &lt;&lt; <a class="code hl_function" href="class_t_single_peak.html#a0d79cc9dc119dea7ade7c9d27262dab9">CentroidErr</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Area = &quot;</span> &lt;&lt; <a class="code hl_function" href="class_t_single_peak.html#afdc64b7a8d5315d282201cd3950c43b9">Area</a>() &lt;&lt; <span class="stringliteral">&quot; +/- &quot;</span> &lt;&lt; <a class="code hl_function" href="class_t_single_peak.html#a51b186071d30bb318455325d85d48649">AreaErr</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>   std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
@@ -171,10 +171,10 @@ $(document).ready(function(){initNavTree('_t_single_peak_8cxx_source.html',''); 
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_single_peak.html#a3a8cb81a269b539a3108549924c79162">fTotalFunction</a> != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_t_single_peak.html#a3a8cb81a269b539a3108549924c79162">fTotalFunction</a>-&gt;GetNpar(); ++i) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>         std::cout&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;/&quot;</span>&lt;&lt;<a class="code hl_variable" href="class_t_single_peak.html#a3a8cb81a269b539a3108549924c79162">fTotalFunction</a>-&gt;GetParName(i)&lt;&lt;<span class="stringliteral">&quot; = &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_t_single_peak.html#a3a8cb81a269b539a3108549924c79162">fTotalFunction</a>-&gt;GetParameter(i)&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>         std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_t_single_peak.html#a3a8cb81a269b539a3108549924c79162">fTotalFunction</a>-&gt;GetParName(i) &lt;&lt; <span class="stringliteral">&quot; = &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_t_single_peak.html#a3a8cb81a269b539a3108549924c79162">fTotalFunction</a>-&gt;GetParameter(i) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>   } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;no total function &quot;</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;no total function &quot;</span>;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>   }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 </div>
@@ -213,7 +213,7 @@ $(document).ready(function(){initNavTree('_t_single_peak_8cxx_source.html',''); 
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{<span class="comment"></span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">   /// Return the full width at half-maximum.</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment"></span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_single_peak.html#a3a78b6a9ce0c41d19a8550ea9ce3b6f5">fPeakFunction</a> == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      std::cerr&lt;&lt;__PRETTY_FUNCTION__&lt;&lt;<span class="stringliteral">&quot;: peak function (&quot;</span>&lt;&lt;<a class="code hl_variable" href="class_t_single_peak.html#a3a78b6a9ce0c41d19a8550ea9ce3b6f5">fPeakFunction</a>&lt;&lt;<span class="stringliteral">&quot;) is null&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      std::cerr &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: peak function (&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_t_single_peak.html#a3a78b6a9ce0c41d19a8550ea9ce3b6f5">fPeakFunction</a> &lt;&lt; <span class="stringliteral">&quot;) is null&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keywordflow">return</span> 0.;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>   }</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>   <a class="code hl_function" href="class_t_single_peak.html#afa420f687a46bc14ac8bcc67c33ab71d">UpdatePeakParameters</a>();</div>
@@ -310,7 +310,7 @@ $(document).ready(function(){initNavTree('_t_single_peak_8cxx_source.html',''); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_359637ddf5ff0dd5705446986a14d7e9.html">TPeakFitting</a></li><li class="navelem"><a class="el" href="_t_single_peak_8cxx.html">TSinglePeak.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>

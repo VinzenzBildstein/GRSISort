@@ -517,11 +517,11 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>   bin = biny * (2 * fXaxis.GetNbins() - biny + 3) / 2 + binx - binz +</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>         (fXaxis.GetNbins() + 2) * (fXaxis.GetNbins() + 3) * (fXaxis.GetNbins() + 4) / 6 -</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>         (fXaxis.GetNbins() + 2 - binz) * (fXaxis.GetNbins() + 3 - binz) * (fXaxis.GetNbins() + 4 - binz) / 6 - biny;</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;binx,y,z = &quot;</span>&lt;&lt;binx&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;biny&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;binz&lt;&lt;<span class="stringliteral">&quot; =&gt; bin = &quot;</span>&lt;&lt;bin&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;binx,y,z = &quot;</span> &lt;&lt; binx &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; biny &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; binz &lt;&lt; <span class="stringliteral">&quot; =&gt; bin = &quot;</span> &lt;&lt; bin &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>   bin = binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>         binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                 10. / 3.);</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;binx,y,z = &quot;</span>&lt;&lt;binx&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;biny&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;binz&lt;&lt;<span class="stringliteral">&quot; =&gt; bin = &quot;</span>&lt;&lt;bin&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;binx,y,z = &quot;</span> &lt;&lt; binx &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; biny &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; binz &lt;&lt; <span class="stringliteral">&quot; =&gt; bin = &quot;</span> &lt;&lt; bin &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>   AddBinContent(bin);</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>   <span class="keywordflow">if</span>(fSumw2.fN != 0) {</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>      ++fSumw2.fArray[bin];</div>
@@ -1752,11 +1752,11 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span> </div>
 <div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>   <span class="comment">//   debug printout</span></div>
 <div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>   <span class="keywordflow">if</span>(opt.Contains(<span class="stringliteral">&quot;D&quot;</span>)) {</div>
-<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>      std::cout&lt;&lt;<span class="stringliteral">&quot; Kolmo Prob  h1 = &quot;</span>&lt;&lt;h1-&gt;GetName()&lt;&lt;<span class="stringliteral">&quot;, sum1 = &quot;</span>&lt;&lt;sum1&lt;&lt;std::endl;</div>
-<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>      std::cout&lt;&lt;<span class="stringliteral">&quot; Kolmo Prob  h2 = &quot;</span>&lt;&lt;h2-&gt;GetName()&lt;&lt;<span class="stringliteral">&quot;, sum2 = &quot;</span>&lt;&lt;sum2&lt;&lt;std::endl;</div>
-<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span>      std::cout&lt;&lt;<span class="stringliteral">&quot; Kolmo Probabil = &quot;</span>&lt;&lt;prb&lt;&lt;<span class="stringliteral">&quot;, Max dist = &quot;</span>&lt;&lt;dfmax&lt;&lt;std::endl;</div>
+<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>      std::cout &lt;&lt; <span class="stringliteral">&quot; Kolmo Prob  h1 = &quot;</span> &lt;&lt; h1-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot;, sum1 = &quot;</span> &lt;&lt; sum1 &lt;&lt; std::endl;</div>
+<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>      std::cout &lt;&lt; <span class="stringliteral">&quot; Kolmo Prob  h2 = &quot;</span> &lt;&lt; h2-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot;, sum2 = &quot;</span> &lt;&lt; sum2 &lt;&lt; std::endl;</div>
+<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span>      std::cout &lt;&lt; <span class="stringliteral">&quot; Kolmo Probabil = &quot;</span> &lt;&lt; prb &lt;&lt; <span class="stringliteral">&quot;, Max dist = &quot;</span> &lt;&lt; dfmax &lt;&lt; std::endl;</div>
 <div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>      <span class="keywordflow">if</span>(opt.Contains(<span class="stringliteral">&quot;N&quot;</span>)) {</div>
-<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>         std::cout&lt;&lt;<span class="stringliteral">&quot; Kolmo Probabil = &quot;</span>&lt;&lt;prb1&lt;&lt;<span class="stringliteral">&quot; for shape alone, &quot;</span>&lt;&lt;prb2&lt;&lt;<span class="stringliteral">&quot; for normalisation alone&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>         std::cout &lt;&lt; <span class="stringliteral">&quot; Kolmo Probabil = &quot;</span> &lt;&lt; prb1 &lt;&lt; <span class="stringliteral">&quot; for shape alone, &quot;</span> &lt;&lt; prb2 &lt;&lt; <span class="stringliteral">&quot; for normalisation alone&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span>      }</div>
 <div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>   }</div>
 <div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span>   <span class="comment">// This numerical error condition should never occur:</span></div>
@@ -3412,7 +3412,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_g_cube_8cxx.html">GCube.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>

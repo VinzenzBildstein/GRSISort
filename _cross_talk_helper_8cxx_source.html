@@ -145,9 +145,9 @@ $(document).ready(function(){initNavTree('_cross_talk_helper_8cxx_source.html','
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> crys_2 = crys_1 + 1; crys_2 &lt; 4; ++crys_2) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            std::string name_str  = Form(<span class="stringliteral">&quot;det_%d_%d_%d&quot;</span>, det_num, crys_1, crys_2);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keyword">const</span> <span class="keywordtype">char</span>* hist_name = name_str.c_str();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            std::cout&lt;&lt;<span class="stringliteral">&quot;Creating histogram: &quot;</span>&lt;&lt;hist_name;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Creating histogram: &quot;</span> &lt;&lt; hist_name;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_variable" href="class_t_g_r_s_i_helper.html#a27adae6a07b011a2c5beb6a572acaa42">fH2</a>[slot][name_str] = <span class="keyword">new</span> TH2I(hist_name, hist_name, 1500, 0, 1500, 1500, 0, 1500);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            std::cout&lt;&lt;<span class="stringliteral">&quot; at address: &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_t_g_r_s_i_helper.html#a27adae6a07b011a2c5beb6a572acaa42">fH2</a>[slot][hist_name]&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            std::cout &lt;&lt; <span class="stringliteral">&quot; at address: &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_t_g_r_s_i_helper.html#a27adae6a07b011a2c5beb6a572acaa42">fH2</a>[slot][hist_name] &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>         }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>   }</div>
@@ -238,7 +238,7 @@ $(document).ready(function(){initNavTree('_cross_talk_helper_8cxx_source.html','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="_cross_talk_helper_8cxx.html">CrossTalkHelper.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:13.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:48.</li>
   </ul>
 </div>
 </body>

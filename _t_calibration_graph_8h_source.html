@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('_t_calibration_graph_8h_source.html','
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_t_calibration_graph_set.html#a279c1a07e583b4f136f9e48f9dac53da">   57</a></span>   <span class="keywordtype">void</span> <a class="code hl_function" href="class_t_calibration_graph_set.html#a279c1a07e583b4f136f9e48f9dac53da">SetLineColor</a>(<span class="keywordtype">int</span> index, <span class="keywordtype">int</span> color)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>   {  <span class="comment"></span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>   {<span class="comment"></span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">      /// Set the line color of the graph and residuals at index</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"></span>      <a class="code hl_variable" href="class_t_calibration_graph_set.html#ac0ccbc9d948206b483210864fdf62bcc">fGraphs</a>[index].SetLineColor(color);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      <a class="code hl_variable" href="class_t_calibration_graph_set.html#a48091d8a371c58ebf4498f031422f8d9">fResidualGraphs</a>[index].SetLineColor(color);</div>
@@ -173,16 +173,16 @@ $(document).ready(function(){initNavTree('_t_calibration_graph_8h_source.html','
 </div>
 <div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_t_calibration_graph_set.html#aa32eeceead7bdda3fcea8e5aa497c5e8">   63</a></span>   <span class="keywordtype">void</span> <a class="code hl_function" href="class_t_calibration_graph_set.html#aa32eeceead7bdda3fcea8e5aa497c5e8">SetMarkerColor</a>(<span class="keywordtype">int</span> index, <span class="keywordtype">int</span> color)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   {   <span class="comment"></span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   {<span class="comment"></span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">      /// Set the marker color of the graph and residuals at index</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"></span>      <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_calibration_graph_set.html#a50f9615d7f707cc3af2ab9dc6b756791">fVerboseLevel</a> &gt; 3) std::cout&lt;&lt;<span class="stringliteral">&quot;setting marker color of graph &quot;</span>&lt;&lt;index&lt;&lt;<span class="stringliteral">&quot; to &quot;</span>&lt;&lt;color&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"></span>      <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_calibration_graph_set.html#a50f9615d7f707cc3af2ab9dc6b756791">fVerboseLevel</a> &gt; 3) std::cout &lt;&lt; <span class="stringliteral">&quot;setting marker color of graph &quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot; to &quot;</span> &lt;&lt; color &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <a class="code hl_variable" href="class_t_calibration_graph_set.html#ac0ccbc9d948206b483210864fdf62bcc">fGraphs</a>[index].SetMarkerColor(color);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <a class="code hl_variable" href="class_t_calibration_graph_set.html#a48091d8a371c58ebf4498f031422f8d9">fResidualGraphs</a>[index].SetMarkerColor(color);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   }</div>
 </div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_t_calibration_graph_set.html#a9b2d136d061176e0f79c34d4539830cb">   70</a></span>   <span class="keywordtype">void</span> <a class="code hl_function" href="class_t_calibration_graph_set.html#a9b2d136d061176e0f79c34d4539830cb">SetMarkerStyle</a>(<span class="keywordtype">int</span> index, <span class="keywordtype">int</span> style)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   { <span class="comment"></span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   {<span class="comment"></span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">      /// Set the marker style of the graph and residuals at index</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment"></span>      <a class="code hl_variable" href="class_t_calibration_graph_set.html#ac0ccbc9d948206b483210864fdf62bcc">fGraphs</a>[index].SetMarkerStyle(style);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <a class="code hl_variable" href="class_t_calibration_graph_set.html#a48091d8a371c58ebf4498f031422f8d9">fResidualGraphs</a>[index].SetMarkerStyle(style);</div>
@@ -386,7 +386,7 @@ $(document).ready(function(){initNavTree('_t_calibration_graph_8h_source.html','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_t_calibration_graph_8h.html">TCalibrationGraph.h</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:49.</li>
   </ul>
 </div>
 </body>

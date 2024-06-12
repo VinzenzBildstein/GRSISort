@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('_t_l_m_fitter_8cxx_source.html',''); i
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>   <a class="code hl_variable" href="class_t_l_m_fitter.html#a0167ba9a51bae955bac474a6ac888a42">fHist</a>     = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>   <span class="comment">// Sets whether parameters are fixed or free.</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Setting the parameters...&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Setting the parameters...&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; func-&gt;GetNpar(); ++i) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      Double_t min, max;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      a[i] = func-&gt;GetParameter(i);</div>
@@ -172,12 +172,12 @@ $(document).ready(function(){initNavTree('_t_l_m_fitter_8cxx_source.html',''); i
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      ia[i] = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>   }</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; ma; ++i) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;par[&quot;</span>&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;] = &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_t_l_m_fitter.html#acc2c9620953a74db4b017c5dff652c2e">fFunction</a>-&gt;GetParameter(i)&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;par[&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;] = &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_t_l_m_fitter.html#acc2c9620953a74db4b017c5dff652c2e">fFunction</a>-&gt;GetParameter(i) &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>   <span class="keywordtype">double</span> func_range_min, func_range_max;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   <span class="keywordtype">int</span>    bin_min, bin_max, nBins;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>   func-&gt;GetRange(func_range_min, func_range_max);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;function range: &quot;</span>&lt;&lt;func_range_min&lt;&lt;<span class="stringliteral">&quot; to &quot;</span>&lt;&lt;func_range_max&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;function range: &quot;</span> &lt;&lt; func_range_min &lt;&lt; <span class="stringliteral">&quot; to &quot;</span> &lt;&lt; func_range_max &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>   <a class="code hl_function" href="class_t_l_m_fitter.html#a7ba728b3f8ea802a84a73391b516ceba">SetFitterRange</a>(func_range_min, func_range_max);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>   bin_min = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;FindBin(func_range_min);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>   bin_max = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;FindBin(func_range_max);</div>
@@ -186,8 +186,8 @@ $(document).ready(function(){initNavTree('_t_l_m_fitter_8cxx_source.html',''); i
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>   <span class="comment">// nBins = bin_max - bin_min;</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>   <a class="code hl_class" href="class_n_r_vec.html">Vec_double</a> x(nBins), y(nBins), sig(nBins), yfit(nBins), W(nBins), v(nBins);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Setting bin values...&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Range is &quot;</span>&lt;&lt;bin_min&lt;&lt;<span class="stringliteral">&quot; to &quot;</span>&lt;&lt;bin_max&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Setting bin values...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Range is &quot;</span> &lt;&lt; bin_min &lt;&lt; <span class="stringliteral">&quot; to &quot;</span> &lt;&lt; bin_max &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetNbinsX(); ++i) {</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      x[i] = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetXaxis()-&gt;GetBinUpEdge(i + 1) * <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetXaxis()-&gt;GetBinWidth(1);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      y[i] = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetBinContent(i + 1);</div>
@@ -201,18 +201,18 @@ $(document).ready(function(){initNavTree('_t_l_m_fitter_8cxx_source.html',''); i
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>   alamda = -1;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>   <a class="code hl_function" href="class_t_l_m_fitter.html#af3676a7b6ee49466935cdadadd4eec16">mrqmin</a>(x, y, sig, a, ia, covar, alpha, chisq, W, alamda);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;out of mrqmin&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;out of mrqmin&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>   <span class="keywordtype">int</span> k    = 1;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>   <span class="keywordtype">int</span> itst = 0;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>   <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      std::cout&lt;&lt;std::endl</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>               &lt;&lt;<span class="stringliteral">&quot;Iteration #&quot;</span>&lt;&lt;std::setw(3)&lt;&lt;k;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      std::cout&lt;&lt;std::setw(18)&lt;&lt;<span class="stringliteral">&quot;chi-squared:&quot;</span>&lt;&lt;std::setw(13)&lt;&lt;chisq;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      std::cout&lt;&lt;std::setw(11)&lt;&lt;<span class="stringliteral">&quot;alamda:&quot;</span>&lt;&lt;std::setw(10)&lt;&lt;alamda&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      std::cout &lt;&lt; std::endl</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                &lt;&lt; <span class="stringliteral">&quot;Iteration #&quot;</span> &lt;&lt; std::setw(3) &lt;&lt; k;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      std::cout &lt;&lt; std::setw(18) &lt;&lt; <span class="stringliteral">&quot;chi-squared:&quot;</span> &lt;&lt; std::setw(13) &lt;&lt; chisq;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      std::cout &lt;&lt; std::setw(11) &lt;&lt; <span class="stringliteral">&quot;alamda:&quot;</span> &lt;&lt; std::setw(10) &lt;&lt; alamda &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; ma; ++i) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>         std::cout&lt;&lt;<span class="stringliteral">&quot;par[&quot;</span>&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;] = &quot;</span>&lt;&lt;<a class="code hl_variable" href="class_t_l_m_fitter.html#acc2c9620953a74db4b017c5dff652c2e">fFunction</a>-&gt;GetParameter(i)&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>         std::cout &lt;&lt; <span class="stringliteral">&quot;par[&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;] = &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_t_l_m_fitter.html#acc2c9620953a74db4b017c5dff652c2e">fFunction</a>-&gt;GetParameter(i) &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      ++k;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      ochisq = chisq;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <a class="code hl_function" href="class_t_l_m_fitter.html#af3676a7b6ee49466935cdadadd4eec16">mrqmin</a>(x, y, sig, a, ia, covar, alpha, chisq, W, alamda);</div>
@@ -222,14 +222,14 @@ $(document).ready(function(){initNavTree('_t_l_m_fitter_8cxx_source.html',''); i
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      }</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      alamda = 0.0;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <a class="code hl_function" href="class_t_l_m_fitter.html#af3676a7b6ee49466935cdadadd4eec16">mrqmin</a>(x, y, sig, a, ia, covar, alpha, chisq, W, alamda);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Uncertainties:&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Uncertainties:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; ma; ++i) {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>         std::cout&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;std::sqrt(covar[i][i]);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>         std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::sqrt(covar[i][i]);</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>   }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Chis2/ndf: &quot;</span>&lt;&lt;chisq&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Chis2/ndf: &quot;</span> &lt;&lt; chisq &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>   <span class="comment">// Feed the parameters back into the function.</span></div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; ma; ++i) {</div>
@@ -326,7 +326,7 @@ $(document).ready(function(){initNavTree('_t_l_m_fitter_8cxx_source.html',''); i
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>   <span class="keywordtype">int</span> ma = a.<a class="code hl_function" href="group___fitting.html#ga526bee6692df28d868dd2572c8254b76">size</a>();</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>   <span class="keywordflow">if</span>(ma &lt;= 0) {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>      std::cerr&lt;&lt;__PRETTY_FUNCTION__&lt;&lt;<span class="stringliteral">&quot;: vector a is empty, not doing anything!&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>      std::cerr &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: vector a is empty, not doing anything!&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>   }</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>   <span class="keyword">static</span> <a class="code hl_class" href="class_n_r_mat.html">Mat_double</a>* oneda_p;</div>
@@ -641,7 +641,7 @@ $(document).ready(function(){initNavTree('_t_l_m_fitter_8cxx_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_c27fb4ff404115d281d3c6aa730dcb72.html">TGRSIFit</a></li><li class="navelem"><a class="el" href="_t_l_m_fitter_8cxx.html">TLMFitter.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>

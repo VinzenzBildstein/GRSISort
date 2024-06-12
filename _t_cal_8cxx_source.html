@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('_t_cal_8cxx_source.html',''); initResi
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>         <a class="code hl_function" href="class_t_cal.html#a616789d8d6ba61ddc18e5548fb7ab48d">WriteToChannel</a>();</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>   }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>   <span class="keywordflow">if</span>(origChan != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <a class="code hl_function" href="class_t_cal.html#a54c363b8f3e87522afc7435b21da360d">SetChannel</a>(origChan);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>   }</div>
@@ -288,26 +288,26 @@ $(document).ready(function(){initNavTree('_t_cal_8cxx_source.html',''); initResi
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword"></span>{<span class="comment"></span></div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">   /// Prints calibration information</span></div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment"></span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>() != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Channel Number: &quot;</span>&lt;&lt;<a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>()-&gt;<a class="code hl_function" href="class_t_channel.html#ac33ac3f89678743363d1923f64766e2d">GetNumber</a>()&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Channel Number: &quot;</span> &lt;&lt; <a class="code hl_function" href="class_t_cal.html#ad3a29c8369ce14d84dd39e13fa4fccde">GetChannel</a>()-&gt;<a class="code hl_function" href="class_t_channel.html#ac33ac3f89678743363d1923f64766e2d">GetNumber</a>() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>   } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>   }</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_cal.html#a74f2b4e7d76c9c28a998cc146271e6c5">fFitFunc</a> != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      std::cout&lt;&lt;std::endl</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>               &lt;&lt;<span class="stringliteral">&quot;*******************************&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      std::cout&lt;&lt;<span class="stringliteral">&quot; Fit:&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      std::cout &lt;&lt; std::endl</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                &lt;&lt; <span class="stringliteral">&quot;*******************************&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      std::cout &lt;&lt; <span class="stringliteral">&quot; Fit:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      <a class="code hl_variable" href="class_t_cal.html#a74f2b4e7d76c9c28a998cc146271e6c5">fFitFunc</a>-&gt;Print();</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      std::cout&lt;&lt;std::endl</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>               &lt;&lt;<span class="stringliteral">&quot;*******************************&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      std::cout &lt;&lt; std::endl</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                &lt;&lt; <span class="stringliteral">&quot;*******************************&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>   } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;Parameters: FIT NOT SET&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Parameters: FIT NOT SET&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>   }</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>   std::cout&lt;&lt;<span class="stringliteral">&quot;Nucleus: &quot;</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;Nucleus: &quot;</span>;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_t_cal.html#afcdadcfd2191729d71be0331c44ffa21">GetNucleus</a>() != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      std::cout&lt;&lt;<a class="code hl_function" href="class_t_cal.html#afcdadcfd2191729d71be0331c44ffa21">GetNucleus</a>()-&gt;GetName()&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      std::cout &lt;&lt; <a class="code hl_function" href="class_t_cal.html#afcdadcfd2191729d71be0331c44ffa21">GetNucleus</a>()-&gt;GetName() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>   } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;NOT SET&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;NOT SET&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>   }</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
 </div>
@@ -360,7 +360,7 @@ $(document).ready(function(){initNavTree('_t_cal_8cxx_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_4d17f409fb020449a7716dffae2b2761.html">TCal</a></li><li class="navelem"><a class="el" href="_t_cal_8cxx.html">TCal.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 11 2024 19:01:15.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 12 2024 15:15:50.</li>
   </ul>
 </div>
 </body>
