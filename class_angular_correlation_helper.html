@@ -119,8 +119,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a83867950a39a88771925b422e1fbeffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a891a718773c5e761bb6063f8147da025" id="r_a891a718773c5e761bb6063f8147da025"><td class="memItemLeft" align="right" valign="top">ROOT::RDF::RResultPtr&lt; std::map&lt; std::string, TList &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#a891a718773c5e761bb6063f8147da025">Book</a> (ROOT::RDataFrame *d) override</td></tr>
 <tr class="separator:a891a718773c5e761bb6063f8147da025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad730015de98e09d763e51acd0ffbab47" id="r_ad730015de98e09d763e51acd0ffbab47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#ad730015de98e09d763e51acd0ffbab47">CreateHistograms</a> (unsigned int slot)</td></tr>
-<tr class="separator:ad730015de98e09d763e51acd0ffbab47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3014850b1a4f45a7902412e6931f5433" id="r_a3014850b1a4f45a7902412e6931f5433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#a3014850b1a4f45a7902412e6931f5433">CreateHistograms</a> (unsigned int slot) override</td></tr>
+<tr class="separator:a3014850b1a4f45a7902412e6931f5433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8293c18719d3e29c1d9afb74cc41d9a" id="r_ae8293c18719d3e29c1d9afb74cc41d9a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_r_s_i_helper.html#ae8293c18719d3e29c1d9afb74cc41d9a">EndOfSort</a> (std::shared_ptr&lt; std::map&lt; std::string, TList &gt; &gt;)</td></tr>
 <tr class="separator:ae8293c18719d3e29c1d9afb74cc41d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f7156ade4ff7f67fd3501dfddb357ad" id="r_a1f7156ade4ff7f67fd3501dfddb357ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#a1f7156ade4ff7f67fd3501dfddb357ad">Exec</a> (unsigned int slot, <a class="el" href="class_t_griffin.html">TGriffin</a> &amp;fGriffin, <a class="el" href="class_t_griffin_bgo.html">TGriffinBgo</a> &amp;fGriffinBgo)</td></tr>
@@ -206,6 +206,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae68e12917cc78fe1014b95bc6f551644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace524d8aa76d2456711b20f21cced35d" id="r_ace524d8aa76d2456711b20f21cced35d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#ace524d8aa76d2456711b20f21cced35d">fMinEnergy</a> {0.}</td></tr>
 <tr class="separator:ace524d8aa76d2456711b20f21cced35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484cf4085c060d9d3bb29fd0665ff8e1" id="r_a484cf4085c060d9d3bb29fd0665ff8e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#a484cf4085c060d9d3bb29fd0665ff8e1">fNofMixedEvents</a> {10}</td></tr>
+<tr class="separator:a484cf4085c060d9d3bb29fd0665ff8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa01629ae28171846ffa58dedc3f4f7b8" id="r_aa01629ae28171846ffa58dedc3f4f7b8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#aa01629ae28171846ffa58dedc3f4f7b8">fPrompt</a> {200.}</td></tr>
 <tr class="separator:aa01629ae28171846ffa58dedc3f4f7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e7a84869448adbdc4cf7eae43b7b530" id="r_a7e7a84869448adbdc4cf7eae43b7b530"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_angular_correlation_helper.html#a7e7a84869448adbdc4cf7eae43b7b530">fTimeRandomHigh</a> {600.}</td></tr>
@@ -279,9 +281,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">47</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">48</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">References <a class="el" href="_angular_correlation_helper_8hh_source.html#l00014">fAddback</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00026">fAngles</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00022">fBins</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00016">fExcludedCrystals</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00015">fExcludedDetectors</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00012">fFolding</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00011">fGriffinDistance</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00013">fGrouping</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00024">fMaxEnergy</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00023">fMinEnergy</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00018">fPrompt</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">fTimeRandomHigh</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">fTimeRandomLow</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00041">TGRSIHelper::fUserSettings</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00121">TUserSettings::GetBool()</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00147">TUserSettings::GetDouble()</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00134">TUserSettings::GetInt()</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00186">TUserSettings::GetIntVector()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00082">TGRSIHelper::Prefix()</a>, <a class="el" href="_t_griffin_angles_8cxx_source.html#l00325">TGriffinAngles::Print()</a>, and <a class="el" href="_t_g_r_s_i_helper_8cxx_source.html#l00079">TGRSIHelper::Setup()</a>.</p>
+<p class="reference">References <a class="el" href="_angular_correlation_helper_8hh_source.html#l00015">fAddback</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00027">fAngles</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00023">fBins</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00017">fExcludedCrystals</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00016">fExcludedDetectors</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00013">fFolding</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00012">fGriffinDistance</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00014">fGrouping</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00025">fMaxEnergy</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00024">fMinEnergy</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00011">fNofMixedEvents</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">fPrompt</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00021">fTimeRandomHigh</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">fTimeRandomLow</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00041">TGRSIHelper::fUserSettings</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00121">TUserSettings::GetBool()</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00147">TUserSettings::GetDouble()</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00134">TUserSettings::GetInt()</a>, <a class="el" href="_t_user_settings_8cxx_source.html#l00186">TUserSettings::GetIntVector()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00082">TGRSIHelper::Prefix()</a>, <a class="el" href="_t_griffin_angles_8cxx_source.html#l00325">TGriffinAngles::Print()</a>, and <a class="el" href="_t_g_r_s_i_helper_8cxx_source.html#l00079">TGRSIHelper::Setup()</a>.</p>
 
 </div>
 </div>
@@ -314,7 +316,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_t_g_r_s_i_helper.html#a70d034002c30d8d30c5865f21783e36a">TGRSIHelper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00087">87</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00089">89</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
 </div>
 </div>
@@ -361,8 +363,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad730015de98e09d763e51acd0ffbab47" name="ad730015de98e09d763e51acd0ffbab47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad730015de98e09d763e51acd0ffbab47">&#9670;&#160;</a></span>CreateHistograms()</h2>
+<a id="a3014850b1a4f45a7902412e6931f5433" name="a3014850b1a4f45a7902412e6931f5433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3014850b1a4f45a7902412e6931f5433">&#9670;&#160;</a></span>CreateHistograms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +382,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -391,7 +393,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">3</a> of file <a class="el" href="_angular_correlation_helper_8cxx_source.html">AngularCorrelationHelper.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_griffin_angles_8h_source.html#l00044">TGriffinAngles::begin()</a>, <a class="el" href="_t_griffin_angles_8h_source.html#l00045">TGriffinAngles::end()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00014">fAddback</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00026">fAngles</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00029">fBgoDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00022">fBins</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00012">fFolding</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00028">fGriffinDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00013">fGrouping</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00033">TGRSIHelper::fH2</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00024">fMaxEnergy</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00023">fMinEnergy</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00038">TGRSIHelper::fObject</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00018">fPrompt</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">fTimeRandomHigh</a>, and <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">fTimeRandomLow</a>.</p>
+<p class="reference">References <a class="el" href="_t_griffin_angles_8h_source.html#l00044">TGriffinAngles::begin()</a>, <a class="el" href="_t_griffin_angles_8h_source.html#l00045">TGriffinAngles::end()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00015">fAddback</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00027">fAngles</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00030">fBgoDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00023">fBins</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00013">fFolding</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00029">fGriffinDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00014">fGrouping</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00033">TGRSIHelper::fH2</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00025">fMaxEnergy</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00024">fMinEnergy</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00011">fNofMixedEvents</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00038">TGRSIHelper::fObject</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">fPrompt</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00021">fTimeRandomHigh</a>, and <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">fTimeRandomLow</a>.</p>
 
 </div>
 </div>
@@ -453,9 +455,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00038">38</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00039">39</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">References <a class="el" href="_angular_correlation_helper_8hh_source.html#l00016">fExcludedCrystals</a>.</p>
+<p class="reference">References <a class="el" href="_angular_correlation_helper_8hh_source.html#l00017">fExcludedCrystals</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
@@ -485,9 +487,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00031">31</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00032">32</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">References <a class="el" href="_angular_correlation_helper_8hh_source.html#l00015">fExcludedDetectors</a>.</p>
+<p class="reference">References <a class="el" href="_angular_correlation_helper_8hh_source.html#l00016">fExcludedDetectors</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
@@ -527,7 +529,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">33</a> of file <a class="el" href="_angular_correlation_helper_8cxx_source.html">AngularCorrelationHelper.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_griffin_angles_8h_source.html#l00039">TGriffinAngles::Angle()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00038">ExcludeCrystal()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00031">ExcludeDetector()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00014">fAddback</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00026">fAngles</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00029">fBgoDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00012">fFolding</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00028">fGriffinDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00011">fGriffinDistance</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00033">TGRSIHelper::fH2</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00018">fPrompt</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">fTimeRandomHigh</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">fTimeRandomLow</a>, <a class="el" href="_t_griffin_8h_source.html#l00121">TGriffin::GetSuppressedAddbackHit()</a>, <a class="el" href="_t_griffin_8h_source.html#l00118">TGriffin::GetSuppressedAddbackMultiplicity()</a>, <a class="el" href="_t_griffin_8h_source.html#l00107">TGriffin::GetSuppressedHit()</a>, <a class="el" href="_t_griffin_8h_source.html#l00110">TGriffin::GetSuppressedMultiplicity()</a>, and <a class="el" href="_t_griffin_angles_8cxx_source.html#l00108">TGriffinAngles::Index()</a>.</p>
+<p class="reference">References <a class="el" href="_t_griffin_angles_8h_source.html#l00039">TGriffinAngles::Angle()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00039">ExcludeCrystal()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00032">ExcludeDetector()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00015">fAddback</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00027">fAngles</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00030">fBgoDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00013">fFolding</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00029">fGriffinDeque</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00012">fGriffinDistance</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00033">TGRSIHelper::fH2</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">fPrompt</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00021">fTimeRandomHigh</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">fTimeRandomLow</a>, <a class="el" href="_t_griffin_8h_source.html#l00121">TGriffin::GetSuppressedAddbackHit()</a>, <a class="el" href="_t_griffin_8h_source.html#l00118">TGriffin::GetSuppressedAddbackMultiplicity()</a>, <a class="el" href="_t_griffin_8h_source.html#l00107">TGriffin::GetSuppressedHit()</a>, <a class="el" href="_t_griffin_8h_source.html#l00110">TGriffin::GetSuppressedMultiplicity()</a>, and <a class="el" href="_t_griffin_angles_8cxx_source.html#l00108">TGriffinAngles::Index()</a>.</p>
 
 </div>
 </div>
@@ -712,7 +714,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00043">TGRSIHelper::fPrefix</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alphanumeric_helper_8hh_source.html#l00017">AlphanumericHelper::AlphanumericHelper()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_cross_talk_helper_8hh_source.html#l00011">CrossTalkHelper::CrossTalkHelper()</a>, <a class="el" href="_directory_helper_8hh_source.html#l00018">DirectoryHelper::DirectoryHelper()</a>, <a class="el" href="_efficiency_helper_8hh_source.html#l00018">EfficiencyHelper::EfficiencyHelper()</a>, <a class="el" href="_example_event_helper_8hh_source.html#l00021">ExampleEventHelper::ExampleEventHelper()</a>, <a class="el" href="_example_fragment_helper_8hh_source.html#l00010">ExampleFragmentHelper::ExampleFragmentHelper()</a>, <a class="el" href="_example_tree_helper_8hh_source.html#l00028">ExampleTreeHelper::ExampleTreeHelper()</a>, <a class="el" href="_griffin_k_value_helper_8hh_source.html#l00012">GriffinKValueHelper::GriffinKValueHelper()</a>, <a class="el" href="_t_g_r_s_i_frame_8cxx_source.html#l00018">TGRSIFrame::TGRSIFrame()</a>, <a class="el" href="_time_walk_helper_8hh_source.html#l00011">TimeWalkHelper::TimeWalkHelper()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00064">TGRSIHelper::Book()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00059">TGRSIHelper::CreateHistograms()</a>, and <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00084">TGRSIHelper::GetActionName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alphanumeric_helper_8hh_source.html#l00017">AlphanumericHelper::AlphanumericHelper()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_cross_talk_helper_8hh_source.html#l00011">CrossTalkHelper::CrossTalkHelper()</a>, <a class="el" href="_directory_helper_8hh_source.html#l00018">DirectoryHelper::DirectoryHelper()</a>, <a class="el" href="_efficiency_helper_8hh_source.html#l00018">EfficiencyHelper::EfficiencyHelper()</a>, <a class="el" href="_example_event_helper_8hh_source.html#l00021">ExampleEventHelper::ExampleEventHelper()</a>, <a class="el" href="_example_fragment_helper_8hh_source.html#l00010">ExampleFragmentHelper::ExampleFragmentHelper()</a>, <a class="el" href="_example_tree_helper_8hh_source.html#l00028">ExampleTreeHelper::ExampleTreeHelper()</a>, <a class="el" href="_griffin_k_value_helper_8hh_source.html#l00012">GriffinKValueHelper::GriffinKValueHelper()</a>, <a class="el" href="_t_g_r_s_i_frame_8cxx_source.html#l00018">TGRSIFrame::TGRSIFrame()</a>, <a class="el" href="_time_walk_helper_8hh_source.html#l00011">TimeWalkHelper::TimeWalkHelper()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00064">TGRSIHelper::Book()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00059">TGRSIHelper::CreateHistograms()</a>, and <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00084">TGRSIHelper::GetActionName()</a>.</p>
 
 </div>
 </div>
@@ -774,7 +776,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_t_g_r_s_i_helper_8cxx_source.html#l00223">TGRSIHelper::CheckSizes()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00059">TGRSIHelper::CreateHistograms()</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00036">TGRSIHelper::fCube</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00032">TGRSIHelper::fH1</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00033">TGRSIHelper::fH2</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00034">TGRSIHelper::fH3</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00031">TGRSIHelper::fLists</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00038">TGRSIHelper::fObject</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00035">TGRSIHelper::fSym</a>, <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00037">TGRSIHelper::fTree</a>, <a class="el" href="_t_g_r_s_i_options_8cxx_source.html#l00022">TGRSIOptions::Get()</a>, and <a class="el" href="_t_g_r_s_i_options_8h_source.html#l00134">TGRSIOptions::GetMaxWorkers()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alphanumeric_helper_8hh_source.html#l00017">AlphanumericHelper::AlphanumericHelper()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_cross_talk_helper_8hh_source.html#l00011">CrossTalkHelper::CrossTalkHelper()</a>, <a class="el" href="_directory_helper_8hh_source.html#l00018">DirectoryHelper::DirectoryHelper()</a>, <a class="el" href="_efficiency_helper_8hh_source.html#l00018">EfficiencyHelper::EfficiencyHelper()</a>, <a class="el" href="_example_event_helper_8hh_source.html#l00021">ExampleEventHelper::ExampleEventHelper()</a>, <a class="el" href="_example_fragment_helper_8hh_source.html#l00010">ExampleFragmentHelper::ExampleFragmentHelper()</a>, <a class="el" href="_example_tree_helper_8hh_source.html#l00028">ExampleTreeHelper::ExampleTreeHelper()</a>, <a class="el" href="_griffin_k_value_helper_8hh_source.html#l00012">GriffinKValueHelper::GriffinKValueHelper()</a>, and <a class="el" href="_time_walk_helper_8hh_source.html#l00011">TimeWalkHelper::TimeWalkHelper()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alphanumeric_helper_8hh_source.html#l00017">AlphanumericHelper::AlphanumericHelper()</a>, <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_cross_talk_helper_8hh_source.html#l00011">CrossTalkHelper::CrossTalkHelper()</a>, <a class="el" href="_directory_helper_8hh_source.html#l00018">DirectoryHelper::DirectoryHelper()</a>, <a class="el" href="_efficiency_helper_8hh_source.html#l00018">EfficiencyHelper::EfficiencyHelper()</a>, <a class="el" href="_example_event_helper_8hh_source.html#l00021">ExampleEventHelper::ExampleEventHelper()</a>, <a class="el" href="_example_fragment_helper_8hh_source.html#l00010">ExampleFragmentHelper::ExampleFragmentHelper()</a>, <a class="el" href="_example_tree_helper_8hh_source.html#l00028">ExampleTreeHelper::ExampleTreeHelper()</a>, <a class="el" href="_griffin_k_value_helper_8hh_source.html#l00012">GriffinKValueHelper::GriffinKValueHelper()</a>, and <a class="el" href="_time_walk_helper_8hh_source.html#l00011">TimeWalkHelper::TimeWalkHelper()</a>.</p>
 
 </div>
 </div>
@@ -799,9 +801,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00014">14</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00015">15</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
 </div>
 </div>
@@ -825,9 +827,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00026">26</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00027">27</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
 </div>
 </div>
@@ -851,7 +853,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00029">29</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00030">30</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
@@ -877,9 +879,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00022">22</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00023">23</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
 
 </div>
 </div>
@@ -959,9 +961,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00016">16</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00017">17</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8hh_source.html#l00038">ExcludeCrystal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8hh_source.html#l00039">ExcludeCrystal()</a>.</p>
 
 </div>
 </div>
@@ -985,9 +987,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00015">15</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00016">16</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8hh_source.html#l00031">ExcludeDetector()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8hh_source.html#l00032">ExcludeDetector()</a>.</p>
 
 </div>
 </div>
@@ -1011,9 +1013,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00012">12</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00013">13</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
 </div>
 </div>
@@ -1037,7 +1039,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00028">28</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00029">29</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
@@ -1063,9 +1065,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00011">11</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00012">12</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
 </div>
 </div>
@@ -1089,9 +1091,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00013">13</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00014">14</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
 
 </div>
 </div>
@@ -1147,7 +1149,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00033">33</a> of file <a class="el" href="_t_g_r_s_i_helper_8h_source.html">TGRSIHelper.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alphanumeric_helper_8cxx_source.html#l00003">AlphanumericHelper::CreateHistograms()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, <a class="el" href="_cross_talk_helper_8cxx_source.html#l00026">CrossTalkHelper::CreateHistograms()</a>, <a class="el" href="_example_fragment_helper_8cxx_source.html#l00003">ExampleFragmentHelper::CreateHistograms()</a>, <a class="el" href="_example_tree_helper_8cxx_source.html#l00003">ExampleTreeHelper::CreateHistograms()</a>, <a class="el" href="_griffin_k_value_helper_8cxx_source.html#l00005">GriffinKValueHelper::CreateHistograms()</a>, <a class="el" href="_time_walk_helper_8cxx_source.html#l00003">TimeWalkHelper::CreateHistograms()</a>, <a class="el" href="_directory_helper_8cxx_source.html#l00003">DirectoryHelper::CreateHistograms()</a>, <a class="el" href="_efficiency_helper_8cxx_source.html#l00017">EfficiencyHelper::CreateHistograms()</a>, <a class="el" href="_example_event_helper_8cxx_source.html#l00003">ExampleEventHelper::CreateHistograms()</a>, <a class="el" href="_example_event_helper_8cxx_source.html#l00141">ExampleEventHelper::EndOfSort()</a>, <a class="el" href="_example_fragment_helper_8cxx_source.html#l00009">ExampleFragmentHelper::Exec()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>, <a class="el" href="_alphanumeric_helper_8cxx_source.html#l00036">AlphanumericHelper::Exec()</a>, <a class="el" href="_cross_talk_helper_8cxx_source.html#l00053">CrossTalkHelper::Exec()</a>, <a class="el" href="_directory_helper_8cxx_source.html#l00050">DirectoryHelper::Exec()</a>, <a class="el" href="_efficiency_helper_8cxx_source.html#l00054">EfficiencyHelper::Exec()</a>, <a class="el" href="_example_event_helper_8cxx_source.html#l00072">ExampleEventHelper::Exec()</a>, <a class="el" href="_example_tree_helper_8cxx_source.html#l00043">ExampleTreeHelper::Exec()</a>, <a class="el" href="_time_walk_helper_8cxx_source.html#l00058">TimeWalkHelper::Exec()</a>, <a class="el" href="_griffin_k_value_helper_8cxx_source.html#l00025">GriffinKValueHelper::Exec()</a>, and <a class="el" href="_t_g_r_s_i_helper_8cxx_source.html#l00079">TGRSIHelper::Setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_cross_talk_helper_8cxx_source.html#l00026">CrossTalkHelper::CreateHistograms()</a>, <a class="el" href="_example_fragment_helper_8cxx_source.html#l00003">ExampleFragmentHelper::CreateHistograms()</a>, <a class="el" href="_example_tree_helper_8cxx_source.html#l00003">ExampleTreeHelper::CreateHistograms()</a>, <a class="el" href="_griffin_k_value_helper_8cxx_source.html#l00005">GriffinKValueHelper::CreateHistograms()</a>, <a class="el" href="_time_walk_helper_8cxx_source.html#l00003">TimeWalkHelper::CreateHistograms()</a>, <a class="el" href="_alphanumeric_helper_8cxx_source.html#l00003">AlphanumericHelper::CreateHistograms()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, <a class="el" href="_directory_helper_8cxx_source.html#l00003">DirectoryHelper::CreateHistograms()</a>, <a class="el" href="_efficiency_helper_8cxx_source.html#l00017">EfficiencyHelper::CreateHistograms()</a>, <a class="el" href="_example_event_helper_8cxx_source.html#l00003">ExampleEventHelper::CreateHistograms()</a>, <a class="el" href="_example_event_helper_8cxx_source.html#l00141">ExampleEventHelper::EndOfSort()</a>, <a class="el" href="_example_fragment_helper_8cxx_source.html#l00009">ExampleFragmentHelper::Exec()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>, <a class="el" href="_alphanumeric_helper_8cxx_source.html#l00036">AlphanumericHelper::Exec()</a>, <a class="el" href="_cross_talk_helper_8cxx_source.html#l00053">CrossTalkHelper::Exec()</a>, <a class="el" href="_directory_helper_8cxx_source.html#l00050">DirectoryHelper::Exec()</a>, <a class="el" href="_efficiency_helper_8cxx_source.html#l00054">EfficiencyHelper::Exec()</a>, <a class="el" href="_example_event_helper_8cxx_source.html#l00072">ExampleEventHelper::Exec()</a>, <a class="el" href="_example_tree_helper_8cxx_source.html#l00043">ExampleTreeHelper::Exec()</a>, <a class="el" href="_time_walk_helper_8cxx_source.html#l00058">TimeWalkHelper::Exec()</a>, <a class="el" href="_griffin_k_value_helper_8cxx_source.html#l00025">GriffinKValueHelper::Exec()</a>, and <a class="el" href="_t_g_r_s_i_helper_8cxx_source.html#l00079">TGRSIHelper::Setup()</a>.</p>
 
 </div>
 </div>
@@ -1227,9 +1229,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00024">24</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00025">25</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
 
 </div>
 </div>
@@ -1253,9 +1255,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00023">23</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00024">24</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
+
+</div>
+</div>
+<a id="a484cf4085c060d9d3bb29fd0665ff8e1" name="a484cf4085c060d9d3bb29fd0665ff8e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a484cf4085c060d9d3bb29fd0665ff8e1">&#9670;&#160;</a></span>fNofMixedEvents</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AngularCorrelationHelper::fNofMixedEvents {10}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00011">11</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>.</p>
 
 </div>
 </div>
@@ -1363,9 +1391,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00018">18</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">19</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
 </div>
 </div>
@@ -1445,9 +1473,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">20</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00021">21</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
 </div>
 </div>
@@ -1471,9 +1499,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00019">19</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_angular_correlation_helper_8hh_source.html#l00020">20</a> of file <a class="el" href="_angular_correlation_helper_8hh_source.html">AngularCorrelationHelper.hh</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00003">CreateHistograms()</a>, and <a class="el" href="_angular_correlation_helper_8cxx_source.html#l00033">Exec()</a>.</p>
 
 </div>
 </div>
@@ -1529,7 +1557,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_t_g_r_s_i_helper_8h_source.html#l00041">41</a> of file <a class="el" href="_t_g_r_s_i_helper_8h_source.html">TGRSIHelper.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00047">AngularCorrelationHelper()</a>, and <a class="el" href="_t_g_r_s_i_helper_8cxx_source.html#l00005">TGRSIHelper::TGRSIHelper()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_angular_correlation_helper_8hh_source.html#l00048">AngularCorrelationHelper()</a>, and <a class="el" href="_t_g_r_s_i_helper_8cxx_source.html#l00005">TGRSIHelper::TGRSIHelper()</a>.</p>
 
 </div>
 </div>
@@ -1540,7 +1568,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_angular_correlation_helper.html">AngularCorrelationHelper</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Jun 18 2024 01:57:17.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Jun 19 2024 01:27:47.</li>
   </ul>
 </div>
 </body>

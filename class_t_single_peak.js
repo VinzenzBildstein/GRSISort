@@ -1,7 +1,7 @@
 var class_t_single_peak =
 [
-    [ "~TSinglePeak", "class_t_single_peak.html#a2b4d6ac5ae930e21ff1a528aeac82d5e", null ],
-    [ "TSinglePeak", "class_t_single_peak.html#a6a2119b2d6c1d41d2ae530dcd775d400", null ],
+    [ "TSinglePeak", "class_t_single_peak.html#a0e1ad9f508d334ed9f18802a8a3a4a9f", null ],
+    [ "~TSinglePeak", "class_t_single_peak.html#a607c9192bc87c96c7f976067a6307880", null ],
     [ "Area", "class_t_single_peak.html#afdc64b7a8d5315d282201cd3950c43b9", null ],
     [ "AreaErr", "class_t_single_peak.html#a51b186071d30bb318455325d85d48649", null ],
     [ "BackgroundFunction", "class_t_single_peak.html#a345dd2b47314015e1b42b8ae2e7edf5f", null ],
@@ -31,8 +31,8 @@ var class_t_single_peak =
     [ "SetArea", "class_t_single_peak.html#ac79fecdaab0b676726fb9f742917453e", null ],
     [ "SetAreaErr", "class_t_single_peak.html#ab09b57847af52a357be8a4139aee8dce", null ],
     [ "SetChi2", "class_t_single_peak.html#af5d7bf369510f4fada2c9a6788edead3", null ],
-    [ "SetGlobalBackground", "class_t_single_peak.html#a0b6be6e2d392916773222dd91940f2b5", null ],
-    [ "SetListOfBGPar", "class_t_single_peak.html#a6367da403902cec39f1fb9ca52ff1889", null ],
+    [ "SetGlobalBackground", "class_t_single_peak.html#a3cb6a527ab2e13ce581a0d0d99cadf13", null ],
+    [ "SetListOfBGPar", "class_t_single_peak.html#af4abcd121323ae0b6537c18cad92cdd4", null ],
     [ "SetNDF", "class_t_single_peak.html#ad73666dae8b31d345035cee27e2ae620", null ],
     [ "Sigma", "class_t_single_peak.html#a2b5b32295c97a37db736f98df39dd81d", null ],
     [ "TotalFunction", "class_t_single_peak.html#a94d3f320c91a98ae5eaffdd20453e2f6", null ],

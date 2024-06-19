@@ -1,5 +1,16 @@
 var NAVTREEINDEX31 =
 {
+"class_t_g_r_s_i_fit.html#ac2c725a228aeedfee165c394179ee948":[7,3,12,6],
+"class_t_g_r_s_i_fit.html#ac94666a66130c2eb3874d0148c6164c4":[7,3,12,22],
+"class_t_g_r_s_i_fit.html#ad15f0dcb58eeb7f13713aca3086b188c":[7,3,12,9],
+"class_t_g_r_s_i_frame.html":[7,4,0],
+"class_t_g_r_s_i_frame.html#a0d0e05018efa413ac13fd0cdee57d84d":[7,4,0,8],
+"class_t_g_r_s_i_frame.html#a10b0b09a75926371f54041f2a938f611":[7,4,0,6],
+"class_t_g_r_s_i_frame.html#a51785de670a34b4e44844c9c89adf5b9":[7,4,0,0],
+"class_t_g_r_s_i_frame.html#a5f4f9205fca3fae7829ebdf7c83402a6":[7,4,0,5],
+"class_t_g_r_s_i_frame.html#a6122e69943c9da570d5bd823746a604a":[7,4,0,1],
+"class_t_g_r_s_i_frame.html#a6eef1a4d231fc55cbdfc25416645eefa":[7,4,0,3],
+"class_t_g_r_s_i_frame.html#a82bfdf7ee5b528349ac68314f8bdfe04":[7,4,0,7],
 "class_t_g_r_s_i_frame.html#a9197e8fe257d4c378b645c7d6a0bc826":[7,4,0,2],
 "class_t_g_r_s_i_frame.html#abf2f3fb79b9b56b4fc54eb6fdb06f88f":[7,4,0,4],
 "class_t_g_r_s_i_helper.html":[9,0,146],
@@ -238,16 +249,5 @@ var NAVTREEINDEX31 =
 "class_t_g_r_s_i_options.html#a53559befd039514f942cee0cbb78f137":[7,11,19,145],
 "class_t_g_r_s_i_options.html#a53dc61fc9c6e07a47151a41aafb8ce3d":[7,11,19,31],
 "class_t_g_r_s_i_options.html#a53fc835d1d4b95cefd197c63a9b0553b":[7,11,19,34],
-"class_t_g_r_s_i_options.html#a5525a7ea54cc51b3308223e389029394":[7,11,19,152],
-"class_t_g_r_s_i_options.html#a58eb5046fc795efbfa7179c4d1088334":[7,11,19,149],
-"class_t_g_r_s_i_options.html#a597a2b7a64fe546696a99ed493f09514":[7,11,19,28],
-"class_t_g_r_s_i_options.html#a59b4560e59a872711c9307bae6437f8b":[7,11,19,66],
-"class_t_g_r_s_i_options.html#a5b14dbbdd3734e3ad6ac4cea75060963":[7,11,19,22],
-"class_t_g_r_s_i_options.html#a5c9e41e9e1016f7203fcc1d466cf8044":[7,11,19,26],
-"class_t_g_r_s_i_options.html#a5df0c7356d6957d3c4df3f10c1bc8571":[7,11,19,39],
-"class_t_g_r_s_i_options.html#a5f43ad4140f6d45326fc435735d19c43":[7,11,19,97],
-"class_t_g_r_s_i_options.html#a605efddf93c52f338d33cb1104dd0a13":[7,11,19,23],
-"class_t_g_r_s_i_options.html#a623e22d4a1ed7511398ba29a79d73ac4":[7,11,19,63],
-"class_t_g_r_s_i_options.html#a62d5010954c1f80cbf6ca48d0c971510":[7,11,19,56],
-"class_t_g_r_s_i_options.html#a6945b9ad9d6c005001665d65b73871d8":[7,11,19,8]
+"class_t_g_r_s_i_options.html#a5525a7ea54cc51b3308223e389029394":[7,11,19,152]
 };

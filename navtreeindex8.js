@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"class_cross_talk.html#a4c63306fc0b6f402e926953654305de9":[9,0,14,13],
 "class_cross_talk.html#a4ede910b47837cd5cdc611154973b5a5":[9,0,14,20],
 "class_cross_talk.html#a5d4c3f5aef64c23330e2f80b017d9e42":[9,0,14,24],
 "class_cross_talk.html#a6179997d65c5c6e3a0d6edec42180405":[9,0,14,38],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "class_example_fragment_helper.html#af70ba099fb02f24961d985d47f7a568d":[9,0,26,19],
 "class_example_fragment_selector.html":[9,0,27],
 "class_example_fragment_selector.html#a095a925b9e0e9ae440a758300f082c9c":[9,0,27,29],
-"class_example_fragment_selector.html#a0a36b80b21d1c5fd0b2246943c28ebce":[9,0,27,38],
-"class_example_fragment_selector.html#a1935dbf4d7080d06bc59903daafca0ce":[9,0,27,19]
+"class_example_fragment_selector.html#a0a36b80b21d1c5fd0b2246943c28ebce":[9,0,27,38]
 };

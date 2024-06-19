@@ -1,5 +1,16 @@
 var NAVTREEINDEX38 =
 {
+"class_t_ifin_bgo_hit.html#aac412bd213790cd3544121d118dc665b":[7,2,31,14],
+"class_t_ifin_bgo_hit.html#ab34ad53f3a608de8cedb043f4aa8f194":[7,2,31,10],
+"class_t_ifin_bgo_hit.html#ab4f4c27b4ee3c8d8b24db08ae85c2fb0":[7,2,31,27],
+"class_t_ifin_bgo_hit.html#ab5efce05747d2c39d501a16dc2382db5":[7,2,31,21],
+"class_t_ifin_bgo_hit.html#ab6769845c97c3ab9f3173407ed724da9":[7,2,31,8],
+"class_t_ifin_bgo_hit.html#ab6adf5ff1ffbcbb3b50c4559209f007a":[7,2,31,35],
+"class_t_ifin_bgo_hit.html#ab901600498f2b8d8ccc888398321c30d":[7,2,31,15],
+"class_t_ifin_bgo_hit.html#aba5e96b2f172f0e12eb2b6e06af5a735":[7,2,31,36],
+"class_t_ifin_bgo_hit.html#abab2f46047c824844baca0e7fae7eb03":[7,2,31,57],
+"class_t_ifin_bgo_hit.html#abb29f0acb47e7e3a316f7ff998bce3a1":[7,2,31,71],
+"class_t_ifin_bgo_hit.html#abc39d95961863ed1182a7de704d2af74":[7,2,31,42],
 "class_t_ifin_bgo_hit.html#ac010e49b428031b43808f9eabcb82c31":[7,2,31,3],
 "class_t_ifin_bgo_hit.html#ac9202e62116783982bac618bea13cbb7":[7,2,31,44],
 "class_t_ifin_bgo_hit.html#ac991ef6a8ca68a630513addff6fe87c5":[7,2,31,19],
@@ -238,16 +249,5 @@ var NAVTREEINDEX38 =
 "class_t_l_m_fitter.html#ab0e1bf15e91595bf963cc1ece53c1f15":[7,3,15,19],
 "class_t_l_m_fitter.html#ac98bbd42fe6a789b50bfd8c961385692":[7,3,15,11],
 "class_t_l_m_fitter.html#acc2c9620953a74db4b017c5dff652c2e":[7,3,15,15],
-"class_t_l_m_fitter.html#ae5f7277091033ef86cf4bdf516543aa1":[7,3,15,6],
-"class_t_l_m_fitter.html#af3676a7b6ee49466935cdadadd4eec16":[7,3,15,12],
-"class_t_l_m_fitter.html#af80693ec30fe59b530383c5306f2f730":[7,3,15,9],
-"class_t_l_m_fitter.html#afc152a4a93168440e13af242e7d3c87b":[7,3,15,8],
-"class_t_l_m_fitter.html#afe130397a22da5630c3286c0014c8642":[7,3,15,7],
-"class_t_l_m_fitter_1_1_n_r_mat.html":[7,3,15,0],
-"class_t_l_m_fitter_1_1_n_r_mat3d.html":[7,3,15,1],
-"class_t_l_m_fitter_1_1_n_r_vec.html":[7,3,15,2],
-"class_t_la_br.html":[7,2,33],
-"class_t_la_br.html#a00a3aa02080e5093417cf3d53b59b739":[7,2,33,3],
-"class_t_la_br.html#a08b7db1da16286c0c89526f9d788daf4":[7,2,33,25],
-"class_t_la_br.html#a08c0579fd70e1834ca32249e7f840387":[7,2,33,24]
+"class_t_l_m_fitter.html#ae5f7277091033ef86cf4bdf516543aa1":[7,3,15,6]
 };

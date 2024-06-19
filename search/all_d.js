@@ -96,7 +96,7 @@ var searchData=
   ['ispaused_93',['IsPaused',['../class_stoppable_thread.html#a34658723be83bff3f1b98e22488b1fce',1,'StoppableThread']]],
   ['ispeakparameter_94',['IsPeakParameter',['../class_t_single_peak.html#a42b9e80dd695ac5ebddd0caee15dd4d7',1,'TSinglePeak']]],
   ['isppgset_95',['IsPPGSet',['../class_t_detector_hit.html#a892a4320fe35c1ee04fe3191e38d1b46',1,'TDetectorHit']]],
-  ['isresidual_96',['isresidual',['../class_t_calibration_graph.html#a328729354ad540a5c2a941d1091226dc',1,'TCalibrationGraph::IsResidual(bool val)'],['../class_t_calibration_graph.html#aa0c6052cbae5d77acc5db5969da76c23',1,'TCalibrationGraph::IsResidual()']]],
+  ['isresidual_96',['isresidual',['../class_t_calibration_graph.html#a328729354ad540a5c2a941d1091226dc',1,'TCalibrationGraph::IsResidual(bool val)'],['../class_t_calibration_graph.html#ae0f096877f364e2c7e31c1134fd576d0',1,'TCalibrationGraph::IsResidual() const']]],
   ['isrunning_97',['IsRunning',['../class_stoppable_thread.html#a53d6222ee0e1cf4a0d5eefae3a271357',1,'StoppableThread']]],
   ['isset_98',['IsSet',['../class_t_pulse_analyzer.html#afcdf1d3ec6bec0872806779b18a2805d',1,'TPulseAnalyzer']]],
   ['issortable_99',['issortable',['../class_t_transition.html#ae047a3335407cdf40dcbc9ad9c513764',1,'TTransition::IsSortable()'],['../class_t_g_r_s_i_transition.html#abf20ab6d9a90adcae22bfbe94399df32',1,'TGRSITransition::IsSortable()']]],

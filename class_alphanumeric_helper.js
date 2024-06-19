@@ -4,7 +4,7 @@ var class_alphanumeric_helper =
     [ "AlphanumericHelper", "class_alphanumeric_helper.html#aced3bcc0f9193a67028afeb412146fa0", null ],
     [ "Book", "class_alphanumeric_helper.html#a9c0db166fc7075e23efe93cd6327e823", null ],
     [ "CheckSizes", "class_alphanumeric_helper.html#a49c88825285ac0920b4af055ddbd0fbb", null ],
-    [ "CreateHistograms", "class_alphanumeric_helper.html#ae6035ec24f2e70def55e959ec4d9a341", null ],
+    [ "CreateHistograms", "class_alphanumeric_helper.html#a3b8f0c6a602cf1d3895dbe0bdfc6c239", null ],
     [ "EndOfSort", "class_alphanumeric_helper.html#ae8293c18719d3e29c1d9afb74cc41d9a", null ],
     [ "Exec", "class_alphanumeric_helper.html#a67d625e92f1838f716f4b73574fb44d7", null ],
     [ "Finalize", "class_alphanumeric_helper.html#a0e505d1c617db78984dd90345c10d50e", null ],

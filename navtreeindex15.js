@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"class_t_analysis_hist_loop.html#a145499bbb554ad6ff9cbed4af14d4eb3":[7,9,1,35],
 "class_t_analysis_hist_loop.html#a14d1029d5d956a5f8cffcabb2e1c5e17":[7,9,1,56],
 "class_t_analysis_hist_loop.html#a292c5e3a19062bcc3d2a3b598327c175":[7,9,1,7],
 "class_t_analysis_hist_loop.html#a30e2bdefe7d239ea2abfe5da3e69f92e":[7,9,1,59],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "class_t_angular_correlation.html#ad95270beb07b7383fa9b53d7237bd940":[7,3,6,4],
 "class_t_angular_correlation.html#adaf1021d7a2293d2e1b739f323e0de4c":[7,3,6,37],
 "class_t_angular_correlation.html#adb0089886896d2cb7082b5f9dfcffbd7":[7,3,6,71],
-"class_t_angular_correlation.html#add33438691750ca9f8e087dc3e37e1f2":[7,3,6,46],
-"class_t_angular_correlation.html#ae8b305dfe4521e817ff979a52e80d51f":[7,3,6,74]
+"class_t_angular_correlation.html#add33438691750ca9f8e087dc3e37e1f2":[7,3,6,46]
 };

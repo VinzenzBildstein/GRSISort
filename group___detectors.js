@@ -3703,7 +3703,7 @@ var group___detectors =
     ] ],
     [ "TSuppressed", "class_t_suppressed.html", [
       [ "TSuppressed", "class_t_suppressed.html#a2ead56a15b4f754db6bdafcbd684baa2", null ],
-      [ "~TSuppressed", "class_t_suppressed.html#a0f2975c0814c4509b79d59f8f87da5cb", null ],
+      [ "~TSuppressed", "class_t_suppressed.html#a8c5b83edfdbb7ab31078729e7ca024a6", null ],
       [ "AddbackCriterion", "class_t_suppressed.html#a60817f357b7b432072114248ec5e8a55", null ],
       [ "AddFragment", "class_t_suppressed.html#ace91f1e86d601edd8986f191fbc2ae8d", null ],
       [ "AddHit", "class_t_suppressed.html#af83ad943618a30f7d1639675e18fc5b8", null ],
