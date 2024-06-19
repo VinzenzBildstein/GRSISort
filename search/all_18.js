@@ -240,7 +240,7 @@ var searchData=
   ['tgainmatch_237',['tgainmatch',['../class_t_gain_match.html#a4ddf969b96297741ff403989f9ae46bd',1,'TGainMatch::TGainMatch(const char *name, const char *title)'],['../class_t_gain_match.html#a3213592dc06de97d7595141f8c82d8ec',1,'TGainMatch::TGainMatch(const TGainMatch &amp;copy)'],['../class_t_gain_match.html',1,'TGainMatch'],['../class_t_gain_match.html#a02a51d00e679964ec4d74597737bd82d',1,'TGainMatch::TGainMatch()']]],
   ['tgainmatch_2ecxx_238',['TGainMatch.cxx',['../_t_gain_match_8cxx.html',1,'']]],
   ['tgainmatch_2eh_239',['TGainMatch.h',['../_t_gain_match_8h.html',1,'']]],
-  ['tgauss_240',['tgauss',['../class_t_gauss.html#a4cbcc475d88e1539a12cc49cb254721c',1,'TGauss::TGauss(Double_t centroid, Double_t relativeLimit=-1.)'],['../class_t_gauss.html#acd29e610e20e8f5576efcf748d4af248',1,'TGauss::TGauss()'],['../class_t_gauss.html',1,'TGauss']]],
+  ['tgauss_240',['tgauss',['../class_t_gauss.html#a4cbcc475d88e1539a12cc49cb254721c',1,'TGauss::TGauss(Double_t centroid, Double_t relativeLimit=-1.)'],['../class_t_gauss.html#a215c9ad384bdc4505a70785e8449242e',1,'TGauss::TGauss()=default'],['../class_t_gauss.html',1,'TGauss']]],
   ['tgauss_2ecxx_241',['TGauss.cxx',['../_t_gauss_8cxx.html',1,'']]],
   ['tgauss_2eh_242',['TGauss.h',['../_t_gauss_8h.html',1,'']]],
   ['tgenericdetector_243',['tgenericdetector',['../class_t_generic_detector.html#afaebcc83921074bad82703f930ebe0a4',1,'TGenericDetector::TGenericDetector(const TGenericDetector &amp;)'],['../class_t_generic_detector.html#ac3050608e488dc693205767a95b5b140',1,'TGenericDetector::TGenericDetector()'],['../class_t_generic_detector.html',1,'TGenericDetector']]],

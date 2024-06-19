@@ -1,5 +1,14 @@
 var NAVTREEINDEX34 =
 {
+"class_t_griffin.html#aff7cf7c9cd1d07ee799053fa09634ce9":[7,2,25,56],
+"class_t_griffin_angles.html":[7,0,0],
+"class_t_griffin_angles.html#a02e15b4482f3ba041de933f7d2503284":[7,0,0,21],
+"class_t_griffin_angles.html#a1ad3a99afabbd3cbdcf38f2c0e099be2":[7,0,0,13],
+"class_t_griffin_angles.html#a51983f9069e9c7b750512bed398f65a6":[7,0,0,2],
+"class_t_griffin_angles.html#a59fbe1bec5ffa30ed634b4ec183397ce":[7,0,0,27],
+"class_t_griffin_angles.html#a5bc143b1fb7bcfcb8058060410b93587":[7,0,0,7],
+"class_t_griffin_angles.html#a5eb36f9c66af1efa37b9bf1fda15193d":[7,0,0,12],
+"class_t_griffin_angles.html#a63e7ab32a1bf195ae7fabf0778de3eb4":[7,0,0,10],
 "class_t_griffin_angles.html#a6779dc88b65c057d3d5eb8978c0bff39":[7,0,0,26],
 "class_t_griffin_angles.html#a740a3c6d5a1e91e563683f61989f734a":[7,0,0,8],
 "class_t_griffin_angles.html#a86cad5065a1284fc531a5ccd6de11dd3":[7,0,0,11],
@@ -240,14 +249,5 @@ var NAVTREEINDEX34 =
 "class_t_griffin_hit.html#ad62673f38054fff81556da5aa2770a3b":[7,2,28,51],
 "class_t_griffin_hit.html#ad722731c5fde16e444eccbc61a697dda":[7,2,28,22],
 "class_t_griffin_hit.html#ad7fb301833e90f4b36b7fa1be7fe1334":[7,2,28,93],
-"class_t_griffin_hit.html#ad7fc819e54332ab04928b3fc9aff599e":[7,2,28,28],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eb":[7,2,28,0],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba2eb1e43d1f624b58f25b306dacc7456e":[7,2,28,0,1],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba377ea2e41439f212e05aeb08fc352cb2":[7,2,28,0,5],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba39a6ce5f6b4b66bc2bf85f3ae6c40817":[7,2,28,0,9],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba41cb5aedd98614cd326ab6348400df82":[7,2,28,0,12],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba59d97a49ea9366a78241ca68d8bfb0b2":[7,2,28,0,10],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba642cd2e286b8be8deaf8a9ce839969de":[7,2,28,0,6],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba7433dc57f9db1fc472789e8796527f19":[7,2,28,0,0],
-"class_t_griffin_hit.html#ada323f08a38cd73186465ecb4f9b72eba75a188ec1639bee31019afaa2bb5607a":[7,2,28,0,13]
+"class_t_griffin_hit.html#ad7fc819e54332ab04928b3fc9aff599e":[7,2,28,28]
 };

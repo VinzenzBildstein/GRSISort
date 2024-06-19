@@ -21,7 +21,7 @@ var searchData=
   ['eentry_18',['EEntry',['../class_t_source_calibration.html#a692165d80e615305fb4274df7dde9a89',1,'TSourceCalibration']]],
   ['eff_5fgraph_19',['eff_graph',['../class_t_calibrator.html#a2a40d4f0c60370b9a594603a28f7d259',1,'TCalibrator']]],
   ['eff_5fpar_20',['eff_par',['../class_t_calibrator.html#afe11a260ffd3deea5411c15f842d55c1',1,'TCalibrator']]],
-  ['efffit_21',['efffit',['../class_t_calibrator.html#a4b378083a5f9df88a2892cfd344de8c3',1,'TCalibrator::EffFit()'],['../class_t_calibrator.html#ab48ce860004627209ff567fb180ecc15',1,'TCalibrator::efffit']]],
+  ['efffit_21',['efffit',['../class_t_calibrator.html#ab48ce860004627209ff567fb180ecc15',1,'TCalibrator::efffit'],['../class_t_calibrator.html#a4b378083a5f9df88a2892cfd344de8c3',1,'TCalibrator::EffFit()']]],
   ['effgraph_22',['EffGraph',['../class_t_calibrator.html#ad5b94e7229d18d31fb569375a92ce3f1',1,'TCalibrator']]],
   ['efficiency_23',['efficiency',['../class_t_channel_tab.html#abea26baa32648ef12d4204b2f99aa006',1,'TChannelTab::Efficiency()'],['../class_t_source_tab.html#a9e31840e4b40b37b4df3cdae124ee122',1,'TSourceTab::Efficiency()'],['../namespace_g_root_functions.html#ae45e124f9e9ba2bc0aa0fbfa6a488ee5',1,'GRootFunctions::Efficiency()'],['../_t_source_calibration_8h.html#ac9b0e9ae53777e0bb0a8a26b1078c522',1,'Efficiency(double *x, double *par):&#160;TSourceCalibration.cxx'],['../_t_source_calibration_8cxx.html#ac9b0e9ae53777e0bb0a8a26b1078c522',1,'Efficiency(double *x, double *par):&#160;TSourceCalibration.cxx']]],
   ['efficiencyhelper_24',['efficiencyhelper',['../class_efficiency_helper.html#ace0b1258ab39b5571f52a42c36ea8059',1,'EfficiencyHelper::EfficiencyHelper()'],['../class_efficiency_helper.html',1,'EfficiencyHelper']]],

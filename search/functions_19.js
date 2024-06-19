@@ -103,7 +103,7 @@ var searchData=
   ['_7etfragmentmap_100',['~TFragmentMap',['../class_t_fragment_map.html#a0caade1dda73a5577551de19e233fa7f',1,'TFragmentMap']]],
   ['_7etfragwriteloop_101',['~TFragWriteLoop',['../class_t_frag_write_loop.html#ac486fc913091e45a8c86cc5afbdff3e2',1,'TFragWriteLoop']]],
   ['_7etgainmatch_102',['~TGainMatch',['../class_t_gain_match.html#ae51f307ad0d67bec33c9a7d90c8dffaa',1,'TGainMatch']]],
-  ['_7etgauss_103',['~TGauss',['../class_t_gauss.html#a608c6c55027467434d7c4d2e64ea7510',1,'TGauss']]],
+  ['_7etgauss_103',['~TGauss',['../class_t_gauss.html#a6359f3e352fc3c79b29480e07bbd5196',1,'TGauss']]],
   ['_7etgenericdetector_104',['~TGenericDetector',['../class_t_generic_detector.html#a3ed87a1e8d307558502803d2756264bf',1,'TGenericDetector']]],
   ['_7etgriffin_105',['~TGriffin',['../class_t_griffin.html#a6632ed16aea65fc3050bd7be88caa030',1,'TGriffin']]],
   ['_7etgriffinangles_106',['~TGriffinAngles',['../class_t_griffin_angles.html#afb82b46cba0a653ae8634f7c7ac4d25d',1,'TGriffinAngles']]],
