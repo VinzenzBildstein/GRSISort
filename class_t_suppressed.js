@@ -12,7 +12,7 @@ var class_t_suppressed =
     [ "CreateAddback", "class_t_suppressed.html#a59f557c2b1b8e17e8c8d9ecb0ce59f36", null ],
     [ "CreateSuppressed", "class_t_suppressed.html#a68d78a79808314414994e25285fe5cb6", null ],
     [ "CreateSuppressedAddback", "class_t_suppressed.html#abcc6366a598a7641ab93ceada912dfad", null ],
-    [ "GetHit", "class_t_suppressed.html#abb7c88ad69c596f7c183a82a746e2542", null ],
+    [ "GetHit", "class_t_suppressed.html#a9fb5bed513f435084094b92fb6a5b296", null ],
     [ "GetHitVector", "class_t_suppressed.html#ac5a25bee6d5fff8d30f929f3aaceb2db", null ],
     [ "GetMultiplicity", "class_t_suppressed.html#a9d5c07abd73ec148fe0adbee0c7c1eec", null ],
     [ "Print", "class_t_suppressed.html#a16143affb8db86547ab1ee1d37f5704c", null ],

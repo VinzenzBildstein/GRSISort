@@ -41,6 +41,7 @@ var class_angular_correlation_helper =
     [ "fPrefix", "class_angular_correlation_helper.html#a67b6f5f70635c0bd67ae1b8bf1c1197a", null ],
     [ "fPrompt", "class_angular_correlation_helper.html#aa01629ae28171846ffa58dedc3f4f7b8", null ],
     [ "fRunInfo", "class_angular_correlation_helper.html#ae95111fa334deef7e49ea2050899e972", null ],
+    [ "fSizeLimit", "class_angular_correlation_helper.html#adba49a09a6ebe50ebb9b33e051c0a3c0", null ],
     [ "fSym", "class_angular_correlation_helper.html#a210872f6be03540044b9e1e190fde8f6", null ],
     [ "fTimeRandomHigh", "class_angular_correlation_helper.html#a7e7a84869448adbdc4cf7eae43b7b530", null ],
     [ "fTimeRandomLow", "class_angular_correlation_helper.html#ad10f01b569c971216fa5c0089c7f550f", null ],
