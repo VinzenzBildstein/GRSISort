@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('class_t_decay_chain.html',''); initRes
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00265">265</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00262">262</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -151,7 +151,7 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a2ef281022959d10ca6d305fd3e465186" id="r_a2ef281022959d10ca6d305fd3e465186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_decay_fit.html">TDecayFit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_decay_chain.html#a2ef281022959d10ca6d305fd3e465186">fChainFunc</a></td></tr>
+<tr class="memitem:a2ef281022959d10ca6d305fd3e465186" id="r_a2ef281022959d10ca6d305fd3e465186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_decay_fit.html">TDecayFit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_decay_chain.html#a2ef281022959d10ca6d305fd3e465186">fChainFunc</a> {nullptr}</td></tr>
 <tr class="separator:a2ef281022959d10ca6d305fd3e465186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4268e3b2cdbaeefac8b7bdd14a54440" id="r_ab4268e3b2cdbaeefac8b7bdd14a54440"><td class="memItemLeft" align="right" valign="top">Int_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_decay_chain.html#ab4268e3b2cdbaeefac8b7bdd14a54440">fChainId</a> {0}</td></tr>
 <tr class="separator:ab4268e3b2cdbaeefac8b7bdd14a54440"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,6 +202,9 @@ Static Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">TDecayChain::TDecayChain </td>
@@ -211,11 +214,16 @@ Static Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00487">487</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8cxx_source.html#l00535">ChainActivityFunc()</a>, <a class="el" href="_t_decay_8h_source.html#l00294">fChainCounter</a>, <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, <a class="el" href="_t_decay_8h_source.html#l00304">fChainId</a>, <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>, <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00020">TDecayFit::SetDecay()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8cxx_source.html#l00537">ChainActivityFunc()</a>, <a class="el" href="_t_decay_8h_source.html#l00291">fChainCounter</a>, <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, <a class="el" href="_t_decay_8h_source.html#l00300">fChainId</a>, <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>, <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00018">TDecayFit::SetDecay()</a>.</p>
 
 </div>
 </div>
@@ -244,6 +252,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00511">511</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, and <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -271,9 +281,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00572">572</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00573">573</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>.</p>
 
 </div>
 </div>
@@ -312,9 +322,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>This fits the total activity caused by the entire chain.</p>
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00535">535</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00537">537</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8cxx_source.html#l00360">TSingleDecay::EvalPar()</a>, <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00579">GetDecay()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8cxx_source.html#l00359">TSingleDecay::EvalPar()</a>, <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00580">GetDecay()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>.</p>
 
@@ -344,9 +354,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00551">551</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00553">553</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>.</p>
 
 </div>
 </div>
@@ -386,9 +396,9 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_t_virtual_decay.html#a5dffe1f48c859829ebf8a6dc8570b4d2">TVirtualDecay</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00557">557</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00559">559</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>.</p>
 
 </div>
 </div>
@@ -408,9 +418,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00546">546</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00548">548</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>.</p>
 
 </div>
 </div>
@@ -440,9 +450,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00630">630</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00631">631</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>.</p>
 
 </div>
 </div>
@@ -472,9 +482,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00600">600</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00601">601</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>, <a class="el" href="_t_decay_8cxx_source.html#l00038">TDecayFit::Fit()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00342">TSingleDecay::GetDaughterDecay()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>, <a class="el" href="_t_decay_8h_source.html#l00148">TSingleDecay::SetDecayRate()</a>, <a class="el" href="_t_decay_8h_source.html#l00212">TSingleDecay::SetDecayRateError()</a>, <a class="el" href="_t_decay_8h_source.html#l00153">TSingleDecay::SetIntensity()</a>, <a class="el" href="_t_decay_8h_source.html#l00213">TSingleDecay::SetIntensityError()</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00262">TSingleDecay::UpdateDecays()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>, <a class="el" href="_t_decay_8cxx_source.html#l00036">TDecayFit::Fit()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00341">TSingleDecay::GetDaughterDecay()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>, <a class="el" href="_t_decay_8h_source.html#l00146">TSingleDecay::SetDecayRate()</a>, <a class="el" href="_t_decay_8h_source.html#l00210">TSingleDecay::SetDecayRateError()</a>, <a class="el" href="_t_decay_8h_source.html#l00151">TSingleDecay::SetIntensity()</a>, <a class="el" href="_t_decay_8h_source.html#l00211">TSingleDecay::SetIntensityError()</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00260">TSingleDecay::UpdateDecays()</a>.</p>
 
 </div>
 </div>
@@ -501,9 +511,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00280">280</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00277">277</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>.</p>
 
 </div>
 </div>
@@ -530,9 +540,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00289">289</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00286">286</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00304">fChainId</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00300">fChainId</a>.</p>
 
 </div>
 </div>
@@ -552,11 +562,11 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00579">579</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00580">580</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00535">ChainActivityFunc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00537">ChainActivityFunc()</a>.</p>
 
 </div>
 </div>
@@ -585,9 +595,9 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_t_virtual_decay.html#a19f3f304a77e1cbfd85c65b127cebd9f">TVirtualDecay</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00295">295</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00292">292</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>.</p>
 
 </div>
 </div>
@@ -617,9 +627,9 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_t_virtual_decay.html#a302f214579a9e15ab8c3a9b1db85d2fb">TVirtualDecay</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00589">589</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00590">590</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>.</p>
 
 </div>
 </div>
@@ -638,11 +648,11 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00519">519</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00520">520</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, and <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, and <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00551">Draw()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00557">DrawComponents()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00630">EvalPar()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00600">Fit()</a>, <a class="el" href="_t_decay_8h_source.html#l00280">GetChainFunc()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00579">GetDecay()</a>, and <a class="el" href="_t_decay_8h_source.html#l00295">GetFitFunction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00553">Draw()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00559">DrawComponents()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00631">EvalPar()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00601">Fit()</a>, <a class="el" href="_t_decay_8h_source.html#l00277">GetChainFunc()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00580">GetDecay()</a>, and <a class="el" href="_t_decay_8h_source.html#l00292">GetFitFunction()</a>.</p>
 
 </div>
 </div>
@@ -672,9 +682,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00638">638</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8cxx_source.html#l00639">639</a> of file <a class="el" href="_t_decay_8cxx_source.html">TDecay.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00303">fChainFunc</a>, and <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00299">fChainFunc</a>, and <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>.</p>
 
 </div>
 </div>
@@ -701,9 +711,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00274">274</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00271">271</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00302">fDecayChain</a>.</p>
+<p class="reference">References <a class="el" href="_t_decay_8h_source.html#l00298">fDecayChain</a>.</p>
 
 </div>
 </div>
@@ -728,7 +738,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00294">294</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00291">291</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>.</p>
 
@@ -744,7 +754,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_t_decay_fit.html">TDecayFit</a>* TDecayChain::fChainFunc</td>
+          <td class="memname"><a class="el" href="class_t_decay_fit.html">TDecayFit</a>* TDecayChain::fChainFunc {nullptr}</td>
         </tr>
       </table>
   </td>
@@ -754,9 +764,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00303">303</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00299">299</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00551">Draw()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00546">Eval()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00630">EvalPar()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00600">Fit()</a>, <a class="el" href="_t_decay_8h_source.html#l00280">GetChainFunc()</a>, <a class="el" href="_t_decay_8h_source.html#l00295">GetFitFunction()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00638">SetRange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00511">~TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00553">Draw()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00548">Eval()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00631">EvalPar()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00601">Fit()</a>, <a class="el" href="_t_decay_8h_source.html#l00277">GetChainFunc()</a>, <a class="el" href="_t_decay_8h_source.html#l00292">GetFitFunction()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>, and <a class="el" href="_t_decay_8cxx_source.html#l00639">SetRange()</a>.</p>
 
 </div>
 </div>
@@ -780,9 +790,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00304">304</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00300">300</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, and <a class="el" href="_t_decay_8h_source.html#l00289">GetChainId()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, and <a class="el" href="_t_decay_8h_source.html#l00286">GetChainId()</a>.</p>
 
 </div>
 </div>
@@ -806,9 +816,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00302">302</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_decay_8h_source.html#l00298">298</a> of file <a class="el" href="_t_decay_8h_source.html">TDecay.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00572">AddToChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00535">ChainActivityFunc()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00557">DrawComponents()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00600">Fit()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00579">GetDecay()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00589">Print()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00519">SetChainParameters()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00638">SetRange()</a>, and <a class="el" href="_t_decay_8h_source.html#l00274">Size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_decay_8cxx_source.html#l00487">TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00511">~TDecayChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00573">AddToChain()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00537">ChainActivityFunc()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00559">DrawComponents()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00601">Fit()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00580">GetDecay()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00590">Print()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00520">SetChainParameters()</a>, <a class="el" href="_t_decay_8cxx_source.html#l00639">SetRange()</a>, and <a class="el" href="_t_decay_8h_source.html#l00271">Size()</a>.</p>
 
 </div>
 </div>
@@ -819,7 +829,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_decay_chain.html">TDecayChain</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Jul 12 2024 00:34:00.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Jul 18 2024 16:40:03.</li>
   </ul>
 </div>
 </body>

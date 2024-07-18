@@ -261,6 +261,7 @@ var hierarchy =
         [ "TS3", "class_t_s3.html", null ],
         [ "TSceptar", "class_t_sceptar.html", null ],
         [ "TSharc", "class_t_sharc.html", null ],
+        [ "TSharc2", "class_t_sharc2.html", null ],
         [ "TSiLi", "class_t_si_li.html", null ],
         [ "TSuppressed", "class_t_suppressed.html", [
           [ "TFipps", "class_t_fipps.html", null ],
@@ -306,6 +307,7 @@ var hierarchy =
         [ "TPinDiodeHit", "class_t_pin_diode_hit.html", null ],
         [ "TS3Hit", "class_t_s3_hit.html", null ],
         [ "TSceptarHit", "class_t_sceptar_hit.html", null ],
+        [ "TSharc2Hit", "class_t_sharc2_hit.html", null ],
         [ "TSharcHit", "class_t_sharc_hit.html", null ],
         [ "TSiLiHit", "class_t_si_li_hit.html", null ],
         [ "TTACHit", "class_t_t_a_c_hit.html", null ],

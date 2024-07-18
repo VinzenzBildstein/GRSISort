@@ -3,7 +3,7 @@ var group___calibration =
     [ "TCal", "class_t_cal.html", [
       [ "TCal", "class_t_cal.html#ac8f8270dac6ae0c306f0cbd8104bfc0d", null ],
       [ "TCal", "class_t_cal.html#a6e1fb57e41bd3074d6a3858391220147", null ],
-      [ "~TCal", "class_t_cal.html#ab6c20df9698b09fa3f13f8cd91fd60e5", null ],
+      [ "~TCal", "class_t_cal.html#a8eeea8f2ba6737639c1ca2574811a039", null ],
       [ "TCal", "class_t_cal.html#af13875761eaa76b7ea3c62bc300012b8", null ],
       [ "Clear", "class_t_cal.html#a91a0f5d9cd9ebb0239e4ff8bc5a795b9", null ],
       [ "Copy", "class_t_cal.html#ab7552abc885f31d9e6c096175c7df81c", null ],
@@ -31,7 +31,7 @@ var group___calibration =
     [ "TCalGraph", "class_t_cal_graph.html", [
       [ "TCalGraph", "class_t_cal_graph.html#a972cff0b6f6e4d9c5d0ecc7cb90db9a7", null ],
       [ "TCalGraph", "class_t_cal_graph.html#a56b9e606221088955bc55c4f9c9cdbcd", null ],
-      [ "~TCalGraph", "class_t_cal_graph.html#ab655194af97e058a07ecf9cc8580e1d2", null ],
+      [ "~TCalGraph", "class_t_cal_graph.html#a210a99aa7ba4d56bc5c3e8f65a4b9c96", null ],
       [ "TCalGraph", "class_t_cal_graph.html#abda5b59734761768f9519f72129582f6", null ],
       [ "AddLists", "class_t_cal_graph.html#a2ae0de5a2e0e85345b5c40544f1b3354", null ],
       [ "AddPoint", "class_t_cal_graph.html#a6739222df2e5575317745ee577586cee", null ],
@@ -49,7 +49,7 @@ var group___calibration =
     [ "TCalList", "class_t_cal_list.html", [
       [ "TCalList", "class_t_cal_list.html#af1ab56706ae0f14b2a86e62c9003bce2", null ],
       [ "TCalList", "class_t_cal_list.html#a0471e617dd1cc043c08444a1c1a338ba", null ],
-      [ "~TCalList", "class_t_cal_list.html#a101149115d8362ae7a06c32c2d606754", null ],
+      [ "~TCalList", "class_t_cal_list.html#a6e92fd2aaa5e93f81e73b6396577b6cc", null ],
       [ "TCalList", "class_t_cal_list.html#a34ef99ab25a89d8d712014491ddcd3ec", null ],
       [ "AddPoint", "class_t_cal_list.html#a67729d4710974ace7ea6530963ee66e2", null ],
       [ "AddPoint", "class_t_cal_list.html#aeca38d14045fe88a4346859617a7438f", null ],
@@ -63,7 +63,6 @@ var group___calibration =
       [ "fCalList", "class_t_cal_list.html#a741b56433be220af76ad091defc0d4b9", null ]
     ] ],
     [ "TCalManager", "class_t_cal_manager.html", [
-      [ "CalMap", "class_t_cal_manager.html#aed46a4492f98dc9a1b0069cedc275e67", null ],
       [ "TCalManager", "class_t_cal_manager.html#a83dcb1684adcbcedccc7fa53af629055", null ],
       [ "TCalManager", "class_t_cal_manager.html#adb39863165608dd8d9878e821c3febc8", null ],
       [ "~TCalManager", "class_t_cal_manager.html#a938b814041df3e775a257a7c3b7a20f9", null ],
@@ -76,16 +75,16 @@ var group___calibration =
       [ "Print", "class_t_cal_manager.html#abe2cfe250011c7a6167c891c0f2090fb", null ],
       [ "RemoveCal", "class_t_cal_manager.html#aec349201532df0634b34887ecc09f9ab", null ],
       [ "SetClass", "class_t_cal_manager.html#abd021b9b1dd68670efaf5fc5d9f66b90", null ],
-      [ "SetClass", "class_t_cal_manager.html#a8e79b4dfa8bf5c7f485aa2a05da1e646", null ],
+      [ "SetClass", "class_t_cal_manager.html#a5d57bebd97debbdfe2f2ce777b29452b", null ],
       [ "WriteToChannel", "class_t_cal_manager.html#a0127fe23dabec8518ed3f259d5494f9b", null ],
-      [ "fCalMap", "class_t_cal_manager.html#a967a6eab72cf18fa763b0181785d0a1a", null ],
+      [ "fCalMap", "class_t_cal_manager.html#ab1baa85ef94664344d72e7bae9fa52e9", null ],
       [ "fClass", "class_t_cal_manager.html#af83eb1b5283f83e4ffc9d64a9dccf9fa", null ]
     ] ],
     [ "TCalPoint", "class_t_cal_point.html", [
       [ "TCalPoint", "class_t_cal_point.html#a1027bb8da9fd2e73e5774f71550bc556", null ],
       [ "TCalPoint", "class_t_cal_point.html#a98b0796221df1e1dc2a060f843014527", null ],
       [ "TCalPoint", "class_t_cal_point.html#a9bf5d2068645c4ea58727193b8eea60e", null ],
-      [ "~TCalPoint", "class_t_cal_point.html#a0b4fb9bf210b8cea49d0b60eb2de8a09", null ],
+      [ "~TCalPoint", "class_t_cal_point.html#a05949e1b551d303e4e6f7bf2fba41ccc", null ],
       [ "TCalPoint", "class_t_cal_point.html#a797d5c0eea04af29a60a17011bcf66cc", null ],
       [ "Area", "class_t_cal_point.html#aced1cc8c164a51c4317036e8a3590b93", null ],
       [ "AreaErr", "class_t_cal_point.html#af6f369526d684e85964606ec8f0b63fa", null ],
@@ -104,7 +103,7 @@ var group___calibration =
       [ "fCentroidErr", "class_t_cal_point.html#adae87e730aae075a2f48d1fa0491469b", null ]
     ] ],
     [ "TCFDCal", "class_t_c_f_d_cal.html", [
-      [ "TCFDCal", "class_t_c_f_d_cal.html#aa044ea8643d6566905602f1dfe42bb68", null ],
+      [ "TCFDCal", "class_t_c_f_d_cal.html#a9ccf146c0ae4ca0ccf486f6b8e75321f", null ],
       [ "TCFDCal", "class_t_c_f_d_cal.html#ada2a5f484a5f59dbc39be4bd258edaaa", null ],
       [ "~TCFDCal", "class_t_c_f_d_cal.html#a163dc15490ddc98edf50d92ee6239f3a", null ],
       [ "AddParameter", "class_t_c_f_d_cal.html#a90b3b1768318410a74c74a2ecd670499", null ],
@@ -136,9 +135,9 @@ var group___calibration =
       [ "fParameters", "class_t_c_f_d_cal.html#ac9be074355055a6f6bd7437c033f6ad0", null ]
     ] ],
     [ "TEfficiencyCal", "class_t_efficiency_cal.html", [
-      [ "TEfficiencyCal", "class_t_efficiency_cal.html#a0aa12445d68fb82c446dc41e7769aed9", null ],
+      [ "TEfficiencyCal", "class_t_efficiency_cal.html#a1efc5cb9851cf4bf8c4af3b5f99c686e", null ],
       [ "TEfficiencyCal", "class_t_efficiency_cal.html#a25b3686b6142f9747d60d8bd71a192dc", null ],
-      [ "~TEfficiencyCal", "class_t_efficiency_cal.html#ab690c369e26d0c87f7980dae241610e1", null ],
+      [ "~TEfficiencyCal", "class_t_efficiency_cal.html#a0e49b32a4f1a9fcf7abfc170f47ba0d0", null ],
       [ "TEfficiencyCal", "class_t_efficiency_cal.html#acab2fba56354b79f23e06b94d9bc9512", null ],
       [ "AddPoint", "class_t_efficiency_cal.html#ac877a5209eb7478b3cf1c329665c5479", null ],
       [ "AddPoint", "class_t_efficiency_cal.html#a29b2de4f2349121360548bbfa9b98dbf", null ],
@@ -219,7 +218,7 @@ var group___calibration =
     [ "TEnergyCal", "class_t_energy_cal.html", [
       [ "TEnergyCal", "class_t_energy_cal.html#a1d9a53825a46c1530e9bebd90535bc43", null ],
       [ "TEnergyCal", "class_t_energy_cal.html#a103fbb8e42d7d3c4cd1f5e76939e6d2c", null ],
-      [ "~TEnergyCal", "class_t_energy_cal.html#a52ec6fa7285cacd147f7ca0c5d18f7a9", null ],
+      [ "~TEnergyCal", "class_t_energy_cal.html#aa704a01cb15107cf4461eda47e921c20", null ],
       [ "AddPoint", "class_t_energy_cal.html#a37c909b7d8b4d23dbc8235b771832785", null ],
       [ "Clear", "class_t_energy_cal.html#adab54964ce680d4442e2da9e7c0c795b", null ],
       [ "Copy", "class_t_energy_cal.html#ab7552abc885f31d9e6c096175c7df81c", null ],
@@ -291,13 +290,13 @@ var group___calibration =
       [ "SetNucleus", "class_t_gain_match.html#ada6e4b52552b0a94ca8ff6f6ea4b120e", null ],
       [ "WriteToAllChannels", "class_t_gain_match.html#ad0060a22683cfa00c711a6f05fbc9349", null ],
       [ "WriteToChannel", "class_t_gain_match.html#a4d2fba9351cacfcd1172845d541263af", null ],
-      [ "fAlignCoeffs", "class_t_gain_match.html#a00e9e9a3d71a8f1b4b4880830c64d3dd", null ],
+      [ "fAlignCoeffs", "class_t_gain_match.html#a2a7c4be5e981595840113a23355c26e8", null ],
       [ "fAligned", "class_t_gain_match.html#afdf328223580d9e5840732de7b6683a8", null ],
       [ "fChan", "class_t_gain_match.html#a9c73a35ace5129d14086ba02f01f8a25", null ],
       [ "fCoarseMatch", "class_t_gain_match.html#a72062a11179fb53efe919219a76ff9be", null ],
       [ "fCoarseRange", "class_t_gain_match.html#ae52e58ec0fc6f6d44bdb88309339df96", null ],
       [ "fFitFunc", "class_t_gain_match.html#a74f2b4e7d76c9c28a998cc146271e6c5", null ],
-      [ "fGainCoeffs", "class_t_gain_match.html#ae43cd4a104d8f2ad3fe734c8c5849608", null ],
+      [ "fGainCoeffs", "class_t_gain_match.html#a119bd8ca412d3670cbe20e87ed2211c5", null ],
       [ "fHist", "class_t_gain_match.html#a27942facfb401828bc92db0f14187b34", null ],
       [ "fNuc", "class_t_gain_match.html#ac2b208e6ba80b92fc738de2c58dad3c1", null ],
       [ "gDefaultCoarseRange", "class_t_gain_match.html#a208c9506fc44e8bf65144847318613f0", null ]
@@ -325,7 +324,7 @@ var group___calibration =
       [ "fNucleusName", "class_t_source_list.html#a7d9ded6c2f79a5e57df9746977c32b94", null ]
     ] ],
     [ "TTimeCal", "class_t_time_cal.html", [
-      [ "TTimeCal", "class_t_time_cal.html#a417b0487851ba0882aa403fdc17264e5", null ],
+      [ "TTimeCal", "class_t_time_cal.html#a3a96e176d86b944a50c26c656da88cb1", null ],
       [ "TTimeCal", "class_t_time_cal.html#abae5f9735e4d568d9229c6207e8daedf", null ],
       [ "~TTimeCal", "class_t_time_cal.html#a807f0a47bcc01ceabfd2f68698e55a4a", null ],
       [ "AddParameter", "class_t_time_cal.html#a2da5a619b6fcda380b5b0cac8b16cb02", null ],

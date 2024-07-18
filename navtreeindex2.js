@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"_gain_match_g_r_i_f_f_i_n_8cxx.html#ac675f324f4d6dc12bc9e2e0579fe77dc":[10,0,2,4,5,10],
-"_gain_match_g_r_i_f_f_i_n_8cxx.html#ad37d3cead1aa0e6cbb6f3601bd834cc4":[10,0,2,4,5,16],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#ad5d0e87f61ba99c47a539492df7917a1":[10,0,2,4,5,0],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#ad5d0e87f61ba99c47a539492df7917a1a41de1e96935c1d8874e509b84eae1d3f":[10,0,2,4,5,0,1],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#ad5d0e87f61ba99c47a539492df7917a1a553347d926b88adee123fa75da6e25a7":[10,0,2,4,5,0,0],
@@ -33,7 +31,7 @@ var NAVTREEINDEX2 =
 "_globals_8h.html#a21ef237e1c4d69656729da4b34c31d8b":[10,0,7,12,3],
 "_globals_8h.html#a2469054c121245df4df9bd60a18570c2":[10,0,7,12,14],
 "_globals_8h.html#a2b95b007bb26fbf1ed623d53b2976ac4":[10,0,7,12,22],
-"_globals_8h.html#a3f0930614f3ea2f2f153242657b08ba0":[10,0,7,12,38],
+"_globals_8h.html#a446b981c75bfc4865a6b0b75ae9c65a0":[10,0,7,12,41],
 "_globals_8h.html#a52b20d1a0ce0cf354138dd47ae9a5f46":[10,0,7,12,37],
 "_globals_8h.html#a59524b4cf113f646696e5955023df6a4":[10,0,7,12,21],
 "_globals_8h.html#a6265459411ad3caa42ad4d1d54616034":[10,0,7,12,26],
@@ -48,10 +46,10 @@ var NAVTREEINDEX2 =
 "_globals_8h.html#a7eef4710200f09420381ca5744ca30b1":[10,0,7,12,34],
 "_globals_8h.html#a82e4da5718eb63f4ce3f51f73cb49232":[10,0,7,12,15],
 "_globals_8h.html#a87b537f5fa5c109d3c05c13d6b18f382":[10,0,7,12,31],
+"_globals_8h.html#a892ab854c2a3b8622797099d79eef4f5":[10,0,7,12,38],
 "_globals_8h.html#a8d23feea868a983c8c2b661e1e16972f":[10,0,7,12,28],
 "_globals_8h.html#a9abe1243cfcf86c811d8321920b26fe2":[10,0,7,12,16],
 "_globals_8h.html#a9afd14c731aa8c62d9471913c1b23b9f":[10,0,7,12,2],
-"_globals_8h.html#a9ed1d6946c2794ab146f9bc05578e1de":[10,0,7,12,41],
 "_globals_8h.html#ab31fe3e74b1137650d30ede5c9b86218":[10,0,7,12,8],
 "_globals_8h.html#ab37ad6f1cf4c93e161b5caaeae971ef4":[10,0,7,12,36],
 "_globals_8h.html#ab3ab6dab442708543d2a71ba522bad21":[10,0,7,12,42],
@@ -249,5 +247,7 @@ var NAVTREEINDEX2 =
 "_t_calibrate_descant_8cxx_source.html":[10,0,9,6,2],
 "_t_calibrate_descant_8h.html":[10,0,7,37],
 "_t_calibrate_descant_8h_source.html":[10,0,7,37],
-"_t_calibration_graph_8cxx.html":[10,0,9,6,3]
+"_t_calibration_graph_8cxx.html":[10,0,9,6,3],
+"_t_calibration_graph_8cxx_source.html":[10,0,9,6,3],
+"_t_calibration_graph_8h.html":[10,0,7,38]
 };

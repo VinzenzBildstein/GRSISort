@@ -1,8 +1,8 @@
 var class_g_marker =
 [
-    [ "GMarker", "class_g_marker.html#ae0ab4c54842b80661c22f693f06d72a1", null ],
+    [ "GMarker", "class_g_marker.html#afd61f9d779b711232147464350ee5e23", null ],
     [ "GMarker", "class_g_marker.html#a33b6d59d46fdcf449b6dbe77eb6c8729", null ],
-    [ "GMarker", "class_g_marker.html#a4bdf587b86ee12d54ca160ac0e7e6e5e", null ],
+    [ "GMarker", "class_g_marker.html#ab4ed903de3bd929586795220b4391786", null ],
     [ "~GMarker", "class_g_marker.html#ac6b20e17d023fadcdf0f7e13d8833f54", null ],
     [ "Copy", "class_g_marker.html#a8657ec1af93546ca1ad5820060c9b432", null ],
     [ "Draw", "class_g_marker.html#a3c887f1e9ca6583df15ddf19331f9b97", null ],

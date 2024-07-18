@@ -1,8 +1,8 @@
 var class_t_efficiency_cal =
 [
-    [ "TEfficiencyCal", "class_t_efficiency_cal.html#a0aa12445d68fb82c446dc41e7769aed9", null ],
+    [ "TEfficiencyCal", "class_t_efficiency_cal.html#a1efc5cb9851cf4bf8c4af3b5f99c686e", null ],
     [ "TEfficiencyCal", "class_t_efficiency_cal.html#a25b3686b6142f9747d60d8bd71a192dc", null ],
-    [ "~TEfficiencyCal", "class_t_efficiency_cal.html#ab690c369e26d0c87f7980dae241610e1", null ],
+    [ "~TEfficiencyCal", "class_t_efficiency_cal.html#a0e49b32a4f1a9fcf7abfc170f47ba0d0", null ],
     [ "TEfficiencyCal", "class_t_efficiency_cal.html#acab2fba56354b79f23e06b94d9bc9512", null ],
     [ "AddPoint", "class_t_efficiency_cal.html#ac877a5209eb7478b3cf1c329665c5479", null ],
     [ "AddPoint", "class_t_efficiency_cal.html#a29b2de4f2349121360548bbfa9b98dbf", null ],

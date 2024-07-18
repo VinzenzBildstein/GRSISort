@@ -11,6 +11,7 @@ var class_g_cube_d =
     [ "BufferEmpty", "class_g_cube_d.html#ac188fb4627c94b1f537ea682713755a5", null ],
     [ "BufferFill", "class_g_cube_d.html#ae56d636cec798c239c8ea6832e88325f", null ],
     [ "BufferFill", "class_g_cube_d.html#aef66606557bd23197fbe12199478683c", null ],
+    [ "ClassDefOverride", "class_g_cube_d.html#a71c341b6ead7eb9e4df53dc3f254350c", null ],
     [ "ClassDefOverride", "class_g_cube_d.html#a4341634301ef0a0793fc3fd14e66638e", null ],
     [ "Copy", "class_g_cube_d.html#a778d223aeba2d272cc75a0d3d8e589a2", null ],
     [ "DoIntegral", "class_g_cube_d.html#ad8c54ec93ba43f7d84ecf2564c82d297", null ],

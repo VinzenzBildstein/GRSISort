@@ -3,7 +3,7 @@ var class_t_cal_point =
     [ "TCalPoint", "class_t_cal_point.html#a1027bb8da9fd2e73e5774f71550bc556", null ],
     [ "TCalPoint", "class_t_cal_point.html#a98b0796221df1e1dc2a060f843014527", null ],
     [ "TCalPoint", "class_t_cal_point.html#a9bf5d2068645c4ea58727193b8eea60e", null ],
-    [ "~TCalPoint", "class_t_cal_point.html#a0b4fb9bf210b8cea49d0b60eb2de8a09", null ],
+    [ "~TCalPoint", "class_t_cal_point.html#a05949e1b551d303e4e6f7bf2fba41ccc", null ],
     [ "TCalPoint", "class_t_cal_point.html#a797d5c0eea04af29a60a17011bcf66cc", null ],
     [ "Area", "class_t_cal_point.html#aced1cc8c164a51c4317036e8a3590b93", null ],
     [ "AreaErr", "class_t_cal_point.html#af6f369526d684e85964606ec8f0b63fa", null ],

@@ -7,7 +7,7 @@ var class_t_calibrator =
     [ "AddData", "class_t_calibrator.html#a47c282a971d4a67435eefe3ce6edd9ca", null ],
     [ "AddPeak", "class_t_calibrator.html#a804003fefbd85288847d37e6977d51f9", null ],
     [ "Calibrate", "class_t_calibrator.html#a1fca408a638358c45ae79e6fb193c039", null ],
-    [ "CheckMap", "class_t_calibrator.html#a3bdb9fe969b702017b5181c2ff17a78a", null ],
+    [ "CheckMap", "class_t_calibrator.html#a7416a1af4c7c09c39feeae29a6c65553", null ],
     [ "Clear", "class_t_calibrator.html#afd60cbd0484a45e8c021bf4aa612f555", null ],
     [ "Copy", "class_t_calibrator.html#a5c70b86830adc318a29118787da8cd12", null ],
     [ "Draw", "class_t_calibrator.html#a5c28dc6633b72a6a5a0f5b751345ed75", null ],
@@ -30,12 +30,11 @@ var class_t_calibrator =
     [ "SetFitOrder", "class_t_calibrator.html#a0614a37dc8de134463f7eb075c60aabf", null ],
     [ "Size", "class_t_calibrator.html#ac0b90a3730712f2fbcb4b7d6997e915e", null ],
     [ "UpdateTChannel", "class_t_calibrator.html#acbfd91d13b31ee9f3513e5a00150e4d6", null ],
-    [ "eff_graph", "class_t_calibrator.html#a2a40d4f0c60370b9a594603a28f7d259", null ],
-    [ "eff_par", "class_t_calibrator.html#afe11a260ffd3deea5411c15f842d55c1", null ],
-    [ "efffit", "class_t_calibrator.html#ab48ce860004627209ff567fb180ecc15", null ],
-    [ "fit_graph", "class_t_calibrator.html#a01a498a935fdaf5cc78d2a26b41b10b5", null ],
-    [ "fit_order", "class_t_calibrator.html#afb95179ad5ec1227d47a89da0f5a1498", null ],
-    [ "fPeaks", "class_t_calibrator.html#af0bfb668005a86c504e9b87c1094ca64", null ],
-    [ "linfit", "class_t_calibrator.html#ac7b5f4c7ed552981ea2330d1c0505d83", null ],
-    [ "total_points", "class_t_calibrator.html#a211b2a7f04009f80d8c8bdeee581e2b8", null ]
+    [ "fEffFit", "class_t_calibrator.html#a3fe2eb823f9bbe7b75f2835289b4ac14", null ],
+    [ "fEffGraph", "class_t_calibrator.html#aa7195b06aed3614409c15fb2635a5969", null ],
+    [ "fEffPar", "class_t_calibrator.html#a5e4712afa6dc87f634324ef8691efe04", null ],
+    [ "fFitGraph", "class_t_calibrator.html#a29a98b9445365e9814f313a14e38facb", null ],
+    [ "fFitOrder", "class_t_calibrator.html#af503fb9ace4cae5279b36623e2555887", null ],
+    [ "fLinFit", "class_t_calibrator.html#ac838b770e13886f0b24163238deadc93", null ],
+    [ "fPeaks", "class_t_calibrator.html#af0bfb668005a86c504e9b87c1094ca64", null ]
 ];

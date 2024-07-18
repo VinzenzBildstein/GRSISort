@@ -251,6 +251,8 @@ var annotated_dup =
     [ "TSceptar", "class_t_sceptar.html", "class_t_sceptar" ],
     [ "TSceptarHit", "class_t_sceptar_hit.html", "class_t_sceptar_hit" ],
     [ "TSharc", "class_t_sharc.html", "class_t_sharc" ],
+    [ "TSharc2", "class_t_sharc2.html", "class_t_sharc2" ],
+    [ "TSharc2Hit", "class_t_sharc2_hit.html", "class_t_sharc2_hit" ],
     [ "TSharcHit", "class_t_sharc_hit.html", "class_t_sharc_hit" ],
     [ "TSiLi", "class_t_si_li.html", "class_t_si_li" ],
     [ "TSiLiHit", "class_t_si_li_hit.html", "class_t_si_li_hit" ],

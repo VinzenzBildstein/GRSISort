@@ -2,7 +2,7 @@ var class_t_cal_graph =
 [
     [ "TCalGraph", "class_t_cal_graph.html#a972cff0b6f6e4d9c5d0ecc7cb90db9a7", null ],
     [ "TCalGraph", "class_t_cal_graph.html#a56b9e606221088955bc55c4f9c9cdbcd", null ],
-    [ "~TCalGraph", "class_t_cal_graph.html#ab655194af97e058a07ecf9cc8580e1d2", null ],
+    [ "~TCalGraph", "class_t_cal_graph.html#a210a99aa7ba4d56bc5c3e8f65a4b9c96", null ],
     [ "TCalGraph", "class_t_cal_graph.html#abda5b59734761768f9519f72129582f6", null ],
     [ "AddLists", "class_t_cal_graph.html#a2ae0de5a2e0e85345b5c40544f1b3354", null ],
     [ "AddPoint", "class_t_cal_graph.html#a6739222df2e5575317745ee577586cee", null ],

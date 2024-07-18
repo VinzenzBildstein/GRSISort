@@ -2,7 +2,7 @@ var class_t_cal_list =
 [
     [ "TCalList", "class_t_cal_list.html#af1ab56706ae0f14b2a86e62c9003bce2", null ],
     [ "TCalList", "class_t_cal_list.html#a0471e617dd1cc043c08444a1c1a338ba", null ],
-    [ "~TCalList", "class_t_cal_list.html#a101149115d8362ae7a06c32c2d606754", null ],
+    [ "~TCalList", "class_t_cal_list.html#a6e92fd2aaa5e93f81e73b6396577b6cc", null ],
     [ "TCalList", "class_t_cal_list.html#a34ef99ab25a89d8d712014491ddcd3ec", null ],
     [ "AddPoint", "class_t_cal_list.html#a67729d4710974ace7ea6530963ee66e2", null ],
     [ "AddPoint", "class_t_cal_list.html#aeca38d14045fe88a4346859617a7438f", null ],

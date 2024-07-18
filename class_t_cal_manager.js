@@ -1,6 +1,5 @@
 var class_t_cal_manager =
 [
-    [ "CalMap", "class_t_cal_manager.html#aed46a4492f98dc9a1b0069cedc275e67", null ],
     [ "TCalManager", "class_t_cal_manager.html#a83dcb1684adcbcedccc7fa53af629055", null ],
     [ "TCalManager", "class_t_cal_manager.html#adb39863165608dd8d9878e821c3febc8", null ],
     [ "~TCalManager", "class_t_cal_manager.html#a938b814041df3e775a257a7c3b7a20f9", null ],
@@ -13,8 +12,8 @@ var class_t_cal_manager =
     [ "Print", "class_t_cal_manager.html#abe2cfe250011c7a6167c891c0f2090fb", null ],
     [ "RemoveCal", "class_t_cal_manager.html#aec349201532df0634b34887ecc09f9ab", null ],
     [ "SetClass", "class_t_cal_manager.html#abd021b9b1dd68670efaf5fc5d9f66b90", null ],
-    [ "SetClass", "class_t_cal_manager.html#a8e79b4dfa8bf5c7f485aa2a05da1e646", null ],
+    [ "SetClass", "class_t_cal_manager.html#a5d57bebd97debbdfe2f2ce777b29452b", null ],
     [ "WriteToChannel", "class_t_cal_manager.html#a0127fe23dabec8518ed3f259d5494f9b", null ],
-    [ "fCalMap", "class_t_cal_manager.html#a967a6eab72cf18fa763b0181785d0a1a", null ],
+    [ "fCalMap", "class_t_cal_manager.html#ab1baa85ef94664344d72e7bae9fa52e9", null ],
     [ "fClass", "class_t_cal_manager.html#af83eb1b5283f83e4ffc9d64a9dccf9fa", null ]
 ];

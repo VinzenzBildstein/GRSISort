@@ -4,7 +4,7 @@ var class_g_gaus =
     [ "GGaus", "class_g_gaus.html#a9cc1069f51a3769da848bf3d3f1aa174", null ],
     [ "GGaus", "class_g_gaus.html#a339f7bd69826ad1562a406915beb0385", null ],
     [ "GGaus", "class_g_gaus.html#aa7701a3a5d4a5cda585fca013d49beb4", null ],
-    [ "~GGaus", "class_g_gaus.html#a094db1f15e9283cdd033632525935fc5", null ],
+    [ "~GGaus", "class_g_gaus.html#a6e656c18ce2c20ef53517bb8af10a432", null ],
     [ "Background", "class_g_gaus.html#a1a4b9aae4c88a17ae109f8db8ca033de", null ],
     [ "Clear", "class_g_gaus.html#aae2661ac227fe75d2f92cf29e975782b", null ],
     [ "CompareArea", "class_g_gaus.html#a3d9d6d82e0c2d5393f60de1b839478ec", null ],
@@ -38,7 +38,7 @@ var class_g_gaus =
     [ "fChi2", "class_g_gaus.html#aa7469f455a584e6219b60d4dc856b775", null ],
     [ "fDArea", "class_g_gaus.html#abd3b4c62e9bd5073c8fed77c8dedb32a", null ],
     [ "fDSum", "class_g_gaus.html#a606178780f8ae84d0aaa9510804e523e", null ],
+    [ "fInitFlag", "class_g_gaus.html#a471bbbfde58a59d5bf38be257e4682c4", null ],
     [ "fNdf", "class_g_gaus.html#a630b3ff61822734e3287c1d55254ba49", null ],
-    [ "fSum", "class_g_gaus.html#ac849ae42b0202409fde7381c1b417e8c", null ],
-    [ "init_flag", "class_g_gaus.html#a8848341ba10ed2cd55cb61c0e654f52f", null ]
+    [ "fSum", "class_g_gaus.html#ac849ae42b0202409fde7381c1b417e8c", null ]
 ];

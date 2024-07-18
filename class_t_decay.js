@@ -1,8 +1,8 @@
 var class_t_decay =
 [
     [ "TDecay", "class_t_decay.html#a44d7b888a3f2136b1f087ac0fe1caa3f", null ],
-    [ "TDecay", "class_t_decay.html#abad826a9077ef4c83f95d39b0cb61acf", null ],
-    [ "~TDecay", "class_t_decay.html#aa4cd45b9447f973f08ab8af678b5b802", null ],
+    [ "TDecay", "class_t_decay.html#ad385f7d10135e018f65f26154b90cac5", null ],
+    [ "~TDecay", "class_t_decay.html#ac621bb69e3af1721c6b4cc28b01f7910", null ],
     [ "AddChain", "class_t_decay.html#afd96ff57995b363bbae805df4b3b52e5", null ],
     [ "ComponentFunc", "class_t_decay.html#a99326c7676f475a9baa692eaffef4b5b", null ],
     [ "DecayFit", "class_t_decay.html#a0fcca66c065020e8b5c88b189dd2ac68", null ],

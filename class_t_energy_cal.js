@@ -2,7 +2,7 @@ var class_t_energy_cal =
 [
     [ "TEnergyCal", "class_t_energy_cal.html#a1d9a53825a46c1530e9bebd90535bc43", null ],
     [ "TEnergyCal", "class_t_energy_cal.html#a103fbb8e42d7d3c4cd1f5e76939e6d2c", null ],
-    [ "~TEnergyCal", "class_t_energy_cal.html#a52ec6fa7285cacd147f7ca0c5d18f7a9", null ],
+    [ "~TEnergyCal", "class_t_energy_cal.html#aa704a01cb15107cf4461eda47e921c20", null ],
     [ "AddPoint", "class_t_energy_cal.html#a37c909b7d8b4d23dbc8235b771832785", null ],
     [ "Clear", "class_t_energy_cal.html#adab54964ce680d4442e2da9e7c0c795b", null ],
     [ "Copy", "class_t_energy_cal.html#ab7552abc885f31d9e6c096175c7df81c", null ],

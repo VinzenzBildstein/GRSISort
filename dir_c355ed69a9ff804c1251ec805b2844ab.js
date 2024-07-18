@@ -34,6 +34,8 @@ var dir_c355ed69a9ff804c1251ec805b2844ab =
     [ "TSceptar.h", "_t_sceptar_8h.html", null ],
     [ "TSceptarHit.h", "_t_sceptar_hit_8h.html", null ],
     [ "TSharc.h", "_t_sharc_8h.html", null ],
+    [ "TSharc2.h", "_t_sharc2_8h.html", null ],
+    [ "TSharc2Hit.h", "_t_sharc2_hit_8h.html", null ],
     [ "TSharcHit.h", "_t_sharc_hit_8h.html", null ],
     [ "TSiLi.h", "_t_si_li_8h.html", null ],
     [ "TSiLiHit.h", "_t_si_li_hit_8h.html", null ],

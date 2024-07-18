@@ -11,6 +11,7 @@ var class_g_h_sym_d =
     [ "BufferEmpty", "class_g_h_sym_d.html#aa6f6059f8e03a966108c2dddf3b82d16", null ],
     [ "BufferFill", "class_g_h_sym_d.html#ade18e601e825940379a17a32b6ef0f06", null ],
     [ "BufferFill", "class_g_h_sym_d.html#a5a71239a73aa059ffef7063a82ae46b1", null ],
+    [ "ClassDefOverride", "class_g_h_sym_d.html#ad86a4ef4b088989989fd2a2ea6e8c2da", null ],
     [ "ClassDefOverride", "class_g_h_sym_d.html#a5a16c5e0ab71d83420aac61a48238eb4", null ],
     [ "Copy", "class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc", null ],
     [ "DoIntegral", "class_g_h_sym_d.html#a03d7530a19688f42059c9bf2ede350ec", null ],
