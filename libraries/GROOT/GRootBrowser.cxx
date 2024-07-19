@@ -191,8 +191,8 @@ void GRootBrowser::CreateBrowser(const char* name)
    AddFrame(fVf, fLH5);
 
    // status bar
-   fStatusBar  = new TGStatusBar(this, 400, 20);
-	std::array<int, 4> parts = {33, 10, 10, 47};
+   fStatusBar               = new TGStatusBar(this, 400, 20);
+   std::array<int, 4> parts = {33, 10, 10, 47};
    fStatusBar->SetParts(parts.data(), 4);
    AddFrame(fStatusBar, fLH6);
 
@@ -471,9 +471,9 @@ Long_t GRootBrowser::ExecPlugin(const char* name, const char* fname, const char*
    /// Execute a macro and embed the created frame in the tab "pos"
    /// and tab element "subpos".
 
-   Long_t          retval = 0;
-   TString         command;
-   TString         pname;
+   Long_t  retval = 0;
+   TString command;
+   TString pname;
    StartEmbedding(pos, subpos);
    if(cmd != nullptr && strlen(cmd) != 0u) {
       command = cmd;
@@ -483,7 +483,7 @@ Long_t GRootBrowser::ExecPlugin(const char* name, const char* fname, const char*
          pname = TString::Format("Plugin %d", fPlugins.GetSize());
       }
    } else if(fname != nullptr && strlen(fname) != 0u) {
-      pname    = name != nullptr ? name : gSystem->BaseName(fname);
+      pname          = name != nullptr ? name : gSystem->BaseName(fname);
       Ssiz_t lastDot = pname.Last('.');
       if(lastDot > 0) {
          pname.Remove(lastDot);
@@ -492,7 +492,7 @@ Long_t GRootBrowser::ExecPlugin(const char* name, const char* fname, const char*
    } else {
       return 0;
    }
-	auto* plugin = new GBrowserPlugin(pname.Data(), command.Data(), pos, subpos);
+   auto* plugin = new GBrowserPlugin(pname.Data(), command.Data(), pos, subpos);
    fPlugins.Add(plugin);
    retval = gROOT->ProcessLine(command.Data());
    if(command.Contains("new TCanvas")) {
@@ -533,10 +533,10 @@ Bool_t GRootBrowser::HandleKey(Event_t* event)
 {
    /// Handle keyboard events.
 
-	std::array<char, 10> input{};
+   std::array<char, 10> input{};
 
    if(event->fType == kGKeyPress) {
-		UInt_t keysym = 0;
+      UInt_t keysym = 0;
       gVirtualX->LookupString(event, input.data(), input.size(), keysym);
 
       if((event->fState == 0u) && static_cast<EKeySym>(keysym) == kKey_F5) {
@@ -578,139 +578,139 @@ void GRootBrowser::HandleMenu(Int_t id)
 
    TRootHelpDialog* helperDialog = nullptr;
    TString          cmd;
-	static Int_t     eNr    = 1;
+   static Int_t     eNr    = 1;
    auto*            sender = reinterpret_cast<TGPopupMenu*>(gTQSender);
-	if(sender != fMenuFile) {
-		return;
-	}
+   if(sender != fMenuFile) {
+      return;
+   }
    switch(static_cast<ENewBrowserMessages>(id)) {
    case ENewBrowserMessages::kBrowse: new TBrowser(); break;
-	case ENewBrowserMessages::kOpenFile: {
-														 Bool_t         newfile = kFALSE;
-														 static TString dir(".");
-														 TGFileInfo     fileInfo;
-														 fileInfo.fFileTypes = gOpenFileTypes;
-														 fileInfo.fIniDir    = StrDup(dir);
-														 new TGFileDialog(gClient->GetDefaultRoot(), this, kFDOpen, &fileInfo);
-														 dir = fileInfo.fIniDir;
-														 if(fileInfo.fMultipleSelection && (fileInfo.fFileNamesList != nullptr)) {
-															 TObjString* element = nullptr;
-															 TIter       next(fileInfo.fFileNamesList);
-															 while((element = static_cast<TObjString*>(next())) != nullptr) {
-																 gROOT->ProcessLine(Form(R"(new TFile("%s");)", gSystem->UnixPathName(element->GetString())));
-															 }
-															 newfile = kTRUE;
-														 } else if(fileInfo.fFilename != nullptr) {
-															 gROOT->ProcessLine(Form(R"(new TFile("%s");)", gSystem->UnixPathName(fileInfo.fFilename)));
-															 newfile = kTRUE;
-														 }
-														 if((fActBrowser != nullptr) && newfile) {
-															 TGFileBrowser* fileBrowser = static_cast<TGFileBrowser*>(fActBrowser);
-															 if(fileBrowser != nullptr) {
-																 fileBrowser->Selected(nullptr);
-															 }
-														 }
-													 } break;
+   case ENewBrowserMessages::kOpenFile: {
+      Bool_t         newfile = kFALSE;
+      static TString dir(".");
+      TGFileInfo     fileInfo;
+      fileInfo.fFileTypes = gOpenFileTypes;
+      fileInfo.fIniDir    = StrDup(dir);
+      new TGFileDialog(gClient->GetDefaultRoot(), this, kFDOpen, &fileInfo);
+      dir = fileInfo.fIniDir;
+      if(fileInfo.fMultipleSelection && (fileInfo.fFileNamesList != nullptr)) {
+         TObjString* element = nullptr;
+         TIter       next(fileInfo.fFileNamesList);
+         while((element = static_cast<TObjString*>(next())) != nullptr) {
+            gROOT->ProcessLine(Form(R"(new TFile("%s");)", gSystem->UnixPathName(element->GetString())));
+         }
+         newfile = kTRUE;
+      } else if(fileInfo.fFilename != nullptr) {
+         gROOT->ProcessLine(Form(R"(new TFile("%s");)", gSystem->UnixPathName(fileInfo.fFilename)));
+         newfile = kTRUE;
+      }
+      if((fActBrowser != nullptr) && newfile) {
+         TGFileBrowser* fileBrowser = static_cast<TGFileBrowser*>(fActBrowser);
+         if(fileBrowser != nullptr) {
+            fileBrowser->Selected(nullptr);
+         }
+      }
+   } break;
       // Handle Help menu items...
-	case ENewBrowserMessages::kHelpAbout: {
+   case ENewBrowserMessages::kHelpAbout: {
 #ifdef R__UNIX
-														  TString rootx;
+      TString rootx;
 #ifdef ROOTBINDIR
-														  rootx = ROOTBINDIR;
+      rootx = ROOTBINDIR;
 #else
-														  rootx = gSystem->Getenv("ROOTSYS");
-														  if(!rootx.IsNull()) {
-															  rootx += "/bin";
-														  }
+      rootx = gSystem->Getenv("ROOTSYS");
+      if(!rootx.IsNull()) {
+         rootx += "/bin";
+      }
 #endif   // ROOTBINDIR
-														  rootx += "/root -a &";
-														  gSystem->Exec(rootx);
+      rootx += "/root -a &";
+      gSystem->Exec(rootx);
 #else   // R__UNIX
 #ifdef WIN32
-														  new TWin32SplashThread(kTRUE);
+      new TWin32SplashThread(kTRUE);
 #else
-														  std::ostringstream str;
-														  str << "About ROOT " << gROOT->GetVersion() << "...";
-														  helperDialog = new TRootHelpDialog(this, str.str(), 600, 400);
-														  helperDialog->SetText(gHelpAbout);
-														  helperDialog->Popup();
+      std::ostringstream str;
+      str << "About ROOT " << gROOT->GetVersion() << "...";
+      helperDialog = new TRootHelpDialog(this, str.str(), 600, 400);
+      helperDialog->SetText(gHelpAbout);
+      helperDialog->Popup();
 #endif   // WIN32
 #endif   // R__UNIX
-													  } break;
-	case ENewBrowserMessages::kHelpOnCanvas:
-													  helperDialog = new TRootHelpDialog(this, "Help on Canvas...", 600, 400);
-													  helperDialog->SetText(gHelpCanvas);
-													  helperDialog->Popup();
-													  break;
-	case ENewBrowserMessages::kHelpOnMenus:
-													  helperDialog = new TRootHelpDialog(this, "Help on Menus...", 600, 400);
-													  helperDialog->SetText(gHelpPullDownMenus);
-													  helperDialog->Popup();
-													  break;
-	case ENewBrowserMessages::kHelpOnGraphicsEd:
-													  helperDialog = new TRootHelpDialog(this, "Help on Graphics Editor...", 600, 400);
-													  helperDialog->SetText(gHelpGraphicsEditor);
-													  helperDialog->Popup();
-													  break;
-	case ENewBrowserMessages::kHelpOnBrowser:
-													  helperDialog = new TRootHelpDialog(this, "Help on Browser...", 600, 400);
-													  helperDialog->SetText(gHelpBrowser);
-													  helperDialog->Popup();
-													  break;
-	case ENewBrowserMessages::kHelpOnObjects:
-													  helperDialog = new TRootHelpDialog(this, "Help on Objects...", 600, 400);
-													  helperDialog->SetText(gHelpObjects);
-													  helperDialog->Popup();
-													  break;
-	case ENewBrowserMessages::kHelpOnPS:
-													  helperDialog = new TRootHelpDialog(this, "Help on PostScript...", 600, 400);
-													  helperDialog->SetText(gHelpPostscript);
-													  helperDialog->Popup();
-													  break;
-	case ENewBrowserMessages::kHelpOnRemote:
-													  helperDialog = new TRootHelpDialog(this, "Help on Browser...", 600, 400);
-													  helperDialog->SetText(gHelpRemote);
-													  helperDialog->Popup();
-													  break;
-	case ENewBrowserMessages::kClone: CloneBrowser(); break;
-	case ENewBrowserMessages::kNewEditor:
-												 cmd.Form("new TGTextEditor((const char *)0, gClient->GetRoot())");
-												 ++eNr;
-												 ExecPlugin(Form("Editor %d", eNr), "", cmd.Data(), 1);
-												 break;
-	case ENewBrowserMessages::kNewCanvas: ExecPlugin("", "", "new TCanvas()", 1); break;
-	case ENewBrowserMessages::kNewHtml:
-													  cmd.Form(R"(new TGHtmlBrowser("%s", gClient->GetRoot()))",
-															  gEnv->GetValue("Browser.StartUrl", "http://root.cern.ch"));
-													  ExecPlugin("HTML", "", cmd.Data(), 1);
-													  break;
-	case ENewBrowserMessages::kExecPluginMacro: {
-																  static TString dir(".");
-																  TGFileInfo     fileInfo;
-																  fileInfo.fFileTypes = gPluginFileTypes;
-																  fileInfo.fIniDir    = StrDup(dir);
-																  new TGFileDialog(gClient->GetDefaultRoot(), this, kFDOpen, &fileInfo);
-																  dir = fileInfo.fIniDir;
-																  if(fileInfo.fFilename != nullptr) {
-																	  ExecPlugin(nullptr, fileInfo.fFilename, nullptr, static_cast<Int_t>(EInsertPosition::kRight));
-																  }
-															  } break;
-	case ENewBrowserMessages::kExecPluginCmd: {
-																std::array<char, 1024> command{};
-																strlcpy(command.data(), "new TGLSAViewer(gClient->GetRoot(), 0);", command.size());
-																new TGInputDialog(gClient->GetRoot(), this, "Enter plugin command line:", command.data(), command.data());
-																if(strcmp(command.data(), "") != 0) {
-																	ExecPlugin("User", nullptr, command.data(), static_cast<Int_t>(EInsertPosition::kRight));
-																}
-															} break;
-	case ENewBrowserMessages::kCloseTab: CloseTab(fTabRight->GetCurrent()); break;
-	case ENewBrowserMessages::kCloseWindow: CloseWindow(); break;
-	case ENewBrowserMessages::kQuitRoot:
-														 CloseWindow();
-														 gApplication->Terminate(0);
-														 break;
-	default: break;
-	}
+   } break;
+   case ENewBrowserMessages::kHelpOnCanvas:
+      helperDialog = new TRootHelpDialog(this, "Help on Canvas...", 600, 400);
+      helperDialog->SetText(gHelpCanvas);
+      helperDialog->Popup();
+      break;
+   case ENewBrowserMessages::kHelpOnMenus:
+      helperDialog = new TRootHelpDialog(this, "Help on Menus...", 600, 400);
+      helperDialog->SetText(gHelpPullDownMenus);
+      helperDialog->Popup();
+      break;
+   case ENewBrowserMessages::kHelpOnGraphicsEd:
+      helperDialog = new TRootHelpDialog(this, "Help on Graphics Editor...", 600, 400);
+      helperDialog->SetText(gHelpGraphicsEditor);
+      helperDialog->Popup();
+      break;
+   case ENewBrowserMessages::kHelpOnBrowser:
+      helperDialog = new TRootHelpDialog(this, "Help on Browser...", 600, 400);
+      helperDialog->SetText(gHelpBrowser);
+      helperDialog->Popup();
+      break;
+   case ENewBrowserMessages::kHelpOnObjects:
+      helperDialog = new TRootHelpDialog(this, "Help on Objects...", 600, 400);
+      helperDialog->SetText(gHelpObjects);
+      helperDialog->Popup();
+      break;
+   case ENewBrowserMessages::kHelpOnPS:
+      helperDialog = new TRootHelpDialog(this, "Help on PostScript...", 600, 400);
+      helperDialog->SetText(gHelpPostscript);
+      helperDialog->Popup();
+      break;
+   case ENewBrowserMessages::kHelpOnRemote:
+      helperDialog = new TRootHelpDialog(this, "Help on Browser...", 600, 400);
+      helperDialog->SetText(gHelpRemote);
+      helperDialog->Popup();
+      break;
+   case ENewBrowserMessages::kClone: CloneBrowser(); break;
+   case ENewBrowserMessages::kNewEditor:
+      cmd.Form("new TGTextEditor((const char *)0, gClient->GetRoot())");
+      ++eNr;
+      ExecPlugin(Form("Editor %d", eNr), "", cmd.Data(), 1);
+      break;
+   case ENewBrowserMessages::kNewCanvas: ExecPlugin("", "", "new TCanvas()", 1); break;
+   case ENewBrowserMessages::kNewHtml:
+      cmd.Form(R"(new TGHtmlBrowser("%s", gClient->GetRoot()))",
+               gEnv->GetValue("Browser.StartUrl", "http://root.cern.ch"));
+      ExecPlugin("HTML", "", cmd.Data(), 1);
+      break;
+   case ENewBrowserMessages::kExecPluginMacro: {
+      static TString dir(".");
+      TGFileInfo     fileInfo;
+      fileInfo.fFileTypes = gPluginFileTypes;
+      fileInfo.fIniDir    = StrDup(dir);
+      new TGFileDialog(gClient->GetDefaultRoot(), this, kFDOpen, &fileInfo);
+      dir = fileInfo.fIniDir;
+      if(fileInfo.fFilename != nullptr) {
+         ExecPlugin(nullptr, fileInfo.fFilename, nullptr, static_cast<Int_t>(EInsertPosition::kRight));
+      }
+   } break;
+   case ENewBrowserMessages::kExecPluginCmd: {
+      std::array<char, 1024> command{};
+      strlcpy(command.data(), "new TGLSAViewer(gClient->GetRoot(), 0);", command.size());
+      new TGInputDialog(gClient->GetRoot(), this, "Enter plugin command line:", command.data(), command.data());
+      if(strcmp(command.data(), "") != 0) {
+         ExecPlugin("User", nullptr, command.data(), static_cast<Int_t>(EInsertPosition::kRight));
+      }
+   } break;
+   case ENewBrowserMessages::kCloseTab: CloseTab(fTabRight->GetCurrent()); break;
+   case ENewBrowserMessages::kCloseWindow: CloseWindow(); break;
+   case ENewBrowserMessages::kQuitRoot:
+      CloseWindow();
+      gApplication->Terminate(0);
+      break;
+   default: break;
+   }
 }
 
 //______________________________________________________________________________
@@ -1138,7 +1138,7 @@ void GRootBrowser::Checked(TObject* obj, Bool_t checked)
 {
    /// Emits signal when double clicking on icon.
 
-	std::array<Long_t, 2> args = { reinterpret_cast<Long_t>(obj), static_cast<Long_t>(checked) };
+   std::array<Long_t, 2> args = {reinterpret_cast<Long_t>(obj), static_cast<Long_t>(checked)};
 
    Emit("Checked(TObject*,Bool_t)", args.data());
 }

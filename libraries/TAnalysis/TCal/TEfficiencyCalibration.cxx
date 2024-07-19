@@ -29,10 +29,10 @@ TEfficiencyCalibration::TEfficiencyCalibration(const char* name, const char* tit
 
 TEfficiencyCalibration::~TEfficiencyCalibration()
 {
-	delete fRelativeEffGraph;
-	delete fAbsEffGraph;
-	delete fRelativeFit;
-	delete fAbsoluteFunc;
+   delete fRelativeEffGraph;
+   delete fAbsEffGraph;
+   delete fRelativeFit;
+   delete fAbsoluteFunc;
 }
 
 TEfficiencyCalibration::TEfficiencyCalibration(const TEfficiencyCalibration& copy)
@@ -167,7 +167,7 @@ TFitResultPtr TEfficiencyCalibration::Fit(Option_t*)
 {
    // This fits the relative efficiency curve
    UInt_t n_rel_graphs = fRelativeEffGraph->GetListOfGraphs()->GetSize();
-	delete fRelativeFit;
+   delete fRelativeFit;
    fRelativeFit = new TF1("fRelativeFit", this, &TEfficiencyCalibration::PhotoPeakEfficiency, 0, 8000, 8 + n_rel_graphs, "TEfficiencyCalibration", "PhotoPeakEfficiency");
 
    // Start by naming the parameters of the fit

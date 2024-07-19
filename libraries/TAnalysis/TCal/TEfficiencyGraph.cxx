@@ -11,7 +11,7 @@ TEfficiencyGraph::TEfficiencyGraph()
 TEfficiencyGraph::~TEfficiencyGraph() = default;
 
 TEfficiencyGraph::TEfficiencyGraph(const TEfficiencyGraph& copy)
-	: TCalGraph(copy), fIsAbsolute(copy.fIsAbsolute)
+   : TCalGraph(copy), fIsAbsolute(copy.fIsAbsolute)
 {
 }
 

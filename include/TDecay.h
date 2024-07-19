@@ -83,8 +83,8 @@ public:
 private:
    void DefaultGraphs();
 
-   TVirtualDecay* fDecay{nullptr};       // VirtualDecay that made this fit
-   TGraph         fResiduals;   // Last histogram fit by this function
+   TVirtualDecay* fDecay{nullptr};   // VirtualDecay that made this fit
+   TGraph         fResiduals;        // Last histogram fit by this function
 
    /// \cond CLASSIMP
    ClassDefOverride(TDecayFit, 1);   // Extends TF1 for nuclear decays
@@ -295,8 +295,8 @@ private:
       return fChainFunc;
    }
 
-   std::vector<TSingleDecay*> fDecayChain;            // The Decays in the Decay Chain
-   TDecayFit*                 fChainFunc{nullptr};    // Function describing the total chain activity
+   std::vector<TSingleDecay*> fDecayChain;           // The Decays in the Decay Chain
+   TDecayFit*                 fChainFunc{nullptr};   // Function describing the total chain activity
    Int_t                      fChainId{0};
 
    /// \cond CLASSIMP

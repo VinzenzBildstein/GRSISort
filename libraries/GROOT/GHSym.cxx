@@ -1131,13 +1131,13 @@ Double_t GHSym::Interpolate(Double_t x, Double_t y) const
    // Andy Mastbaum 10/8/2008
    // vaguely based on R.Raja 6-Sep-2008
 
-   Double_t f  = 0;
-   Double_t x1 = 0;
-   Double_t x2 = 0;
-   Double_t y1 = 0;
-   Double_t y2 = 0;
-   Double_t dx = 0.;
-	Double_t dy = 0.;
+   Double_t f     = 0;
+   Double_t x1    = 0;
+   Double_t x2    = 0;
+   Double_t y1    = 0;
+   Double_t y2    = 0;
+   Double_t dx    = 0.;
+   Double_t dy    = 0.;
    Int_t    bin_x = fXaxis.FindBin(x);
    Int_t    bin_y = fYaxis.FindBin(y);
    if(bin_x < 1 || bin_x > GetNbinsX() || bin_y < 1 || bin_y > GetNbinsY()) {
@@ -1343,7 +1343,7 @@ Double_t GHSym::KolmogorovTest(const TH1* h2, Option_t* option) const
    // the case when errors are zero (w1 == 0 or w2 ==0) are equivalent to
    // compare to a function. In that case the rescaling is done only on sqrt(esum2) or sqrt(esum1)
    Double_t esum1 = 0.;
-	Double_t esum2 = 0.;
+   Double_t esum2 = 0.;
    if(w1 > 0) {
       esum1 = sum1 * sum1 / w1;
    } else {
@@ -1365,8 +1365,8 @@ Double_t GHSym::KolmogorovTest(const TH1* h2, Option_t* option) const
    Double_t s1     = 1 / sum1;
    Double_t s2     = 1 / sum2;
    Double_t dfmax1 = 0;
-   Double_t rsum1 = 0.;
-	Double_t rsum2 = 0.;
+   Double_t rsum1  = 0.;
+   Double_t rsum2  = 0.;
    for(Int_t i = ibeg; i <= iend; ++i) {
       for(Int_t j = jbeg; j <= jend; ++j) {
          rsum1 += s1 * h1->GetCellContent(i, j);
@@ -1377,8 +1377,8 @@ Double_t GHSym::KolmogorovTest(const TH1* h2, Option_t* option) const
 
    //   Find second Kolmogorov distance
    Double_t dfmax2 = 0;
-   rsum1 = 0.;
-	rsum2 = 0.;
+   rsum1           = 0.;
+   rsum2           = 0.;
    for(Int_t j = jbeg; j <= jend; ++j) {
       for(Int_t i = ibeg; i <= iend; ++i) {
          rsum1 += s1 * h1->GetCellContent(i, j);
@@ -1636,16 +1636,16 @@ Long64_t GHSym::Merge(TCollection* list)
    }
 
    // merge bin contents and errors
-	std::array<Double_t, kNstat> stats;
-	std::array<Double_t, kNstat> totstats;
+   std::array<Double_t, kNstat> stats;
+   std::array<Double_t, kNstat> totstats;
    for(Int_t i = 0; i < kNstat; ++i) {
       totstats[i] = stats[i] = 0;
    }
    GetStats(totstats.data());
-   Double_t nentries = GetEntries();
-	Int_t    ix = 0;
-	Int_t    iy = 0;
-   Double_t cu = 0.;
+   Double_t nentries  = GetEntries();
+   Int_t    ix        = 0;
+   Int_t    iy        = 0;
+   Double_t cu        = 0.;
    Bool_t   canExtend = CanExtendAllAxes();
    SetCanExtend(TH1::kNoAxis);   // reset, otherwise setting the under/overflow will extend the axis
 
@@ -2074,7 +2074,7 @@ TH1D* GHSym::Projection(const char* name, Int_t firstBin, Int_t lastBin, Option_
    if(labels != nullptr) {
       TIter       iL(labels);
       TObjString* lb = nullptr;
-      Int_t       i = 1;
+      Int_t       i  = 1;
       while((lb = static_cast<TObjString*>(iL())) != nullptr) {
          h1->GetXaxis()->SetBinLabel(i, lb->String().Data());
          i++;
@@ -2146,7 +2146,7 @@ TH1D* GHSym::Projection(const char* name, Int_t firstBin, Int_t lastBin, Option_
    // can re-use entries if underflow/overflow are included
    reuseEntries &= static_cast<int>(firstBin == 0 && lastBin == fYaxis.GetLast() + 1);
    if(reuseStats) {
-		std::array<Double_t, kNstat> stats;
+      std::array<Double_t, kNstat> stats;
       GetStats(stats.data());
       h1->PutStats(stats.data());
    } else {
@@ -2265,8 +2265,8 @@ GHSym* GHSym::Rebin2D(Int_t ngroup, const char* newname)
    }
 
    // save original statistics
-	std::array<Double_t, kNstat> stats;
-	GetStats(stats.data());
+   std::array<Double_t, kNstat> stats;
+   GetStats(stats.data());
    bool resetStat = false;
 
    // change axis specs and rebuild bin contents array
@@ -2313,8 +2313,8 @@ GHSym* GHSym::Rebin2D(Int_t ngroup, const char* newname)
          hnew->SetBins(newbins, min, max, newbins, min, max);   // changes also errors array
       }
 
-      Int_t    oldxbin = 1;
-      Int_t    oldybin = 1;
+      Int_t oldxbin = 1;
+      Int_t oldybin = 1;
       for(Int_t xbin = 1; xbin <= newbins; ++xbin) {
          oldybin = 1;
          for(Int_t ybin = 1; ybin <= xbin; ++ybin) {
@@ -2329,7 +2329,7 @@ GHSym* GHSym::Rebin2D(Int_t ngroup, const char* newname)
                      break;
                   }
                   // get global bin (same conventions as in GHSym::GetBin(xbin,ybin)
-						Int_t bin = 0;
+                  Int_t bin = 0;
                   if(oldybin + j <= oldxbin + i) {
                      bin = oldxbin + i + (oldybin + j) * (2 * fXaxis.GetNbins() - (oldybin + j) + 3) / 2;
                   } else {
@@ -2409,9 +2409,9 @@ GHSym* GHSym::Rebin2D(Int_t ngroup, const char* newname)
       Int_t oldxbin2 = 1;
       for(Int_t xbin = 1; xbin <= newbins; ++xbin) {
          Double_t binContent0 = 0.;
-			Double_t binContent2 = 0.;
-         Double_t binError0 = 0.;
-			Double_t binError2 = 0.;
+         Double_t binContent2 = 0.;
+         Double_t binError0   = 0.;
+         Double_t binError2   = 0.;
          for(Int_t i = 0; i < ngroup; ++i) {
             if(oldxbin2 + i > nbins) {
                break;
@@ -2444,9 +2444,9 @@ GHSym* GHSym::Rebin2D(Int_t ngroup, const char* newname)
       Int_t oldybin2 = 1;
       for(Int_t ybin = 1; ybin <= newbins; ++ybin) {
          Double_t binContent0 = 0.;
-			Double_t binContent2 = 0.;
-         Double_t binError0 = 0.;
-			Double_t binError2 = 0.;
+         Double_t binContent2 = 0.;
+         Double_t binError0   = 0.;
+         Double_t binError2   = 0.;
          for(Int_t i = 0; i < ngroup; ++i) {
             if(oldybin2 + i > nbins) {
                break;
@@ -2507,7 +2507,7 @@ GHSym* GHSym::Rebin2D(Int_t ngroup, const char* newname)
    }
 
    delete[] oldBins;
-	delete[] oldErrors;
+   delete[] oldErrors;
    return hnew;
 }
 
@@ -2660,8 +2660,8 @@ void GHSym::Smooth(Int_t ntimes, Option_t* option)
    // Copy all the data to the temporary buffers
    for(Int_t i = ifirst; i <= ilast; ++i) {
       for(Int_t j = jfirst; j <= jlast; ++j) {
-         Int_t bin      = GetBin(i, j);
-         buf[bin] = GetBinContent(bin);
+         Int_t bin = GetBin(i, j);
+         buf[bin]  = GetBinContent(bin);
          if(ebuf != nullptr) {
             ebuf[bin] = GetBinError(bin);
          }
@@ -2684,8 +2684,8 @@ void GHSym::Smooth(Int_t ntimes, Option_t* option)
                Int_t xb = i + (n - x_push);
                Int_t yb = j + (m - y_push);
                if((xb >= 1) && (xb <= nx) && (yb >= 1) && (yb <= ny)) {
-                  Int_t bin        = GetBin(xb, yb);
-                  Double_t k = kernel[n * ksize_y + m];
+                  Int_t    bin = GetBin(xb, yb);
+                  Double_t k   = kernel[n * ksize_y + m];
                   if(k != 0.0) {
                      norm += k;
                      content += k * buf[bin];
@@ -2754,7 +2754,7 @@ GHSymF::GHSymF(const char* name, const char* title, Int_t nbins, const Float_t* 
 }
 
 GHSymF::GHSymF(const GHSymF& rhs)
-	: GHSym(rhs), TArrayF(rhs)
+   : GHSym(rhs), TArrayF(rhs)
 {
    rhs.Copy(*this);
 }
@@ -2959,7 +2959,7 @@ GHSymD::GHSymD(const char* name, const char* title, Int_t nbins, const Float_t* 
 }
 
 GHSymD::GHSymD(const GHSymD& rhs)
-	: GHSym(rhs), TArrayD(rhs)
+   : GHSym(rhs), TArrayD(rhs)
 {
    rhs.Copy(*this);
 }

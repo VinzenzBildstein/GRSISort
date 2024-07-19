@@ -22,9 +22,9 @@ TPulseAnalyzer::TPulseAnalyzer(const std::vector<Short_t>& wave, double noise_fa
 
 TPulseAnalyzer::~TPulseAnalyzer()
 {
-	delete cWpar;
-	delete spar;
-	delete shpar;
+   delete cWpar;
+   delete spar;
+   delete shpar;
 }
 
 void TPulseAnalyzer::Clear(Option_t*)
@@ -125,10 +125,10 @@ int TPulseAnalyzer::fit_smooth_parabola(int low, int high, double x0, ParPar* pp
    memset(pp, 0, sizeof(ParPar));
    memset(lineq_matrix, 0, sizeof(lineq_matrix));
    memset(lineq_vector, 0, sizeof(lineq_vector));
-   lineq_dim = 2;
-   double chisq     = 0.;
-   int ndf       = 0;
-   int k         = static_cast<int>(rint(x0));
+   lineq_dim    = 2;
+   double chisq = 0.;
+   int    ndf   = 0;
+   int    k     = static_cast<int>(rint(x0));
 
    for(int i = low; i < k; i++) {
       lineq_matrix[0][0] += 1;
@@ -174,7 +174,7 @@ double TPulseAnalyzer::fit_rf(double T)
    if(!set || cN < 10) {
       return -1;
    }
-	delete spar;
+   delete spar;
    spar = new SinPar;
 
    spar->t0 = -1;
@@ -193,7 +193,7 @@ double TPulseAnalyzer::fit_newT0()
       return -1;
    }
 
-	delete cWpar;
+   delete cWpar;
    cWpar     = new WaveFormPar;
    cWpar->t0 = -1;
 
@@ -217,7 +217,7 @@ double TPulseAnalyzer::fit_newT0()
    }
 
    size_t swp = sizeof(WaveFormPar);
-   chisq[0] = get_smooth_T0();
+   chisq[0]   = get_smooth_T0();
    memcpy(&w[0], cWpar, swp);
    chisq[1] = get_parabolic_T0();
    memcpy(&w[1], cWpar, swp);
@@ -225,7 +225,7 @@ double TPulseAnalyzer::fit_newT0()
    memcpy(&w[2], cWpar, swp);
 
    double chimin = LARGECHISQ;
-   int imin   = 0;
+   int    imin   = 0;
 
    for(int i = 0; i < 3; i++) {
       if(chisq[i] < chimin && chisq[i] > 0) {
@@ -249,9 +249,9 @@ int TPulseAnalyzer::fit_parabola(int low, int high, ParPar* pp)
    memset(pp, 0, sizeof(ParPar));
    memset(lineq_matrix, 0, sizeof(lineq_matrix));
    memset(lineq_vector, 0, sizeof(lineq_vector));
-   lineq_dim = 3;
-   double chisq     = 0.;
-   int ndf       = 0;
+   lineq_dim    = 3;
+   double chisq = 0.;
+   int    ndf   = 0;
    for(int i = low; i < high; i++) {
       lineq_matrix[0][0] += 1;
       lineq_matrix[0][1] += i;
@@ -290,9 +290,9 @@ int TPulseAnalyzer::fit_line(int low, int high, LinePar* lp)
    memset(lp, 0, sizeof(LinePar));
    memset(lineq_matrix, 0, sizeof(lineq_matrix));
    memset(lineq_vector, 0, sizeof(lineq_vector));
-   lineq_dim = 2;
-   double chisq     = 0.;
-   int ndf       = 0;
+   lineq_dim    = 2;
+   double chisq = 0.;
+   int    ndf   = 0;
    for(int i = low; i < high; i++) {
       lineq_matrix[0][0] += 1;
       lineq_matrix[0][1] += i;

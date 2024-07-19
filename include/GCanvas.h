@@ -85,8 +85,9 @@ public:
 
    void SetLineX(double x1, double x2, double y1, double y2)
    {
-      if(fLineX == nullptr) { fLineX = new TLine(x1, y1, x2, y2); }
-      else {
+      if(fLineX == nullptr) {
+         fLineX = new TLine(x1, y1, x2, y2);
+      } else {
          fLineX->SetX1(x1);
          fLineX->SetX2(x2);
          fLineX->SetY1(y1);
@@ -96,8 +97,9 @@ public:
 
    void SetLineY(double x1, double x2, double y1, double y2)
    {
-      if(fLineY == nullptr) { fLineY = new TLine(x1, y1, x2, y2); }
-      else {
+      if(fLineY == nullptr) {
+         fLineY = new TLine(x1, y1, x2, y2);
+      } else {
          fLineY->SetX1(x1);
          fLineY->SetX2(x2);
          fLineY->SetY1(y1);

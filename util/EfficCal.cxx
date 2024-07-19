@@ -140,9 +140,9 @@ int main(int argc, char** argv)
    std::string type;
    if(abs_flag) {
       type = "abs";
-	} else {
+   } else {
       type = "rel";
-	}
+   }
 
    const char* suff = type.c_str();
 
@@ -157,9 +157,9 @@ int main(int argc, char** argv)
       GetCal(current_hist, ge, abs_flag);
       if(abs_flag) {
          ge->SetName(Form("chan%d_abs", i));
-		} else {
+      } else {
          ge->SetName(Form("chan%d_rel", i));
-		}
+      }
 
       ge->GetXaxis()->SetTitle("Energy (keV)");
       ge->GetYaxis()->SetTitle("Effic");
@@ -172,9 +172,9 @@ int main(int argc, char** argv)
    GetCal(eng_sum, ge, abs_flag);
    if(abs_flag) {
       ge->SetName("sum_abs");
-	} else {
+   } else {
       ge->SetName("sum_rel");
-	}
+   }
    ge->GetXaxis()->SetTitle("Energy (keV)");
    ge->GetYaxis()->SetTitle("Effic");
    eng_sum->Write();

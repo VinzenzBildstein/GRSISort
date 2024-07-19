@@ -150,8 +150,8 @@ inline std::string hex(T val, int width = -1)
 
 static inline std::string getexepath()
 {
-	std::array<char, 1024> result{};
-   ssize_t count = readlink("/proc/self/exe", result.data(), sizeof(result) - 1);
+   std::array<char, 1024> result{};
+   ssize_t                count = readlink("/proc/self/exe", result.data(), sizeof(result) - 1);
    return std::string(result.data(), (count > 0) ? count : 0);
 }
 
@@ -263,9 +263,9 @@ static inline void PrintStacktrace(std::ostream& out = std::cout, int maxFrames 
 #include <sys/prctl.h>
 static inline void PrintGdbStacktrace()
 {
-	std::array<char, 30> pid_buf{};
+   std::array<char, 30> pid_buf{};
    sprintf(pid_buf.data(), "%d", getpid());
-	std::array<char, 512> name_buf{};
+   std::array<char, 512> name_buf{};
    name_buf[readlink("/proc/self/exe", name_buf.data(), 511)] = 0;
    prctl(PR_SET_PTRACER, PR_SET_PTRACER_ANY, 0, 0, 0);
    int child_pid = fork();

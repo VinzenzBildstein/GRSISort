@@ -278,7 +278,7 @@ void WriteMat(TH2* mat, std::fstream* outfile)
 
    for(int y = 1; y <= 4096; ++y) {
       uint16_t buffer[4096] = {0};
-      TH1D*    proj = empty;
+      TH1D*    proj         = empty;
       if(y <= ybins) {
          proj = mat->ProjectionX("proj", y, y);
       }
@@ -303,7 +303,7 @@ void WriteM4b(TH2* mat, std::fstream* outfile)
 
    for(int y = 1; y <= 4096; ++y) {
       uint32_t buffer[4096] = {0};
-      TH1D*    proj = empty;
+      TH1D*    proj         = empty;
       if(y <= ybins) {
          proj = mat->ProjectionX("proj", y, y);
       }

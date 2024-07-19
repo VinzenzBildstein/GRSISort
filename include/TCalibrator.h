@@ -80,7 +80,7 @@ private:
 
    int fFitOrder{0};
 
-	std::array<double, 4> fEffPar{0.};
+   std::array<double, 4> fEffPar{0.};
 
    static void ResetMap(std::map<double, double>& inmap);
    static void PrintMap(std::map<double, double>& inmap);
