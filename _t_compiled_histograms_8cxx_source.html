@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('_t_compiled_histograms_8cxx_source.htm
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_t_compiled_histograms.html#acf0fac4f29a37fe0bba59a0fe2b128a4">   28</a></span><a class="code hl_function" href="class_t_compiled_histograms.html#ae846be7c07fd69f729acfb49798c4834">TCompiledHistograms::TCompiledHistograms</a>(<span class="keyword">const</span> std::string&amp; inputLib, <span class="keyword">const</span> std::string&amp; funcName)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>   : fFunc(nullptr), fObj(&amp;fObjects, &amp;fGates, fCutFiles), fLibName(inputLib), fFuncName(funcName)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>   : fLibName(inputLib), fFuncName(funcName), fFunc(nullptr), fObj(&amp;fObjects, &amp;fGates, fCutFiles)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>   <a class="code hl_variable" href="class_t_compiled_histograms.html#a9d4a58bb59dfb9ff8042243bc5836c73">fLibrary</a>   = std::make_shared&lt;DynamicLibrary&gt;(<a class="code hl_variable" href="class_t_compiled_histograms.html#a99c8949f44d12bd648706bf98259f7aa">fLibName</a>.c_str(), <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>   <span class="comment">// Casting required to keep gcc from complaining.</span></div>
@@ -364,7 +364,7 @@ $(document).ready(function(){initNavTree('_t_compiled_histograms_8cxx_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_cd3c6700b09e85b3c422529c0dd23545.html">TLoops</a></li><li class="navelem"><a class="el" href="_t_compiled_histograms_8cxx.html">TCompiledHistograms.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Jul 18 2024 16:40:01.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Jul 19 2024 15:44:43.</li>
   </ul>
 </div>
 </body>
