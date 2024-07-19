@@ -263,8 +263,8 @@ GCanvas* GCanvas::MakeDefCanvas()
    // Static function to build a default canvas.
 
    const char* defcanvas = gROOT->GetDefCanvasName();
-   char*       cdef = nullptr;
-   auto*       lc = static_cast<TList*>(gROOT->GetListOfCanvases());
+   char*       cdef      = nullptr;
+   auto*       lc        = static_cast<TList*>(gROOT->GetListOfCanvases());
    if(lc->FindObject(defcanvas) != nullptr) {
       Int_t n = lc->GetSize() + 1;
       cdef    = new char[strlen(defcanvas) + 15];
@@ -518,9 +518,9 @@ bool GCanvas::HandleWheel(Int_t event, Int_t px, Int_t py)
 
    // get the current range
    double x1 = 0.;
-	double y1 = 0.;
-	double x2 = 0.;
-	double y2 = 0.;
+   double y1 = 0.;
+   double x2 = 0.;
+   double y2 = 0.;
    GetRange(x1, y1, x2, y2);
 
    // calculate the new range

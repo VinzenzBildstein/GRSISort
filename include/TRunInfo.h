@@ -236,7 +236,7 @@ public:
 
    /// \cond CLASSIMP
    ClassDefOverride(TRunInfo, 17);
-	/// \endcond
+   /// \endcond
 };
 /*! @} */
 #endif

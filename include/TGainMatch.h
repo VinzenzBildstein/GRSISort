@@ -76,13 +76,13 @@ public:
    static Double_t GetDefaultCoarseRange() { return gDefaultCoarseRange; }
 
 private:
-   Bool_t   fCoarseMatch{false};
-   Bool_t   fAligned{false};
-   TH1*     fHist{nullptr};
-	std::array<Double_t, 2> fAlignCoeffs{0.};
+   Bool_t                  fCoarseMatch{false};
+   Bool_t                  fAligned{false};
+   TH1*                    fHist{nullptr};
+   std::array<Double_t, 2> fAlignCoeffs{0.};
    std::array<Double_t, 2> fGainCoeffs{0.};
-   Double_t fCoarseRange{0.};
-   Double_t HistCompare(Double_t* x, Double_t* par);
+   Double_t                fCoarseRange{0.};
+   Double_t                HistCompare(Double_t* x, Double_t* par);
 
    static Double_t gDefaultCoarseRange;
 

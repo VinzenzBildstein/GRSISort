@@ -540,11 +540,11 @@ double PolarizationCalculation()
 
 double Kcoefficents(int mu, int L1, int L2)
 {
-   double k = 0.;
+   double k  = 0.;
    double l1 = L1;
    double l2 = L2;
-   L1 = std::max(l1, l2);
-   L2 = std::min(l1, l2);
+   L1        = std::max(l1, l2);
+   L2        = std::min(l1, l2);
 
    if((L1 + L2) % 2 == 0) {
       k = (static_cast<double>(mu) * (mu + 1.0) * (L1 * (L1 + 1.0) + L2 * (L2 + 1.0)) - TMath::Power(L2 * (L2 + 1.0) - L1 * (L1 + 1.0), 2)) / (L1 * (L1 + 1.0) + L2 * (L2 + 1.0) - mu * (mu + 1.0));
@@ -558,7 +558,7 @@ double ScaleQ(double E1, double E2)
 {
    // E1 is the energy of the scattering gamma used to determine the Q you wish to scale.  E2 is the
    // energy  of the gamma you are trying to examine now.
-   int    nDiv = 1000;
+   int    nDiv  = 1000;
    double m_eC2 = 510.9989;   // keV
    double Q1    = 0.0;
    double Q2    = 0.0;

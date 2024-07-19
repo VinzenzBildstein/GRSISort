@@ -229,8 +229,8 @@ void TCalibrateDescant::BuildInterface()
    // maybe add splitter between canvases?
 
    // create status bar
-   fStatusBar    = new TGStatusBar(fLeftFrame, 400, 10, kHorizontalFrame);
-	std::array<Int_t, 3> parts = {25, 25, 50};
+   fStatusBar                 = new TGStatusBar(fLeftFrame, 400, 10, kHorizontalFrame);
+   std::array<Int_t, 3> parts = {25, 25, 50};
    fStatusBar->SetParts(parts.data(), parts.size());
 
    // build parameter entries
@@ -762,9 +762,9 @@ void TCalibrateDescant::FitCanvasZoomed()
    std::cout << __PRETTY_FUNCTION__ << std::endl;
    // update range of fit functions
    Double_t xmin = 0.;
-	Double_t ymin = 0.;
-	Double_t xmax = 0.;
-	Double_t ymax = 0.;
+   Double_t ymin = 0.;
+   Double_t xmax = 0.;
+   Double_t ymax = 0.;
    fFitCanvas->GetCanvas()->GetRange(xmin, ymin, xmax, ymax);
 
    std::cout << "updating ranges to " << xmin << " - " << xmax << std::endl;
