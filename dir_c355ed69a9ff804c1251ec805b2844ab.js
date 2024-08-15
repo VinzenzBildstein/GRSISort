@@ -28,6 +28,8 @@ var dir_c355ed69a9ff804c1251ec805b2844ab =
     [ "TMidasStructs.h", "_t_midas_structs_8h.html", null ],
     [ "TPaces.h", "_t_paces_8h.html", null ],
     [ "TPacesHit.h", "_t_paces_hit_8h.html", null ],
+    [ "TRcmp.h", "_t_rcmp_8h.html", null ],
+    [ "TRcmpHit.h", "_t_rcmp_hit_8h.html", null ],
     [ "TRF.h", "_t_r_f_8h.html", null ],
     [ "TS3.h", "_t_s3_8h.html", null ],
     [ "TS3Hit.h", "_t_s3_hit_8h.html", null ],

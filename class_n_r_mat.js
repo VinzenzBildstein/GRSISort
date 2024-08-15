@@ -10,8 +10,8 @@ var class_n_r_mat =
     [ "nrows", "group___fitting.html#ga10475233c8657903b0e07e9b26711c99", null ],
     [ "operator=", "group___fitting.html#ga83b7a22bc216f3b75aca356b077d3eb0", null ],
     [ "operator=", "group___fitting.html#ga5c0ef740d322d4a8a6b21d4da1053e2f", null ],
-    [ "operator[]", "group___fitting.html#ga947ff7588b1eed80fed633e8b001838b", null ],
-    [ "operator[]", "group___fitting.html#ga8ae8abcf7c56932b621a90f7898131c4", null ],
+    [ "operator[]", "group___fitting.html#ga540d4eba804d4fe60b489ad897e2d4de", null ],
+    [ "operator[]", "group___fitting.html#ga31f874da486899767fc576b44df21c39", null ],
     [ "mm", "class_n_r_mat.html#af6077429fdf806ac4c8eba949fa2c0bf", null ],
     [ "nn", "class_n_r_mat.html#a83dd72f199fb36b0e334a344174d3e80", null ],
     [ "v", "class_n_r_mat.html#a9f11fba17ad81873f2bed5f7624e4740", null ]

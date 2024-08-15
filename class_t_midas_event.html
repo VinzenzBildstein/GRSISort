@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('class_t_midas_event.html',''); initRes
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_t_midas_event-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TMidasEvent Class Reference<div class="ingroups"><a class="el" href="group___sorting.html">Sorting</a></div></div></div>
 </div><!--header-->
@@ -180,6 +181,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aa42ca2080168de4525edddb768cd9ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add0a9ff221e56784ac6198925df1ee36" id="r_add0a9ff221e56784ac6198925df1ee36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_t_midas___e_v_e_n_t___h_e_a_d_e_r.html">TMidas_EVENT_HEADER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_midas_event.html#add0a9ff221e56784ac6198925df1ee36">fEventHeader</a></td></tr>
 <tr class="separator:add0a9ff221e56784ac6198925df1ee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:a842ee9d55ece75f079c259bb8f7f8fa2" id="r_a842ee9d55ece75f079c259bb8f7f8fa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_raw_event.html#a842ee9d55ece75f079c259bb8f7f8fa2">fGoodFrags</a> {0}</td></tr>
 <tr class="separator:a842ee9d55ece75f079c259bb8f7f8fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -328,7 +332,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_t_midas_event_8cxx_source.html#l00079">79</a> of file <a class="el" href="_t_midas_event_8cxx_source.html">TMidasEvent.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_midas_event_8h_source.html#l00086">fAllocatedByUs</a>, <a class="el" href="_t_midas_event_8h_source.html#l00085">fBankList</a>, <a class="el" href="_t_midas_event_8h_source.html#l00084">fBanksN</a>, <a class="el" href="_t_midas_event_8h_source.html#l00083">fData</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00023">TMidas_EVENT_HEADER::fDataSize</a>, <a class="el" href="_t_midas_event_8h_source.html#l00082">fEventHeader</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00019">TMidas_EVENT_HEADER::fEventId</a>, <a class="el" href="_t_raw_event_8h_source.html#l00049">TRawEvent::fGoodFrags</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00021">TMidas_EVENT_HEADER::fSerialNumber</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00022">TMidas_EVENT_HEADER::fTimeStamp</a>, and <a class="el" href="_t_midas_event_header_8h_source.html#l00020">TMidas_EVENT_HEADER::fTriggerMask</a>.</p>
+<p class="reference">References <a class="el" href="_t_midas_event_8h_source.html#l00086">fAllocatedByUs</a>, <a class="el" href="_t_midas_event_8h_source.html#l00085">fBankList</a>, <a class="el" href="_t_midas_event_8h_source.html#l00084">fBanksN</a>, <a class="el" href="_t_midas_event_8h_source.html#l00083">fData</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00023">TMidas_EVENT_HEADER::fDataSize</a>, <a class="el" href="_t_midas_event_8h_source.html#l00082">fEventHeader</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00019">TMidas_EVENT_HEADER::fEventId</a>, <a class="el" href="_t_raw_event_8h_source.html#l00051">TRawEvent::fGoodFrags</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00021">TMidas_EVENT_HEADER::fSerialNumber</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00022">TMidas_EVENT_HEADER::fTimeStamp</a>, and <a class="el" href="_t_midas_event_header_8h_source.html#l00020">TMidas_EVENT_HEADER::fTriggerMask</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_t_midas_event_8cxx_source.html#l00064">~TMidasEvent()</a>, <a class="el" href="_t_midas_event_8cxx_source.html#l00069">operator=()</a>, and <a class="el" href="_t_midas_file_8cxx_source.html#l00384">TMidasFile::Skip()</a>.</p>
 
@@ -667,9 +671,9 @@ Protected Attributes</h2></td></tr>
 
 <p>returns number of good fragments parsed </p>
 
-<p class="definition">Definition at line <a class="el" href="_t_raw_event_8h_source.html#l00045">45</a> of file <a class="el" href="_t_raw_event_8h_source.html">TRawEvent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_raw_event_8h_source.html#l00047">47</a> of file <a class="el" href="_t_raw_event_8h_source.html">TRawEvent.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_raw_event_8h_source.html#l00049">TRawEvent::fGoodFrags</a>.</p>
+<p class="reference">References <a class="el" href="_t_raw_event_8h_source.html#l00051">TRawEvent::fGoodFrags</a>.</p>
 
 </div>
 </div>
@@ -698,9 +702,9 @@ Protected Attributes</h2></td></tr>
 
 <p>increments the number of good fragments parsed </p>
 
-<p class="definition">Definition at line <a class="el" href="_t_raw_event_8h_source.html#l00046">46</a> of file <a class="el" href="_t_raw_event_8h_source.html">TRawEvent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_raw_event_8h_source.html#l00048">48</a> of file <a class="el" href="_t_raw_event_8h_source.html">TRawEvent.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_raw_event_8h_source.html#l00049">TRawEvent::fGoodFrags</a>.</p>
+<p class="reference">References <a class="el" href="_t_raw_event_8h_source.html#l00051">TRawEvent::fGoodFrags</a>.</p>
 
 </div>
 </div>
@@ -932,7 +936,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_t_midas_event_8cxx_source.html#l00265">265</a> of file <a class="el" href="_t_midas_event_8cxx_source.html">TMidasEvent.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_midas_event_8h_source.html#l00085">fBankList</a>, <a class="el" href="_t_midas_event_8h_source.html#l00084">fBanksN</a>, <a class="el" href="_t_midas_event_8h_source.html#l00083">fData</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00023">TMidas_EVENT_HEADER::fDataSize</a>, <a class="el" href="_t_midas_event_8h_source.html#l00082">fEventHeader</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00019">TMidas_EVENT_HEADER::fEventId</a>, <a class="el" href="_t_midas_event_8cxx_source.html#l00192">FindBank()</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00021">TMidas_EVENT_HEADER::fSerialNumber</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00022">TMidas_EVENT_HEADER::fTimeStamp</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00020">TMidas_EVENT_HEADER::fTriggerMask</a>, <a class="el" href="_globals_8h_source.html#l00137">hex()</a>, and <a class="el" href="_globals_8h_source.html#l00004">RESET_COLOR</a>.</p>
+<p class="reference">References <a class="el" href="_t_midas_event_8h_source.html#l00085">fBankList</a>, <a class="el" href="_t_midas_event_8h_source.html#l00084">fBanksN</a>, <a class="el" href="_t_midas_event_8h_source.html#l00083">fData</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00023">TMidas_EVENT_HEADER::fDataSize</a>, <a class="el" href="_t_midas_event_8h_source.html#l00082">fEventHeader</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00019">TMidas_EVENT_HEADER::fEventId</a>, <a class="el" href="_t_midas_event_8cxx_source.html#l00192">FindBank()</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00021">TMidas_EVENT_HEADER::fSerialNumber</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00022">TMidas_EVENT_HEADER::fTimeStamp</a>, <a class="el" href="_t_midas_event_header_8h_source.html#l00020">TMidas_EVENT_HEADER::fTriggerMask</a>, <a class="el" href="_globals_8h_source.html#l00136">hex()</a>, and <a class="el" href="_globals_8h_source.html#l00004">RESET_COLOR</a>.</p>
 
 </div>
 </div>
@@ -1210,15 +1214,15 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>number of good fragments parsed </p>
 
-<p class="definition">Definition at line <a class="el" href="_t_raw_event_8h_source.html#l00049">49</a> of file <a class="el" href="_t_raw_event_8h_source.html">TRawEvent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_raw_event_8h_source.html#l00051">51</a> of file <a class="el" href="_t_raw_event_8h_source.html">TRawEvent.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_midas_event_8cxx_source.html#l00079">Clear()</a>, <a class="el" href="_t_raw_event_8h_source.html#l00045">TRawEvent::GoodFrags()</a>, and <a class="el" href="_t_raw_event_8h_source.html#l00046">TRawEvent::IncrementGoodFrags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_raw_event_8h_source.html#l00032">TRawEvent::Clear()</a>, <a class="el" href="_t_midas_event_8cxx_source.html#l00079">Clear()</a>, <a class="el" href="_t_raw_event_8h_source.html#l00033">TRawEvent::Copy()</a>, <a class="el" href="_t_raw_event_8h_source.html#l00047">TRawEvent::GoodFrags()</a>, and <a class="el" href="_t_raw_event_8h_source.html#l00048">TRawEvent::IncrementGoodFrags()</a>.</p>
 
 </div>
 </div>
@@ -1229,7 +1233,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_midas_event.html">TMidasEvent</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Jul 19 2024 15:44:48.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Aug 15 2024 20:01:21.</li>
   </ul>
 </div>
 </body>

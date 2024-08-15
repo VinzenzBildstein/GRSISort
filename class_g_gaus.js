@@ -1,10 +1,11 @@
 var class_g_gaus =
 [
+    [ "GGaus", "class_g_gaus.html#aa7701a3a5d4a5cda585fca013d49beb4", null ],
     [ "GGaus", "class_g_gaus.html#aee8af38eae82ed158f57542b306f22bf", null ],
     [ "GGaus", "class_g_gaus.html#a9cc1069f51a3769da848bf3d3f1aa174", null ],
     [ "GGaus", "class_g_gaus.html#a339f7bd69826ad1562a406915beb0385", null ],
-    [ "GGaus", "class_g_gaus.html#aa7701a3a5d4a5cda585fca013d49beb4", null ],
-    [ "~GGaus", "class_g_gaus.html#a6e656c18ce2c20ef53517bb8af10a432", null ],
+    [ "GGaus", "class_g_gaus.html#ab7b7fad6223f4fc8a7c4ae110831620a", null ],
+    [ "~GGaus", "class_g_gaus.html#a493a40869cef63132539cf8718cf964d", null ],
     [ "Background", "class_g_gaus.html#a1a4b9aae4c88a17ae109f8db8ca033de", null ],
     [ "Clear", "class_g_gaus.html#aae2661ac227fe75d2f92cf29e975782b", null ],
     [ "CompareArea", "class_g_gaus.html#a3d9d6d82e0c2d5393f60de1b839478ec", null ],
@@ -23,6 +24,8 @@ var class_g_gaus =
     [ "InitNames", "class_g_gaus.html#ac7f2157d7ca5fc0c86c375d610b82673", null ],
     [ "InitParams", "class_g_gaus.html#a69cf349892960079fd3d230a6026c04f", null ],
     [ "IsInitialized", "class_g_gaus.html#a97ce1077cdf3a627cd7a376d4eea96ab", null ],
+    [ "operator=", "class_g_gaus.html#a6181cc40b7bec764665551bdaf2917b2", null ],
+    [ "operator=", "class_g_gaus.html#ad97d033f62412f10428eccb67677a6e0", null ],
     [ "Print", "class_g_gaus.html#ae806de1f686c1c716c7a3dacc2faaeef", null ],
     [ "SetArea", "class_g_gaus.html#a084974da7312ae3ef50d460b7143035a", null ],
     [ "SetArea", "class_g_gaus.html#afb99aefa66d71e49704bd227bd0fce4d", null ],

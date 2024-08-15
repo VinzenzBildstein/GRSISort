@@ -1,10 +1,11 @@
 var class_g_peak =
 [
+    [ "GPeak", "class_g_peak.html#a01655a4345aadd1a4f8f01e089d0b6db", null ],
     [ "GPeak", "class_g_peak.html#a8bdcfdf7c9611198ac96b735a818001f", null ],
     [ "GPeak", "class_g_peak.html#a22cfbce5138a89836e4c7c60fc7f640b", null ],
     [ "GPeak", "class_g_peak.html#a49a2aa6c4083a367b2a6b89749e90348", null ],
-    [ "GPeak", "class_g_peak.html#a01655a4345aadd1a4f8f01e089d0b6db", null ],
-    [ "~GPeak", "class_g_peak.html#a844444c7e981eab5b03018961c6be530", null ],
+    [ "GPeak", "class_g_peak.html#a1501b0b418b4dff8fdf31bb480807a93", null ],
+    [ "~GPeak", "class_g_peak.html#a151ae6c3dc845fa2322cd6f93568318f", null ],
     [ "Area", "class_g_peak.html#a88818cfd29172ab05c3d310c9ccf1e5a", null ],
     [ "AreaErr", "class_g_peak.html#a2e562ec1d22965f0b4f64a24f4f6b0a7", null ],
     [ "Background", "class_g_peak.html#a29962b3c75fd82b95f3c983c0c5351cb", null ],
@@ -30,6 +31,8 @@ var class_g_peak =
     [ "InitNames", "class_g_peak.html#ad3e292a67021e7c2cdcb85f639783911", null ],
     [ "InitParams", "class_g_peak.html#abd8aec7f14e57530042974e401fb15fa", null ],
     [ "IsInitialized", "class_g_peak.html#a1475d063636f7b586b3b9196e802496d", null ],
+    [ "operator=", "class_g_peak.html#a276673140c5a3d4f17076a9408fcf0d2", null ],
+    [ "operator=", "class_g_peak.html#ae4e220fdd54fccf6f6a65d8009c0f28c", null ],
     [ "Print", "class_g_peak.html#a883c1eddea9989426160e34218db3193", null ],
     [ "SetArea", "class_g_peak.html#a13b57cc1526b50d1a6327a4332d4089b", null ],
     [ "SetArea", "class_g_peak.html#ad6d5ae5a4e6f79c0bf49bfe7c3f0c1e1", null ],

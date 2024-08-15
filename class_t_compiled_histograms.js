@@ -1,9 +1,8 @@
 var class_t_compiled_histograms =
 [
     [ "TCompiledHistograms", "class_t_compiled_histograms.html#ae846be7c07fd69f729acfb49798c4834", null ],
-    [ "TCompiledHistograms", "class_t_compiled_histograms.html#acf0fac4f29a37fe0bba59a0fe2b128a4", null ],
+    [ "TCompiledHistograms", "class_t_compiled_histograms.html#af018853c9aa4767e7e0689957eda626c", null ],
     [ "AddCutFile", "class_t_compiled_histograms.html#a1040169cded1170922717f4206984a01", null ],
-    [ "ClassDefOverride", "class_t_compiled_histograms.html#aa5f97ac1492d23cc4aef734a8b15a3f9", null ],
     [ "ClearHistograms", "class_t_compiled_histograms.html#adbb2aba755a783236d872440ad244a67", null ],
     [ "file_exists", "class_t_compiled_histograms.html#aec36d4af9cf02d1944e1f7ce7a862ad0", null ],
     [ "Fill", "class_t_compiled_histograms.html#abecbcdf65070544bc7b2b47eb8f43f10", null ],
@@ -13,7 +12,7 @@ var class_t_compiled_histograms =
     [ "GetGates", "class_t_compiled_histograms.html#a1dec768e37eebf7341f333a8a579ba61", null ],
     [ "GetLibraryName", "class_t_compiled_histograms.html#ae6f0aacf385ea4b9810fbc94e8d19769", null ],
     [ "GetObjects", "class_t_compiled_histograms.html#a208336c9185b0986e7ac53b6bd723ef5", null ],
-    [ "Load", "class_t_compiled_histograms.html#a3172473f127b64816d827aa0d7bf53bd", null ],
+    [ "Load", "class_t_compiled_histograms.html#af143d2221ec218d8de70a3a5bde89f1a", null ],
     [ "Reload", "class_t_compiled_histograms.html#a179563afb7db7cb633e85890c14edfcd", null ],
     [ "SetDefaultDirectory", "class_t_compiled_histograms.html#ad75cbad0260c9dbfa1a2a478c833f21f", null ],
     [ "swap_lib", "class_t_compiled_histograms.html#a6c51a0e18c7fa4de475d1681a5fed020", null ],
