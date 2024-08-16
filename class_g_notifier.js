@@ -1,9 +1,9 @@
 var class_g_notifier =
 [
+    [ "~GNotifier", "class_g_notifier.html#ab05752ae88ee3e9e4139ecad08653ac4", null ],
     [ "GNotifier", "class_g_notifier.html#a8f9b113241f92b3616c596c2f52ebcd7", null ],
     [ "GNotifier", "class_g_notifier.html#a366f57555fec28c6be6988ce1e12b9c8", null ],
     [ "GNotifier", "class_g_notifier.html#a69e3b0de76d4e3854a81775c84e66ea6", null ],
-    [ "~GNotifier", "class_g_notifier.html#ab05752ae88ee3e9e4139ecad08653ac4", null ],
     [ "AddCallback", "class_g_notifier.html#ae9774d9cf3c9c149686612629952d24c", null ],
     [ "AddCallback", "class_g_notifier.html#a336ded57f98c3d97ca7b5dbb33f5dab3", null ],
     [ "Clear", "class_g_notifier.html#aa244e9b6447ea762f12226f1cf038e31", null ],

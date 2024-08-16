@@ -1,9 +1,9 @@
 var class_stoppable_thread =
 [
     [ "StoppableThread", "class_stoppable_thread.html#a33a026ea19f5c7b103c20334b9fba76c", null ],
-    [ "~StoppableThread", "class_stoppable_thread.html#a618fbc69b415e4fdb8900ab0c2aa7a34", null ],
     [ "StoppableThread", "class_stoppable_thread.html#a486427802d8f07332034e59622efab1c", null ],
     [ "StoppableThread", "class_stoppable_thread.html#a2688a21eacafbf565b3f8e890c72adb9", null ],
+    [ "~StoppableThread", "class_stoppable_thread.html#a618fbc69b415e4fdb8900ab0c2aa7a34", null ],
     [ "AllThreadHeader", "class_stoppable_thread.html#a8db1da4e8b583f0fab2b889ad261cca0", null ],
     [ "AllThreadProgress", "class_stoppable_thread.html#a72c27027df52370e08a78ef72d6440cc", null ],
     [ "AllThreadStatus", "class_stoppable_thread.html#a4dc75fea376080641dd0ab279c02c22c", null ],

@@ -1,9 +1,9 @@
 var class_t_det_building_loop =
 [
-    [ "~TDetBuildingLoop", "class_t_det_building_loop.html#a28a3d45bb3cf62d0af048897fc7c24f4", null ],
-    [ "TDetBuildingLoop", "class_t_det_building_loop.html#a9e77047ba3ce65b461d905d21396cfb2", null ],
     [ "TDetBuildingLoop", "class_t_det_building_loop.html#aa11f3db96a2a3ada7b8392f6da22f7f8", null ],
     [ "TDetBuildingLoop", "class_t_det_building_loop.html#ac1a156b1d0bd8bebcd7710a3dced7f45", null ],
+    [ "~TDetBuildingLoop", "class_t_det_building_loop.html#a28a3d45bb3cf62d0af048897fc7c24f4", null ],
+    [ "TDetBuildingLoop", "class_t_det_building_loop.html#a9e77047ba3ce65b461d905d21396cfb2", null ],
     [ "AddOutputQueue", "class_t_det_building_loop.html#a0581ffa9a379293662db970ab2fe7ebc", null ],
     [ "AllThreadHeader", "class_t_det_building_loop.html#a8db1da4e8b583f0fab2b889ad261cca0", null ],
     [ "AllThreadProgress", "class_t_det_building_loop.html#a72c27027df52370e08a78ef72d6440cc", null ],

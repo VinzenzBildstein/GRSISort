@@ -183,6 +183,7 @@ var group___g_u_i =
       [ "TCalibrateDescant", "class_t_calibrate_descant.html#a115aaea56129bcf52d5a09cd681f705b", null ],
       [ "TCalibrateDescant", "class_t_calibrate_descant.html#a7dca99adb0f35789176138e6b95567d4", null ],
       [ "TCalibrateDescant", "class_t_calibrate_descant.html#a19310015b9df1ae0dfb7b4bb70a5757d", null ],
+      [ "~TCalibrateDescant", "class_t_calibrate_descant.html#af2878a8691b916de3433a76ba0de3476", null ],
       [ "AddCalibrationPoint", "class_t_calibrate_descant.html#a35ae915b1238424d0fcae8f1b3f2f5d1", null ],
       [ "BuildInterface", "class_t_calibrate_descant.html#acb0b77d25cb0ecad28191102be23cd38", null ],
       [ "CalibrationCanvasZoomed", "class_t_calibrate_descant.html#a09c38997f63ac3376677349ba6b14369", null ],

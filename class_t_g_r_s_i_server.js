@@ -1,9 +1,9 @@
 var class_t_g_r_s_i_server =
 [
-    [ "~TGRSIServer", "class_t_g_r_s_i_server.html#a6a23302e15e6df5a264b1bf910714ac0", null ],
-    [ "TGRSIServer", "class_t_g_r_s_i_server.html#af38fdce179098598165e8d89ac04981d", null ],
     [ "TGRSIServer", "class_t_g_r_s_i_server.html#ab13289cf28441b93f4a41ab60433fbda", null ],
     [ "TGRSIServer", "class_t_g_r_s_i_server.html#a4f8d9a18ec6a2a4ae761db4e8b63ee4f", null ],
+    [ "~TGRSIServer", "class_t_g_r_s_i_server.html#a6a23302e15e6df5a264b1bf910714ac0", null ],
+    [ "TGRSIServer", "class_t_g_r_s_i_server.html#af38fdce179098598165e8d89ac04981d", null ],
     [ "AcceptConnectionThread", "class_t_g_r_s_i_server.html#ab254d906609527ccd9a85d4f7fb634d0", null ],
     [ "instance", "class_t_g_r_s_i_server.html#a672ca1eb46fb372a6a34c5056f7b297d", null ],
     [ "MonitorConnectionsThread", "class_t_g_r_s_i_server.html#ab4393e03fbe1f2c85363f3bfa661a2e1", null ],

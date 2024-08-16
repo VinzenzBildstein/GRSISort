@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"_t_la_br_bgo_hit_8h.html":[10,0,2,1,19],
+"_t_la_br_bgo_hit_8h_source.html":[10,0,2,1,19],
 "_t_la_br_hit_8cxx.html":[10,0,2,2,0,6,4],
 "_t_la_br_hit_8cxx_source.html":[10,0,2,2,0,6,4],
 "_t_la_br_hit_8h.html":[10,0,2,1,20],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "_t_tdr_clover_bgo_8h_source.html":[10,0,8,0,1],
 "_t_tdr_clover_hit_8cxx.html":[10,0,8,1,1,0,3],
 "_t_tdr_clover_hit_8cxx_source.html":[10,0,8,1,1,0,3],
-"_t_tdr_clover_hit_8h.html":[10,0,8,0,2],
-"_t_tdr_clover_hit_8h_source.html":[10,0,8,0,2],
-"_t_tdr_data_parser_8cxx.html":[10,0,8,1,2,0]
+"_t_tdr_clover_hit_8h.html":[10,0,8,0,2]
 };

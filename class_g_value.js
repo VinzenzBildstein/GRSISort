@@ -11,6 +11,7 @@ var class_g_value =
     [ "GValue", "class_g_value.html#ac7dfda2a8b8b681b583f3ec2ed143c9a", null ],
     [ "GValue", "class_g_value.html#a2738e6d35b08268bad75877c2b262809", null ],
     [ "GValue", "class_g_value.html#a9508a1eb5d1a9a99c28dd851b765ccd3", null ],
+    [ "~GValue", "class_g_value.html#a2741b47e2fc8e59db055f57d4f418d9b", null ],
     [ "AddValue", "class_g_value.html#a04a90667defb38eaec8f0c0985fd72f5", null ],
     [ "AllValues", "class_g_value.html#a07aeb2a2ad5b260aa470c998dad42d8c", null ],
     [ "AppendValue", "class_g_value.html#a8dccbce79b895b2c02b8880d1bbf81c4", null ],

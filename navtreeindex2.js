@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"_gain_match_g_r_i_f_f_i_n_8cxx.html#a60cb4cbdb2abf6bfbf5560947248da9c":[10,0,2,4,5,21],
+"_gain_match_g_r_i_f_f_i_n_8cxx.html#a6d678e8b9bdc757d6e34052d24cfaca2":[10,0,2,4,5,3],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#a7ad6d53132b33444a8fbcabfb42ad0b5":[10,0,2,4,5,20],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#a92c1d7cd69241dc11d03fdddda92f097":[10,0,2,4,5,5],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#a9749e9c4781edcd4283b06c806d8a100":[10,0,2,4,5,7],
@@ -79,13 +81,13 @@ var NAVTREEINDEX2 =
 "_griffin_c_t_fix_8cxx.html#ad00b72fbd61fcca8826704dc9f8283a8":[10,0,2,4,7,2],
 "_griffin_c_t_fix_8cxx.html#afc9fef42cbd907209240ef82d2ddcf2e":[10,0,2,4,7,0],
 "_griffin_c_t_fix_8cxx_source.html":[10,0,2,4,7],
-"_griffin_k_value_helper_8cxx.html":[10,0,1,17],
-"_griffin_k_value_helper_8cxx.html#a20d30ae6910ac5d9e99bbdd953bdf000":[10,0,1,17,0],
-"_griffin_k_value_helper_8cxx_source.html":[10,0,1,17],
-"_griffin_k_value_helper_8hh.html":[10,0,1,18],
-"_griffin_k_value_helper_8hh.html#a27be8731f98163f424ff2a52c0bb771b":[10,0,1,18,2],
-"_griffin_k_value_helper_8hh.html#a60ee0e162137e8b1d115ea12bc49ca83":[10,0,1,18,1],
-"_griffin_k_value_helper_8hh_source.html":[10,0,1,18],
+"_griffin_k_value_helper_8cxx.html":[10,0,1,18],
+"_griffin_k_value_helper_8cxx.html#a20d30ae6910ac5d9e99bbdd953bdf000":[10,0,1,18,0],
+"_griffin_k_value_helper_8cxx_source.html":[10,0,1,18],
+"_griffin_k_value_helper_8hh.html":[10,0,1,19],
+"_griffin_k_value_helper_8hh.html#a27be8731f98163f424ff2a52c0bb771b":[10,0,1,19,2],
+"_griffin_k_value_helper_8hh.html#a60ee0e162137e8b1d115ea12bc49ca83":[10,0,1,19,1],
+"_griffin_k_value_helper_8hh_source.html":[10,0,1,19],
 "_griffin_k_value_selector_8_c.html":[10,0,3,14],
 "_griffin_k_value_selector_8_c.html#a20d30ae6910ac5d9e99bbdd953bdf000":[10,0,3,14,1],
 "_griffin_k_value_selector_8_c.html#a326dad5b7b78e26500ecfb896908cec1":[10,0,3,14,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "_t_cal_manager_8h_source.html":[10,0,7,41],
 "_t_cal_point_8cxx.html":[10,0,9,1,2,5],
 "_t_cal_point_8cxx_source.html":[10,0,9,1,2,5],
-"_t_cal_point_8h.html":[10,0,7,42],
-"_t_cal_point_8h_source.html":[10,0,7,42],
-"_t_calibrate_descant_8cxx.html":[10,0,9,6,2]
+"_t_cal_point_8h.html":[10,0,7,42]
 };
