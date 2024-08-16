@@ -2971,460 +2971,476 @@ $(document).ready(function(){initNavTree('_g_h_sym_8cxx_source.html',''); initRe
 <div class="line"><a id="l02762" name="l02762"></a><span class="lineno"> 2762</span>}</div>
 </div>
 <div class="line"><a id="l02763" name="l02763"></a><span class="lineno"> 2763</span> </div>
-<div class="line"><a id="l02764" name="l02764"></a><span class="lineno"> 2764</span><a class="code hl_function" href="class_g_h_sym_f.html#af95141e02bc7f091001ee92281af77e8">GHSymF::~GHSymF</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l02765" name="l02765"></a><span class="lineno"> 2765</span> </div>
-<div class="foldopen" id="foldopen02766" data-start="{" data-end="}">
-<div class="line"><a id="l02766" name="l02766"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a9f48a7f167f74d1ba24e8bc55c3e5c13"> 2766</a></span>TH2F* <a class="code hl_function" href="class_g_h_sym_f.html#a9f48a7f167f74d1ba24e8bc55c3e5c13">GHSymF::GetMatrix</a>(<span class="keywordtype">bool</span> force)</div>
-<div class="line"><a id="l02767" name="l02767"></a><span class="lineno"> 2767</span>{</div>
-<div class="line"><a id="l02768" name="l02768"></a><span class="lineno"> 2768</span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>() != <span class="keyword">nullptr</span> &amp;&amp; !force) {</div>
-<div class="line"><a id="l02769" name="l02769"></a><span class="lineno"> 2769</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2F*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
-<div class="line"><a id="l02770" name="l02770"></a><span class="lineno"> 2770</span>   }</div>
-<div class="line"><a id="l02771" name="l02771"></a><span class="lineno"> 2771</span>   <span class="keywordflow">if</span>(force) {</div>
-<div class="line"><a id="l02772" name="l02772"></a><span class="lineno"> 2772</span>      <span class="keyword">delete</span> <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>();</div>
-<div class="line"><a id="l02773" name="l02773"></a><span class="lineno"> 2773</span>   }</div>
-<div class="line"><a id="l02774" name="l02774"></a><span class="lineno"> 2774</span> </div>
-<div class="line"><a id="l02775" name="l02775"></a><span class="lineno"> 2775</span>   <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>(<span class="keyword">new</span> TH2F(Form(<span class="stringliteral">&quot;%s_mat&quot;</span>, GetName()), GetTitle(), fXaxis.GetNbins(), fXaxis.GetXmin(), fXaxis.GetXmax(),</div>
-<div class="line"><a id="l02776" name="l02776"></a><span class="lineno"> 2776</span>                   fYaxis.GetNbins(), fYaxis.GetXmin(), fYaxis.GetXmax()));</div>
-<div class="line"><a id="l02777" name="l02777"></a><span class="lineno"> 2777</span>   <span class="comment">// copy cell contents (including all overflow and underflow cells)</span></div>
-<div class="line"><a id="l02778" name="l02778"></a><span class="lineno"> 2778</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; fXaxis.GetNbins() + 2; ++i) {</div>
-<div class="line"><a id="l02779" name="l02779"></a><span class="lineno"> 2779</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; fXaxis.GetNbins() + 2; ++j) {</div>
-<div class="line"><a id="l02780" name="l02780"></a><span class="lineno"> 2780</span>         <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>()-&gt;SetBinContent(i, j, <a class="code hl_function" href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0">GetBinContent</a>(i, j));</div>
-<div class="line"><a id="l02781" name="l02781"></a><span class="lineno"> 2781</span>      }</div>
-<div class="line"><a id="l02782" name="l02782"></a><span class="lineno"> 2782</span>   }</div>
-<div class="line"><a id="l02783" name="l02783"></a><span class="lineno"> 2783</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2F*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
-<div class="line"><a id="l02784" name="l02784"></a><span class="lineno"> 2784</span>}</div>
+<div class="foldopen" id="foldopen02764" data-start="{" data-end="}">
+<div class="line"><a id="l02764" name="l02764"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a92ad17f2a55924d3255d557f53acf2f6"> 2764</a></span><a class="code hl_function" href="class_g_h_sym_f.html#ad0e767d329f190625c383b6ade3c916a">GHSymF::GHSymF</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp;&amp; rhs) noexcept</div>
+<div class="line"><a id="l02765" name="l02765"></a><span class="lineno"> 2765</span>   : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(rhs), TArrayF(rhs)</div>
+<div class="line"><a id="l02766" name="l02766"></a><span class="lineno"> 2766</span>{</div>
+<div class="line"><a id="l02767" name="l02767"></a><span class="lineno"> 2767</span>   rhs.<a class="code hl_function" href="class_g_h_sym.html#a2d190c1548192ff0cec29a45fedcb344">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l02768" name="l02768"></a><span class="lineno"> 2768</span>}</div>
 </div>
-<div class="line"><a id="l02785" name="l02785"></a><span class="lineno"> 2785</span> </div>
-<div class="foldopen" id="foldopen02786" data-start="{" data-end="}">
-<div class="line"><a id="l02786" name="l02786"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3"> 2786</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">GHSymF::Copy</a>(TObject&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a id="l02787" name="l02787"></a><span class="lineno"> 2787</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02788" name="l02788"></a><span class="lineno"> 2788</span>   <a class="code hl_function" href="class_g_h_sym.html#a2d190c1548192ff0cec29a45fedcb344">GHSym::Copy</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp;<span class="keyword">&gt;</span>(rhs));</div>
-<div class="line"><a id="l02789" name="l02789"></a><span class="lineno"> 2789</span>}</div>
+<div class="line"><a id="l02769" name="l02769"></a><span class="lineno"> 2769</span> </div>
+<div class="line"><a id="l02770" name="l02770"></a><span class="lineno"> 2770</span><a class="code hl_function" href="class_g_h_sym_f.html#af95141e02bc7f091001ee92281af77e8">GHSymF::~GHSymF</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l02771" name="l02771"></a><span class="lineno"> 2771</span> </div>
+<div class="foldopen" id="foldopen02772" data-start="{" data-end="}">
+<div class="line"><a id="l02772" name="l02772"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a9f48a7f167f74d1ba24e8bc55c3e5c13"> 2772</a></span>TH2F* <a class="code hl_function" href="class_g_h_sym_f.html#a9f48a7f167f74d1ba24e8bc55c3e5c13">GHSymF::GetMatrix</a>(<span class="keywordtype">bool</span> force)</div>
+<div class="line"><a id="l02773" name="l02773"></a><span class="lineno"> 2773</span>{</div>
+<div class="line"><a id="l02774" name="l02774"></a><span class="lineno"> 2774</span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>() != <span class="keyword">nullptr</span> &amp;&amp; !force) {</div>
+<div class="line"><a id="l02775" name="l02775"></a><span class="lineno"> 2775</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2F*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
+<div class="line"><a id="l02776" name="l02776"></a><span class="lineno"> 2776</span>   }</div>
+<div class="line"><a id="l02777" name="l02777"></a><span class="lineno"> 2777</span>   <span class="keywordflow">if</span>(force) {</div>
+<div class="line"><a id="l02778" name="l02778"></a><span class="lineno"> 2778</span>      <span class="keyword">delete</span> <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>();</div>
+<div class="line"><a id="l02779" name="l02779"></a><span class="lineno"> 2779</span>   }</div>
+<div class="line"><a id="l02780" name="l02780"></a><span class="lineno"> 2780</span> </div>
+<div class="line"><a id="l02781" name="l02781"></a><span class="lineno"> 2781</span>   <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>(<span class="keyword">new</span> TH2F(Form(<span class="stringliteral">&quot;%s_mat&quot;</span>, GetName()), GetTitle(), fXaxis.GetNbins(), fXaxis.GetXmin(), fXaxis.GetXmax(),</div>
+<div class="line"><a id="l02782" name="l02782"></a><span class="lineno"> 2782</span>                   fYaxis.GetNbins(), fYaxis.GetXmin(), fYaxis.GetXmax()));</div>
+<div class="line"><a id="l02783" name="l02783"></a><span class="lineno"> 2783</span>   <span class="comment">// copy cell contents (including all overflow and underflow cells)</span></div>
+<div class="line"><a id="l02784" name="l02784"></a><span class="lineno"> 2784</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; fXaxis.GetNbins() + 2; ++i) {</div>
+<div class="line"><a id="l02785" name="l02785"></a><span class="lineno"> 2785</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; fXaxis.GetNbins() + 2; ++j) {</div>
+<div class="line"><a id="l02786" name="l02786"></a><span class="lineno"> 2786</span>         <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>()-&gt;SetBinContent(i, j, <a class="code hl_function" href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0">GetBinContent</a>(i, j));</div>
+<div class="line"><a id="l02787" name="l02787"></a><span class="lineno"> 2787</span>      }</div>
+<div class="line"><a id="l02788" name="l02788"></a><span class="lineno"> 2788</span>   }</div>
+<div class="line"><a id="l02789" name="l02789"></a><span class="lineno"> 2789</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2F*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
+<div class="line"><a id="l02790" name="l02790"></a><span class="lineno"> 2790</span>}</div>
 </div>
-<div class="line"><a id="l02790" name="l02790"></a><span class="lineno"> 2790</span> </div>
-<div class="foldopen" id="foldopen02791" data-start="{" data-end="}">
-<div class="line"><a id="l02791" name="l02791"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a99b8cb7a687894bbd1296daaf6435e43"> 2791</a></span>TH1* <a class="code hl_function" href="class_g_h_sym_f.html#a99b8cb7a687894bbd1296daaf6435e43">GHSymF::DrawCopy</a>(Option_t* option, <span class="keyword">const</span> <span class="keywordtype">char</span>* name_postfix)<span class="keyword"> const</span></div>
-<div class="line"><a id="l02792" name="l02792"></a><span class="lineno"> 2792</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02793" name="l02793"></a><span class="lineno"> 2793</span>   <span class="comment">// Draw copy.</span></div>
-<div class="line"><a id="l02794" name="l02794"></a><span class="lineno"> 2794</span> </div>
-<div class="line"><a id="l02795" name="l02795"></a><span class="lineno"> 2795</span>   TString opt = option;</div>
-<div class="line"><a id="l02796" name="l02796"></a><span class="lineno"> 2796</span>   opt.ToLower();</div>
-<div class="line"><a id="l02797" name="l02797"></a><span class="lineno"> 2797</span>   <span class="keywordflow">if</span>(gPad != <span class="keyword">nullptr</span> &amp;&amp; !opt.Contains(<span class="stringliteral">&quot;same&quot;</span>)) {</div>
-<div class="line"><a id="l02798" name="l02798"></a><span class="lineno"> 2798</span>      gPad-&gt;Clear();</div>
-<div class="line"><a id="l02799" name="l02799"></a><span class="lineno"> 2799</span>   }</div>
-<div class="line"><a id="l02800" name="l02800"></a><span class="lineno"> 2800</span>   TString newName = (name_postfix) != <span class="keyword">nullptr</span> ? TString::Format(<span class="stringliteral">&quot;%s%s&quot;</span>, GetName(), name_postfix) : <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l02801" name="l02801"></a><span class="lineno"> 2801</span>   TH1*    newth1  = <span class="keyword">static_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(Clone(newName));</div>
-<div class="line"><a id="l02802" name="l02802"></a><span class="lineno"> 2802</span>   newth1-&gt;SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l02803" name="l02803"></a><span class="lineno"> 2803</span>   newth1-&gt;SetBit(kCanDelete);</div>
-<div class="line"><a id="l02804" name="l02804"></a><span class="lineno"> 2804</span>   newth1-&gt;AppendPad(option);</div>
-<div class="line"><a id="l02805" name="l02805"></a><span class="lineno"> 2805</span>   <span class="keywordflow">return</span> newth1;</div>
-<div class="line"><a id="l02806" name="l02806"></a><span class="lineno"> 2806</span>}</div>
+<div class="line"><a id="l02791" name="l02791"></a><span class="lineno"> 2791</span> </div>
+<div class="foldopen" id="foldopen02792" data-start="{" data-end="}">
+<div class="line"><a id="l02792" name="l02792"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3"> 2792</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">GHSymF::Copy</a>(TObject&amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a id="l02793" name="l02793"></a><span class="lineno"> 2793</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l02794" name="l02794"></a><span class="lineno"> 2794</span>   <a class="code hl_function" href="class_g_h_sym.html#a2d190c1548192ff0cec29a45fedcb344">GHSym::Copy</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp;<span class="keyword">&gt;</span>(rhs));</div>
+<div class="line"><a id="l02795" name="l02795"></a><span class="lineno"> 2795</span>}</div>
 </div>
-<div class="line"><a id="l02807" name="l02807"></a><span class="lineno"> 2807</span> </div>
-<div class="foldopen" id="foldopen02808" data-start="{" data-end="}">
-<div class="line"><a id="l02808" name="l02808"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0"> 2808</a></span>Double_t <a class="code hl_function" href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0">GHSymF::GetBinContent</a>(Int_t bin)<span class="keyword"> const</span></div>
-<div class="line"><a id="l02809" name="l02809"></a><span class="lineno"> 2809</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02810" name="l02810"></a><span class="lineno"> 2810</span>   <span class="comment">// Get bin content.</span></div>
-<div class="line"><a id="l02811" name="l02811"></a><span class="lineno"> 2811</span> </div>
-<div class="line"><a id="l02812" name="l02812"></a><span class="lineno"> 2812</span>   <span class="keywordflow">if</span>(fBuffer != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l02813" name="l02813"></a><span class="lineno"> 2813</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_h_sym.html#aa6f6059f8e03a966108c2dddf3b82d16">BufferEmpty</a>(); <span class="comment">// NOLINT</span></div>
-<div class="line"><a id="l02814" name="l02814"></a><span class="lineno"> 2814</span>   }</div>
-<div class="line"><a id="l02815" name="l02815"></a><span class="lineno"> 2815</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
-<div class="line"><a id="l02816" name="l02816"></a><span class="lineno"> 2816</span>      bin = 0;</div>
-<div class="line"><a id="l02817" name="l02817"></a><span class="lineno"> 2817</span>   }</div>
-<div class="line"><a id="l02818" name="l02818"></a><span class="lineno"> 2818</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
-<div class="line"><a id="l02819" name="l02819"></a><span class="lineno"> 2819</span>      bin = fNcells - 1;</div>
+<div class="line"><a id="l02796" name="l02796"></a><span class="lineno"> 2796</span> </div>
+<div class="foldopen" id="foldopen02797" data-start="{" data-end="}">
+<div class="line"><a id="l02797" name="l02797"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a99b8cb7a687894bbd1296daaf6435e43"> 2797</a></span>TH1* <a class="code hl_function" href="class_g_h_sym_f.html#a99b8cb7a687894bbd1296daaf6435e43">GHSymF::DrawCopy</a>(Option_t* option, <span class="keyword">const</span> <span class="keywordtype">char</span>* name_postfix)<span class="keyword"> const</span></div>
+<div class="line"><a id="l02798" name="l02798"></a><span class="lineno"> 2798</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l02799" name="l02799"></a><span class="lineno"> 2799</span>   <span class="comment">// Draw copy.</span></div>
+<div class="line"><a id="l02800" name="l02800"></a><span class="lineno"> 2800</span> </div>
+<div class="line"><a id="l02801" name="l02801"></a><span class="lineno"> 2801</span>   TString opt = option;</div>
+<div class="line"><a id="l02802" name="l02802"></a><span class="lineno"> 2802</span>   opt.ToLower();</div>
+<div class="line"><a id="l02803" name="l02803"></a><span class="lineno"> 2803</span>   <span class="keywordflow">if</span>(gPad != <span class="keyword">nullptr</span> &amp;&amp; !opt.Contains(<span class="stringliteral">&quot;same&quot;</span>)) {</div>
+<div class="line"><a id="l02804" name="l02804"></a><span class="lineno"> 2804</span>      gPad-&gt;Clear();</div>
+<div class="line"><a id="l02805" name="l02805"></a><span class="lineno"> 2805</span>   }</div>
+<div class="line"><a id="l02806" name="l02806"></a><span class="lineno"> 2806</span>   TString newName = (name_postfix) != <span class="keyword">nullptr</span> ? TString::Format(<span class="stringliteral">&quot;%s%s&quot;</span>, GetName(), name_postfix) : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l02807" name="l02807"></a><span class="lineno"> 2807</span>   TH1*    newth1  = <span class="keyword">static_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(Clone(newName));</div>
+<div class="line"><a id="l02808" name="l02808"></a><span class="lineno"> 2808</span>   newth1-&gt;SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l02809" name="l02809"></a><span class="lineno"> 2809</span>   newth1-&gt;SetBit(kCanDelete);</div>
+<div class="line"><a id="l02810" name="l02810"></a><span class="lineno"> 2810</span>   newth1-&gt;AppendPad(option);</div>
+<div class="line"><a id="l02811" name="l02811"></a><span class="lineno"> 2811</span>   <span class="keywordflow">return</span> newth1;</div>
+<div class="line"><a id="l02812" name="l02812"></a><span class="lineno"> 2812</span>}</div>
+</div>
+<div class="line"><a id="l02813" name="l02813"></a><span class="lineno"> 2813</span> </div>
+<div class="foldopen" id="foldopen02814" data-start="{" data-end="}">
+<div class="line"><a id="l02814" name="l02814"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0"> 2814</a></span>Double_t <a class="code hl_function" href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0">GHSymF::GetBinContent</a>(Int_t bin)<span class="keyword"> const</span></div>
+<div class="line"><a id="l02815" name="l02815"></a><span class="lineno"> 2815</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l02816" name="l02816"></a><span class="lineno"> 2816</span>   <span class="comment">// Get bin content.</span></div>
+<div class="line"><a id="l02817" name="l02817"></a><span class="lineno"> 2817</span> </div>
+<div class="line"><a id="l02818" name="l02818"></a><span class="lineno"> 2818</span>   <span class="keywordflow">if</span>(fBuffer != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l02819" name="l02819"></a><span class="lineno"> 2819</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_h_sym.html#aa6f6059f8e03a966108c2dddf3b82d16">BufferEmpty</a>(); <span class="comment">// NOLINT</span></div>
 <div class="line"><a id="l02820" name="l02820"></a><span class="lineno"> 2820</span>   }</div>
-<div class="line"><a id="l02821" name="l02821"></a><span class="lineno"> 2821</span>   <span class="keywordflow">if</span>(fArray == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l02822" name="l02822"></a><span class="lineno"> 2822</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l02821" name="l02821"></a><span class="lineno"> 2821</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
+<div class="line"><a id="l02822" name="l02822"></a><span class="lineno"> 2822</span>      bin = 0;</div>
 <div class="line"><a id="l02823" name="l02823"></a><span class="lineno"> 2823</span>   }</div>
-<div class="line"><a id="l02824" name="l02824"></a><span class="lineno"> 2824</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Double_t<span class="keyword">&gt;</span>(fArray[bin]);</div>
-<div class="line"><a id="l02825" name="l02825"></a><span class="lineno"> 2825</span>}</div>
+<div class="line"><a id="l02824" name="l02824"></a><span class="lineno"> 2824</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
+<div class="line"><a id="l02825" name="l02825"></a><span class="lineno"> 2825</span>      bin = fNcells - 1;</div>
+<div class="line"><a id="l02826" name="l02826"></a><span class="lineno"> 2826</span>   }</div>
+<div class="line"><a id="l02827" name="l02827"></a><span class="lineno"> 2827</span>   <span class="keywordflow">if</span>(fArray == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l02828" name="l02828"></a><span class="lineno"> 2828</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l02829" name="l02829"></a><span class="lineno"> 2829</span>   }</div>
+<div class="line"><a id="l02830" name="l02830"></a><span class="lineno"> 2830</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Double_t<span class="keyword">&gt;</span>(fArray[bin]);</div>
+<div class="line"><a id="l02831" name="l02831"></a><span class="lineno"> 2831</span>}</div>
 </div>
-<div class="line"><a id="l02826" name="l02826"></a><span class="lineno"> 2826</span> </div>
-<div class="foldopen" id="foldopen02827" data-start="{" data-end="}">
-<div class="line"><a id="l02827" name="l02827"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a65b8b190e185195b3807aee5cef7cf70"> 2827</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#a65b8b190e185195b3807aee5cef7cf70">GHSymF::Reset</a>(Option_t* option)</div>
-<div class="line"><a id="l02828" name="l02828"></a><span class="lineno"> 2828</span>{</div>
-<div class="line"><a id="l02829" name="l02829"></a><span class="lineno"> 2829</span>   <span class="comment">//*-*-*-*-*-*-*-*Reset this histogram: contents, errors, etc*-*-*-*-*-*-*-*</span></div>
-<div class="line"><a id="l02830" name="l02830"></a><span class="lineno"> 2830</span>   <span class="comment">//*-*            ===========================================</span></div>
-<div class="line"><a id="l02831" name="l02831"></a><span class="lineno"> 2831</span> </div>
-<div class="line"><a id="l02832" name="l02832"></a><span class="lineno"> 2832</span>   <a class="code hl_function" href="class_g_h_sym.html#a5ac7cd11a73a5da8d1e12b9e9fc3f44c">GHSym::Reset</a>(option);</div>
-<div class="line"><a id="l02833" name="l02833"></a><span class="lineno"> 2833</span>   TArrayF::Reset();</div>
-<div class="line"><a id="l02834" name="l02834"></a><span class="lineno"> 2834</span>}</div>
+<div class="line"><a id="l02832" name="l02832"></a><span class="lineno"> 2832</span> </div>
+<div class="foldopen" id="foldopen02833" data-start="{" data-end="}">
+<div class="line"><a id="l02833" name="l02833"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a65b8b190e185195b3807aee5cef7cf70"> 2833</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#a65b8b190e185195b3807aee5cef7cf70">GHSymF::Reset</a>(Option_t* option)</div>
+<div class="line"><a id="l02834" name="l02834"></a><span class="lineno"> 2834</span>{</div>
+<div class="line"><a id="l02835" name="l02835"></a><span class="lineno"> 2835</span>   <span class="comment">//*-*-*-*-*-*-*-*Reset this histogram: contents, errors, etc*-*-*-*-*-*-*-*</span></div>
+<div class="line"><a id="l02836" name="l02836"></a><span class="lineno"> 2836</span>   <span class="comment">//*-*            ===========================================</span></div>
+<div class="line"><a id="l02837" name="l02837"></a><span class="lineno"> 2837</span> </div>
+<div class="line"><a id="l02838" name="l02838"></a><span class="lineno"> 2838</span>   <a class="code hl_function" href="class_g_h_sym.html#a5ac7cd11a73a5da8d1e12b9e9fc3f44c">GHSym::Reset</a>(option);</div>
+<div class="line"><a id="l02839" name="l02839"></a><span class="lineno"> 2839</span>   TArrayF::Reset();</div>
+<div class="line"><a id="l02840" name="l02840"></a><span class="lineno"> 2840</span>}</div>
 </div>
-<div class="line"><a id="l02835" name="l02835"></a><span class="lineno"> 2835</span> </div>
-<div class="foldopen" id="foldopen02836" data-start="{" data-end="}">
-<div class="line"><a id="l02836" name="l02836"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a8a45fa73ec72ed9cad8213c917612212"> 2836</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#a8a45fa73ec72ed9cad8213c917612212">GHSymF::SetBinContent</a>(Int_t bin, Double_t content)</div>
-<div class="line"><a id="l02837" name="l02837"></a><span class="lineno"> 2837</span>{</div>
-<div class="line"><a id="l02838" name="l02838"></a><span class="lineno"> 2838</span>   <span class="comment">// Set bin content</span></div>
-<div class="line"><a id="l02839" name="l02839"></a><span class="lineno"> 2839</span>   fEntries++;</div>
-<div class="line"><a id="l02840" name="l02840"></a><span class="lineno"> 2840</span>   fTsumw = 0;</div>
-<div class="line"><a id="l02841" name="l02841"></a><span class="lineno"> 2841</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
-<div class="line"><a id="l02842" name="l02842"></a><span class="lineno"> 2842</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l02843" name="l02843"></a><span class="lineno"> 2843</span>   }</div>
-<div class="line"><a id="l02844" name="l02844"></a><span class="lineno"> 2844</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
-<div class="line"><a id="l02845" name="l02845"></a><span class="lineno"> 2845</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l02846" name="l02846"></a><span class="lineno"> 2846</span>   }</div>
-<div class="line"><a id="l02847" name="l02847"></a><span class="lineno"> 2847</span>   fArray[bin] = <span class="keyword">static_cast&lt;</span>Float_t<span class="keyword">&gt;</span>(content);</div>
-<div class="line"><a id="l02848" name="l02848"></a><span class="lineno"> 2848</span>}</div>
+<div class="line"><a id="l02841" name="l02841"></a><span class="lineno"> 2841</span> </div>
+<div class="foldopen" id="foldopen02842" data-start="{" data-end="}">
+<div class="line"><a id="l02842" name="l02842"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a8a45fa73ec72ed9cad8213c917612212"> 2842</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#a8a45fa73ec72ed9cad8213c917612212">GHSymF::SetBinContent</a>(Int_t bin, Double_t content)</div>
+<div class="line"><a id="l02843" name="l02843"></a><span class="lineno"> 2843</span>{</div>
+<div class="line"><a id="l02844" name="l02844"></a><span class="lineno"> 2844</span>   <span class="comment">// Set bin content</span></div>
+<div class="line"><a id="l02845" name="l02845"></a><span class="lineno"> 2845</span>   fEntries++;</div>
+<div class="line"><a id="l02846" name="l02846"></a><span class="lineno"> 2846</span>   fTsumw = 0;</div>
+<div class="line"><a id="l02847" name="l02847"></a><span class="lineno"> 2847</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
+<div class="line"><a id="l02848" name="l02848"></a><span class="lineno"> 2848</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l02849" name="l02849"></a><span class="lineno"> 2849</span>   }</div>
+<div class="line"><a id="l02850" name="l02850"></a><span class="lineno"> 2850</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
+<div class="line"><a id="l02851" name="l02851"></a><span class="lineno"> 2851</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l02852" name="l02852"></a><span class="lineno"> 2852</span>   }</div>
+<div class="line"><a id="l02853" name="l02853"></a><span class="lineno"> 2853</span>   fArray[bin] = <span class="keyword">static_cast&lt;</span>Float_t<span class="keyword">&gt;</span>(content);</div>
+<div class="line"><a id="l02854" name="l02854"></a><span class="lineno"> 2854</span>}</div>
 </div>
-<div class="line"><a id="l02849" name="l02849"></a><span class="lineno"> 2849</span> </div>
-<div class="foldopen" id="foldopen02850" data-start="{" data-end="}">
-<div class="line"><a id="l02850" name="l02850"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a14c287b63f12b0a67282f71cf680dc84"> 2850</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#a14c287b63f12b0a67282f71cf680dc84">GHSymF::SetBinsLength</a>(Int_t n)</div>
-<div class="line"><a id="l02851" name="l02851"></a><span class="lineno"> 2851</span>{</div>
-<div class="line"><a id="l02852" name="l02852"></a><span class="lineno"> 2852</span>   <span class="comment">// Set total number of bins including under/overflow</span></div>
-<div class="line"><a id="l02853" name="l02853"></a><span class="lineno"> 2853</span>   <span class="comment">// Reallocate bin contents array</span></div>
-<div class="line"><a id="l02854" name="l02854"></a><span class="lineno"> 2854</span> </div>
-<div class="line"><a id="l02855" name="l02855"></a><span class="lineno"> 2855</span>   <span class="keywordflow">if</span>(n &lt; 0) {</div>
-<div class="line"><a id="l02856" name="l02856"></a><span class="lineno"> 2856</span>      n = (fXaxis.GetNbins() + 2) * (fYaxis.GetNbins() + 2);</div>
-<div class="line"><a id="l02857" name="l02857"></a><span class="lineno"> 2857</span>   }</div>
-<div class="line"><a id="l02858" name="l02858"></a><span class="lineno"> 2858</span>   fNcells = n;</div>
-<div class="line"><a id="l02859" name="l02859"></a><span class="lineno"> 2859</span>   TArrayF::Set(n);</div>
-<div class="line"><a id="l02860" name="l02860"></a><span class="lineno"> 2860</span>}</div>
+<div class="line"><a id="l02855" name="l02855"></a><span class="lineno"> 2855</span> </div>
+<div class="foldopen" id="foldopen02856" data-start="{" data-end="}">
+<div class="line"><a id="l02856" name="l02856"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a14c287b63f12b0a67282f71cf680dc84"> 2856</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_f.html#a14c287b63f12b0a67282f71cf680dc84">GHSymF::SetBinsLength</a>(Int_t n)</div>
+<div class="line"><a id="l02857" name="l02857"></a><span class="lineno"> 2857</span>{</div>
+<div class="line"><a id="l02858" name="l02858"></a><span class="lineno"> 2858</span>   <span class="comment">// Set total number of bins including under/overflow</span></div>
+<div class="line"><a id="l02859" name="l02859"></a><span class="lineno"> 2859</span>   <span class="comment">// Reallocate bin contents array</span></div>
+<div class="line"><a id="l02860" name="l02860"></a><span class="lineno"> 2860</span> </div>
+<div class="line"><a id="l02861" name="l02861"></a><span class="lineno"> 2861</span>   <span class="keywordflow">if</span>(n &lt; 0) {</div>
+<div class="line"><a id="l02862" name="l02862"></a><span class="lineno"> 2862</span>      n = (fXaxis.GetNbins() + 2) * (fYaxis.GetNbins() + 2);</div>
+<div class="line"><a id="l02863" name="l02863"></a><span class="lineno"> 2863</span>   }</div>
+<div class="line"><a id="l02864" name="l02864"></a><span class="lineno"> 2864</span>   fNcells = n;</div>
+<div class="line"><a id="l02865" name="l02865"></a><span class="lineno"> 2865</span>   TArrayF::Set(n);</div>
+<div class="line"><a id="l02866" name="l02866"></a><span class="lineno"> 2866</span>}</div>
 </div>
-<div class="line"><a id="l02861" name="l02861"></a><span class="lineno"> 2861</span> </div>
-<div class="foldopen" id="foldopen02862" data-start="{" data-end="}">
-<div class="line"><a id="l02862" name="l02862"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1"> 2862</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; <a class="code hl_function" href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1">GHSymF::operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1)</div>
-<div class="line"><a id="l02863" name="l02863"></a><span class="lineno"> 2863</span>{</div>
-<div class="line"><a id="l02864" name="l02864"></a><span class="lineno"> 2864</span>   <span class="comment">// Operator =</span></div>
-<div class="line"><a id="l02865" name="l02865"></a><span class="lineno"> 2865</span> </div>
-<div class="line"><a id="l02866" name="l02866"></a><span class="lineno"> 2866</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
-<div class="line"><a id="l02867" name="l02867"></a><span class="lineno"> 2867</span>      h1.<a class="code hl_function" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">Copy</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l02868" name="l02868"></a><span class="lineno"> 2868</span>   }</div>
-<div class="line"><a id="l02869" name="l02869"></a><span class="lineno"> 2869</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l02870" name="l02870"></a><span class="lineno"> 2870</span>}</div>
-</div>
+<div class="line"><a id="l02867" name="l02867"></a><span class="lineno"> 2867</span> </div>
+<div class="foldopen" id="foldopen02868" data-start="{" data-end="}">
+<div class="line"><a id="l02868" name="l02868"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1"> 2868</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; <a class="code hl_function" href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1">GHSymF::operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1)</div>
+<div class="line"><a id="l02869" name="l02869"></a><span class="lineno"> 2869</span>{</div>
+<div class="line"><a id="l02870" name="l02870"></a><span class="lineno"> 2870</span>   <span class="comment">// Operator =</span></div>
 <div class="line"><a id="l02871" name="l02871"></a><span class="lineno"> 2871</span> </div>
-<div class="foldopen" id="foldopen02872" data-start="{" data-end="}">
-<div class="line"><a id="l02872" name="l02872"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a7b11406bbfd0b50856c2b01b0bede27a"> 2872</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; <a class="code hl_function" href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1">GHSymF::operator=</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp;&amp; h1) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l02873" name="l02873"></a><span class="lineno"> 2873</span>{</div>
-<div class="line"><a id="l02874" name="l02874"></a><span class="lineno"> 2874</span>   <span class="comment">// Operator =</span></div>
-<div class="line"><a id="l02875" name="l02875"></a><span class="lineno"> 2875</span> </div>
-<div class="line"><a id="l02876" name="l02876"></a><span class="lineno"> 2876</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
-<div class="line"><a id="l02877" name="l02877"></a><span class="lineno"> 2877</span>      h1.<a class="code hl_function" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">Copy</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l02878" name="l02878"></a><span class="lineno"> 2878</span>   }</div>
-<div class="line"><a id="l02879" name="l02879"></a><span class="lineno"> 2879</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l02880" name="l02880"></a><span class="lineno"> 2880</span>}</div>
+<div class="line"><a id="l02872" name="l02872"></a><span class="lineno"> 2872</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
+<div class="line"><a id="l02873" name="l02873"></a><span class="lineno"> 2873</span>      h1.<a class="code hl_function" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l02874" name="l02874"></a><span class="lineno"> 2874</span>   }</div>
+<div class="line"><a id="l02875" name="l02875"></a><span class="lineno"> 2875</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l02876" name="l02876"></a><span class="lineno"> 2876</span>}</div>
 </div>
+<div class="line"><a id="l02877" name="l02877"></a><span class="lineno"> 2877</span> </div>
+<div class="foldopen" id="foldopen02878" data-start="{" data-end="}">
+<div class="line"><a id="l02878" name="l02878"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a7b11406bbfd0b50856c2b01b0bede27a"> 2878</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; <a class="code hl_function" href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1">GHSymF::operator=</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp;&amp; h1) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l02879" name="l02879"></a><span class="lineno"> 2879</span>{</div>
+<div class="line"><a id="l02880" name="l02880"></a><span class="lineno"> 2880</span>   <span class="comment">// Operator =</span></div>
 <div class="line"><a id="l02881" name="l02881"></a><span class="lineno"> 2881</span> </div>
-<div class="foldopen" id="foldopen02882" data-start="{" data-end="};">
-<div class="line"><a id="l02882" name="l02882"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#aec771ed66a6c39889a1b622ab4f85a34"> 2882</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(Float_t c1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1)</div>
-<div class="line"><a id="l02883" name="l02883"></a><span class="lineno"> 2883</span>{</div>
-<div class="line"><a id="l02884" name="l02884"></a><span class="lineno"> 2884</span>   <span class="comment">// Operator *</span></div>
-<div class="line"><a id="l02885" name="l02885"></a><span class="lineno"> 2885</span> </div>
-<div class="line"><a id="l02886" name="l02886"></a><span class="lineno"> 2886</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
-<div class="line"><a id="l02887" name="l02887"></a><span class="lineno"> 2887</span>   hnew.Scale(c1);</div>
-<div class="line"><a id="l02888" name="l02888"></a><span class="lineno"> 2888</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l02889" name="l02889"></a><span class="lineno"> 2889</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l02890" name="l02890"></a><span class="lineno"> 2890</span>}</div>
+<div class="line"><a id="l02882" name="l02882"></a><span class="lineno"> 2882</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
+<div class="line"><a id="l02883" name="l02883"></a><span class="lineno"> 2883</span>      h1.<a class="code hl_function" href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l02884" name="l02884"></a><span class="lineno"> 2884</span>   }</div>
+<div class="line"><a id="l02885" name="l02885"></a><span class="lineno"> 2885</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l02886" name="l02886"></a><span class="lineno"> 2886</span>}</div>
 </div>
+<div class="line"><a id="l02887" name="l02887"></a><span class="lineno"> 2887</span> </div>
+<div class="foldopen" id="foldopen02888" data-start="{" data-end="};">
+<div class="line"><a id="l02888" name="l02888"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#aec771ed66a6c39889a1b622ab4f85a34"> 2888</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(Float_t c1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1)</div>
+<div class="line"><a id="l02889" name="l02889"></a><span class="lineno"> 2889</span>{</div>
+<div class="line"><a id="l02890" name="l02890"></a><span class="lineno"> 2890</span>   <span class="comment">// Operator *</span></div>
 <div class="line"><a id="l02891" name="l02891"></a><span class="lineno"> 2891</span> </div>
-<div class="foldopen" id="foldopen02892" data-start="{" data-end="};">
-<div class="line"><a id="l02892" name="l02892"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a746a703b7fab96c506b6d173b80653f9"> 2892</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a746a703b7fab96c506b6d173b80653f9">operator+</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
-<div class="line"><a id="l02893" name="l02893"></a><span class="lineno"> 2893</span>{</div>
-<div class="line"><a id="l02894" name="l02894"></a><span class="lineno"> 2894</span>   <span class="comment">// Operator +</span></div>
-<div class="line"><a id="l02895" name="l02895"></a><span class="lineno"> 2895</span> </div>
-<div class="line"><a id="l02896" name="l02896"></a><span class="lineno"> 2896</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
-<div class="line"><a id="l02897" name="l02897"></a><span class="lineno"> 2897</span>   hnew.Add(&amp;h2, 1);</div>
-<div class="line"><a id="l02898" name="l02898"></a><span class="lineno"> 2898</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l02899" name="l02899"></a><span class="lineno"> 2899</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l02900" name="l02900"></a><span class="lineno"> 2900</span>}</div>
+<div class="line"><a id="l02892" name="l02892"></a><span class="lineno"> 2892</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
+<div class="line"><a id="l02893" name="l02893"></a><span class="lineno"> 2893</span>   hnew.Scale(c1);</div>
+<div class="line"><a id="l02894" name="l02894"></a><span class="lineno"> 2894</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l02895" name="l02895"></a><span class="lineno"> 2895</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l02896" name="l02896"></a><span class="lineno"> 2896</span>}</div>
 </div>
+<div class="line"><a id="l02897" name="l02897"></a><span class="lineno"> 2897</span> </div>
+<div class="foldopen" id="foldopen02898" data-start="{" data-end="};">
+<div class="line"><a id="l02898" name="l02898"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a746a703b7fab96c506b6d173b80653f9"> 2898</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a746a703b7fab96c506b6d173b80653f9">operator+</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
+<div class="line"><a id="l02899" name="l02899"></a><span class="lineno"> 2899</span>{</div>
+<div class="line"><a id="l02900" name="l02900"></a><span class="lineno"> 2900</span>   <span class="comment">// Operator +</span></div>
 <div class="line"><a id="l02901" name="l02901"></a><span class="lineno"> 2901</span> </div>
-<div class="foldopen" id="foldopen02902" data-start="{" data-end="};">
-<div class="line"><a id="l02902" name="l02902"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#ae9a4646b618abb5a3e6e13d163c2be2f"> 2902</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#ae9a4646b618abb5a3e6e13d163c2be2f">operator-</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
-<div class="line"><a id="l02903" name="l02903"></a><span class="lineno"> 2903</span>{</div>
-<div class="line"><a id="l02904" name="l02904"></a><span class="lineno"> 2904</span>   <span class="comment">// Operator -</span></div>
-<div class="line"><a id="l02905" name="l02905"></a><span class="lineno"> 2905</span> </div>
-<div class="line"><a id="l02906" name="l02906"></a><span class="lineno"> 2906</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
-<div class="line"><a id="l02907" name="l02907"></a><span class="lineno"> 2907</span>   hnew.Add(&amp;h2, -1);</div>
-<div class="line"><a id="l02908" name="l02908"></a><span class="lineno"> 2908</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l02909" name="l02909"></a><span class="lineno"> 2909</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l02910" name="l02910"></a><span class="lineno"> 2910</span>}</div>
+<div class="line"><a id="l02902" name="l02902"></a><span class="lineno"> 2902</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
+<div class="line"><a id="l02903" name="l02903"></a><span class="lineno"> 2903</span>   hnew.Add(&amp;h2, 1);</div>
+<div class="line"><a id="l02904" name="l02904"></a><span class="lineno"> 2904</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l02905" name="l02905"></a><span class="lineno"> 2905</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l02906" name="l02906"></a><span class="lineno"> 2906</span>}</div>
 </div>
+<div class="line"><a id="l02907" name="l02907"></a><span class="lineno"> 2907</span> </div>
+<div class="foldopen" id="foldopen02908" data-start="{" data-end="};">
+<div class="line"><a id="l02908" name="l02908"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#ae9a4646b618abb5a3e6e13d163c2be2f"> 2908</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#ae9a4646b618abb5a3e6e13d163c2be2f">operator-</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
+<div class="line"><a id="l02909" name="l02909"></a><span class="lineno"> 2909</span>{</div>
+<div class="line"><a id="l02910" name="l02910"></a><span class="lineno"> 2910</span>   <span class="comment">// Operator -</span></div>
 <div class="line"><a id="l02911" name="l02911"></a><span class="lineno"> 2911</span> </div>
-<div class="foldopen" id="foldopen02912" data-start="{" data-end="};">
-<div class="line"><a id="l02912" name="l02912"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a4b49df8dc1473f870ef13c162bffad4c"> 2912</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
-<div class="line"><a id="l02913" name="l02913"></a><span class="lineno"> 2913</span>{</div>
-<div class="line"><a id="l02914" name="l02914"></a><span class="lineno"> 2914</span>   <span class="comment">// Operator *</span></div>
-<div class="line"><a id="l02915" name="l02915"></a><span class="lineno"> 2915</span> </div>
-<div class="line"><a id="l02916" name="l02916"></a><span class="lineno"> 2916</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
-<div class="line"><a id="l02917" name="l02917"></a><span class="lineno"> 2917</span>   hnew.Multiply(&amp;h2);</div>
-<div class="line"><a id="l02918" name="l02918"></a><span class="lineno"> 2918</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l02919" name="l02919"></a><span class="lineno"> 2919</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l02920" name="l02920"></a><span class="lineno"> 2920</span>}</div>
+<div class="line"><a id="l02912" name="l02912"></a><span class="lineno"> 2912</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
+<div class="line"><a id="l02913" name="l02913"></a><span class="lineno"> 2913</span>   hnew.Add(&amp;h2, -1);</div>
+<div class="line"><a id="l02914" name="l02914"></a><span class="lineno"> 2914</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l02915" name="l02915"></a><span class="lineno"> 2915</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l02916" name="l02916"></a><span class="lineno"> 2916</span>}</div>
 </div>
+<div class="line"><a id="l02917" name="l02917"></a><span class="lineno"> 2917</span> </div>
+<div class="foldopen" id="foldopen02918" data-start="{" data-end="};">
+<div class="line"><a id="l02918" name="l02918"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a4b49df8dc1473f870ef13c162bffad4c"> 2918</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
+<div class="line"><a id="l02919" name="l02919"></a><span class="lineno"> 2919</span>{</div>
+<div class="line"><a id="l02920" name="l02920"></a><span class="lineno"> 2920</span>   <span class="comment">// Operator *</span></div>
 <div class="line"><a id="l02921" name="l02921"></a><span class="lineno"> 2921</span> </div>
-<div class="foldopen" id="foldopen02922" data-start="{" data-end="};">
-<div class="line"><a id="l02922" name="l02922"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a5cf2b1399d585cf67e1c82bb408b55d3"> 2922</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a5cf2b1399d585cf67e1c82bb408b55d3">operator/</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
-<div class="line"><a id="l02923" name="l02923"></a><span class="lineno"> 2923</span>{</div>
-<div class="line"><a id="l02924" name="l02924"></a><span class="lineno"> 2924</span>   <span class="comment">// Operator /</span></div>
-<div class="line"><a id="l02925" name="l02925"></a><span class="lineno"> 2925</span> </div>
-<div class="line"><a id="l02926" name="l02926"></a><span class="lineno"> 2926</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
-<div class="line"><a id="l02927" name="l02927"></a><span class="lineno"> 2927</span>   hnew.Divide(&amp;h2);</div>
-<div class="line"><a id="l02928" name="l02928"></a><span class="lineno"> 2928</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l02929" name="l02929"></a><span class="lineno"> 2929</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l02930" name="l02930"></a><span class="lineno"> 2930</span>}</div>
+<div class="line"><a id="l02922" name="l02922"></a><span class="lineno"> 2922</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
+<div class="line"><a id="l02923" name="l02923"></a><span class="lineno"> 2923</span>   hnew.Multiply(&amp;h2);</div>
+<div class="line"><a id="l02924" name="l02924"></a><span class="lineno"> 2924</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l02925" name="l02925"></a><span class="lineno"> 2925</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l02926" name="l02926"></a><span class="lineno"> 2926</span>}</div>
 </div>
+<div class="line"><a id="l02927" name="l02927"></a><span class="lineno"> 2927</span> </div>
+<div class="foldopen" id="foldopen02928" data-start="{" data-end="};">
+<div class="line"><a id="l02928" name="l02928"></a><span class="lineno"><a class="line" href="class_g_h_sym_f.html#a5cf2b1399d585cf67e1c82bb408b55d3"> 2928</a></span><a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a5cf2b1399d585cf67e1c82bb408b55d3">operator/</a>(<a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a>&amp; h2)</div>
+<div class="line"><a id="l02929" name="l02929"></a><span class="lineno"> 2929</span>{</div>
+<div class="line"><a id="l02930" name="l02930"></a><span class="lineno"> 2930</span>   <span class="comment">// Operator /</span></div>
 <div class="line"><a id="l02931" name="l02931"></a><span class="lineno"> 2931</span> </div>
-<div class="line"><a id="l02932" name="l02932"></a><span class="lineno"> 2932</span><span class="comment">//------------------------------------------------------------</span></div>
-<div class="line"><a id="l02933" name="l02933"></a><span class="lineno"> 2933</span><span class="comment">// GHSymD methods (double = eight bytes per cell)</span></div>
-<div class="line"><a id="l02934" name="l02934"></a><span class="lineno"> 2934</span><span class="comment">//------------------------------------------------------------</span></div>
-<div class="line"><a id="l02935" name="l02935"></a><span class="lineno"> 2935</span> </div>
-<div class="foldopen" id="foldopen02936" data-start="{" data-end="}">
-<div class="line"><a id="l02936" name="l02936"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a"> 2936</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>()</div>
-<div class="line"><a id="l02937" name="l02937"></a><span class="lineno"> 2937</span>{</div>
-<div class="line"><a id="l02938" name="l02938"></a><span class="lineno"> 2938</span>   <a class="code hl_function" href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f">SetBinsLength</a>(9);</div>
-<div class="line"><a id="l02939" name="l02939"></a><span class="lineno"> 2939</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
-<div class="line"><a id="l02940" name="l02940"></a><span class="lineno"> 2940</span>      Sumw2();</div>
-<div class="line"><a id="l02941" name="l02941"></a><span class="lineno"> 2941</span>   }</div>
-<div class="line"><a id="l02942" name="l02942"></a><span class="lineno"> 2942</span>}</div>
+<div class="line"><a id="l02932" name="l02932"></a><span class="lineno"> 2932</span>   <a class="code hl_class" href="class_g_h_sym_f.html">GHSymF</a> hnew = h1;</div>
+<div class="line"><a id="l02933" name="l02933"></a><span class="lineno"> 2933</span>   hnew.Divide(&amp;h2);</div>
+<div class="line"><a id="l02934" name="l02934"></a><span class="lineno"> 2934</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l02935" name="l02935"></a><span class="lineno"> 2935</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l02936" name="l02936"></a><span class="lineno"> 2936</span>}</div>
 </div>
-<div class="line"><a id="l02943" name="l02943"></a><span class="lineno"> 2943</span> </div>
-<div class="foldopen" id="foldopen02944" data-start="{" data-end="}">
-<div class="line"><a id="l02944" name="l02944"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a5c956e0f54cd4b9ec571314a77e827c9"> 2944</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* title, Int_t nbins, Double_t low, Double_t up)</div>
-<div class="line"><a id="l02945" name="l02945"></a><span class="lineno"> 2945</span>   : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(name, title, nbins, low, up)</div>
-<div class="line"><a id="l02946" name="l02946"></a><span class="lineno"> 2946</span>{</div>
-<div class="line"><a id="l02947" name="l02947"></a><span class="lineno"> 2947</span>   TArrayD::Set(fNcells);</div>
-<div class="line"><a id="l02948" name="l02948"></a><span class="lineno"> 2948</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
-<div class="line"><a id="l02949" name="l02949"></a><span class="lineno"> 2949</span>      Sumw2();</div>
-<div class="line"><a id="l02950" name="l02950"></a><span class="lineno"> 2950</span>   }</div>
-<div class="line"><a id="l02951" name="l02951"></a><span class="lineno"> 2951</span> </div>
-<div class="line"><a id="l02952" name="l02952"></a><span class="lineno"> 2952</span>   <span class="keywordflow">if</span>(low &gt;= up) {</div>
-<div class="line"><a id="l02953" name="l02953"></a><span class="lineno"> 2953</span>      SetBuffer(fgBufferSize);</div>
-<div class="line"><a id="l02954" name="l02954"></a><span class="lineno"> 2954</span>   }</div>
-<div class="line"><a id="l02955" name="l02955"></a><span class="lineno"> 2955</span>}</div>
+<div class="line"><a id="l02937" name="l02937"></a><span class="lineno"> 2937</span> </div>
+<div class="line"><a id="l02938" name="l02938"></a><span class="lineno"> 2938</span><span class="comment">//------------------------------------------------------------</span></div>
+<div class="line"><a id="l02939" name="l02939"></a><span class="lineno"> 2939</span><span class="comment">// GHSymD methods (double = eight bytes per cell)</span></div>
+<div class="line"><a id="l02940" name="l02940"></a><span class="lineno"> 2940</span><span class="comment">//------------------------------------------------------------</span></div>
+<div class="line"><a id="l02941" name="l02941"></a><span class="lineno"> 2941</span> </div>
+<div class="foldopen" id="foldopen02942" data-start="{" data-end="}">
+<div class="line"><a id="l02942" name="l02942"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a"> 2942</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>()</div>
+<div class="line"><a id="l02943" name="l02943"></a><span class="lineno"> 2943</span>{</div>
+<div class="line"><a id="l02944" name="l02944"></a><span class="lineno"> 2944</span>   <a class="code hl_function" href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f">SetBinsLength</a>(9);</div>
+<div class="line"><a id="l02945" name="l02945"></a><span class="lineno"> 2945</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
+<div class="line"><a id="l02946" name="l02946"></a><span class="lineno"> 2946</span>      Sumw2();</div>
+<div class="line"><a id="l02947" name="l02947"></a><span class="lineno"> 2947</span>   }</div>
+<div class="line"><a id="l02948" name="l02948"></a><span class="lineno"> 2948</span>}</div>
 </div>
-<div class="line"><a id="l02956" name="l02956"></a><span class="lineno"> 2956</span> </div>
-<div class="foldopen" id="foldopen02957" data-start="{" data-end="}">
-<div class="line"><a id="l02957" name="l02957"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a6ae1f2b490c8b0a4a44cb719572a3d73"> 2957</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* title, Int_t nbins, <span class="keyword">const</span> Double_t* bins) : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(name, title, nbins, bins)</div>
-<div class="line"><a id="l02958" name="l02958"></a><span class="lineno"> 2958</span>{</div>
-<div class="line"><a id="l02959" name="l02959"></a><span class="lineno"> 2959</span>   TArrayD::Set(fNcells);</div>
-<div class="line"><a id="l02960" name="l02960"></a><span class="lineno"> 2960</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
-<div class="line"><a id="l02961" name="l02961"></a><span class="lineno"> 2961</span>      Sumw2();</div>
-<div class="line"><a id="l02962" name="l02962"></a><span class="lineno"> 2962</span>   }</div>
-<div class="line"><a id="l02963" name="l02963"></a><span class="lineno"> 2963</span>}</div>
+<div class="line"><a id="l02949" name="l02949"></a><span class="lineno"> 2949</span> </div>
+<div class="foldopen" id="foldopen02950" data-start="{" data-end="}">
+<div class="line"><a id="l02950" name="l02950"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a5c956e0f54cd4b9ec571314a77e827c9"> 2950</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* title, Int_t nbins, Double_t low, Double_t up)</div>
+<div class="line"><a id="l02951" name="l02951"></a><span class="lineno"> 2951</span>   : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(name, title, nbins, low, up)</div>
+<div class="line"><a id="l02952" name="l02952"></a><span class="lineno"> 2952</span>{</div>
+<div class="line"><a id="l02953" name="l02953"></a><span class="lineno"> 2953</span>   TArrayD::Set(fNcells);</div>
+<div class="line"><a id="l02954" name="l02954"></a><span class="lineno"> 2954</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
+<div class="line"><a id="l02955" name="l02955"></a><span class="lineno"> 2955</span>      Sumw2();</div>
+<div class="line"><a id="l02956" name="l02956"></a><span class="lineno"> 2956</span>   }</div>
+<div class="line"><a id="l02957" name="l02957"></a><span class="lineno"> 2957</span> </div>
+<div class="line"><a id="l02958" name="l02958"></a><span class="lineno"> 2958</span>   <span class="keywordflow">if</span>(low &gt;= up) {</div>
+<div class="line"><a id="l02959" name="l02959"></a><span class="lineno"> 2959</span>      SetBuffer(fgBufferSize);</div>
+<div class="line"><a id="l02960" name="l02960"></a><span class="lineno"> 2960</span>   }</div>
+<div class="line"><a id="l02961" name="l02961"></a><span class="lineno"> 2961</span>}</div>
 </div>
-<div class="line"><a id="l02964" name="l02964"></a><span class="lineno"> 2964</span> </div>
-<div class="foldopen" id="foldopen02965" data-start="{" data-end="}">
-<div class="line"><a id="l02965" name="l02965"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a009ab66b7d435ef1c58dcb1182c13c9e"> 2965</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* title, Int_t nbins, <span class="keyword">const</span> Float_t* bins) : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(name, title, nbins, bins)</div>
-<div class="line"><a id="l02966" name="l02966"></a><span class="lineno"> 2966</span>{</div>
-<div class="line"><a id="l02967" name="l02967"></a><span class="lineno"> 2967</span>   TArrayD::Set(fNcells);</div>
-<div class="line"><a id="l02968" name="l02968"></a><span class="lineno"> 2968</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
-<div class="line"><a id="l02969" name="l02969"></a><span class="lineno"> 2969</span>      Sumw2();</div>
-<div class="line"><a id="l02970" name="l02970"></a><span class="lineno"> 2970</span>   }</div>
-<div class="line"><a id="l02971" name="l02971"></a><span class="lineno"> 2971</span>}</div>
+<div class="line"><a id="l02962" name="l02962"></a><span class="lineno"> 2962</span> </div>
+<div class="foldopen" id="foldopen02963" data-start="{" data-end="}">
+<div class="line"><a id="l02963" name="l02963"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a6ae1f2b490c8b0a4a44cb719572a3d73"> 2963</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* title, Int_t nbins, <span class="keyword">const</span> Double_t* bins) : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(name, title, nbins, bins)</div>
+<div class="line"><a id="l02964" name="l02964"></a><span class="lineno"> 2964</span>{</div>
+<div class="line"><a id="l02965" name="l02965"></a><span class="lineno"> 2965</span>   TArrayD::Set(fNcells);</div>
+<div class="line"><a id="l02966" name="l02966"></a><span class="lineno"> 2966</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
+<div class="line"><a id="l02967" name="l02967"></a><span class="lineno"> 2967</span>      Sumw2();</div>
+<div class="line"><a id="l02968" name="l02968"></a><span class="lineno"> 2968</span>   }</div>
+<div class="line"><a id="l02969" name="l02969"></a><span class="lineno"> 2969</span>}</div>
 </div>
-<div class="line"><a id="l02972" name="l02972"></a><span class="lineno"> 2972</span> </div>
-<div class="foldopen" id="foldopen02973" data-start="{" data-end="}">
-<div class="line"><a id="l02973" name="l02973"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a0f8ebf85ee9ee62b1a7b997b9abf19a3"> 2973</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; rhs)</div>
-<div class="line"><a id="l02974" name="l02974"></a><span class="lineno"> 2974</span>   : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(rhs), TArrayD(rhs)</div>
-<div class="line"><a id="l02975" name="l02975"></a><span class="lineno"> 2975</span>{</div>
-<div class="line"><a id="l02976" name="l02976"></a><span class="lineno"> 2976</span>   rhs.<a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l02970" name="l02970"></a><span class="lineno"> 2970</span> </div>
+<div class="foldopen" id="foldopen02971" data-start="{" data-end="}">
+<div class="line"><a id="l02971" name="l02971"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a009ab66b7d435ef1c58dcb1182c13c9e"> 2971</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* title, Int_t nbins, <span class="keyword">const</span> Float_t* bins) : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(name, title, nbins, bins)</div>
+<div class="line"><a id="l02972" name="l02972"></a><span class="lineno"> 2972</span>{</div>
+<div class="line"><a id="l02973" name="l02973"></a><span class="lineno"> 2973</span>   TArrayD::Set(fNcells);</div>
+<div class="line"><a id="l02974" name="l02974"></a><span class="lineno"> 2974</span>   <span class="keywordflow">if</span>(fgDefaultSumw2) {</div>
+<div class="line"><a id="l02975" name="l02975"></a><span class="lineno"> 2975</span>      Sumw2();</div>
+<div class="line"><a id="l02976" name="l02976"></a><span class="lineno"> 2976</span>   }</div>
 <div class="line"><a id="l02977" name="l02977"></a><span class="lineno"> 2977</span>}</div>
 </div>
 <div class="line"><a id="l02978" name="l02978"></a><span class="lineno"> 2978</span> </div>
-<div class="line"><a id="l02979" name="l02979"></a><span class="lineno"> 2979</span><a class="code hl_function" href="class_g_h_sym_d.html#a1ccc61cade241dbd252d08baecbe366a">GHSymD::~GHSymD</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l02980" name="l02980"></a><span class="lineno"> 2980</span> </div>
-<div class="foldopen" id="foldopen02981" data-start="{" data-end="}">
-<div class="line"><a id="l02981" name="l02981"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a56d29bc3bad00f355e049500dd6ac5d0"> 2981</a></span>TH2D* <a class="code hl_function" href="class_g_h_sym_d.html#a56d29bc3bad00f355e049500dd6ac5d0">GHSymD::GetMatrix</a>(<span class="keywordtype">bool</span> force)</div>
-<div class="line"><a id="l02982" name="l02982"></a><span class="lineno"> 2982</span>{</div>
-<div class="line"><a id="l02983" name="l02983"></a><span class="lineno"> 2983</span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>() != <span class="keyword">nullptr</span> &amp;&amp; !force) {</div>
-<div class="line"><a id="l02984" name="l02984"></a><span class="lineno"> 2984</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2D*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
-<div class="line"><a id="l02985" name="l02985"></a><span class="lineno"> 2985</span>   }</div>
-<div class="line"><a id="l02986" name="l02986"></a><span class="lineno"> 2986</span>   <span class="keywordflow">if</span>(force) {</div>
-<div class="line"><a id="l02987" name="l02987"></a><span class="lineno"> 2987</span>      <span class="keyword">delete</span> <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>();</div>
-<div class="line"><a id="l02988" name="l02988"></a><span class="lineno"> 2988</span>   }</div>
-<div class="line"><a id="l02989" name="l02989"></a><span class="lineno"> 2989</span> </div>
-<div class="line"><a id="l02990" name="l02990"></a><span class="lineno"> 2990</span>   <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>(<span class="keyword">new</span> TH2D(Form(<span class="stringliteral">&quot;%s_mat&quot;</span>, GetName()), Form(<span class="stringliteral">&quot;%s;%s;%s&quot;</span>, GetTitle(), fXaxis.GetTitle(), fYaxis.GetTitle()),</div>
-<div class="line"><a id="l02991" name="l02991"></a><span class="lineno"> 2991</span>                   fXaxis.GetNbins(), fXaxis.GetXmin(), fXaxis.GetXmax(), fYaxis.GetNbins(), fYaxis.GetXmin(),</div>
-<div class="line"><a id="l02992" name="l02992"></a><span class="lineno"> 2992</span>                   fYaxis.GetXmax()));</div>
-<div class="line"><a id="l02993" name="l02993"></a><span class="lineno"> 2993</span>   <span class="comment">// copy cell contents (including all overflow and underflow cells)</span></div>
-<div class="line"><a id="l02994" name="l02994"></a><span class="lineno"> 2994</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; fXaxis.GetNbins() + 2; ++i) {</div>
-<div class="line"><a id="l02995" name="l02995"></a><span class="lineno"> 2995</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; fXaxis.GetNbins() + 2; ++j) {</div>
-<div class="line"><a id="l02996" name="l02996"></a><span class="lineno"> 2996</span>         <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>()-&gt;SetBinContent(i, j, <a class="code hl_function" href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b">GetBinContent</a>(i, j));</div>
-<div class="line"><a id="l02997" name="l02997"></a><span class="lineno"> 2997</span>      }</div>
-<div class="line"><a id="l02998" name="l02998"></a><span class="lineno"> 2998</span>   }</div>
-<div class="line"><a id="l02999" name="l02999"></a><span class="lineno"> 2999</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2D*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
-<div class="line"><a id="l03000" name="l03000"></a><span class="lineno"> 3000</span>}</div>
+<div class="foldopen" id="foldopen02979" data-start="{" data-end="}">
+<div class="line"><a id="l02979" name="l02979"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a0f8ebf85ee9ee62b1a7b997b9abf19a3"> 2979</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; rhs)</div>
+<div class="line"><a id="l02980" name="l02980"></a><span class="lineno"> 2980</span>   : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(rhs), TArrayD(rhs)</div>
+<div class="line"><a id="l02981" name="l02981"></a><span class="lineno"> 2981</span>{</div>
+<div class="line"><a id="l02982" name="l02982"></a><span class="lineno"> 2982</span>   rhs.<a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l02983" name="l02983"></a><span class="lineno"> 2983</span>}</div>
 </div>
+<div class="line"><a id="l02984" name="l02984"></a><span class="lineno"> 2984</span> </div>
+<div class="foldopen" id="foldopen02985" data-start="{" data-end="}">
+<div class="line"><a id="l02985" name="l02985"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a86bcf8d7505c85d88b3cb62783c27ca0"> 2985</a></span><a class="code hl_function" href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp;&amp; rhs) noexcept</div>
+<div class="line"><a id="l02986" name="l02986"></a><span class="lineno"> 2986</span>   : <a class="code hl_class" href="class_g_h_sym.html">GHSym</a>(rhs), TArrayD(rhs)</div>
+<div class="line"><a id="l02987" name="l02987"></a><span class="lineno"> 2987</span>{</div>
+<div class="line"><a id="l02988" name="l02988"></a><span class="lineno"> 2988</span>   rhs.<a class="code hl_function" href="class_g_h_sym.html#a2d190c1548192ff0cec29a45fedcb344">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l02989" name="l02989"></a><span class="lineno"> 2989</span>}</div>
+</div>
+<div class="line"><a id="l02990" name="l02990"></a><span class="lineno"> 2990</span> </div>
+<div class="line"><a id="l02991" name="l02991"></a><span class="lineno"> 2991</span><a class="code hl_function" href="class_g_h_sym_d.html#a1ccc61cade241dbd252d08baecbe366a">GHSymD::~GHSymD</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l02992" name="l02992"></a><span class="lineno"> 2992</span> </div>
+<div class="foldopen" id="foldopen02993" data-start="{" data-end="}">
+<div class="line"><a id="l02993" name="l02993"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a56d29bc3bad00f355e049500dd6ac5d0"> 2993</a></span>TH2D* <a class="code hl_function" href="class_g_h_sym_d.html#a56d29bc3bad00f355e049500dd6ac5d0">GHSymD::GetMatrix</a>(<span class="keywordtype">bool</span> force)</div>
+<div class="line"><a id="l02994" name="l02994"></a><span class="lineno"> 2994</span>{</div>
+<div class="line"><a id="l02995" name="l02995"></a><span class="lineno"> 2995</span>   <span class="keywordflow">if</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>() != <span class="keyword">nullptr</span> &amp;&amp; !force) {</div>
+<div class="line"><a id="l02996" name="l02996"></a><span class="lineno"> 2996</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2D*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
+<div class="line"><a id="l02997" name="l02997"></a><span class="lineno"> 2997</span>   }</div>
+<div class="line"><a id="l02998" name="l02998"></a><span class="lineno"> 2998</span>   <span class="keywordflow">if</span>(force) {</div>
+<div class="line"><a id="l02999" name="l02999"></a><span class="lineno"> 2999</span>      <span class="keyword">delete</span> <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>();</div>
+<div class="line"><a id="l03000" name="l03000"></a><span class="lineno"> 3000</span>   }</div>
 <div class="line"><a id="l03001" name="l03001"></a><span class="lineno"> 3001</span> </div>
-<div class="foldopen" id="foldopen03002" data-start="{" data-end="}">
-<div class="line"><a id="l03002" name="l03002"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc"> 3002</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">GHSymD::Copy</a>(TObject&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a id="l03003" name="l03003"></a><span class="lineno"> 3003</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03004" name="l03004"></a><span class="lineno"> 3004</span>   <a class="code hl_function" href="class_g_h_sym.html#a2d190c1548192ff0cec29a45fedcb344">GHSym::Copy</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp;<span class="keyword">&gt;</span>(rhs));</div>
-<div class="line"><a id="l03005" name="l03005"></a><span class="lineno"> 3005</span>}</div>
+<div class="line"><a id="l03002" name="l03002"></a><span class="lineno"> 3002</span>   <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>(<span class="keyword">new</span> TH2D(Form(<span class="stringliteral">&quot;%s_mat&quot;</span>, GetName()), Form(<span class="stringliteral">&quot;%s;%s;%s&quot;</span>, GetTitle(), fXaxis.GetTitle(), fYaxis.GetTitle()),</div>
+<div class="line"><a id="l03003" name="l03003"></a><span class="lineno"> 3003</span>                   fXaxis.GetNbins(), fXaxis.GetXmin(), fXaxis.GetXmax(), fYaxis.GetNbins(), fYaxis.GetXmin(),</div>
+<div class="line"><a id="l03004" name="l03004"></a><span class="lineno"> 3004</span>                   fYaxis.GetXmax()));</div>
+<div class="line"><a id="l03005" name="l03005"></a><span class="lineno"> 3005</span>   <span class="comment">// copy cell contents (including all overflow and underflow cells)</span></div>
+<div class="line"><a id="l03006" name="l03006"></a><span class="lineno"> 3006</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; fXaxis.GetNbins() + 2; ++i) {</div>
+<div class="line"><a id="l03007" name="l03007"></a><span class="lineno"> 3007</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; fXaxis.GetNbins() + 2; ++j) {</div>
+<div class="line"><a id="l03008" name="l03008"></a><span class="lineno"> 3008</span>         <a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>()-&gt;SetBinContent(i, j, <a class="code hl_function" href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b">GetBinContent</a>(i, j));</div>
+<div class="line"><a id="l03009" name="l03009"></a><span class="lineno"> 3009</span>      }</div>
+<div class="line"><a id="l03010" name="l03010"></a><span class="lineno"> 3010</span>   }</div>
+<div class="line"><a id="l03011" name="l03011"></a><span class="lineno"> 3011</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TH2D*<span class="keyword">&gt;</span>(<a class="code hl_function" href="class_g_h_sym.html#a886cace899818b0e69b50656cacdc615">Matrix</a>());</div>
+<div class="line"><a id="l03012" name="l03012"></a><span class="lineno"> 3012</span>}</div>
 </div>
-<div class="line"><a id="l03006" name="l03006"></a><span class="lineno"> 3006</span> </div>
-<div class="foldopen" id="foldopen03007" data-start="{" data-end="}">
-<div class="line"><a id="l03007" name="l03007"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a085096759c28084e7f7bd0e462c1c138"> 3007</a></span>TH1* <a class="code hl_function" href="class_g_h_sym_d.html#a085096759c28084e7f7bd0e462c1c138">GHSymD::DrawCopy</a>(Option_t* option, <span class="keyword">const</span> <span class="keywordtype">char</span>* name_postfix)<span class="keyword"> const</span></div>
-<div class="line"><a id="l03008" name="l03008"></a><span class="lineno"> 3008</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03009" name="l03009"></a><span class="lineno"> 3009</span>   <span class="comment">// Draw copy.</span></div>
-<div class="line"><a id="l03010" name="l03010"></a><span class="lineno"> 3010</span> </div>
-<div class="line"><a id="l03011" name="l03011"></a><span class="lineno"> 3011</span>   TString opt = option;</div>
-<div class="line"><a id="l03012" name="l03012"></a><span class="lineno"> 3012</span>   opt.ToLower();</div>
-<div class="line"><a id="l03013" name="l03013"></a><span class="lineno"> 3013</span>   <span class="keywordflow">if</span>(gPad != <span class="keyword">nullptr</span> &amp;&amp; !opt.Contains(<span class="stringliteral">&quot;same&quot;</span>)) {</div>
-<div class="line"><a id="l03014" name="l03014"></a><span class="lineno"> 3014</span>      gPad-&gt;Clear();</div>
-<div class="line"><a id="l03015" name="l03015"></a><span class="lineno"> 3015</span>   }</div>
-<div class="line"><a id="l03016" name="l03016"></a><span class="lineno"> 3016</span>   TString newName = (name_postfix) != <span class="keyword">nullptr</span> ? TString::Format(<span class="stringliteral">&quot;%s%s&quot;</span>, GetName(), name_postfix) : <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l03017" name="l03017"></a><span class="lineno"> 3017</span>   TH1*    newth1  = <span class="keyword">static_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(Clone(newName));</div>
-<div class="line"><a id="l03018" name="l03018"></a><span class="lineno"> 3018</span>   newth1-&gt;SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l03019" name="l03019"></a><span class="lineno"> 3019</span>   newth1-&gt;SetBit(kCanDelete);</div>
-<div class="line"><a id="l03020" name="l03020"></a><span class="lineno"> 3020</span>   newth1-&gt;AppendPad(option);</div>
-<div class="line"><a id="l03021" name="l03021"></a><span class="lineno"> 3021</span>   <span class="keywordflow">return</span> newth1;</div>
-<div class="line"><a id="l03022" name="l03022"></a><span class="lineno"> 3022</span>}</div>
+<div class="line"><a id="l03013" name="l03013"></a><span class="lineno"> 3013</span> </div>
+<div class="foldopen" id="foldopen03014" data-start="{" data-end="}">
+<div class="line"><a id="l03014" name="l03014"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc"> 3014</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">GHSymD::Copy</a>(TObject&amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a id="l03015" name="l03015"></a><span class="lineno"> 3015</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l03016" name="l03016"></a><span class="lineno"> 3016</span>   <a class="code hl_function" href="class_g_h_sym.html#a2d190c1548192ff0cec29a45fedcb344">GHSym::Copy</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp;<span class="keyword">&gt;</span>(rhs));</div>
+<div class="line"><a id="l03017" name="l03017"></a><span class="lineno"> 3017</span>}</div>
 </div>
-<div class="line"><a id="l03023" name="l03023"></a><span class="lineno"> 3023</span> </div>
-<div class="foldopen" id="foldopen03024" data-start="{" data-end="}">
-<div class="line"><a id="l03024" name="l03024"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b"> 3024</a></span>Double_t <a class="code hl_function" href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b">GHSymD::GetBinContent</a>(Int_t bin)<span class="keyword"> const</span></div>
-<div class="line"><a id="l03025" name="l03025"></a><span class="lineno"> 3025</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l03026" name="l03026"></a><span class="lineno"> 3026</span>   <span class="comment">// Get bin content.</span></div>
-<div class="line"><a id="l03027" name="l03027"></a><span class="lineno"> 3027</span>   <span class="keywordflow">if</span>(fBuffer != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l03028" name="l03028"></a><span class="lineno"> 3028</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_h_sym.html#aa6f6059f8e03a966108c2dddf3b82d16">BufferEmpty</a>(); <span class="comment">// NOLINT</span></div>
-<div class="line"><a id="l03029" name="l03029"></a><span class="lineno"> 3029</span>   }</div>
-<div class="line"><a id="l03030" name="l03030"></a><span class="lineno"> 3030</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
-<div class="line"><a id="l03031" name="l03031"></a><span class="lineno"> 3031</span>      bin = 0;</div>
-<div class="line"><a id="l03032" name="l03032"></a><span class="lineno"> 3032</span>   }</div>
-<div class="line"><a id="l03033" name="l03033"></a><span class="lineno"> 3033</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
-<div class="line"><a id="l03034" name="l03034"></a><span class="lineno"> 3034</span>      bin = fNcells - 1;</div>
-<div class="line"><a id="l03035" name="l03035"></a><span class="lineno"> 3035</span>   }</div>
-<div class="line"><a id="l03036" name="l03036"></a><span class="lineno"> 3036</span>   <span class="keywordflow">if</span>(fArray == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l03037" name="l03037"></a><span class="lineno"> 3037</span>      <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l03038" name="l03038"></a><span class="lineno"> 3038</span>   }</div>
-<div class="line"><a id="l03039" name="l03039"></a><span class="lineno"> 3039</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Double_t<span class="keyword">&gt;</span>(fArray[bin]);</div>
-<div class="line"><a id="l03040" name="l03040"></a><span class="lineno"> 3040</span>}</div>
+<div class="line"><a id="l03018" name="l03018"></a><span class="lineno"> 3018</span> </div>
+<div class="foldopen" id="foldopen03019" data-start="{" data-end="}">
+<div class="line"><a id="l03019" name="l03019"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a085096759c28084e7f7bd0e462c1c138"> 3019</a></span>TH1* <a class="code hl_function" href="class_g_h_sym_d.html#a085096759c28084e7f7bd0e462c1c138">GHSymD::DrawCopy</a>(Option_t* option, <span class="keyword">const</span> <span class="keywordtype">char</span>* name_postfix)<span class="keyword"> const</span></div>
+<div class="line"><a id="l03020" name="l03020"></a><span class="lineno"> 3020</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l03021" name="l03021"></a><span class="lineno"> 3021</span>   <span class="comment">// Draw copy.</span></div>
+<div class="line"><a id="l03022" name="l03022"></a><span class="lineno"> 3022</span> </div>
+<div class="line"><a id="l03023" name="l03023"></a><span class="lineno"> 3023</span>   TString opt = option;</div>
+<div class="line"><a id="l03024" name="l03024"></a><span class="lineno"> 3024</span>   opt.ToLower();</div>
+<div class="line"><a id="l03025" name="l03025"></a><span class="lineno"> 3025</span>   <span class="keywordflow">if</span>(gPad != <span class="keyword">nullptr</span> &amp;&amp; !opt.Contains(<span class="stringliteral">&quot;same&quot;</span>)) {</div>
+<div class="line"><a id="l03026" name="l03026"></a><span class="lineno"> 3026</span>      gPad-&gt;Clear();</div>
+<div class="line"><a id="l03027" name="l03027"></a><span class="lineno"> 3027</span>   }</div>
+<div class="line"><a id="l03028" name="l03028"></a><span class="lineno"> 3028</span>   TString newName = (name_postfix) != <span class="keyword">nullptr</span> ? TString::Format(<span class="stringliteral">&quot;%s%s&quot;</span>, GetName(), name_postfix) : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l03029" name="l03029"></a><span class="lineno"> 3029</span>   TH1*    newth1  = <span class="keyword">static_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(Clone(newName));</div>
+<div class="line"><a id="l03030" name="l03030"></a><span class="lineno"> 3030</span>   newth1-&gt;SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l03031" name="l03031"></a><span class="lineno"> 3031</span>   newth1-&gt;SetBit(kCanDelete);</div>
+<div class="line"><a id="l03032" name="l03032"></a><span class="lineno"> 3032</span>   newth1-&gt;AppendPad(option);</div>
+<div class="line"><a id="l03033" name="l03033"></a><span class="lineno"> 3033</span>   <span class="keywordflow">return</span> newth1;</div>
+<div class="line"><a id="l03034" name="l03034"></a><span class="lineno"> 3034</span>}</div>
 </div>
-<div class="line"><a id="l03041" name="l03041"></a><span class="lineno"> 3041</span> </div>
-<div class="foldopen" id="foldopen03042" data-start="{" data-end="}">
-<div class="line"><a id="l03042" name="l03042"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a5f91ae4602e4bc5442df7d79bada2aee"> 3042</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#a5f91ae4602e4bc5442df7d79bada2aee">GHSymD::Reset</a>(Option_t* option)</div>
-<div class="line"><a id="l03043" name="l03043"></a><span class="lineno"> 3043</span>{</div>
-<div class="line"><a id="l03044" name="l03044"></a><span class="lineno"> 3044</span>   <span class="comment">//*-*-*-*-*-*-*-*Reset this histogram: contents, errors, etc*-*-*-*-*-*-*-*</span></div>
-<div class="line"><a id="l03045" name="l03045"></a><span class="lineno"> 3045</span>   <span class="comment">//*-*            ===========================================</span></div>
-<div class="line"><a id="l03046" name="l03046"></a><span class="lineno"> 3046</span> </div>
-<div class="line"><a id="l03047" name="l03047"></a><span class="lineno"> 3047</span>   <a class="code hl_function" href="class_g_h_sym.html#a5ac7cd11a73a5da8d1e12b9e9fc3f44c">GHSym::Reset</a>(option);</div>
-<div class="line"><a id="l03048" name="l03048"></a><span class="lineno"> 3048</span>   TArrayD::Reset();</div>
-<div class="line"><a id="l03049" name="l03049"></a><span class="lineno"> 3049</span>}</div>
+<div class="line"><a id="l03035" name="l03035"></a><span class="lineno"> 3035</span> </div>
+<div class="foldopen" id="foldopen03036" data-start="{" data-end="}">
+<div class="line"><a id="l03036" name="l03036"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b"> 3036</a></span>Double_t <a class="code hl_function" href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b">GHSymD::GetBinContent</a>(Int_t bin)<span class="keyword"> const</span></div>
+<div class="line"><a id="l03037" name="l03037"></a><span class="lineno"> 3037</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l03038" name="l03038"></a><span class="lineno"> 3038</span>   <span class="comment">// Get bin content.</span></div>
+<div class="line"><a id="l03039" name="l03039"></a><span class="lineno"> 3039</span>   <span class="keywordflow">if</span>(fBuffer != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l03040" name="l03040"></a><span class="lineno"> 3040</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_h_sym.html#aa6f6059f8e03a966108c2dddf3b82d16">BufferEmpty</a>(); <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l03041" name="l03041"></a><span class="lineno"> 3041</span>   }</div>
+<div class="line"><a id="l03042" name="l03042"></a><span class="lineno"> 3042</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
+<div class="line"><a id="l03043" name="l03043"></a><span class="lineno"> 3043</span>      bin = 0;</div>
+<div class="line"><a id="l03044" name="l03044"></a><span class="lineno"> 3044</span>   }</div>
+<div class="line"><a id="l03045" name="l03045"></a><span class="lineno"> 3045</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
+<div class="line"><a id="l03046" name="l03046"></a><span class="lineno"> 3046</span>      bin = fNcells - 1;</div>
+<div class="line"><a id="l03047" name="l03047"></a><span class="lineno"> 3047</span>   }</div>
+<div class="line"><a id="l03048" name="l03048"></a><span class="lineno"> 3048</span>   <span class="keywordflow">if</span>(fArray == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l03049" name="l03049"></a><span class="lineno"> 3049</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l03050" name="l03050"></a><span class="lineno"> 3050</span>   }</div>
+<div class="line"><a id="l03051" name="l03051"></a><span class="lineno"> 3051</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Double_t<span class="keyword">&gt;</span>(fArray[bin]);</div>
+<div class="line"><a id="l03052" name="l03052"></a><span class="lineno"> 3052</span>}</div>
 </div>
-<div class="line"><a id="l03050" name="l03050"></a><span class="lineno"> 3050</span> </div>
-<div class="foldopen" id="foldopen03051" data-start="{" data-end="}">
-<div class="line"><a id="l03051" name="l03051"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#ae940dbfbc3ee28d73b6ec65c572c8599"> 3051</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#ae940dbfbc3ee28d73b6ec65c572c8599">GHSymD::SetBinContent</a>(Int_t bin, Double_t content)</div>
-<div class="line"><a id="l03052" name="l03052"></a><span class="lineno"> 3052</span>{</div>
-<div class="line"><a id="l03053" name="l03053"></a><span class="lineno"> 3053</span>   <span class="comment">// Set bin content</span></div>
-<div class="line"><a id="l03054" name="l03054"></a><span class="lineno"> 3054</span>   fEntries++;</div>
-<div class="line"><a id="l03055" name="l03055"></a><span class="lineno"> 3055</span>   fTsumw = 0;</div>
-<div class="line"><a id="l03056" name="l03056"></a><span class="lineno"> 3056</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
-<div class="line"><a id="l03057" name="l03057"></a><span class="lineno"> 3057</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l03058" name="l03058"></a><span class="lineno"> 3058</span>   }</div>
-<div class="line"><a id="l03059" name="l03059"></a><span class="lineno"> 3059</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
-<div class="line"><a id="l03060" name="l03060"></a><span class="lineno"> 3060</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l03061" name="l03061"></a><span class="lineno"> 3061</span>   }</div>
-<div class="line"><a id="l03062" name="l03062"></a><span class="lineno"> 3062</span>   fArray[bin] = <span class="keyword">static_cast&lt;</span>Float_t<span class="keyword">&gt;</span>(content);</div>
-<div class="line"><a id="l03063" name="l03063"></a><span class="lineno"> 3063</span>}</div>
+<div class="line"><a id="l03053" name="l03053"></a><span class="lineno"> 3053</span> </div>
+<div class="foldopen" id="foldopen03054" data-start="{" data-end="}">
+<div class="line"><a id="l03054" name="l03054"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a5f91ae4602e4bc5442df7d79bada2aee"> 3054</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#a5f91ae4602e4bc5442df7d79bada2aee">GHSymD::Reset</a>(Option_t* option)</div>
+<div class="line"><a id="l03055" name="l03055"></a><span class="lineno"> 3055</span>{</div>
+<div class="line"><a id="l03056" name="l03056"></a><span class="lineno"> 3056</span>   <span class="comment">//*-*-*-*-*-*-*-*Reset this histogram: contents, errors, etc*-*-*-*-*-*-*-*</span></div>
+<div class="line"><a id="l03057" name="l03057"></a><span class="lineno"> 3057</span>   <span class="comment">//*-*            ===========================================</span></div>
+<div class="line"><a id="l03058" name="l03058"></a><span class="lineno"> 3058</span> </div>
+<div class="line"><a id="l03059" name="l03059"></a><span class="lineno"> 3059</span>   <a class="code hl_function" href="class_g_h_sym.html#a5ac7cd11a73a5da8d1e12b9e9fc3f44c">GHSym::Reset</a>(option);</div>
+<div class="line"><a id="l03060" name="l03060"></a><span class="lineno"> 3060</span>   TArrayD::Reset();</div>
+<div class="line"><a id="l03061" name="l03061"></a><span class="lineno"> 3061</span>}</div>
 </div>
-<div class="line"><a id="l03064" name="l03064"></a><span class="lineno"> 3064</span> </div>
-<div class="foldopen" id="foldopen03065" data-start="{" data-end="}">
-<div class="line"><a id="l03065" name="l03065"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f"> 3065</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f">GHSymD::SetBinsLength</a>(Int_t n)</div>
-<div class="line"><a id="l03066" name="l03066"></a><span class="lineno"> 3066</span>{</div>
-<div class="line"><a id="l03067" name="l03067"></a><span class="lineno"> 3067</span>   <span class="comment">// Set total number of bins including under/overflow</span></div>
-<div class="line"><a id="l03068" name="l03068"></a><span class="lineno"> 3068</span>   <span class="comment">// Reallocate bin contents array</span></div>
-<div class="line"><a id="l03069" name="l03069"></a><span class="lineno"> 3069</span> </div>
-<div class="line"><a id="l03070" name="l03070"></a><span class="lineno"> 3070</span>   <span class="keywordflow">if</span>(n &lt; 0) {</div>
-<div class="line"><a id="l03071" name="l03071"></a><span class="lineno"> 3071</span>      n = (fXaxis.GetNbins() + 2) * (fYaxis.GetNbins() + 2);</div>
-<div class="line"><a id="l03072" name="l03072"></a><span class="lineno"> 3072</span>   }</div>
-<div class="line"><a id="l03073" name="l03073"></a><span class="lineno"> 3073</span>   fNcells = n;</div>
-<div class="line"><a id="l03074" name="l03074"></a><span class="lineno"> 3074</span>   TArrayD::Set(n);</div>
+<div class="line"><a id="l03062" name="l03062"></a><span class="lineno"> 3062</span> </div>
+<div class="foldopen" id="foldopen03063" data-start="{" data-end="}">
+<div class="line"><a id="l03063" name="l03063"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#ae940dbfbc3ee28d73b6ec65c572c8599"> 3063</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#ae940dbfbc3ee28d73b6ec65c572c8599">GHSymD::SetBinContent</a>(Int_t bin, Double_t content)</div>
+<div class="line"><a id="l03064" name="l03064"></a><span class="lineno"> 3064</span>{</div>
+<div class="line"><a id="l03065" name="l03065"></a><span class="lineno"> 3065</span>   <span class="comment">// Set bin content</span></div>
+<div class="line"><a id="l03066" name="l03066"></a><span class="lineno"> 3066</span>   fEntries++;</div>
+<div class="line"><a id="l03067" name="l03067"></a><span class="lineno"> 3067</span>   fTsumw = 0;</div>
+<div class="line"><a id="l03068" name="l03068"></a><span class="lineno"> 3068</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
+<div class="line"><a id="l03069" name="l03069"></a><span class="lineno"> 3069</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l03070" name="l03070"></a><span class="lineno"> 3070</span>   }</div>
+<div class="line"><a id="l03071" name="l03071"></a><span class="lineno"> 3071</span>   <span class="keywordflow">if</span>(bin &gt;= fNcells) {</div>
+<div class="line"><a id="l03072" name="l03072"></a><span class="lineno"> 3072</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l03073" name="l03073"></a><span class="lineno"> 3073</span>   }</div>
+<div class="line"><a id="l03074" name="l03074"></a><span class="lineno"> 3074</span>   fArray[bin] = <span class="keyword">static_cast&lt;</span>Float_t<span class="keyword">&gt;</span>(content);</div>
 <div class="line"><a id="l03075" name="l03075"></a><span class="lineno"> 3075</span>}</div>
 </div>
 <div class="line"><a id="l03076" name="l03076"></a><span class="lineno"> 3076</span> </div>
 <div class="foldopen" id="foldopen03077" data-start="{" data-end="}">
-<div class="line"><a id="l03077" name="l03077"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7"> 3077</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; <a class="code hl_function" href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7">GHSymD::operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1)</div>
+<div class="line"><a id="l03077" name="l03077"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f"> 3077</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f">GHSymD::SetBinsLength</a>(Int_t n)</div>
 <div class="line"><a id="l03078" name="l03078"></a><span class="lineno"> 3078</span>{</div>
-<div class="line"><a id="l03079" name="l03079"></a><span class="lineno"> 3079</span>   <span class="comment">// Operator =</span></div>
-<div class="line"><a id="l03080" name="l03080"></a><span class="lineno"> 3080</span> </div>
-<div class="line"><a id="l03081" name="l03081"></a><span class="lineno"> 3081</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
-<div class="line"><a id="l03082" name="l03082"></a><span class="lineno"> 3082</span>      h1.<a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">Copy</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l03083" name="l03083"></a><span class="lineno"> 3083</span>   }</div>
-<div class="line"><a id="l03084" name="l03084"></a><span class="lineno"> 3084</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l03085" name="l03085"></a><span class="lineno"> 3085</span>}</div>
+<div class="line"><a id="l03079" name="l03079"></a><span class="lineno"> 3079</span>   <span class="comment">// Set total number of bins including under/overflow</span></div>
+<div class="line"><a id="l03080" name="l03080"></a><span class="lineno"> 3080</span>   <span class="comment">// Reallocate bin contents array</span></div>
+<div class="line"><a id="l03081" name="l03081"></a><span class="lineno"> 3081</span> </div>
+<div class="line"><a id="l03082" name="l03082"></a><span class="lineno"> 3082</span>   <span class="keywordflow">if</span>(n &lt; 0) {</div>
+<div class="line"><a id="l03083" name="l03083"></a><span class="lineno"> 3083</span>      n = (fXaxis.GetNbins() + 2) * (fYaxis.GetNbins() + 2);</div>
+<div class="line"><a id="l03084" name="l03084"></a><span class="lineno"> 3084</span>   }</div>
+<div class="line"><a id="l03085" name="l03085"></a><span class="lineno"> 3085</span>   fNcells = n;</div>
+<div class="line"><a id="l03086" name="l03086"></a><span class="lineno"> 3086</span>   TArrayD::Set(n);</div>
+<div class="line"><a id="l03087" name="l03087"></a><span class="lineno"> 3087</span>}</div>
 </div>
-<div class="line"><a id="l03086" name="l03086"></a><span class="lineno"> 3086</span> </div>
-<div class="foldopen" id="foldopen03087" data-start="{" data-end="}">
-<div class="line"><a id="l03087" name="l03087"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a910be4e7602600afab1dc4843b2d3a09"> 3087</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; <a class="code hl_function" href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7">GHSymD::operator=</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp;&amp; h1) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l03088" name="l03088"></a><span class="lineno"> 3088</span>{</div>
-<div class="line"><a id="l03089" name="l03089"></a><span class="lineno"> 3089</span>   <span class="comment">// Operator =</span></div>
-<div class="line"><a id="l03090" name="l03090"></a><span class="lineno"> 3090</span> </div>
-<div class="line"><a id="l03091" name="l03091"></a><span class="lineno"> 3091</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
-<div class="line"><a id="l03092" name="l03092"></a><span class="lineno"> 3092</span>      h1.<a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">Copy</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l03093" name="l03093"></a><span class="lineno"> 3093</span>   }</div>
-<div class="line"><a id="l03094" name="l03094"></a><span class="lineno"> 3094</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l03095" name="l03095"></a><span class="lineno"> 3095</span>}</div>
+<div class="line"><a id="l03088" name="l03088"></a><span class="lineno"> 3088</span> </div>
+<div class="foldopen" id="foldopen03089" data-start="{" data-end="}">
+<div class="line"><a id="l03089" name="l03089"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7"> 3089</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; <a class="code hl_function" href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7">GHSymD::operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1)</div>
+<div class="line"><a id="l03090" name="l03090"></a><span class="lineno"> 3090</span>{</div>
+<div class="line"><a id="l03091" name="l03091"></a><span class="lineno"> 3091</span>   <span class="comment">// Operator =</span></div>
+<div class="line"><a id="l03092" name="l03092"></a><span class="lineno"> 3092</span> </div>
+<div class="line"><a id="l03093" name="l03093"></a><span class="lineno"> 3093</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
+<div class="line"><a id="l03094" name="l03094"></a><span class="lineno"> 3094</span>      h1.<a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l03095" name="l03095"></a><span class="lineno"> 3095</span>   }</div>
+<div class="line"><a id="l03096" name="l03096"></a><span class="lineno"> 3096</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l03097" name="l03097"></a><span class="lineno"> 3097</span>}</div>
 </div>
-<div class="line"><a id="l03096" name="l03096"></a><span class="lineno"> 3096</span> </div>
-<div class="foldopen" id="foldopen03097" data-start="{" data-end="};">
-<div class="line"><a id="l03097" name="l03097"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#abe005fb5c6add1c87b832ff5541e4b24"> 3097</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(Float_t c1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1)</div>
-<div class="line"><a id="l03098" name="l03098"></a><span class="lineno"> 3098</span>{</div>
-<div class="line"><a id="l03099" name="l03099"></a><span class="lineno"> 3099</span>   <span class="comment">// Operator *</span></div>
-<div class="line"><a id="l03100" name="l03100"></a><span class="lineno"> 3100</span> </div>
-<div class="line"><a id="l03101" name="l03101"></a><span class="lineno"> 3101</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
-<div class="line"><a id="l03102" name="l03102"></a><span class="lineno"> 3102</span>   hnew.Scale(c1);</div>
-<div class="line"><a id="l03103" name="l03103"></a><span class="lineno"> 3103</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l03104" name="l03104"></a><span class="lineno"> 3104</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l03105" name="l03105"></a><span class="lineno"> 3105</span>}</div>
+<div class="line"><a id="l03098" name="l03098"></a><span class="lineno"> 3098</span> </div>
+<div class="foldopen" id="foldopen03099" data-start="{" data-end="}">
+<div class="line"><a id="l03099" name="l03099"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a910be4e7602600afab1dc4843b2d3a09"> 3099</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; <a class="code hl_function" href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7">GHSymD::operator=</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp;&amp; h1) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l03100" name="l03100"></a><span class="lineno"> 3100</span>{</div>
+<div class="line"><a id="l03101" name="l03101"></a><span class="lineno"> 3101</span>   <span class="comment">// Operator =</span></div>
+<div class="line"><a id="l03102" name="l03102"></a><span class="lineno"> 3102</span> </div>
+<div class="line"><a id="l03103" name="l03103"></a><span class="lineno"> 3103</span>   <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;h1) {</div>
+<div class="line"><a id="l03104" name="l03104"></a><span class="lineno"> 3104</span>      h1.<a class="code hl_function" href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">Copy</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l03105" name="l03105"></a><span class="lineno"> 3105</span>   }</div>
+<div class="line"><a id="l03106" name="l03106"></a><span class="lineno"> 3106</span>   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l03107" name="l03107"></a><span class="lineno"> 3107</span>}</div>
 </div>
-<div class="line"><a id="l03106" name="l03106"></a><span class="lineno"> 3106</span> </div>
-<div class="foldopen" id="foldopen03107" data-start="{" data-end="};">
-<div class="line"><a id="l03107" name="l03107"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a300af4b70dc5c63082a4290d3bc58cf6"> 3107</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a746a703b7fab96c506b6d173b80653f9">operator+</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
-<div class="line"><a id="l03108" name="l03108"></a><span class="lineno"> 3108</span>{</div>
-<div class="line"><a id="l03109" name="l03109"></a><span class="lineno"> 3109</span>   <span class="comment">// Operator +</span></div>
-<div class="line"><a id="l03110" name="l03110"></a><span class="lineno"> 3110</span> </div>
-<div class="line"><a id="l03111" name="l03111"></a><span class="lineno"> 3111</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
-<div class="line"><a id="l03112" name="l03112"></a><span class="lineno"> 3112</span>   hnew.Add(&amp;h2, 1);</div>
-<div class="line"><a id="l03113" name="l03113"></a><span class="lineno"> 3113</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l03114" name="l03114"></a><span class="lineno"> 3114</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l03115" name="l03115"></a><span class="lineno"> 3115</span>}</div>
+<div class="line"><a id="l03108" name="l03108"></a><span class="lineno"> 3108</span> </div>
+<div class="foldopen" id="foldopen03109" data-start="{" data-end="};">
+<div class="line"><a id="l03109" name="l03109"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#abe005fb5c6add1c87b832ff5541e4b24"> 3109</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(Float_t c1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1)</div>
+<div class="line"><a id="l03110" name="l03110"></a><span class="lineno"> 3110</span>{</div>
+<div class="line"><a id="l03111" name="l03111"></a><span class="lineno"> 3111</span>   <span class="comment">// Operator *</span></div>
+<div class="line"><a id="l03112" name="l03112"></a><span class="lineno"> 3112</span> </div>
+<div class="line"><a id="l03113" name="l03113"></a><span class="lineno"> 3113</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
+<div class="line"><a id="l03114" name="l03114"></a><span class="lineno"> 3114</span>   hnew.Scale(c1);</div>
+<div class="line"><a id="l03115" name="l03115"></a><span class="lineno"> 3115</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l03116" name="l03116"></a><span class="lineno"> 3116</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l03117" name="l03117"></a><span class="lineno"> 3117</span>}</div>
 </div>
-<div class="line"><a id="l03116" name="l03116"></a><span class="lineno"> 3116</span> </div>
-<div class="foldopen" id="foldopen03117" data-start="{" data-end="};">
-<div class="line"><a id="l03117" name="l03117"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#ae5b090a294eb528dc0b38761a0a0ca61"> 3117</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#ae9a4646b618abb5a3e6e13d163c2be2f">operator-</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
-<div class="line"><a id="l03118" name="l03118"></a><span class="lineno"> 3118</span>{</div>
-<div class="line"><a id="l03119" name="l03119"></a><span class="lineno"> 3119</span>   <span class="comment">// Operator -</span></div>
-<div class="line"><a id="l03120" name="l03120"></a><span class="lineno"> 3120</span> </div>
-<div class="line"><a id="l03121" name="l03121"></a><span class="lineno"> 3121</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
-<div class="line"><a id="l03122" name="l03122"></a><span class="lineno"> 3122</span>   hnew.Add(&amp;h2, -1);</div>
-<div class="line"><a id="l03123" name="l03123"></a><span class="lineno"> 3123</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l03124" name="l03124"></a><span class="lineno"> 3124</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l03125" name="l03125"></a><span class="lineno"> 3125</span>}</div>
+<div class="line"><a id="l03118" name="l03118"></a><span class="lineno"> 3118</span> </div>
+<div class="foldopen" id="foldopen03119" data-start="{" data-end="};">
+<div class="line"><a id="l03119" name="l03119"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a300af4b70dc5c63082a4290d3bc58cf6"> 3119</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a746a703b7fab96c506b6d173b80653f9">operator+</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
+<div class="line"><a id="l03120" name="l03120"></a><span class="lineno"> 3120</span>{</div>
+<div class="line"><a id="l03121" name="l03121"></a><span class="lineno"> 3121</span>   <span class="comment">// Operator +</span></div>
+<div class="line"><a id="l03122" name="l03122"></a><span class="lineno"> 3122</span> </div>
+<div class="line"><a id="l03123" name="l03123"></a><span class="lineno"> 3123</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
+<div class="line"><a id="l03124" name="l03124"></a><span class="lineno"> 3124</span>   hnew.Add(&amp;h2, 1);</div>
+<div class="line"><a id="l03125" name="l03125"></a><span class="lineno"> 3125</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l03126" name="l03126"></a><span class="lineno"> 3126</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l03127" name="l03127"></a><span class="lineno"> 3127</span>}</div>
 </div>
-<div class="line"><a id="l03126" name="l03126"></a><span class="lineno"> 3126</span> </div>
-<div class="foldopen" id="foldopen03127" data-start="{" data-end="};">
-<div class="line"><a id="l03127" name="l03127"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a50cda1e41c8faa92bf485659e267caad"> 3127</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
-<div class="line"><a id="l03128" name="l03128"></a><span class="lineno"> 3128</span>{</div>
-<div class="line"><a id="l03129" name="l03129"></a><span class="lineno"> 3129</span>   <span class="comment">// Operator *</span></div>
-<div class="line"><a id="l03130" name="l03130"></a><span class="lineno"> 3130</span> </div>
-<div class="line"><a id="l03131" name="l03131"></a><span class="lineno"> 3131</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
-<div class="line"><a id="l03132" name="l03132"></a><span class="lineno"> 3132</span>   hnew.Multiply(&amp;h2);</div>
-<div class="line"><a id="l03133" name="l03133"></a><span class="lineno"> 3133</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l03134" name="l03134"></a><span class="lineno"> 3134</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l03135" name="l03135"></a><span class="lineno"> 3135</span>}</div>
+<div class="line"><a id="l03128" name="l03128"></a><span class="lineno"> 3128</span> </div>
+<div class="foldopen" id="foldopen03129" data-start="{" data-end="};">
+<div class="line"><a id="l03129" name="l03129"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#ae5b090a294eb528dc0b38761a0a0ca61"> 3129</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#ae9a4646b618abb5a3e6e13d163c2be2f">operator-</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
+<div class="line"><a id="l03130" name="l03130"></a><span class="lineno"> 3130</span>{</div>
+<div class="line"><a id="l03131" name="l03131"></a><span class="lineno"> 3131</span>   <span class="comment">// Operator -</span></div>
+<div class="line"><a id="l03132" name="l03132"></a><span class="lineno"> 3132</span> </div>
+<div class="line"><a id="l03133" name="l03133"></a><span class="lineno"> 3133</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
+<div class="line"><a id="l03134" name="l03134"></a><span class="lineno"> 3134</span>   hnew.Add(&amp;h2, -1);</div>
+<div class="line"><a id="l03135" name="l03135"></a><span class="lineno"> 3135</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l03136" name="l03136"></a><span class="lineno"> 3136</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l03137" name="l03137"></a><span class="lineno"> 3137</span>}</div>
 </div>
-<div class="line"><a id="l03136" name="l03136"></a><span class="lineno"> 3136</span> </div>
-<div class="foldopen" id="foldopen03137" data-start="{" data-end="};">
-<div class="line"><a id="l03137" name="l03137"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#aaee41c16dbea00c93aa65b03bde91883"> 3137</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a5cf2b1399d585cf67e1c82bb408b55d3">operator/</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
-<div class="line"><a id="l03138" name="l03138"></a><span class="lineno"> 3138</span>{</div>
-<div class="line"><a id="l03139" name="l03139"></a><span class="lineno"> 3139</span>   <span class="comment">// Operator /</span></div>
-<div class="line"><a id="l03140" name="l03140"></a><span class="lineno"> 3140</span> </div>
-<div class="line"><a id="l03141" name="l03141"></a><span class="lineno"> 3141</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
-<div class="line"><a id="l03142" name="l03142"></a><span class="lineno"> 3142</span>   hnew.Divide(&amp;h2);</div>
-<div class="line"><a id="l03143" name="l03143"></a><span class="lineno"> 3143</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l03144" name="l03144"></a><span class="lineno"> 3144</span>   <span class="keywordflow">return</span> hnew;</div>
-<div class="line"><a id="l03145" name="l03145"></a><span class="lineno"> 3145</span>}</div>
+<div class="line"><a id="l03138" name="l03138"></a><span class="lineno"> 3138</span> </div>
+<div class="foldopen" id="foldopen03139" data-start="{" data-end="};">
+<div class="line"><a id="l03139" name="l03139"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#a50cda1e41c8faa92bf485659e267caad"> 3139</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
+<div class="line"><a id="l03140" name="l03140"></a><span class="lineno"> 3140</span>{</div>
+<div class="line"><a id="l03141" name="l03141"></a><span class="lineno"> 3141</span>   <span class="comment">// Operator *</span></div>
+<div class="line"><a id="l03142" name="l03142"></a><span class="lineno"> 3142</span> </div>
+<div class="line"><a id="l03143" name="l03143"></a><span class="lineno"> 3143</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
+<div class="line"><a id="l03144" name="l03144"></a><span class="lineno"> 3144</span>   hnew.Multiply(&amp;h2);</div>
+<div class="line"><a id="l03145" name="l03145"></a><span class="lineno"> 3145</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l03146" name="l03146"></a><span class="lineno"> 3146</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l03147" name="l03147"></a><span class="lineno"> 3147</span>}</div>
 </div>
-<div class="line"><a id="l03146" name="l03146"></a><span class="lineno"> 3146</span> </div>
-<div class="line"><a id="l03147" name="l03147"></a><span class="lineno"> 3147</span><span class="comment">//------------------------------------------------------------</span></div>
-<div class="ttc" id="a_g_h_sym_8cxx_html_a5cf2b1399d585cf67e1c82bb408b55d3"><div class="ttname"><a href="_g_h_sym_8cxx.html#a5cf2b1399d585cf67e1c82bb408b55d3">operator/</a></div><div class="ttdeci">GHSymF operator/(GHSymF &amp;h1, GHSymF &amp;h2)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02922">GHSym.cxx:2922</a></div></div>
-<div class="ttc" id="a_g_h_sym_8cxx_html_a746a703b7fab96c506b6d173b80653f9"><div class="ttname"><a href="_g_h_sym_8cxx.html#a746a703b7fab96c506b6d173b80653f9">operator+</a></div><div class="ttdeci">GHSymF operator+(GHSymF &amp;h1, GHSymF &amp;h2)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02892">GHSym.cxx:2892</a></div></div>
-<div class="ttc" id="a_g_h_sym_8cxx_html_ae9a4646b618abb5a3e6e13d163c2be2f"><div class="ttname"><a href="_g_h_sym_8cxx.html#ae9a4646b618abb5a3e6e13d163c2be2f">operator-</a></div><div class="ttdeci">GHSymF operator-(GHSymF &amp;h1, GHSymF &amp;h2)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02902">GHSym.cxx:2902</a></div></div>
-<div class="ttc" id="a_g_h_sym_8cxx_html_aec771ed66a6c39889a1b622ab4f85a34"><div class="ttname"><a href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a></div><div class="ttdeci">GHSymF operator*(Float_t c1, GHSymF &amp;h1)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02882">GHSym.cxx:2882</a></div></div>
+<div class="line"><a id="l03148" name="l03148"></a><span class="lineno"> 3148</span> </div>
+<div class="foldopen" id="foldopen03149" data-start="{" data-end="};">
+<div class="line"><a id="l03149" name="l03149"></a><span class="lineno"><a class="line" href="class_g_h_sym_d.html#aaee41c16dbea00c93aa65b03bde91883"> 3149</a></span><a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> <a class="code hl_function" href="_g_h_sym_8cxx.html#a5cf2b1399d585cf67e1c82bb408b55d3">operator/</a>(<a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h1, <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a>&amp; h2)</div>
+<div class="line"><a id="l03150" name="l03150"></a><span class="lineno"> 3150</span>{</div>
+<div class="line"><a id="l03151" name="l03151"></a><span class="lineno"> 3151</span>   <span class="comment">// Operator /</span></div>
+<div class="line"><a id="l03152" name="l03152"></a><span class="lineno"> 3152</span> </div>
+<div class="line"><a id="l03153" name="l03153"></a><span class="lineno"> 3153</span>   <a class="code hl_class" href="class_g_h_sym_d.html">GHSymD</a> hnew = h1;</div>
+<div class="line"><a id="l03154" name="l03154"></a><span class="lineno"> 3154</span>   hnew.Divide(&amp;h2);</div>
+<div class="line"><a id="l03155" name="l03155"></a><span class="lineno"> 3155</span>   hnew.SetDirectory(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l03156" name="l03156"></a><span class="lineno"> 3156</span>   <span class="keywordflow">return</span> hnew;</div>
+<div class="line"><a id="l03157" name="l03157"></a><span class="lineno"> 3157</span>}</div>
+</div>
+<div class="line"><a id="l03158" name="l03158"></a><span class="lineno"> 3158</span> </div>
+<div class="line"><a id="l03159" name="l03159"></a><span class="lineno"> 3159</span><span class="comment">//------------------------------------------------------------</span></div>
+<div class="ttc" id="a_g_h_sym_8cxx_html_a5cf2b1399d585cf67e1c82bb408b55d3"><div class="ttname"><a href="_g_h_sym_8cxx.html#a5cf2b1399d585cf67e1c82bb408b55d3">operator/</a></div><div class="ttdeci">GHSymF operator/(GHSymF &amp;h1, GHSymF &amp;h2)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02928">GHSym.cxx:2928</a></div></div>
+<div class="ttc" id="a_g_h_sym_8cxx_html_a746a703b7fab96c506b6d173b80653f9"><div class="ttname"><a href="_g_h_sym_8cxx.html#a746a703b7fab96c506b6d173b80653f9">operator+</a></div><div class="ttdeci">GHSymF operator+(GHSymF &amp;h1, GHSymF &amp;h2)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02898">GHSym.cxx:2898</a></div></div>
+<div class="ttc" id="a_g_h_sym_8cxx_html_ae9a4646b618abb5a3e6e13d163c2be2f"><div class="ttname"><a href="_g_h_sym_8cxx.html#ae9a4646b618abb5a3e6e13d163c2be2f">operator-</a></div><div class="ttdeci">GHSymF operator-(GHSymF &amp;h1, GHSymF &amp;h2)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02908">GHSym.cxx:2908</a></div></div>
+<div class="ttc" id="a_g_h_sym_8cxx_html_aec771ed66a6c39889a1b622ab4f85a34"><div class="ttname"><a href="_g_h_sym_8cxx.html#aec771ed66a6c39889a1b622ab4f85a34">operator*</a></div><div class="ttdeci">GHSymF operator*(Float_t c1, GHSymF &amp;h1)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02888">GHSym.cxx:2888</a></div></div>
 <div class="ttc" id="a_g_h_sym_8h_html"><div class="ttname"><a href="_g_h_sym_8h.html">GHSym.h</a></div></div>
 <div class="ttc" id="a_user_fill_obj_8h_html_ac15e5a1de3bd77dc1ff2768e42dc9e8b"><div class="ttname"><a href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a></div><div class="ttdeci">TH1D * hist</div><div class="ttdef"><b>Definition</b> <a href="_user_fill_obj_8h_source.html#l00003">UserFillObj.h:3</a></div></div>
 <div class="ttc" id="aclass_different_axis_limits_html"><div class="ttname"><a href="class_different_axis_limits.html">DifferentAxisLimits</a></div><div class="ttdef"><b>Definition</b> <a href="_g_cube_8cxx_source.html#l00024">GCube.cxx:24</a></div></div>
@@ -3433,25 +3449,25 @@ $(document).ready(function(){initNavTree('_g_h_sym_8cxx_source.html',''); initRe
 <div class="ttc" id="aclass_different_labels_html"><div class="ttname"><a href="class_different_labels.html">DifferentLabels</a></div><div class="ttdef"><b>Definition</b> <a href="_g_cube_8cxx_source.html#l00028">GCube.cxx:28</a></div></div>
 <div class="ttc" id="aclass_different_number_of_bins_html"><div class="ttname"><a href="class_different_number_of_bins.html">DifferentNumberOfBins</a></div><div class="ttdef"><b>Definition</b> <a href="_g_cube_8cxx_source.html#l00022">GCube.cxx:22</a></div></div>
 <div class="ttc" id="aclass_g_h_sym_d_html"><div class="ttname"><a href="class_g_h_sym_d.html">GHSymD</a></div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8h_source.html#l00166">GHSym.h:166</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_a0362653056cce8e6d2ab1b51e16dbd0b"><div class="ttname"><a href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b">GHSymD::GetBinContent</a></div><div class="ttdeci">Double_t GetBinContent(Int_t bin) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03024">GHSym.cxx:3024</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_a085096759c28084e7f7bd0e462c1c138"><div class="ttname"><a href="class_g_h_sym_d.html#a085096759c28084e7f7bd0e462c1c138">GHSymD::DrawCopy</a></div><div class="ttdeci">TH1 * DrawCopy(Option_t *option=&quot;&quot;, const char *name_postfix=&quot;_copy&quot;) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03007">GHSym.cxx:3007</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_a13a2748423d87b673f5bfaf7fadb5c1a"><div class="ttname"><a href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a></div><div class="ttdeci">GHSymD()</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02936">GHSym.cxx:2936</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_a0362653056cce8e6d2ab1b51e16dbd0b"><div class="ttname"><a href="class_g_h_sym_d.html#a0362653056cce8e6d2ab1b51e16dbd0b">GHSymD::GetBinContent</a></div><div class="ttdeci">Double_t GetBinContent(Int_t bin) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03036">GHSym.cxx:3036</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_a085096759c28084e7f7bd0e462c1c138"><div class="ttname"><a href="class_g_h_sym_d.html#a085096759c28084e7f7bd0e462c1c138">GHSymD::DrawCopy</a></div><div class="ttdeci">TH1 * DrawCopy(Option_t *option=&quot;&quot;, const char *name_postfix=&quot;_copy&quot;) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03019">GHSym.cxx:3019</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_a13a2748423d87b673f5bfaf7fadb5c1a"><div class="ttname"><a href="class_g_h_sym_d.html#a13a2748423d87b673f5bfaf7fadb5c1a">GHSymD::GHSymD</a></div><div class="ttdeci">GHSymD()</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02942">GHSym.cxx:2942</a></div></div>
 <div class="ttc" id="aclass_g_h_sym_d_html_a1ccc61cade241dbd252d08baecbe366a"><div class="ttname"><a href="class_g_h_sym_d.html#a1ccc61cade241dbd252d08baecbe366a">GHSymD::~GHSymD</a></div><div class="ttdeci">~GHSymD()</div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_a56d29bc3bad00f355e049500dd6ac5d0"><div class="ttname"><a href="class_g_h_sym_d.html#a56d29bc3bad00f355e049500dd6ac5d0">GHSymD::GetMatrix</a></div><div class="ttdeci">TH2D * GetMatrix(bool force=false)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02981">GHSym.cxx:2981</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_a5f91ae4602e4bc5442df7d79bada2aee"><div class="ttname"><a href="class_g_h_sym_d.html#a5f91ae4602e4bc5442df7d79bada2aee">GHSymD::Reset</a></div><div class="ttdeci">void Reset(Option_t *option=&quot;&quot;) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03042">GHSym.cxx:3042</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_a74b84f0aa771cc10fca742330b2c5efc"><div class="ttname"><a href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">GHSymD::Copy</a></div><div class="ttdeci">void Copy(TObject &amp;rh) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03002">GHSym.cxx:3002</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_a9b370c59dbfd3078df653de5f26ab35f"><div class="ttname"><a href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f">GHSymD::SetBinsLength</a></div><div class="ttdeci">void SetBinsLength(Int_t n=-1) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03065">GHSym.cxx:3065</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_aa78be605442d7089c4261f95e57705c7"><div class="ttname"><a href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7">GHSymD::operator=</a></div><div class="ttdeci">GHSymD &amp; operator=(const GHSymD &amp;h1)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03077">GHSym.cxx:3077</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_d_html_ae940dbfbc3ee28d73b6ec65c572c8599"><div class="ttname"><a href="class_g_h_sym_d.html#ae940dbfbc3ee28d73b6ec65c572c8599">GHSymD::SetBinContent</a></div><div class="ttdeci">void SetBinContent(Int_t bin, Double_t content) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03051">GHSym.cxx:3051</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_a56d29bc3bad00f355e049500dd6ac5d0"><div class="ttname"><a href="class_g_h_sym_d.html#a56d29bc3bad00f355e049500dd6ac5d0">GHSymD::GetMatrix</a></div><div class="ttdeci">TH2D * GetMatrix(bool force=false)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02993">GHSym.cxx:2993</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_a5f91ae4602e4bc5442df7d79bada2aee"><div class="ttname"><a href="class_g_h_sym_d.html#a5f91ae4602e4bc5442df7d79bada2aee">GHSymD::Reset</a></div><div class="ttdeci">void Reset(Option_t *option=&quot;&quot;) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03054">GHSym.cxx:3054</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_a74b84f0aa771cc10fca742330b2c5efc"><div class="ttname"><a href="class_g_h_sym_d.html#a74b84f0aa771cc10fca742330b2c5efc">GHSymD::Copy</a></div><div class="ttdeci">void Copy(TObject &amp;rh) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03014">GHSym.cxx:3014</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_a9b370c59dbfd3078df653de5f26ab35f"><div class="ttname"><a href="class_g_h_sym_d.html#a9b370c59dbfd3078df653de5f26ab35f">GHSymD::SetBinsLength</a></div><div class="ttdeci">void SetBinsLength(Int_t n=-1) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03077">GHSym.cxx:3077</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_aa78be605442d7089c4261f95e57705c7"><div class="ttname"><a href="class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7">GHSymD::operator=</a></div><div class="ttdeci">GHSymD &amp; operator=(const GHSymD &amp;h1)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03089">GHSym.cxx:3089</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_d_html_ae940dbfbc3ee28d73b6ec65c572c8599"><div class="ttname"><a href="class_g_h_sym_d.html#ae940dbfbc3ee28d73b6ec65c572c8599">GHSymD::SetBinContent</a></div><div class="ttdeci">void SetBinContent(Int_t bin, Double_t content) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l03063">GHSym.cxx:3063</a></div></div>
 <div class="ttc" id="aclass_g_h_sym_f_html"><div class="ttname"><a href="class_g_h_sym_f.html">GHSymF</a></div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8h_source.html#l00122">GHSym.h:122</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_a02cedee9422ff43f39bd1bb15e87bdb0"><div class="ttname"><a href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0">GHSymF::GetBinContent</a></div><div class="ttdeci">Double_t GetBinContent(Int_t bin) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02808">GHSym.cxx:2808</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_a14c287b63f12b0a67282f71cf680dc84"><div class="ttname"><a href="class_g_h_sym_f.html#a14c287b63f12b0a67282f71cf680dc84">GHSymF::SetBinsLength</a></div><div class="ttdeci">void SetBinsLength(Int_t n=-1) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02850">GHSym.cxx:2850</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_a167d8dce279687655b917f5940514bb1"><div class="ttname"><a href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1">GHSymF::operator=</a></div><div class="ttdeci">GHSymF &amp; operator=(const GHSymF &amp;h1)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02862">GHSym.cxx:2862</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_a65b8b190e185195b3807aee5cef7cf70"><div class="ttname"><a href="class_g_h_sym_f.html#a65b8b190e185195b3807aee5cef7cf70">GHSymF::Reset</a></div><div class="ttdeci">void Reset(Option_t *option=&quot;&quot;) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02827">GHSym.cxx:2827</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_a8a45fa73ec72ed9cad8213c917612212"><div class="ttname"><a href="class_g_h_sym_f.html#a8a45fa73ec72ed9cad8213c917612212">GHSymF::SetBinContent</a></div><div class="ttdeci">void SetBinContent(Int_t bin, Double_t content) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02836">GHSym.cxx:2836</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_a99b8cb7a687894bbd1296daaf6435e43"><div class="ttname"><a href="class_g_h_sym_f.html#a99b8cb7a687894bbd1296daaf6435e43">GHSymF::DrawCopy</a></div><div class="ttdeci">TH1 * DrawCopy(Option_t *option=&quot;&quot;, const char *name_postfix=&quot;_copy&quot;) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02791">GHSym.cxx:2791</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_a9f48a7f167f74d1ba24e8bc55c3e5c13"><div class="ttname"><a href="class_g_h_sym_f.html#a9f48a7f167f74d1ba24e8bc55c3e5c13">GHSymF::GetMatrix</a></div><div class="ttdeci">TH2F * GetMatrix(bool force=false)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02766">GHSym.cxx:2766</a></div></div>
-<div class="ttc" id="aclass_g_h_sym_f_html_abe7d500abdb048ac79adfaf69f4027c3"><div class="ttname"><a href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">GHSymF::Copy</a></div><div class="ttdeci">void Copy(TObject &amp;rh) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02786">GHSym.cxx:2786</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_a02cedee9422ff43f39bd1bb15e87bdb0"><div class="ttname"><a href="class_g_h_sym_f.html#a02cedee9422ff43f39bd1bb15e87bdb0">GHSymF::GetBinContent</a></div><div class="ttdeci">Double_t GetBinContent(Int_t bin) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02814">GHSym.cxx:2814</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_a14c287b63f12b0a67282f71cf680dc84"><div class="ttname"><a href="class_g_h_sym_f.html#a14c287b63f12b0a67282f71cf680dc84">GHSymF::SetBinsLength</a></div><div class="ttdeci">void SetBinsLength(Int_t n=-1) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02856">GHSym.cxx:2856</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_a167d8dce279687655b917f5940514bb1"><div class="ttname"><a href="class_g_h_sym_f.html#a167d8dce279687655b917f5940514bb1">GHSymF::operator=</a></div><div class="ttdeci">GHSymF &amp; operator=(const GHSymF &amp;h1)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02868">GHSym.cxx:2868</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_a65b8b190e185195b3807aee5cef7cf70"><div class="ttname"><a href="class_g_h_sym_f.html#a65b8b190e185195b3807aee5cef7cf70">GHSymF::Reset</a></div><div class="ttdeci">void Reset(Option_t *option=&quot;&quot;) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02833">GHSym.cxx:2833</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_a8a45fa73ec72ed9cad8213c917612212"><div class="ttname"><a href="class_g_h_sym_f.html#a8a45fa73ec72ed9cad8213c917612212">GHSymF::SetBinContent</a></div><div class="ttdeci">void SetBinContent(Int_t bin, Double_t content) override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02842">GHSym.cxx:2842</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_a99b8cb7a687894bbd1296daaf6435e43"><div class="ttname"><a href="class_g_h_sym_f.html#a99b8cb7a687894bbd1296daaf6435e43">GHSymF::DrawCopy</a></div><div class="ttdeci">TH1 * DrawCopy(Option_t *option=&quot;&quot;, const char *name_postfix=&quot;_copy&quot;) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02797">GHSym.cxx:2797</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_a9f48a7f167f74d1ba24e8bc55c3e5c13"><div class="ttname"><a href="class_g_h_sym_f.html#a9f48a7f167f74d1ba24e8bc55c3e5c13">GHSymF::GetMatrix</a></div><div class="ttdeci">TH2F * GetMatrix(bool force=false)</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02772">GHSym.cxx:2772</a></div></div>
+<div class="ttc" id="aclass_g_h_sym_f_html_abe7d500abdb048ac79adfaf69f4027c3"><div class="ttname"><a href="class_g_h_sym_f.html#abe7d500abdb048ac79adfaf69f4027c3">GHSymF::Copy</a></div><div class="ttdeci">void Copy(TObject &amp;rh) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02792">GHSym.cxx:2792</a></div></div>
 <div class="ttc" id="aclass_g_h_sym_f_html_ad0e767d329f190625c383b6ade3c916a"><div class="ttname"><a href="class_g_h_sym_f.html#ad0e767d329f190625c383b6ade3c916a">GHSymF::GHSymF</a></div><div class="ttdeci">GHSymF()</div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8cxx_source.html#l02721">GHSym.cxx:2721</a></div></div>
 <div class="ttc" id="aclass_g_h_sym_f_html_af95141e02bc7f091001ee92281af77e8"><div class="ttname"><a href="class_g_h_sym_f.html#af95141e02bc7f091001ee92281af77e8">GHSymF::~GHSymF</a></div><div class="ttdeci">~GHSymF()</div></div>
 <div class="ttc" id="aclass_g_h_sym_html"><div class="ttname"><a href="class_g_h_sym.html">GHSym</a></div><div class="ttdef"><b>Definition</b> <a href="_g_h_sym_8h_source.html#l00012">GHSym.h:12</a></div></div>
@@ -3503,7 +3519,7 @@ $(document).ready(function(){initNavTree('_g_h_sym_8cxx_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_g_h_sym_8cxx.html">GHSym.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Aug 16 2024 19:29:59.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Aug 16 2024 20:24:15.</li>
   </ul>
 </div>
 </body>

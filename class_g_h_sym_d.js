@@ -5,7 +5,7 @@ var class_g_h_sym_d =
     [ "GHSymD", "class_g_h_sym_d.html#a6ae1f2b490c8b0a4a44cb719572a3d73", null ],
     [ "GHSymD", "class_g_h_sym_d.html#a009ab66b7d435ef1c58dcb1182c13c9e", null ],
     [ "GHSymD", "class_g_h_sym_d.html#a0f8ebf85ee9ee62b1a7b997b9abf19a3", null ],
-    [ "GHSymD", "class_g_h_sym_d.html#a61552f25630a637adbde039d169a8b36", null ],
+    [ "GHSymD", "class_g_h_sym_d.html#a86bcf8d7505c85d88b3cb62783c27ca0", null ],
     [ "~GHSymD", "class_g_h_sym_d.html#a1ccc61cade241dbd252d08baecbe366a", null ],
     [ "AddBinContent", "class_g_h_sym_d.html#a46204c4ef35a04da8f23b8f77c1256cc", null ],
     [ "AddBinContent", "class_g_h_sym_d.html#a69bcfd450beeeccbf949489b60d76f0a", null ],
