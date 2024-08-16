@@ -52,7 +52,7 @@ var class_g_h_sym_d =
     [ "Matrix", "class_g_h_sym_d.html#a5455e91b5fc54cb7ebe971be21f71457", null ],
     [ "Merge", "class_g_h_sym_d.html#a18ad46c16a1e9cb6a8801d712a4c361a", null ],
     [ "operator=", "class_g_h_sym_d.html#aa78be605442d7089c4261f95e57705c7", null ],
-    [ "operator=", "class_g_h_sym_d.html#a0a43531a00e5b3b4a80d40c30ec9eb2a", null ],
+    [ "operator=", "class_g_h_sym_d.html#a910be4e7602600afab1dc4843b2d3a09", null ],
     [ "Profile", "class_g_h_sym_d.html#a360cda0bb380322d2385abd71de5ca19", null ],
     [ "Projection", "class_g_h_sym_d.html#aaafb07d5d6fd82329379a092d5ee54ba", null ],
     [ "PutStats", "class_g_h_sym_d.html#a5576b3b794a18ae400fa07c19869ead5", null ],

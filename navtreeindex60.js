@@ -1,7 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"class_t_tigress_hit.html#ac62835a3dd9025e0908385fd95bff958":[7,2,67,89],
-"class_t_tigress_hit.html#ac9202e62116783982bac618bea13cbb7":[7,2,67,63],
 "class_t_tigress_hit.html#accf37a09c00501e307ca9d6fb5451436":[7,2,67,105],
 "class_t_tigress_hit.html#acd815e31f036fa6505e06512e5183d4c":[7,2,67,26],
 "class_t_tigress_hit.html#acdb38ab68d5513dab900d3471e348270":[7,2,67,69],
@@ -249,5 +247,7 @@ var NAVTREEINDEX60 =
 "class_t_transient_bits.html#ac6b05f1c68881bb82afbb67b49b1ca51":[7,11,60,3],
 "class_t_transient_bits.html#ac8ab0becf86ff15328f419d44e19559a":[7,11,60,18],
 "class_t_transient_bits.html#ade97a83507cc857dc0f41cbba78a3618":[7,11,60,9],
-"class_t_transient_bits.html#ae05a3b4d041f8417829ab5177d373654":[7,11,60,7]
+"class_t_transient_bits.html#ae05a3b4d041f8417829ab5177d373654":[7,11,60,7],
+"class_t_transient_bits.html#ae6d2715dca27133d44fb982634fb3194":[7,11,60,1],
+"class_t_transient_bits.html#afb4eeace0ff41d55a0489109e8359c3f":[7,11,60,14]
 };

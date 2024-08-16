@@ -1,7 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"class_g_marker.html#aa1812a52efc112267bb7b4de7e839385":[7,5,2,10],
-"class_g_marker.html#aa7692fa2f9e0893c9634ba693b41a427":[7,5,2,13],
 "class_g_marker.html#ab4ed903de3bd929586795220b4391786":[7,5,2,2],
 "class_g_marker.html#ab8e8009057040a0f4db5348b48945b2f":[7,5,2,15],
 "class_g_marker.html#ac50dbefb4b85370bbfa6a1eefe723b4f":[7,5,2,12],
@@ -249,5 +247,7 @@ var NAVTREEINDEX13 =
 "class_g_root_canvas.html#a61dee9daee7e9eb4becacca51157ddd6":[7,5,4,88],
 "class_g_root_canvas.html#a61fb0f975c6b8c56bae7e603e6aea920":[7,5,4,10],
 "class_g_root_canvas.html#a6ff40d577cfbf2488924e4d735f5060c":[7,5,4,30],
-"class_g_root_canvas.html#a733b39ac53eeb88d21d74b18aab63ec1":[7,5,4,32]
+"class_g_root_canvas.html#a733b39ac53eeb88d21d74b18aab63ec1":[7,5,4,32],
+"class_g_root_canvas.html#a780fccb67322333d039e7bb2af1ade0e":[7,5,4,45],
+"class_g_root_canvas.html#a7ba7e71f9545bf44e2063fb4dcdd623e":[7,5,4,61]
 };

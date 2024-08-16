@@ -1,7 +1,5 @@
 var NAVTREEINDEX61 =
 {
-"class_t_transient_bits.html#ae6d2715dca27133d44fb982634fb3194":[7,11,60,1],
-"class_t_transient_bits.html#afb4eeace0ff41d55a0489109e8359c3f":[7,11,60,14],
 "class_t_transition.html":[7,3,25],
 "class_t_transition.html#a09cad457179313faf4f5e67a23245ff5":[7,3,25,1],
 "class_t_transition.html#a2b04c42e59253ad0cf9db2f2883562cf":[7,3,25,11],
@@ -249,5 +247,7 @@ var NAVTREEINDEX61 =
 "class_t_unpacked_event.html#adc22f528e8b4e989671b295658f6bc58":[9,0,273,8],
 "class_t_unpacking_loop.html":[7,9,10],
 "class_t_unpacking_loop.html#a0b8802826748503aab12dfd9a011d396":[7,9,10,52],
-"class_t_unpacking_loop.html#a111b945766cd9d2e58b853bf0dc292b2":[7,9,10,51]
+"class_t_unpacking_loop.html#a111b945766cd9d2e58b853bf0dc292b2":[7,9,10,51],
+"class_t_unpacking_loop.html#a14d1029d5d956a5f8cffcabb2e1c5e17":[7,9,10,59],
+"class_t_unpacking_loop.html#a292c5e3a19062bcc3d2a3b598327c175":[7,9,10,10]
 };

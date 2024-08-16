@@ -1,7 +1,5 @@
 var NAVTREEINDEX23 =
 {
-"class_t_decay_chain.html#ab4268e3b2cdbaeefac8b7bdd14a54440":[7,3,9,24],
-"class_t_decay_chain.html#ad69199a6d7a53689f7c078bbfcf71124":[7,3,9,13],
 "class_t_decay_chain.html#ad6bdefeb246983106c79d8f4d65ac462":[7,3,9,20],
 "class_t_decay_chain.html#ae9cf25ab51747c8ea299b5a7206104f7":[7,3,9,12],
 "class_t_decay_chain.html#aef91b0a8760eade09db3342e19cb6917":[7,3,9,7],
@@ -249,5 +247,7 @@ var NAVTREEINDEX23 =
 "class_t_det_building_loop.html#abe60c16209394a97817fe33058a8c0ec":[7,9,4,13],
 "class_t_det_building_loop.html#abfe1543692efb1e4eb2d43cdbfce6f5f":[7,9,4,19],
 "class_t_det_building_loop.html#ac1a156b1d0bd8bebcd7710a3dced7f45":[7,9,4,1],
-"class_t_det_building_loop.html#ac20a4c3f69442f30470288ca6e169a67":[7,9,4,59]
+"class_t_det_building_loop.html#ac20a4c3f69442f30470288ca6e169a67":[7,9,4,59],
+"class_t_det_building_loop.html#ac3e4f4d5ade78f955f1ea763798d625a":[7,9,4,41],
+"class_t_det_building_loop.html#acf70f87914f2cb39f4f21cab300d220f":[7,9,4,8]
 };
