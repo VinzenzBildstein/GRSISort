@@ -1,5 +1,7 @@
 var NAVTREEINDEX68 =
 {
+"namespacepygui_1_1status__widget.html":[8,0,5,5],
+"namespacepygui_1_1status__widget.html#afb966fc344bcec793fd48fcd59d7874b":[8,0,5,5,2],
 "namespacepygui_1_1tcut__tab.html":[8,0,5,6],
 "namespacepygui_1_1tcut__tab.html#a0d556aeafcf1623caf3c3ec36bf4707e":[8,0,5,6,1],
 "namespacepygui_1_1util.html":[8,0,5,7],

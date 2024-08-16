@@ -1,5 +1,7 @@
 var NAVTREEINDEX67 =
 {
+"grsiproof_8cxx.html#a43d82899d0debf7098583ec99891e9d0":[10,0,3,16,11],
+"grsiproof_8cxx.html#a559f8e6b08cfc421c65b509ecdc61e03":[10,0,3,16,0],
 "grsiproof_8cxx.html#a71a74b9c177ff01097d993110a2b92be":[10,0,3,16,7],
 "grsiproof_8cxx.html#a81cc151d0cdb0e7c41717363ced1d91f":[10,0,3,16,5],
 "grsiproof_8cxx.html#a90a49b50a652d99b8d612ad0f76a3565":[10,0,3,16,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX67 =
 "namespacepygui_1_1mainwindow.html":[8,0,5,3],
 "namespacepygui_1_1run__command.html":[8,0,5,4],
 "namespacepygui_1_1run__command.html#a9f87668e7992498825ef02432573a3c2":[8,0,5,4,1],
-"namespacepygui_1_1run__command.html#ac0b9ab5a4e10c88d3497719f93ea59f4":[8,0,5,4,0],
-"namespacepygui_1_1status__widget.html":[8,0,5,5],
-"namespacepygui_1_1status__widget.html#afb966fc344bcec793fd48fcd59d7874b":[8,0,5,5,2]
+"namespacepygui_1_1run__command.html#ac0b9ab5a4e10c88d3497719f93ea59f4":[8,0,5,4,0]
 };

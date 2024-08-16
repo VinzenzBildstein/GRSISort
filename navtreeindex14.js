@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"class_g_root_canvas.html#a780fccb67322333d039e7bb2af1ade0e":[7,5,4,45],
+"class_g_root_canvas.html#a7ba7e71f9545bf44e2063fb4dcdd623e":[7,5,4,61],
 "class_g_root_canvas.html#a7c8f08008bdc547b4b2def67fe411353":[7,5,4,0],
 "class_g_root_canvas.html#a7d9c3198145f12eac3c3d6cec752e4a9":[7,5,4,94],
 "class_g_root_canvas.html#a7e673e6ab6c7b01f52bd1c45471e3d9a":[7,5,4,71],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "class_stoppable_thread.html#a34658723be83bff3f1b98e22488b1fce":[7,9,0,24],
 "class_stoppable_thread.html#a374402a1edaa416e51c6913efbd7391c":[7,9,0,9],
 "class_stoppable_thread.html#a3e7173edc5fcccaa6d1532d561f009db":[7,9,0,13],
-"class_stoppable_thread.html#a40263af2b008909fa16cac3d1f759736":[7,9,0,26],
-"class_stoppable_thread.html#a406b8e51e5fcc5446adca1d5e6d7fd4c":[7,9,0,22],
-"class_stoppable_thread.html#a4685b7d00f32acd831b5118972146f7d":[7,9,0,18]
+"class_stoppable_thread.html#a40263af2b008909fa16cac3d1f759736":[7,9,0,26]
 };
