@@ -178,14 +178,14 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_g_cube.html#aa37c28d455ac767cedb81c6dc7f0bbb4">   60</a></span><a class="code hl_function" href="class_g_cube.html#a7939eeac7f9e41c648cc08c9ffda1b45">GCube::GCube</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_cube.html">GCube</a>&amp; rhs) : TH1()   <span class="comment">// NOLINT calling TH1 constuctor to shut up g++, can&#39;t call TH1(rhs) because it&#39;s private</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_g_cube.html#aa37c28d455ac767cedb81c6dc7f0bbb4">   60</a></span><a class="code hl_function" href="class_g_cube.html#a7939eeac7f9e41c648cc08c9ffda1b45">GCube::GCube</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_g_cube.html">GCube</a>&amp; rhs) : TH1()   <span class="comment">// NOLINT(readability-redundant-member-init)</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>   rhs.<a class="code hl_function" href="class_g_cube.html#af9b2af5da814283c07a8848cb75aeb91">Copy</a>(*<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_g_cube.html#ad45f946bd6510ed34e04c83abc98fdef">   65</a></span><a class="code hl_function" href="class_g_cube.html#a7939eeac7f9e41c648cc08c9ffda1b45">GCube::GCube</a>(<a class="code hl_class" href="class_g_cube.html">GCube</a>&amp;&amp; rhs) noexcept : TH1()   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_g_cube.html#ad45f946bd6510ed34e04c83abc98fdef">   65</a></span><a class="code hl_function" href="class_g_cube.html#a7939eeac7f9e41c648cc08c9ffda1b45">GCube::GCube</a>(<a class="code hl_class" href="class_g_cube.html">GCube</a>&amp;&amp; rhs) noexcept : TH1()   <span class="comment">// NOLINT(readability-redundant-member-init)</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   rhs.Copy(*<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
@@ -1325,7 +1325,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span><span class="comment">   ///  the histogram.</span></div>
 <div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span><span class="comment"></span> </div>
 <div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>   <span class="keywordflow">if</span>(fBuffer != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_cube.html">GCube</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_cube.html#ac188fb4627c94b1f537ea682713755a5">BufferEmpty</a>();   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_cube.html">GCube</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_cube.html#ac188fb4627c94b1f537ea682713755a5">BufferEmpty</a>();   <span class="comment">// NOLINT(cppcoreguidelines-pro-type-const-cast)</span></div>
 <div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>   }</div>
 <div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span> </div>
 <div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>   <span class="keywordflow">if</span>((fTsumw == 0 &amp;&amp; fEntries &gt; 0) || fXaxis.TestBit(TAxis::kAxisRange) || fYaxis.TestBit(TAxis::kAxisRange) ||</div>
@@ -1568,12 +1568,12 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>   opt.ToUpper();</div>
 <div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span> </div>
 <div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>   Double_t prb = 0;</div>
-<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>   <span class="keyword">auto</span>*    h1  = <span class="keyword">const_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>TH1*<span class="keyword">&gt;</span>(<span class="keyword">this</span>));   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>   <span class="keyword">auto</span>*    h1  = <span class="keyword">const_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>TH1*<span class="keyword">&gt;</span>(<span class="keyword">this</span>));   <span class="comment">// NOLINT(cppcoreguidelines-pro-type-const-cast)</span></div>
 <div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>   <span class="keywordflow">if</span>(h2 == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>      <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>   }</div>
 <div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>   TAxis* xaxis1 = h1-&gt;GetXaxis();</div>
-<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>   <span class="keyword">auto</span>*  xaxis2 = <span class="keyword">const_cast&lt;</span>TAxis*<span class="keyword">&gt;</span>(h2-&gt;GetXaxis());   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>   <span class="keyword">auto</span>*  xaxis2 = <span class="keyword">const_cast&lt;</span>TAxis*<span class="keyword">&gt;</span>(h2-&gt;GetXaxis());   <span class="comment">// NOLINT(cppcoreguidelines-pro-type-const-cast)</span></div>
 <div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>   Int_t  nc1    = xaxis1-&gt;GetNbins();</div>
 <div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>   Int_t  nc2    = xaxis2-&gt;GetNbins();</div>
 <div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span> </div>
@@ -2075,7 +2075,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l01896" name="l01896"></a><span class="lineno"> 1896</span>   }</div>
 <div class="line"><a id="l01897" name="l01897"></a><span class="lineno"> 1897</span> </div>
 <div class="line"><a id="l01898" name="l01898"></a><span class="lineno"> 1898</span>   <span class="comment">// Create the projection histogram</span></div>
-<div class="line"><a id="l01899" name="l01899"></a><span class="lineno"> 1899</span>   <span class="keywordtype">char</span>* pname = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(name);   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l01899" name="l01899"></a><span class="lineno"> 1899</span>   <span class="keywordtype">char</span>* pname = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(name);   <span class="comment">// NOLINT(cppcoreguidelines-pro-type-const-cast)</span></div>
 <div class="line"><a id="l01900" name="l01900"></a><span class="lineno"> 1900</span>   <span class="keywordflow">if</span>(name != <span class="keyword">nullptr</span> &amp;&amp; strcmp(name, expectedName) == 0) {</div>
 <div class="line"><a id="l01901" name="l01901"></a><span class="lineno"> 1901</span>      <span class="keyword">auto</span> nch = strlen(GetName()) + 4;</div>
 <div class="line"><a id="l01902" name="l01902"></a><span class="lineno"> 1902</span>      pname    = <span class="keyword">new</span> <span class="keywordtype">char</span>[nch];</div>
@@ -2140,7 +2140,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l01961" name="l01961"></a><span class="lineno"> 1961</span> </div>
 <div class="line"><a id="l01962" name="l01962"></a><span class="lineno"> 1962</span>   <span class="comment">// Copy the axis attributes and the axis labels if needed.</span></div>
 <div class="line"><a id="l01963" name="l01963"></a><span class="lineno"> 1963</span>   h1-&gt;GetXaxis()-&gt;ImportAttributes(&amp;fXaxis);</div>
-<div class="line"><a id="l01964" name="l01964"></a><span class="lineno"> 1964</span>   THashList* labels = <span class="keyword">const_cast&lt;</span>TAxis*<span class="keyword">&gt;</span>(&amp;fXaxis)-&gt;GetLabels();   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l01964" name="l01964"></a><span class="lineno"> 1964</span>   THashList* labels = <span class="keyword">const_cast&lt;</span>TAxis*<span class="keyword">&gt;</span>(&amp;fXaxis)-&gt;GetLabels();   <span class="comment">// NOLINT(cppcoreguidelines-pro-type-const-cast)</span></div>
 <div class="line"><a id="l01965" name="l01965"></a><span class="lineno"> 1965</span>   <span class="keywordflow">if</span>(labels != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l01966" name="l01966"></a><span class="lineno"> 1966</span>      TIter       iL(labels);</div>
 <div class="line"><a id="l01967" name="l01967"></a><span class="lineno"> 1967</span>      TObjString* lb = <span class="keyword">nullptr</span>;</div>
@@ -2679,7 +2679,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l02490" name="l02490"></a><span class="lineno"> 2490</span>   <span class="comment">//   The background is returned as a histogram.</span></div>
 <div class="line"><a id="l02491" name="l02491"></a><span class="lineno"> 2491</span>   <span class="comment">//   to be implemented (may be)</span></div>
 <div class="line"><a id="l02492" name="l02492"></a><span class="lineno"> 2492</span> </div>
-<div class="line"><a id="l02493" name="l02493"></a><span class="lineno"> 2493</span>   <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(gROOT-&gt;ProcessLineFast(   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l02493" name="l02493"></a><span class="lineno"> 2493</span>   <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>TH1*<span class="keyword">&gt;</span>(gROOT-&gt;ProcessLineFast(   <span class="comment">// NOLINT(performance-no-int-to-ptr)</span></div>
 <div class="line"><a id="l02494" name="l02494"></a><span class="lineno"> 2494</span>      Form(R<span class="stringliteral">&quot;(TSpectrum2::StaticBackground((TH1*)0x%lx,%d,&quot;%s&quot;))&quot;, </span><span class="keyword">reinterpret_cast&lt;</span>ULong_t<span class="keyword">&gt;</span>(<span class="keyword">this</span>), niter, option)));</div>
 <div class="line"><a id="l02495" name="l02495"></a><span class="lineno"> 2495</span>}</div>
 </div>
@@ -2875,7 +2875,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l02671" name="l02671"></a><span class="lineno"> 2671</span> </div>
 <div class="foldopen" id="foldopen02672" data-start="{" data-end="}">
 <div class="line"><a id="l02672" name="l02672"></a><span class="lineno"><a class="line" href="class_g_cube_f.html#ad5b4795aeac693b40a9dac91c5e6d7ef"> 2672</a></span><a class="code hl_function" href="class_g_cube_f.html#a4a5f56ebe3858110c0d111c1c9d8c30b">GCubeF::GCubeF</a>(<a class="code hl_class" href="class_g_cube_f.html">GCubeF</a>&amp;&amp; rhs) noexcept</div>
-<div class="line"><a id="l02673" name="l02673"></a><span class="lineno"> 2673</span>   : <a class="code hl_class" href="class_g_cube.html">GCube</a>(rhs), TArrayF(rhs)</div>
+<div class="line"><a id="l02673" name="l02673"></a><span class="lineno"> 2673</span>   : <a class="code hl_class" href="class_g_cube.html">GCube</a>(std::move(rhs)), TArrayF(rhs)</div>
 <div class="line"><a id="l02674" name="l02674"></a><span class="lineno"> 2674</span>{</div>
 <div class="line"><a id="l02675" name="l02675"></a><span class="lineno"> 2675</span>   rhs.<a class="code hl_function" href="class_g_cube.html#af9b2af5da814283c07a8848cb75aeb91">Copy</a>(*<span class="keyword">this</span>);</div>
 <div class="line"><a id="l02676" name="l02676"></a><span class="lineno"> 2676</span>}</div>
@@ -2938,7 +2938,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l02725" name="l02725"></a><span class="lineno"> 2725</span>   <span class="comment">// Get bin content.</span></div>
 <div class="line"><a id="l02726" name="l02726"></a><span class="lineno"> 2726</span> </div>
 <div class="line"><a id="l02727" name="l02727"></a><span class="lineno"> 2727</span>   <span class="keywordflow">if</span>(fBuffer != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l02728" name="l02728"></a><span class="lineno"> 2728</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_cube_f.html">GCubeF</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_cube.html#ac188fb4627c94b1f537ea682713755a5">BufferEmpty</a>();   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l02728" name="l02728"></a><span class="lineno"> 2728</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_cube_f.html">GCubeF</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_cube.html#ac188fb4627c94b1f537ea682713755a5">BufferEmpty</a>();   <span class="comment">// NOLINT(cppcoreguidelines-pro-type-const-cast)</span></div>
 <div class="line"><a id="l02729" name="l02729"></a><span class="lineno"> 2729</span>   }</div>
 <div class="line"><a id="l02730" name="l02730"></a><span class="lineno"> 2730</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
 <div class="line"><a id="l02731" name="l02731"></a><span class="lineno"> 2731</span>      bin = 0;</div>
@@ -3137,7 +3137,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l02893" name="l02893"></a><span class="lineno"> 2893</span> </div>
 <div class="foldopen" id="foldopen02894" data-start="{" data-end="}">
 <div class="line"><a id="l02894" name="l02894"></a><span class="lineno"><a class="line" href="class_g_cube_d.html#a58303a7fc1df42a1bf0b8b18190e7c65"> 2894</a></span><a class="code hl_function" href="class_g_cube_d.html#a2b8475e0857ca108816bee6822536e02">GCubeD::GCubeD</a>(<a class="code hl_class" href="class_g_cube_d.html">GCubeD</a>&amp;&amp; rhs) noexcept</div>
-<div class="line"><a id="l02895" name="l02895"></a><span class="lineno"> 2895</span>   : <a class="code hl_class" href="class_g_cube.html">GCube</a>(rhs), TArrayD(rhs)</div>
+<div class="line"><a id="l02895" name="l02895"></a><span class="lineno"> 2895</span>   : <a class="code hl_class" href="class_g_cube.html">GCube</a>(std::move(rhs)), TArrayD(rhs)</div>
 <div class="line"><a id="l02896" name="l02896"></a><span class="lineno"> 2896</span>{</div>
 <div class="line"><a id="l02897" name="l02897"></a><span class="lineno"> 2897</span>   rhs.<a class="code hl_function" href="class_g_cube.html#af9b2af5da814283c07a8848cb75aeb91">Copy</a>(*<span class="keyword">this</span>);</div>
 <div class="line"><a id="l02898" name="l02898"></a><span class="lineno"> 2898</span>}</div>
@@ -3201,7 +3201,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l02948" name="l02948"></a><span class="lineno"> 2948</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l02949" name="l02949"></a><span class="lineno"> 2949</span>   <span class="comment">// Get bin content.</span></div>
 <div class="line"><a id="l02950" name="l02950"></a><span class="lineno"> 2950</span>   <span class="keywordflow">if</span>(fBuffer != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l02951" name="l02951"></a><span class="lineno"> 2951</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_cube_d.html">GCubeD</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_cube.html#ac188fb4627c94b1f537ea682713755a5">BufferEmpty</a>();   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l02951" name="l02951"></a><span class="lineno"> 2951</span>      <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="class_g_cube_d.html">GCubeD</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="class_g_cube.html#ac188fb4627c94b1f537ea682713755a5">BufferEmpty</a>();   <span class="comment">// NOLINT(cppcoreguidelines-pro-type-const-cast)</span></div>
 <div class="line"><a id="l02952" name="l02952"></a><span class="lineno"> 2952</span>   }</div>
 <div class="line"><a id="l02953" name="l02953"></a><span class="lineno"> 2953</span>   <span class="keywordflow">if</span>(bin &lt; 0) {</div>
 <div class="line"><a id="l02954" name="l02954"></a><span class="lineno"> 2954</span>      bin = 0;</div>
@@ -3420,7 +3420,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_g_cube_8cxx.html">GCube.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 19:28:55.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 21:20:16.</li>
   </ul>
 </div>
 </body>

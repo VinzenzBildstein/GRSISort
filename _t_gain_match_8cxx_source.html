@@ -982,7 +982,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 </div>
 <div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span> </div>
 <div class="foldopen" id="foldopen00840" data-start="{" data-end="}">
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno"><a class="line" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">  840</a></span>Double_t <a class="code hl_function" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">TGainMatch::HistCompare</a>(Double_t* x, Double_t* par)   <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno"><a class="line" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">  840</a></span>Double_t <a class="code hl_function" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">TGainMatch::HistCompare</a>(Double_t* x, Double_t* par)   <span class="comment">// NOLINT(readability-non-const-parameter)</span></div>
 <div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>{</div>
 <div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>   Int_t    bin     = <a class="code hl_variable" href="class_t_gain_match.html#a27942facfb401828bc92db0f14187b34">fHist</a>-&gt;GetXaxis()-&gt;FindBin(x[0] * par[2] + par[1]);</div>
 <div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>   Double_t content = <a class="code hl_variable" href="class_t_gain_match.html#a27942facfb401828bc92db0f14187b34">fHist</a>-&gt;GetBinContent(bin);</div>
@@ -1043,7 +1043,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_4d17f409fb020449a7716dffae2b2761.html">TCal</a></li><li class="navelem"><a class="el" href="_t_gain_match_8cxx.html">TGainMatch.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 19:28:56.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 21:20:16.</li>
   </ul>
 </div>
 </body>
