@@ -21,7 +21,7 @@ var class_t_trific =
     [ "Copy", "class_t_trific.html#a0df87a4a6077082b8ec50ce2eb3a41e9", null ],
     [ "GetHit", "class_t_trific.html#a9fb5bed513f435084094b92fb6a5b296", null ],
     [ "GetHitVector", "class_t_trific.html#ac5a25bee6d5fff8d30f929f3aaceb2db", null ],
-    [ "GetMultiplicity", "class_t_trific.html#ad3f8c4fa9690ee9d52481f31d70b5ab0", null ],
+    [ "GetMultiplicity", "class_t_trific.html#a9d5c07abd73ec148fe0adbee0c7c1eec", null ],
     [ "GetPosition", "class_t_trific.html#a59e917079a2bc561fa8ccc3fbd0b1f00", null ],
     [ "GetPosition", "class_t_trific.html#af83f25009bbee633190904900ae02ef2", null ],
     [ "GetRange", "class_t_trific.html#a2bda454a9c3472d2746f43454fffd074", null ],

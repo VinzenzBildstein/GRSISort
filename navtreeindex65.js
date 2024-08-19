@@ -1,6 +1,5 @@
 var NAVTREEINDEX65 =
 {
-"classpygui_1_1tcut__tab_1_1_t_cut_tab.html#ae726d50d7f1f4db4eff7223bf946a421":[8,0,5,6,0,24],
 "classpygui_1_1tcut__tab_1_1_t_cut_tab.html#ae726d50d7f1f4db4eff7223bf946a421":[9,0,1,4,0,24],
 "classpygui_1_1tcut__tab_1_1_t_cut_tab.html#aeed99355f31995fa68463638fe6cbc05":[9,0,1,4,0,22],
 "classpygui_1_1tcut__tab_1_1_t_cut_tab.html#aeed99355f31995fa68463638fe6cbc05":[8,0,5,6,0,22],
@@ -249,5 +248,6 @@ var NAVTREEINDEX65 =
 "functions_vars_s.html":[9,3,2,18],
 "functions_vars_t.html":[9,3,2,19],
 "functions_vars_u.html":[9,3,2,20],
-"functions_vars_v.html":[9,3,2,21]
+"functions_vars_v.html":[9,3,2,21],
+"functions_vars_w.html":[9,3,2,22]
 };

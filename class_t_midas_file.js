@@ -17,7 +17,7 @@ var class_t_midas_file =
     [ "FileSize", "class_t_midas_file.html#a92f7f63635aa48319bd2d055116e82e8", null ],
     [ "FileSize", "class_t_midas_file.html#af86125e0a4f210dc0c2e78c118f59c55", null ],
     [ "FillBuffer", "class_t_midas_file.html#aa325a7962a9922ff3b4937cb0123ce68", null ],
-    [ "GetFilename", "class_t_midas_file.html#af12181d63dad85ffee09ec4e09b643c2", null ],
+    [ "GetFilename", "class_t_midas_file.html#a37d73ab1087c2a9c8df0bc838010e688", null ],
     [ "GetLastErrno", "class_t_midas_file.html#a55ffaa696f8a91a794aa2d4112b209af", null ],
     [ "GetLastError", "class_t_midas_file.html#ab3cf23dc574a377f4657f161030c7351", null ],
     [ "GetOdbEvent", "class_t_midas_file.html#ab0b0aee7f8b5bbcbb3ff36b7f6ebb1f8", null ],

@@ -131,7 +131,6 @@ var class_t_griffin =
     [ "fDefaultGainType", "class_t_griffin.html#a1f723c043888f32acd3a4239a06fd968", null ],
     [ "fGriffinBits", "class_t_griffin.html#a78349578bc2408a4049bc295af08ab7e", null ],
     [ "fGriffinHighGainHits", "class_t_griffin.html#a69c073b113688159e138ccbce4581b4c", null ],
-    [ "fGriffinLowGainHits", "class_t_griffin.html#a77dfb037e0fb4c019ffc6b1dea10b4c6", null ],
     [ "fHits", "class_t_griffin.html#a13ea06ba385aabcf09c1ea5a70d8145b", null ],
     [ "fSetCoreWave", "class_t_griffin.html#ada7b046cefade862401e2ac356e5038e", null ],
     [ "fSuppressedAddbackHighGainFrags", "class_t_griffin.html#a893bfdb4d346a0943f9c1290e0f7dfdc", null ],
