@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>   Int_t high = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetXaxis()-&gt;GetLast();</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>   <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetXaxis()-&gt;SetRangeUser(100, <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetXaxis()-&gt;GetBinCenter(high));</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>   <span class="comment">// Use a TSpectrum to find the two largest peaks in the spectrum</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>   <span class="keyword">auto</span>* spec   = <span class="keyword">new</span> TSpectrum;                  <span class="comment">// This might not have to be allocated</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>   <span class="keyword">auto</span>* spec   = <span class="keyword">new</span> TSpectrum;                     <span class="comment">// This might not have to be allocated</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>   Int_t nFound = spec-&gt;Search(<a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>, 2, <span class="stringliteral">&quot;&quot;</span>, 0.50);   <span class="comment">// This returns peaks in order of their height in the spectrum.</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>   <span class="comment">// return histogram to proper range</span></div>
@@ -276,8 +276,8 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>   <span class="comment">// See if the channel exists. There is no point in finding the gains if we don&#39;t have anywhere to write it</span></div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>   Double_t  gain   = 0.;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>   Double_t offset = 0.;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>   <a class="code hl_class" href="class_t_channel.html">TChannel</a>* chan = <a class="code hl_function" href="class_t_channel.html#ac8d8e95b683e5783b2b4176def9826cf">TChannel::GetChannelByNumber</a>(channelNum);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>   Double_t  offset = 0.;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>   <a class="code hl_class" href="class_t_channel.html">TChannel</a>* chan   = <a class="code hl_function" href="class_t_channel.html#ac8d8e95b683e5783b2b4176def9826cf">TChannel::GetChannelByNumber</a>(channelNum);</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>   <span class="keywordflow">if</span>(chan == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      <span class="keywordflow">if</span>(channelNum != 9999) {</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>         Warning(<span class="stringliteral">&quot;FineMatchFast&quot;</span>, <span class="stringliteral">&quot;Channel Number %d does not exist in current memory.&quot;</span>, channelNum);</div>
@@ -375,7 +375,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>   peak1-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>   peak2-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>   std::array&lt;Double_t, 2&gt; centroid = { peak1-&gt;<a class="code hl_function" href="class_t_peak.html#ae71437ddab1693069e618edc7d1a3efa">GetCentroid</a>(), peak2-&gt;<a class="code hl_function" href="class_t_peak.html#ae71437ddab1693069e618edc7d1a3efa">GetCentroid</a>() };</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>   std::array&lt;Double_t, 2&gt; centroid = {peak1-&gt;<a class="code hl_function" href="class_t_peak.html#ae71437ddab1693069e618edc7d1a3efa">GetCentroid</a>(), peak2-&gt;<a class="code hl_function" href="class_t_peak.html#ae71437ddab1693069e618edc7d1a3efa">GetCentroid</a>()};</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>   <span class="comment">// Put the peaks in order for ease (if the user put them in the wrong order)</span></div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>   <span class="comment">// Apparantly there is a TGraph Sort method. Might look into this later.</span></div>
@@ -836,9 +836,9 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>   }</div>
 <div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span> </div>
 <div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>   <span class="comment">// See if the channel exists. There is no point in finding the gains if we don&#39;t have anywhere to write it</span></div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>   Double_t gain   = 0.;</div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>   Double_t offset = 0.;</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>   <a class="code hl_class" href="class_t_channel.html">TChannel</a>* chan = <a class="code hl_function" href="class_t_channel.html#ac8d8e95b683e5783b2b4176def9826cf">TChannel::GetChannelByNumber</a>(channelNum);</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>   Double_t  gain   = 0.;</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>   Double_t  offset = 0.;</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>   <a class="code hl_class" href="class_t_channel.html">TChannel</a>* chan   = <a class="code hl_function" href="class_t_channel.html#ac8d8e95b683e5783b2b4176def9826cf">TChannel::GetChannelByNumber</a>(channelNum);</div>
 <div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>   <span class="keywordflow">if</span>(chan == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>      <span class="keywordflow">if</span>(channelNum != 9999) {</div>
 <div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>         Warning(<span class="stringliteral">&quot;FineMatch&quot;</span>, <span class="stringliteral">&quot;Channel Number %d does not exist in current memory.&quot;</span>, channelNum);</div>
@@ -869,7 +869,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>   Set(2);</div>
 <div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span> </div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>   <span class="comment">// Find the energy of the peak that we want to use</span></div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>   std::array&lt;Double_t, 2&gt; energy = { peak1-&gt;GetParameter(<span class="stringliteral">&quot;centroid&quot;</span>), peak2-&gt;GetParameter(<span class="stringliteral">&quot;centroid&quot;</span>) };</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>   std::array&lt;Double_t, 2&gt; energy = {peak1-&gt;GetParameter(<span class="stringliteral">&quot;centroid&quot;</span>), peak2-&gt;GetParameter(<span class="stringliteral">&quot;centroid&quot;</span>)};</div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>   std::cout &lt;&lt; peak1-&gt;GetParameter(<span class="stringliteral">&quot;centroid&quot;</span>) &lt;&lt; <span class="stringliteral">&quot; ENERGIES &quot;</span> &lt;&lt; energy[1] &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>   <span class="comment">// Offsets are very small right now so I&#39;m not including them until they become a problem.</span></div>
 <div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>   <span class="comment">//   peak1-&gt;SetParameter(&quot;centroid&quot;,((energy[0]-offset)/gain)*fAlignCoeffs[1] + fAlignCoeffs[0]);</span></div>
@@ -953,7 +953,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>   peak1-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>   peak2-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span> </div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>   std::array&lt;Double_t, 2&gt; centroid = { peak1-&gt;GetCentroid(), peak2-&gt;GetCentroid() };</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>   std::array&lt;Double_t, 2&gt; centroid = {peak1-&gt;GetCentroid(), peak2-&gt;GetCentroid()};</div>
 <div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span> </div>
 <div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>   <span class="comment">// Put the peaks in order for ease (if the user put them in the wrong order)</span></div>
 <div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>   <span class="comment">// Apparantly there is a TGraph Sort method. Might look into this later.</span></div>
@@ -982,7 +982,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 </div>
 <div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span> </div>
 <div class="foldopen" id="foldopen00840" data-start="{" data-end="}">
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno"><a class="line" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">  840</a></span>Double_t <a class="code hl_function" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">TGainMatch::HistCompare</a>(Double_t* x, Double_t* par) <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno"><a class="line" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">  840</a></span>Double_t <a class="code hl_function" href="class_t_gain_match.html#a4bf28ae40bea89efc1ce2524ce96226e">TGainMatch::HistCompare</a>(Double_t* x, Double_t* par)   <span class="comment">// NOLINT</span></div>
 <div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>{</div>
 <div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>   Int_t    bin     = <a class="code hl_variable" href="class_t_gain_match.html#a27942facfb401828bc92db0f14187b34">fHist</a>-&gt;GetXaxis()-&gt;FindBin(x[0] * par[2] + par[1]);</div>
 <div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>   Double_t content = <a class="code hl_variable" href="class_t_gain_match.html#a27942facfb401828bc92db0f14187b34">fHist</a>-&gt;GetBinContent(bin);</div>
@@ -1043,7 +1043,7 @@ $(document).ready(function(){initNavTree('_t_gain_match_8cxx_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_4d17f409fb020449a7716dffae2b2761.html">TCal</a></li><li class="navelem"><a class="el" href="_t_gain_match_8cxx.html">TGainMatch.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Aug 16 2024 20:36:56.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 15:44:25.</li>
   </ul>
 </div>
 </body>

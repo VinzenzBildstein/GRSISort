@@ -515,8 +515,8 @@ $(document).ready(function(){initNavTree('_g_peak_8cxx_source.html',''); initRes
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>   Double_t xhigh = 0.;</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>   GetRange(xlow, xhigh);</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>   Int_t nbins  = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetXaxis()-&gt;GetNbins();</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>   <span class="keyword">auto</span>* res = <span class="keyword">new</span> Double_t[nbins];</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>   <span class="keyword">auto</span>* bin = <span class="keyword">new</span> Double_t[nbins];</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>   <span class="keyword">auto</span>* res    = <span class="keyword">new</span> Double_t[nbins];</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>   <span class="keyword">auto</span>* bin    = <span class="keyword">new</span> Double_t[nbins];</div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>   Int_t points = 0;</div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt;= nbins; i++) {</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>      <span class="keywordflow">if</span>(<a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetBinCenter(i) &lt;= xlow || <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetBinCenter(i) &gt;= xhigh) {</div>
@@ -545,7 +545,7 @@ $(document).ready(function(){initNavTree('_g_peak_8cxx_source.html',''); initRes
 <div class="ttc" id="a_globals_8h_html_ad7c3b975e5552a122f836b02fa138502"><div class="ttname"><a href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a></div><div class="ttdeci">#define RESET_COLOR</div><div class="ttdef"><b>Definition</b> <a href="_globals_8h_source.html#l00004">Globals.h:4</a></div></div>
 <div class="ttc" id="a_t_g_r_s_i_functions_8h_html"><div class="ttname"><a href="_t_g_r_s_i_functions_8h.html">TGRSIFunctions.h</a></div></div>
 <div class="ttc" id="a_user_fill_obj_8h_html_ac15e5a1de3bd77dc1ff2768e42dc9e8b"><div class="ttname"><a href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a></div><div class="ttdeci">TH1D * hist</div><div class="ttdef"><b>Definition</b> <a href="_user_fill_obj_8h_source.html#l00003">UserFillObj.h:3</a></div></div>
-<div class="ttc" id="aclass_g_canvas_html"><div class="ttname"><a href="class_g_canvas.html">GCanvas</a></div><div class="ttdef"><b>Definition</b> <a href="_g_canvas_8h_source.html#l00236">GCanvas.h:236</a></div></div>
+<div class="ttc" id="aclass_g_canvas_html"><div class="ttname"><a href="class_g_canvas.html">GCanvas</a></div><div class="ttdef"><b>Definition</b> <a href="_g_canvas_8h_source.html#l00238">GCanvas.h:238</a></div></div>
 <div class="ttc" id="aclass_g_peak_html"><div class="ttname"><a href="class_g_peak.html">GPeak</a></div><div class="ttdef"><b>Definition</b> <a href="_g_peak_8h_source.html#l00011">GPeak.h:11</a></div></div>
 <div class="ttc" id="aclass_g_peak_html_a01655a4345aadd1a4f8f01e089d0b6db"><div class="ttname"><a href="class_g_peak.html#a01655a4345aadd1a4f8f01e089d0b6db">GPeak::GPeak</a></div><div class="ttdeci">GPeak()</div><div class="ttdef"><b>Definition</b> <a href="_g_peak_8cxx_source.html#l00088">GPeak.cxx:88</a></div></div>
 <div class="ttc" id="aclass_g_peak_html_a0a558214f1a13a437d477c6adba3dc01"><div class="ttname"><a href="class_g_peak.html#a0a558214f1a13a437d477c6adba3dc01">GPeak::Copy</a></div><div class="ttdeci">void Copy(TObject &amp;) const override</div><div class="ttdef"><b>Definition</b> <a href="_g_peak_8cxx_source.html#l00125">GPeak.cxx:125</a></div></div>
@@ -578,7 +578,7 @@ $(document).ready(function(){initNavTree('_g_peak_8cxx_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_g_peak_8cxx.html">GPeak.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Aug 16 2024 20:36:56.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 15:44:25.</li>
   </ul>
 </div>
 </body>

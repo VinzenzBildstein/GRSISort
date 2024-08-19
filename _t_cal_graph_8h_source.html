@@ -135,10 +135,10 @@ $(document).ready(function(){initNavTree('_t_cal_graph_8h_source.html',''); init
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>   <a class="code hl_function" href="class_t_cal_graph.html#a972cff0b6f6e4d9c5d0ecc7cb90db9a7">TCalGraph</a>();</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a56b9e606221088955bc55c4f9c9cdbcd">   31</a></span>   <a class="code hl_function" href="class_t_cal_graph.html#a56b9e606221088955bc55c4f9c9cdbcd">TCalGraph</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* title) : TGraphErrors(name, title){};</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>   <a class="code hl_function" href="class_t_cal_graph.html#a972cff0b6f6e4d9c5d0ecc7cb90db9a7">TCalGraph</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp;);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a58677b19b1b393cf712ec3914f9f1c84">   33</a></span>   <a class="code hl_function" href="class_t_cal_graph.html#a58677b19b1b393cf712ec3914f9f1c84">TCalGraph</a>(<a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a7817f671759bf183b9c63509a5cc0dbb">   34</a></span>   <a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp; operator=(const <a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp;) = default;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a58677b19b1b393cf712ec3914f9f1c84">   33</a></span>   <a class="code hl_function" href="class_t_cal_graph.html#a58677b19b1b393cf712ec3914f9f1c84">TCalGraph</a>(<a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp;&amp;) noexcept            = default;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a7817f671759bf183b9c63509a5cc0dbb">   34</a></span>   <a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp; operator=(const <a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp;)     = default;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a158244b814d924d356a77710957dbe12">   35</a></span>   <a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp; operator=(<a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>&amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a9a32634d76d58d0e858840e2e445e221">   36</a></span>   ~<a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>() = default;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#a9a32634d76d58d0e858840e2e445e221">   36</a></span>   ~<a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>()                               = default;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#if ROOT_VERSION_CODE &gt;= ROOT_VERSION(6, 24, 0)</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>   <span class="keyword">using </span>TGraph::AddPoint;</div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('_t_cal_graph_8h_source.html',''); init
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_t_cal_graph.html#aee7eb13e3edc4a48e1e51f8717e69873">   64</a></span>   std::map&lt;UInt_t, std::pair&lt;TCalPoint, TCalPoint&gt;&gt; <a class="code hl_variable" href="class_t_cal_graph.html#aee7eb13e3edc4a48e1e51f8717e69873">fCompareMap</a>;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">   /// \cond CLASSIMP</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span>   ClassDefOverride(<a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>, 1) <span class="comment">// NOLINT</span><span class="comment"></span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span>   ClassDefOverride(<a class="code hl_class" href="class_t_cal_graph.html">TCalGraph</a>, 1)   <span class="comment">// NOLINT</span><span class="comment"></span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">   /// \endcond</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span>};<span class="comment"></span></div>
 </div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('_t_cal_graph_8h_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_t_cal_graph_8h.html">TCalGraph.h</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Aug 16 2024 20:36:56.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 15:44:24.</li>
   </ul>
 </div>
 </body>

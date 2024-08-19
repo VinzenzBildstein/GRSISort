@@ -138,8 +138,8 @@ $(document).ready(function(){initNavTree('_t_peak_8h_source.html',''); initResiz
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>   <a class="code hl_function" href="class_t_peak.html#acc7b289ce4fa612258c023a0772a00d2">TPeak</a>(Double_t cent, Double_t xlow, Double_t xhigh, TF1* background = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>   <a class="code hl_function" href="class_t_peak.html#acc7b289ce4fa612258c023a0772a00d2">TPeak</a>();   <span class="comment">// I might make it so if you call this ctor, the TPeak yells at you since it&#39;s a fairly useless call anyway</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>   <a class="code hl_function" href="class_t_peak.html#acc7b289ce4fa612258c023a0772a00d2">TPeak</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp; copy);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_t_peak.html#a3783de39d9287b2a20a444b31db08745">   36</a></span>   <a class="code hl_function" href="class_t_peak.html#a3783de39d9287b2a20a444b31db08745">TPeak</a>(<a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_t_peak.html#ab775d9a0401b7b5e4decf964b2958bce">   37</a></span>   <a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp; operator=(const <a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp;) = default;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_t_peak.html#a3783de39d9287b2a20a444b31db08745">   36</a></span>   <a class="code hl_function" href="class_t_peak.html#a3783de39d9287b2a20a444b31db08745">TPeak</a>(<a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp;&amp;) noexcept            = default;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_t_peak.html#ab775d9a0401b7b5e4decf964b2958bce">   37</a></span>   <a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp; operator=(const <a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp;)     = default;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_t_peak.html#a26d82b7dda2e4789b54bbddb0c6ea342">   38</a></span>   <a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp; operator=(<a class="code hl_class" href="class_t_peak.html">TPeak</a>&amp;&amp;) noexcept = default;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>   ~<a class="code hl_class" href="class_t_peak.html">TPeak</a>();</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
@@ -237,7 +237,7 @@ $(document).ready(function(){initNavTree('_t_peak_8h_source.html',''); initResiz
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_t_peak.html#a5eb7cd4b6e8fbd1cfb3d94c107f33433">  128</a></span>   TGraph* <a class="code hl_variable" href="class_t_peak.html#a5eb7cd4b6e8fbd1cfb3d94c107f33433">fResiduals</a>{<span class="keyword">nullptr</span>};</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment"></span> </div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">   /// \cond CLASSIMP</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"></span>   ClassDefOverride(<a class="code hl_class" href="class_t_peak.html">TPeak</a>, 2) <span class="comment">// NOLINT</span><span class="comment"></span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"></span>   ClassDefOverride(<a class="code hl_class" href="class_t_peak.html">TPeak</a>, 2)   <span class="comment">// NOLINT</span><span class="comment"></span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">   /// \endcond</span></div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"></span>};<span class="comment"></span></div>
 </div>
@@ -310,7 +310,7 @@ $(document).ready(function(){initNavTree('_t_peak_8h_source.html',''); initResiz
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_t_peak_8h.html">TPeak.h</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Aug 16 2024 20:36:56.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Aug 19 2024 15:44:24.</li>
   </ul>
 </div>
 </body>
