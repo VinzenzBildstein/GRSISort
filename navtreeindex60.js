@@ -1,15 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"class_t_tigress_hit.html#ac9202e62116783982bac618bea13cbb7":[7,2,67,63],
-"class_t_tigress_hit.html#accf37a09c00501e307ca9d6fb5451436":[7,2,67,105],
-"class_t_tigress_hit.html#acd815e31f036fa6505e06512e5183d4c":[7,2,67,26],
-"class_t_tigress_hit.html#acdb38ab68d5513dab900d3471e348270":[7,2,67,69],
-"class_t_tigress_hit.html#ad046c38d7b93b87b7e169e3418c43a09":[7,2,67,91],
-"class_t_tigress_hit.html#ad08e816347670259c6624a8be3ab6594":[7,2,67,75],
-"class_t_tigress_hit.html#ad3fa7465bdd5ad351ade982d0b65e4ed":[7,2,67,23],
-"class_t_tigress_hit.html#ad62673f38054fff81556da5aa2770a3b":[7,2,67,62],
-"class_t_tigress_hit.html#ad722731c5fde16e444eccbc61a697dda":[7,2,67,27],
-"class_t_tigress_hit.html#ad7fb301833e90f4b36b7fa1be7fe1334":[7,2,67,106],
 "class_t_tigress_hit.html#ad7fc819e54332ab04928b3fc9aff599e":[7,2,67,34],
 "class_t_tigress_hit.html#ada323f08a38cd73186465ecb4f9b72eb":[7,2,67,0],
 "class_t_tigress_hit.html#ada323f08a38cd73186465ecb4f9b72eba2eb1e43d1f624b58f25b306dacc7456e":[7,2,67,0,1],
@@ -249,5 +239,15 @@ var NAVTREEINDEX60 =
 "class_t_transient_bits.html#ac8ab0becf86ff15328f419d44e19559a":[7,11,60,18],
 "class_t_transient_bits.html#ade97a83507cc857dc0f41cbba78a3618":[7,11,60,9],
 "class_t_transient_bits.html#ae05a3b4d041f8417829ab5177d373654":[7,11,60,7],
-"class_t_transient_bits.html#ae6d2715dca27133d44fb982634fb3194":[7,11,60,1]
+"class_t_transient_bits.html#ae6d2715dca27133d44fb982634fb3194":[7,11,60,1],
+"class_t_transient_bits.html#afb4eeace0ff41d55a0489109e8359c3f":[7,11,60,14],
+"class_t_transition.html":[7,3,25],
+"class_t_transition.html#a09cad457179313faf4f5e67a23245ff5":[7,3,25,1],
+"class_t_transition.html#a2b04c42e59253ad0cf9db2f2883562cf":[7,3,25,11],
+"class_t_transition.html#a33033b84ca1e3fa66aaa6f7dec3ba3c2":[7,3,25,13],
+"class_t_transition.html#a380fa636e06380474f69d7d910bf3f43":[7,3,25,17],
+"class_t_transition.html#a3eea01975bb40c72a1c16716a525697e":[7,3,25,0],
+"class_t_transition.html#a4a6ba2625f0604cd1fe7442de40cc36c":[7,3,25,15],
+"class_t_transition.html#a4d5014e603b49678a082d13f22e653f3":[7,3,25,27],
+"class_t_transition.html#a4f829e2ab2db3550bf47148e6f289fe9":[7,3,25,3]
 };

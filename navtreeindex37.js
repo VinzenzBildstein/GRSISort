@@ -1,15 +1,5 @@
 var NAVTREEINDEX37 =
 {
-"class_t_griffin_hit.html#addb3ffba39dbe599159838e329d0c4b8":[7,2,28,50],
-"class_t_griffin_hit.html#adfe1154b7cd0969319ac01e12a16a9f5":[7,2,28,71],
-"class_t_griffin_hit.html#ae035598462afc7faf4035ada0bd183dd":[7,2,28,84],
-"class_t_griffin_hit.html#ae8e8f7fdd137db1b8b5df4deca0f8c99":[7,2,28,75],
-"class_t_griffin_hit.html#aeab285a914a74f67155972bb51841ecd":[7,2,28,9],
-"class_t_griffin_hit.html#aeea3aeb84822c4f565bf36659474db15":[7,2,28,12],
-"class_t_griffin_hit.html#af58eacf1f4d733600e1bbb4979cd0a50":[7,2,28,57],
-"class_t_griffin_hit.html#af6674402721ffa473fa65f8fdbeff62a":[7,2,28,55],
-"class_t_griffin_hit.html#af8d5245a46498534f224f84619ff2f56":[7,2,28,76],
-"class_t_griffin_hit.html#afaf905f6ea1055e3982e2d814fe71bf1":[7,2,28,19],
 "class_t_h_i_l_data_parser.html":[7,11,24],
 "class_t_h_i_l_data_parser.html#a02643e27154833c53169f89151050fd5":[7,11,24,44],
 "class_t_h_i_l_data_parser.html#a0354dff4a941e5fdbffd632cfe9eb68f":[7,11,24,22],
@@ -249,5 +239,15 @@ var NAVTREEINDEX37 =
 "class_t_h_i_l_fragment.html#ab6adf5ff1ffbcbb3b50c4559209f007a":[7,11,27,67],
 "class_t_h_i_l_fragment.html#ab8f2c26d18ac49826ea8bf3bbc10ab3a":[7,11,27,102],
 "class_t_h_i_l_fragment.html#ab901600498f2b8d8ccc888398321c30d":[7,11,27,15],
-"class_t_h_i_l_fragment.html#aba5e96b2f172f0e12eb2b6e06af5a735":[7,11,27,69]
+"class_t_h_i_l_fragment.html#aba5e96b2f172f0e12eb2b6e06af5a735":[7,11,27,69],
+"class_t_h_i_l_fragment.html#abab2f46047c824844baca0e7fae7eb03":[7,11,27,112],
+"class_t_h_i_l_fragment.html#abb29f0acb47e7e3a316f7ff998bce3a1":[7,11,27,157],
+"class_t_h_i_l_fragment.html#abb42dec7d310583cace555ede575ef0f":[7,11,27,22],
+"class_t_h_i_l_fragment.html#abb7691c4e0912c1fb5f276cd26542a7c":[7,11,27,134],
+"class_t_h_i_l_fragment.html#abc39d95961863ed1182a7de704d2af74":[7,11,27,81],
+"class_t_h_i_l_fragment.html#abd2d027e0e62b956feeadba52d6b5e4e":[7,11,27,2],
+"class_t_h_i_l_fragment.html#abd7a5518c4789a93297ada07bebff9bd":[7,11,27,76],
+"class_t_h_i_l_fragment.html#ac3f524e92442781ff7314c5ed7c3da28":[7,11,27,45],
+"class_t_h_i_l_fragment.html#ac4146cc1457aef74e69de9bcce9b3a1a":[7,11,27,4],
+"class_t_h_i_l_fragment.html#ac4a6b9aee17dc144fdda2ce86d9509ff":[7,11,27,116]
 };

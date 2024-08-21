@@ -1,15 +1,5 @@
 var NAVTREEINDEX35 =
 {
-"class_t_gain_match.html#acc5aedbaca3dfc61bab08825f21709ad":[7,1,10,25],
-"class_t_gain_match.html#ad0060a22683cfa00c711a6f05fbc9349":[7,1,10,43],
-"class_t_gain_match.html#ad18eea2802030bec137f32c6f132e191":[7,1,10,2],
-"class_t_gain_match.html#ad3a29c8369ce14d84dd39e13fa4fccde":[7,1,10,22],
-"class_t_gain_match.html#ada6e4b52552b0a94ca8ff6f6ea4b120e":[7,1,10,42],
-"class_t_gain_match.html#ae44ff57886a1045a1527280a6449f400":[7,1,10,29],
-"class_t_gain_match.html#ae52e58ec0fc6f6d44bdb88309339df96":[7,1,10,49],
-"class_t_gain_match.html#afdf328223580d9e5840732de7b6683a8":[7,1,10,46],
-"class_t_gauss.html":[7,3,11],
-"class_t_gauss.html#a0378b7b1f22028a7751b81d177487416":[7,3,11,20],
 "class_t_gauss.html#a04356d7486ad1498cbfe50bfb248f1a1":[7,3,11,17],
 "class_t_gauss.html#a0d86138a5b453b2c16b262d6ce581060":[7,3,11,11],
 "class_t_gauss.html#a11906646c75fddd71b5fd8ae63f21804":[7,3,11,50],
@@ -249,5 +239,15 @@ var NAVTREEINDEX35 =
 "class_t_griffin_angles.html#abeac19ee1c9d4df76540a39d00455b93":[7,0,0,14],
 "class_t_griffin_angles.html#ad553b5453657c0194f1484865c24198c":[7,0,0,19],
 "class_t_griffin_angles.html#ada59f37eb0221d344d5d8d280a76f418":[7,0,0,24],
-"class_t_griffin_angles.html#adcae16506d95a3772171a056e405a30a":[7,0,0,20]
+"class_t_griffin_angles.html#adcae16506d95a3772171a056e405a30a":[7,0,0,20],
+"class_t_griffin_angles.html#ae168cff819e782c7ce3f4d74449d93f5":[7,0,0,23],
+"class_t_griffin_angles.html#ae53441dc46c1588077d23572f703d03c":[7,0,0,5],
+"class_t_griffin_angles.html#ae82a03978a5034937f4c46e826e5de93":[7,0,0,9],
+"class_t_griffin_angles.html#ae9f42762bb3f426271ecc3e9aec89f77":[7,0,0,17],
+"class_t_griffin_angles.html#afb82b46cba0a653ae8634f7c7ac4d25d":[7,0,0,1],
+"class_t_griffin_angles.html#afc9a8c2ec5d2cf70f9256da5033b544a":[7,0,0,6],
+"class_t_griffin_angles.html#afd646dd0beca73b9b2ba03b13746a3d6":[7,0,0,4],
+"class_t_griffin_bgo.html":[7,2,26],
+"class_t_griffin_bgo.html#a085bc6ed53bf021937b04ced8c87f6d6":[7,2,26,1],
+"class_t_griffin_bgo.html#a13ea06ba385aabcf09c1ea5a70d8145b":[7,2,26,20]
 };
