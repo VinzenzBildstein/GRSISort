@@ -1,13 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"class_alphanumeric_selector.html#a1e35e3147d9f14a04e4d0f9f30431074":[9,0,4,30],
-"class_alphanumeric_selector.html#a21b4ed735f1d17cb6a232510ca430339":[9,0,4,7],
-"class_alphanumeric_selector.html#a29945f1269efc3023c16716af041d4bd":[9,0,4,16],
-"class_alphanumeric_selector.html#a301316e1b796a58ca2abd5339ff35e29":[9,0,4,13],
-"class_alphanumeric_selector.html#a399ba322e2eef95dfcc3f2d21d27fbac":[9,0,4,27],
-"class_alphanumeric_selector.html#a3ee3614749d1369487299802d7e18364":[9,0,4,3],
-"class_alphanumeric_selector.html#a4df6c5b7c9f1cd15756e4df594b29098":[9,0,4,21],
-"class_alphanumeric_selector.html#a4ede910b47837cd5cdc611154973b5a5":[9,0,4,19],
 "class_alphanumeric_selector.html#a504e2b821c2f5629263a37d659427d5b":[9,0,4,0],
 "class_alphanumeric_selector.html#a5d4c3f5aef64c23330e2f80b017d9e42":[9,0,4,23],
 "class_alphanumeric_selector.html#a613ab2575ae93c6001aa09235c454546":[9,0,4,37],
@@ -249,5 +241,13 @@ var NAVTREEINDEX7 =
 "class_compton_polarimetry_helper.html#a0595f69cfb8c9399f4af6b28e185de87":[9,0,13,50],
 "class_compton_polarimetry_helper.html#a0b2861b9e607129c2d996f46d871baa6":[9,0,13,47],
 "class_compton_polarimetry_helper.html#a0e505d1c617db78984dd90345c10d50e":[9,0,13,11],
-"class_compton_polarimetry_helper.html#a106305b1b18827f1f5ec4952b63b54f3":[9,0,13,26]
+"class_compton_polarimetry_helper.html#a106305b1b18827f1f5ec4952b63b54f3":[9,0,13,26],
+"class_compton_polarimetry_helper.html#a11d96937ca29dba17c7c55ccd78b1846":[9,0,13,28],
+"class_compton_polarimetry_helper.html#a134602d3db37506ecdcd5665bb339942":[9,0,13,25],
+"class_compton_polarimetry_helper.html#a13982a2930b892f25393e87a3c69c884":[9,0,13,2],
+"class_compton_polarimetry_helper.html#a18d8f7091c28ea80fd5038f87960716b":[9,0,13,30],
+"class_compton_polarimetry_helper.html#a210872f6be03540044b9e1e190fde8f6":[9,0,13,45],
+"class_compton_polarimetry_helper.html#a218dfe434a003466646cd80ae445aec9":[9,0,13,42],
+"class_compton_polarimetry_helper.html#a2305d7d9f9694492f1da9fff5a82484f":[9,0,13,22],
+"class_compton_polarimetry_helper.html#a23db3e61978039fa768fa3a90c1cd982":[9,0,13,13]
 };

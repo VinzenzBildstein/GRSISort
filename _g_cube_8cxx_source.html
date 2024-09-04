@@ -499,9 +499,9 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>               (fXaxis.GetNbins() + 2) * (fXaxis.GetNbins() + 3) * (fXaxis.GetNbins() + 4) / 6 -</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>               (fXaxis.GetNbins() + 2 - binz) * (fXaxis.GetNbins() + 3 - binz) * (fXaxis.GetNbins() + 4 - binz) / 6 - biny;</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;binx,y,z = &quot;</span> &lt;&lt; binx &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; biny &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; binz &lt;&lt; <span class="stringliteral">&quot; =&gt; bin = &quot;</span> &lt;&lt; bin &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>   bin = binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>         binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                 10. / 3.);</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>   bin = <span class="keyword">static_cast&lt;</span>Int_t<span class="keyword">&gt;</span>(binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                            binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                                    10. / 3.));</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;binx,y,z = &quot;</span> &lt;&lt; binx &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; biny &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; binz &lt;&lt; <span class="stringliteral">&quot; =&gt; bin = &quot;</span> &lt;&lt; bin &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>   AddBinContent(bin);</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>   <span class="keywordflow">if</span>(fSumw2.fN != 0) {</div>
@@ -588,9 +588,9 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>   <span class="keywordflow">if</span>(binx &lt; 0 || biny &lt; 0 || binz &lt; 0) {</div>
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>      <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>   }</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>   Int_t bin = binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>               binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>                       10. / 3.);</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>   <span class="keyword">auto</span> bin = <span class="keyword">static_cast&lt;</span>Int_t<span class="keyword">&gt;</span>(binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>                                 binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>                                         10. / 3.));</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>   AddBinContent(bin, w);</div>
 <div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>   <span class="keywordflow">if</span>(fSumw2.fN != 0) {</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>      fSumw2.fArray[bin] += w * w;</div>
@@ -664,9 +664,9 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>      std::swap(biny, binz);</div>
 <div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>   }</div>
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span> </div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>   Int_t bin = binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>               binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                       10. / 3.);</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>   <span class="keyword">auto</span> bin = <span class="keyword">static_cast&lt;</span>Int_t<span class="keyword">&gt;</span>(binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>                                 binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                                         10. / 3.));</div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>   AddBinContent(bin, w);</div>
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>   <span class="keywordflow">if</span>(fSumw2.fN != 0) {</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>      fSumw2.fArray[bin] += w * w;</div>
@@ -1021,14 +1021,14 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>   <span class="comment">// Loop on all cells in X,Y generate a projection along Z</span></div>
 <div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>   <span class="keyword">auto</span>* hpz = <span class="keyword">new</span> TH1D(<span class="stringliteral">&quot;R_temp&quot;</span>, <span class="stringliteral">&quot;_temp&quot;</span>, nbinsz, fZaxis.GetXmin(), fZaxis.GetXmax());</div>
 <div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>   <span class="keywordflow">for</span>(Int_t biny = binminy; biny &lt;= binmaxy; biny++) {</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>      Float_t y = fYaxis.GetBinCenter(biny);</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>      Double_t y = fYaxis.GetBinCenter(biny);</div>
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>      <span class="keywordflow">for</span>(Int_t binx = binminx; binx &lt;= binmaxx; binx++) {</div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>         Float_t x = fXaxis.GetBinCenter(binx);</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>         Double_t x = fXaxis.GetBinCenter(binx);</div>
 <div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>         hpz-&gt;Reset();</div>
 <div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>         Int_t nfill = 0;</div>
 <div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>         <span class="keywordflow">for</span>(Int_t binz = 1; binz &lt;= nbinsz; binz++) {</div>
 <div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>            Int_t   bin = <a class="code hl_function" href="class_g_cube.html#a5241c5f641c6cc1cd758319ba14b9df0">GetBin</a>(binx, biny, binz);</div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>            Float_t w   = RetrieveBinContent(bin);</div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>            Double_t w   = RetrieveBinContent(bin);</div>
 <div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>            <span class="keywordflow">if</span>(w == 0) {</div>
 <div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>               <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>            }</div>
@@ -1089,9 +1089,9 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>      std::swap(biny, binz);</div>
 <div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>   }</div>
 <div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span> </div>
-<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>   <span class="keywordflow">return</span> binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
-<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>          binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
-<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>                  10. / 3.);</div>
+<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>   <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Int_t<span class="keyword">&gt;</span>(binx + biny * (fXaxis.GetNbins() - (biny + 1.) / 2.) +</div>
+<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>                             binz * (binz / 2. * (binz / 3. - fXaxis.GetNbins() + 3.) + fXaxis.GetNbins() * (3 + fXaxis.GetNbins() / 2.) +</div>
+<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>                                     10. / 3.));</div>
 <div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>}</div>
 </div>
 <div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span> </div>
@@ -3420,7 +3420,7 @@ $(document).ready(function(){initNavTree('_g_cube_8cxx_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_g_cube_8cxx.html">GCube.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Aug 21 2024 17:32:51.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Sep 4 2024 16:03:29.</li>
   </ul>
 </div>
 </body>

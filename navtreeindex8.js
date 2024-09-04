@@ -1,13 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"class_compton_polarimetry_helper.html#a11d96937ca29dba17c7c55ccd78b1846":[9,0,13,28],
-"class_compton_polarimetry_helper.html#a134602d3db37506ecdcd5665bb339942":[9,0,13,25],
-"class_compton_polarimetry_helper.html#a13982a2930b892f25393e87a3c69c884":[9,0,13,2],
-"class_compton_polarimetry_helper.html#a18d8f7091c28ea80fd5038f87960716b":[9,0,13,30],
-"class_compton_polarimetry_helper.html#a210872f6be03540044b9e1e190fde8f6":[9,0,13,45],
-"class_compton_polarimetry_helper.html#a218dfe434a003466646cd80ae445aec9":[9,0,13,42],
-"class_compton_polarimetry_helper.html#a2305d7d9f9694492f1da9fff5a82484f":[9,0,13,22],
-"class_compton_polarimetry_helper.html#a23db3e61978039fa768fa3a90c1cd982":[9,0,13,13],
 "class_compton_polarimetry_helper.html#a2543f966e5e6f55dd84d8167e742f6b8":[9,0,13,5],
 "class_compton_polarimetry_helper.html#a27adae6a07b011a2c5beb6a572acaa42":[9,0,13,34],
 "class_compton_polarimetry_helper.html#a2ea158b59f9de0ea9323142bf22f2766":[9,0,13,29],
@@ -249,5 +241,13 @@ var NAVTREEINDEX8 =
 "class_example_event_helper.html#add19941df642bbd2f8994a3b799d4760":[9,0,24,8],
 "class_example_event_helper.html#ae2c692144a9b683f3bd206bf70dda117":[9,0,24,12],
 "class_example_event_helper.html#ae5c188f3fc54bc1e7ee607421a46b678":[9,0,24,17],
-"class_example_event_helper.html#ae95111fa334deef7e49ea2050899e972":[9,0,24,29]
+"class_example_event_helper.html#ae95111fa334deef7e49ea2050899e972":[9,0,24,29],
+"class_example_event_helper.html#af70ba099fb02f24961d985d47f7a568d":[9,0,24,24],
+"class_example_event_helper.html#afc04623bddc6272dce189c6aafa9d31e":[9,0,24,1],
+"class_example_event_selector.html":[9,0,25],
+"class_example_event_selector.html#a095a925b9e0e9ae440a758300f082c9c":[9,0,25,28],
+"class_example_event_selector.html#a0a36b80b21d1c5fd0b2246943c28ebce":[9,0,25,40],
+"class_example_event_selector.html#a12e279b3988df21458f60fe483546c4d":[9,0,25,38],
+"class_example_event_selector.html#a149f95eff09cf13edda2429e1c4e4028":[9,0,25,7],
+"class_example_event_selector.html#a1935dbf4d7080d06bc59903daafca0ce":[9,0,25,18]
 };
