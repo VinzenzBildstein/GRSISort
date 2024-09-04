@@ -166,11 +166,11 @@ $(document).ready(function(){initNavTree('_t_efficiency_calibrator_8h_source.htm
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    kGauss   = 3 };</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   TEfficiencyTab(TEfficiencyDatatypeTab* parent, <a class="code hl_class" href="class_t_nucleus.html">TNucleus</a>* nucleus, std::tuple&lt;TH1*, TH2*, TH2*&gt; hists, TGCompositeFrame* frame, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; verboseLevel = 0);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>   TEfficiencyTab(<span class="keyword">const</span> TEfficiencyTab&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>   TEfficiencyTab(TEfficiencyTab&amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   TEfficiencyTab&amp; operator=(const TEfficiencyTab&amp;) = default;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>   TEfficiencyTab(<span class="keyword">const</span> TEfficiencyTab&amp;)                = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>   TEfficiencyTab(TEfficiencyTab&amp;&amp;) noexcept            = default;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   TEfficiencyTab&amp; operator=(const TEfficiencyTab&amp;)     = default;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>   TEfficiencyTab&amp; operator=(TEfficiencyTab&amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   ~TEfficiencyTab() = default;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   ~TEfficiencyTab()                                    = default;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   <span class="keywordtype">void</span>         FindPeaks();</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>   <a class="code hl_class" href="class_t_single_peak.html">TSinglePeak</a>* NewPeak(const <span class="keywordtype">double</span>&amp; energy);</div>
@@ -236,9 +236,9 @@ $(document).ready(function(){initNavTree('_t_efficiency_calibrator_8h_source.htm
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                 kPlotSummingOutCheck };</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>   TEfficiencyDatatypeTab(TEfficiencyCalibrator* parent, std::vector&lt;TNucleus*&gt; nucleus, std::vector&lt;std::tuple&lt;TH1*, TH2*, TH2*&gt;&gt; hists, TGCompositeFrame* frame, <span class="keyword">const</span> std::string&amp; dataType, TGHProgressBar* progressBar, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; verboseLevel = 0);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>   TEfficiencyDatatypeTab(<span class="keyword">const</span> TEfficiencyDatatypeTab&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>   TEfficiencyDatatypeTab(TEfficiencyDatatypeTab&amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>   TEfficiencyDatatypeTab&amp; operator=(const TEfficiencyDatatypeTab&amp;) = default;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>   TEfficiencyDatatypeTab(<span class="keyword">const</span> TEfficiencyDatatypeTab&amp;)                = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>   TEfficiencyDatatypeTab(TEfficiencyDatatypeTab&amp;&amp;) noexcept            = default;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>   TEfficiencyDatatypeTab&amp; operator=(const TEfficiencyDatatypeTab&amp;)     = default;</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>   TEfficiencyDatatypeTab&amp; operator=(TEfficiencyDatatypeTab&amp;&amp;) noexcept = default;</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>   ~TEfficiencyDatatypeTab();</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
@@ -357,9 +357,9 @@ $(document).ready(function(){initNavTree('_t_efficiency_calibrator_8h_source.htm
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                 kThresholdEntry = 300 };</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>   <span class="keyword">explicit</span> TEfficiencyCalibrator(<span class="keywordtype">int</span> n...);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>   TEfficiencyCalibrator(<span class="keyword">const</span> TEfficiencyCalibrator&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>   TEfficiencyCalibrator(TEfficiencyCalibrator&amp;&amp;) noexcept = delete;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>   TEfficiencyCalibrator&amp; operator=(const TEfficiencyCalibrator&amp;) = delete;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>   TEfficiencyCalibrator(<span class="keyword">const</span> TEfficiencyCalibrator&amp;)                = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>   TEfficiencyCalibrator(TEfficiencyCalibrator&amp;&amp;) noexcept            = delete;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>   TEfficiencyCalibrator&amp; operator=(const TEfficiencyCalibrator&amp;)     = delete;</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>   TEfficiencyCalibrator&amp; operator=(TEfficiencyCalibrator&amp;&amp;) noexcept = delete;</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>   ~TEfficiencyCalibrator();</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
@@ -461,7 +461,7 @@ $(document).ready(function(){initNavTree('_t_efficiency_calibrator_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_t_efficiency_calibrator_8h.html">TEfficiencyCalibrator.h</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Sep 4 2024 18:10:43.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Sep 4 2024 18:12:22.</li>
   </ul>
 </div>
 </body>
