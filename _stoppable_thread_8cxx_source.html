@@ -244,7 +244,7 @@ $(document).ready(function(){initNavTree('_stoppable_thread_8cxx_source.html',''
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_stoppable_thread.html#a57dfca04579bd53ad000bf93cd050ce6">  119</a></span>std::string <a class="code hl_function" href="class_stoppable_thread.html#a57dfca04579bd53ad000bf93cd050ce6">StoppableThread::Progress</a>()</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>   std::ostringstream str;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>   <span class="keywordtype">float</span>             percentDone = 100.f * <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_stoppable_thread.html#ac20a4c3f69442f30470288ca6e169a67">fItemsPopped</a>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>   <span class="keywordtype">float</span>              percentDone = 100.f * <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_stoppable_thread.html#ac20a4c3f69442f30470288ca6e169a67">fItemsPopped</a>);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_stoppable_thread.html#ac20a4c3f69442f30470288ca6e169a67">fItemsPopped</a> + <a class="code hl_variable" href="class_stoppable_thread.html#af2fbb178759f1b05df24f33b3a7a6233">fInputSize</a> &gt; 0) {</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      percentDone /= <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_stoppable_thread.html#ac20a4c3f69442f30470288ca6e169a67">fItemsPopped</a> + <a class="code hl_variable" href="class_stoppable_thread.html#af2fbb178759f1b05df24f33b3a7a6233">fInputSize</a>);</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">while</span>(percentDone &gt; 100.f / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_stoppable_thread.html#a4e6e493ea525d7bdee066fae3412d5db">fColumnWidth</a> - 1)) {</div>
@@ -550,7 +550,7 @@ $(document).ready(function(){initNavTree('_stoppable_thread_8cxx_source.html',''
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_cd3c6700b09e85b3c422529c0dd23545.html">TLoops</a></li><li class="navelem"><a class="el" href="_stoppable_thread_8cxx.html">StoppableThread.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Sep 17 2024 18:54:00.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Sep 17 2024 19:15:44.</li>
   </ul>
 </div>
 </body>
