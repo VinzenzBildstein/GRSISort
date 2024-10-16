@@ -699,13 +699,13 @@ $(document).ready(function(){initNavTree('_t_run_info_8cxx_source.html',''); ini
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>      <span class="keywordflow">return</span> {<span class="stringliteral">&quot;none&quot;</span>};</div>
 <div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>   }</div>
 <div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>   <span class="comment">// unless the &quot;all&quot; flag is set, we limit ourself to printing 140 characters (should be 20 runs?) </span></div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>   std::cout &lt;&lt; <span class="stringliteral">&quot; current string length is &quot;</span> &lt;&lt; result.str().length() &lt;&lt; <span class="stringliteral">&quot; and all is set to &quot;</span> &lt;&lt; (all?<span class="stringliteral">&quot;true&quot;</span>:<span class="stringliteral">&quot;false&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>   <span class="comment">// unless the &quot;all&quot; flag is set, we limit ourself to printing 140 characters (should be 20 runs?)</span></div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>   std::cout &lt;&lt; <span class="stringliteral">&quot; current string length is &quot;</span> &lt;&lt; result.str().length() &lt;&lt; <span class="stringliteral">&quot; and all is set to &quot;</span> &lt;&lt; (all ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>   <span class="keywordflow">if</span>(!all &amp;&amp; result.str().length() &gt; 140) {</div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>           result.str(result.str().substr(0, 140));</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>           result.seekp(0, std::ios_base::end);</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>           result &lt;&lt; <span class="stringliteral">&quot; ... and more&quot;</span>;</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>           std::cout &lt;&lt; <span class="stringliteral">&quot; limited string length is &quot;</span> &lt;&lt; result.str().length() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>      result.str(result.str().substr(0, 140));</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>      result.seekp(0, std::ios_base::end);</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>      result &lt;&lt; <span class="stringliteral">&quot; ... and more&quot;</span>;</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>      std::cout &lt;&lt; <span class="stringliteral">&quot; limited string length is &quot;</span> &lt;&lt; result.str().length() &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>   }</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>   <span class="keywordflow">return</span> result.str();</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>}</div>
@@ -873,7 +873,7 @@ $(document).ready(function(){initNavTree('_t_run_info_8cxx_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_2b08b36851fcb6a7439555c8d93f536c.html">TFormat</a></li><li class="navelem"><a class="el" href="_t_run_info_8cxx.html">TRunInfo.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Oct 16 2024 23:14:35.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Oct 16 2024 23:27:31.</li>
   </ul>
 </div>
 </body>

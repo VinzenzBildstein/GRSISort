@@ -163,10 +163,10 @@ $(document).ready(function(){initNavTree('_t_g_r_s_i_frame_8cxx_source.html','')
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <span class="keywordflow">if</span>(chain-&gt;Add(fileName.c_str(), 0) &gt;= 1) {   <span class="comment">// setting nentries parameter to zero make TChain load the file header and return a 1 if the file was opened successfully</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>         TFile* file = TFile::Open(fileName.c_str());</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>         <span class="keywordflow">if</span>(first) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                 first = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                 <a class="code hl_function" href="class_t_singleton.html#a58e2a8e03fa6a7c20638044626add93a">TRunInfo::Get</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            first = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_function" href="class_t_singleton.html#a58e2a8e03fa6a7c20638044626add93a">TRunInfo::Get</a>();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>         } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                 <a class="code hl_function" href="class_t_singleton.html#a25568e49214ec73aa40a19f7da64870f">TRunInfo::AddCurrent</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <a class="code hl_function" href="class_t_singleton.html#a25568e49214ec73aa40a19f7da64870f">TRunInfo::AddCurrent</a>();</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>         }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>         <span class="keyword">auto</span>* ppg = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_t_p_p_g.html">TPPG</a>*<span class="keyword">&gt;</span>(file-&gt;Get(<span class="stringliteral">&quot;PPG&quot;</span>));</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>         <span class="keywordflow">if</span>(ppg != <span class="keyword">nullptr</span>) {</div>
@@ -350,7 +350,7 @@ $(document).ready(function(){initNavTree('_t_g_r_s_i_frame_8cxx_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_2b08b36851fcb6a7439555c8d93f536c.html">TFormat</a></li><li class="navelem"><a class="el" href="_t_g_r_s_i_frame_8cxx.html">TGRSIFrame.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Oct 16 2024 23:14:35.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Oct 16 2024 23:27:31.</li>
   </ul>
 </div>
 </body>
