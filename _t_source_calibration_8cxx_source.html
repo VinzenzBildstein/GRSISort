@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('_t_source_calibration_8cxx_source.html
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{<span class="comment"></span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">   /// This function tries to match a list of found peaks (channels) to a list of provided peaks (energies).</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">   /// It does so in a brute force fashion where we try all combinations of channels and energies, do a linear fit through them, and keep the one with the best chi square.</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"></span>   </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"></span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>   <span class="keywordflow">if</span>(verboseLevel &gt; 1) { std::cout &lt;&lt; <span class="stringliteral">&quot;Matching &quot;</span> &lt;&lt; peaks.size() &lt;&lt; <span class="stringliteral">&quot; peaks with &quot;</span> &lt;&lt; sources.size() &lt;&lt; <span class="stringliteral">&quot; source energies&quot;</span> &lt;&lt; std::endl; }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>   std::map&lt;std::tuple&lt;double, double, double, double&gt;, std::tuple&lt;double, double, double, double&gt;&gt; result;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>   std::sort(peaks.begin(), peaks.end());</div>
@@ -252,7 +252,7 @@ $(document).ready(function(){initNavTree('_t_source_calibration_8cxx_source.html
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>{<span class="comment"></span></div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">   /// This function tries to match a list of found peaks (channels) to a list of provided peaks (energies).</span></div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">   /// It does so in slightly smarter way than the brute force method `Match`, by taking the reported intensity of the source peaks into account.</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment"></span>   </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment"></span> </div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>   <span class="keywordflow">if</span>(verboseLevel &gt; 1) { std::cout &lt;&lt; <span class="stringliteral">&quot;Matching &quot;</span> &lt;&lt; peaks.size() &lt;&lt; <span class="stringliteral">&quot; peaks with &quot;</span> &lt;&lt; sources.size() &lt;&lt; <span class="stringliteral">&quot; source energies&quot;</span> &lt;&lt; std::endl; }</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>   std::map&lt;std::tuple&lt;double, double, double, double&gt;, std::tuple&lt;double, double, double, double&gt;&gt; result;</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>   std::sort(peaks.begin(), peaks.end());</div>
@@ -2309,7 +2309,7 @@ $(document).ready(function(){initNavTree('_t_source_calibration_8cxx_source.html
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_af8759249976916949d3211b2e3ed5df.html">TGUI</a></li><li class="navelem"><a class="el" href="_t_source_calibration_8cxx.html">TSourceCalibration.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Oct 29 2024 15:18:55.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Oct 29 2024 18:22:06.</li>
   </ul>
 </div>
 </body>
