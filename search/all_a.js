@@ -888,7 +888,7 @@ var searchData=
   ['fownbgflag_885',['fOwnBgFlag',['../class_t_peak.html#a5910ae3de5256e39cf05356237d6ddbf',1,'TPeak']]],
   ['fp_886',['fP',['../class_t_kinematics.html#ad40d37b9c2f371fd5beefba4bf80c876',1,'TKinematics']]],
   ['fpaces_887',['fPaces',['../class_t_g_r_s_i_detector_information.html#ac90c3663264b04b1ac6b242fe93b9244',1,'TGRSIDetectorInformation']]],
-  ['fpaddleposition_888',['fpaddleposition',['../class_t_sceptar.html#a7cf149c6c97c8e70fc7774b68738b552',1,'TSceptar::fPaddlePosition'],['../class_t_aries.html#abe333d98958b1b85fa977576f91d8abc',1,'TAries::fPaddlePosition']]],
+  ['fpaddleposition_888',['fpaddleposition',['../class_t_sceptar.html#a7cf149c6c97c8e70fc7774b68738b552',1,'TSceptar::fPaddlePosition'],['../class_t_aries.html#a2fd13c04622e3845c5f243dc21da4d02',1,'TAries::fPaddlePosition']]],
   ['fpadfragments_889',['fPadFragments',['../class_t_sharc.html#a519dec18aeec4032f0478f2093ccaa5e',1,'TSharc']]],
   ['fpadhit_890',['fpadhit',['../class_t_sharc_hit.html#a527122730893a98c0e31a70cab9d93b7',1,'TSharcHit::fPadHit'],['../class_t_sharc2_hit.html#afa35f966eb6ae751517fa42ffab75985',1,'TSharc2Hit::fPadHit']]],
   ['fparallelunzip_891',['fParallelUnzip',['../class_t_g_r_s_i_options.html#abf257fb533652697945c2d429c5011fd',1,'TGRSIOptions']]],
