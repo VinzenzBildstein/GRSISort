@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"_t_ifin_hit_8cxx_source.html":[11,0,6,1,0,4,4],
+"_t_ifin_hit_8h.html":[11,0,6,0,14],
 "_t_ifin_hit_8h_source.html":[11,0,6,0,14],
 "_t_kinematics_8cxx.html":[11,0,9,1,4,1],
 "_t_kinematics_8cxx_source.html":[11,0,9,1,4,1],
@@ -31,7 +33,6 @@ var NAVTREEINDEX5 =
 "_t_level_scheme_8h.html":[11,0,7,84],
 "_t_level_scheme_8h_source.html":[11,0,7,84],
 "_t_lst_event_8cxx.html":[11,0,6,1,3,1],
-"_t_lst_event_8cxx.html#a0dc1f440bb2e1e0a414d8a8bd2a4353f":[11,0,6,1,3,1,3],
 "_t_lst_event_8cxx.html#a4670ac841b4b8e3c3141a91a743bc61d":[11,0,6,1,3,1,2],
 "_t_lst_event_8cxx.html#a8c6db33e3f8af89e87556d9f7a9b32a8":[11,0,6,1,3,1,1],
 "_t_lst_event_8cxx.html#adb40ea04e4e009bbde68c027a8f95039":[11,0,6,1,3,1,0],
@@ -46,12 +47,13 @@ var NAVTREEINDEX5 =
 "_t_midas_banks_8h.html":[11,0,2,1,23],
 "_t_midas_banks_8h_source.html":[11,0,2,1,23],
 "_t_midas_event_8cxx.html":[11,0,2,2,3,1],
-"_t_midas_event_8cxx.html#a0dc1f440bb2e1e0a414d8a8bd2a4353f":[11,0,2,2,3,1,3],
+"_t_midas_event_8cxx.html#a25e7a602cb801e0981e9c19c2d9a492c":[11,0,2,2,3,1,3],
 "_t_midas_event_8cxx.html#a4670ac841b4b8e3c3141a91a743bc61d":[11,0,2,2,3,1,2],
 "_t_midas_event_8cxx.html#a8c6db33e3f8af89e87556d9f7a9b32a8":[11,0,2,2,3,1,1],
 "_t_midas_event_8cxx.html#adb40ea04e4e009bbde68c027a8f95039":[11,0,2,2,3,1,0],
 "_t_midas_event_8cxx_source.html":[11,0,2,2,3,1],
 "_t_midas_event_8h.html":[11,0,2,1,24],
+"_t_midas_event_8h.html#a78b517aa7815cc2c12fdb103281d49ad":[11,0,2,1,24,0],
 "_t_midas_event_8h_source.html":[11,0,2,1,24],
 "_t_midas_event_header_8h.html":[11,0,2,1,25],
 "_t_midas_event_header_8h_source.html":[11,0,2,1,25],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "_t_suppressed_8h_source.html":[11,0,7,113],
 "_t_t_a_c_8cxx.html":[11,0,2,2,0,16,1],
 "_t_t_a_c_8cxx_source.html":[11,0,2,2,0,16,1],
-"_t_t_a_c_8h.html":[11,0,2,1,43],
-"_t_t_a_c_8h_source.html":[11,0,2,1,43],
-"_t_t_a_c_hit_8cxx.html":[11,0,2,2,0,16,2]
+"_t_t_a_c_8h.html":[11,0,2,1,43]
 };
