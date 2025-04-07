@@ -1,5 +1,16 @@
 var NAVTREEINDEX64 =
 {
+"class_t_user_settings.html#a614d03f6f6a0f382b18ded90d141c84b":[8,11,64,32],
+"class_t_user_settings.html#a7036780054671994d435db423b61ba36":[8,11,64,19],
+"class_t_user_settings.html#a73eba328b9fe0c5a2c147b3ea52099e0":[8,11,64,38],
+"class_t_user_settings.html#a7639393a396b6717ff950e6392afba08":[8,11,64,27],
+"class_t_user_settings.html#a7b5ef4d1e20d92e8cf28ab34c63073af":[8,11,64,24],
+"class_t_user_settings.html#a7ef90bfc6e6cce2434eac0ee8bb26258":[8,11,64,37],
+"class_t_user_settings.html#a9719687cffb80fb61e978b88880a6e78":[8,11,64,1],
+"class_t_user_settings.html#a9769166a5fe0cfc2b756d06e000bba55":[8,11,64,29],
+"class_t_user_settings.html#a9b6801fd93ffd2e078d831d4948fc1d2":[8,11,64,14],
+"class_t_user_settings.html#a9e085d2ffb486cb281d1439b666633cf":[8,11,64,35],
+"class_t_user_settings.html#ab1c9171cd3ffb4d64042227b6e2a2e85":[8,11,64,2],
 "class_t_user_settings.html#ac0aba11939f785c3425ec85a95fa67b7":[8,11,64,4],
 "class_t_user_settings.html#ac20ca4b81f82de9760ab15912da092f8":[8,11,64,13],
 "class_t_user_settings.html#acb685be0db2e5a5c142294168daa6705":[8,11,64,20],
@@ -238,16 +249,5 @@ var NAVTREEINDEX64 =
 "class_time_walk_helper.html#aad7e7d8ceee2f9fa1d96256a4e15138b":[10,0,175,24],
 "class_time_walk_helper.html#ac7ce3378d3b7c730f9cbd73dd2cf7ab3":[10,0,175,26],
 "class_time_walk_helper.html#ac8e3b2c0233863390b3d8afd443b6241":[10,0,175,11],
-"class_time_walk_helper.html#adba49a09a6ebe50ebb9b33e051c0a3c0":[10,0,175,29],
-"class_time_walk_helper.html#add19941df642bbd2f8994a3b799d4760":[10,0,175,8],
-"class_time_walk_helper.html#ae2c692144a9b683f3bd206bf70dda117":[10,0,175,12],
-"class_time_walk_helper.html#ae5c188f3fc54bc1e7ee607421a46b678":[10,0,175,17],
-"class_time_walk_helper.html#ae831de4a785c33e55f889b2406ab8430":[10,0,175,2],
-"class_time_walk_helper.html#ae95111fa334deef7e49ea2050899e972":[10,0,175,28],
-"class_time_walk_helper.html#af70ba099fb02f24961d985d47f7a568d":[10,0,175,23],
-"class_time_walk_selector.html":[10,0,176],
-"class_time_walk_selector.html#a095a925b9e0e9ae440a758300f082c9c":[10,0,176,28],
-"class_time_walk_selector.html#a0a36b80b21d1c5fd0b2246943c28ebce":[10,0,176,39],
-"class_time_walk_selector.html#a1935dbf4d7080d06bc59903daafca0ce":[10,0,176,18],
-"class_time_walk_selector.html#a1a4bb08fb6a355a82ed12a5ec159507b":[10,0,176,21]
+"class_time_walk_helper.html#adba49a09a6ebe50ebb9b33e051c0a3c0":[10,0,175,29]
 };

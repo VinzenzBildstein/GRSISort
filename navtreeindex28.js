@@ -1,6 +1,5 @@
 var NAVTREEINDEX28 =
 {
-"class_t_event_time.html#a8c27a86afdb826793bcc4b7b348884e6":[10,0,118,2],
 "class_t_event_time.html#a8c27a86afdb826793bcc4b7b348884e6":[10,0,118,6],
 "class_t_event_time.html#a9af0f449435394ab1e2a29c5ad1f7e4d":[10,0,118,43],
 "class_t_event_time.html#a9b077cb73348bfc7c7f359e354103557":[10,0,118,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX28 =
 "class_t_fipps_hit.html#a3548d815985bbe93215d419a6e136d01":[8,2,18,32],
 "class_t_fipps_hit.html#a38da6bef2ab37a189d47529c601f0657":[8,2,18,17],
 "class_t_fipps_hit.html#a38f135d727658dd05749cc40464886f7":[8,2,18,37],
-"class_t_fipps_hit.html#a39dd0e70e98e507cfe0afc0bdab2b9a0":[8,2,18,65]
+"class_t_fipps_hit.html#a39dd0e70e98e507cfe0afc0bdab2b9a0":[8,2,18,65],
+"class_t_fipps_hit.html#a3c925c5bd01fd15d0428d21427e00abf":[8,2,18,13]
 };
