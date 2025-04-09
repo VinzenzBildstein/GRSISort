@@ -1,5 +1,10 @@
 var NAVTREEINDEX68 =
 {
+"group___fitting.html#ga3df880983b722aaaa34c14cfa5a99f92":[8,3,99],
+"group___fitting.html#ga3e32e1aa2a7492d8401ff811559f4e4f":[8,3,152],
+"group___fitting.html#ga3e341b02c85d8b629c2884e016cdd381":[8,3,94],
+"group___fitting.html#ga3e7d146382ee63a63057d0d1da21681c":[8,3,145],
+"group___fitting.html#ga3f84d4e52eb6a9b8eda43adbdfd81368":[8,3,123],
 "group___fitting.html#ga40a975f0eb93b836904b0027a316932e":[8,3,147],
 "group___fitting.html#ga40b1ac71f3437e38823a9ac45973ba9c":[8,3,161],
 "group___fitting.html#ga4205d4fe423c3fb96e79530e31084ca3":[8,3,96],
@@ -244,10 +249,5 @@ var NAVTREEINDEX68 =
 "libraries_2_t_analysis_2_t_kinematics_2_link_def_8h_source.html":[11,0,9,1,4,0],
 "libraries_2_t_analysis_2_t_nucleus_2_link_def_8h.html":[11,0,9,1,5,0],
 "libraries_2_t_analysis_2_t_nucleus_2_link_def_8h_source.html":[11,0,9,1,5,0],
-"libraries_2_t_analysis_2_t_peak_fitting_2_link_def_8h.html":[11,0,9,1,6,0],
-"libraries_2_t_analysis_2_t_peak_fitting_2_link_def_8h_source.html":[11,0,9,1,6,0],
-"libraries_2_t_analysis_2_t_pulse_analyzer_2_link_def_8h.html":[11,0,9,1,7,0],
-"libraries_2_t_analysis_2_t_pulse_analyzer_2_link_def_8h_source.html":[11,0,9,1,7,0],
-"libraries_2_t_analysis_2_t_reaction_2_link_def_8h.html":[11,0,9,1,8,0],
-"libraries_2_t_analysis_2_t_reaction_2_link_def_8h_source.html":[11,0,9,1,8,0]
+"libraries_2_t_analysis_2_t_peak_fitting_2_link_def_8h.html":[11,0,9,1,6,0]
 };

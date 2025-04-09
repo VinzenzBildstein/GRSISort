@@ -15,8 +15,8 @@ var class_t_source_calibration =
       [ "kFindPeaksFast", "class_t_source_calibration.html#af38ce0cdc864e9d077dd780264d8bbbfa78e58bf9c7d5fff524d6288068823404", null ],
       [ "kFindPeaksCal", "class_t_source_calibration.html#af38ce0cdc864e9d077dd780264d8bbbfa47554e556736ee58685802d313ba5382", null ],
       [ "kFindPeaksCalAll", "class_t_source_calibration.html#af38ce0cdc864e9d077dd780264d8bbbfa2a81ed26f5fedd53b46219c1482b5d24", null ],
-      [ "kIterate", "class_t_source_calibration.html#af38ce0cdc864e9d077dd780264d8bbbfa0f02671726a9d5d3f5f5841e9c564a18", null ],
-      [ "kCalibrate", "class_t_source_calibration.html#af38ce0cdc864e9d077dd780264d8bbbfa99c5d58181a808bc9633da5dec237401", null ]
+      [ "kCalibrate", "class_t_source_calibration.html#af38ce0cdc864e9d077dd780264d8bbbfa99c5d58181a808bc9633da5dec237401", null ],
+      [ "kRemove", "class_t_source_calibration.html#af38ce0cdc864e9d077dd780264d8bbbfa4746b087bb96320bf2b5b15313e8e908", null ]
     ] ],
     [ "ENavigate", "class_t_source_calibration.html#a3105481db7ddb67180bfa1a7e6ed3784", [
       [ "kPrevious", "class_t_source_calibration.html#a3105481db7ddb67180bfa1a7e6ed3784a69fe0f253d301d3ee812a9fc66857016", null ],
@@ -60,7 +60,6 @@ var class_t_source_calibration =
     [ "Fitting", "class_t_source_calibration.html#ab03fd78532abbbfbafefcdd23e8390a5", null ],
     [ "GraphicsMutex", "class_t_source_calibration.html#aecc387926296ac36b02db4ceaf6e7b07", null ],
     [ "HandleTimer", "class_t_source_calibration.html#a804f4883fc65a731389419abfac57da6", null ],
-    [ "Iterate", "class_t_source_calibration.html#a661c32665a400fb5ecf6bf935783a4cf", null ],
     [ "LineHeight", "class_t_source_calibration.html#ab7565ef506352f391bf8c19189ea4969", null ],
     [ "LogFile", "class_t_source_calibration.html#a07c48cb4e16d0fd1760690251c60ec59", null ],
     [ "LogFile", "class_t_source_calibration.html#a8faec5fba73032e9ce54f8810e0c38a1", null ],
@@ -85,6 +84,7 @@ var class_t_source_calibration =
     [ "PeakRatio", "class_t_source_calibration.html#a9f8af2f02b86f31d30e0d684ae6601e3", null ],
     [ "PrintCanvases", "class_t_source_calibration.html#a6c376a521b1f5e4f8ebda3837d8c006a", null ],
     [ "PrintLayout", "class_t_source_calibration.html#a13ec3b9df9e5a5a8d04e1f65289cb4ff", null ],
+    [ "Remove", "class_t_source_calibration.html#ac0852e6fd7faf2d6b71c4ab13db0a2b1", null ],
     [ "SecondWindow", "class_t_source_calibration.html#a4269f4728c26ba16947b3c496b3af847", null ],
     [ "SelectedFinalMainTab", "class_t_source_calibration.html#a761cec641cace3530b6e145a4351073d", null ],
     [ "SelectedFinalTab", "class_t_source_calibration.html#a76c403cb4eb6c26f0d67e66ba613f631", null ],
@@ -133,7 +133,6 @@ var class_t_source_calibration =
     [ "fFittingGroup", "class_t_source_calibration.html#abe2776c642a9b008c08ac8e0146a8232", null ],
     [ "fFutures", "class_t_source_calibration.html#a839dd2ae344478a599d867e9ad860a67", null ],
     [ "fGraphicsMutex", "class_t_source_calibration.html#a2fbe953fb61d08949bf67a22d6f72e2d", null ],
-    [ "fIterateButton", "class_t_source_calibration.html#ae30e756fb70ad961673aa22daabb1b82", null ],
     [ "fLeftFrame", "class_t_source_calibration.html#aefd709acf6d46f02e323fb8609fba720", null ],
     [ "fLineHeight", "class_t_source_calibration.html#a010f992184c0d13d9a8426652d0f1e0e", null ],
     [ "fLogFile", "class_t_source_calibration.html#a1580540967ef523deb394c3f6a7c040d", null ],
@@ -158,6 +157,7 @@ var class_t_source_calibration =
     [ "fPreviousButton", "class_t_source_calibration.html#a0767f513013bda6543a6fb057c626c64", null ],
     [ "fProgressBar", "class_t_source_calibration.html#a6a32bd75ce292f4a7c1c1cf49bcdd7c6", null ],
     [ "fRedirect", "class_t_source_calibration.html#a07b45201e13adfcac3ae515414317f21", null ],
+    [ "fRemoveButton", "class_t_source_calibration.html#a37b3ba03e9ac7c0b8e3f86d0f4f9ce6b", null ],
     [ "fRightFrame", "class_t_source_calibration.html#a11d394bd7a03ac4ea30c8433a8be4463", null ],
     [ "fSigmaEntry", "class_t_source_calibration.html#a521cc8b8fc0088bd214aad6aac2926b3", null ],
     [ "fSigmaLabel", "class_t_source_calibration.html#a02484427aeb39e7b6433e66c2e1daf74", null ],

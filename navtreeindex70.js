@@ -1,5 +1,10 @@
 var NAVTREEINDEX70 =
 {
+"struct_t_channel_1_1_wave_form_shape_par.html#aafb5c8f6af4a22795a2c32fc2e9bf0ea":[8,11,5,0,2],
+"struct_t_midas___b_a_n_k.html":[8,11,33],
+"struct_t_midas___b_a_n_k.html#a248a79716c727c3fd6d1ae873097367b":[8,11,33,2],
+"struct_t_midas___b_a_n_k.html#a664d3cb9bf736bb19bfd35b935a80599":[8,11,33,4],
+"struct_t_midas___b_a_n_k.html#a975b5cbb606dfe21f2485c3fc678b02a":[8,11,33,0],
 "struct_t_midas___b_a_n_k.html#ad48af9b7274b9f588b80efd97d98bce9":[8,11,33,3],
 "struct_t_midas___b_a_n_k.html#afc1f7f4e764a81ce26f5ab4484599347":[8,11,33,1],
 "struct_t_midas___b_a_n_k32.html":[8,11,35],
