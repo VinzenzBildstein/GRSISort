@@ -53,13 +53,14 @@ public:
       fPeaksToFit.clear();
       ResetTotalFitFunction();
    }
-	size_t NumberOfPeaks() { return fPeaksToFit.size(); }
-	std::list<TSinglePeak*>& Peaks() { return fPeaksToFit; }
-	TSinglePeak* Peak(const size_t& index) { 
-		auto it = fPeaksToFit.begin();
-		std::advance(it, index);
-		return *it;
-	}
+   size_t                   NumberOfPeaks() { return fPeaksToFit.size(); }
+   std::list<TSinglePeak*>& Peaks() { return fPeaksToFit; }
+   TSinglePeak*             Peak(const size_t& index)
+   {
+      auto it = fPeaksToFit.begin();
+      std::advance(it, index);
+      return *it;
+   }
 
    void SetBackground(TF1* bg_to_fit) { fBGToFit = bg_to_fit; }
    void InitializeParameters(TH1* fit_hist);
