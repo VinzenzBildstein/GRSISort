@@ -1,7 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"class_t_mnemonic.html#a92e657dc4b7a3ffc7f4ec1aac156468ea3e56c011b37f0bc78fb9eb175c1181c6":[10,0,191,0,1],
-"class_t_mnemonic.html#a92e657dc4b7a3ffc7f4ec1aac156468ea42d422a6da0db894e598473e419a7546":[10,0,191,0,14],
 "class_t_mnemonic.html#a92e657dc4b7a3ffc7f4ec1aac156468ea5dd37a35d548b7e1d5b3e7877b22676e":[10,0,191,0,11],
 "class_t_mnemonic.html#a92e657dc4b7a3ffc7f4ec1aac156468ea63b39853c60d1092c257c1ab898bad0a":[10,0,191,0,21],
 "class_t_mnemonic.html#a92e657dc4b7a3ffc7f4ec1aac156468ea64fa0b7138d2992f2e7daa5080eb5ed0":[10,0,191,0,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX44 =
 "class_t_paces.html#a4a76092bd0f4bdcf7ade541763ccb09a":[8,2,39,2],
 "class_t_paces.html#a5157695811c23caccbc71ce62b9cacd0":[8,2,39,8],
 "class_t_paces.html#a64ad8e69427c3719f15c3d400021ab1f":[8,2,39,17],
-"class_t_paces.html#a6cb869b2d7523fabe218702737fb2dd6":[8,2,39,23]
+"class_t_paces.html#a6cb869b2d7523fabe218702737fb2dd6":[8,2,39,23],
+"class_t_paces.html#a6ea05954383d02981c0f7e675bb38e63":[8,2,39,25],
+"class_t_paces.html#a8556a8a8d8557bf07efcb8cfd85736f2":[8,2,39,1]
 };

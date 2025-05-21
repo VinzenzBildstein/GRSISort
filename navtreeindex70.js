@@ -1,14 +1,5 @@
 var NAVTREEINDEX70 =
 {
-"struct_rlmd_file_header.html#ac0e7f818ffc426f4393f8fab98964903":[8,11,2,22],
-"struct_rlmd_file_header.html#acd729fea3c7726b6f1aacec8002ef08f":[8,11,2,21],
-"struct_rlmd_file_header.html#ace0a6e1fa3e0de5db65fe5489ac8c5f3":[8,11,2,5],
-"struct_rlmd_file_header.html#ad287362e4104f21e8af439c8f97659cb":[8,11,2,6],
-"struct_rlmd_file_header.html#af073ff18c97fac260451f89f2a539ad8":[8,11,2,13],
-"struct_rlmd_file_header.html#af29a20a19352aef20f6f6a8cb4bd1899":[8,11,2,25],
-"struct_rlmd_file_header.html#affcc38833f3297c7031d55725842052c":[8,11,2,27],
-"struct_t_calibrator_1_1_peak.html":[10,0,84,0],
-"struct_t_calibrator_1_1_peak.html#a2375cc56b5e1d794067294a0984241fa":[10,0,84,0,3],
 "struct_t_calibrator_1_1_peak.html#a285fbd5d11afbc1b9cd79e75939cbc2c":[10,0,84,0,1],
 "struct_t_calibrator_1_1_peak.html#a4dce7f14823c6f3e569b1d5d6825e8a7":[10,0,84,0,2],
 "struct_t_calibrator_1_1_peak.html#a63d2acc7425ecaf845f357318af0a3bb":[10,0,84,0,0],

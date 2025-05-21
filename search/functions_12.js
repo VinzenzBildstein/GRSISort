@@ -52,7 +52,7 @@ var searchData=
   ['releaseintensity_49',['ReleaseIntensity',['../class_t_single_decay.html#ac11bbaaf3c7010a0778e38d5f079c27e',1,'TSingleDecay']]],
   ['reload_50',['Reload',['../class_t_compiled_histograms.html#a179563afb7db7cb633e85890c14edfcd',1,'TCompiledHistograms']]],
   ['remakemap_51',['RemakeMap',['../class_t_decay.html#a594b42df454a784e7e21986fd1f3c8ec',1,'TDecay']]],
-  ['remove_52',['Remove',['../class_t_channel_tab.html#a484e510fdb0f76210d99e12eb5e201b3',1,'TChannelTab::Remove()'],['../class_t_source_calibration.html#ac0852e6fd7faf2d6b71c4ab13db0a2b1',1,'TSourceCalibration::Remove()']]],
+  ['remove_52',['Remove',['../class_t_source_calibration.html#ac0852e6fd7faf2d6b71c4ab13db0a2b1',1,'TSourceCalibration']]],
   ['removeallpeaks_53',['RemoveAllPeaks',['../class_t_peak_fitter.html#a2bd5ac92474d2fb4d371c061563d4255',1,'TPeakFitter']]],
   ['removebadcycle_54',['RemoveBadCycle',['../class_t_run_info.html#a3aaeef65e9ead21b7a256aede22a2bef',1,'TRunInfo']]],
   ['removecal_55',['RemoveCal',['../class_t_cal_manager.html#aec349201532df0634b34887ecc09f9ab',1,'TCalManager']]],

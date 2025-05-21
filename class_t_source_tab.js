@@ -11,7 +11,6 @@ var class_t_source_tab =
     [ "Disconnect", "class_t_source_tab.html#a69432b774b089733fd288fe3996a0c67", null ],
     [ "Draw", "class_t_source_tab.html#af6654cf86b63225447ad7a553faa8c0a", null ],
     [ "FindCalibratedPeaks", "class_t_source_tab.html#ae4e4ee1a911fba0a334a8dc7a8a5bf19", null ],
-    [ "FindPeaks", "class_t_source_tab.html#a2754b31fff77516dc9cd9f93f09f04a0", null ],
     [ "Fwhm", "class_t_source_tab.html#a564305010a3af801a6e154bbf7235d7e", null ],
     [ "Good", "class_t_source_tab.html#a59279f17161cf644dd51558ad6da9b9c", null ],
     [ "Good", "class_t_source_tab.html#a64a6b1b83326e1825e0f4e7352aab785", null ],

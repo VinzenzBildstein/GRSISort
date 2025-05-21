@@ -1,14 +1,5 @@
 var NAVTREEINDEX66 =
 {
-"classpygui_1_1mainwindow_1_1_main_window.html#a7765e20e6cdd7c5f9c172658be097a88":[9,0,5,3,0,31],
-"classpygui_1_1mainwindow_1_1_main_window.html#a7765e20e6cdd7c5f9c172658be097a88":[10,0,1,2,0,31],
-"classpygui_1_1mainwindow_1_1_main_window.html#a78672d8fae3cbc4c935406157292b91b":[9,0,5,3,0,41],
-"classpygui_1_1mainwindow_1_1_main_window.html#a78672d8fae3cbc4c935406157292b91b":[10,0,1,2,0,41],
-"classpygui_1_1mainwindow_1_1_main_window.html#a7d37649ceeddea145014ca3476de01fa":[9,0,5,3,0,60],
-"classpygui_1_1mainwindow_1_1_main_window.html#a7d37649ceeddea145014ca3476de01fa":[10,0,1,2,0,60],
-"classpygui_1_1mainwindow_1_1_main_window.html#a7d5ab0d6e36278a78c4e8220ca1ab82a":[9,0,5,3,0,21],
-"classpygui_1_1mainwindow_1_1_main_window.html#a7d5ab0d6e36278a78c4e8220ca1ab82a":[10,0,1,2,0,21],
-"classpygui_1_1mainwindow_1_1_main_window.html#a7f6798e386411c036d3315ec13047269":[9,0,5,3,0,28],
 "classpygui_1_1mainwindow_1_1_main_window.html#a7f6798e386411c036d3315ec13047269":[10,0,1,2,0,28],
 "classpygui_1_1mainwindow_1_1_main_window.html#a853e4d783ca2d260717a76cce02a5b3f":[9,0,5,3,0,58],
 "classpygui_1_1mainwindow_1_1_main_window.html#a853e4d783ca2d260717a76cce02a5b3f":[10,0,1,2,0,58],
@@ -249,5 +240,14 @@ var NAVTREEINDEX66 =
 "dir_34c6163d67acbbcfc56107279c411fb1.html":[11,0,0],
 "dir_34f699861ee5810f4e10c4eefa95da9a.html":[11,0,2,2,1],
 "dir_359637ddf5ff0dd5705446986a14d7e9.html":[11,0,9,1,6],
-"dir_373e6201baaefc2e8f6195b56d1012fa.html":[11,0,6,1,0,4]
+"dir_373e6201baaefc2e8f6195b56d1012fa.html":[11,0,6,1,0,4],
+"dir_421328a064793002bf1de509a137bebb.html":[11,0,6,1,1],
+"dir_47358ee868e3aed1e59cf9c2ead119a2.html":[11,0,9,0],
+"dir_4925a956edac1f5a41aa2a78deadb7b0.html":[11,0,2,2,0,21],
+"dir_4bb6f76668d6d9582c2c8d16c7151ac7.html":[11,0,9,2],
+"dir_4d17f409fb020449a7716dffae2b2761.html":[11,0,9,1,2],
+"dir_4d7a83305960b64d8c07c7efbf543e1a.html":[11,0,2,2,0,6],
+"dir_4d99cfd5505f921b61c4eae3c76dc75f.html":[11,0,2,2,0,11],
+"dir_4e367981f2d77f8889e3f1d66e4c9aaa.html":[11,0,9,1,10],
+"dir_50352e263f8119c6746fa440b6a9cc8a.html":[11,0,2,2,0,13]
 };

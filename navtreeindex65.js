@@ -1,14 +1,5 @@
 var NAVTREEINDEX65 =
 {
-"class_time_walk_helper.html#a11499e49023f480a13c0949fe42a96f6":[10,0,175,1],
-"class_time_walk_helper.html#a134602d3db37506ecdcd5665bb339942":[10,0,175,19],
-"class_time_walk_helper.html#a13d75eb98256ae11e6bd917de6eb10aa":[10,0,175,6],
-"class_time_walk_helper.html#a210872f6be03540044b9e1e190fde8f6":[10,0,175,30],
-"class_time_walk_helper.html#a23db3e61978039fa768fa3a90c1cd982":[10,0,175,9],
-"class_time_walk_helper.html#a27adae6a07b011a2c5beb6a572acaa42":[10,0,175,22],
-"class_time_walk_helper.html#a39e031ee0f0ebedb946541fd145300bd":[10,0,175,15],
-"class_time_walk_helper.html#a43b96b9c64dcb585762ce691e38814ac":[10,0,175,14],
-"class_time_walk_helper.html#a49c88825285ac0920b4af055ddbd0fbb":[10,0,175,3],
 "class_time_walk_helper.html#a50d7d9d2fb783c2d70056cb5203f89b1":[10,0,175,25],
 "class_time_walk_helper.html#a559c82856eb597c7951c63b61a7802fc":[10,0,175,32],
 "class_time_walk_helper.html#a649dd6a8cfd47823ff7145fb02362f3c":[10,0,175,0],
@@ -249,5 +240,14 @@ var NAVTREEINDEX65 =
 "classpygui_1_1mainwindow_1_1_main_window.html#a726dd90cd8281808c8d3253d589bac46":[9,0,5,3,0,65],
 "classpygui_1_1mainwindow_1_1_main_window.html#a726dd90cd8281808c8d3253d589bac46":[10,0,1,2,0,65],
 "classpygui_1_1mainwindow_1_1_main_window.html#a72cf0ba04ae7bdd40e0f655e60649ed1":[9,0,5,3,0,55],
-"classpygui_1_1mainwindow_1_1_main_window.html#a72cf0ba04ae7bdd40e0f655e60649ed1":[10,0,1,2,0,55]
+"classpygui_1_1mainwindow_1_1_main_window.html#a72cf0ba04ae7bdd40e0f655e60649ed1":[10,0,1,2,0,55],
+"classpygui_1_1mainwindow_1_1_main_window.html#a7765e20e6cdd7c5f9c172658be097a88":[9,0,5,3,0,31],
+"classpygui_1_1mainwindow_1_1_main_window.html#a7765e20e6cdd7c5f9c172658be097a88":[10,0,1,2,0,31],
+"classpygui_1_1mainwindow_1_1_main_window.html#a78672d8fae3cbc4c935406157292b91b":[9,0,5,3,0,41],
+"classpygui_1_1mainwindow_1_1_main_window.html#a78672d8fae3cbc4c935406157292b91b":[10,0,1,2,0,41],
+"classpygui_1_1mainwindow_1_1_main_window.html#a7d37649ceeddea145014ca3476de01fa":[9,0,5,3,0,60],
+"classpygui_1_1mainwindow_1_1_main_window.html#a7d37649ceeddea145014ca3476de01fa":[10,0,1,2,0,60],
+"classpygui_1_1mainwindow_1_1_main_window.html#a7d5ab0d6e36278a78c4e8220ca1ab82a":[9,0,5,3,0,21],
+"classpygui_1_1mainwindow_1_1_main_window.html#a7d5ab0d6e36278a78c4e8220ca1ab82a":[10,0,1,2,0,21],
+"classpygui_1_1mainwindow_1_1_main_window.html#a7f6798e386411c036d3315ec13047269":[9,0,5,3,0,28]
 };
