@@ -60,7 +60,7 @@ var group___sorting =
       [ "BuildEventsByTimeStamp", "class_t_analysis_options.html#aa52dcd85ade4167c2916959f3409aaeb", null ],
       [ "BuildWindow", "class_t_analysis_options.html#a0de189c874d9d90885f61b17e1e50621", null ],
       [ "Clear", "class_t_analysis_options.html#ab6630ab9a5005cadcf0a7b4e4cc4ae47", null ],
-      [ "Compare", "class_t_analysis_options.html#a8ceb896d8c5fea173d08ae50bba00ae3", null ],
+      [ "Compare", "class_t_analysis_options.html#ae46de044ca688f44ee7db2fde25bd531", null ],
       [ "IsCorrectingCrossTalk", "class_t_analysis_options.html#a6e3463f470141fc702409f47ba328746", null ],
       [ "IsWaveformFitting", "class_t_analysis_options.html#af236f439e88329c95f78f151dc102707", null ],
       [ "Merge", "class_t_analysis_options.html#abfe179bb15efb2eb78f2aa184d81d893", null ],
