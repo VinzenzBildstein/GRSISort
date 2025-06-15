@@ -1,5 +1,8 @@
 var NAVTREEINDEX66 =
 {
+"classes.html":[10,1],
+"classpygui_1_1_ansi_color_text_1_1_ansi_color_text.html":[9,0,5,0,0],
+"classpygui_1_1_ansi_color_text_1_1_ansi_color_text.html":[10,0,1,0,0],
 "classpygui_1_1_ansi_color_text_1_1_ansi_color_text.html#a118cbd669a72a2c3ba825abce94a8479":[9,0,5,0,0,5],
 "classpygui_1_1_ansi_color_text_1_1_ansi_color_text.html#a118cbd669a72a2c3ba825abce94a8479":[10,0,1,0,0,5],
 "classpygui_1_1_ansi_color_text_1_1_ansi_color_text.html#a12da6bda587d04f61ffebbcb00ba973b":[9,0,5,0,0,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX66 =
 "classpygui_1_1status__widget_1_1_thread_vars.html#ac512c11cd7e10940ae71923f6c24b671":[10,0,1,3,1,4],
 "classpygui_1_1tcut__tab_1_1_t_cut_tab.html":[9,0,5,6,0],
 "classpygui_1_1tcut__tab_1_1_t_cut_tab.html":[10,0,1,4,0],
-"classpygui_1_1tcut__tab_1_1_t_cut_tab.html#a025b3c61f4ac69e3caaaf9b7afc99c49":[9,0,5,6,0,1],
-"classpygui_1_1tcut__tab_1_1_t_cut_tab.html#a025b3c61f4ac69e3caaaf9b7afc99c49":[10,0,1,4,0,1],
-"classpygui_1_1tcut__tab_1_1_t_cut_tab.html#a07820884021d9e5fc6c2d0f452e25ee6":[9,0,5,6,0,9],
-"classpygui_1_1tcut__tab_1_1_t_cut_tab.html#a07820884021d9e5fc6c2d0f452e25ee6":[10,0,1,4,0,9]
+"classpygui_1_1tcut__tab_1_1_t_cut_tab.html#a025b3c61f4ac69e3caaaf9b7afc99c49":[9,0,5,6,0,1]
 };

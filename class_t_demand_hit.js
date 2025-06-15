@@ -61,7 +61,7 @@ var class_t_demand_hit =
     [ "GetKValue", "class_t_demand_hit.html#a3548d815985bbe93215d419a6e136d01", null ],
     [ "GetName", "class_t_demand_hit.html#a403df2f2b7723bc84d83ea1060ca5119", null ],
     [ "GetPosition", "class_t_demand_hit.html#a151b5e785273d5bcef0e6b20eda5b8c9", null ],
-    [ "GetPosition", "class_t_demand_hit.html#abf78298a1609c8cc234dada8b3306a44", null ],
+    [ "GetPosition", "class_t_demand_hit.html#a8947a17721cefef11cfc4f855a239af8", null ],
     [ "GetPPGStatus", "class_t_demand_hit.html#a31ee4547a5a23ded0845a0a02603f783", null ],
     [ "GetSegment", "class_t_demand_hit.html#ab6adf5ff1ffbcbb3b50c4559209f007a", null ],
     [ "GetTime", "class_t_demand_hit.html#aba5e96b2f172f0e12eb2b6e06af5a735", null ],
