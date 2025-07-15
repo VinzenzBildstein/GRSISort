@@ -23,6 +23,8 @@ var class_t_griffin_angles =
     [ "Print", "class_t_griffin_angles.html#a8c327da5908ccb068542ded435d7b9c8", null ],
     [ "Rounding", "class_t_griffin_angles.html#ae3fdb9e2eee86a51c0b0b63385a47ccd", null ],
     [ "Rounding", "class_t_griffin_angles.html#a05c242e672cfa012d96152cf5f17c931", null ],
+    [ "Verbosity", "class_t_griffin_angles.html#ada3c4671616d05dbac47001c158cdd27", null ],
+    [ "Verbosity", "class_t_griffin_angles.html#abdb0c01d2f9c4cc986a49607758695b8", null ],
     [ "fAddback", "class_t_griffin_angles.html#a9e8dcaf6290799be798ba967f79d1819", null ],
     [ "fAngleCount", "class_t_griffin_angles.html#ad553b5453657c0194f1484865c24198c", null ],
     [ "fAngleMap", "class_t_griffin_angles.html#adcae16506d95a3772171a056e405a30a", null ],
@@ -33,5 +35,6 @@ var class_t_griffin_angles =
     [ "fExcludedDetectors", "class_t_griffin_angles.html#ada59f37eb0221d344d5d8d280a76f418", null ],
     [ "fFolding", "class_t_griffin_angles.html#a96d17432086c0d69dd8756d161af01ad", null ],
     [ "fGrouping", "class_t_griffin_angles.html#a6779dc88b65c057d3d5eb8978c0bff39", null ],
-    [ "fRounding", "class_t_griffin_angles.html#a59fbe1bec5ffa30ed634b4ec183397ce", null ]
+    [ "fRounding", "class_t_griffin_angles.html#a59fbe1bec5ffa30ed634b4ec183397ce", null ],
+    [ "fVerbosity", "class_t_griffin_angles.html#add6fedb78092f6d5985cd1b44ab16486", null ]
 ];
