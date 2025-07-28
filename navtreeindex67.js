@@ -1,5 +1,8 @@
 var NAVTREEINDEX67 =
 {
+"classpygui_1_1mainwindow_1_1_main_window.html#ab9eb35b3b335cd0bed3b390067b7ce4a":[10,0,1,2,0,23],
+"classpygui_1_1mainwindow_1_1_main_window.html#abb88d3339f4e9cf20033cd73d1fa84ed":[9,0,5,3,0,2],
+"classpygui_1_1mainwindow_1_1_main_window.html#abb88d3339f4e9cf20033cd73d1fa84ed":[10,0,1,2,0,2],
 "classpygui_1_1mainwindow_1_1_main_window.html#abcd6deabf873692bc849dbc6c63c5192":[9,0,5,3,0,36],
 "classpygui_1_1mainwindow_1_1_main_window.html#abcd6deabf873692bc849dbc6c63c5192":[10,0,1,2,0,36],
 "classpygui_1_1mainwindow_1_1_main_window.html#abce546a4875a1f07b8633e37d5b6cdba":[9,0,5,3,0,42],
@@ -246,8 +249,5 @@ var NAVTREEINDEX67 =
 "dir_922bc89a4fe7a3014680e6c7709ac08a.html":[11,0,2,0],
 "dir_934f90ec7b7003bf03c7a36bdb961e81.html":[11,0,4,1,2],
 "dir_9669779df7bfcf1c7bf651204e08d102.html":[11,0,13],
-"dir_96a286c95e152dc84501dde3344e48b1.html":[11,0,2,2,0,6],
-"dir_9845ec3075b8f0d0b5f73e8d0ac0ff6c.html":[11,0,0,0],
-"dir_9898311765dba9e8b5ad6a9c9b1db5d5.html":[11,0,3],
-"dir_a3742f42c59f9008c555307cd0d941bd.html":[11,0,2,2,0,11]
+"dir_96a286c95e152dc84501dde3344e48b1.html":[11,0,2,2,0,6]
 };

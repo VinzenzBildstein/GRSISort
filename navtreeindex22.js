@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"class_t_channel.html#a44eb83fe3284a8734c1e9163aac2676c":[8,11,5,108],
 "class_t_channel.html#a467e9c490e9d71aa7d2e215e333e1909":[8,11,5,90],
 "class_t_channel.html#a484e019ebe241f457b21cc9751c6efde":[8,11,5,107],
 "class_t_channel.html#a49c87ab10ba08fbf95a829dd2b2e2877":[8,11,5,127],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "class_t_data_frame_library.html#aa539a8c7f815b0ea87bf471982727652":[10,0,94,19],
 "class_t_data_frame_library.html#ab3e486c86bf8af56ba6eb6165a0f2b27":[10,0,94,15],
 "class_t_data_frame_library.html#ab3f625c1553ed57a8af3eae3bb92781c":[10,0,94,14],
-"class_t_data_frame_library.html#ab4a21529be2a44d339363da8cceb5788":[10,0,94,16],
-"class_t_data_frame_library.html#ac51fe54d1fde5b5456aabeb892b8fb53":[10,0,94,10]
+"class_t_data_frame_library.html#ab4a21529be2a44d339363da8cceb5788":[10,0,94,16]
 };

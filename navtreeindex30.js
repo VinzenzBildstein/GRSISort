@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"class_t_fipps_hit.html#af20c90e480c622e3ba21e9adf49d261e":[8,2,20,28],
 "class_t_fipps_hit.html#af58eacf1f4d733600e1bbb4979cd0a50":[8,2,20,51],
 "class_t_fipps_hit.html#af8d5245a46498534f224f84619ff2f56":[8,2,20,64],
 "class_t_fipps_hit.html#af9b6208802f7aa872a9234581f73a61e":[8,2,20,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "class_t_fipps_la_br_hit.html#ad046c38d7b93b87b7e169e3418c43a09":[8,2,24,66],
 "class_t_fipps_la_br_hit.html#ad08e816347670259c6624a8be3ab6594":[8,2,24,56],
 "class_t_fipps_la_br_hit.html#ad62673f38054fff81556da5aa2770a3b":[8,2,24,44],
-"class_t_fipps_la_br_hit.html#ad722731c5fde16e444eccbc61a697dda":[8,2,24,20],
-"class_t_fipps_la_br_hit.html#ad7fb301833e90f4b36b7fa1be7fe1334":[8,2,24,76]
+"class_t_fipps_la_br_hit.html#ad722731c5fde16e444eccbc61a697dda":[8,2,24,20]
 };

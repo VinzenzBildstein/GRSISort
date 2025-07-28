@@ -1,5 +1,8 @@
 var NAVTREEINDEX71 =
 {
+"struct_t_midas___b_a_n_k___h_e_a_d_e_r.html#a4edd76e4dc77c19904da5c6475be35a5":[8,11,37,3],
+"struct_t_midas___b_a_n_k___h_e_a_d_e_r.html#a58253ae5299612df270feb835c059c76":[8,11,37,1],
+"struct_t_midas___b_a_n_k___h_e_a_d_e_r.html#afda267e7c892dd56e0eb2876a01009fa":[8,11,37,2],
 "struct_t_midas___e_v_e_n_t___h_e_a_d_e_r.html":[8,11,39],
 "struct_t_midas___e_v_e_n_t___h_e_a_d_e_r.html#a38b10015697fe83904614dc5d3ec66ec":[8,11,39,0],
 "struct_t_midas___e_v_e_n_t___h_e_a_d_e_r.html#a5c8afd39a16e647960225265a58f6808":[8,11,39,4],

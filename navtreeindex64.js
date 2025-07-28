@@ -1,5 +1,8 @@
 var NAVTREEINDEX64 =
 {
+"class_t_trific.html#ad05fbbfc3f08f131525809321f3234f1":[8,2,74,24],
+"class_t_trific.html#ad592a99244d69abf3257b28488ae3c24":[8,2,74,17],
+"class_t_trific.html#ad7253d7a95cd3d9cebb8bc68b2090dce":[8,2,74,40],
 "class_t_trific.html#adb8c1f8037511613f00761b098808cf3":[8,2,74,41],
 "class_t_trific.html#ae0801594426a8f79f60fac0f31be2e1b":[8,2,74,29],
 "class_t_trific.html#ae77c63b34a1df7dbfe64cd13dfc7c62c":[8,2,74,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX64 =
 "class_t_user_settings.html#a9b6801fd93ffd2e078d831d4948fc1d2":[8,11,64,15],
 "class_t_user_settings.html#a9e085d2ffb486cb281d1439b666633cf":[8,11,64,38],
 "class_t_user_settings.html#ab1c9171cd3ffb4d64042227b6e2a2e85":[8,11,64,2],
-"class_t_user_settings.html#ac0aba11939f785c3425ec85a95fa67b7":[8,11,64,4],
-"class_t_user_settings.html#ac20ca4b81f82de9760ab15912da092f8":[8,11,64,14],
-"class_t_user_settings.html#acb685be0db2e5a5c142294168daa6705":[8,11,64,23],
-"class_t_user_settings.html#acd6c7d027419ef6cd793774b563e17da":[8,11,64,42]
+"class_t_user_settings.html#ac0aba11939f785c3425ec85a95fa67b7":[8,11,64,4]
 };
