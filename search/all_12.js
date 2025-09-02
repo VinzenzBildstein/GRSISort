@@ -33,7 +33,7 @@ var searchData=
   ['nrows_30',['nrows',['../group___fitting.html#ga10475233c8657903b0e07e9b26711c99',1,'NRMat']]],
   ['nrvec_31',['NRVec',['../class_n_r_vec.html',1,'NRVec&lt; T &gt;'],['../class_t_l_m_fitter_1_1_n_r_vec.html',1,'TLMFitter::NRVec&lt; T &gt;'],['../group___fitting.html#ga723e76c5a0f9d216e80f8b128abd3dd1',1,'NRVec::NRVec()'],['../group___fitting.html#ga478e724d382133add68eb125d7d32902',1,'NRVec::NRVec(int n)'],['../group___fitting.html#ga8e7741f242e11d33fedf292b92aeed12',1,'NRVec::NRVec(const T &amp;a, int n)'],['../group___fitting.html#gaf1017a82c93d1b000b7b6c220d62ffd3',1,'NRVec::NRVec(const T *a, int n)'],['../group___fitting.html#ga9d0c1a68537a31cf49ef8db9bf2b5d9e',1,'NRVec::NRVec(const NRVec &amp;rhs)'],['../class_n_r_vec.html#ab70bef08bdeb579c33cb2851164ed5ac',1,'NRVec::NRVec(NRVec &amp;&amp;rhs) noexcept=default']]],
   ['ns_32',['ns',['../_make_griffin_histograms_8cxx.html#a494b864e979f7a664ba81b0df3e26dc3',1,'MakeGriffinHistograms.cxx']]],
-  ['nscl_5fevt_33',['NSCL_EVT',['../_t_g_r_s_i_types_8h.html#aa52857f83d8b7cda6be7f0bec0f45229ade300a0bf536f97d0a59006b9a7b258b',1,'TGRSITypes.h']]],
+  ['nscl_5fevt_33',['NSCL_EVT',['../_t_g_r_s_i_types_8h.html#a2107a3f64d8d627d0ed2d981655304bdade300a0bf536f97d0a59006b9a7b258b',1,'TGRSITypes.h']]],
   ['nshape_34',['NSHAPE',['../class_t_pulse_analyzer.html#a36c5afa4442433a10e587f48bb5db385',1,'TPulseAnalyzer']]],
   ['ntbeam_35',['NTBeam',['../class_t_tri_foil.html#a306e3c14bf5156317fee344831ae6662',1,'TTriFoil']]],
   ['ntransitions_36',['NTransitions',['../class_t_nucleus.html#a1881155a53739493cba9b9d29f975521',1,'TNucleus']]],

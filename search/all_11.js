@@ -108,7 +108,7 @@ var searchData=
   ['mev_105',['MeV',['../_make_griffin_histograms_8cxx.html#ae33a2161a1199a5801afef610f151cf2',1,'MakeGriffinHistograms.cxx']]],
   ['mflag_106',['mflag',['../struct_t_pulse_analyzer_1_1_wave_form_par.html#a98a33945bd49205b87d790cfa04ffcad',1,'TPulseAnalyzer::WaveFormPar']]],
   ['microsecondtime_107',['MicrosecondTime',['../class_t_h_i_l_fragment.html#a4e9eba0c69cedd731a66158674291d5a',1,'THILFragment::MicrosecondTime() const'],['../class_t_h_i_l_fragment.html#a8a96524a9a82afbfb62e922028dd7566',1,'THILFragment::MicrosecondTime(const uint16_t &amp;usTime)']]],
-  ['midas_5ffile_108',['MIDAS_FILE',['../_t_g_r_s_i_types_8h.html#aa52857f83d8b7cda6be7f0bec0f45229a44bc8feca79f1a56f26038e3e71dbfd3',1,'TGRSITypes.h']]],
+  ['midas_5ffile_108',['MIDAS_FILE',['../_t_g_r_s_i_types_8h.html#a2107a3f64d8d627d0ed2d981655304bda44bc8feca79f1a56f26038e3e71dbfd3',1,'TGRSITypes.h']]],
   ['midastime_109',['MidasTime',['../class_t_r_f.html#a0a42dbe6b91035e32fed3d121064367f',1,'TRF::MidasTime()'],['../class_t_event_time.html#a88383fe58c7176d8895511009e9aa7d8',1,'TEventTime::MidasTime() const'],['../class_t_event_time.html#a88383fe58c7176d8895511009e9aa7d8',1,'TEventTime::MidasTime() const']]],
   ['minchannelid_110',['MinChannelId',['../class_t_parsing_diagnostics_data.html#acc4a448281c4c508a17b2e5d289684c8',1,'TParsingDiagnosticsData']]],
   ['minintensity_111',['MinIntensity',['../class_t_source_calibration.html#ab5915bc02c53abc9f57ffbdb984ccd66',1,'TSourceCalibration::MinIntensity(double val)'],['../class_t_source_calibration.html#a4ce4ff102b3b33de99a03cae2300615e',1,'TSourceCalibration::MinIntensity()']]],

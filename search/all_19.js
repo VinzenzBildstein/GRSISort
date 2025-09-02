@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unknown_5ffiletype_0',['UNKNOWN_FILETYPE',['../_t_g_r_s_i_types_8h.html#aa52857f83d8b7cda6be7f0bec0f45229aac1a7a605d5b521b9c6d053cadbea75a',1,'TGRSITypes.h']]],
+  ['unknown_5ffiletype_0',['UNKNOWN_FILETYPE',['../_t_g_r_s_i_types_8h.html#a2107a3f64d8d627d0ed2d981655304bdaac1a7a605d5b521b9c6d053cadbea75a',1,'TGRSITypes.h']]],
   ['unpack_5ftdirectory_1',['unpack_tdirectory',['../namespacepygui_1_1util.html#a84e281e412d4ad2545839c7256f9788a',1,'pygui::util']]],
   ['update_2',['Update',['../class_g_marker.html#a4de0c64a16a4994e2c8514fc9c3f051a',1,'GMarker::Update()'],['../class_t_region.html#acdcf3d4fc74a8d82684d895f365dcb02',1,'TRegion::Update()'],['../class_t_region.html#a9a91f6d311c5a50d22912934d0b1e3bb',1,'TRegion::Update(double startX, double stopX)'],['../class_t_parsing_diagnostics_data.html#a67f4f220994a72268f12e32bdaa536f7',1,'TParsingDiagnosticsData::Update()'],['../classpygui_1_1mainwindow_1_1_main_window.html#a2a9ffa6544392112b8ef35221ca4c459',1,'pygui.mainwindow.MainWindow.Update()'],['../classpygui_1_1status__widget_1_1_thread_vars.html#abb30961891102c5ee35af3f3e9410ca6',1,'pygui.status_widget.ThreadVars.Update()']]],
   ['update_3',['update',['../namespacepygui_1_1grut-view.html#ac5e138d12a76d3de581d0a99b29aabba',1,'pygui::grut-view']]],
@@ -44,7 +44,7 @@ var searchData=
   ['userfillobj_2eh_41',['UserFillObj.h',['../_user_fill_obj_8h.html',1,'']]],
   ['userinitobj_2eh_42',['UserInitObj.h',['../_user_init_obj_8h.html',1,'']]],
   ['userntuple_43',['UseRnTuple',['../class_t_g_r_s_i_options.html#aaed9b80d63709b7dea94d280aa57d09f',1,'TGRSIOptions']]],
-  ['usersettings_44',['USERSETTINGS',['../_t_g_r_s_i_types_8h.html#aa52857f83d8b7cda6be7f0bec0f45229a3f22fceb493dbff3d5e6d162787a2a64',1,'TGRSITypes.h']]],
+  ['usersettings_44',['USERSETTINGS',['../_t_g_r_s_i_types_8h.html#a2107a3f64d8d627d0ed2d981655304bda3f22fceb493dbff3d5e6d162787a2a64',1,'TGRSITypes.h']]],
   ['usersettings_45',['UserSettings',['../class_t_g_r_s_i_helper.html#a01803cc3aee74715892f7478b7158f4e',1,'TGRSIHelper::UserSettings()'],['../class_t_g_r_s_i_options.html#a3f5f82869ca2a90c392dbfa2acd16290',1,'TGRSIOptions::UserSettings()']]],
   ['usewaveparam_46',['UseWaveParam',['../class_t_channel.html#ae4629bd1d70f0bd5ce4f7122359907f9',1,'TChannel']]],
   ['util_2epy_47',['util.py',['../util_8py.html',1,'']]]
