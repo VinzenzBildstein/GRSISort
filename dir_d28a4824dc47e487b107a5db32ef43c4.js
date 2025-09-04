@@ -20,6 +20,8 @@ var dir_d28a4824dc47e487b107a5db32ef43c4 =
     [ "ExampleTreeHelper.hh", "_example_tree_helper_8hh.html", "_example_tree_helper_8hh" ],
     [ "GriffinKValueHelper.cxx", "_griffin_k_value_helper_8cxx.html", "_griffin_k_value_helper_8cxx" ],
     [ "GriffinKValueHelper.hh", "_griffin_k_value_helper_8hh.html", "_griffin_k_value_helper_8hh" ],
+    [ "TacOffsetHelper.cxx", "_tac_offset_helper_8cxx.html", null ],
+    [ "TacOffsetHelper.hh", "_tac_offset_helper_8hh.html", "_tac_offset_helper_8hh" ],
     [ "TimeWalkHelper.cxx", "_time_walk_helper_8cxx.html", "_time_walk_helper_8cxx" ],
     [ "TimeWalkHelper.hh", "_time_walk_helper_8hh.html", "_time_walk_helper_8hh" ]
 ];

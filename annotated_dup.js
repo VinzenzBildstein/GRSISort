@@ -94,6 +94,7 @@ var annotated_dup =
     [ "SuppressTH1GDirectory", "class_suppress_t_h1_g_directory.html", "class_suppress_t_h1_g_directory" ],
     [ "TAB3Peak", "class_t_a_b3_peak.html", "class_t_a_b3_peak" ],
     [ "TABPeak", "class_t_a_b_peak.html", "class_t_a_b_peak" ],
+    [ "TacOffsetHelper", "class_tac_offset_helper.html", "class_tac_offset_helper" ],
     [ "TAnalysisHistLoop", "class_t_analysis_hist_loop.html", "class_t_analysis_hist_loop" ],
     [ "TAnalysisOptions", "class_t_analysis_options.html", "class_t_analysis_options" ],
     [ "TAnalysisWriteLoop", "class_t_analysis_write_loop.html", "class_t_analysis_write_loop" ],
