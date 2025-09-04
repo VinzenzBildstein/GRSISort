@@ -157,9 +157,9 @@ $(function(){initNavTree('_t_efficiency_calibrator_8h_source.html',''); initResi
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">   /////////////////////////////////////////////////////////////////</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"></span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>   <span class="keyword">enum</span> EPeakType : std::uint8_t { kRWPeak  = 0,</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    kABPeak  = 1,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    kAB3Peak = 2,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    kGauss   = 3 };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                                   kABPeak  = 1,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                   kAB3Peak = 2,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                   kGauss   = 3 };</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>   TEfficiencyTab(TEfficiencyDatatypeTab* parent, <a class="code hl_class" href="class_t_nucleus.html">TNucleus</a>* nucleus, std::tuple&lt;TH1*, TH2*, TH2*&gt; hists, TGCompositeFrame* frame);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>   TEfficiencyTab(<span class="keyword">const</span> TEfficiencyTab&amp;)                = <span class="keywordflow">default</span>;</div>
@@ -217,16 +217,16 @@ $(function(){initNavTree('_t_efficiency_calibrator_8h_source.html',''); initResi
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">   /////////////////////////////////////////////////////////////////</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment"></span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>   <span class="keyword">enum</span> EEntry : std::uint8_t { kRangeEntry,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                 kThresholdEntry,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                 kBgParamEntry,</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                 kCalibrationUncertaintyEntry,</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                 kPeakTypeBox,</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                 kDegreeEntry,</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                 kPlotEfficiencyCheck,</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                 kPlotUncorrEfficiencyCheck,</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                 kPlotPeakAreaCheck,</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                 kPlotSummingInCheck,</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                 kPlotSummingOutCheck };</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                kThresholdEntry,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                                kBgParamEntry,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                kCalibrationUncertaintyEntry,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                kPeakTypeBox,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                kDegreeEntry,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                                kPlotEfficiencyCheck,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                                kPlotUncorrEfficiencyCheck,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                                kPlotPeakAreaCheck,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                                kPlotSummingInCheck,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                                kPlotSummingOutCheck };</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>   TEfficiencyDatatypeTab(TEfficiencyCalibrator* parent, std::vector&lt;TNucleus*&gt; nucleus, std::vector&lt;std::tuple&lt;TH1*, TH2*, TH2*&gt;&gt; hists, TGCompositeFrame* frame, <span class="keyword">const</span> std::string&amp; dataType, TGHProgressBar* progressBar);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>   TEfficiencyDatatypeTab(<span class="keyword">const</span> TEfficiencyDatatypeTab&amp;)                = <span class="keywordflow">default</span>;</div>
@@ -451,7 +451,7 @@ $(function(){initNavTree('_t_efficiency_calibrator_8h_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_t_efficiency_calibrator_8h.html">TEfficiencyCalibrator.h</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Sep 4 2025 15:45:08.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Sep 4 2025 15:50:01.</li>
   </ul>
 </div>
 </body>
