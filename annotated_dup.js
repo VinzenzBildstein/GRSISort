@@ -159,6 +159,7 @@ var annotated_dup =
     [ "TFippsPulser", "class_t_fipps_pulser.html", "class_t_fipps_pulser" ],
     [ "TFippsTAC", "class_t_fipps_t_a_c.html", "class_t_fipps_t_a_c" ],
     [ "TFippsTACHit", "class_t_fipps_t_a_c_hit.html", "class_t_fipps_t_a_c_hit" ],
+    [ "TFragDiagnosticsLoop", "class_t_frag_diagnostics_loop.html", "class_t_frag_diagnostics_loop" ],
     [ "TFragHistLoop", "class_t_frag_hist_loop.html", "class_t_frag_hist_loop" ],
     [ "TFragment", "class_t_fragment.html", "class_t_fragment" ],
     [ "TFragmentChainLoop", "class_t_fragment_chain_loop.html", "class_t_fragment_chain_loop" ],

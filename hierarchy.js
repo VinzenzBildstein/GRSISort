@@ -90,6 +90,7 @@ var hierarchy =
       [ "TDataLoop", "class_t_data_loop.html", null ],
       [ "TDetBuildingLoop", "class_t_det_building_loop.html", null ],
       [ "TEventBuildingLoop", "class_t_event_building_loop.html", null ],
+      [ "TFragDiagnosticsLoop", "class_t_frag_diagnostics_loop.html", null ],
       [ "TFragHistLoop", "class_t_frag_hist_loop.html", null ],
       [ "TFragWriteLoop", "class_t_frag_write_loop.html", null ],
       [ "TFragmentChainLoop", "class_t_fragment_chain_loop.html", null ],

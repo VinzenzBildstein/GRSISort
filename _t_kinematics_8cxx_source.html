@@ -393,7 +393,7 @@ $(function(){initNavTree('_t_kinematics_8cxx_source.html',''); initResizable(tru
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>   <span class="keywordtype">double</span> TargetMass     = <a class="code hl_variable" href="class_t_kinematics.html#a5592a191fba18d74df1c4bc159eb4849">fM</a>[1];</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>   <span class="keywordtype">double</span> ts = pow(TargetMass, 2);</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>   <span class="keywordtype">double</span> <a class="code hl_variable" href="_make_griffin_histograms_8cxx.html#a2438a45a0a3a3a4b5fcfa60b2e7097d6">ps</a> = pow(ProjectileMass, 2);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>   <span class="keywordtype">double</span> ps = pow(ProjectileMass, 2);</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>   <span class="keywordtype">double</span> cs = pow(cos(LabAngle), 2);</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>   <span class="keywordtype">double</span> es = pow(LabEnergy, 2);</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>   <span class="keywordtype">double</span> te = TargetMass * LabEnergy;</div>
@@ -403,12 +403,12 @@ $(function(){initNavTree('_t_kinematics_8cxx_source.html',''); initResizable(tru
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                LabEnergy * (LabEnergy / cs * pow(cos(LabAngle) - sin(LabAngle), 4) +</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                             8 * TargetMass * (3 + sin(2 * LabAngle)))) /</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>              cos(LabAngle) +</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>           sqrt((24 * ts * LabEnergy * cs + 32 * <a class="code hl_variable" href="_make_griffin_histograms_8cxx.html#a2438a45a0a3a3a4b5fcfa60b2e7097d6">ps</a> * TargetMass * pow(cos(LabAngle), 4) +</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>           sqrt((24 * ts * LabEnergy * cs + 32 * ps * TargetMass * pow(cos(LabAngle), 4) +</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                 2 * TargetMass * es * pow(cos(LabAngle) - sin(LabAngle), 4) +</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                 16 * ts * LabEnergy * pow(cos(LabAngle), 3) * sin(LabAngle) -</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                 8 * <a class="code hl_variable" href="_make_griffin_histograms_8cxx.html#a2438a45a0a3a3a4b5fcfa60b2e7097d6">ps</a> * LabEnergy * cs * (sin(2 * LabAngle) - 1) +</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                 2 * <a class="code hl_variable" href="_make_griffin_histograms_8cxx.html#a2438a45a0a3a3a4b5fcfa60b2e7097d6">ps</a> * cos(3 * LabAngle) * sqrt(2 * (4 * ts + 12 * te + es) + (8 * ts - 2 * es) * cos(2 * LabAngle) + LabEnergy * (LabEnergy / cs + 8 * TargetMass * sin(2 * LabAngle) - 4 * LabEnergy * tan(LabAngle))) +</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                 2 * cos(LabAngle) * (3 * <a class="code hl_variable" href="_make_griffin_histograms_8cxx.html#a2438a45a0a3a3a4b5fcfa60b2e7097d6">ps</a> + te - te * sin(2 * LabAngle)) *</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                 8 * ps * LabEnergy * cs * (sin(2 * LabAngle) - 1) +</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                 2 * ps * cos(3 * LabAngle) * sqrt(2 * (4 * ts + 12 * te + es) + (8 * ts - 2 * es) * cos(2 * LabAngle) + LabEnergy * (LabEnergy / cs + 8 * TargetMass * sin(2 * LabAngle) - 4 * LabEnergy * tan(LabAngle))) +</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                 2 * cos(LabAngle) * (3 * ps + te - te * sin(2 * LabAngle)) *</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                    sqrt(2 * (4 * ts + 12 * te + es) + (8 * ts - 2 * es) * cos(2 * LabAngle) +</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                         LabEnergy *</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                            (LabEnergy / cs + 8 * TargetMass * sin(2 * LabAngle) - 4 * LabEnergy * tan(LabAngle)))) /</div>
@@ -891,7 +891,6 @@ $(function(){initNavTree('_t_kinematics_8cxx_source.html',''); initResizable(tru
 <div class="ttc" id="a_globals_8h_html"><div class="ttname"><a href="_globals_8h.html">Globals.h</a></div></div>
 <div class="ttc" id="a_globals_8h_html_ad7c3b975e5552a122f836b02fa138502"><div class="ttname"><a href="_globals_8h.html#ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</a></div><div class="ttdeci">#define RESET_COLOR</div><div class="ttdef"><b>Definition</b> <a href="_globals_8h_source.html#l00005">Globals.h:5</a></div></div>
 <div class="ttc" id="a_globals_8h_html_ade3b398d4c616608495b2d29e309badb"><div class="ttname"><a href="_globals_8h.html#ade3b398d4c616608495b2d29e309badb">ALERTTEXT</a></div><div class="ttdeci">#define ALERTTEXT</div><div class="ttdef"><b>Definition</b> <a href="_globals_8h_source.html#l00035">Globals.h:35</a></div></div>
-<div class="ttc" id="a_make_griffin_histograms_8cxx_html_a2438a45a0a3a3a4b5fcfa60b2e7097d6"><div class="ttname"><a href="_make_griffin_histograms_8cxx.html#a2438a45a0a3a3a4b5fcfa60b2e7097d6">ps</a></div><div class="ttdeci">const Double_t ps</div><div class="ttdef"><b>Definition</b> <a href="_make_griffin_histograms_8cxx_source.html#l00011">MakeGriffinHistograms.cxx:11</a></div></div>
 <div class="ttc" id="a_t_kinematics_8h_html"><div class="ttname"><a href="_t_kinematics_8h.html">TKinematics.h</a></div></div>
 <div class="ttc" id="aclass_t_kinematics_html_a00f49001a8c1c8a43346883b7d0c8d89"><div class="ttname"><a href="class_t_kinematics.html#a00f49001a8c1c8a43346883b7d0c8d89">TKinematics::fTCm_i</a></div><div class="ttdeci">double fTCm_i</div><div class="ttdef"><b>Definition</b> <a href="_t_kinematics_8h_source.html#l00106">TKinematics.h:106</a></div></div>
 <div class="ttc" id="aclass_t_kinematics_html_a00f66e26d3a752186d1dd64df4fdf493"><div class="ttname"><a href="class_t_kinematics.html#a00f66e26d3a752186d1dd64df4fdf493">TKinematics::fQValue</a></div><div class="ttdeci">double fQValue</div><div class="ttdef"><b>Definition</b> <a href="_t_kinematics_8h_source.html#l00114">TKinematics.h:114</a></div></div>
@@ -967,7 +966,7 @@ $(function(){initNavTree('_t_kinematics_8cxx_source.html',''); initResizable(tru
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_ffe9e0fcf26f96bc53aa7b2fce78662c.html">TKinematics</a></li><li class="navelem"><a class="el" href="_t_kinematics_8cxx.html">TKinematics.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Sep 4 2025 15:50:02.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Sep 9 2025 15:04:28.</li>
   </ul>
 </div>
 </body>

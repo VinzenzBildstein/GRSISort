@@ -151,10 +151,10 @@ $(function(){initNavTree('_time_walk_helper_8cxx_source.html',''); initResizable
 </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_time_walk_helper_8cxx.html#a7c685c24eb1ac9036c18506dc392edf3">   46</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_time_walk_helper_8cxx.html#a7c685c24eb1ac9036c18506dc392edf3">PromptCoincidence</a>(<a class="code hl_class" href="class_t_griffin_hit.html">TGriffinHit</a>* g, <a class="code hl_class" href="class_t_sceptar_hit.html">TSceptarHit</a>* <a class="code hl_variable" href="_make_griffin_histograms_8cxx.html#ac9f781c0a1f40b02ce4266f1add0feb9">s</a>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_time_walk_helper_8cxx.html#a7c685c24eb1ac9036c18506dc392edf3">   46</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_time_walk_helper_8cxx.html#a7c685c24eb1ac9036c18506dc392edf3">PromptCoincidence</a>(<a class="code hl_class" href="class_t_griffin_hit.html">TGriffinHit</a>* g, <a class="code hl_class" href="class_t_sceptar_hit.html">TSceptarHit</a>* s)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   <span class="comment">// Check if hits are less then 300 ns apart.</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>   <span class="keywordflow">return</span> std::fabs(g-&gt;<a class="code hl_function" href="class_t_detector_hit.html#aba5e96b2f172f0e12eb2b6e06af5a735">GetTime</a>() - <a class="code hl_variable" href="_make_griffin_histograms_8cxx.html#ac9f781c0a1f40b02ce4266f1add0feb9">s</a>-&gt;GetTime()) &lt; 300.;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>   <span class="keywordflow">return</span> std::fabs(g-&gt;<a class="code hl_function" href="class_t_detector_hit.html#aba5e96b2f172f0e12eb2b6e06af5a735">GetTime</a>() - s-&gt;<a class="code hl_function" href="class_t_detector_hit.html#aba5e96b2f172f0e12eb2b6e06af5a735">GetTime</a>()) &lt; 300.;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
@@ -232,7 +232,6 @@ $(function(){initNavTree('_time_walk_helper_8cxx_source.html',''); initResizable
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>   }</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 </div>
-<div class="ttc" id="a_make_griffin_histograms_8cxx_html_ac9f781c0a1f40b02ce4266f1add0feb9"><div class="ttname"><a href="_make_griffin_histograms_8cxx.html#ac9f781c0a1f40b02ce4266f1add0feb9">s</a></div><div class="ttdeci">const Double_t s</div><div class="ttdef"><b>Definition</b> <a href="_make_griffin_histograms_8cxx_source.html#l00015">MakeGriffinHistograms.cxx:15</a></div></div>
 <div class="ttc" id="a_time_walk_helper_8cxx_html_a7c685c24eb1ac9036c18506dc392edf3"><div class="ttname"><a href="_time_walk_helper_8cxx.html#a7c685c24eb1ac9036c18506dc392edf3">PromptCoincidence</a></div><div class="ttdeci">bool PromptCoincidence(TGriffinHit *g, TSceptarHit *s)</div><div class="ttdef"><b>Definition</b> <a href="#l00046">TimeWalkHelper.cxx:46</a></div></div>
 <div class="ttc" id="a_time_walk_helper_8hh_html"><div class="ttname"><a href="_time_walk_helper_8hh.html">TimeWalkHelper.hh</a></div></div>
 <div class="ttc" id="aclass_t_detector_hit_html_a2d0ccf28cbe0792ebdf0987d47c14997"><div class="ttname"><a href="class_t_detector_hit.html#a2d0ccf28cbe0792ebdf0987d47c14997">TDetectorHit::GetTimeStamp</a></div><div class="ttdeci">virtual Long64_t GetTimeStamp(Option_t *=&quot;&quot;) const</div><div class="ttdef"><b>Definition</b> <a href="_t_detector_hit_8h_source.html#l00134">TDetectorHit.h:134</a></div></div>
@@ -255,7 +254,7 @@ $(function(){initNavTree('_time_walk_helper_8cxx_source.html',''); initResizable
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="_time_walk_helper_8cxx.html">TimeWalkHelper.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Sep 4 2025 15:50:00.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Sep 9 2025 15:04:27.</li>
   </ul>
 </div>
 </body>

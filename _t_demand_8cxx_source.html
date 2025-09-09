@@ -189,13 +189,11 @@ $(function(){initNavTree('_t_demand_8cxx_source.html',''); initResizable(true); 
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_t_demand.html#a583e6c2e33004fa1ff533eb74d31fddf">   67</a></span>TVector3 <a class="code hl_function" href="class_t_demand.html#a583e6c2e33004fa1ff533eb74d31fddf">TDemand::GetPosition</a>(<span class="keywordtype">int</span> DetNbr)</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   <span class="keywordflow">if</span>(1 &gt; DetNbr || 6 &lt; DetNbr) {   <span class="comment">//if detector number is not 1,2,3,4,5,6, then return a 0 vector</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordflow">return</span> TVector3(0, 0, 0);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordflow">return</span> {0, 0, 0};</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>   <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">return</span> TVector3(<a class="code hl_variable" href="class_t_demand.html#ac941d66420854d222be54f2794207478">fXPositions</a>[DetNbr - 1], <a class="code hl_variable" href="class_t_demand.html#a3a8cd960d653b7680e5ba9d7c09a3ad5">fYPositions</a>[DetNbr - 1], <a class="code hl_variable" href="class_t_demand.html#ab9e83c723c2f8f82aa817df7b9753735">fZPositions</a>[DetNbr - 1]);   <span class="comment">//-1 because we index the detectors at 1 but the vector at 0</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>   }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>   <span class="keywordflow">return</span> {<a class="code hl_variable" href="class_t_demand.html#ac941d66420854d222be54f2794207478">fXPositions</a>[DetNbr - 1], <a class="code hl_variable" href="class_t_demand.html#a3a8cd960d653b7680e5ba9d7c09a3ad5">fYPositions</a>[DetNbr - 1], <a class="code hl_variable" href="class_t_demand.html#ab9e83c723c2f8f82aa817df7b9753735">fZPositions</a>[DetNbr - 1]};   <span class="comment">//-1 because we index the detectors at 1 but the vector at 0</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 </div>
 <div class="ttc" id="a_t_demand_8h_html"><div class="ttname"><a href="_t_demand_8h.html">TDemand.h</a></div></div>
 <div class="ttc" id="a_t_mnemonic_8h_html"><div class="ttname"><a href="_t_mnemonic_8h.html">TMnemonic.h</a></div></div>
@@ -224,7 +222,7 @@ $(function(){initNavTree('_t_demand_8cxx_source.html',''); initResizable(true); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1d7397b112c23d4eb2fe49dc66ace00a.html">GRSIData</a></li><li class="navelem"><a class="el" href="dir_04ded5cb9506aadc0b6d1c08d3b0ca72.html">libraries</a></li><li class="navelem"><a class="el" href="dir_f1ca9974b6d60d8551858194bc4a7b28.html">TGRSIAnalysis</a></li><li class="navelem"><a class="el" href="dir_b5961c678ebe878120c028a0fa1d54ee.html">TDemand</a></li><li class="navelem"><a class="el" href="_t_demand_8cxx.html">TDemand.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Sep 4 2025 15:50:01.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Sep 9 2025 15:04:27.</li>
   </ul>
 </div>
 </body>
