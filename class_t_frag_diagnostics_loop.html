@@ -235,6 +235,8 @@ Protected Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa42d38661837f802cbdbc26c9c31d491" id="r_aa42d38661837f802cbdbc26c9c31d491"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa42d38661837f802cbdbc26c9c31d491">TFragDiagnosticsLoop</a> (std::string name, const std::string &amp;fOutputFilename)</td></tr>
 <tr class="separator:aa42d38661837f802cbdbc26c9c31d491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b8327d4c801604626e520b185efea6" id="r_a81b8327d4c801604626e520b185efea6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81b8327d4c801604626e520b185efea6">CreateHistograms</a> ()</td></tr>
+<tr class="separator:a81b8327d4c801604626e520b185efea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a345004678ce5aa33ddb539bad031c188" id="r_a345004678ce5aa33ddb539bad031c188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stoppable_thread.html#a345004678ce5aa33ddb539bad031c188">Loop</a> ()</td></tr>
 <tr class="separator:a345004678ce5aa33ddb539bad031c188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396f8b2b17eb6a05f09251055968a7b3" id="r_a396f8b2b17eb6a05f09251055968a7b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a396f8b2b17eb6a05f09251055968a7b3">Process</a> (const std::shared_ptr&lt; const <a class="el" href="class_t_fragment.html">TFragment</a> &gt; &amp;event)</td></tr>
@@ -244,14 +246,14 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae1dfd9152457ca79fe196275c7b1afec" id="r_ae1dfd9152457ca79fe196275c7b1afec"><td class="memItemLeft" align="right" valign="top">TH2D *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1dfd9152457ca79fe196275c7b1afec">fAccepted</a> {nullptr}</td></tr>
 <tr class="separator:ae1dfd9152457ca79fe196275c7b1afec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad702740235fc3c83170635504d6384ab" id="r_ad702740235fc3c83170635504d6384ab"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::array&lt; int64_t, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad702740235fc3c83170635504d6384ab">fAcceptedChannelIds</a></td></tr>
-<tr class="separator:ad702740235fc3c83170635504d6384ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a057fc074b6d1dfbf2746a7ba3cd32" id="r_ad3a057fc074b6d1dfbf2746a7ba3cd32"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::array&lt; int64_t, 2 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3a057fc074b6d1dfbf2746a7ba3cd32">fAcceptedChannelIds</a></td></tr>
+<tr class="separator:ad3a057fc074b6d1dfbf2746a7ba3cd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64ef0f1a65e952df04234d792b5e049e" id="r_a64ef0f1a65e952df04234d792b5e049e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64ef0f1a65e952df04234d792b5e049e">fAcceptedMax</a> {0x1 &lt;&lt; 14}</td></tr>
 <tr class="separator:a64ef0f1a65e952df04234d792b5e049e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4585becf6f966355b76c1dadef5e6cfa" id="r_a4585becf6f966355b76c1dadef5e6cfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_bad_fragment.html">TBadFragment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4585becf6f966355b76c1dadef5e6cfa">fBadEventAddress</a> {nullptr}</td></tr>
 <tr class="separator:a4585becf6f966355b76c1dadef5e6cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a745591d1f88db0388180bbf153a5d837" id="r_a745591d1f88db0388180bbf153a5d837"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::array&lt; int64_t, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a745591d1f88db0388180bbf153a5d837">fChannelIds</a></td></tr>
-<tr class="separator:a745591d1f88db0388180bbf153a5d837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa623af47106e8cbad634d282ca696a9f" id="r_aa623af47106e8cbad634d282ca696a9f"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::array&lt; int64_t, 2 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa623af47106e8cbad634d282ca696a9f">fChannelIds</a></td></tr>
+<tr class="separator:aa623af47106e8cbad634d282ca696a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaca354253521492483087f6ba98ddd88" id="r_aaca354253521492483087f6ba98ddd88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_fragment.html">TFragment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaca354253521492483087f6ba98ddd88">fEventAddress</a> {nullptr}</td></tr>
 <tr class="separator:aaca354253521492483087f6ba98ddd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad54db1cd59d084a858e069e3ea90fda9" id="r_ad54db1cd59d084a858e069e3ea90fda9"><td class="memItemLeft" align="right" valign="top">std::atomic_bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stoppable_thread.html#ad54db1cd59d084a858e069e3ea90fda9">fForceStop</a> {false}</td></tr>
@@ -274,10 +276,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afbae2a5580f7d3095615e4f7612011b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68215d46ffa29d2a86d00a88bc28df50" id="r_a68215d46ffa29d2a86d00a88bc28df50"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stoppable_thread.html#a68215d46ffa29d2a86d00a88bc28df50">fName</a></td></tr>
 <tr class="separator:a68215d46ffa29d2a86d00a88bc28df50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab972595248325ba7f5c454c187852eed" id="r_ab972595248325ba7f5c454c187852eed"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab972595248325ba7f5c454c187852eed">fNetworkPacketNumber</a> {{0, 0, 0}}</td></tr>
-<tr class="separator:ab972595248325ba7f5c454c187852eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8908f3421d4349941c22face4058b08" id="r_ab8908f3421d4349941c22face4058b08"><td class="memItemLeft" align="right" valign="top">std::array&lt; int64_t, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8908f3421d4349941c22face4058b08">fNetworkPacketTimeStamp</a> {{0, 0, 0}}</td></tr>
-<tr class="separator:ab8908f3421d4349941c22face4058b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa63a9be231e7068e2a8a2bf58d7029" id="r_aeaa63a9be231e7068e2a8a2bf58d7029"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaa63a9be231e7068e2a8a2bf58d7029">fNetworkPacketNumber</a> {{0, 0}}</td></tr>
+<tr class="separator:aeaa63a9be231e7068e2a8a2bf58d7029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65773e7d93b116ae76d514438f0e482" id="r_aa65773e7d93b116ae76d514438f0e482"><td class="memItemLeft" align="right" valign="top">std::array&lt; int64_t, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65773e7d93b116ae76d514438f0e482">fNetworkPacketTimeStamp</a> {{0, 0}}</td></tr>
+<tr class="separator:aa65773e7d93b116ae76d514438f0e482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f1c475195565d87f51260a0595e964" id="r_ad3f1c475195565d87f51260a0595e964"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3f1c475195565d87f51260a0595e964">fNofRollovers</a></td></tr>
 <tr class="separator:ad3f1c475195565d87f51260a0595e964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d10189ea0898213515b94c04a95eb95" id="r_a5d10189ea0898213515b94c04a95eb95"><td class="memItemLeft" align="right" valign="top">TFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d10189ea0898213515b94c04a95eb95">fOutputFile</a> {nullptr}</td></tr>
@@ -296,14 +298,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afb3eb940ea2cda208dbb7baa641d708c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1525c571970ee7d6006d3ed655b372dd" id="r_a1525c571970ee7d6006d3ed655b372dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1525c571970ee7d6006d3ed655b372dd">fRollnumThreshold</a> {20}</td></tr>
 <tr class="separator:a1525c571970ee7d6006d3ed655b372dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45ccab86afd3923d11e897a4f849974" id="r_af45ccab86afd3923d11e897a4f849974"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af45ccab86afd3923d11e897a4f849974">fRunLength</a> {0}</td></tr>
+<tr class="separator:af45ccab86afd3923d11e897a4f849974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af304b0aae5e7384aedac24f024031603" id="r_af304b0aae5e7384aedac24f024031603"><td class="memItemLeft" align="right" valign="top">std::atomic_bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stoppable_thread.html#af304b0aae5e7384aedac24f024031603">fRunning</a> {false}</td></tr>
 <tr class="separator:af304b0aae5e7384aedac24f024031603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6a9468dda47e17f1239ca8738adc36b" id="r_ad6a9468dda47e17f1239ca8738adc36b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_epics_frag.html">TEpicsFrag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6a9468dda47e17f1239ca8738adc36b">fScalerAddress</a> {nullptr}</td></tr>
 <tr class="separator:ad6a9468dda47e17f1239ca8738adc36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1b786985e83b0c1228167f8b11dee62" id="r_aa1b786985e83b0c1228167f8b11dee62"><td class="memItemLeft" align="right" valign="top">std::thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stoppable_thread.html#aa1b786985e83b0c1228167f8b11dee62">fThread</a></td></tr>
 <tr class="separator:aa1b786985e83b0c1228167f8b11dee62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa88728258e59496ff23e45f56afeb350" id="r_aa88728258e59496ff23e45f56afeb350"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::array&lt; int64_t, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa88728258e59496ff23e45f56afeb350">fTimeStamps</a></td></tr>
-<tr class="separator:aa88728258e59496ff23e45f56afeb350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a045de4ed55657064a46f6c65dea81d" id="r_a5a045de4ed55657064a46f6c65dea81d"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, std::array&lt; int64_t, 2 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a045de4ed55657064a46f6c65dea81d">fTimeStamps</a></td></tr>
+<tr class="separator:a5a045de4ed55657064a46f6c65dea81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -400,9 +404,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00085">85</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00056">56</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -435,7 +439,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">39</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00082">fAccepted</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00085">fLostAcceptedIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">fLostAcceptedIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00084">fLostChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00086">fLostChannelIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00083">fLostNetworkPackets</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00061">fOutputFile</a>, <a class="el" href="_t_channel_8h_source.html#l00067">TChannel::GetChannelMap()</a>, <a class="el" href="_t_channel_8h_source.html#l00063">TChannel::GetNumberOfChannels()</a>, <a class="el" href="_t_run_info_8h_source.html#l00243">TRunInfo::RunLength()</a>, <a class="el" href="_t_run_info_8h_source.html#l00241">TRunInfo::RunStart()</a>, and <a class="el" href="_t_run_info_8h_source.html#l00242">TRunInfo::RunStop()</a>.</p>
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00062">fOutputFile</a>.</p>
 
 </div>
 </div>
@@ -560,7 +564,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_stoppable_thread_8h_source.html#l00112">StoppableThread::fThreadMap</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_channel_8cxx_source.html#l00460">TChannel::GetChannel()</a>, <a class="el" href="_t_g_r_s_iint_8cxx_source.html#l00165">TGRSIint::LoopUntilDone()</a>, and <a class="el" href="_t_g_r_s_iint_8cxx_source.html#l00735">TGRSIInterruptHandler::Notify()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_channel_8cxx_source.html#l00460">TChannel::GetChannel()</a>, <a class="el" href="_t_g_r_s_iint_8cxx_source.html#l00165">TGRSIint::LoopUntilDone()</a>, and <a class="el" href="_t_g_r_s_iint_8cxx_source.html#l00739">TGRSIInterruptHandler::Notify()</a>.</p>
 
 </div>
 </div>
@@ -620,7 +624,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_stoppable_thread_8h_source.html#l00112">StoppableThread::fThreadMap</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_g_r_s_iint_8cxx_source.html#l00735">TGRSIInterruptHandler::Notify()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_g_r_s_iint_8cxx_source.html#l00739">TGRSIInterruptHandler::Notify()</a>.</p>
 
 </div>
 </div>
@@ -649,9 +653,9 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_stoppable_thread.html#ad0fa1c8f84616aedcfb9baa3f781f977">StoppableThread</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00090">90</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00061">61</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">fInputQueue</a>.</p>
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00095">fInputQueue</a>.</p>
 
 </div>
 </div>
@@ -715,6 +719,37 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a81b8327d4c801604626e520b185efea6" name="a81b8327d4c801604626e520b185efea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b8327d4c801604626e520b185efea6">&#9670;&#160;</a></span>CreateHistograms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TFragDiagnosticsLoop::CreateHistograms </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">147</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
+
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">fAccepted</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">fLostAcceptedIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00092">fLostAcceptedIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00089">fLostChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00091">fLostChannelIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00088">fLostNetworkPackets</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00062">fOutputFile</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00084">fRunLength</a>, <a class="el" href="_t_channel_8h_source.html#l00067">TChannel::GetChannelMap()</a>, <a class="el" href="_t_channel_8h_source.html#l00063">TChannel::GetNumberOfChannels()</a>, <a class="el" href="_stoppable_thread_8h_source.html#l00062">StoppableThread::Name()</a>, and <a class="el" href="_t_run_info_8h_source.html#l00243">TRunInfo::RunLength()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
+
+</div>
+</div>
 <a id="aeb089058c6f27340cb4402d610142088" name="aeb089058c6f27340cb4402d610142088"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb089058c6f27340cb4402d610142088">&#9670;&#160;</a></span>EndStatus()</h2>
 
@@ -740,7 +775,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_stoppable_thread.html#a3e7173edc5fcccaa6d1532d561f009db">StoppableThread</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">98</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00069">69</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
 
 <p class="reference">References <a class="el" href="_stoppable_thread_8h_source.html#l00095">StoppableThread::InputSize()</a>, <a class="el" href="_stoppable_thread_8h_source.html#l00094">StoppableThread::ItemsPopped()</a>, and <a class="el" href="_stoppable_thread_8h_source.html#l00062">StoppableThread::Name()</a>.</p>
 
@@ -1019,7 +1054,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_stoppable_thread_8h_source.html#l00100">StoppableThread::fItemsPopped</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_analysis_hist_loop_8cxx_source.html#l00045">TAnalysisHistLoop::Iteration()</a>, <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00085">TAnalysisWriteLoop::Iteration()</a>, <a class="el" href="_t_det_building_loop_8cxx_source.html#l00028">TDetBuildingLoop::Iteration()</a>, <a class="el" href="_t_event_building_loop_8cxx_source.html#l00077">TEventBuildingLoop::Iteration()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00106">Iteration()</a>, <a class="el" href="_t_frag_hist_loop_8cxx_source.html#l00045">TFragHistLoop::Iteration()</a>, <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00069">TFragmentChainLoop::Iteration()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00091">TFragWriteLoop::Iteration()</a>, and <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00049">TUnpackingLoop::Iteration()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_analysis_hist_loop_8cxx_source.html#l00045">TAnalysisHistLoop::Iteration()</a>, <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00085">TAnalysisWriteLoop::Iteration()</a>, <a class="el" href="_t_det_building_loop_8cxx_source.html#l00028">TDetBuildingLoop::Iteration()</a>, <a class="el" href="_t_event_building_loop_8cxx_source.html#l00077">TEventBuildingLoop::Iteration()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00077">Iteration()</a>, <a class="el" href="_t_frag_hist_loop_8cxx_source.html#l00045">TFragHistLoop::Iteration()</a>, <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00069">TFragmentChainLoop::Iteration()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00091">TFragWriteLoop::Iteration()</a>, and <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00049">TUnpackingLoop::Iteration()</a>.</p>
 
 </div>
 </div>
@@ -1048,7 +1083,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00036">36</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">fInputQueue</a>.</p>
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00095">fInputQueue</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_t_g_r_s_iint_8cxx_source.html#l00400">TGRSIint::SetupPipeline()</a>.</p>
 
@@ -1081,7 +1116,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_stoppable_thread_8h_source.html#l00101">StoppableThread::fInputSize</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00072">TAnalysisWriteLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">EndStatus()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00081">TFragWriteLoop::EndStatus()</a>, <a class="el" href="_t_analysis_hist_loop_8cxx_source.html#l00045">TAnalysisHistLoop::Iteration()</a>, <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00085">TAnalysisWriteLoop::Iteration()</a>, <a class="el" href="_t_data_loop_8cxx_source.html#l00048">TDataLoop::Iteration()</a>, <a class="el" href="_t_det_building_loop_8cxx_source.html#l00028">TDetBuildingLoop::Iteration()</a>, <a class="el" href="_t_event_building_loop_8cxx_source.html#l00077">TEventBuildingLoop::Iteration()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00106">Iteration()</a>, <a class="el" href="_t_frag_hist_loop_8cxx_source.html#l00045">TFragHistLoop::Iteration()</a>, <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00069">TFragmentChainLoop::Iteration()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00091">TFragWriteLoop::Iteration()</a>, and <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00049">TUnpackingLoop::Iteration()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00072">TAnalysisWriteLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00069">EndStatus()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00081">TFragWriteLoop::EndStatus()</a>, <a class="el" href="_t_analysis_hist_loop_8cxx_source.html#l00045">TAnalysisHistLoop::Iteration()</a>, <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00085">TAnalysisWriteLoop::Iteration()</a>, <a class="el" href="_t_data_loop_8cxx_source.html#l00048">TDataLoop::Iteration()</a>, <a class="el" href="_t_det_building_loop_8cxx_source.html#l00028">TDetBuildingLoop::Iteration()</a>, <a class="el" href="_t_event_building_loop_8cxx_source.html#l00077">TEventBuildingLoop::Iteration()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00077">Iteration()</a>, <a class="el" href="_t_frag_hist_loop_8cxx_source.html#l00045">TFragHistLoop::Iteration()</a>, <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00069">TFragmentChainLoop::Iteration()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00091">TFragWriteLoop::Iteration()</a>, and <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00049">TUnpackingLoop::Iteration()</a>.</p>
 
 </div>
 </div>
@@ -1201,7 +1236,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_stoppable_thread_8h_source.html#l00100">StoppableThread::fItemsPopped</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00072">TAnalysisWriteLoop::EndStatus()</a>, <a class="el" href="_t_event_building_loop_8cxx_source.html#l00256">TEventBuildingLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">EndStatus()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00081">TFragWriteLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00046">GetItemsPopped()</a>, <a class="el" href="_t_fragment_chain_loop_8h_source.html#l00047">TFragmentChainLoop::GetItemsPopped()</a>, <a class="el" href="_t_frag_write_loop_8h_source.html#l00047">TFragWriteLoop::GetItemsPopped()</a>, <a class="el" href="_t_analysis_write_loop_8h_source.html#l00045">TAnalysisWriteLoop::GetItemsPushed()</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00045">GetItemsPushed()</a>, <a class="el" href="_t_fragment_chain_loop_8h_source.html#l00046">TFragmentChainLoop::GetItemsPushed()</a>, <a class="el" href="_t_frag_write_loop_8h_source.html#l00046">TFragWriteLoop::GetItemsPushed()</a>, <a class="el" href="_t_data_loop_8cxx_source.html#l00048">TDataLoop::Iteration()</a>, <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00069">TFragmentChainLoop::Iteration()</a>, <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00049">TUnpackingLoop::Iteration()</a>, and <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00057">TFragmentChainLoop::Restart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00072">TAnalysisWriteLoop::EndStatus()</a>, <a class="el" href="_t_event_building_loop_8cxx_source.html#l00256">TEventBuildingLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00069">EndStatus()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00081">TFragWriteLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00046">GetItemsPopped()</a>, <a class="el" href="_t_fragment_chain_loop_8h_source.html#l00047">TFragmentChainLoop::GetItemsPopped()</a>, <a class="el" href="_t_frag_write_loop_8h_source.html#l00047">TFragWriteLoop::GetItemsPopped()</a>, <a class="el" href="_t_analysis_write_loop_8h_source.html#l00045">TAnalysisWriteLoop::GetItemsPushed()</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00045">GetItemsPushed()</a>, <a class="el" href="_t_fragment_chain_loop_8h_source.html#l00046">TFragmentChainLoop::GetItemsPushed()</a>, <a class="el" href="_t_frag_write_loop_8h_source.html#l00046">TFragWriteLoop::GetItemsPushed()</a>, <a class="el" href="_t_data_loop_8cxx_source.html#l00048">TDataLoop::Iteration()</a>, <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00069">TFragmentChainLoop::Iteration()</a>, <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00049">TUnpackingLoop::Iteration()</a>, and <a class="el" href="_t_fragment_chain_loop_8cxx_source.html#l00057">TFragmentChainLoop::Restart()</a>.</p>
 
 </div>
 </div>
@@ -1259,9 +1294,9 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_stoppable_thread.html#afeb34fff4155683116a473cade35f054">StoppableThread</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00106">106</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00077">77</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">fInputQueue</a>, <a class="el" href="_stoppable_thread_8h_source.html#l00096">StoppableThread::IncrementItemsPopped()</a>, <a class="el" href="_stoppable_thread_8h_source.html#l00095">StoppableThread::InputSize()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00095">fInputQueue</a>, <a class="el" href="_stoppable_thread_8h_source.html#l00096">StoppableThread::IncrementItemsPopped()</a>, <a class="el" href="_stoppable_thread_8h_source.html#l00095">StoppableThread::InputSize()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -1383,7 +1418,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_stoppable_thread_8h_source.html#l00105">StoppableThread::fName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00148">TAnalysisWriteLoop::AddBranch()</a>, <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00072">TAnalysisWriteLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">EndStatus()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00081">TFragWriteLoop::EndStatus()</a>, <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00076">TUnpackingLoop::EndStatus()</a>, and <a class="el" href="_stoppable_thread_8cxx_source.html#l00297">StoppableThread::status_out()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00148">TAnalysisWriteLoop::AddBranch()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_analysis_write_loop_8cxx_source.html#l00072">TAnalysisWriteLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00069">EndStatus()</a>, <a class="el" href="_t_frag_write_loop_8cxx_source.html#l00081">TFragWriteLoop::EndStatus()</a>, <a class="el" href="_t_unpacking_loop_8cxx_source.html#l00076">TUnpackingLoop::EndStatus()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>, <a class="el" href="_stoppable_thread_8cxx_source.html#l00297">StoppableThread::status_out()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -1578,11 +1613,11 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">169</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">199</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00082">fAccepted</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00076">fAcceptedChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00068">fAcceptedMax</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00075">fChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00085">fLostAcceptedIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">fLostAcceptedIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00084">fLostChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00086">fLostChannelIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00083">fLostNetworkPackets</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00078">fNetworkPacketNumber</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00079">fNetworkPacketTimeStamp</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00069">fNofRollovers</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00070">fRolling</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00072">fRollingThreshold</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00071">fRollnum</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00073">fRollnumThreshold</a>, and <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00077">fTimeStamps</a>.</p>
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">fAccepted</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00078">fAcceptedChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00069">fAcceptedMax</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00077">fChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">fLostAcceptedIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00092">fLostAcceptedIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00089">fLostChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00091">fLostChannelIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00088">fLostNetworkPackets</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00080">fNetworkPacketNumber</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00081">fNetworkPacketTimeStamp</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00070">fNofRollovers</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00071">fRolling</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00073">fRollingThreshold</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00072">fRollnum</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00074">fRollnumThreshold</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00079">fTimeStamps</a>, and <a class="el" href="_stoppable_thread_8h_source.html#l00062">StoppableThread::Name()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00106">Iteration()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00077">Iteration()</a>.</p>
 
 </div>
 </div>
@@ -1994,11 +2029,11 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">127</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">98</a> of file <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html">TFragDiagnosticsLoop.cxx</a>.</p>
 
-<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00082">fAccepted</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00085">fLostAcceptedIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">fLostAcceptedIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00084">fLostChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00086">fLostChannelIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00083">fLostNetworkPackets</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00061">fOutputFile</a>, <a class="el" href="_g_value_8h_source.html#l00039">GValue::Get()</a>, <a class="el" href="_t_g_r_s_i_options_8cxx_source.html#l00020">TGRSIOptions::Get()</a>, <a class="el" href="_t_singleton_8h_source.html#l00033">TSingleton&lt; TParsingDiagnostics &gt;::Get()</a>, <a class="el" href="_t_singleton_8h_source.html#l00033">TSingleton&lt; TPPG &gt;::Get()</a>, <a class="el" href="_t_channel_8h_source.html#l00063">TChannel::GetNumberOfChannels()</a>, <a class="el" href="_t_parsing_diagnostics_8cxx_source.html#l00140">TParsingDiagnostics::ReadPPG()</a>, <a class="el" href="_g_value_8h_source.html#l00063">GValue::Size()</a>, <a class="el" href="_t_p_p_g_8h_source.html#l00146">TPPG::Write()</a>, <a class="el" href="_t_g_r_s_i_options_8h_source.html#l00093">TGRSIOptions::WriteDiagnostics()</a>, <a class="el" href="_t_g_r_s_i_options_8cxx_source.html#l00633">TGRSIOptions::WriteToFile()</a>, <a class="el" href="_t_channel_8cxx_source.html#l01445">TChannel::WriteToRoot()</a>, and <a class="el" href="_t_run_info_8cxx_source.html#l00309">TRunInfo::WriteToRoot()</a>.</p>
+<p class="reference">References <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">fAccepted</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">fLostAcceptedIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00092">fLostAcceptedIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00089">fLostChannelIds</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00091">fLostChannelIdsTime</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00088">fLostNetworkPackets</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00062">fOutputFile</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00084">fRunLength</a>, <a class="el" href="_g_value_8h_source.html#l00039">GValue::Get()</a>, <a class="el" href="_t_g_r_s_i_options_8cxx_source.html#l00020">TGRSIOptions::Get()</a>, <a class="el" href="_t_singleton_8h_source.html#l00033">TSingleton&lt; TParsingDiagnostics &gt;::Get()</a>, <a class="el" href="_t_singleton_8h_source.html#l00033">TSingleton&lt; TPPG &gt;::Get()</a>, <a class="el" href="_t_channel_8h_source.html#l00063">TChannel::GetNumberOfChannels()</a>, <a class="el" href="_stoppable_thread_8h_source.html#l00062">StoppableThread::Name()</a>, <a class="el" href="_t_parsing_diagnostics_8cxx_source.html#l00140">TParsingDiagnostics::ReadPPG()</a>, <a class="el" href="_t_run_info_8h_source.html#l00243">TRunInfo::RunLength()</a>, <a class="el" href="_g_value_8h_source.html#l00063">GValue::Size()</a>, <a class="el" href="_t_p_p_g_8h_source.html#l00146">TPPG::Write()</a>, <a class="el" href="_t_g_r_s_i_options_8h_source.html#l00094">TGRSIOptions::WriteDiagnostics()</a>, <a class="el" href="_t_g_r_s_i_options_8cxx_source.html#l00635">TGRSIOptions::WriteToFile()</a>, <a class="el" href="_t_channel_8cxx_source.html#l01445">TChannel::WriteToRoot()</a>, and <a class="el" href="_t_run_info_8cxx_source.html#l00309">TRunInfo::WriteToRoot()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00085">~TFragDiagnosticsLoop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00056">~TFragDiagnosticsLoop()</a>.</p>
 
 </div>
 </div>
@@ -2023,14 +2058,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00082">82</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">87</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
-<a id="ad702740235fc3c83170635504d6384ab" name="ad702740235fc3c83170635504d6384ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad702740235fc3c83170635504d6384ab">&#9670;&#160;</a></span>fAcceptedChannelIds</h2>
+<a id="ad3a057fc074b6d1dfbf2746a7ba3cd32" name="ad3a057fc074b6d1dfbf2746a7ba3cd32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a057fc074b6d1dfbf2746a7ba3cd32">&#9670;&#160;</a></span>fAcceptedChannelIds</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2039,7 +2074,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;unsigned int, std::array&lt;int64_t, 3&gt; &gt; TFragDiagnosticsLoop::fAcceptedChannelIds</td>
+          <td class="memname">std::map&lt;unsigned int, std::array&lt;int64_t, 2&gt; &gt; TFragDiagnosticsLoop::fAcceptedChannelIds</td>
         </tr>
       </table>
   </td>
@@ -2049,9 +2084,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00076">76</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00078">78</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2075,9 +2110,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00068">68</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00069">69</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2101,12 +2136,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00064">64</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00065">65</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
 </div>
 </div>
-<a id="a745591d1f88db0388180bbf153a5d837" name="a745591d1f88db0388180bbf153a5d837"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a745591d1f88db0388180bbf153a5d837">&#9670;&#160;</a></span>fChannelIds</h2>
+<a id="aa623af47106e8cbad634d282ca696a9f" name="aa623af47106e8cbad634d282ca696a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa623af47106e8cbad634d282ca696a9f">&#9670;&#160;</a></span>fChannelIds</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2115,7 +2150,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;unsigned int, std::array&lt;int64_t, 3&gt; &gt; TFragDiagnosticsLoop::fChannelIds</td>
+          <td class="memname">std::map&lt;unsigned int, std::array&lt;int64_t, 2&gt; &gt; TFragDiagnosticsLoop::fChannelIds</td>
         </tr>
       </table>
   </td>
@@ -2125,9 +2160,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00075">75</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00077">77</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2177,7 +2212,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00063">63</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00064">64</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
 </div>
 </div>
@@ -2225,9 +2260,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">90</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00095">95</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00090">ClearQueue()</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00036">InputQueue()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00106">Iteration()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00061">ClearQueue()</a>, <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00036">InputQueue()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00077">Iteration()</a>.</p>
 
 </div>
 </div>
@@ -2306,9 +2341,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00085">85</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00090">90</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -2332,9 +2367,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00087">87</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00092">92</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -2358,9 +2393,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00084">84</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00089">89</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -2384,9 +2419,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00086">86</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00091">91</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -2410,9 +2445,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00083">83</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00088">88</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -2442,8 +2477,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab972595248325ba7f5c454c187852eed" name="ab972595248325ba7f5c454c187852eed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab972595248325ba7f5c454c187852eed">&#9670;&#160;</a></span>fNetworkPacketNumber</h2>
+<a id="aeaa63a9be231e7068e2a8a2bf58d7029" name="aeaa63a9be231e7068e2a8a2bf58d7029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa63a9be231e7068e2a8a2bf58d7029">&#9670;&#160;</a></span>fNetworkPacketNumber</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2452,7 +2487,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;int, 3&gt; TFragDiagnosticsLoop::fNetworkPacketNumber {{0, 0, 0}}</td>
+          <td class="memname">std::array&lt;int, 2&gt; TFragDiagnosticsLoop::fNetworkPacketNumber {{0, 0}}</td>
         </tr>
       </table>
   </td>
@@ -2462,14 +2497,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00078">78</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00080">80</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
-<a id="ab8908f3421d4349941c22face4058b08" name="ab8908f3421d4349941c22face4058b08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8908f3421d4349941c22face4058b08">&#9670;&#160;</a></span>fNetworkPacketTimeStamp</h2>
+<a id="aa65773e7d93b116ae76d514438f0e482" name="aa65773e7d93b116ae76d514438f0e482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65773e7d93b116ae76d514438f0e482">&#9670;&#160;</a></span>fNetworkPacketTimeStamp</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2478,7 +2513,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;int64_t, 3&gt; TFragDiagnosticsLoop::fNetworkPacketTimeStamp {{0, 0, 0}}</td>
+          <td class="memname">std::array&lt;int64_t, 2&gt; TFragDiagnosticsLoop::fNetworkPacketTimeStamp {{0, 0}}</td>
         </tr>
       </table>
   </td>
@@ -2488,9 +2523,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00079">79</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00081">81</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2514,9 +2549,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00069">69</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00070">70</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2540,9 +2575,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00061">61</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00062">62</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00127">Write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00039">TFragDiagnosticsLoop()</a>, <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -2644,9 +2679,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00070">70</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00071">71</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2670,9 +2705,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00072">72</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00073">73</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2696,9 +2731,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00071">71</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00072">72</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2722,9 +2757,35 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00073">73</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00074">74</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
+
+</div>
+</div>
+<a id="af45ccab86afd3923d11e897a4f849974" name="af45ccab86afd3923d11e897a4f849974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af45ccab86afd3923d11e897a4f849974">&#9670;&#160;</a></span>fRunLength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TFragDiagnosticsLoop::fRunLength {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00084">84</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00147">CreateHistograms()</a>, and <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00098">Write()</a>.</p>
 
 </div>
 </div>
@@ -2774,7 +2835,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00065">65</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00066">66</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
 </div>
 </div>
@@ -2908,8 +2969,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa88728258e59496ff23e45f56afeb350" name="aa88728258e59496ff23e45f56afeb350"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa88728258e59496ff23e45f56afeb350">&#9670;&#160;</a></span>fTimeStamps</h2>
+<a id="a5a045de4ed55657064a46f6c65dea81d" name="a5a045de4ed55657064a46f6c65dea81d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a045de4ed55657064a46f6c65dea81d">&#9670;&#160;</a></span>fTimeStamps</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2918,7 +2979,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;unsigned int, std::array&lt;int64_t, 3&gt; &gt; TFragDiagnosticsLoop::fTimeStamps</td>
+          <td class="memname">std::map&lt;unsigned int, std::array&lt;int64_t, 2&gt; &gt; TFragDiagnosticsLoop::fTimeStamps</td>
         </tr>
       </table>
   </td>
@@ -2928,9 +2989,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00077">77</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_t_frag_diagnostics_loop_8h_source.html#l00079">79</a> of file <a class="el" href="_t_frag_diagnostics_loop_8h_source.html">TFragDiagnosticsLoop.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00169">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_t_frag_diagnostics_loop_8cxx_source.html#l00199">Process()</a>.</p>
 
 </div>
 </div>
@@ -2941,7 +3002,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_frag_diagnostics_loop.html">TFragDiagnosticsLoop</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Tue Sep 9 2025 15:04:32.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Wed Sep 10 2025 21:11:19.</li>
   </ul>
 </div>
 </body>

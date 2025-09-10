@@ -1,5 +1,9 @@
 var NAVTREEINDEX66 =
 {
+"class_t_zero_degree_hit.html#ac3d111623387561ace83224960a67631":[8,2,78,14],
+"class_t_zero_degree_hit.html#ac4ebe9f12c88e303b5644b63ee376faf":[8,2,78,15],
+"class_t_zero_degree_hit.html#ac62835a3dd9025e0908385fd95bff958":[8,2,78,78],
+"class_t_zero_degree_hit.html#ac9202e62116783982bac618bea13cbb7":[8,2,78,56],
 "class_t_zero_degree_hit.html#acdb38ab68d5513dab900d3471e348270":[8,2,78,64],
 "class_t_zero_degree_hit.html#ad046c38d7b93b87b7e169e3418c43a09":[8,2,78,80],
 "class_t_zero_degree_hit.html#ad08e816347670259c6624a8be3ab6594":[8,2,78,69],
@@ -245,9 +249,5 @@ var NAVTREEINDEX66 =
 "classpygui_1_1hist__tab_1_1_hist_tab.html#a965872ee63035c5eab04ca61a7cb5851":[9,0,5,2,0,19],
 "classpygui_1_1hist__tab_1_1_hist_tab.html#a965872ee63035c5eab04ca61a7cb5851":[10,0,1,1,0,19],
 "classpygui_1_1hist__tab_1_1_hist_tab.html#a9aadcf5c186b63ad88b7f5b542018d30":[9,0,5,2,0,10],
-"classpygui_1_1hist__tab_1_1_hist_tab.html#a9aadcf5c186b63ad88b7f5b542018d30":[10,0,1,1,0,10],
-"classpygui_1_1hist__tab_1_1_hist_tab.html#a9bfc0f90e5ea00b411e8139e3cddd7a3":[9,0,5,2,0,9],
-"classpygui_1_1hist__tab_1_1_hist_tab.html#a9bfc0f90e5ea00b411e8139e3cddd7a3":[10,0,1,1,0,9],
-"classpygui_1_1hist__tab_1_1_hist_tab.html#ab56063f11e0b1f2015b7627dbb831683":[9,0,5,2,0,2],
-"classpygui_1_1hist__tab_1_1_hist_tab.html#ab56063f11e0b1f2015b7627dbb831683":[10,0,1,1,0,2]
+"classpygui_1_1hist__tab_1_1_hist_tab.html#a9aadcf5c186b63ad88b7f5b542018d30":[10,0,1,1,0,10]
 };

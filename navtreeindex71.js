@@ -1,5 +1,9 @@
 var NAVTREEINDEX71 =
 {
+"namespacepygui_1_1util.html#a25f41dffb3a957323e0d5f3d15a4f70f":[9,0,5,7,4],
+"namespacepygui_1_1util.html#a4ab57f74ed4c17245f75cc397e40fc7e":[9,0,5,7,2],
+"namespacepygui_1_1util.html#a84e281e412d4ad2545839c7256f9788a":[9,0,5,7,3],
+"namespacepygui_1_1variable__tab.html":[9,0,5,8],
 "namespacepygui_1_1variable__tab.html#a3499736ecddb0866be4bea0f6ff31d94":[9,0,5,8,1],
 "namespaces.html":[9,0],
 "offsetadd_8cxx.html":[11,0,2,3,9],
