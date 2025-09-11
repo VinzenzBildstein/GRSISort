@@ -760,7 +760,7 @@ $(function(){initNavTree('_t_g_r_s_iint_8cxx_source.html',''); initResizable(tru
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      <span class="comment">// we only have the diagnostics loop running if requested and we write an analysis tree as we write to the same output file</span></div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>      <a class="code hl_class" href="class_t_frag_diagnostics_loop.html">TFragDiagnosticsLoop</a>* loop = <a class="code hl_function" href="class_t_frag_diagnostics_loop.html#ab829e7be1743838da88ef67bc4b06237">TFragDiagnosticsLoop::Get</a>(<span class="stringliteral">&quot;4_frag_diag_loop&quot;</span>, outputDiagnosticsFilename);</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>      <span class="keywordflow">if</span>(unpackLoop != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>         loop-&gt;<a class="code hl_function" href="class_t_frag_diagnostics_loop.html#ad562b6b448e0ee9187e06fc763537126">InputQueue</a>()       = unpackLoop-&gt;<a class="code hl_function" href="class_t_unpacking_loop.html#a49e53726cc8dd79602097489fd60b949">AddGoodOutputQueue</a>(<a class="code hl_function" href="class_t_g_r_s_i_options.html#a1a8edf1ec3d24de78be268e1a12492f7">TGRSIOptions::Get</a>()-&gt;FragmentWriteQueueSize());</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>         loop-&gt;<a class="code hl_function" href="class_t_frag_diagnostics_loop.html#ad562b6b448e0ee9187e06fc763537126">InputQueue</a>() = unpackLoop-&gt;<a class="code hl_function" href="class_t_unpacking_loop.html#a49e53726cc8dd79602097489fd60b949">AddGoodOutputQueue</a>(<a class="code hl_function" href="class_t_g_r_s_i_options.html#a1a8edf1ec3d24de78be268e1a12492f7">TGRSIOptions::Get</a>()-&gt;FragmentWriteQueueSize());</div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>      }</div>
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>      <span class="keywordflow">if</span>(fragmentChainLoop != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>         loop-&gt;<a class="code hl_function" href="class_t_frag_diagnostics_loop.html#ad562b6b448e0ee9187e06fc763537126">InputQueue</a>() = fragmentChainLoop-&gt;<a class="code hl_function" href="class_t_fragment_chain_loop.html#a388d1144c31e6365825dcc44d8f750de">AddOutputQueue</a>();</div>
@@ -1163,7 +1163,7 @@ $(function(){initNavTree('_t_g_r_s_iint_8cxx_source.html',''); initResizable(tru
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_1f2c117abb9c439347e5eda4f80f97eb.html">TGRSIint</a></li><li class="navelem"><a class="el" href="_t_g_r_s_iint_8cxx.html">TGRSIint.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Sep 11 2025 18:48:17.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Sep 11 2025 18:52:26.</li>
   </ul>
 </div>
 </body>
