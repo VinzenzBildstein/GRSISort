@@ -1,5 +1,8 @@
 var NAVTREEINDEX68 =
 {
+"classpygui_1_1util_1_1_preserve_g_dir.html#a2ad1ece8cc0f90890f9bff6a8e7c31ee":[10,0,1,5,0,0],
+"classpygui_1_1util_1_1_preserve_g_dir.html#a706def07c49e54d554c90a5347f8cf6d":[9,0,5,7,0,3],
+"classpygui_1_1util_1_1_preserve_g_dir.html#a706def07c49e54d554c90a5347f8cf6d":[10,0,1,5,0,3],
 "classpygui_1_1util_1_1_preserve_g_dir.html#a87352be637c1d6baee4e8a84cb290071":[9,0,5,7,0,4],
 "classpygui_1_1util_1_1_preserve_g_dir.html#a87352be637c1d6baee4e8a84cb290071":[10,0,1,5,0,4],
 "classpygui_1_1util_1_1_preserve_g_dir.html#aa4a1e5bac5569e6143af7ea54f60b983":[9,0,5,7,0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX68 =
 "functions_vars_z.html":[10,3,2,23],
 "functions_w.html":[10,3,0,23],
 "functions_x.html":[10,3,0,24],
-"functions_y.html":[10,3,0,25],
-"functions_z.html":[10,3,0,26],
-"functions_~.html":[10,3,0,27],
-"globals.html":[11,1,0]
+"functions_y.html":[10,3,0,25]
 };

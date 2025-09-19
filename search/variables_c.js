@@ -7,7 +7,7 @@ var searchData=
   ['max_5fqueue_5fsize_4',['max_queue_size',['../class_threadsafe_queue.html#a43390fe45dd2bdd6ab26960915cd792f',1,'ThreadsafeQueue']]],
   ['max_5fsamples_5',['MAX_SAMPLES',['../class_t_pulse_analyzer.html#a95e6b4a232af29f1d1f6a7874c08ad0e',1,'TPulseAnalyzer']]],
   ['maxentries_6',['MaxEntries',['../_lean_compton_matrices_8cxx.html#a54b9af3f801a540a559693947f73c066',1,'LeanComptonMatrices.cxx']]],
-  ['maxkvalue_7',['maxKValue',['../_griffin_k_value_helper_8cxx.html#a20d30ae6910ac5d9e99bbdd953bdf000',1,'maxKValue:&#160;GriffinKValueHelper.cxx'],['../_griffin_k_value_selector_8_c.html#a20d30ae6910ac5d9e99bbdd953bdf000',1,'maxKValue:&#160;GriffinKValueSelector.C']]],
+  ['maxkvalue_7',['maxKValue',['../_griffin_k_value_selector_8_c.html#a20d30ae6910ac5d9e99bbdd953bdf000',1,'GriffinKValueSelector.C']]],
   ['message_8',['message',['../structgrsi_1_1exit__exception.html#acca63b1e9a57f9ad0375b4f63bdc38ca',1,'grsi::exit_exception::message'],['../namespacepygui_1_1grut-view.html#a09de9c7b4f562d6690a3cc6f05445565',1,'pygui.grut-view.message']]],
   ['mflag_9',['mflag',['../struct_t_pulse_analyzer_1_1_wave_form_par.html#a98a33945bd49205b87d790cfa04ffcad',1,'TPulseAnalyzer::WaveFormPar']]],
   ['mm_10',['mm',['../class_n_r_mat.html#af6077429fdf806ac4c8eba949fa2c0bf',1,'NRMat::mm'],['../class_n_r_mat3d.html#a17bea165bdf243a494883e76ce30bea1',1,'NRMat3d::mm']]],

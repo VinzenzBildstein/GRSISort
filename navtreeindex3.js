@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"_t_calibrate_descant_8h.html":[11,0,7,37],
 "_t_calibrate_descant_8h_source.html":[11,0,7,37],
 "_t_calibration_graph_8cxx.html":[11,0,9,6,3],
 "_t_calibration_graph_8cxx_source.html":[11,0,9,6,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "_t_g_r_s_i_functions_8h.html#afeba76f4ea51cb86865d42d6d886cf92":[11,0,7,71,14],
 "_t_g_r_s_i_functions_8h_source.html":[11,0,7,71],
 "_t_g_r_s_i_helper_8cxx.html":[11,0,9,3,12],
-"_t_g_r_s_i_helper_8cxx_source.html":[11,0,9,3,12]
+"_t_g_r_s_i_helper_8cxx_source.html":[11,0,9,3,12],
+"_t_g_r_s_i_helper_8h.html":[11,0,7,72]
 };

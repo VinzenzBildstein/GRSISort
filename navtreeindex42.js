@@ -1,5 +1,8 @@
 var NAVTREEINDEX42 =
 {
+"class_t_ifin_bgo_hit.html#a187897c681b829247a98022bbb81fffea75a188ec1639bee31019afaa2bb5607a":[8,2,35,0,13],
+"class_t_ifin_bgo_hit.html#a187897c681b829247a98022bbb81fffea8ae5d0cf4967beedfb2b3937b4855ed3":[8,2,35,0,17],
+"class_t_ifin_bgo_hit.html#a187897c681b829247a98022bbb81fffeaa0ac660d426d24973e8e577cbbd2956d":[8,2,35,0,8],
 "class_t_ifin_bgo_hit.html#a187897c681b829247a98022bbb81fffeacc77ad5a75191c50f792a9e981af004f":[8,2,35,0,15],
 "class_t_ifin_bgo_hit.html#a187897c681b829247a98022bbb81fffead4826be5c215ecd23478e9a4c7dcbe01":[8,2,35,0,7],
 "class_t_ifin_bgo_hit.html#a187897c681b829247a98022bbb81fffead972115f06325253781715b97744abdd":[8,2,35,0,16],
@@ -246,8 +249,5 @@ var NAVTREEINDEX42 =
 "class_t_kinematics.html#ab31075d42ac3501b02ef0c4b3dacaa9b":[8,3,14,52],
 "class_t_kinematics.html#ab4788bd2d899cf31ec87c4673297d8cf":[8,3,14,67],
 "class_t_kinematics.html#ab618a2f9a0f40c5847cf2d3ddc95f7bd":[8,3,14,20],
-"class_t_kinematics.html#ab8cfe4ec3c44cc6651579d4f6306501b":[8,3,14,53],
-"class_t_kinematics.html#ac363b93a46f8cac3f3224b891f31043e":[8,3,14,35],
-"class_t_kinematics.html#ac44cf0c783ab7650c9fcff7efadd8234":[8,3,14,3],
-"class_t_kinematics.html#ac53bc2cb922b28ceb17bcda750c295a0":[8,3,14,47]
+"class_t_kinematics.html#ab8cfe4ec3c44cc6651579d4f6306501b":[8,3,14,53]
 };

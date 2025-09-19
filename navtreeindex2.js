@@ -93,7 +93,6 @@ var NAVTREEINDEX2 =
 "_griffin_c_t_fix_8cxx.html#afc9fef42cbd907209240ef82d2ddcf2e":[11,0,2,3,7,0],
 "_griffin_c_t_fix_8cxx_source.html":[11,0,2,3,7],
 "_griffin_k_value_helper_8cxx.html":[11,0,1,18],
-"_griffin_k_value_helper_8cxx.html#a20d30ae6910ac5d9e99bbdd953bdf000":[11,0,1,18,0],
 "_griffin_k_value_helper_8cxx_source.html":[11,0,1,18],
 "_griffin_k_value_helper_8hh.html":[11,0,1,19],
 "_griffin_k_value_helper_8hh.html#a27be8731f98163f424ff2a52c0bb771b":[11,0,1,19,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "_t_cal_point_8h.html":[11,0,7,42],
 "_t_cal_point_8h_source.html":[11,0,7,42],
 "_t_calibrate_descant_8cxx.html":[11,0,9,6,2],
-"_t_calibrate_descant_8cxx_source.html":[11,0,9,6,2]
+"_t_calibrate_descant_8cxx_source.html":[11,0,9,6,2],
+"_t_calibrate_descant_8h.html":[11,0,7,37]
 };

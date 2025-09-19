@@ -96,7 +96,7 @@ var searchData=
   ['maxentrydiff_93',['MaxEntryDiff',['../class_t_sorting_diagnostics.html#aaf3355b8a2d0e7145a9eefe27939ca52',1,'TSortingDiagnostics']]],
   ['maximumrecoilenergy_94',['MaximumRecoilEnergy',['../group___g_u_i.html#gac64dee8a91ad21b961db29f0c145e2bb',1,'MaximumRecoilEnergy(double gammaEnergy):&#160;TCalibrateDescant.cxx'],['../group___g_u_i.html#gac64dee8a91ad21b961db29f0c145e2bb',1,'MaximumRecoilEnergy(double gammaEnergy):&#160;TCalibrateDescant.cxx']]],
   ['maxiterations_95',['MaxIterations',['../class_t_source_calibration.html#a64ea772b00c3fdd0be705b33b00f5513',1,'TSourceCalibration::MaxIterations(int val)'],['../class_t_source_calibration.html#a534cd214f475a9eb7cd0ae20074744a9',1,'TSourceCalibration::MaxIterations()']]],
-  ['maxkvalue_96',['maxKValue',['../_griffin_k_value_helper_8cxx.html#a20d30ae6910ac5d9e99bbdd953bdf000',1,'maxKValue:&#160;GriffinKValueHelper.cxx'],['../_griffin_k_value_selector_8_c.html#a20d30ae6910ac5d9e99bbdd953bdf000',1,'maxKValue:&#160;GriffinKValueSelector.C']]],
+  ['maxkvalue_96',['maxKValue',['../_griffin_k_value_selector_8_c.html#a20d30ae6910ac5d9e99bbdd953bdf000',1,'GriffinKValueSelector.C']]],
   ['maxresidual_97',['MaxResidual',['../class_t_source_calibration.html#a6c5810b49cb8d93920298190df21b2d4',1,'TSourceCalibration']]],
   ['maxtimestamp_98',['MaxTimeStamp',['../class_t_parsing_diagnostics_data.html#a98fdea37730d38515b51abe5da912bed',1,'TParsingDiagnosticsData']]],
   ['maxtriggerid_99',['MaxTriggerId',['../class_t_data_parser.html#ad792a4f0b6efbe11912b3d308f83a2dc',1,'TDataParser']]],

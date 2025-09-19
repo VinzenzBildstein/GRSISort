@@ -1,5 +1,8 @@
 var NAVTREEINDEX67 =
 {
+"classpygui_1_1hist__tab_1_1_hist_tab.html#a965872ee63035c5eab04ca61a7cb5851":[10,0,1,1,0,19],
+"classpygui_1_1hist__tab_1_1_hist_tab.html#a9aadcf5c186b63ad88b7f5b542018d30":[9,0,5,2,0,10],
+"classpygui_1_1hist__tab_1_1_hist_tab.html#a9aadcf5c186b63ad88b7f5b542018d30":[10,0,1,1,0,10],
 "classpygui_1_1hist__tab_1_1_hist_tab.html#a9bfc0f90e5ea00b411e8139e3cddd7a3":[9,0,5,2,0,9],
 "classpygui_1_1hist__tab_1_1_hist_tab.html#a9bfc0f90e5ea00b411e8139e3cddd7a3":[10,0,1,1,0,9],
 "classpygui_1_1hist__tab_1_1_hist_tab.html#ab56063f11e0b1f2015b7627dbb831683":[9,0,5,2,0,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX67 =
 "classpygui_1_1tcut__tab_1_1_t_cut_tab.html#afa393608586d4cc3ec46739fdf565a63":[10,0,1,4,0,8],
 "classpygui_1_1util_1_1_preserve_g_dir.html":[9,0,5,7,0],
 "classpygui_1_1util_1_1_preserve_g_dir.html":[10,0,1,5,0],
-"classpygui_1_1util_1_1_preserve_g_dir.html#a2ad1ece8cc0f90890f9bff6a8e7c31ee":[9,0,5,7,0,0],
-"classpygui_1_1util_1_1_preserve_g_dir.html#a2ad1ece8cc0f90890f9bff6a8e7c31ee":[10,0,1,5,0,0],
-"classpygui_1_1util_1_1_preserve_g_dir.html#a706def07c49e54d554c90a5347f8cf6d":[9,0,5,7,0,3],
-"classpygui_1_1util_1_1_preserve_g_dir.html#a706def07c49e54d554c90a5347f8cf6d":[10,0,1,5,0,3]
+"classpygui_1_1util_1_1_preserve_g_dir.html#a2ad1ece8cc0f90890f9bff6a8e7c31ee":[9,0,5,7,0,0]
 };

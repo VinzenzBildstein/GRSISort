@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"class_alphanumeric_selector.html#a21b4ed735f1d17cb6a232510ca430339":[10,0,4,7],
 "class_alphanumeric_selector.html#a29945f1269efc3023c16716af041d4bd":[10,0,4,16],
 "class_alphanumeric_selector.html#a301316e1b796a58ca2abd5339ff35e29":[10,0,4,13],
 "class_alphanumeric_selector.html#a399ba322e2eef95dfcc3f2d21d27fbac":[10,0,4,27],
@@ -50,10 +49,10 @@ var NAVTREEINDEX7 =
 "class_angular_correlation_helper.html#a27adae6a07b011a2c5beb6a572acaa42":[10,0,5,38],
 "class_angular_correlation_helper.html#a3014850b1a4f45a7902412e6931f5433":[10,0,5,4],
 "class_angular_correlation_helper.html#a39e031ee0f0ebedb946541fd145300bd":[10,0,5,18],
+"class_angular_correlation_helper.html#a3b1c722ffe334a66170f7977f28a6232":[10,0,5,12],
 "class_angular_correlation_helper.html#a43b96b9c64dcb585762ce691e38814ac":[10,0,5,17],
 "class_angular_correlation_helper.html#a484cf4085c060d9d3bb29fd0665ff8e1":[10,0,5,43],
 "class_angular_correlation_helper.html#a49c88825285ac0920b4af055ddbd0fbb":[10,0,5,3],
-"class_angular_correlation_helper.html#a4b48efbf37f665a21e47a9c6b1ac7c25":[10,0,5,12],
 "class_angular_correlation_helper.html#a50d7d9d2fb783c2d70056cb5203f89b1":[10,0,5,44],
 "class_angular_correlation_helper.html#a511ca187d5656bf453a0f8784b39e230":[10,0,5,35],
 "class_angular_correlation_helper.html#a5315e410debe9e771bda2de44c2cace7":[10,0,5,22],
@@ -249,5 +248,6 @@ var NAVTREEINDEX7 =
 "class_arg_parser.html#aedc80e066b44e7a5375d1b144f4860d6":[10,0,11,10],
 "class_arg_parser.html#af29eee2c652ca2f8e94dbc5c4e7c795f":[10,0,11,1],
 "class_compton_polarimetry_helper.html":[10,0,13],
-"class_compton_polarimetry_helper.html#a01803cc3aee74715892f7478b7158f4e":[10,0,13,23]
+"class_compton_polarimetry_helper.html#a01803cc3aee74715892f7478b7158f4e":[10,0,13,23],
+"class_compton_polarimetry_helper.html#a0595f69cfb8c9399f4af6b28e185de87":[10,0,13,50]
 };
