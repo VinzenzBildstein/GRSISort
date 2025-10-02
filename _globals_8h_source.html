@@ -313,20 +313,20 @@ $(function(){initNavTree('_globals_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>   }</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>   std::string line;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>   <span class="keywordtype">int</span> counter = 0;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>   <span class="keywordtype">int</span>         counter = 0;</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>   <span class="keywordflow">while</span>(std::getline(procMap, line)) {</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      <span class="comment">// line has format</span></div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      <span class="comment">// &lt;start address&gt;-&lt;end address&gt; &lt;four letters for permissions&gt; &lt;offset&gt; &lt;device major&gt;:&lt;device minor&gt; &lt;inode&gt; &lt;so-library&gt;</span></div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      <span class="comment">// if &lt;inode&gt; is 0 there is no so-library</span></div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      std::stringstream str(line);</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      uint64_t startAddress = 0;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="keywordtype">char</span> dash = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      uint64_t endAddress = 0;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      uint64_t    startAddress = 0;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="keywordtype">char</span>        dash         = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      uint64_t    endAddress   = 0;</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      std::string permissions;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      uint64_t offset = 0;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      uint64_t    offset = 0;</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      std::string device;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keywordtype">int</span> inode = 0;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keywordtype">int</span>         inode = 0;</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      std::string soLibrary;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      str &gt;&gt; std::hex &gt;&gt; startAddress &gt;&gt; dash &gt;&gt; endAddress &gt;&gt; permissions &gt;&gt; std::dec &gt;&gt; offset &gt;&gt; device &gt;&gt; inode;</div>
@@ -412,8 +412,8 @@ $(function(){initNavTree('_globals_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>      std::string line;</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      <span class="keywordflow">if</span>(symbollist[i][0] == <span class="charliteral">&#39;/&#39;</span>) {</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>         std::ostringstream command;</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>         std::string filename = symbollist[i];</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>         filename = filename.substr(0, filename.find_first_of(<span class="charliteral">&#39;(&#39;</span>));</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>         std::string        filename = symbollist[i];</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>         filename                    = filename.substr(0, filename.find_first_of(<span class="charliteral">&#39;(&#39;</span>));</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>         <span class="keywordflow">if</span>(<a class="code hl_variable" href="_globals_8h.html#aa0602bd948a5be365359fb1842a7a82d">gAddressOffset</a>.find(filename) == <a class="code hl_variable" href="_globals_8h.html#aa0602bd948a5be365359fb1842a7a82d">gAddressOffset</a>.end()) {</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <a class="code hl_function" href="_globals_8h.html#aa8a2329a84c1ebb9da026e7de59d8a87">FindAddressOffsets</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>         }</div>
@@ -507,7 +507,7 @@ $(function(){initNavTree('_globals_8h_source.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_globals_8h.html">Globals.h</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Oct 2 2025 19:50:18.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Thu Oct 2 2025 19:56:03.</li>
   </ul>
 </div>
 </body>
