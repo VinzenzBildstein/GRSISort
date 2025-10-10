@@ -48,6 +48,11 @@ public:
       return fLibraryVersion();
    }
 
+   int MajorVersion() const { return fMajor; }
+   int MinorFragmentVersion() const { return fMinorFragment; }
+   int MinorAnalysisVersion() const { return fMinorAnalysis; }
+   int PatchVersion() const { return fPatch; }
+
 private:
    TParserLibrary()                                     = default;
    TParserLibrary(const TParserLibrary&)                = default;
@@ -55,8 +60,16 @@ private:
    TParserLibrary& operator=(const TParserLibrary&)     = default;
    TParserLibrary& operator=(TParserLibrary&&) noexcept = default;
 
+   // private  members and functions
    void* fHandle{nullptr};   ///< handle for shared object library
 
+   void ParseVersion(); ///< function to parse the library string into numbers
+   int fMajor{0};
+   int fMinorFragment{0};
+   int fMinorAnalysis{0};
+   int fPatch{0};
+
+   // the functions provided by the shared object library
    void (*fInitLibrary)();
    std::string (*fLibraryVersion)();
 

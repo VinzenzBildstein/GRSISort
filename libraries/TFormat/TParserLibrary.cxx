@@ -68,4 +68,36 @@ void TParserLibrary::Load(bool quiet)
    std::cout << "\tUsing library " << TGRSIOptions::Get()->ParserLibrary() << " version " << fLibraryVersion() << std::endl;
    TRunInfo::SetLibraryVersion(fLibraryVersion());
    TRunInfo::SetLibraryPath(TGRSIOptions::Get()->ParserLibrary());
+   ParseVersion();
+}
+
+void TParserLibrary::ParseVersion()
+{
+   std::stringstream versionStream(fLibraryVersion());
+
+   char tmpChar{'\0'};
+   versionStream >> fMajor >> tmpChar;
+   if(tmpChar != '.') {
+      std::stringstream errorMessage;
+      errorMessage << "Error parsing \"" << fLibraryVersion() << "\", expected a dot after reading major version " << fMajor << ", but got '" << tmpChar << "' instead!" << std::endl;
+      throw std::runtime_error(errorMessage.str());
+   }
+   versionStream >> fMinorFragment >> tmpChar;
+   if(tmpChar != '.') {
+      std::stringstream errorMessage;
+      errorMessage << "Error parsing \"" << fLibraryVersion() << "\", expected a dot after reading minor fragment version " << fMinorFragment << ", but got '" << tmpChar << "' instead!" << std::endl;
+      throw std::runtime_error(errorMessage.str());
+   }
+   versionStream >> fMinorAnalysis >> tmpChar;
+   if(tmpChar != '.') {
+      std::stringstream errorMessage;
+      errorMessage << "Error parsing \"" << fLibraryVersion() << "\", expected a dot after reading minor analysis version " << fMinorAnalysis << ", but got '" << tmpChar << "' instead!" << std::endl;
+      throw std::runtime_error(errorMessage.str());
+   }
+   versionStream >> fPatch >> tmpChar;
+   if(tmpChar != '.') {
+      std::stringstream errorMessage;
+      errorMessage << "Error parsing \"" << fLibraryVersion() << "\", expected a dot after reading patch version " << fPatch << ", but got '" << tmpChar << "' instead!" << std::endl;
+      throw std::runtime_error(errorMessage.str());
+   }
 }
