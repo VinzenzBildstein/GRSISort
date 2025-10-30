@@ -2,12 +2,11 @@
 
 #include <iostream>
 
+#include "TString.h"
+
 TGRSITransition::TGRSITransition()
 {
    // Default constructor for TGRSITransition
-#if ROOT_VERSION_CODE < ROOT_VERSION(6, 0, 0)
-   Class()->IgnoreTObjectStreamer(kTRUE);
-#endif
    Clear();
 }
 

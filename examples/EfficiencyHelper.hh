@@ -1,5 +1,5 @@
-#ifndef EXAMPLEEVENTHELPER_HH
-#define EXAMPLEEVENTHELPER_HH
+#ifndef EFFICIENCYHELPER_HH
+#define EFFICIENCYHELPER_HH
 
 #include "TGRSIHelper.h"
 
@@ -18,6 +18,20 @@ public:
    explicit EfficiencyHelper(TList* list)
       : TGRSIHelper(list)
    {
+      if(fUserSettings != nullptr) {
+         fKValueGriffin = fUserSettings->GetInt("KValue.Griffin", fKValueGriffin);
+         try {
+            fPileUpRejection = fUserSettings->GetBool("PileUpRejection", true);
+         } catch(std::exception&) {}
+         fMinimumGriffinEnergy = fUserSettings->GetDouble("MinimumGriffinEnergy", fMinimumGriffinEnergy);
+         fGgLow                = fUserSettings->GetDouble("Timing.GriffinGriffin.Coincident.Low", fGgLow);
+         fGgHigh               = fUserSettings->GetDouble("Timing.GriffinGriffin.Coincident.High", fGgHigh);
+         fMaxCfd               = fUserSettings->GetDouble("MaximumCfd", fMaxCfd);
+         fEnergyBins1D         = fUserSettings->GetInt("Energy.Bins.1D", fEnergyBins1D);
+         fEnergyBins2D         = fUserSettings->GetInt("Energy.Bins.2D", fEnergyBins2D);
+         fLowEnergy            = fUserSettings->GetDouble("Energy.Low", fLowEnergy);
+         fHighEnergy           = fUserSettings->GetDouble("Energy.High", fHighEnergy);
+      }
       Prefix("EfficiencyHelper");
       Setup();
    }
@@ -31,12 +45,45 @@ public:
    // this function gets called for every single event and fills the histograms
    void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo);
    // this function is optional and is called after the output lists off all slots/workers have been merged
-   void EndOfSort(std::shared_ptr<std::map<std::string, TList>>& list) override;
+   void EndOfSort(std::shared_ptr<std::map<std::string, TList>>& list) override {}
 
 private:
    // any constants that are set in the CreateHistograms function and used in the Exec function can be stored here
    // or any other settings
-   Long64_t fCycleLength{0};
+   // some variables to easily change range and binning for multiple histograms at once
+   int    fEnergyBins1D{10000};
+   int    fEnergyBins2D{2000};
+   double fLowEnergy{0.};
+   double fHighEnergy{2000.};
+
+   // Pile-up Rejection - default k-values for not piled-up hits
+   int    fKValueGriffin{379};
+   bool   fPileUpRejection{true};      // If true, pile-up is rejected
+   double fMinimumGriffinEnergy{0.};   // reject hits below this energy
+
+   // Coincidences Gates
+   double fGgLow{-250.};
+   double fGgHigh{250.};
+   double fMaxCfd{20.};
+
+   // ==========  functions for timing conditions  ==========
+   // Griffin-Griffin
+   bool PromptCoincidence(TGriffinHit* h1, TGriffinHit* h2) const
+   {
+      return fGgLow < h1->GetTime() - h2->GetTime() && h1->GetTime() - h2->GetTime() < fGgHigh;
+   }
+
+   // general check for good CFD
+   bool GoodCfd(TDetectorHit* h1) const
+   {
+      return h1->GetTime() - static_cast<double>(h1->GetTimeStampNs()) < fMaxCfd;
+   }
+
+   // ==========  functions for pileup rejection, and minimum energy  ==========
+   bool Reject(TGriffinHit* hit) const
+   {
+      return ((fPileUpRejection && hit->GetKValue() != fKValueGriffin) || hit->GetEnergy() < fMinimumGriffinEnergy);
+   }
 };
 
 // These are needed functions used by TDataFrameLibrary to create and destroy the instance of this helper

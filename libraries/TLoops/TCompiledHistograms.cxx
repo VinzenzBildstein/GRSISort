@@ -14,7 +14,6 @@
 #include "TROOT.h"
 #include "TKey.h"
 
-#include "GValue.h"
 #include "GRootCommands.h"
 #include "TPreserveGDirectory.h"
 
@@ -67,7 +66,7 @@ void TCompiledHistograms::ClearHistograms()
 
 time_t TCompiledHistograms::get_timestamp()
 {
-   struct stat buf {};
+   struct stat buf{};
    stat(fLibName.c_str(), &buf);
    return buf.st_mtime;
 }

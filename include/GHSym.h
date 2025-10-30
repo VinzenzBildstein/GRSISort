@@ -41,8 +41,11 @@ public:
    void FillRandom(TH1* h, Int_t ntimes = 5000) override { FillRandom(h, ntimes, nullptr); }
    void FillRandom(const char* fname, Int_t ntimes = 5000, TRandom* rng = nullptr);
    void FillRandom(TH1* h, Int_t ntimes = 5000, TRandom* rng = nullptr);
-#else
+#elif ROOT_VERSION_CODE < ROOT_VERSION(6, 36, 0)
    void FillRandom(const char* fname, Int_t ntimes = 5000, TRandom* rng = nullptr) override;
+   void FillRandom(TH1* h, Int_t ntimes = 5000, TRandom* rng = nullptr) override;
+#else
+   void FillRandom(const char* fname, Int_t ntimes = 5000, TRandom* rng = nullptr);
    void FillRandom(TH1* h, Int_t ntimes = 5000, TRandom* rng = nullptr) override;
 #endif
 #if ROOT_VERSION_CODE < ROOT_VERSION(6, 18, 0)
@@ -186,7 +189,7 @@ public:
    Double_t GetBinContent(Int_t binx, Int_t biny) const override { return GetBinContent(GetBin(binx, biny)); }
    Double_t GetBinContent(Int_t binx, Int_t biny, Int_t) const override { return GetBinContent(GetBin(binx, biny)); }
    void     Reset(Option_t* option = "") override;
-   Double_t RetrieveBinContent(Int_t bin) const override { return static_cast<Double_t>(fArray[bin]); }
+   Double_t RetrieveBinContent(Int_t bin) const override { return fArray[bin]; }
    void     SetBinContent(Int_t bin, Double_t content) override;
    void     SetBinContent(Int_t binx, Int_t biny, Double_t content) override { SetBinContent(GetBin(binx, biny), content); }
    void     SetBinContent(Int_t binx, Int_t biny, Int_t, Double_t content) override

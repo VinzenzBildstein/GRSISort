@@ -2,6 +2,8 @@
 #define GROOTCOMMANDS__H
 
 #include <string>
+#include <cstdint>
+
 class TTree;
 class TH1;
 class TH2;
@@ -16,11 +18,12 @@ class GGaus;
 class TFile;
 
 #include "TDirectory.h"
+#include "TH2.h"
 
-enum GRSIArrowPress { kGRSIArrowLeft  = 0x1012,
-                      kGRSIArrowUp    = 0x1013,
-                      kGRSIArrowRight = 0x1014,
-                      kGRSIArrowDown  = 0x1015 };
+enum GRSIArrowPress : std::uint16_t { kGRSIArrowLeft  = 0x1012,
+                                      kGRSIArrowUp    = 0x1013,
+                                      kGRSIArrowRight = 0x1014,
+                                      kGRSIArrowDown  = 0x1015 };
 
 int  LabelPeaks(TH1*, double, double, Option_t* opt = "");
 bool ShowPeaks(TH1**, unsigned int, double sigma = 2.0, double thresh = 0.02);
@@ -29,7 +32,8 @@ bool RemovePeaks(TH1**, unsigned int);
 bool Move1DHistogram(const Int_t& key, TH1* histogram = nullptr);
 bool Move2DHistogram(const Int_t& key, TH2* histogram = nullptr);
 
-GPeak* PhotoPeakFit(TH1*, double, double, Option_t* opt = "");
+GPeak* PhotoPeakFit(TH1*, double xlow, double xhigh, Option_t* opt = "");
+GPeak* PhotoPeakFit(TH1*, double xlow, double centroid, double xhigh, Option_t* opt = "");
 TPeak* AltPhotoPeakFit(TH1*, double, double, Option_t* opt = "");
 GGaus* GausFit(TH1*, double, double, Option_t* opt = "");
 TF1*   DoubleGausFit(TH1*, double, double, double, double, Option_t* opt = "");
@@ -55,8 +59,8 @@ void StartGUI();
 bool GUIIsRunning();
 void AddFileToGUI(TFile* file);
 
-enum class EAxis { kXAxis = 1,
-                   kYAxis = 2 };
+enum class EAxis : std::uint8_t { kXAxis = 1,
+                                  kYAxis = 2 };
 EAxis operator&(EAxis lhs, EAxis rhs);
 
 TH2* AddOffset(TH2* mat, double offset, EAxis axis = EAxis::kXAxis);

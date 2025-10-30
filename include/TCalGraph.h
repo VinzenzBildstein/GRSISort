@@ -17,7 +17,6 @@
 /////////////////////////////////////////////////////////////////
 
 #include <map>
-#include <vector>
 #include <utility>
 
 #include "TGraphErrors.h"
@@ -28,7 +27,7 @@
 class TCalGraph : public TGraphErrors {
 public:
    TCalGraph();
-   TCalGraph(const char* name, const char* title) : TGraphErrors(name, title){};
+   TCalGraph(const char* name, const char* title) : TGraphErrors(name, title) {};
    TCalGraph(const TCalGraph&);
    TCalGraph(TCalGraph&&) noexcept            = default;
    TCalGraph& operator=(const TCalGraph&)     = default;

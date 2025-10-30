@@ -5,14 +5,9 @@
  *  @{
  */
 
-#include <string>
-#include <algorithm>
-#include <vector>
 #include <cstdarg>
 
 #include "TF1.h"
-#include "TFitResultPtr.h"
-#include "TFitResult.h"
 
 #include "TSinglePeak.h"
 
@@ -44,6 +39,7 @@ public:
    Double_t CentroidErr() const override;
    Double_t Width() const override;
    Double_t Sigma() const override;
+   Double_t SigmaErr() const override { return GetFitFunction()->GetParError(GetFitFunction()->GetParNumber("sigma")); }
 
    void DrawComponents(Option_t* opt = "") override;
 

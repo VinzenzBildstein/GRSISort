@@ -1,7 +1,6 @@
 #ifndef TREDIRECT_H
 #define TREDIRECT_H
 
-#include <iostream>
 #include <cstdio>
 #include <cstdlib>
 #include <fcntl.h>
@@ -43,8 +42,10 @@ public:
    {
       fflush(stdout);
       dup2(fStdOutFileDescriptor, fileno(stdout));
+      close(fStdOutFileDescriptor);
       fflush(stderr);
       dup2(fStdErrFileDescriptor, fileno(stderr));
+      close(fStdErrFileDescriptor);
    }
 
    TRedirect(const TRedirect&) = delete;

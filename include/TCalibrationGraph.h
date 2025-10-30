@@ -7,10 +7,11 @@
 
 #include "TNamed.h"
 #include "TGraphErrors.h"
-#include "TFitResultPtr.h"
 #include "TList.h"
 #include "TLegend.h"
 #include "TQObject.h"
+
+#include "Globals.h"
 
 class TCalibrationGraphSet;
 
@@ -85,7 +86,7 @@ public:
    void SetMarkerColor(int index, Color_t color)
    {
       /// Set the marker color of the graph and residuals at index
-      if(fVerboseLevel > 3) { std::cout << "setting marker color of graph " << index << " to " << color << std::endl; }
+      if(fVerboseLevel > EVerbosity::kSubroutines) { std::cout << "setting marker color of graph " << index << " to " << color << std::endl; }
       fGraphs[index].SetMarkerColor(color);
       fResidualGraphs[index].SetMarkerColor(color);
    }
@@ -125,10 +126,12 @@ public:
    void               Fit(TF1* function, Option_t* opt = "") { fTotalGraph->Fit(function, opt); }                                      ///< Fits the provided function to the total graph.
    TF1*               FitFunction() { return reinterpret_cast<TF1*>(fTotalGraph->GetListOfFunctions()->FindObject("fitfunction")); }   ///< Gets the calibration from the total graph (might be nullptr!).
    TGraphErrors*      TotalGraph() { return fTotalGraph; }
+   TGraphErrors*      TotalResidualGraph() { return fTotalResidualGraph; }
    size_t             NumberOfGraphs() { return fGraphs.size(); }
    TCalibrationGraph* Graph(size_t index) { return &(fGraphs.at(index)); }
    TCalibrationGraph* Residual(size_t index) { return &(fResidualGraphs.at(index)); }
 
+   void Draw(Option_t* opt = "") override { DrawCalibration(opt, nullptr); }
    void DrawCalibration(Option_t* opt = "", TLegend* legend = nullptr);
    void DrawResidual(Option_t* opt = "", TLegend* legend = nullptr);
 
@@ -137,8 +140,11 @@ public:
       fGraphs.erase(fGraphs.begin() + index);
       ResetTotalGraph();
    }
-   Int_t RemovePoint(const Int_t& px, const Int_t& py);           //*SIGNAL*
-   Int_t RemoveResidualPoint(const Int_t& px, const Int_t& py);   //*SIGNAL*
+   Int_t RemovePoint(const Int_t& px, const Int_t& py);                        //*SIGNAL*
+   Int_t RemoveResidualPoint(const Int_t& px, const Int_t& py);                //*SIGNAL*
+   Int_t RemovePoint(TGraphErrors* graph, const Int_t& px, const Int_t& py);   //*SIGNAL*
+
+   void RemovePoint(const int& point);   //*SIGNAL*
 
    void XAxisLabel(const std::string& xAxisLabel) { fXAxisLabel = xAxisLabel; }
    void YAxisLabel(const std::string& yAxisLabel) { fYAxisLabel = yAxisLabel; }
@@ -148,12 +154,14 @@ public:
 
    void Scale(bool useAllPrevious = true);
 
+   void Sort();
+
    void Print(Option_t* opt = "") const override;
 
    void ResetTotalGraph();   ///< reset the total graph and add the individual ones again (used e.g. after scaling of individual graphs is done)
 
-   static void VerboseLevel(int val) { fVerboseLevel = val; }
-   static int  VerboseLevel() { return fVerboseLevel; }
+   static void       VerboseLevel(EVerbosity val) { fVerboseLevel = val; }
+   static EVerbosity VerboseLevel() { return fVerboseLevel; }
 
    void Clear(Option_t* option = "") override;
 
@@ -173,7 +181,7 @@ private:
    std::string                    fXAxisLabel;                    ///< The label of the x-axis.
    std::string                    fYAxisLabel;                    ///< The label of the y-axis.
 
-   static int fVerboseLevel;   ///< Changes verbosity from 0 (quiet) to 4 (very verbose)
+   static EVerbosity fVerboseLevel;   ///< Changes verbosity
 
    /// \cond CLASSIMP
    ClassDefOverride(TCalibrationGraphSet, 3)   // NOLINT(readability-else-after-return)

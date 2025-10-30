@@ -1,8 +1,8 @@
-#include <map>
+#include <fstream>
+
 #include "Globals.h"
 #include "TFile.h"
 #include "TSystem.h"
-#include "TEnv.h"
 
 #include "TGRSIOptions.h"
 #include "TChannel.h"
@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 
    // See if we can open the cal file
    if(TChannel::ReadCalFile(argv[2]) < 1) {
-      std::cout << "Bad Cal File: " << argv[1] << std::endl;
+      std::cout << "Bad Cal File: " << argv[2] << std::endl;
       return 1;
    }
 

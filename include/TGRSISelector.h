@@ -8,9 +8,6 @@
 #ifndef TGRSISelector_h
 #define TGRSISelector_h
 
-#include "TROOT.h"
-#include "TChain.h"
-#include "TFile.h"
 #include "TSelector.h"
 #include "TH1.h"
 #include "TH2.h"
@@ -57,7 +54,7 @@ public:
    virtual void CreateHistograms()              = 0;
    virtual void FillHistograms()                = 0;
    virtual void InitializeBranches(TTree* tree) = 0;
-   virtual void EndOfSort(){};
+   virtual void EndOfSort() {};
    void         SetOutputPrefix(const char* prefix) { fOutputPrefix = prefix; }
    std::string  GetOutputPrefix() const { return fOutputPrefix; }
 

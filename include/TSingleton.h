@@ -144,9 +144,8 @@ public:
       if(fSingleton == nullptr) {
          return Get();
       }
-      // if we do have an instance and changed into another directory
-      // we want to add the object read from the current directory
-      if(fSingleton != nullptr && fDir != gDirectory) {
+      // if we changed into another directory we want to add the object read from the current directory
+      if(fDir != gDirectory) {
          if((gDirectory->GetFile()) != nullptr) {
             TList* list = gDirectory->GetFile()->GetListOfKeys();
             TIter  iter(list);
@@ -171,6 +170,12 @@ public:
    static void PrintDirectory()
    {
       std::cout << "Singleton " << fSingleton << " was read from " << (fDir != nullptr ? fDir->GetName() : "N/A") << std::endl;
+   }
+
+   static void Delete()
+   {
+      delete fSingleton;
+      fSingleton = nullptr;
    }
 
 protected:

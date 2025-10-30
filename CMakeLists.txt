@@ -26,6 +26,12 @@ cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 project(GRSISort)
 
 #----------------------------------------------------------------------------
+# Check that we are building out of source
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
+	message(FATAL_ERROR "In-source builds are not recommended, please re-run from a separate build directory, or specify the build directory via the -B flag.")
+endif()
+
+#----------------------------------------------------------------------------
 # find git (to set version correctly)
 find_package(Git REQUIRED)
 
@@ -87,7 +93,7 @@ message("${BoldBlue}C++ version set to: ${CMAKE_CXX_STANDARD}\n${ColourReset}")
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 #----------------------------------------------------------------------------
-# configure the include directories and set other variables (could mayme have just one include_directories for both linux and macOS?)
+# configure the include directories and set other variables (could maybe have just one include_directories for both linux and macOS?)
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 	include_directories(${PROJECT_SOURCE_DIR}/include ${ROOT_INCLUDE_DIRS} ${X11_INCLUDE_DIR})
 	add_compile_options(-DOS_DARWIN)
@@ -118,6 +124,7 @@ endif()
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/include DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/examples DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/libraries/TAnalysis/SourceData DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/libraries/TAnalysis/SRIMData DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 #----------------------------------------------------------------------------
 # define all libraries and root dictionaries
@@ -203,6 +210,7 @@ add_library(TFormat SHARED
 	${PROJECT_SOURCE_DIR}/libraries/TLoops/TEventBuildingLoop.cxx
 	${PROJECT_SOURCE_DIR}/libraries/TLoops/TAnalysisWriteLoop.cxx
 	${PROJECT_SOURCE_DIR}/libraries/TLoops/TFragWriteLoop.cxx
+   ${PROJECT_SOURCE_DIR}/libraries/TLoops/TFragDiagnosticsLoop.cxx
 	${PROJECT_SOURCE_DIR}/libraries/TLoops/TDetBuildingLoop.cxx
 	${PROJECT_SOURCE_DIR}/libraries/TLoops/TFragmentChainLoop.cxx
 	${PROJECT_SOURCE_DIR}/libraries/TLoops/TRuntimeObjects.cxx
@@ -230,7 +238,7 @@ add_library(TFormat SHARED
 	${PROJECT_SOURCE_DIR}/libraries/GROOT/GRootGuiFactory.cxx
 	${PROJECT_SOURCE_DIR}/libraries/GROOT/TLevelScheme.cxx
 	)
-root_generate_dictionary(G__TFormat TSingleton.h TFragment.h TBadFragment.h TChannel.h TRunInfo.h TGRSISortInfo.h TPPG.h TEpicsFrag.h TScaler.h TScalerQueue.h TParsingDiagnostics.h TGRSIUtilities.h TMnemonic.h TSortingDiagnostics.h TTransientBits.h TPriorityValue.h TSingleton.h TDetectorInformation.h TParserLibrary.h TDataFrameLibrary.h TUserSettings.h TDetector.h TDetectorHit.h GValue.h TGRSIFrame.h TGRSIHelper.h TGRSIOptions.h TGRSIint.h TAnalysisOptions.h TDataLoop.h StoppableThread.h TFragWriteLoop.h TTerminalLoop.h TEventBuildingLoop.h TDetBuildingLoop.h TAnalysisWriteLoop.h TFragHistLoop.h TCompiledHistograms.h TRuntimeObjects.h TAnalysisHistLoop.h GRootGuiFactory.h GRootFunctions.h GRootCommands.h GRootCanvas.h GRootBrowser.h GCanvas.h GH2Base.h GH2I.h GH2D.h GPeak.h GGaus.h GH1D.h GNotifier.h GPopup.h GSnapshot.h TCalibrator.h GHSym.h GCube.h TLevelScheme.h MODULE TFormat LINKDEF ${PROJECT_SOURCE_DIR}/libraries/TFormat/CMakeLinkDef.h)
+root_generate_dictionary(G__TFormat TSingleton.h TFragment.h TBadFragment.h TChannel.h TRunInfo.h TGRSISortInfo.h TPPG.h TEpicsFrag.h TScaler.h TScalerQueue.h TParsingDiagnostics.h TGRSIUtilities.h TMnemonic.h TSortingDiagnostics.h TTransientBits.h TPriorityValue.h TSingleton.h TDetectorInformation.h TParserLibrary.h TDataFrameLibrary.h TUserSettings.h TDetector.h TDetectorHit.h GValue.h TGRSIFrame.h TGRSIHelper.h TGRSIOptions.h TGRSIint.h TAnalysisOptions.h TDataLoop.h StoppableThread.h TFragWriteLoop.h TFragDiagnosticsLoop.h TTerminalLoop.h TEventBuildingLoop.h TDetBuildingLoop.h TAnalysisWriteLoop.h TFragHistLoop.h TCompiledHistograms.h TRuntimeObjects.h TAnalysisHistLoop.h GRootGuiFactory.h GRootFunctions.h GRootCommands.h GRootCanvas.h GRootBrowser.h GCanvas.h GH2Base.h GH2I.h GH2D.h GPeak.h GGaus.h GH1D.h GNotifier.h GPopup.h GSnapshot.h TCalibrator.h GHSym.h GCube.h TLevelScheme.h MODULE TFormat LINKDEF ${PROJECT_SOURCE_DIR}/libraries/TFormat/CMakeLinkDef.h)
 target_link_libraries(TFormat TGRSIFit TNucleus ${ROOT_LIBRARIES} ${X11_LIBRARIES} ${X11_Xpm_LIB})
 add_dependencies(TFormat GVersion)
 
@@ -309,7 +317,7 @@ add_library(TSRIM SHARED
 	${PROJECT_SOURCE_DIR}/libraries/TAnalysis/TSRIM/TSRIM.cxx
 	)
 root_generate_dictionary(G__TSRIM TSRIM.h MODULE TSRIM LINKDEF ${PROJECT_SOURCE_DIR}/libraries/TAnalysis/TSRIM/LinkDef.h)
-target_link_libraries(TSRIM ${ROOT_LIBRARIES})
+target_link_libraries(TSRIM TFormat ${ROOT_LIBRARIES})
 
 #add_library(TRawFile INTERFACE)
 add_library(TRawFile SHARED
@@ -368,6 +376,12 @@ add_custom_target(GVersion
 						  COMMENT "Generating ${CMAKE_SOURCE_DIR}/include/GVersion.h from ${CMAKE_SOURCE_DIR}/include/GVersion.h.in"
 						  #WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
   )
+
+add_custom_command(TARGET GVersion POST_BUILD
+	  COMMAND ${CMAKE_COMMAND} -E copy
+	  ${CMAKE_SOURCE_DIR}/include/GVersion.h
+	  ${CMAKE_CURRENT_BINARY_DIR}/include/GVersion.h
+)
 
 #----------------------------------------------------------------------------
 # add grsiproof (but exclude it from target all)
@@ -450,6 +464,6 @@ endif()
 #----------------------------------------------------------------------------
 # create a compile_commands.json file which can be used for clang-tidy
 if(NOT DEFINED ENV{CMAKE_EXPORT_COMPILE_COMMANDS})
-    message("ENV(CMAKE_EXPORT_COMPILE_COMMANDS) NOT DEFINED")
-    set($ENV{CMAKE_EXPORT_COMPILE_COMMANDS} TRUE)
+	message("ENV(CMAKE_EXPORT_COMPILE_COMMANDS) NOT DEFINED, setting it to TRUE")
+	set($ENV{CMAKE_EXPORT_COMPILE_COMMANDS} TRUE)
 endif()

@@ -5,18 +5,12 @@
  *  @{
  */
 
-#include <string>
-#include <algorithm>
 #include <vector>
 #include <cstdarg>
 
 #include "TObject.h"
 #include "TF1.h"
-#include "TFitResultPtr.h"
-#include "TFitResult.h"
 #include "TGraph.h"
-#include "TMath.h"
-#include "TVirtualFitter.h"
 #include "TPeakFitter.h"
 
 /////////////////////////////////////////////////////////////////
@@ -62,7 +56,9 @@ public:
    virtual Double_t CentroidErr() const                = 0;
    virtual Double_t Width() const                      = 0;
    virtual Double_t Sigma() const                      = 0;
-   virtual Double_t FWHM();   // not constant because we have to update the parmeters of the peak function
+   virtual Double_t SigmaErr() const                   = 0;
+   virtual Double_t FWHM();      // not constant because we have to update the parameters of the peak function
+   virtual Double_t FWHMErr();   // not constant because we have to update the parameters of the peak function
 
    void         Print(Option_t* = "") const override;
    void         Draw(Option_t* opt = "") override;
@@ -91,6 +87,12 @@ public:
    Double_t GetReducedChi2() const { return fChi2 / fNDF; }
 
    bool ParameterSetByUser(int par);
+
+   void SetLineColor(Color_t color) { fTotalFunction->SetLineColor(color); }
+   void SetLineStyle(Style_t style) { fTotalFunction->SetLineStyle(style); }
+
+   Color_t GetLineColor() { return fTotalFunction->GetLineColor(); }
+   Style_t GetLineStyle() { return fTotalFunction->GetLineStyle(); }
 
 protected:
    Double_t         TotalFunction(Double_t* dim, Double_t* par);

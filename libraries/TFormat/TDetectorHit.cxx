@@ -1,4 +1,5 @@
 #include "TDetectorHit.h"
+#include "TGRSIOptions.h"
 
 #include <iostream>
 
@@ -13,24 +14,19 @@ TDetectorHit::TDetectorHit(const int& address)
    // this needs to happen here, after we call Clear
    // otherwise if will be cleared as well
    fAddress = address;   // NOLINT(cppcoreguidelines-prefer-member-initializer)
-
-#if ROOT_VERSION_CODE < ROOT_VERSION(6, 0, 0)
-   Class()->IgnoreTObjectStreamer(kTRUE);
-#endif
 }
 
 TDetectorHit::TDetectorHit(const TDetectorHit& rhs, bool copywave) : TObject(rhs)
 {
    /// Default Copy constructor
    rhs.Copy(*this);
-   if(copywave) {
+   // if we can get the commandline options, we respect whether ExtracWaves has been set or not
+   // otherwise we rely on the copywave flag (defaults to true)
+   if((TGRSIOptions::Get() != nullptr && TGRSIOptions::Get()->ExtractWaves()) ||
+      (TGRSIOptions::Get() == nullptr && copywave)) {
       rhs.CopyWave(*this);
    }
    ClearTransients();
-
-#if ROOT_VERSION_CODE < ROOT_VERSION(6, 0, 0)
-   Class()->IgnoreTObjectStreamer(kTRUE);
-#endif
 }
 
 TDetectorHit::~TDetectorHit() = default;
@@ -56,7 +52,8 @@ Double_t TDetectorHit::GetTime(const ETimeFlag&, Option_t*) const
       return SetTime(static_cast<Double_t>(static_cast<double>(GetTimeStamp()) + gRandom->Uniform()));
    }
 
-   return SetTime(tmpChan->GetTime(GetTimeStamp(), GetCfd(), GetEnergy()));
+   //return SetTime(tmpChan->GetTime(GetTimeStamp(), GetCfd(), GetEnergy()) * (1. - tmpChan->GetTimeDrift()));
+   return SetTime(tmpChan->GetTime(GetTimeStamp(), GetCfd(), GetEnergy()) * (1. - tmpChan->GetTimeDrift()) - tmpChan->GetTimeNonlinearity(GetTimeStamp()));
 }
 
 Float_t TDetectorHit::GetCharge() const
@@ -70,8 +67,8 @@ Float_t TDetectorHit::GetCharge() const
    }
    if(channel->UseCalFileIntegration()) {
       return Charge() / (static_cast<Float_t>(channel->GetIntegration()));   // this will use the integration value
-   }                                                                         // in the TChannel if it exists.
-   return Charge();                                                          // this will use no integration value
+   }   // in the TChannel if it exists.
+   return Charge();   // this will use no integration value
 }
 
 double TDetectorHit::GetEnergy(Option_t*) const
@@ -104,6 +101,15 @@ Double_t TDetectorHit::GetEnergyNonlinearity(double energy) const
       return 0.;
    }
    return -(channel->GetEnergyNonlinearity(energy));
+}
+
+Double_t TDetectorHit::GetTimeNonlinearity(Long64_t mytimestamp) const
+{
+   TChannel* channel = GetChannel();
+   if(channel == nullptr) {
+      return 0.;
+   }
+   return -(channel->GetTimeNonlinearity(mytimestamp));
 }
 
 void TDetectorHit::Copy(TObject& rhs) const
@@ -232,9 +238,9 @@ Long64_t TDetectorHit::GetTimeStampNs(Option_t*) const
 {
    TChannel* tmpChan = GetChannel();
    if(tmpChan == nullptr) {
-      return GetTimeStamp();   // GetTimeStampUnit returns 1 of there is no channel
+      return GetTimeStamp();   // GetTimeStampUnit returns 1 if there is no channel
    }
-   return GetTimeStamp() * GetTimeStampUnit() * static_cast<Long64_t>((1.0 - tmpChan->GetTimeDrift()) - static_cast<double>(tmpChan->GetTimeOffset()));
+   return GetTimeStamp() * GetTimeStampUnit() - tmpChan->GetTimeOffset();
 }
 
 Int_t TDetectorHit::GetTimeStampUnit() const

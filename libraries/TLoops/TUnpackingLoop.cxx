@@ -10,7 +10,7 @@
 
 TUnpackingLoop* TUnpackingLoop::Get(std::string name)
 {
-   if(name.length() == 0) {
+   if(name.empty()) {
       name = "unpacking_loop";
    }
 
@@ -34,7 +34,10 @@ TUnpackingLoop::TUnpackingLoop(std::string name)
    fParser = TParserLibrary::Get()->CreateDataParser();
 }
 
-TUnpackingLoop::~TUnpackingLoop() = default;
+TUnpackingLoop::~TUnpackingLoop()
+{
+   delete fParser;
+}
 
 void TUnpackingLoop::ClearQueue()
 {

@@ -18,10 +18,12 @@ TParserLibrary::~TParserLibrary()
    }
 }
 
-void TParserLibrary::Load()
+void TParserLibrary::Load(bool quiet)
 {
    if(fHandle != nullptr) {
-      std::cout << "Already loaded handle " << fHandle << std::endl;
+      if(!quiet) {
+         std::cout << "Already loaded handle " << fHandle << std::endl;
+      }
       return;
    }
 
@@ -31,7 +33,7 @@ void TParserLibrary::Load()
       throw std::runtime_error(str.str());
    }
 
-   if(!file_exists(TGRSIOptions::Get()->ParserLibrary().c_str())) {
+   if(!FileExists(TGRSIOptions::Get()->ParserLibrary().c_str())) {
       std::ostringstream str;
       str << DRED << "Library '" << TGRSIOptions::Get()->ParserLibrary() << "' does not exist or we do not have permissions to access it!" << RESET_COLOR;
       throw std::runtime_error(str.str());

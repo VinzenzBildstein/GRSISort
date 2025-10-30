@@ -1,9 +1,10 @@
-#include "Globals.h"
-
 #include "TSRIM.h"
 
-#include <TVector3.h>
-#include <TMath.h>
+#include "Globals.h"
+#include "TGRSIUtilities.h"
+
+#include "TMath.h"
+#include "TAxis.h"
 
 #include <cmath>
 #include <sstream>
@@ -31,7 +32,16 @@ void TSRIM::ReadEnergyLossFile(const char* filename, double emax, double emin, b
 
    std::string        grsipath = getenv("GRSISYS");
    std::ostringstream ostr;
-   ostr << grsipath << "/libraries/TAnalysis/SRIMData/" << fname;
+   ostr << grsipath << "/libraries/TAnalysis/SRIMData/";
+   if(!DirectoryExists(ostr.str().c_str())) {
+      ostr.str(std::string());
+      ostr << grsipath << "/SRIMData/";
+   }
+   if(!DirectoryExists(ostr.str().c_str())) {
+      std::cout << std::endl
+                << "Failed to find directory with SRIM data, tried \"" << grsipath << "/libraries/TAnalysis/SRIMData/\" and \"" << grsipath << "/SRIMData/\"!" << std::endl;
+   }
+   ostr << fname;
    if(printfile) {
       std::cout << std::endl
                 << "Searching for " << ostr.str() << "..." << std::endl;
@@ -52,7 +62,7 @@ void TSRIM::ReadEnergyLossFile(const char* filename, double emax, double emin, b
    std::vector<std::string> string_input;
 
    while(!std::getline(infile, line).fail()) {
-      if(line.length() == 0u) {
+      if(line.empty()) {
          continue;
       }
       std::istringstream linestream(line);

@@ -5,15 +5,9 @@
 
 #include "TFile.h"
 #include "TThread.h"
-#include "TMessage.h"
-#include "TSocket.h"
-#include "TMemFile.h"
 #include "TFileMerger.h"
-#include "TServerSocket.h"
-#include "TMonitor.h"
 #include "TFileCacheWrite.h"
 #include "TROOT.h"
-#include "THashTable.h"
 
 #include "GValue.h"
 #include "TChannel.h"
@@ -21,16 +15,18 @@
 #include "TGRSIOptions.h"
 #include "TTreeFillMutex.h"
 #include "TSortingDiagnostics.h"
+#include "TParsingDiagnostics.h"
+#include "TScalerQueue.h"
 
 TAnalysisWriteLoop* TAnalysisWriteLoop::Get(std::string name, std::string outputFilename)
 {
-   if(name.length() == 0) {
+   if(name.empty()) {
       name = "write_loop";
    }
 
    auto* loop = static_cast<TAnalysisWriteLoop*>(StoppableThread::Get(name));
    if(loop == nullptr) {
-      if(outputFilename.length() == 0) {
+      if(outputFilename.empty()) {
          outputFilename = "temp.root";
       }
       loop = new TAnalysisWriteLoop(name, outputFilename);
@@ -64,6 +60,14 @@ TAnalysisWriteLoop::~TAnalysisWriteLoop()
    for(auto& elem : fDetMap) {
       delete elem.second;
    }
+   for(auto& elem : fDefaultDets) {
+      delete elem.second;
+   }
+   delete fOutOfOrderFrag;
+   // for some reason deleting these creates a seg-fault at the end of sorting
+   // leaving them in for now as a reminder to check why
+   //delete fOutOfOrderTree;
+   //delete fEventTree;
 }
 
 void TAnalysisWriteLoop::ClearQueue()
@@ -123,7 +127,6 @@ void TAnalysisWriteLoop::Write()
       gROOT->cd();
       auto* options = TGRSIOptions::Get();
       auto* ppg     = TPPG::Get();
-      auto* diag    = TSortingDiagnostics::Get();
 
       fOutputFile->cd();
       if(GValue::Size() != 0) {
@@ -137,7 +140,50 @@ void TAnalysisWriteLoop::Write()
       ppg->Write("PPG");
 
       if(options->WriteDiagnostics()) {
+         auto* diag = TSortingDiagnostics::Get();
          diag->Write("SortingDiagnostics", TObject::kOverwrite);
+      }
+      // if we do not write a fragment tree we need to write some diagnostics and scalers to the analysis file
+      // that would normally be in the fragment file
+      if(!options->WriteFragmentTree()) {
+         // write the parsing diagnostices
+         auto* parsingDiagnostics = TParsingDiagnostics::Get();
+         parsingDiagnostics->Write("ParsingDiagnostics", TObject::kOverwrite);
+
+         // always get the scaler queues so that we can delete them
+         // but only write them if --ignore-scalers isn't used
+         auto* deadtimeQueue = TDeadtimeScalerQueue::Get();
+         auto* rateQueue     = TRateScalerQueue::Get();
+         if(!options->IgnoreScaler()) {
+            std::cout << "Starting to write dead time scalers" << std::endl;
+            auto* scalerTree = new TTree("DeadtimeScaler", "DeadtimeScaler");
+            auto* scalerData = new TScalerData;
+            scalerTree->Branch("ScalerData", &scalerData);
+            delete scalerData;
+            while(deadtimeQueue->Size() > 0) {
+               scalerData = deadtimeQueue->PopScaler();
+               scalerTree->Fill();
+               delete scalerData;
+            }
+            scalerTree->Write();
+            delete scalerTree;
+
+            std::cout << "Starting to write rate scalers" << std::endl;
+            scalerTree = new TTree("RateScaler", "RateScaler");
+            scalerData = new TScalerData;
+            scalerTree->Branch("ScalerData", &scalerData);
+            delete scalerData;
+            while(rateQueue->Size() > 0) {
+               scalerData = rateQueue->PopScaler();
+               scalerTree->Fill();
+               delete scalerData;
+            }
+            scalerTree->Write();
+            delete scalerTree;
+            std::cout << "Done writing scaler trees" << std::endl;
+         }
+         delete deadtimeQueue;
+         delete rateQueue;
       }
 
       fOutputFile->Write();
@@ -180,7 +226,7 @@ void TAnalysisWriteLoop::AddBranch(TClass* cls)
          newBranch->Fill();
       }
 
-      std::cout << "\r" << std::string(30, ' ') << "\r" << Name() << ": added \"" << cls->GetName() << R"(" branch)" << std::endl;
+      std::cout << "\r" << std::string(30, ' ') << "\r" << Name() << ": added \"" << cls->GetName() << R"(" branch, )" << det_pp << ", " << det_p << std::string(30, ' ') << std::endl;
 
       // Unlock after we are done.
       TThread::UnLock();
@@ -197,19 +243,17 @@ void TAnalysisWriteLoop::WriteEvent(std::shared_ptr<TUnpackedEvent>& event)
       //   which suggests that a new object would be constructed only when setting the address,
       //   not when filling the TTree.
       for(auto& elem : fDetMap) {
-         (*elem.second)->Clear();
+         (*elem.second)->Clear("a");
       }
 
       // Load current events
       for(const auto& det : event->GetDetectors()) {
          TClass* cls = det->IsA();
-         try {
-            *fDetMap.at(cls) = det.get();
-            //**fDetMap.at(cls) = *det;
-         } catch(std::out_of_range& e) {
+         // check if this detector is in the detector map, if not, add it
+         if(fDetMap.find(cls) == fDetMap.end()) {
             AddBranch(cls);
-            **fDetMap.at(cls) = *det;   //(det.get());
          }
+         **fDetMap.at(cls) = *det;   // this should call Copy internally
          (*fDetMap.at(cls))->ClearTransients();
       }
 

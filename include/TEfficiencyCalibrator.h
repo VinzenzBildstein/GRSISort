@@ -4,31 +4,26 @@
 #if __cplusplus >= 201703L
 
 #include <cstdarg>
-#include <iostream>
 #include <vector>
 #include <string>
-#include <thread>
-#include <mutex>
 
 #include "TFile.h"
-#include "TCanvas.h"
 #include "TPad.h"
 #include "TLegend.h"
 #include "TGFrame.h"
 #include "TGTab.h"
-#include "TGFSComboBox.h"
 #include "TGStatusBar.h"
 #include "TGButtonGroup.h"
 #include "TGButton.h"
 #include "TGNumberEntry.h"
 #include "TGLabel.h"
 #include "TGProgressBar.h"
+#include "TGComboBox.h"
 #include "TRootEmbeddedCanvas.h"
 #include "TH1.h"
 #include "TH2.h"
-#include "TPaveText.h"
-#include "RVersion.h"
 
+#include "Globals.h"
 #include "TNucleus.h"
 #include "TPeakFitter.h"
 #include "TSinglePeak.h"
@@ -56,12 +51,12 @@ class TEfficiencyTab {
    ///
    /////////////////////////////////////////////////////////////////
 public:
-   enum EPeakType { kRWPeak  = 0,
-                    kABPeak  = 1,
-                    kAB3Peak = 2,
-                    kGauss   = 3 };
+   enum EPeakType : std::uint8_t { kRWPeak  = 0,
+                                   kABPeak  = 1,
+                                   kAB3Peak = 2,
+                                   kGauss   = 3 };
 
-   TEfficiencyTab(TEfficiencyDatatypeTab* parent, TNucleus* nucleus, std::tuple<TH1*, TH2*, TH2*> hists, TGCompositeFrame* frame, const int& verboseLevel = 0);
+   TEfficiencyTab(TEfficiencyDatatypeTab* parent, TNucleus* nucleus, std::tuple<TH1*, TH2*, TH2*> hists, TGCompositeFrame* frame);
    TEfficiencyTab(const TEfficiencyTab&)                = default;
    TEfficiencyTab(TEfficiencyTab&&) noexcept            = default;
    TEfficiencyTab& operator=(const TEfficiencyTab&)     = default;
@@ -74,8 +69,6 @@ public:
    void         MakeConnections();
    void         Disconnect();
    void         Status(Int_t event, Int_t px, Int_t py, TObject* selected);
-
-   void VerboseLevel(int val) { fVerboseLevel = val; }
 
    // getters
    std::vector<std::tuple<TTransition*, double, double, double, double, double, double, double, double>> Peaks() const { return fPeaks; }
@@ -105,7 +98,6 @@ private:
    std::vector<std::tuple<TTransition*, double, double, double, double, double, double, double, double>> fPeaks;
    std::vector<TObject*>                                                                                 fFitFunctions;          ///< vector with all fits of the singles histogram
    std::vector<TObject*>                                                                                 fRemovedFitFunctions;   ///< vector with all removed fits of the singles histogram
-   int                                                                                                   fVerboseLevel{0};       ///< Changes verbosity from 0 (quiet) to 4 (very verbose)
 };
 
 class TEfficiencyDatatypeTab {
@@ -119,19 +111,19 @@ class TEfficiencyDatatypeTab {
    ///
    /////////////////////////////////////////////////////////////////
 public:
-   enum EEntry { kRangeEntry,
-                 kThresholdEntry,
-                 kBgParamEntry,
-                 kCalibrationUncertaintyEntry,
-                 kPeakTypeBox,
-                 kDegreeEntry,
-                 kPlotEfficiencyCheck,
-                 kPlotUncorrEfficiencyCheck,
-                 kPlotPeakAreaCheck,
-                 kPlotSummingInCheck,
-                 kPlotSummingOutCheck };
+   enum EEntry : std::uint8_t { kRangeEntry,
+                                kThresholdEntry,
+                                kBgParamEntry,
+                                kCalibrationUncertaintyEntry,
+                                kPeakTypeBox,
+                                kDegreeEntry,
+                                kPlotEfficiencyCheck,
+                                kPlotUncorrEfficiencyCheck,
+                                kPlotPeakAreaCheck,
+                                kPlotSummingInCheck,
+                                kPlotSummingOutCheck };
 
-   TEfficiencyDatatypeTab(TEfficiencyCalibrator* parent, std::vector<TNucleus*> nucleus, std::vector<std::tuple<TH1*, TH2*, TH2*>> hists, TGCompositeFrame* frame, const std::string& dataType, TGHProgressBar* progressBar, const int& verboseLevel = 0);
+   TEfficiencyDatatypeTab(TEfficiencyCalibrator* parent, std::vector<TNucleus*> nucleus, std::vector<std::tuple<TH1*, TH2*, TH2*>> hists, TGCompositeFrame* frame, const std::string& dataType, TGHProgressBar* progressBar);
    TEfficiencyDatatypeTab(const TEfficiencyDatatypeTab&)                = default;
    TEfficiencyDatatypeTab(TEfficiencyDatatypeTab&&) noexcept            = default;
    TEfficiencyDatatypeTab& operator=(const TEfficiencyDatatypeTab&)     = default;
@@ -141,12 +133,6 @@ public:
    void CreateTabs();
    void MakeConnections();
    void Disconnect();
-
-   void VerboseLevel(int val)
-   {
-      fVerboseLevel = val;
-      for(auto& tab : fEfficiencyTab) { tab->VerboseLevel(val); }
-   }
 
    void Status(Int_t event, Int_t px, Int_t py, TObject* selected);
    void DrawGraph();
@@ -203,7 +189,6 @@ private:
    std::vector<TNucleus*> fNucleus;                          ///< the source nuclei
    TEfficiencyCalibrator* fParent;                           ///< the parent of this tab
    std::string            fDataType;                         ///< data type of this tab
-   int                    fVerboseLevel{0};                  ///< Changes verbosity from 0 (quiet) to 4 (very verbose)
    TCalibrationGraphSet*  fEfficiencyGraph{nullptr};         ///< the combined efficiency graph from all sources
    TCalibrationGraphSet*  fUncorrEfficiencyGraph{nullptr};   ///< the combined uncorrected efficiency graph from all sources
    TCalibrationGraphSet*  fPeakAreaGraph{nullptr};           ///< the combined peak area graph from all sources
@@ -241,16 +226,16 @@ class TEfficiencyCalibrator : public TGMainFrame {
    /////////////////////////////////////////////////////////////////
 
 public:
-   enum ESources { k22Na,
-                   k56Co,
-                   k60Co,
-                   k133Ba,
-                   k152Eu,
-                   k241Am };
-   enum EEntry { kStartButton,
-                 kSourceBox      = 100,
-                 kSigmaEntry     = 200,
-                 kThresholdEntry = 300 };
+   enum ESources : std::uint8_t { k22Na,
+                                  k56Co,
+                                  k60Co,
+                                  k133Ba,
+                                  k152Eu,
+                                  k241Am };
+   enum EEntry : std::uint16_t { kStartButton    = 0,
+                                 kSourceBox      = 100,
+                                 kSigmaEntry     = 200,
+                                 kThresholdEntry = 300 };
 
    explicit TEfficiencyCalibrator(int n...);
    TEfficiencyCalibrator(const TEfficiencyCalibrator&)                = delete;
@@ -291,7 +276,8 @@ public:
    static int LineHeight() { return fLineHeight; }
    static int WindowWidth() { return fWindowWidth; }
 
-   void VerboseLevel(int val) { fVerboseLevel = val; }
+   static EVerbosity VerboseLevel() { return fVerboseLevel; }
+   static void       VerboseLevel(EVerbosity val) { fVerboseLevel = val; }
 
    std::vector<TCalibrationGraphSet*> EfficiencyGraphs() { return fEfficiencyGraph; }
    size_t                             NumberOfEfficiencyGraphs() { return fEfficiencyGraph.size(); }
@@ -307,7 +293,7 @@ private:
    void MakeSecondConnections();
    void DisconnectSecond();
 
-   int                                                    fVerboseLevel{4};   ///< Changes verbosity from 0 (quiet) to 4 (very verbose)
+   static EVerbosity                                      fVerboseLevel;   ///< Changes verbosity from 0 (quiet) to 4 (very verbose)
    static double                                          fRange;
    static double                                          fThreshold;
    static int                                             fBgParam;                  ///< the bg parameter used to determine the background in the gamma spectra

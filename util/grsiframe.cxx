@@ -2,18 +2,15 @@
 #include <string>
 #include <vector>
 
-#include "RVersion.h"
+#include "RVersion.h"   // IWYU pragma: keep
 #if ROOT_VERSION_CODE >= ROOT_VERSION(6, 14, 0)
-#include "TStyle.h"
 #include "TFile.h"
 #include "TChain.h"
-#include "ROOT/RDataFrame.hxx"
 #include "TEnv.h"
-#include "TSystem.h"
 #include "TStopwatch.h"
 
 #include "TGRSIOptions.h"
-#include "TChannel.h"
+#include "ArgParser.h"
 #include "TParserLibrary.h"
 #include "TGRSIFrame.h"
 #include "TRedirect.h"
@@ -26,7 +23,7 @@ int main(int argc, char** argv)
    TGRSIOptions* opt = nullptr;
    try {
       std::string grsi_path = getenv("GRSISYS");   // Finds the GRSISYS path to be used by other parts of the grsisort code
-      if(grsi_path.length() > 0) {
+      if(!grsi_path.empty()) {
          grsi_path += "/";
       }
       // Read in grsirc in the GRSISYS directory to set user defined options on grsisort startup
@@ -75,15 +72,15 @@ int main(int argc, char** argv)
          TRunInfo::AddCurrent();
       }
    }
+   // if this is a single sub run or consecutive sub runs from a single run, we re-calculate the run length
+   // this is to avoid small mistakes where the start time of the next sub run is one second after the stop time of the current sub run
+   // otherwise this function call does nothing:
+   TRunInfo::SetRunLength();
 
    // determine the name of the helper (from the provided helper library) to create a redirect of stdout
    std::string logFileName = opt->DataFrameLibrary();
    logFileName             = logFileName.substr(logFileName.find_last_of('/') + 1);   // strip everything before the last slash
-   if(logFileName.find("Helper") != std::string::npos) {
-      logFileName = logFileName.substr(0, logFileName.find("Helper"));   // strip "Helper" and anything after it (like the extension)
-   } else {
-      logFileName = logFileName.substr(0, logFileName.find_last_of('.'));   // strip extension since we didn't find "Helper" in the name
-   }
+   logFileName             = logFileName.substr(0, logFileName.find_last_of('.'));    // strip extension
    logFileName.append(TRunInfo::CreateLabel(true));
    logFileName.append(".log");
 

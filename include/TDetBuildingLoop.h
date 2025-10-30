@@ -13,12 +13,6 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __CINT__
-#include <condition_variable>
-#include <mutex>
-#include <queue>
-#endif
-
 #include "StoppableThread.h"
 #include "ThreadsafeQueue.h"
 #include "TFragment.h"
@@ -61,7 +55,7 @@ public:
          return fOutputQueues.back()->ItemsPushed();
       }
       return std::numeric_limits<size_t>::max();
-   }                                                 // this should work fine as all loops are always filled at the same time
+   }   // this should work fine as all loops are always filled at the same time
    size_t GetItemsPopped() override { return 0; }    // fOutputQueue->ItemsPopped(); }
    size_t GetItemsCurrent() override { return 0; }   // fOutputQueue->Size();        }
    size_t GetRate() override { return 0; }
