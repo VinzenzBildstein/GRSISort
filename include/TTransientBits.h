@@ -56,6 +56,7 @@ public:
    void Clear() { fBits = 0; }
    void Print() const { std::cout << fBits << std::endl; }
 
+private:
    T fBits;
 };
 
