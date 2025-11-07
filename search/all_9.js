@@ -62,7 +62,7 @@ var searchData=
   ['erase_59',['erase',['../class_t_g_r_s_i_map.html#aa5090ca628456920689772e1e5563001',1,'TGRSIMap::erase(typename map_t::iterator pos)'],['../class_t_g_r_s_i_map.html#a675d18be3086cedece09bcd19ee64bec',1,'TGRSIMap::erase(typename map_t::iterator first, typename map_t::iterator last)']]],
   ['ercmpbits_60',['ERcmpBits',['../class_t_rcmp.html#a60665aea258d399c991b1d989078c26a',1,'TRcmp']]],
   ['eregiontype_61',['ERegionType',['../_g_h1_d_8h.html#ae819606bdea10ec6bbc4dd2471bbc3ae',1,'GH1D.h']]],
-  ['erootcanvascommands_62',['ERootCanvasCommands',['../_g_root_canvas_8cxx.html#a05b56d948b7fcb369490fafff19e529d',1,'GRootCanvas.cxx']]],
+  ['erootcanvascommands_62',['ERootCanvasCommands',['../_g_root_canvas_8cxx.html#a0591db0ae116ee19a2358e9ac972d01c',1,'GRootCanvas.cxx']]],
   ['errfile_63',['ErrFile',['../class_t_redirect.html#af4166deebd651b26baa64006d302d0a0',1,'TRedirect']]],
   ['es3bits_64',['ES3Bits',['../class_t_s3.html#af5a27902ce27e2c8c5666b648edca460',1,'TS3']]],
   ['es3globalbits_65',['ES3GlobalBits',['../class_t_s3.html#a88a7183aa5cedb5eec25bb27c8b3633a',1,'TS3']]],

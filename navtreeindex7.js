@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"class_alphanumeric_selector.html#a1d59e4374d4ab9545e87e05e45467131":[10,0,4,5],
 "class_alphanumeric_selector.html#a1e35e3147d9f14a04e4d0f9f30431074":[10,0,4,30],
 "class_alphanumeric_selector.html#a21b4ed735f1d17cb6a232510ca430339":[10,0,4,7],
 "class_alphanumeric_selector.html#a29945f1269efc3023c16716af041d4bd":[10,0,4,16],
@@ -249,5 +248,6 @@ var NAVTREEINDEX7 =
 "class_arg_parser.html#aec9450dbdf6142a8911952de91148396":[10,0,11,0],
 "class_arg_parser.html#aed7119fd57148dbe3ac3d34e8649c0f3":[10,0,11,9],
 "class_arg_parser.html#aedc80e066b44e7a5375d1b144f4860d6":[10,0,11,10],
-"class_arg_parser.html#af29eee2c652ca2f8e94dbc5c4e7c795f":[10,0,11,1]
+"class_arg_parser.html#af29eee2c652ca2f8e94dbc5c4e7c795f":[10,0,11,1],
+"class_compton_polarimetry_helper.html":[10,0,13]
 };
