@@ -1,7 +1,5 @@
 var NAVTREEINDEX22 =
 {
-"class_t_channel.html#a4132e77693a8d6ed2da1c63277941443":[8,11,5,30],
-"class_t_channel.html#a44eb83fe3284a8734c1e9163aac2676c":[8,11,5,113],
 "class_t_channel.html#a467e9c490e9d71aa7d2e215e333e1909":[8,11,5,94],
 "class_t_channel.html#a484e019ebe241f457b21cc9751c6efde":[8,11,5,112],
 "class_t_channel.html#a49c87ab10ba08fbf95a829dd2b2e2877":[8,11,5,132],
@@ -249,5 +247,7 @@ var NAVTREEINDEX22 =
 "class_t_data_frame_library.html#a58e2a8e03fa6a7c20638044626add93a":[10,0,95,9],
 "class_t_data_frame_library.html#a6a8cba893da4114aa47cf7bdf24c853a":[10,0,95,10],
 "class_t_data_frame_library.html#a83b6058b0bbe5c7545948ae9161a39fc":[10,0,95,5],
-"class_t_data_frame_library.html#a9f19005fabb5b0cc6d53222a2a111c6a":[10,0,95,1]
+"class_t_data_frame_library.html#a9f19005fabb5b0cc6d53222a2a111c6a":[10,0,95,1],
+"class_t_data_frame_library.html#aa00d3facf62c610ac87f251df02aac22":[10,0,95,3],
+"class_t_data_frame_library.html#aa539a8c7f815b0ea87bf471982727652":[10,0,95,20]
 };
