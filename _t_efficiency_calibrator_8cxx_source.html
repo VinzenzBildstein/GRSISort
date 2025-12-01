@@ -272,7 +272,7 @@ $(function(){initNavTree('_t_efficiency_calibrator_8cxx_source.html',''); initRe
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>         fSummingInProj.back()-&gt;Write(Form(<span class="stringliteral">&quot;%s_%.0fkeV&quot;</span>, fSummingInProj.back()-&gt;GetName(), centroid), TObject::kOverwrite);</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>         fSummingInProjBg.back()-&gt;Write(Form(<span class="stringliteral">&quot;%s_%.0fkeV&quot;</span>, fSummingInProjBg.back()-&gt;GetName(), centroid), TObject::kOverwrite);</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>         <span class="keywordtype">double</span> summingOut = summingOutPeaks[p]-&gt;Area();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>         <span class="keywordtype">double</span> summingOut    = summingOutPeaks[p]-&gt;Area();</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>         <span class="keywordtype">double</span> correctedArea = peak-&gt;Area() - summingIn + summingOutPeaks[p]-&gt;AreaErr();</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>         <span class="comment">// uncertainties for summing in and summing out is sqrt(N) (?)</span></div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>         <span class="keywordtype">double</span> correctedAreaErr = TMath::Sqrt(TMath::Power(peak-&gt;AreaErr(), 2) + summingIn + summingOut);</div>
@@ -1264,7 +1264,7 @@ $(function(){initNavTree('_t_efficiency_calibrator_8cxx_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_13ff732e2c56f9e39f6b01628bb57815.html">TAnalysis</a></li><li class="navelem"><a class="el" href="dir_4d17f409fb020449a7716dffae2b2761.html">TCal</a></li><li class="navelem"><a class="el" href="_t_efficiency_calibrator_8cxx.html">TEfficiencyCalibrator.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Dec 1 2025 10:31:58.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Dec 1 2025 10:40:52.</li>
   </ul>
 </div>
 </body>

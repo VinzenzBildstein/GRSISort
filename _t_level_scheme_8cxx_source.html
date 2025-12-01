@@ -293,7 +293,7 @@ $(function(){initNavTree('_t_level_scheme_8cxx_source.html',''); initResizable(t
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>   }</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>   <span class="keyword">auto</span> result = fLevelScheme-&gt;ParallelGammas(fInitialEnergy, fFinalEnergy);</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>   <span class="comment">// remove any path of less than two gammas (</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>   <span class="keyword">auto</span> last   = std::remove_if(result.begin(), result.end(), [](std::tuple&lt;<span class="keywordtype">double</span>, std::vector&lt;double&gt;&gt; x) { return std::get&lt;1&gt;(x).size() &lt; 2; });</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>   <span class="keyword">auto</span> last = std::remove_if(result.begin(), result.end(), [](std::tuple&lt;<span class="keywordtype">double</span>, std::vector&lt;double&gt;&gt; x) { return std::get&lt;1&gt;(x).size() &lt; 2; });</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>   <span class="keywordflow">if</span>(fDebug) {</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Removing &quot;</span> &lt;&lt; std::distance(last, result.end()) &lt;&lt; <span class="stringliteral">&quot; paths, keeping &quot;</span> &lt;&lt; std::distance(result.begin(), last) &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>   }</div>
@@ -1829,7 +1829,7 @@ $(function(){initNavTree('_t_level_scheme_8cxx_source.html',''); initResizable(t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_47358ee868e3aed1e59cf9c2ead119a2.html">GROOT</a></li><li class="navelem"><a class="el" href="_t_level_scheme_8cxx.html">TLevelScheme.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Dec 1 2025 10:31:58.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Mon Dec 1 2025 10:40:52.</li>
   </ul>
 </div>
 </body>
