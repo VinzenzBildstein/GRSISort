@@ -13,6 +13,7 @@
 #include "TRunInfo.h"
 #include "TStopwatch.h"
 #include "TPPG.h"
+#include "TGRSIMap.h"
 
 #include <iostream>
 #include <vector>
