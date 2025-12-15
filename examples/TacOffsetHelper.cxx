@@ -5,7 +5,7 @@ void TacOffsetHelper::CreateHistograms(unsigned int slot)
    // find the offsets from the current calibration
    int channelNumber = 0;
    int currentIndex  = 0;
-	// we can't expect that all channel numbers are defined, so we loop until the channel number equals the number of channels
+   // we can't expect that all channel numbers are defined, so we loop until the channel number equals the number of channels
    while(currentIndex < 8 && channelNumber < TChannel::GetNumberOfChannels()) {
       auto* channel = TChannel::GetChannelByNumber(++channelNumber);
       if(channel == nullptr || channel->GetClassType() != TTAC::Class()) {
