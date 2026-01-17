@@ -387,12 +387,18 @@ TEventBuildingLoop::EBuildMode TRunInfo::BuildMode() const
 void TRunInfo::Add(TRunInfo* runinfo, bool verbose)
 {
    if(verbose) { std::cout << "TRunInfo::Add(" << runinfo << ", " << (verbose ? "true" : "false") << "), this = " << this << std::endl; }
+   if(fRunList.empty()) {
+      if(verbose) { std::cout << "Run list is empty, adding current run (" << fRunNumber << ", " << fSubRunNumber << ") to it before adding the new run" << std::endl; }
+      fRunList.insert(std::make_pair(fRunNumber, fSubRunNumber));
+   }
    std::pair<int, int> newPair = std::make_pair(runinfo->fRunNumber, runinfo->fSubRunNumber);
    // check for dual entries
+   if(verbose) { std::cout << fRunList.size() << " entries in run list, pair of " << runinfo->fRunNumber << ",  " << runinfo->fSubRunNumber << " is " << (fRunList.find(newPair) != fRunList.end() ? "" : "not ") << "in run list" << std::endl; }
    if(fRunList.find(newPair) != fRunList.end()) {
       std::cerr << DYELLOW << "Warning, adding run " << std::setfill('0') << std::setw(5) << newPair.first << "_" << std::setw(3) << newPair.second << std::setfill(' ') << " again!" << RESET_COLOR << std::endl;
       return;
    }
+   if(verbose) { std::cout << "Adding new run (" << runinfo->fRunNumber << ", " << runinfo->fSubRunNumber << ") to run list" << std::endl; }
    fRunList.insert(newPair);
 
    if(verbose) { std::cout << std::endl
