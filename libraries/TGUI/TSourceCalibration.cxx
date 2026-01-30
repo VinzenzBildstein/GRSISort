@@ -2099,6 +2099,9 @@ void TChannelTab::ZoomY()
    for(const auto&& obj : *(pad2->GetListOfPrimitives())) {
       if(obj->InheritsFrom(TGraph::Class())) {
          hist2 = static_cast<TGraph*>(obj)->GetHistogram();
+         if(obj->IsA() == TCalibrationGraphSet::Class()) {
+            static_cast<TCalibrationGraphSet*>(obj)->RefreshResidualLine();
+         }
          break;
       }
    }

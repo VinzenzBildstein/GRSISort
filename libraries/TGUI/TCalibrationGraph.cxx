@@ -234,6 +234,17 @@ void TCalibrationGraphSet::DrawCalibration(Option_t* opt, TLegend* legend)
    }
 }
 
+void TCalibrationGraphSet::RefreshResidualLine()
+{
+   if(fZeroResidual == nullptr) { return; }
+
+   auto* hist = fTotalResidualGraph->GetHistogram();
+   double minY = hist->GetYaxis()->GetXmin();
+   double maxY = hist->GetYaxis()->GetXmax();
+   fZeroResidual->SetY1(minY);
+   fZeroResidual->SetY2(maxY);
+}
+
 void TCalibrationGraphSet::DrawResidual(Option_t* opt, TLegend* legend)
 {
    TString options = opt;

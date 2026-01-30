@@ -161,6 +161,8 @@ public:
 
    void ResetTotalGraph();   ///< reset the total graph and add the individual ones again (used e.g. after scaling of individual graphs is done)
 
+   void RefreshResidualLine();
+
    static void       VerboseLevel(EVerbosity val) { fVerboseLevel = val; }
    static EVerbosity VerboseLevel() { return fVerboseLevel; }
 
