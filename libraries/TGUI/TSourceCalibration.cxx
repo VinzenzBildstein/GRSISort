@@ -55,8 +55,7 @@ std::map<double, std::tuple<double, double, double, double>> RoughCal(std::vecto
    std::sort(peaks.begin(), peaks.end());
    std::sort(sources.begin(), sources.end(), [](const std::tuple<double, double, double, double>& a, const std::tuple<double, double, double, double>& b) { return std::get<2>(a) > std::get<2>(b); });
 
-   auto maxSize = peaks.size();
-   if(sources.size() > maxSize) { maxSize = sources.size(); }
+   auto maxSize = std::max(peaks.size(), sources.size());
 
    // Peaks are the fitted points.
    // source are the known values
@@ -191,8 +190,7 @@ std::map<TGauss*, std::tuple<double, double, double, double>> Match(std::vector<
    std::sort(peaks.begin(), peaks.end(), [](const TGauss* a, const TGauss* b) { return a->Centroid() < b->Centroid(); });
    std::sort(sources.begin(), sources.end());
 
-   auto maxSize = peaks.size();
-   if(sources.size() > maxSize) { maxSize = sources.size(); }
+   auto maxSize = std::max(peaks.size(), sources.size());
 
    // Peaks are the fitted points.
    // source are the known values
@@ -333,8 +331,7 @@ std::map<TGauss*, std::tuple<double, double, double, double>> SmartMatch(std::ve
    std::sort(peaks.begin(), peaks.end(), [](const TGauss* a, const TGauss* b) { return a->Centroid() < b->Centroid(); });
    std::sort(sources.begin(), sources.end(), [](const std::tuple<double, double, double, double>& a, const std::tuple<double, double, double, double>& b) { return std::get<2>(a) > std::get<2>(b); });
 
-   auto maxSize = peaks.size();
-   if(sources.size() > maxSize) { maxSize = sources.size(); }
+   auto maxSize = std::max(peaks.size(), sources.size());
 
    // Peaks are the fitted points.
    // source are the known values
@@ -1571,7 +1568,8 @@ void TChannelTab::RemovePoint(Int_t oldGraph, Int_t oldPoint)
    }
    if(0 <= oldGraph && oldGraph < static_cast<int>(fSources.size())) {
       if(oldPoint >= 0) {
-         return fSources[oldGraph]->RemovePoint(oldPoint);
+         fSources[oldGraph]->RemovePoint(oldPoint);
+         return;
       }
       std::cout << "Can't remove negative point " << oldPoint << " from graph " << oldGraph << std::endl;
    }
@@ -1758,7 +1756,7 @@ void TChannelTab::Calibrate(int degree)
    fInfoLabel->Draw();
 
    fResidualPad->cd();
-   fData->DrawResidual("*");
+   fData->DrawResidual("*r0");
 
    fCalibrationCanvas->GetCanvas()->Modified();
 
@@ -2181,7 +2179,7 @@ TSourceCalibration::TSourceCalibration(double sigma, double threshold, int degre
    }
    va_end(args);   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
    if(fVerboseLevel > EVerbosity::kQuiet) {
-      std::cout << DGREEN << __PRETTY_FUNCTION__ << ": verbose level " << static_cast<std::underlying_type<EVerbosity>::type>(fVerboseLevel) << std::endl   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+      std::cout << DGREEN << __PRETTY_FUNCTION__ << ": verbose level " << static_cast<std::underlying_type_t<EVerbosity>>(fVerboseLevel) << std::endl   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
                 << "using " << count << "/" << fMatrices.size() << " matrices:" << std::endl;
       for(auto* mat : fMatrices) {
          std::cout << mat << std::flush << " = " << mat->GetName() << std::endl;
@@ -2282,6 +2280,8 @@ void TSourceCalibration::BuildFirstInterface()
    if(fVerboseLevel > EVerbosity::kBasicFlow) { std::cout << "created table layout manager with 2 columns, " << fMatrices.size() + 1 << " rows" << std::endl; }
    SetLayoutManager(layoutManager);
 
+   // find the path for the .sou files
+   std::string path = TNucleus::SourceDirectory();
    // The matrices and source selection boxes
    size_t i = 0;
    for(i = 0; i < fMatrices.size(); ++i) {
@@ -2292,14 +2292,11 @@ void TSourceCalibration::BuildFirstInterface()
       fSourceBox.push_back(new TGComboBox(this, "Select source", kSourceBox + fSourceBox.size()));
 
       int index = 0;
+      // convert name to lower-case
+      std::string name = fMatrices[i]->GetName();
+      std::transform(name.begin(), name.end(), name.begin(), ::tolower);
+      fMatrices[i]->SetName(name.c_str());
 #if __cplusplus >= 201703L
-      // For some reasons getenv("GRSISYS") with strcat does not work (adds the "sub"-path twice).
-      // Have to do this by copying the getenv result into a c++-string.
-      if(std::getenv("GRSISYS") == nullptr) {
-         throw std::runtime_error("Failed to get environment variable $GRSISYS");
-      }
-      std::string path(std::getenv("GRSISYS"));
-      path += "/libraries/TAnalysis/SourceData/";
       for(const auto& file : std::filesystem::directory_iterator(path)) {
          if(file.is_regular_file() && file.path().extension().compare(".sou") == 0) {
             fSourceBox.back()->AddEntry(file.path().stem().c_str(), index);
@@ -2317,37 +2314,37 @@ void TSourceCalibration::BuildFirstInterface()
       if(fVerboseLevel > EVerbosity::kSubroutines) { std::cout << i << ": created list with " << index << " sources" << std::endl; }
 #else
       fSourceBox.back()->AddEntry("22Na", index);
-      if(std::strstr(fMatrices[i]->GetName(), "22Na") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "22na") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("56Co", index);
-      if(std::strstr(fMatrices[i]->GetName(), "56Co") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "56co") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("60Co", index);
-      if(std::strstr(fMatrices[i]->GetName(), "60Co") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "60co") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("133Ba", index);
-      if(std::strstr(fMatrices[i]->GetName(), "133Ba") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "133ba") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("152Eu", index);
-      if(std::strstr(fMatrices[i]->GetName(), "152Eu") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "152eu") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("241Am", index);
-      if(std::strstr(fMatrices[i]->GetName(), "241Am") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "241am") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
@@ -2423,7 +2420,7 @@ void TSourceCalibration::SetSource(Int_t windowId, Int_t entryId)
    TIter iter(nucleus->GetTransitionList());
    fSourceEnergy[index].clear();
    while(auto* transition = static_cast<TTransition*>(iter.Next())) {
-      fSourceEnergy[index].push_back(std::make_tuple(transition->GetEnergy(), transition->GetEnergyUncertainty(), transition->GetIntensity(), transition->GetIntensityUncertainty()));
+      fSourceEnergy[index].emplace_back(transition->GetEnergy(), transition->GetEnergyUncertainty(), transition->GetIntensity(), transition->GetIntensityUncertainty());
    }
    fSource[index] = nucleus;
 }

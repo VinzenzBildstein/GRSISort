@@ -10,6 +10,7 @@
 #include "TList.h"
 #include "TLegend.h"
 #include "TQObject.h"
+#include "TLine.h"
 
 #include "Globals.h"
 
@@ -180,6 +181,7 @@ private:
    double                         fMaximumY{0.};                  ///< Maximum y-value
    std::string                    fXAxisLabel;                    ///< The label of the x-axis.
    std::string                    fYAxisLabel;                    ///< The label of the y-axis.
+   TLine*                         fZeroResidual{nullptr};         //!<! The line denoting zero residual
 
    static EVerbosity fVerboseLevel;   ///< Changes verbosity
 
