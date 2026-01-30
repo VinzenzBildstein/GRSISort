@@ -84,9 +84,14 @@ public:
    bool operator==(const TNucleus& rhs) const { return ((fA == rhs.fA) && (fN == rhs.fN) && (fZ == rhs.fZ)); }
    bool operator!=(const TNucleus& rhs) const { return !(*this == rhs); }
 
+   static std::string& SourceDirectory(); /// < Returns the directory with the .sou files and the mass file
+
 private:
    static std::string& Massfile();   ///< Returns the massfile to be used, which includes Z, N, atomic symbol, and mass excess
    void                SetName(const char* name = "") override;
+
+   static std::string fSourceDirectory;          //!<! path of directory with .sou files
+   static bool        fSourceDirectoryChecked;   //!<! flag to indicate whetehr the source directory path has been checked
 
    int         fA{0};             ///< Number of nucleons (Z + N)
    int         fN{0};             ///< Number of neutrons (N)
