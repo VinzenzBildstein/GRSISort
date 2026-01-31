@@ -5,12 +5,10 @@ void TacOffsetHelper::CreateHistograms(unsigned int slot)
    // find the offsets from the current calibration
    int channelNumber = 0;
    int currentIndex  = 0;
-   while(currentIndex < 8) {
+   // we can't expect that all channel numbers are defined, so we loop until the channel number equals the number of channels
+   while(currentIndex < 8 && channelNumber < TChannel::GetNumberOfChannels()) {
       auto* channel = TChannel::GetChannelByNumber(++channelNumber);
-      if(channel == nullptr) {
-         break;
-      }
-      if(channel->GetClassType() != TTAC::Class()) {
+      if(channel == nullptr || channel->GetClassType() != TTAC::Class()) {
          continue;
       }
       fOffset[currentIndex] = static_cast<double>(channel->GetTimeOffset());
@@ -25,11 +23,11 @@ void TacOffsetHelper::CreateHistograms(unsigned int slot)
       fH1[slot][Form("TacOffset_%d", i)]          = new TH1D(Form("TacOffset_%d", i), Form("Time difference between TAC and LaBr %d; time (ns); counts/ns", i), 10000, -5000., 5000.);
       fH1[slot][Form("TacOffsetCorrected_%d", i)] = new TH1D(Form("TacOffsetCorrected_%d", i), Form("Time difference between TAC and LaBr %d, corrected by TAC offset; time (ns); counts/ns", i), 10000, -5000., 5000.);
       fH1[slot][Form("TimeDiff_%d", i)]           = new TH1D(Form("TimeDiff_%d", i), Form("Time difference for LaBr %d - LaBr with TAC coincidence; time (ns); counts/ns", i), 10000, -5000., 5000.);
-      fH1[slot][Form("TimeDiffNoTac_%d", i)]      = new TH1D(Form("TimeDiffNoTac_%d", i), Form("Time difference for LaBr %d - LaBr without TAC coincidence; time (ns); counts/ns", i), 10000, -5000., 5000.);
-      fH1[slot][Form("TimeStampDiff_%d", i)]      = new TH1D(Form("TimeStampDiff_%d", i), Form("Timestamp difference for LaBr %d - LaBr with TAC coincidence; time (ns); counts/ns", i), 10000, -5000., 5000.);
-      fH1[slot][Form("TimeStampDiffNoTac_%d", i)] = new TH1D(Form("TimeStampDiffNoTac_%d", i), Form("Timestamp difference for LaBr %d - LaBr without TAC coincidence; time (ns); counts/ns", i), 10000, -5000., 5000.);
+      fH1[slot][Form("TimeDiffNoTac_%d", i)]      = new TH1D(Form("TimeDiffNoTac_%d", i), Form("Time difference for LaBr %d - LaBr without TAC coincidence required; time (ns); counts/ns", i), 10000, -5000., 5000.);
+      fH1[slot][Form("TimeStampDiff_%d", i)]      = new TH1D(Form("TimeStampDiff_%d", i), Form("Timestamp difference for LaBr %d - LaBr with TAC coincidence; time (ns); counts/ns", i), 1000, -5000., 5000.);
+      fH1[slot][Form("TimeStampDiffNoTac_%d", i)] = new TH1D(Form("TimeStampDiffNoTac_%d", i), Form("Timestamp difference for LaBr %d - LaBr without TAC coincidence required; time (ns); counts/ns", i), 1000, -5000., 5000.);
    }
-   fH1[slot]["TimeStampDiffGriffin"] = new TH1D("TimeStampDiffGriffin", "Timestamp difference for HPGe - LaBr, with TAC coincidence; time (ns); counts/ns", 10000, -5000., 5000.);
+   fH1[slot]["TimeStampDiffGriffin"] = new TH1D("TimeStampDiffGriffin", "Timestamp difference for HPGe - LaBr, with TAC coincidence; time (ns); counts/ns", 1000, -5000., 5000.);
    fH1[slot]["TimeDiffGriffin"]      = new TH1D("TimeDiffGriffin", "Time difference for HPGe - LaBr, with TAC coincidence; time (ns); counts/ns", 10000, -5000., 5000.);
 }
 
@@ -64,7 +62,7 @@ void TacOffsetHelper::Exec(unsigned int slot, TGriffin& grif, TTAC& tac, TLaBr& 
    if(nofTac == 1) {
       auto* tac0 = tac.GetTACHit(0);
       if(labr0->GetDetector() == tac0->GetDetector()) {
-         fH1[slot].at(Form("TacOffset_%d", tac0->GetDetector() - 1))->Fill(labr0->GetTime() - tac0->GetTime() + fOffset[tac0->GetDetector() - 1] * 10.);
+         fH1[slot].at(Form("TacOffset_%d", tac0->GetDetector() - 1))->Fill(labr0->GetTime() - tac0->GetTime() - fOffset[tac0->GetDetector() - 1]);
          fH1[slot].at(Form("TacOffsetCorrected_%d", tac0->GetDetector() - 1))->Fill(labr0->GetTime() - tac0->GetTime());
          fH1[slot].at(Form("TimeDiff_%d", labr1->GetDetector() - 1))->Fill(labr1->GetTime() - labr1->GetTime());
          fH1[slot].at(Form("TimeStampDiff_%d", labr1->GetDetector() - 1))->Fill(static_cast<Double_t>(labr1->GetTimeStampNs() - labr0->GetTimeStampNs()));

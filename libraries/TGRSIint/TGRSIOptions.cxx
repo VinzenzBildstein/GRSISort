@@ -360,7 +360,7 @@ void TGRSIOptions::Load(int argc, char** argv)
          .default_value(10);
    } else if(program == "grsiproof") {
       // Proof only parser options
-      parser.option("max-workers", &fMaxWorkers, true)
+      parser.option("max-worker max-workers", &fMaxWorkers, true)
          .description("Max number of nodes to use when running a grsiproof session")
          .default_value(-1);
 
@@ -382,7 +382,7 @@ void TGRSIOptions::Load(int argc, char** argv)
          .description("enable proof stats");
    } else if(program == "grsiframe") {
       // grsiframe only parser options
-      parser.option("max-workers", &fMaxWorkers, true)
+      parser.option("max-worker max-workers", &fMaxWorkers, true)
          .description("Maximum number of nodes to use when running a grsiframe session")
          .default_value(1);
       parser.option("tree-name", &fTreeName, true)

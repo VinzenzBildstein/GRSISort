@@ -63,6 +63,7 @@ TGRSIHelper::TGRSIHelper(TList* input)
    }
    for(auto& cut : fCuts) {
       std::cout << cut.first << " = " << cut.second << std::endl;
+      if(cut.second != nullptr) { cut.second->Print(); }
    }
 
    if(GValue::Size() == 0) {
