@@ -25,16 +25,12 @@
 #include <cstdio>
 #include <string>
 
-#include "TSystem.h"
 #include "TSysEvtHandler.h"
 #include "TRint.h"
-#include "TList.h"
 #include "TEnv.h"
 #include "TFile.h"
 #include "TChain.h"
-#include "TStopwatch.h"
 
-#include "Globals.h"
 #include "TRawFile.h"
 
 extern TChain* gFragment;
@@ -79,7 +75,6 @@ private:
    void        SetupPipeline();
    void        LoopUntilDone();
    void        ApplyOptions();
-   static void DrawLogo();
    static void LoadGROOTGraphics();
    void        LoadExtraClasses();
 
@@ -97,6 +92,8 @@ private:
    std::string fNewFragmentFile;      ///< New fragment file name
 
    std::vector<TRawFile*> fRawFiles;   ///< List of Raw files opened
+
+   int fFakeArgc{0};   ///< this is used as a fake argc to pass to the TRint constructor
 
    /// \cond CLASSIMP
    ClassDefOverride(TGRSIint, 0)   // NOLINT(readability-else-after-return)

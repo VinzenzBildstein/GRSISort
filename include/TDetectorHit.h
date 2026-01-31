@@ -6,16 +6,13 @@
  */
 
 #include <vector>
-
-#include "Globals.h"
+#include <cstdint>
 
 #include "TChannel.h"
 #include "TVector3.h"
 #include "TObject.h"
-#include "TRef.h"
 #include "Rtypes.h"
-#include "TFile.h"
-#include "TString.h"
+#include "TRandom.h"
 
 #include "TPPG.h"
 #include "TTransientBits.h"
@@ -47,7 +44,7 @@ class TDetector;
 
 class TDetectorHit : public TObject {
 public:
-   enum class EBitFlag {
+   enum class EBitFlag : std::uint16_t {
       kIsEnergySet  = BIT(0),   // same as BIT(0);
       kIsChannelSet = BIT(1),
       kBit2         = BIT(2),
@@ -69,11 +66,11 @@ public:
       kIsAllSet   = 0xFFFF
    };
 
-   enum class ETimeFlag { kNoneSet = BIT(0),
-                          kCFD     = BIT(1),
-                          kWalk    = BIT(2),
-                          kOffset  = BIT(3),
-                          kAll     = 0xFFFF };
+   enum class ETimeFlag : std::uint16_t { kNoneSet = BIT(0),
+                                          kCFD     = BIT(1),
+                                          kWalk    = BIT(2),
+                                          kOffset  = BIT(3),
+                                          kAll     = 0xFFFF };
 
    explicit TDetectorHit(const int& Address = 0xffffffff);
    TDetectorHit(const TDetectorHit&, bool copywave = true);
@@ -135,6 +132,7 @@ public:
    virtual TVector3            GetPosition() const { return {0., 0., 0.}; }            //!<!
    virtual double              GetEnergy(Option_t* opt = "") const;
    virtual Double_t            GetEnergyNonlinearity(double energy) const;
+   virtual Double_t            GetTimeNonlinearity(Long64_t mytimestamp) const;
    virtual Long64_t            GetTimeStamp(Option_t* = "") const { return fTimeStamp; }
    virtual Long64_t            GetTimeStampNs(Option_t* opt = "") const;
    virtual Double_t            GetTime(const ETimeFlag& correct_flag = ETimeFlag::kAll,

@@ -3,14 +3,9 @@
 #include <chrono>
 #include <thread>
 #include <utility>
-#include <cstdio>
-#include <sstream>
 
 #include "TGRSIOptions.h"
-#include "TString.h"
 #include "TRawFile.h"
-#include "TChannel.h"
-#include "TRunInfo.h"
 
 TDataLoop::TDataLoop(std::string name, TRawFile* source)
    : StoppableThread(std::move(name)), fSource(source), fSelfStopping(true), fEventsRead(0),
@@ -20,7 +15,7 @@ TDataLoop::TDataLoop(std::string name, TRawFile* source)
 
 TDataLoop* TDataLoop::Get(std::string name, TRawFile* source)
 {
-   if(name.length() == 0) {
+   if(name.empty()) {
       name = "input_loop";
    }
    auto* loop = static_cast<TDataLoop*>(StoppableThread::Get(name));

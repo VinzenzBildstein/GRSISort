@@ -13,11 +13,9 @@
 // NOLINTBEGIN(readability-identifier-naming, cppcoreguidelines-macro-usage)
 #define _GLIBCXX_USE_NANOSLEEP 1
 // NOLINTEND(readability-identifier-naming, cppcoreguidelines-macro-usage)
-#include <thread>
 #include <mutex>
 #endif
 
-#include "TObjArray.h"
 #include "TStopwatch.h"
 
 #include "TScaler.h"
@@ -29,7 +27,7 @@ public:
    TDeadtimeScalerQueue(TDeadtimeScalerQueue&&) noexcept            = default;
    TDeadtimeScalerQueue& operator=(const TDeadtimeScalerQueue&)     = default;
    TDeadtimeScalerQueue& operator=(TDeadtimeScalerQueue&&) noexcept = default;
-   ~TDeadtimeScalerQueue()                                          = default;
+   ~TDeadtimeScalerQueue();
 
 private:
    TDeadtimeScalerQueue();
@@ -90,7 +88,7 @@ public:
    TRateScalerQueue(TRateScalerQueue&&) noexcept            = default;
    TRateScalerQueue& operator=(const TRateScalerQueue&)     = default;
    TRateScalerQueue& operator=(TRateScalerQueue&&) noexcept = default;
-   ~TRateScalerQueue()                                      = default;
+   ~TRateScalerQueue();
 
 private:
    TRateScalerQueue();

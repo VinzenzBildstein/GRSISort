@@ -3,7 +3,6 @@
 #include <stdexcept>
 #include <fstream>
 #include <iostream>
-#include <iomanip>
 #include <fcntl.h>
 #include <unistd.h>
 #include <unordered_map>
@@ -15,10 +14,12 @@
 
 #include "TFile.h"
 #include "TKey.h"
+#include "TRandom.h"
 
 #include "StoppableThread.h"
 #include "Globals.h"
 #include "TGRSIUtilities.h"
+#include "TMnemonic.h"
 
 /*
  * Author:  P.C. Bender, <pcbend@gmail.com>
@@ -44,7 +45,10 @@ TChannel::TChannel()
    Clear();
 }   // default constructor need to write to root file.
 
-TChannel::~TChannel() = default;
+TChannel::~TChannel()
+{
+   delete fMnemonic.Value();
+}
 
 TChannel::TChannel(const char* tempName)
 {
@@ -55,7 +59,7 @@ TChannel::TChannel(const char* tempName)
 
 TChannel::TChannel(const TChannel& chan) : TNamed(chan)
 {
-   /// Makes a copy of a the TChannel.
+   /// Makes a copy of the TChannel.
    Clear();
    *(fMnemonic.Value()) = *(chan.fMnemonic.Value());
    SetAddress(chan.GetAddress());
@@ -76,6 +80,7 @@ TChannel::TChannel(const TChannel& chan) : TNamed(chan)
    SetEFFCoefficients(chan.fEFFCoefficients);
    SetCTCoefficients(chan.fCTCoefficients);
    SetEnergyNonlinearity(chan.fEnergyNonlinearity);
+   SetTimeNonlinearity(chan.fTimeNonlinearity);
    SetCFDChi2(chan.fCFDChi2);
    SetLEDChi2(chan.fLEDChi2);
    SetTIMEChi2(chan.fTIMEChi2);
@@ -113,6 +118,7 @@ TChannel::TChannel(TChannel&& chan) noexcept : TNamed(chan)
    SetEFFCoefficients(chan.fEFFCoefficients);
    SetCTCoefficients(chan.fCTCoefficients);
    SetEnergyNonlinearity(chan.fEnergyNonlinearity);
+   SetTimeNonlinearity(chan.fTimeNonlinearity);
    SetCFDChi2(chan.fCFDChi2);
    SetLEDChi2(chan.fLEDChi2);
    SetTIMEChi2(chan.fTIMEChi2);
@@ -149,6 +155,7 @@ TChannel::TChannel(TChannel* chan)
    SetEFFCoefficients(chan->fEFFCoefficients);
    SetCTCoefficients(chan->fCTCoefficients);
    SetEnergyNonlinearity(chan->fEnergyNonlinearity);
+   SetTimeNonlinearity(chan->fTimeNonlinearity);
    SetCFDChi2(chan->fCFDChi2);
    SetLEDChi2(chan->fLEDChi2);
    SetTIMEChi2(chan->fTIMEChi2);
@@ -186,6 +193,7 @@ TChannel& TChannel::operator=(const TChannel& rhs)
    SetEFFCoefficients(rhs.fEFFCoefficients);
    SetCTCoefficients(rhs.fCTCoefficients);
    SetEnergyNonlinearity(rhs.fEnergyNonlinearity);
+   SetTimeNonlinearity(rhs.fTimeNonlinearity);
    SetCFDChi2(rhs.fCFDChi2);
    SetLEDChi2(rhs.fLEDChi2);
    SetTIMEChi2(rhs.fTIMEChi2);
@@ -226,6 +234,7 @@ TChannel& TChannel::operator=(TChannel&& rhs) noexcept
    SetEFFCoefficients(rhs.fEFFCoefficients);
    SetCTCoefficients(rhs.fCTCoefficients);
    SetEnergyNonlinearity(rhs.fEnergyNonlinearity);
+   SetTimeNonlinearity(rhs.fTimeNonlinearity);
    SetCFDChi2(rhs.fCFDChi2);
    SetLEDChi2(rhs.fLEDChi2);
    SetTIMEChi2(rhs.fTIMEChi2);
@@ -344,6 +353,7 @@ void TChannel::OverWriteChannel(TChannel* chan)
    SetEFFCoefficients(TPriorityValue<std::vector<double>>(chan->GetEFFCoeff(), EPriority::kForce));
    SetCTCoefficients(TPriorityValue<std::vector<double>>(chan->GetCTCoeff(), EPriority::kForce));
    SetEnergyNonlinearity(TPriorityValue<TGraph>(chan->GetEnergyNonlinearity(), EPriority::kForce));
+   SetTimeNonlinearity(TPriorityValue<TGraph>(chan->GetTimeNonlinearity(), EPriority::kForce));
 
    SetCFDChi2(TPriorityValue<double>(chan->GetCFDChi2(), EPriority::kForce));
    SetLEDChi2(TPriorityValue<double>(chan->GetLEDChi2(), EPriority::kForce));
@@ -382,6 +392,7 @@ void TChannel::AppendChannel(TChannel* chan)
    SetEFFCoefficients(chan->fEFFCoefficients);
    SetCTCoefficients(chan->fCTCoefficients);
    SetEnergyNonlinearity(chan->fEnergyNonlinearity);
+   SetTimeNonlinearity(chan->fTimeNonlinearity);
    SetCFDChi2(chan->fCFDChi2);
    SetLEDChi2(chan->fLEDChi2);
    SetTIMEChi2(chan->fTIMEChi2);
@@ -437,7 +448,12 @@ void TChannel::Clear(Option_t*)
 
    WaveFormShape = WaveFormShapePar();
 
-   fMnemonic = TPriorityValue<TMnemonic*>(static_cast<TMnemonic*>(fMnemonicClass->New()), EPriority::kForce);
+   // only create a new mnemonic if we do not have one yet (this function is called from the constructor)
+   if(fMnemonic.Value() != nullptr) {
+      fMnemonic.Value()->Clear();
+   } else {
+      fMnemonic = TPriorityValue<TMnemonic*>(static_cast<TMnemonic*>(fMnemonicClass->New()), EPriority::kForce);
+   }
    SetName("DefaultTChannel");
 
    fENGCoefficients.Reset(std::vector<std::vector<Float_t>>());
@@ -454,6 +470,7 @@ void TChannel::Clear(Option_t*)
    fEFFChi2.Reset(0.0);
    fCTCoefficients.Reset(std::vector<double>());
    fEnergyNonlinearity.Reset(TGraph());
+   fTimeNonlinearity.Reset(TGraph());
 }
 
 TChannel* TChannel::GetChannel(unsigned int temp_address, bool warn)
@@ -500,7 +517,7 @@ TChannel* TChannel::FindChannelByName(const char* ccName)
    }
 
    std::string name = ccName;
-   if(name.length() == 0) {
+   if(name.empty()) {
       return chan;
    }
 
@@ -593,6 +610,11 @@ void TChannel::DestroyCTCal()
 void TChannel::DestroyEnergyNonlinearity()
 {
    fEnergyNonlinearity.Address()->Set(0);
+}
+
+void TChannel::DestroyTimeNonlinearity()
+{
+   fTimeNonlinearity.Address()->Set(0);
 }
 
 void TChannel::DestroyCalibrations()
@@ -945,6 +967,15 @@ std::string TChannel::PrintToString(Option_t*) const
       }
       str << std::endl;
    }
+   if(fTimeNonlinearity.Value().GetN() > 0) {
+      str << "TimeNonlinearity:  ";
+      double* x = fTimeNonlinearity.Value().GetX();
+      double* y = fTimeNonlinearity.Value().GetY();
+      for(int i = 0; i < fTimeNonlinearity.Value().GetN(); ++i) {
+         str << x[i] << "\t" << y[i] << "\t";
+      }
+      str << std::endl;
+   }
    if(!fCTCoefficients.empty()) {
       str << "CTCoeff:  ";
       for(auto coeff : fCTCoefficients) {
@@ -998,7 +1029,7 @@ void TChannel::WriteCalFile(const std::string& outfilename)
 
    std::vector<TChannel*> chanVec = SortedChannels();
 
-   if(outfilename.length() > 0) {
+   if(!outfilename.empty()) {
       std::ofstream calout;
       calout.open(outfilename.c_str());
       for(auto* iter_vec : chanVec) {
@@ -1019,7 +1050,7 @@ void TChannel::WriteCTCorrections(const std::string& outfilename)
 {
    std::vector<TChannel*> chanVec = SortedChannels();
 
-   if(outfilename.length() > 0) {
+   if(!outfilename.empty()) {
       std::ofstream calout;
       calout.open(outfilename.c_str());
       for(auto* iter_vec : chanVec) {
@@ -1120,6 +1151,8 @@ Int_t TChannel::ReadCalFile(std::ifstream& infile)
    buffer[length] = '\0';
 
    int channelsFound = ParseInputData(buffer, "q", EPriority::kInputFile);
+   delete[] buffer;
+
    SaveToSelf();
 
    fChannelNumberMap->clear();   // This isn't the nicest way to do this but will keep us consistent.
@@ -1137,7 +1170,7 @@ Int_t TChannel::ReadCalFile(const char* filename)
    /// is closed. Returns the number of channels properly read in.
    std::string infilename(filename);
 
-   if(infilename.length() == 0) {
+   if(infilename.empty()) {
       return -1;
    }
 
@@ -1186,7 +1219,7 @@ Int_t TChannel::ParseInputData(const char* inputdata, Option_t* opt, EPriority p
       if(comment != std::string::npos) {
          line = line.substr(0, comment);
       }
-      if(line.length() == 0u) {
+      if(line.empty()) {
          continue;
       }
       size_t openbrace  = line.find('{');
@@ -1206,7 +1239,7 @@ Int_t TChannel::ParseInputData(const char* inputdata, Option_t* opt, EPriority p
                AddChannel(channel);   // consider using a default option here
                newchannels++;
             } else {
-               currentchan->UpdateChannel(channel);
+               TChannel::UpdateChannel(channel);
                delete channel;
                newchannels++;
             }
@@ -1364,6 +1397,15 @@ Int_t TChannel::ParseInputData(const char* inputdata, Option_t* opt, EPriority p
                   channel->AddEnergyNonlinearityPoint(x, y);
                }
                channel->SetupEnergyNonlinearity();
+            } else if(type == "TIMENONLINEARITY") {
+               channel->DestroyTimeNonlinearity();
+               channel->fTimeNonlinearity.SetPriority(prio);
+               double x = 0.;
+               double y = 0.;
+               while(!(str >> x >> y).fail()) {
+                  channel->AddTimeNonlinearityPoint(x, y);
+               }
+               channel->SetupTimeNonlinearity();
             } else if(type == "EFFCOEFF") {
                channel->DestroyEFFCal();
                channel->fEFFCoefficients.SetPriority(prio);
@@ -1573,12 +1615,27 @@ double TChannel::GetEnergyNonlinearity(double eng) const
    return fEnergyNonlinearity.Value().Eval(eng);
 }
 
+double TChannel::GetTimeNonlinearity(Long64_t mytimestamp) const
+{
+   int nPoints = fTimeNonlinearity.Value().GetN();
+   if(nPoints < 1 || static_cast<double>(mytimestamp) < fTimeNonlinearity.Value().GetX()[0] || fTimeNonlinearity.Value().GetX()[nPoints - 1] < static_cast<double>(mytimestamp)) { return 0.; }
+   return fTimeNonlinearity.Value().Eval(static_cast<double>(mytimestamp));
+}
+
 void TChannel::SetupEnergyNonlinearity()
 {
    fEnergyNonlinearity.Address()->Sort();
    fEnergyNonlinearity.Address()->SetBit(TGraph::kIsSortedX);
    fEnergyNonlinearity.Address()->SetName(Form("EnergyNonlinearity0x%04x", fAddress));
    fEnergyNonlinearity.Address()->SetTitle(Form("Energy nonlinearity of channel 0x%04x", fAddress));
+}
+
+void TChannel::SetupTimeNonlinearity()
+{
+   fTimeNonlinearity.Address()->Sort();
+   fTimeNonlinearity.Address()->SetBit(TGraph::kIsSortedX);
+   fTimeNonlinearity.Address()->SetName(Form("TimeNonlinearity0x%04x", fAddress));
+   fTimeNonlinearity.Address()->SetTitle(Form("Time nonlinearity of channel 0x%04x", fAddress));
 }
 
 void TChannel::ReadEnergyNonlinearities(TFile* file, const char* graphName, bool all)
@@ -1604,6 +1661,34 @@ void TChannel::ReadEnergyNonlinearities(TFile* file, const char* graphName, bool
          newChannel->SetAddress(address);
          newChannel->fEnergyNonlinearity.Set(*(static_cast<TGraph*>(key->ReadObj())), EPriority::kRootFile);
          newChannel->SetupEnergyNonlinearity();
+         AddChannel(newChannel);
+      }
+   }
+}
+
+void TChannel::ReadTimeNonlinearities(TFile* file, const char* graphName, bool all)
+{
+   /// Read Time nonlinearities as TGraphErrors from provided root file using "graphName%x" as names
+   TList* list = file->GetListOfKeys();
+   TIter  iter(list);
+   while(TKey* key = static_cast<TKey*>(iter.Next())) {
+      TClass* cls = TClass::GetClass(key->GetClassName());
+      if(!cls->InheritsFrom(TGraph::Class()) || strncmp(key->GetName(), graphName, strlen(graphName)) != 0) {
+         continue;
+      }
+      // get address from keys name
+      std::stringstream str;
+      str << std::hex << key->GetName() + strlen(graphName);
+      unsigned int address = 0;
+      str >> address;
+      if(GetChannel(address) != nullptr) {
+         GetChannel(address)->fTimeNonlinearity.Set(*(static_cast<TGraph*>(key->ReadObj())), EPriority::kRootFile);
+         GetChannel(address)->SetupTimeNonlinearity();
+      } else if(all) {
+         auto* newChannel = new TChannel("");
+         newChannel->SetAddress(address);
+         newChannel->fTimeNonlinearity.Set(*(static_cast<TGraph*>(key->ReadObj())), EPriority::kRootFile);
+         newChannel->SetupTimeNonlinearity();
          AddChannel(newChannel);
       }
    }

@@ -3,17 +3,12 @@
 #include <chrono>
 #include <thread>
 
-#include "TClass.h"
-#include "TFile.h"
-#include "TThread.h"
-
-#include "TDetector.h"
 #include "TGRSIint.h"
 #include "TFragment.h"
 
 TFragmentChainLoop* TFragmentChainLoop::Get(std::string name, TChain* chain)
 {
-   if(name.length() == 0) {
+   if(name.empty()) {
       name = "chain_loop";
    }
 

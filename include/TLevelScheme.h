@@ -3,12 +3,11 @@
 
 #if __cplusplus >= 201703L
 
-#include <iostream>
 #include <vector>
 #include <map>
 #include <utility>
+#include <cstdint>
 
-#include "TColor.h"
 #include "TPolyLine.h"
 #include "TArrow.h"
 #include "TPaveLabel.h"
@@ -136,7 +135,7 @@ private:
    static float fTextSize;
 
    /// \cond CLASSIMP
-   ClassDefOverride(TGamma, 1)   // NOLINT(readability-else-after-return)
+   ClassDefOverride(TGamma, 2)   // NOLINT(readability-else-after-return)
    /// \endcond
 };
 
@@ -278,9 +277,9 @@ private:
 
 class TLevelScheme : public TPaveLabel {
 public:
-   enum class EGammaWidth { kNoWidth,
-                            kBand,
-                            kGlobal };
+   enum class EGammaWidth : char { kNoWidth,
+                                   kBand,
+                                   kGlobal };
 
    explicit TLevelScheme(const std::string& filename = "", bool debug = false);
    explicit TLevelScheme(const char* filename, bool debug = false) : TLevelScheme(std::string(filename), debug) {}
@@ -292,6 +291,16 @@ public:
 
    static void          ListLevelSchemes();
    static TLevelScheme* GetLevelScheme(const char* name);
+
+   // static settings
+   static void DrawLevelEnergy(bool val) { fDrawLevelEnergy = val; }
+   static void DrawLevelLabel(bool val) { fDrawLevelLabel = val; }
+   static void DrawName(bool val) { fDrawName = val; }
+   static void DrawBandLabel(bool val) { fDrawBandLabel = val; }
+   static bool DrawLevelEnergy() { return fDrawLevelEnergy; }
+   static bool DrawLevelLabel() { return fDrawLevelLabel; }
+   static bool DrawName() { return fDrawName; }
+   static bool DrawBandLabel() { return fDrawBandLabel; }
 
    TLevel* AddLevel(double energy, const std::string& bandName, const std::string& label);
    TLevel* AddLevel(const double energy, const char* bandName, const char* label) { return AddLevel(energy, std::string(bandName), std::string(label)); }   // *MENU*
@@ -390,6 +399,12 @@ private:
    double      fTopMargin{-1.};
    double      fMinWidth{1.};
    double      fMaxWidth{10.};
+
+   // static settings
+   static bool fDrawLevelEnergy;
+   static bool fDrawLevelLabel;
+   static bool fDrawName;
+   static bool fDrawBandLabel;
 
    // original canvas range
    double fX1{0.};
