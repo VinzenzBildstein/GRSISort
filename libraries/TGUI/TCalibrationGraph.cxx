@@ -54,6 +54,7 @@ TCalibrationGraphSet::~TCalibrationGraphSet()
 {
    delete fTotalGraph;
    delete fTotalResidualGraph;
+   delete fZeroResidual;
 }
 
 int TCalibrationGraphSet::Add(TGraphErrors* graph, const std::string& label)
@@ -233,6 +234,17 @@ void TCalibrationGraphSet::DrawCalibration(Option_t* opt, TLegend* legend)
    }
 }
 
+void TCalibrationGraphSet::RefreshResidualLine()
+{
+   if(fZeroResidual == nullptr) { return; }
+
+   auto*  hist = fTotalResidualGraph->GetHistogram();
+   double minY = hist->GetYaxis()->GetXmin();
+   double maxY = hist->GetYaxis()->GetXmax();
+   fZeroResidual->SetY1(minY);
+   fZeroResidual->SetY2(maxY);
+}
+
 void TCalibrationGraphSet::DrawResidual(Option_t* opt, TLegend* legend)
 {
    TString options = opt;
@@ -243,6 +255,23 @@ void TCalibrationGraphSet::DrawResidual(Option_t* opt, TLegend* legend)
    auto* hist = fTotalResidualGraph->GetHistogram();
    if(hist != nullptr) {
       hist->GetXaxis()->SetLabelSize(0.06);
+      // check if a reference line at zero has been requested
+      if(options.Contains("r0")) {
+         // find the y-range to plot the line on
+         double minY = hist->GetYaxis()->GetXmin();
+         double maxY = hist->GetYaxis()->GetXmax();
+         if(fVerboseLevel > EVerbosity::kBasicFlow) {
+            std::cout << __PRETTY_FUNCTION__ << " drawing line at zero from " << minY << " to " << maxY << " as requested (\"" << options.Data() << "\") " << std::endl;   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+         }
+         if(fZeroResidual == nullptr) {
+            fZeroResidual = new TLine(0., minY, 0., maxY);
+         } else {
+            fZeroResidual->SetY1(minY);
+            fZeroResidual->SetY2(maxY);
+         }
+         fZeroResidual->Draw("same");
+         options.ReplaceAll("r0", "");
+      }
    } else {
       std::cout << "Failed to get histogram for graph:" << std::endl;
       fTotalResidualGraph->Print();
