@@ -360,7 +360,7 @@ $(function(){initNavTree('_t_calibration_graph_8cxx_source.html',''); initResiza
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>{</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>   <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_t_calibration_graph_set.html#a562d713fd4022a399e4b5aa93b2cd362">fZeroResidual</a> == <span class="keyword">nullptr</span>) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>   <span class="keyword">auto</span>* <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a> = <a class="code hl_variable" href="class_t_calibration_graph_set.html#aa44991836226d716309103f149d69467">fTotalResidualGraph</a>-&gt;GetHistogram();</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>   <span class="keyword">auto</span>*  <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a> = <a class="code hl_variable" href="class_t_calibration_graph_set.html#aa44991836226d716309103f149d69467">fTotalResidualGraph</a>-&gt;GetHistogram();</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>   <span class="keywordtype">double</span> minY = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetYaxis()-&gt;GetXmin();</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>   <span class="keywordtype">double</span> maxY = <a class="code hl_variable" href="_user_fill_obj_8h.html#ac15e5a1de3bd77dc1ff2768e42dc9e8b">hist</a>-&gt;GetYaxis()-&gt;GetXmax();</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>   <a class="code hl_variable" href="class_t_calibration_graph_set.html#a562d713fd4022a399e4b5aa93b2cd362">fZeroResidual</a>-&gt;SetY1(minY);</div>
@@ -394,7 +394,7 @@ $(function(){initNavTree('_t_calibration_graph_8cxx_source.html',''); initResiza
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            <a class="code hl_variable" href="class_t_calibration_graph_set.html#a562d713fd4022a399e4b5aa93b2cd362">fZeroResidual</a>-&gt;SetY2(maxY);</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>         }</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>         <a class="code hl_variable" href="class_t_calibration_graph_set.html#a562d713fd4022a399e4b5aa93b2cd362">fZeroResidual</a>-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>         options.ReplaceAll(<span class="stringliteral">&quot;r0&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>         options.ReplaceAll(<span class="stringliteral">&quot;r0&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      }</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>   } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Failed to get histogram for graph:&quot;</span> &lt;&lt; std::endl;</div>
@@ -831,7 +831,7 @@ $(function(){initNavTree('_t_calibration_graph_8cxx_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_bc0718b08fb2015b8e59c47b2805f60c.html">libraries</a></li><li class="navelem"><a class="el" href="dir_af8759249976916949d3211b2e3ed5df.html">TGUI</a></li><li class="navelem"><a class="el" href="_t_calibration_graph_8cxx.html">TCalibrationGraph.cxx</a></li>
-    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Fri Jan 30 2026 22:03:34.</li>
+    <li class="footer">GRSISort ("v4.0.0.5") Reference Guide Generated on Sat Jan 31 2026 17:59:30.</li>
   </ul>
 </div>
 </body>
