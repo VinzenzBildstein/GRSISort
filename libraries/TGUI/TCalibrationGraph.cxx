@@ -238,7 +238,7 @@ void TCalibrationGraphSet::RefreshResidualLine()
 {
    if(fZeroResidual == nullptr) { return; }
 
-   auto* hist = fTotalResidualGraph->GetHistogram();
+   auto*  hist = fTotalResidualGraph->GetHistogram();
    double minY = hist->GetYaxis()->GetXmin();
    double maxY = hist->GetYaxis()->GetXmax();
    fZeroResidual->SetY1(minY);
@@ -270,7 +270,7 @@ void TCalibrationGraphSet::DrawResidual(Option_t* opt, TLegend* legend)
             fZeroResidual->SetY2(maxY);
          }
          fZeroResidual->Draw("same");
-         options.ReplaceAll("r0","");
+         options.ReplaceAll("r0", "");
       }
    } else {
       std::cout << "Failed to get histogram for graph:" << std::endl;
