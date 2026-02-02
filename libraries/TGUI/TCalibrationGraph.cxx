@@ -243,6 +243,9 @@ void TCalibrationGraphSet::RefreshResidualLine()
    double maxY = hist->GetYaxis()->GetXmax();
    fZeroResidual->SetY1(minY);
    fZeroResidual->SetY2(maxY);
+   if(fVerboseLevel > EVerbosity::kBasicFlow) {
+      std::cout << __PRETTY_FUNCTION__ << " changing line at zero to go from " << minY << " to " << maxY << std::endl;   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   }
 }
 
 void TCalibrationGraphSet::DrawResidual(Option_t* opt, TLegend* legend)
