@@ -2099,9 +2099,6 @@ void TChannelTab::ZoomY()
    for(const auto&& obj : *(pad2->GetListOfPrimitives())) {
       if(obj->InheritsFrom(TGraph::Class())) {
          hist2 = static_cast<TGraph*>(obj)->GetHistogram();
-         if(obj->IsA() == TCalibrationGraphSet::Class()) {
-            static_cast<TCalibrationGraphSet*>(obj)->RefreshResidualLine();
-         }
          break;
       }
    }
@@ -2113,6 +2110,27 @@ void TChannelTab::ZoomY()
 
    hist2->SetMinimum(hist1->GetMinimum());
    hist2->SetMaximum(hist1->GetMaximum());
+
+   // update residual line
+   TLine* resLine = nullptr;
+   for(const auto&& obj : *(gPad->GetListOfPrimitives())) {
+      if(obj->IsA() == TLine::Class()) {
+         if(resLine != nullptr) { std::cout << "ZoomY found residual line, old was " << resLine << std::endl; }
+         resLine = static_cast<TLine*>(obj);
+      }
+   }
+   for(const auto&& obj : *(pad2->GetListOfPrimitives())) {
+      if(obj->IsA() == TLine::Class()) {
+         if(resLine != nullptr) { std::cout << "ZoomY found residual line, old was " << resLine << std::endl; }
+         resLine = static_cast<TLine*>(obj);
+      }
+   }
+
+   // update the y-limits of the line at zero residual
+   if(resLine != nullptr) {
+      resLine->SetY1(hist1->GetMinimum());
+      resLine->SetY2(hist1->GetMaximum());
+   }
 
    pad2->Modified();
    pad2->Update();
@@ -2436,7 +2454,6 @@ void TSourceCalibration::HandleTimer()
    } else if(fEmitter == fAcceptAllButton) {
       for(auto& channelTab : fChannelTab) {
          if(channelTab == nullptr) { continue; }
-         channelTab->UpdateChannel();
          channelTab->Write(fOutput);
       }
       WriteCalibration();
@@ -2960,6 +2977,10 @@ void TSourceCalibration::RecursiveRemove()
 void TSourceCalibration::WriteCalibration()
 {
    if(fVerboseLevel > EVerbosity::kBasicFlow) { std::cout << DGREEN << __PRETTY_FUNCTION__ << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   for(auto& channelTab : fChannelTab) {
+      if(channelTab == nullptr) { continue; }
+      channelTab->UpdateChannel();
+   }
    std::ostringstream fileName;
    for(auto* source : fSource) {
       fileName << source->GetName();
