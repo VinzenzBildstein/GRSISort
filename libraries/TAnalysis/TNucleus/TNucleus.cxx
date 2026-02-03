@@ -13,7 +13,7 @@
 
 static double amu = 931.494043;
 
-bool TNucleus::fSourceDirectoryChecked = false;
+bool        TNucleus::fSourceDirectoryChecked = false;
 std::string TNucleus::fSourceDirectory;
 
 std::string& TNucleus::SourceDirectory()
@@ -353,7 +353,7 @@ bool TNucleus::LoadTransitionFile()
       return false;
    }
    std::string filename = SourceDirectory();
-   std::string symbol = GetSymbol();
+   std::string symbol   = GetSymbol();
    std::transform(symbol.begin(), symbol.end(), symbol.begin(), ::tolower);
    filename.append(symbol);
    filename.append(std::to_string(GetA()));
