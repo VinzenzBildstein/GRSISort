@@ -282,8 +282,8 @@ public:
    static void MaxIterations(int val) { fMaxIterations = val; }
    static int  MaxIterations() { return fMaxIterations; }
 
-   static void   FitRange(int val) { fFitRange = val; }
-   double        FitRange()
+   static void FitRange(int val) { fFitRange = val; }
+   double      FitRange()
    {
       fFitRange = fFitRangeEntry->GetIntNumber();
       return fFitRange;
