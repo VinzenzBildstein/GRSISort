@@ -237,7 +237,7 @@ public:
    void WriteCalibration();
 
    double Sigma() { return fSigmaEntry->GetNumber(); }
-   double Threshold() { return fThresholdEntry->GetNumber(); }
+   double Threshold() const { return fThreshold; }
    int    Degree()
    {
       if(fDegreeEntry != nullptr) { fDefaultDegree = static_cast<int>(fDegreeEntry->GetNumber()); }
@@ -283,7 +283,11 @@ public:
    static int  MaxIterations() { return fMaxIterations; }
 
    static void   FitRange(int val) { fFitRange = val; }
-   static double FitRange() { return fFitRange; }
+   double        FitRange()
+   {
+      fFitRange = fFitRangeEntry->GetIntNumber();
+      return fFitRange;
+   }
 
    static void AcceptBadFits(bool val) { fAcceptBadFits = val; }
    static bool AcceptBadFits() { return fAcceptBadFits; }
@@ -312,7 +316,7 @@ private:
       kStartButton         = 0,
       kSourceBox           = 10,
       kSigmaEntry          = 20,
-      kThresholdEntry      = 30,
+      kFitRangeEntry       = 30,
       kDegreeEntry         = 40,
       kMaxResidualEntry    = 50,
       kApplyToAll          = 60,
@@ -376,8 +380,8 @@ private:
    TGGroupFrame*   fParameterFrame{nullptr};
    TGLabel*        fSigmaLabel{nullptr};
    TGNumberEntry*  fSigmaEntry{nullptr};
-   TGLabel*        fThresholdLabel{nullptr};
-   TGNumberEntry*  fThresholdEntry{nullptr};
+   TGLabel*        fFitRangeLabel{nullptr};
+   TGNumberEntry*  fFitRangeEntry{nullptr};
    TGLabel*        fDegreeLabel{nullptr};
    TGNumberEntry*  fDegreeEntry{nullptr};
    TGLabel*        fMaxResidualLabel{nullptr};
@@ -416,7 +420,7 @@ private:
    int fOldErrorLevel;   ///< Used to store old value of gErrorIgnoreLevel (set to kError for the scope of the class)
 
    double                  fDefaultSigma{2.};         ///< The default sigma used for the peak finding algorithm, can be changed later.
-   double                  fDefaultThreshold{0.05};   ///< The default threshold used for the peak finding algorithm, can be changed later. Co-56 source needs a much lower threshold, 0.01 or 0.02, but that makes it much slower too.
+   double                  fThreshold{0.05};          ///< The default threshold used for the peak finding algorithm.
    int                     fDefaultDegree{1};         ///< The default degree of the polynomial used for calibrating, can be changed later.
    double                  fDefaultMaxResidual{2.};   ///< The default maximum residual accepted when trying to iteratively find peaks
    static int              fMaxIterations;            ///< Maximum iterations over combinations in Match and SmartMatch
