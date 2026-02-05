@@ -273,16 +273,17 @@ void TCalibrationGraphSet::DrawResidual(Option_t* opt, TLegend* legend)
             fZeroResidual->SetY2(maxY);
          }
          fZeroResidual->Draw("same");
-         options.ReplaceAll("r0", "");
       }
    } else {
       std::cout << "Failed to get histogram for graph:" << std::endl;
       fTotalResidualGraph->Print();
    }
 
+   options = opt;
+   options.ReplaceAll("r0", "");
    for(size_t i = 0; i < fResidualGraphs.size(); ++i) {
       if(fVerboseLevel > EVerbosity::kBasicFlow) { std::cout << __PRETTY_FUNCTION__ << " drawing " << i << ". residual graph with option \"" << opt << "\", marker color " << fResidualGraphs[i].GetMarkerColor() << " on gPad " << gPad->GetName() << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
-      fResidualGraphs[i].Draw(opt);
+      fResidualGraphs[i].Draw(options.Data());
       if(legend != nullptr) {
          legend->AddEntry(&(fResidualGraphs[i]), fLabel[i].c_str());
       }
