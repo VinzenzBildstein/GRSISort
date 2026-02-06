@@ -518,9 +518,10 @@ void TSourceTab::BuildInterface()
                                                                                                                                                 //std::unique_lock<std::mutex> graphicsLock(fSourceCalibration->GraphicsMutex());
                                                                                                                                                 //if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Got unique lock on graphics mutex!" << std::endl; }
    // frame with canvas and status bar
+
    fProjectionCanvas = new TRootEmbeddedCanvas(Form("ProjectionCanvas%s", fProjection->GetName()), fSourceFrame, TSourceCalibration::PanelWidth(), TSourceCalibration::PanelHeight());
 
-   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Created projection canvas!" << std::endl; }
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Created projection canvas " << fProjectionCanvas->GetName() << "!" << std::endl; }
 
    fSourceFrame->AddFrame(fProjectionCanvas, new TGLayoutHints(kLHintsTop | kLHintsExpandX | kLHintsExpandY, 2, 2, 2, 2));
 
@@ -613,7 +614,7 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
             return;
          }
          polym->SetNextPoint(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px), fProjectionCanvas->GetCanvas()->AbsPixeltoX(py));
-         double range = 4 * fSourceCalibration->Sigma();   // * fProjection->GetXaxis()->GetBinWidth(1);
+         double range = fSourceCalibration->FitRange();   // * fProjection->GetXaxis()->GetBinWidth(1);
          auto*  pf    = new TPeakFitter(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px) - range, fProjectionCanvas->GetCanvas()->AbsPixeltoX(px) + range);
          auto*  peak  = new TGauss(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px));
          pf->AddPeak(peak);
@@ -887,8 +888,8 @@ void TSourceTab::FindCalibratedPeaks(const TF1* calibration)
    }
    // loop over channel positions and fit the peaks
    for(size_t i = 0; i < channelPos.size(); ++i) {
-      double lowRange  = TSourceCalibration::FitRange() * fSourceCalibration->Sigma();
-      double highRange = TSourceCalibration::FitRange() * fSourceCalibration->Sigma();
+      double lowRange  = fSourceCalibration->FitRange();
+      double highRange = fSourceCalibration->FitRange();
       // if the range for this peaks overlaps with the previous/next one, reduce the range but not more than half
       // also check if the previous/next one is above the minimum intensity, because otherwise we would have skipped that one anyway
       if(i > 0) {
@@ -1159,7 +1160,7 @@ void TSourceTab::ReplacePeak(const size_t& index, const double& channel)
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Replacing old peak at index " << index << ", centroid " << fPeaks.at(index)->Centroid() << " with new peak at channel " << channel << std::endl; }
 
    // calculate the fitting range (low to high) and adjust it so we ignore the old peak
-   double range = TSourceCalibration::FitRange() * fSourceCalibration->Sigma();
+   double range = fSourceCalibration->FitRange();
    double low   = channel - range;
    double high  = channel + range;
    if(fPeaks.at(index)->Centroid() < channel) {
@@ -1474,6 +1475,9 @@ void TChannelTab::CreateSourceTab(size_t source)
          //std::unique_lock<std::mutex> graphicsLock(fSourceCalibration->GraphicsMutex());
          tmpTab = fSourceTab->AddTab(Form("%s_%s", fNuclei[source]->GetName(), fName.c_str()));
          //if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Releasing unique lock on graphics mutex after adding tab" << std::endl; }
+      }
+      if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
+         std::cout << DYELLOW << "Creating source tab " << source << " = " << fProjections[source]->GetName() << ", tab name " << tmpTab->GetName() << std::endl;
       }
       fSources[source] = new TSourceTab(fSourceCalibration, this, tmpTab, fProjections[source], fNuclei[source]->GetName(), fSourceEnergies[source]);
       {
@@ -2099,9 +2103,6 @@ void TChannelTab::ZoomY()
    for(const auto&& obj : *(pad2->GetListOfPrimitives())) {
       if(obj->InheritsFrom(TGraph::Class())) {
          hist2 = static_cast<TGraph*>(obj)->GetHistogram();
-         if(obj->IsA() == TCalibrationGraphSet::Class()) {
-            static_cast<TCalibrationGraphSet*>(obj)->RefreshResidualLine();
-         }
          break;
       }
    }
@@ -2113,6 +2114,27 @@ void TChannelTab::ZoomY()
 
    hist2->SetMinimum(hist1->GetMinimum());
    hist2->SetMaximum(hist1->GetMaximum());
+
+   // update residual line
+   TLine* resLine = nullptr;
+   for(const auto&& obj : *(gPad->GetListOfPrimitives())) {
+      if(obj->IsA() == TLine::Class()) {
+         if(resLine != nullptr) { std::cout << "ZoomY found residual line, old was " << resLine << std::endl; }
+         resLine = static_cast<TLine*>(obj);
+      }
+   }
+   for(const auto&& obj : *(pad2->GetListOfPrimitives())) {
+      if(obj->IsA() == TLine::Class()) {
+         if(resLine != nullptr) { std::cout << "ZoomY found residual line, old was " << resLine << std::endl; }
+         resLine = static_cast<TLine*>(obj);
+      }
+   }
+
+   // update the y-limits of the line at zero residual
+   if(resLine != nullptr) {
+      resLine->SetY1(hist1->GetMinimum());
+      resLine->SetY2(hist1->GetMaximum());
+   }
 
    pad2->Modified();
    pad2->Update();
@@ -2158,7 +2180,7 @@ int              TSourceCalibration::fSourceboxWidth     = 100;
 int              TSourceCalibration::fParameterHeight    = 200;
 int              TSourceCalibration::fDigitWidth         = 5;
 int              TSourceCalibration::fMaxIterations      = 50;
-int              TSourceCalibration::fFitRange           = 10;
+int              TSourceCalibration::fFitRange           = 20;
 bool             TSourceCalibration::fAcceptBadFits      = false;
 bool             TSourceCalibration::fFast               = false;
 bool             TSourceCalibration::fUseCalibratedPeaks = false;
@@ -2167,7 +2189,7 @@ size_t           TSourceCalibration::fNumberOfThreads    = 4;
 std::vector<int> TSourceCalibration::fBadBins;
 
 TSourceCalibration::TSourceCalibration(double sigma, double threshold, int degree, int count...)
-   : TGMainFrame(nullptr, 2 * fPanelWidth, fPanelHeight + 2 * fStatusbarHeight), fDefaultSigma(sigma), fDefaultThreshold(threshold), fDefaultDegree(degree)
+   : TGMainFrame(nullptr, 2 * fPanelWidth, fPanelHeight + 2 * fStatusbarHeight), fDefaultSigma(sigma), fThreshold(threshold), fDefaultDegree(degree)
 {
    TH1::AddDirectory(false);   // turns off warnings about multiple histograms with the same name because ROOT doesn't manage them anymore
 
@@ -2436,7 +2458,6 @@ void TSourceCalibration::HandleTimer()
    } else if(fEmitter == fAcceptAllButton) {
       for(auto& channelTab : fChannelTab) {
          if(channelTab == nullptr) { continue; }
-         channelTab->UpdateChannel();
          channelTab->Write(fOutput);
       }
       WriteCalibration();
@@ -2538,8 +2559,8 @@ void TSourceCalibration::BuildSecondInterface()
       fChannelTab[bin - 1] = new TChannelTab(this, fSource, projections, fMatrices[0]->GetXaxis()->GetBinLabel(bin), frame, fSourceEnergy, fProgressBar);
       //// right now the lambda uses copies of all variables, not sure if that is neccesary, or if we only need that for projections?
       //fFutures.emplace(std::make_pair(bin - 1, std::async(std::launch::async, [=] {
-      //				std::cout << "creating channel tab with these arguments: " << this << ", fSource vector of size " << fSource.size() << ", projection vector of size " << projections.size() << ", " << fMatrices[0]->GetXaxis()->GetBinLabel(bin) << ", " << frame << ", " << fDefaultSigma << ", " << fDefaultThreshold << ", " << fDefaultDegree << ", " << fSourceEnergy.size() << " source energy vectors, " << fProgressBar << "."<< std::endl;
-      //				auto* newTab = new TChannelTab(this, fSource, projections, fMatrices[0]->GetXaxis()->GetBinLabel(bin), frame, fDefaultSigma, fDefaultThreshold, fDefaultDegree, fSourceEnergy, fProgressBar);
+      //				std::cout << "creating channel tab with these arguments: " << this << ", fSource vector of size " << fSource.size() << ", projection vector of size " << projections.size() << ", " << fMatrices[0]->GetXaxis()->GetBinLabel(bin) << ", " << frame << ", " << fDefaultSigma << ", " << fThreshold << ", " << fDefaultDegree << ", " << fSourceEnergy.size() << " source energy vectors, " << fProgressBar << "."<< std::endl;
+      //				auto* newTab = new TChannelTab(this, fSource, projections, fMatrices[0]->GetXaxis()->GetBinLabel(bin), frame, fDefaultSigma, fThreshold, fDefaultDegree, fSourceEnergy, fProgressBar);
       //				std::cout << "created new tab " << newTab << std::endl;
       //				return newTab;
       //				})));
@@ -2604,10 +2625,10 @@ void TSourceCalibration::BuildSecondInterface()
    fRightFrame     = new TGVerticalFrame(fBottomFrame, fPanelWidth, fParameterHeight);
    fParameterFrame = new TGGroupFrame(fRightFrame, "Parameters", kHorizontalFrame);
    fParameterFrame->SetLayoutManager(new TGMatrixLayout(fParameterFrame, 0, 4, 2));
-   fSigmaLabel       = new TGLabel(fParameterFrame, "Sigma");
+   fSigmaLabel       = new TGLabel(fParameterFrame, "Sigma (in channels)");
    fSigmaEntry       = new TGNumberEntry(fParameterFrame, fDefaultSigma, fDigitWidth, kSigmaEntry, TGNumberFormat::EStyle::kNESRealTwo, TGNumberFormat::EAttribute::kNEAPositive);
-   fThresholdLabel   = new TGLabel(fParameterFrame, "Threshold");
-   fThresholdEntry   = new TGNumberEntry(fParameterFrame, fDefaultThreshold, fDigitWidth, kThresholdEntry, TGNumberFormat::EStyle::kNESRealThree, TGNumberFormat::EAttribute::kNEAPositive, TGNumberFormat::ELimit::kNELLimitMinMax, 0., 1.);
+   fFitRangeLabel    = new TGLabel(fParameterFrame, "Fit range (in channels)");
+   fFitRangeEntry    = new TGNumberEntry(fParameterFrame, fFitRange, fDigitWidth, kFitRangeEntry, TGNumberFormat::EStyle::kNESInteger, TGNumberFormat::EAttribute::kNEAPositive);
    fDegreeLabel      = new TGLabel(fParameterFrame, "Degree of polynomial");
    fDegreeEntry      = new TGNumberEntry(fParameterFrame, fDefaultDegree, 2, kDegreeEntry, TGNumberFormat::EStyle::kNESInteger, TGNumberFormat::EAttribute::kNEAPositive);
    fMaxResidualLabel = new TGLabel(fParameterFrame, "Max. residual (in keV)");
@@ -2615,8 +2636,8 @@ void TSourceCalibration::BuildSecondInterface()
 
    fParameterFrame->AddFrame(fSigmaLabel);
    fParameterFrame->AddFrame(fSigmaEntry);
-   fParameterFrame->AddFrame(fThresholdLabel);
-   fParameterFrame->AddFrame(fThresholdEntry);
+   fParameterFrame->AddFrame(fFitRangeLabel);
+   fParameterFrame->AddFrame(fFitRangeEntry);
    fParameterFrame->AddFrame(fDegreeLabel);
    fParameterFrame->AddFrame(fDegreeEntry);
    fParameterFrame->AddFrame(fMaxResidualLabel);
@@ -2960,6 +2981,10 @@ void TSourceCalibration::RecursiveRemove()
 void TSourceCalibration::WriteCalibration()
 {
    if(fVerboseLevel > EVerbosity::kBasicFlow) { std::cout << DGREEN << __PRETTY_FUNCTION__ << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   for(auto& channelTab : fChannelTab) {
+      if(channelTab == nullptr) { continue; }
+      channelTab->UpdateChannel();
+   }
    std::ostringstream fileName;
    for(auto* source : fSource) {
       fileName << source->GetName();
