@@ -89,7 +89,7 @@ jobs:
         cmake --build root_v${{matrix.config.root}}-build -- install -j4
         elif [ "$RUNNER_OS" == "macOS" ]; then
         brew install libxpm
-        brew install root
+        brew install root@${{matrix.config.root}}
         fi
       shell: bash
 
