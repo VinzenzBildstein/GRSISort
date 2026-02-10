@@ -2654,8 +2654,8 @@ void TSourceCalibration::BuildSecondInterface()
    fParameterFrame->SetLayoutManager(new TGMatrixLayout(fParameterFrame, 0, 4, 2));
    fSigmaLabel       = new TGLabel(fParameterFrame, "Sigma (in channels)");
    fSigmaEntry       = new TGNumberEntry(fParameterFrame, fDefaultSigma, fDigitWidth, kSigmaEntry, TGNumberFormat::EStyle::kNESRealTwo, TGNumberFormat::EAttribute::kNEAPositive);
-   fFitRangeLabel   = new TGLabel(fParameterFrame, "Fit range (in channels)");
-   fFitRangeEntry   = new TGNumberEntry(fParameterFrame, fFitRange, fDigitWidth, kFitRangeEntry, TGNumberFormat::EStyle::kNESInteger, TGNumberFormat::EAttribute::kNEAPositive);
+   fFitRangeLabel    = new TGLabel(fParameterFrame, "Fit range (in channels)");
+   fFitRangeEntry    = new TGNumberEntry(fParameterFrame, fFitRange, fDigitWidth, kFitRangeEntry, TGNumberFormat::EStyle::kNESInteger, TGNumberFormat::EAttribute::kNEAPositive);
    fDegreeLabel      = new TGLabel(fParameterFrame, "Degree of polynomial");
    fDegreeEntry      = new TGNumberEntry(fParameterFrame, fDefaultDegree, 2, kDegreeEntry, TGNumberFormat::EStyle::kNESInteger, TGNumberFormat::EAttribute::kNEAPositive);
    fMaxResidualLabel = new TGLabel(fParameterFrame, "Max. residual (in keV)");

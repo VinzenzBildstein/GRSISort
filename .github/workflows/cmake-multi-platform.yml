@@ -58,6 +58,11 @@ jobs:
         key: ${{runner.os}}-root_v${{matrix.config.root}}-${{hashFiles('**/root')}}
         restore-keys: ${{runner.os}}-root_v${{matrix.config.root}}-
 
+    - name: Linux - Update packages
+      if: ${{runner.os == 'Linux'}}
+      run: |
+        sudo apt update
+        
     - name: Linux - Install packages
       if: ${{runner.os == 'Linux'}}
       run: |
