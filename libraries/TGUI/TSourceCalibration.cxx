@@ -464,10 +464,12 @@ TSourceTab::TSourceTab(TSourceCalibration* sourceCal, TChannelTab* channel, TGCo
    : fSourceCalibration(sourceCal), fChannelTab(channel), fSourceFrame(frame), fProjection(projection), fSourceName(sourceName), fSourceEnergy(std::move(sourceEnergy))
 {
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << __PRETTY_FUNCTION__ << RESET_COLOR << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": const. 1 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    // default sorting of tuples is by the first entry, which is the source energy here, so no need for a custom sort condition
    std::sort(fSourceEnergy.begin(), fSourceEnergy.end());
    BuildInterface();
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << "interface built, finding peaks ... " << RESET_COLOR << std::endl; }
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": const. 2 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
 }
 
 TSourceTab::TSourceTab(const TSourceTab& rhs)
@@ -478,7 +480,9 @@ TSourceTab::TSourceTab(const TSourceTab& rhs)
    fProjectionCanvas = rhs.fProjectionCanvas;
    fSourceStatusBar  = rhs.fSourceStatusBar;
 
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": copy const. 1 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    fProjection = rhs.fProjection;
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": copy const. 2 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    fData       = rhs.fData;
    fFwhm       = rhs.fFwhm;
    // ? not sure what to do here, clearing the vectors seems unnecessary since we never filled them
@@ -535,6 +539,7 @@ void TSourceTab::BuildInterface()
 
    fSourceFrame->AddFrame(fSourceStatusBar, new TGLayoutHints(kLHintsBottom | kLHintsExpandX, 2, 2, 2, 2));
 
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": buildinterface fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Releasing unique lock on graphics mutex after building interface" << std::endl; }
 }
 
@@ -594,6 +599,7 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
    //   kMouseMotion   = 51, kMouseEnter    = 52, kMouseLeave    = 53,
    //   kButton1Double = 61, kButton2Double = 62, kButton3Double = 63
    //};
+   if(selected == nullptr) { return; }
    Status(selected->GetName(), 0);
    Status(selected->GetObjectInfo(px, py), 1);
    //auto key = static_cast<char>(px);
@@ -608,12 +614,12 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
             }
             std::cout << std::endl;
          }
-         auto* polym = static_cast<TPolyMarker*>(fProjection->GetListOfFunctions()->FindObject("TPolyMarker"));
-         if(polym == nullptr) {
-            std::cerr << "No peaks defined yet?" << std::endl;
-            return;
-         }
-         polym->SetNextPoint(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px), fProjectionCanvas->GetCanvas()->AbsPixeltoX(py));
+         //auto* polym = static_cast<TPolyMarker*>(fProjection->GetListOfFunctions()->FindObject("TPolyMarker"));
+         //if(polym == nullptr) {
+         //   std::cerr << "No peaks defined yet?" << std::endl;
+         //   return;
+         //}
+         //polym->SetNextPoint(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px), fProjectionCanvas->GetCanvas()->AbsPixeltoX(py));
          double range = fSourceCalibration->FitRange();   // * fProjection->GetXaxis()->GetBinWidth(1);
          auto*  pf    = new TPeakFitter(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px) - range, fProjectionCanvas->GetCanvas()->AbsPixeltoX(px) + range);
          auto*  peak  = new TGauss(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px));
@@ -632,6 +638,11 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
          std::sort(fPeaks.begin(), fPeaks.end(), [](const TGauss* a, const TGauss* b) { return a->Centroid() < b->Centroid(); });
 
          auto map = Match(fPeaks, fSourceEnergy, this);
+
+         SetLineColors();
+
+         UpdateFits();
+
          Add(map);
 
          // update status
@@ -641,6 +652,11 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
          fChannelTab->UpdateData();
          fChannelTab->UpdateFwhm();
          fChannelTab->Calibrate();
+      } else if (selected->IsA() == GH1D::Class() && fProjection != nullptr) {
+         std::cout << "selected object " << selected << " is a histogram called " << selected->GetName() << " and not the projection " << fProjection << " called " << fProjection->GetName() << ", going to redraw the projection" << std::endl;
+         Draw();
+      } else if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
+         std::cout << DCYAN << "Selected object " << selected << " (" << selected->ClassName() << " called " << selected->GetName() << ") does not match projection " << fProjection << " (" << fProjection->ClassName() << " called " << fProjection->GetName() << ")" << std::endl;
       }
       break;
    case kArrowKeyPress:
@@ -690,7 +706,7 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
       break;
    default:
       if(TSourceCalibration::VerboseLevel() > EVerbosity::kLoops) {
-         std::cout << "unprocessed event " << event << " with px, py " << px << ", " << py << " selected object is a " << selected->ClassName() << " with name " << selected->GetName() << " and title " << selected->GetTitle() << " object info is " << selected->GetObjectInfo(px, py) << std::endl;
+         std::cout << "unprocessed event " << event << " with px, py " << px << ", " << py << " selected object is a " << selected->ClassName() << " with name \"" << selected->GetName() << "\" and title \"" << selected->GetTitle() << "\" object info is " << selected->GetObjectInfo(px, py) << std::endl;
       }
       break;
    }
@@ -770,13 +786,14 @@ void TSourceTab::UpdateFits()
       fProjection->SetTitle(Form("%lu of %lu source peaks used, channel ???? - ????", fFits.size(), fSourceEnergy.size()));
    }
    fProjectionCanvas->GetCanvas()->Modified();
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": updatefits fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
 }
 
 void TSourceTab::Draw()
 {
    fProjectionCanvas->GetCanvas()->cd();
    fProjection->Draw();                                                                                                                                                                                                                           // seems like hist + samefunc does not work. Could use hist + loop over list of functions (with same)
-   if(TSourceCalibration::VerboseLevel() > EVerbosity::kSubroutines) { std::cout << __PRETTY_FUNCTION__ << ": drew " << fProjection->GetName() << " on " << fProjectionCanvas->GetCanvas()->GetName() << "/" << gPad->GetName() << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kSubroutines) { std::cout << __PRETTY_FUNCTION__ << ": drew " << fProjection << " = " << fProjection->GetName() << " on " << fProjectionCanvas->GetCanvas()->GetName() << "/" << gPad->GetName() << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
 }
 
 void TSourceTab::InitialCalibration(const bool& force)
@@ -968,7 +985,7 @@ void TSourceTab::FindCalibratedPeaks(const TF1* calibration)
 void TSourceTab::Add(std::map<double, std::tuple<double, double, double, double>> map)
 {
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
-      std::cout << DCYAN << "Adding map with " << map.size() << " data points, fData = " << fData << std::endl;
+      std::cout << DCYAN << "Adding map (double->tuple) with " << map.size() << " data points, fData = " << fData << std::endl;
    }
    if(fData == nullptr) {
       fData = new TGraphErrors(map.size());
@@ -998,7 +1015,7 @@ void TSourceTab::Add(std::map<double, std::tuple<double, double, double, double>
 void TSourceTab::Add(std::map<TGauss*, std::tuple<double, double, double, double>> map)
 {
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
-      std::cout << DCYAN << "Adding map with " << map.size() << " data points, fData = " << fData << std::endl;
+      std::cout << DCYAN << "Adding map (TGauss*->tuple) with " << map.size() << " data points, fData = " << fData << std::endl;
    }
    if(fData == nullptr) {
       fData = new TGraphErrors(map.size());
@@ -1323,11 +1340,13 @@ void TSourceTab::Print() const
 
 void TSourceTab::PrintCanvases() const
 {
-   std::cout << "TSourceTab " << fSourceName << " projection canvas:" << std::endl;
+   std::cout << this << ": TSourceTab " << fSourceName << " projection canvas:" << std::endl;
    fProjectionCanvas->GetCanvas()->Print();
    for(auto* obj : *(fProjectionCanvas->GetCanvas()->GetListOfPrimitives())) {
+      std::cout << obj << ": " << obj->ClassName() << " called " << obj->GetName() << std::endl;
       obj->Print();
    }
+   std::cout << "--------------------" << std::endl;
 }
 
 void TSourceTab::PrintLayout() const
@@ -2142,7 +2161,8 @@ void TChannelTab::ZoomY()
 
 void TChannelTab::PrintCanvases() const
 {
-   std::cout << "TChannelTab " << Name() << " calibration canvas:" << std::endl;
+   std::cout << "----------------------------------------" << std::endl;
+   std::cout << this << ": TChannelTab " << Name() << " calibration canvas:" << std::endl;
    fCalibrationCanvas->GetCanvas()->Print();
    for(auto* obj : *(fCalibrationCanvas->GetCanvas()->GetListOfPrimitives())) {
       obj->Print();
@@ -2155,6 +2175,7 @@ void TChannelTab::PrintCanvases() const
    for(auto* sourceTab : fSources) {
       sourceTab->PrintCanvases();
    }
+   std::cout << "----------------------------------------" << std::endl;
 }
 
 void TChannelTab::PrintLayout() const
@@ -2536,6 +2557,12 @@ void TSourceCalibration::SecondWindow()
 
    // Map main frame
    MapWindow();
+   // re-draw to try and fix issue with last source histogram being on the wrong tab
+   for(auto* channelTab : fChannelTab) {
+      if(channelTab != nullptr) {
+         channelTab->Draw();
+      }
+   }
    if(fVerboseLevel > EVerbosity::kSubroutines) { std::cout << DGREEN << __PRETTY_FUNCTION__ << " done" << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
 }
 
