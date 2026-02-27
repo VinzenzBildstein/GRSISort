@@ -113,6 +113,7 @@ TGRSIFrame::TGRSIFrame()
    /// To handle all that we use the class TDataFrameLibrary (very similar to TParserLibrary)
    auto* helper  = TDataFrameLibrary::Get()->CreateHelper(inputList);
    fOutputPrefix = helper->Prefix();
+   helper->ColumnNames(fDataFrame->GetColumnNames());
    // this actually moves the helper to the data frame, so from here on "helper" doesn't refer to the object we created anymore
    // aka don't use helper after this!
    fOutput = helper->Book(fDataFrame);
