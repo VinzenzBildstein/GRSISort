@@ -483,8 +483,8 @@ TSourceTab::TSourceTab(const TSourceTab& rhs)
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": copy const. 1 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    fProjection = rhs.fProjection;
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": copy const. 2 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
-   fData       = rhs.fData;
-   fFwhm       = rhs.fFwhm;
+   fData = rhs.fData;
+   fFwhm = rhs.fFwhm;
    // ? not sure what to do here, clearing the vectors seems unnecessary since we never filled them
    // but we also can't just simply copy them, we would need a deep copy, which might not make sense?
    // does is make sense in general to have assignment constructors for this class?
@@ -652,7 +652,7 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
          fChannelTab->UpdateData();
          fChannelTab->UpdateFwhm();
          fChannelTab->Calibrate();
-      } else if (selected->IsA() == GH1D::Class() && fProjection != nullptr) {
+      } else if(selected->IsA() == GH1D::Class() && fProjection != nullptr) {
          std::cout << "selected object " << selected << " is a histogram called " << selected->GetName() << " and not the projection " << fProjection << " called " << fProjection->GetName() << ", going to redraw the projection" << std::endl;
          Draw();
       } else if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
@@ -792,7 +792,7 @@ void TSourceTab::UpdateFits()
 void TSourceTab::Draw()
 {
    fProjectionCanvas->GetCanvas()->cd();
-   fProjection->Draw();                                                                                                                                                                                                                           // seems like hist + samefunc does not work. Could use hist + loop over list of functions (with same)
+   fProjection->Draw();                                                                                                                                                                                                                                                   // seems like hist + samefunc does not work. Could use hist + loop over list of functions (with same)
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kSubroutines) { std::cout << __PRETTY_FUNCTION__ << ": drew " << fProjection << " = " << fProjection->GetName() << " on " << fProjectionCanvas->GetCanvas()->GetName() << "/" << gPad->GetName() << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
 }
 
