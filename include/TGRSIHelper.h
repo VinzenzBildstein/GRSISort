@@ -35,8 +35,8 @@
 
 class TGRSIHelper : public TObject {
 public:
-   std::string& Prefix() { return fPrefix; }
-   void ColumnNames(ROOT::RDF::ColumnNames_t names) { fColumnNames = std::move(names); }
+   std::string&             Prefix() { return fPrefix; }
+   void                     ColumnNames(ROOT::RDF::ColumnNames_t names) { fColumnNames = std::move(names); }
    ROOT::RDF::ColumnNames_t ColumnNames() const { return fColumnNames; }
 
 protected:

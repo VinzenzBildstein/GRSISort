@@ -44,33 +44,36 @@ public:
          std::none_of(columnNames.begin(), columnNames.end(), [](const std::string& name) { return name == "TGriffinBgo"; })) {
          throw std::runtime_error("Missing either TGriffin or TGriffinBgo in list of column names?");
       }
-      fZds = std::any_of(columnNames.begin(), columnNames.end(), [](const std::string& name) { return name == "TZeroDegree"; });
+      fZds     = std::any_of(columnNames.begin(), columnNames.end(), [](const std::string& name) { return name == "TZeroDegree"; });
       fSceptar = std::any_of(columnNames.begin(), columnNames.end(), [](const std::string& name) { return name == "TSceptar"; });
       std::cout << "Zds " << (fZds ? "present" : "missing") << ", and Sceptar " << (fSceptar ? "present" : "missing") << std::endl;
       if(fZds && fSceptar) {
          return d->Book<TGriffin, TGriffinBgo, TZeroDegree, TSceptar>(std::move(*this), {"TGriffin", "TGriffinBgo", "TZeroDegree", "TSceptar"});
-      } 
+      }
       if(fZds) {
          return d->Book<TGriffin, TGriffinBgo, TZeroDegree>(std::move(*this), {"TGriffin", "TGriffinBgo", "TZeroDegree"});
-      } 
+      }
       if(fSceptar) {
          return d->Book<TGriffin, TGriffinBgo, TSceptar>(std::move(*this), {"TGriffin", "TGriffinBgo", "TSceptar"});
-      } 
+      }
       return d->Book<TGriffin, TGriffinBgo>(std::move(*this), {"TGriffin", "TGriffinBgo"});
    }
    void CreateHistograms(unsigned int slot) override;
    void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo, TZeroDegree& zds, TSceptar& scep);
-   void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo, TZeroDegree& zds) {
+   void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo, TZeroDegree& zds)
+   {
       TSceptar scep;
       Exec(slot, grif, grifBgo, zds, scep);
    }
-   void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo, TSceptar& scep) {
+   void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo, TSceptar& scep)
+   {
       TZeroDegree zds;
       Exec(slot, grif, grifBgo, zds, scep);
    }
-   void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo) {
+   void Exec(unsigned int slot, TGriffin& grif, TGriffinBgo& grifBgo)
+   {
       TZeroDegree zds;
-      TSceptar scep;
+      TSceptar    scep;
       Exec(slot, grif, grifBgo, zds, scep);
    }
 
