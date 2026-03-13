@@ -65,7 +65,7 @@ jobs:
         
     - name: Update packages
       run: |
-        sudo apt-get update
+        sudo apt update
         
     - name: Install packages
       run: |
