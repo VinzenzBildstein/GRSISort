@@ -80,7 +80,7 @@ private:
 
    void CheckWrapAround(const std::shared_ptr<TFragment>&);
 
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>                    fInputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>              fInputQueue;
    std::shared_ptr<ThreadsafeQueue<std::vector<std::shared_ptr<TFragment>>>> fOutputQueue;
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>              fOutOfOrderQueue;
 #endif
@@ -91,14 +91,14 @@ private:
    bool         fPreviousSortingDepthError;
    bool         fSkipInputSort;
 
-	std::string  fOffsetFile; ///< name of file with the offset (see below)
-	Long64_t		 fDaqTimeStampOffset{0}; ///< offset between DAQ timestamp (time since 1970 in s) and the timestamp of the first fragment of the run. Read from a file created by sorting the first subrun
-	Long64_t     fCycleLength{0}; ///< total length of cycle in us as defined by ODB
-	Long64_t     fTapeMoveLength{0}; ///< length of the tape move in us (code 0xc008)
-	Long64_t     fBackgroundLength{0}; ///< length of the background in us (code 0xc002)
-	Long64_t     fImplantDaqOnLength{0}; ///< length of the implant(s) in us (DAQ is on ) (code 0xc001)
-	Long64_t     fImplantDaqOffLength{0}; ///< length of the implant(s) in us (DAQ is off) (code 0x8001)
-	Long64_t     fDecayDaqOffLength{0}; ///< length of the decay with DAQ off in us (code 0x8004)
+   std::string fOffsetFile;               ///< name of file with the offset (see below)
+   Long64_t    fDaqTimeStampOffset{0};    ///< offset between DAQ timestamp (time since 1970 in s) and the timestamp of the first fragment of the run. Read from a file created by sorting the first subrun
+   Long64_t    fCycleLength{0};           ///< total length of cycle in us as defined by ODB
+   Long64_t    fTapeMoveLength{0};        ///< length of the tape move in us (code 0xc008)
+   Long64_t    fBackgroundLength{0};      ///< length of the background in us (code 0xc002)
+   Long64_t    fImplantDaqOnLength{0};    ///< length of the implant(s) in us (DAQ is on ) (code 0xc001)
+   Long64_t    fImplantDaqOffLength{0};   ///< length of the implant(s) in us (DAQ is off) (code 0x8001)
+   Long64_t    fDecayDaqOffLength{0};     ///< length of the decay with DAQ off in us (code 0x8004)
 
    std::map<UInt_t, Long64_t> fLastTimeStamp; ///< map of the last time stamp for each address
 

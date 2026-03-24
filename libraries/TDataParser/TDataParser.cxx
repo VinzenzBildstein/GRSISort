@@ -57,7 +57,7 @@ void TDataParser::SetFinished()
 }
 
 void TDataParser::Push(std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>& queues,
-                       const std::shared_ptr<TFragment>&                                                frag)
+                       const std::shared_ptr<TFragment>&                                          frag)
 {
    frag->SetFragmentId(fFragmentIdMap[frag->GetTriggerId()]);
    fFragmentIdMap[frag->GetTriggerId()]++;

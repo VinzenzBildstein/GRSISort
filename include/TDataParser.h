@@ -160,8 +160,8 @@ protected:
 private:
 #ifndef __CINT__
    std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>> fGoodOutputQueues;
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>           fBadOutputQueue;
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TEpicsFrag>>>                   fScalerOutputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>     fBadOutputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TEpicsFrag>>>             fScalerOutputQueue;
 #endif
 
    bool      fNoWaveforms;   ///< The flag to turn wave_forms on or off

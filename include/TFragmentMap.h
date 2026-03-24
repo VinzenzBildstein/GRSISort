@@ -29,7 +29,7 @@ class TFragmentMap {
 public:
 #ifndef __CINT__
    TFragmentMap(std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>& goodOutputQueue,
-                std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>&           badOutputQueue);
+                std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>&     badOutputQueue);
 #endif
 
 #ifndef __CINT__
@@ -45,7 +45,7 @@ private:
                       std::multimap<UInt_t, std::tuple<std::shared_ptr<TFragment>, std::vector<Int_t>, std::vector<Short_t>>>::iterator>& range);
 
    std::multimap<UInt_t, std::tuple<std::shared_ptr<TFragment>, std::vector<Int_t>, std::vector<Short_t>>> fMap;
-   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>&                        fGoodOutputQueue;   //NOLINT(cppcoreguidelines-avoid-const-or-ref-data-members)
+   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>&                              fGoodOutputQueue;   //NOLINT(cppcoreguidelines-avoid-const-or-ref-data-members)
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>&                                  fBadOutputQueue;    //NOLINT(cppcoreguidelines-avoid-const-or-ref-data-members)
 #endif
 };

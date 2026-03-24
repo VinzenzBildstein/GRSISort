@@ -50,7 +50,7 @@ private:
 
 #ifndef __CINT__
    std::vector<std::shared_ptr<TFragment>> fFragments;
-   std::vector<std::shared_ptr<TDetector>>       fDetectors;
+   std::vector<std::shared_ptr<TDetector>> fDetectors;
 #endif
 };
 
