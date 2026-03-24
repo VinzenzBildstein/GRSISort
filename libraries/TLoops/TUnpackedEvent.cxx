@@ -32,7 +32,7 @@ void TUnpackedEvent::Build()
    ClearRawData();
 }
 
-void TUnpackedEvent::AddRawData(const std::shared_ptr<const TFragment>& frag)
+void TUnpackedEvent::AddRawData(const std::shared_ptr<TFragment>& frag)
 {
    fFragments.push_back(frag);
 }

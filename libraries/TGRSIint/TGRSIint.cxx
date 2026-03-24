@@ -548,7 +548,7 @@ void TGRSIint::SetupPipeline()
    StoppableThread::StatusWidth(TGRSIOptions::Get()->StatusWidth());
 
    // Different queues that can show up
-   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>> fragmentQueues;
+   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>> fragmentQueues;
    std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TEpicsFrag>>>>      scalerQueues;
    std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>>>  analysisQueues;
 

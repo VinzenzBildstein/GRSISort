@@ -29,7 +29,7 @@ class TRuntimeObjects : public TNamed {
 public:
 /// Constructor
 #ifndef __CINT__
-   TRuntimeObjects(std::shared_ptr<const TFragment> frag, TList* objects, TList* gates, std::vector<TFile*>& cut_files,
+   TRuntimeObjects(std::shared_ptr<TFragment> frag, TList* objects, TList* gates, std::vector<TFile*>& cut_files,
                    TDirectory* directory = nullptr, const char* name = "default");
 #endif
    TRuntimeObjects(TList* objects, TList* gates, std::vector<TFile*>& cut_files, TDirectory* directory = nullptr,
@@ -43,7 +43,7 @@ public:
       return fDetectors->GetDetector<T>();
    }
 
-   std::shared_ptr<const TFragment> GetFragment() { return fFrag; }
+   std::shared_ptr<TFragment> GetFragment() { return fFrag; }
 #endif
 
    TCutG* GetCut(const std::string& name);
@@ -123,7 +123,7 @@ public:
    }
 
 #ifndef __CINT__
-   void SetFragment(std::shared_ptr<const TFragment> frag)
+   void SetFragment(std::shared_ptr<TFragment> frag)
    {
       fFrag = std::move(frag);
    }
@@ -141,7 +141,7 @@ private:
    TDirectory*                                    FindDirectory(const char*);
 #ifndef __CINT__
    std::shared_ptr<TUnpackedEvent>  fDetectors;
-   std::shared_ptr<const TFragment> fFrag;
+   std::shared_ptr<TFragment> fFrag;
 #endif
    TList*               fObjects{nullptr};
    TList*               fGates{nullptr};

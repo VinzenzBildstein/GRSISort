@@ -39,7 +39,7 @@ TAnalysisWriteLoop::TAnalysisWriteLoop(std::string name, const std::string& outp
    : StoppableThread(std::move(name)),
      fOutputFile(TFile::Open(outputFilename.c_str(), "recreate")),
      fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>>()),
-     fOutOfOrderQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>())
+     fOutOfOrderQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>())
 {
    if(fOutputFile == nullptr || !fOutputFile->IsOpen()) {
       std::cerr << "Failed to open '" << outputFilename << "'" << std::endl;
@@ -103,7 +103,7 @@ bool TAnalysisWriteLoop::Iteration()
    }
 
    if(fOutOfOrder) {
-      std::shared_ptr<const TFragment> frag;
+      std::shared_ptr<TFragment> frag;
       fOutOfOrderQueue->Pop(frag, 0);
       if(frag != nullptr) {
          *fOutOfOrderFrag = *frag;

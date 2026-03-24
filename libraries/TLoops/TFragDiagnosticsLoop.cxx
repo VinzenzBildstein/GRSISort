@@ -38,7 +38,7 @@ TFragDiagnosticsLoop* TFragDiagnosticsLoop::Get(std::string name, std::string fO
 
 TFragDiagnosticsLoop::TFragDiagnosticsLoop(std::string name, const std::string& fOutputFilename)
    : StoppableThread(std::move(name)),
-     fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>())
+     fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>())
 {
    if(fOutputFilename != "/dev/null") {
       TThread::Lock();
@@ -61,7 +61,7 @@ TFragDiagnosticsLoop::~TFragDiagnosticsLoop()
 void TFragDiagnosticsLoop::ClearQueue()
 {
    while(fInputQueue->Size() != 0u) {
-      std::shared_ptr<const TFragment> event;
+      std::shared_ptr<TFragment> event;
       fInputQueue->Pop(event);
    }
 }
@@ -76,7 +76,7 @@ std::string TFragDiagnosticsLoop::EndStatus()
 
 bool TFragDiagnosticsLoop::Iteration()
 {
-   std::shared_ptr<const TFragment> event;
+   std::shared_ptr<TFragment> event;
    InputSize(fInputQueue->Pop(event, 0));
    if(InputSize() < 0) {
       InputSize(0);
@@ -195,7 +195,7 @@ bool TFragDiagnosticsLoop::CreateHistograms()
    return true;
 }
 
-void TFragDiagnosticsLoop::Process(const std::shared_ptr<const TFragment>& event)
+void TFragDiagnosticsLoop::Process(const std::shared_ptr<TFragment>& event)
 {
    if(fAccepted == nullptr || fLostNetworkPackets == nullptr || fLostChannelIds == nullptr ||
       fLostAcceptedIds == nullptr || fLostChannelIdsTime == nullptr || fLostAcceptedIdsTime == nullptr) {

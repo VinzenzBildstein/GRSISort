@@ -41,7 +41,7 @@ public:
    {
       return fInputQueue;
    }
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>& AddGoodOutputQueue(size_t maxSize = 50000)
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>& AddGoodOutputQueue(size_t maxSize = 50000)
    {
       return fParser->AddGoodOutputQueue(maxSize);
    }

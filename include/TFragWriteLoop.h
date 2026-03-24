@@ -32,7 +32,7 @@ public:
    ~TFragWriteLoop();
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>&    InputQueue() { return fInputQueue; }
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>&    InputQueue() { return fInputQueue; }
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>& BadInputQueue() { return fBadInputQueue; }
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TEpicsFrag>>>&         ScalerInputQueue() { return fScalerInputQueue; }
 #endif
@@ -56,7 +56,7 @@ protected:
 private:
    TFragWriteLoop(std::string name, const std::string& fOutputFilename);
 #ifndef __CINT__
-   void WriteEvent(const std::shared_ptr<const TFragment>& event);
+   void WriteEvent(const std::shared_ptr<TFragment>& event);
    void WriteBadEvent(const std::shared_ptr<const TBadFragment>& event);
    void WriteScaler(const std::shared_ptr<TEpicsFrag>& scaler);
 #endif
@@ -72,7 +72,7 @@ private:
    TEpicsFrag*   fScalerAddress;
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>    fInputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>    fInputQueue;
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>> fBadInputQueue;
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TEpicsFrag>>>         fScalerInputQueue;
 #endif

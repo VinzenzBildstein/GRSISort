@@ -33,7 +33,7 @@ public:
    ~TDetBuildingLoop();
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::vector<std::shared_ptr<const TFragment>>>>& InputQueue()
+   std::shared_ptr<ThreadsafeQueue<std::vector<std::shared_ptr<TFragment>>>>& InputQueue()
    {
       return fInputQueue;
    }
@@ -64,7 +64,7 @@ private:
    explicit TDetBuildingLoop(std::string name);
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::vector<std::shared_ptr<const TFragment>>>> fInputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::vector<std::shared_ptr<TFragment>>>> fInputQueue;
    std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>>>  fOutputQueues;
 #endif
 

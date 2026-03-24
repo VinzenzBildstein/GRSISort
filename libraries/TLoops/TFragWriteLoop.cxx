@@ -37,7 +37,7 @@ TFragWriteLoop* TFragWriteLoop::Get(std::string name, std::string fOutputFilenam
 
 TFragWriteLoop::TFragWriteLoop(std::string name, const std::string& fOutputFilename)
    : StoppableThread(std::move(name)), fOutputFile(nullptr), fEventTree(nullptr), fBadEventTree(nullptr), fScalerTree(nullptr),
-     fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>()),
+     fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>()),
      fBadInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>()),
      fScalerInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TEpicsFrag>>>())
 {
@@ -73,7 +73,7 @@ TFragWriteLoop::~TFragWriteLoop()
 void TFragWriteLoop::ClearQueue()
 {
    while(fInputQueue->Size() != 0u) {
-      std::shared_ptr<const TFragment> event;
+      std::shared_ptr<TFragment> event;
       fInputQueue->Pop(event);
    }
 }
@@ -90,7 +90,7 @@ std::string TFragWriteLoop::EndStatus()
 
 bool TFragWriteLoop::Iteration()
 {
-   std::shared_ptr<const TFragment> event;
+   std::shared_ptr<TFragment> event;
    InputSize(fInputQueue->Pop(event, 0));
    if(InputSize() < 0) {
       InputSize(0);
@@ -197,7 +197,7 @@ void TFragWriteLoop::Write()
    }
 }
 
-void TFragWriteLoop::WriteEvent(const std::shared_ptr<const TFragment>& event)
+void TFragWriteLoop::WriteEvent(const std::shared_ptr<TFragment>& event)
 {
    if(fEventTree != nullptr) {
       *fEventAddress = *event;

@@ -143,7 +143,7 @@ void TDetectorHit::Copy(TObject& rhs, bool copywave) const
    }
 }
 
-//void TDetectorHit::CopyFragment(const TFragment& frag)
+//void TDetectorHit::CopyFragment(TFragment& frag)
 //{
 //	frag.Copy(*this);
 //}

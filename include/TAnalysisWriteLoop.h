@@ -35,7 +35,7 @@ public:
    {
       return fInputQueue;
    }
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>& OutOfOrderQueue() { return fOutOfOrderQueue; }
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>& OutOfOrderQueue() { return fOutOfOrderQueue; }
 #endif
 
    void ClearQueue() override;
@@ -68,7 +68,7 @@ private:
    std::map<TClass*, TDetector**>                                     fDetMap;
    std::map<TClass*, TDetector*>                                      fDefaultDets;
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>>  fInputQueue;
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>> fOutOfOrderQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>       fOutOfOrderQueue;
 #endif
 
    /// \cond CLASSIMP

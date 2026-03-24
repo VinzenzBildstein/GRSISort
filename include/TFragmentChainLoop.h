@@ -29,16 +29,16 @@
 class TFragmentChainLoop : public StoppableThread {
 public:
    static TFragmentChainLoop* Get(std::string name = "", TChain* chain = nullptr);
-   TFragmentChainLoop(const TFragmentChainLoop&)                = delete;
+   TFragmentChainLoop(TFragmentChainLoop&)                = delete;
    TFragmentChainLoop(TFragmentChainLoop&&) noexcept            = delete;
-   TFragmentChainLoop& operator=(const TFragmentChainLoop&)     = delete;
+   TFragmentChainLoop& operator=(TFragmentChainLoop&)     = delete;
    TFragmentChainLoop& operator=(TFragmentChainLoop&&) noexcept = delete;
    ~TFragmentChainLoop();
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>& AddOutputQueue()
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>& AddOutputQueue()
    {
-      fOutputQueues.push_back(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>());
+      fOutputQueues.push_back(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>());
       return fOutputQueues.back();
    }
 #endif
@@ -67,7 +67,7 @@ private:
    TChain* fInputChain;
 #ifndef __CINT__
    TFragment*                                                                      fFragment;
-   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>> fOutputQueues;
+   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>> fOutputQueues;
 #endif
 
    bool fSelfStopping;
