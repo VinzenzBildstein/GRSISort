@@ -69,27 +69,27 @@ TEventBuildingLoop::TEventBuildingLoop(std::string name, EBuildMode mode, uint64
       file.close();
    }
 
-   auto* ppg = TPPG::Get();
-	fCycleLength = ppg->OdbCycleLength();
-	
-	// the beam off where we collect data is the last step, so we add up all duration until we get there
-	for(size_t i = 0; i < ppg->OdbPPGSize(); ++i) {
-		if(ppg->OdbPPGCode(i) == 0xc008) {
-			fTapeMoveLength = ppg->OdbDuration(i);
-		}
-		if(ppg->OdbPPGCode(i) == 0xc002) {
-			fBackgroundLength = ppg->OdbDuration(i);
-		}
-		if(ppg->OdbPPGCode(i) == 0xc001) {
-			fImplantDaqOnLength = ppg->OdbDuration(i);
-		}
-		if(ppg->OdbPPGCode(i) == 0x8001) {
-			fImplantDaqOffLength = ppg->OdbDuration(i);
-		}
-		if(ppg->OdbPPGCode(i) == 0x8004) {
-			fDecayDaqOffLength = ppg->OdbDuration(i);
-		}
-	}
+   auto* ppg    = TPPG::Get();
+   fCycleLength = ppg->OdbCycleLength();
+
+   // the beam off where we collect data is the last step, so we add up all duration until we get there
+   for(size_t i = 0; i < ppg->OdbPPGSize(); ++i) {
+      if(ppg->OdbPPGCode(i) == 0xc008) {
+         fTapeMoveLength = ppg->OdbDuration(i);
+      }
+      if(ppg->OdbPPGCode(i) == 0xc002) {
+         fBackgroundLength = ppg->OdbDuration(i);
+      }
+      if(ppg->OdbPPGCode(i) == 0xc001) {
+         fImplantDaqOnLength = ppg->OdbDuration(i);
+      }
+      if(ppg->OdbPPGCode(i) == 0x8001) {
+         fImplantDaqOffLength = ppg->OdbDuration(i);
+      }
+      if(ppg->OdbPPGCode(i) == 0x8004) {
+         fDecayDaqOffLength = ppg->OdbDuration(i);
+      }
+   }
    std::cout << "Using cycle length " << static_cast<double>(fCycleLength) / 1e6 << ", tape move length " << static_cast<double>(fTapeMoveLength) / 1e6
              << ", background length " << static_cast<double>(fBackgroundLength) / 1e6 << ", implant length (DAQ on) " << static_cast<double>(fImplantDaqOnLength) / 1e6
              << ", implant length (DAQ off) " << static_cast<double>(fImplantDaqOffLength) / 1e6 << ", and decay (DAQ off) length "
@@ -121,8 +121,8 @@ bool TEventBuildingLoop::Iteration()
    }
 
    if(inputFragment != nullptr) {
-		Long64_t originalTimeStamp = inputFragment->GetTimeStamp();
-		CheckWrapAround(inputFragment);
+      Long64_t originalTimeStamp = inputFragment->GetTimeStamp();
+      CheckWrapAround(inputFragment);
       IncrementItemsPopped();
       if(!fSkipInputSort) {
          fOrdered.insert(std::make_pair(inputFragment, originalTimeStamp));
@@ -301,29 +301,29 @@ std::string TEventBuildingLoop::EndStatus()
 
 void TEventBuildingLoop::CheckWrapAround(const std::shared_ptr<TFragment>& frag)
 {
-	/// We check the wrap around due to us turning the DAQ off during the implant
-	/// and back on during the decay.
-	/// For this we use the very first fragment to determine the offset of the DAQ timestamp
-	/// (which is time in s from 01.1.1970), and then compare the difference between the timestamp in seconds
-	/// and the offset corrected DAQ timestamp to calculate the wrap around. 
-	/// Comments below are outdated!
-	/// If we are past the background plus both implants (ignoring the decay w/ DAQ off) we correct the timestamp
-	/// by adding the background, both implants, and the decay w/ DAQ on plus (the difference between TS and corr. DAQ TS
-	/// divided by the cycle length) times the cycle length. The latter ensure we only add full cycles.
-	Long64_t timeStamp      = frag->GetTimeStampNs();
-	time_t daqTimeStamp = frag->GetDaqTimeStamp();
+   /// We check the wrap around due to us turning the DAQ off during the implant
+   /// and back on during the decay.
+   /// For this we use the very first fragment to determine the offset of the DAQ timestamp
+   /// (which is time in s from 01.1.1970), and then compare the difference between the timestamp in seconds
+   /// and the offset corrected DAQ timestamp to calculate the wrap around.
+   /// Comments below are outdated!
+   /// If we are past the background plus both implants (ignoring the decay w/ DAQ off) we correct the timestamp
+   /// by adding the background, both implants, and the decay w/ DAQ on plus (the difference between TS and corr. DAQ TS
+   /// divided by the cycle length) times the cycle length. The latter ensure we only add full cycles.
+   Long64_t timeStamp    = frag->GetTimeStampNs();
+   time_t   daqTimeStamp = frag->GetDaqTimeStamp();
 
-	if(fDaqTimeStampOffset == 0 && TRunInfo::SubRunNumber() == 0) {
-		fDaqTimeStampOffset = daqTimeStamp - timeStamp/1000000000;
-		std::ofstream file(fOffsetFile);
-		file<<fDaqTimeStampOffset;
-		file.close();
-		std::cout<<"Wrote daq time offset "<<fDaqTimeStampOffset<<" to "<<fOffsetFile<<std::endl;
-	}
+   if(fDaqTimeStampOffset == 0 && TRunInfo::SubRunNumber() == 0) {
+      fDaqTimeStampOffset = daqTimeStamp - timeStamp / 1000000000;
+      std::ofstream file(fOffsetFile);
+      file << fDaqTimeStampOffset;
+      file.close();
+      std::cout << "Wrote daq time offset " << fDaqTimeStampOffset << " to " << fOffsetFile << std::endl;
+   }
 
-	Long64_t offset = daqTimeStamp - fDaqTimeStampOffset - timeStamp/1000000000;
-	if(offset > (fImplantDaqOffLength + fDecayDaqOffLength)/1000000 - 1) { // -1 to account for uncertainty of offset between DAQ time (1 s precision) and timestamps
-		timeStamp += (fTapeMoveLength + fBackgroundLength + fImplantDaqOnLength + fImplantDaqOffLength + fDecayDaqOffLength)*1000 + (offset/(fCycleLength/1000000))*fCycleLength*1000;
-		frag->SetTimeStamp(timeStamp/frag->GetTimeStampUnit());
-	}
+   Long64_t offset = daqTimeStamp - fDaqTimeStampOffset - timeStamp / 1000000000;
+   if(offset > (fImplantDaqOffLength + fDecayDaqOffLength) / 1000000 - 1) {   // -1 to account for uncertainty of offset between DAQ time (1 s precision) and timestamps
+      timeStamp += (fTapeMoveLength + fBackgroundLength + fImplantDaqOnLength + fImplantDaqOffLength + fDecayDaqOffLength) * 1000 + (offset / (fCycleLength / 1000000)) * fCycleLength * 1000;
+      frag->SetTimeStamp(timeStamp / frag->GetTimeStampUnit());
+   }
 }

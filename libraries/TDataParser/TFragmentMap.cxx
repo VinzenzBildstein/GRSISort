@@ -6,7 +6,7 @@ bool TFragmentMap::fDebug = false;
 
 TFragmentMap::TFragmentMap(
    std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>& goodOutputQueue,
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>&           badOutputQueue)
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>&     badOutputQueue)
    : fGoodOutputQueue(goodOutputQueue), fBadOutputQueue(badOutputQueue)
 {
 }

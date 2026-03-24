@@ -140,8 +140,8 @@ private:
    static std::map<std::string, TRuntimeObjects*> fRuntimeMap;
    TDirectory*                                    FindDirectory(const char*);
 #ifndef __CINT__
-   std::shared_ptr<TUnpackedEvent>  fDetectors;
-   std::shared_ptr<TFragment> fFrag;
+   std::shared_ptr<TUnpackedEvent> fDetectors;
+   std::shared_ptr<TFragment>      fFrag;
 #endif
    TList*               fObjects{nullptr};
    TList*               fGates{nullptr};

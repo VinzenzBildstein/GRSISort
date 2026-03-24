@@ -65,10 +65,10 @@ private:
    TFragment* fOutOfOrderFrag;
    bool       fOutOfOrder;
 #ifndef __CINT__
-   std::map<TClass*, TDetector**>                                     fDetMap;
-   std::map<TClass*, TDetector*>                                      fDefaultDets;
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>>  fInputQueue;
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>       fOutOfOrderQueue;
+   std::map<TClass*, TDetector**>                                    fDetMap;
+   std::map<TClass*, TDetector*>                                     fDefaultDets;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>> fInputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>      fOutOfOrderQueue;
 #endif
 
    /// \cond CLASSIMP
