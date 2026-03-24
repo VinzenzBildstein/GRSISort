@@ -29,9 +29,9 @@
 class TFragmentChainLoop : public StoppableThread {
 public:
    static TFragmentChainLoop* Get(std::string name = "", TChain* chain = nullptr);
-   TFragmentChainLoop(TFragmentChainLoop&)                = delete;
+   TFragmentChainLoop(TFragmentChainLoop&)                      = delete;
    TFragmentChainLoop(TFragmentChainLoop&&) noexcept            = delete;
-   TFragmentChainLoop& operator=(TFragmentChainLoop&)     = delete;
+   TFragmentChainLoop& operator=(TFragmentChainLoop&)           = delete;
    TFragmentChainLoop& operator=(TFragmentChainLoop&&) noexcept = delete;
    ~TFragmentChainLoop();
 
@@ -66,7 +66,7 @@ private:
 
    TChain* fInputChain;
 #ifndef __CINT__
-   TFragment*                                                                      fFragment;
+   TFragment*                                                                fFragment;
    std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>> fOutputQueues;
 #endif
 

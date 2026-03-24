@@ -64,8 +64,8 @@ private:
    explicit TDetBuildingLoop(std::string name);
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::vector<std::shared_ptr<TFragment>>>> fInputQueue;
-   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>>>  fOutputQueues;
+   std::shared_ptr<ThreadsafeQueue<std::vector<std::shared_ptr<TFragment>>>>      fInputQueue;
+   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TUnpackedEvent>>>> fOutputQueues;
 #endif
 
    /// \cond CLASSIMP
