@@ -24,7 +24,7 @@ TFragHistLoop* TFragHistLoop::Get(std::string name)
 
 TFragHistLoop::TFragHistLoop(std::string name)
    : StoppableThread(std::move(name)), fOutputFile(nullptr), fOutputFilename("last.root"),
-     fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>())
+     fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>())
 {
    LoadLibrary(TGRSIOptions::Get()->FragmentHistogramLib());
 }
@@ -37,14 +37,14 @@ TFragHistLoop::~TFragHistLoop()
 void TFragHistLoop::ClearQueue()
 {
    while(fInputQueue->Size() != 0u) {
-      std::shared_ptr<const TFragment> event;
+      std::shared_ptr<TFragment> event;
       fInputQueue->Pop(event);
    }
 }
 
 bool TFragHistLoop::Iteration()
 {
-   std::shared_ptr<const TFragment> event;
+   std::shared_ptr<TFragment> event;
    InputSize(fInputQueue->Pop(event));
 
    if(event) {

@@ -33,7 +33,7 @@ public:
    ~TFragHistLoop();
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>& InputQueue()
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>& InputQueue()
    {
       return fInputQueue;
    }
@@ -75,7 +75,7 @@ private:
    std::string fOutputFilename;
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>> fInputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>> fInputQueue;
 #endif
 
    /// \cond CLASSIMP

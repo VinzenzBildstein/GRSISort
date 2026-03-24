@@ -164,7 +164,7 @@ public:
    Bool_t      MapIsEmpty() const;
    std::size_t PPGSize() const { return fPPGStatusMap->size() - 1; }
    std::size_t OdbPPGSize() const { return fOdbPPGCodes.size(); }
-   int16_t     OdbPPGCode(size_t index) const { return fOdbPPGCodes.at(index); }
+   uint16_t    OdbPPGCode(size_t index) const { return fOdbPPGCodes.at(index); }
    int         OdbDuration(size_t index) const { return fOdbDurations.at(index); }
    Long64_t    OdbCycleLength() const
    {
@@ -192,7 +192,7 @@ public:
    const TPPGData* First();
    const TPPGData* Last();
 
-   void SetOdbCycle(std::vector<int16_t> ppgCodes, std::vector<int> durations)
+   void SetOdbCycle(std::vector<uint16_t> ppgCodes, std::vector<int> durations)
    {
       fOdbPPGCodes  = std::move(ppgCodes);
       fOdbDurations = std::move(durations);
@@ -212,11 +212,11 @@ private:
    ULong64_t                fCycleLength{0};
    std::map<ULong64_t, int> fNumberOfCycleLengths;
 
-   std::vector<int16_t> fOdbPPGCodes;    ///< ppg state codes read from odb
-   std::vector<int>     fOdbDurations;   ///< duration of ppg state as read from odb
+   std::vector<uint16_t> fOdbPPGCodes;    ///< ppg state codes read from odb
+   std::vector<int>      fOdbDurations;   ///< duration of ppg state as read from odb
 
    bool                   fCycleSet{false};                //!<! flag to indicate whether the codes and durations have been calculated from the data
-   std::vector<int16_t>   fPPGCodes{0x8, 0x2, 0x1, 0x4};   //!<! ppg state codes (these are always set)
+   std::vector<uint16_t>  fPPGCodes{0x8, 0x2, 0x1, 0x4};   //!<! ppg state codes (these are always set)
    std::vector<ULong64_t> fDurations{0, 0, 0, 0};          //!<! duration of ppg state calculated from data
 
    /// \cond CLASSIMP

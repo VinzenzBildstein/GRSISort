@@ -30,14 +30,14 @@
 class TParsingDiagnosticsData : public TObject {
 public:
    TParsingDiagnosticsData();
-   explicit TParsingDiagnosticsData(const std::shared_ptr<const TFragment>& frag);
+   explicit TParsingDiagnosticsData(const std::shared_ptr<TFragment>& frag);
    TParsingDiagnosticsData(const TParsingDiagnosticsData&)                = default;
    TParsingDiagnosticsData(TParsingDiagnosticsData&&) noexcept            = default;
    TParsingDiagnosticsData& operator=(const TParsingDiagnosticsData&)     = default;
    TParsingDiagnosticsData& operator=(TParsingDiagnosticsData&&) noexcept = default;
    ~TParsingDiagnosticsData()                                             = default;
 
-   void Update(const std::shared_ptr<const TFragment>& frag);
+   void Update(const std::shared_ptr<TFragment>& frag);
    using TObject::Print;
    void Print(UInt_t address) const;
 
@@ -102,7 +102,7 @@ private:
 public:
 //"setter" functions
 #ifndef __CINT__
-   void GoodFragment(const std::shared_ptr<const TFragment>&);
+   void GoodFragment(const std::shared_ptr<TFragment>&);
 #endif
    void GoodFragment(Short_t detType)
    {

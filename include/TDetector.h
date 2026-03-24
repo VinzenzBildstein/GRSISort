@@ -51,7 +51,7 @@ public:
 
    virtual void BuildHits() { AbstractMethod("BuildHits()"); }   //!<!
 #ifndef __CINT__
-   virtual void AddFragment(const std::shared_ptr<const TFragment>&, TChannel*)
+   virtual void AddFragment(const std::shared_ptr<TFragment>&, TChannel*)
    {
       AbstractMethod("AddFragment()");
    }   //!<!

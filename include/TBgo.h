@@ -24,7 +24,7 @@ public:
 
    static TVector3 GetPosition(int DetNbr, int CryNbr = 5, double distance = 110.0);   //!<!
 #ifndef __CINT__
-   void AddFragment(const std::shared_ptr<const TFragment>& frag, TChannel* chan) override;   //!<!
+   void AddFragment(const std::shared_ptr<TFragment>& frag, TChannel* chan) override;   //!<!
 #endif
    void BuildHits() override {}   // no need to build any hits, everything already done in AddFragment
 

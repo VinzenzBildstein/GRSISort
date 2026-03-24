@@ -2,9 +2,11 @@
 
 #include "TGRSIOptions.h"
 #include "TSortingDiagnostics.h"
+#include "TRunInfo.h"
 
 #include <chrono>
 #include <thread>
+#include <fstream>
 
 TEventBuildingLoop* TEventBuildingLoop::Get(std::string name, EBuildMode mode, uint64_t buildWindow)
 {
@@ -20,34 +22,34 @@ TEventBuildingLoop* TEventBuildingLoop::Get(std::string name, EBuildMode mode, u
 }
 
 TEventBuildingLoop::TEventBuildingLoop(std::string name, EBuildMode mode, uint64_t buildWindow)
-   : StoppableThread(std::move(name)), fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>()),
-     fOutputQueue(std::make_shared<ThreadsafeQueue<std::vector<std::shared_ptr<const TFragment>>>>()),
-     fOutOfOrderQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>()), fBuildMode(mode),
+   : StoppableThread(std::move(name)), fInputQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>()),
+     fOutputQueue(std::make_shared<ThreadsafeQueue<std::vector<std::shared_ptr<TFragment>>>>()),
+     fOutOfOrderQueue(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>()), fBuildMode(mode),
      fSortingDepth(10000), fBuildWindow(buildWindow), fPreviousSortingDepthError(false), fSkipInputSort(TGRSIOptions::Get()->SkipInputSort())
 {
    std::cout << DYELLOW << (fSkipInputSort ? "Not sorting " : "Sorting ") << "input by time: ";
    switch(fBuildMode) {
    case EBuildMode::kTime:
-      fOrdered = decltype(fOrdered)([](const std::shared_ptr<const TFragment>& a, const std::shared_ptr<const TFragment>& b) {
-         return a->GetTime() < b->GetTime();
+      fOrdered = decltype(fOrdered)([](const std::pair<std::shared_ptr<TFragment>, Long64_t>& a, const std::pair<std::shared_ptr<TFragment>, Long64_t>& b) {
+         return a.first->GetTime() < b.first->GetTime();
       });
       std::cout << DYELLOW << "sorting by time, using build window of " << fBuildWindow << "!" << RESET_COLOR << std::endl;
       break;
    case EBuildMode::kTimestamp:
-      fOrdered = decltype(fOrdered)([](const std::shared_ptr<const TFragment>& a, const std::shared_ptr<const TFragment>& b) {
-         return a->GetTimeStampNs() < b->GetTimeStampNs();
+      fOrdered = decltype(fOrdered)([](const std::pair<std::shared_ptr<TFragment>, Long64_t>& a, const std::pair<std::shared_ptr<TFragment>, Long64_t>& b) {
+         return a.first->GetTimeStampNs() < b.first->GetTimeStampNs();
       });
       std::cout << DYELLOW << "sorting by timestamp, using build window of " << fBuildWindow << "!" << RESET_COLOR << std::endl;
       break;
    case EBuildMode::kTriggerId:
-      fOrdered = decltype(fOrdered)([](const std::shared_ptr<const TFragment>& a, const std::shared_ptr<const TFragment>& b) {
-         return a->GetTriggerId() < b->GetTriggerId();
+      fOrdered = decltype(fOrdered)([](const std::pair<std::shared_ptr<TFragment>, Long64_t>& a, const std::pair<std::shared_ptr<TFragment>, Long64_t>& b) {
+         return a.first->GetTriggerId() < b.first->GetTriggerId();
       });
       std::cout << DYELLOW << "sorting by trigger ID!" << RESET_COLOR << std::endl;
       break;
    case EBuildMode::kSkip:
       // no need for ordering, always return true
-      fOrdered = decltype(fOrdered)([](const std::shared_ptr<const TFragment>&, const std::shared_ptr<const TFragment>&) {
+      fOrdered = decltype(fOrdered)([](const std::pair<std::shared_ptr<TFragment>, Long64_t>&, const std::pair<std::shared_ptr<TFragment>, Long64_t>&) {
          return true;
       });
       std::cout << DYELLOW << "not sorting!" << RESET_COLOR << std::endl;
@@ -57,18 +59,53 @@ TEventBuildingLoop::TEventBuildingLoop(std::string name, EBuildMode mode, uint64
       throw std::runtime_error("Error in event building loop, no build mode selected. Maybe because no custom run info was loaded?");
       break;
    }
+
+   fOffsetFile = Form("offset%05d.txt", TRunInfo::RunNumber());
+   // if this is not the first sub-run, try to read the offset file
+   if(TRunInfo::SubRunNumber() > 0) {
+      std::ifstream file(fOffsetFile);
+      file >> fDaqTimeStampOffset;
+      std::cout << "Using previously determined daq time offset " << fDaqTimeStampOffset << " (read from " << fOffsetFile << ")" << std::endl;
+      file.close();
+   }
+
+   auto* ppg = TPPG::Get();
+	fCycleLength = ppg->OdbCycleLength();
+	
+	// the beam off where we collect data is the last step, so we add up all duration until we get there
+	for(size_t i = 0; i < ppg->OdbPPGSize(); ++i) {
+		if(ppg->OdbPPGCode(i) == 0xc008) {
+			fTapeMoveLength = ppg->OdbDuration(i);
+		}
+		if(ppg->OdbPPGCode(i) == 0xc002) {
+			fBackgroundLength = ppg->OdbDuration(i);
+		}
+		if(ppg->OdbPPGCode(i) == 0xc001) {
+			fImplantDaqOnLength = ppg->OdbDuration(i);
+		}
+		if(ppg->OdbPPGCode(i) == 0x8001) {
+			fImplantDaqOffLength = ppg->OdbDuration(i);
+		}
+		if(ppg->OdbPPGCode(i) == 0x8004) {
+			fDecayDaqOffLength = ppg->OdbDuration(i);
+		}
+	}
+   std::cout << "Using cycle length " << static_cast<double>(fCycleLength) / 1e6 << ", tape move length " << static_cast<double>(fTapeMoveLength) / 1e6
+             << ", background length " << static_cast<double>(fBackgroundLength) / 1e6 << ", implant length (DAQ on) " << static_cast<double>(fImplantDaqOnLength) / 1e6
+             << ", implant length (DAQ off) " << static_cast<double>(fImplantDaqOffLength) / 1e6 << ", and decay (DAQ off) length "
+             << static_cast<double>(fDecayDaqOffLength) / 1e6 << " to build events!" << std::endl;
 }
 
 TEventBuildingLoop::~TEventBuildingLoop() = default;
 
 void TEventBuildingLoop::ClearQueue()
 {
-   std::shared_ptr<const TFragment> singleEvent;
+   std::shared_ptr<TFragment> singleEvent;
    while(fInputQueue->Size() != 0u) {
       fInputQueue->Pop(singleEvent);
    }
 
-   std::vector<std::shared_ptr<const TFragment>> event;
+   std::vector<std::shared_ptr<TFragment>> event;
    while(fOutputQueue->Size() != 0u) {
       fOutputQueue->Pop(event);
    }
@@ -77,16 +114,18 @@ void TEventBuildingLoop::ClearQueue()
 bool TEventBuildingLoop::Iteration()
 {
    // Pull something off of the input queue.
-   std::shared_ptr<const TFragment> inputFragment = nullptr;
+   std::shared_ptr<TFragment> inputFragment = nullptr;
    InputSize(fInputQueue->Pop(inputFragment, 0));
    if(InputSize() < 0) {
       InputSize(0);
    }
 
    if(inputFragment != nullptr) {
+		Long64_t originalTimeStamp = inputFragment->GetTimeStamp();
+		CheckWrapAround(inputFragment);
       IncrementItemsPopped();
       if(!fSkipInputSort) {
-         fOrdered.insert(inputFragment);
+         fOrdered.insert(std::make_pair(inputFragment, originalTimeStamp));
          if(fOrdered.size() < fSortingDepth) {
             // Got a new event, but we want to have more to sort
             return true;
@@ -113,9 +152,9 @@ bool TEventBuildingLoop::Iteration()
    }
 
    // We have data, and we want to add it to the next fragment;
-   std::shared_ptr<const TFragment> nextFragment;
+   std::shared_ptr<TFragment> nextFragment;
    if(!fSkipInputSort) {
-      nextFragment = *fOrdered.begin();
+      nextFragment = (*fOrdered.begin()).first;
       fOrdered.erase(fOrdered.begin());
    } else {
       nextFragment = inputFragment;
@@ -128,7 +167,7 @@ bool TEventBuildingLoop::Iteration()
    return true;
 }
 
-bool TEventBuildingLoop::CheckBuildCondition(const std::shared_ptr<const TFragment>& frag)
+bool TEventBuildingLoop::CheckBuildCondition(const std::shared_ptr<TFragment>& frag)
 {
    switch(fBuildMode) {
    case EBuildMode::kTime: return CheckTimeCondition(frag); break;
@@ -145,7 +184,7 @@ bool TEventBuildingLoop::CheckBuildCondition(const std::shared_ptr<const TFragme
    return false;   // we should never reach this statement!
 }
 
-bool TEventBuildingLoop::CheckTimeCondition(const std::shared_ptr<const TFragment>& frag)
+bool TEventBuildingLoop::CheckTimeCondition(const std::shared_ptr<TFragment>& frag)
 {
    double time       = frag->GetTime();
    double eventStart = (!fNextEvent.empty() ? (TGRSIOptions::AnalysisOptions()->StaticWindow() ? fNextEvent[0]->GetTime()
@@ -181,7 +220,7 @@ bool TEventBuildingLoop::CheckTimeCondition(const std::shared_ptr<const TFragmen
    return true;
 }
 
-bool TEventBuildingLoop::CheckTimestampCondition(const std::shared_ptr<const TFragment>& frag)
+bool TEventBuildingLoop::CheckTimestampCondition(const std::shared_ptr<TFragment>& frag)
 {
    uint64_t timestamp  = frag->GetTimeStampNs();
    uint64_t eventStart = (!fNextEvent.empty() ? (TGRSIOptions::AnalysisOptions()->StaticWindow() ? fNextEvent[0]->GetTimeStampNs()
@@ -216,7 +255,7 @@ bool TEventBuildingLoop::CheckTimestampCondition(const std::shared_ptr<const TFr
    return true;
 }
 
-bool TEventBuildingLoop::CheckTriggerIdCondition(const std::shared_ptr<const TFragment>& frag)
+bool TEventBuildingLoop::CheckTriggerIdCondition(const std::shared_ptr<TFragment>& frag)
 {
    int64_t triggerId        = frag->GetTriggerId();
    int64_t currentTriggerId = (!fNextEvent.empty() ? fNextEvent[0]->GetTriggerId() : triggerId);
@@ -258,4 +297,33 @@ std::string TEventBuildingLoop::EndStatus()
        << std::endl;
 
    return str.str();
+}
+
+void TEventBuildingLoop::CheckWrapAround(const std::shared_ptr<TFragment>& frag)
+{
+	/// We check the wrap around due to us turning the DAQ off during the implant
+	/// and back on during the decay.
+	/// For this we use the very first fragment to determine the offset of the DAQ timestamp
+	/// (which is time in s from 01.1.1970), and then compare the difference between the timestamp in seconds
+	/// and the offset corrected DAQ timestamp to calculate the wrap around. 
+	/// Comments below are outdated!
+	/// If we are past the background plus both implants (ignoring the decay w/ DAQ off) we correct the timestamp
+	/// by adding the background, both implants, and the decay w/ DAQ on plus (the difference between TS and corr. DAQ TS
+	/// divided by the cycle length) times the cycle length. The latter ensure we only add full cycles.
+	Long64_t timeStamp      = frag->GetTimeStampNs();
+	time_t daqTimeStamp = frag->GetDaqTimeStamp();
+
+	if(fDaqTimeStampOffset == 0 && TRunInfo::SubRunNumber() == 0) {
+		fDaqTimeStampOffset = daqTimeStamp - timeStamp/1000000000;
+		std::ofstream file(fOffsetFile);
+		file<<fDaqTimeStampOffset;
+		file.close();
+		std::cout<<"Wrote daq time offset "<<fDaqTimeStampOffset<<" to "<<fOffsetFile<<std::endl;
+	}
+
+	Long64_t offset = daqTimeStamp - fDaqTimeStampOffset - timeStamp/1000000000;
+	if(offset > (fImplantDaqOffLength + fDecayDaqOffLength)/1000000 - 1) { // -1 to account for uncertainty of offset between DAQ time (1 s precision) and timestamps
+		timeStamp += (fTapeMoveLength + fBackgroundLength + fImplantDaqOnLength + fImplantDaqOffLength + fDecayDaqOffLength)*1000 + (offset/(fCycleLength/1000000))*fCycleLength*1000;
+		frag->SetTimeStamp(timeStamp/frag->GetTimeStampUnit());
+	}
 }

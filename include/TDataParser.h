@@ -60,11 +60,11 @@ public:
                                      kFME3 };
 
 #ifndef __CINT__
-   virtual std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>& AddGoodOutputQueue(size_t maxSize = 50000)
+   virtual std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>& AddGoodOutputQueue(size_t maxSize = 50000)
    {
       std::ostringstream name;
       name << "good_frag_queue_" << fGoodOutputQueues.size();
-      fGoodOutputQueues.push_back(std::make_shared<ThreadsafeQueue<std::shared_ptr<const TFragment>>>(name.str(), maxSize));
+      fGoodOutputQueues.push_back(std::make_shared<ThreadsafeQueue<std::shared_ptr<TFragment>>>(name.str(), maxSize));
       return fGoodOutputQueues.back();
    }
 
@@ -80,7 +80,7 @@ public:
 
    virtual int Process(std::shared_ptr<TRawEvent>) = 0;
    void        Push(ThreadsafeQueue<std::shared_ptr<const TBadFragment>>& queue, const std::shared_ptr<TBadFragment>& frag);
-   void        Push(std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>>& queues, const std::shared_ptr<TFragment>& frag);
+   void        Push(std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>& queues, const std::shared_ptr<TFragment>& frag);
 #endif
    virtual void   ClearQueue();
    virtual size_t ItemsPushed()
@@ -96,7 +96,7 @@ public:
 protected:
    // getters
 #ifndef __CINT__
-   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>>& GoodOutputQueues() { return fGoodOutputQueues; }
+   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>& GoodOutputQueues() { return fGoodOutputQueues; }
 #endif
    bool      NoWaveforms() const { return fNoWaveforms; }
    bool      RecordDiag() const { return fRecordDiag; }
@@ -159,7 +159,7 @@ protected:
 
 private:
 #ifndef __CINT__
-   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>> fGoodOutputQueues;
+   std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>> fGoodOutputQueues;
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TBadFragment>>>           fBadOutputQueue;
    std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TEpicsFrag>>>                   fScalerOutputQueue;
 #endif

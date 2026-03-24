@@ -31,7 +31,7 @@ TDataParser::~TDataParser()
 
 void TDataParser::ClearQueue()
 {
-   std::shared_ptr<const TFragment> frag;
+   std::shared_ptr<TFragment> frag;
    for(const auto& outQueue : fGoodOutputQueues) {
       while(outQueue->Size() != 0u) {
          outQueue->Pop(frag);
@@ -56,7 +56,7 @@ void TDataParser::SetFinished()
    fScalerOutputQueue->SetFinished();
 }
 
-void TDataParser::Push(std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>>& queues,
+void TDataParser::Push(std::vector<std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>>& queues,
                        const std::shared_ptr<TFragment>&                                                frag)
 {
    frag->SetFragmentId(fFragmentIdMap[frag->GetTriggerId()]);

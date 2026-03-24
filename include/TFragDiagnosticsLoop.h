@@ -33,7 +33,7 @@ public:
    ~TFragDiagnosticsLoop();
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>>& InputQueue() { return fInputQueue; }
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>>& InputQueue() { return fInputQueue; }
 #endif
 
    void ClearQueue() override;
@@ -55,7 +55,7 @@ protected:
 private:
    TFragDiagnosticsLoop(std::string name, const std::string& fOutputFilename);
 #ifndef __CINT__
-   void Process(const std::shared_ptr<const TFragment>& event);
+   void Process(const std::shared_ptr<TFragment>& event);
 #endif
    bool CreateHistograms();
 
@@ -92,7 +92,7 @@ private:
    TH2D* fLostAcceptedIdsTime{nullptr};
 
 #ifndef __CINT__
-   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<const TFragment>>> fInputQueue;
+   std::shared_ptr<ThreadsafeQueue<std::shared_ptr<TFragment>>> fInputQueue;
 #endif
 
    /// \cond CLASSIMP

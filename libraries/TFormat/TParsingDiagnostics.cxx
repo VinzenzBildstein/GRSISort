@@ -8,13 +8,13 @@
 
 TParsingDiagnosticsData::TParsingDiagnosticsData() = default;
 
-TParsingDiagnosticsData::TParsingDiagnosticsData(const std::shared_ptr<const TFragment>& frag)
+TParsingDiagnosticsData::TParsingDiagnosticsData(const std::shared_ptr<TFragment>& frag)
    : fMinChannelId(frag->GetChannelId()), fMaxChannelId(frag->GetChannelId()), fNumberOfHits(1),
      fDeadTime(frag->GetDeadTime()), fMinTimeStamp(frag->GetTimeStampNs()), fMaxTimeStamp(frag->GetTimeStampNs())
 {
 }
 
-void TParsingDiagnosticsData::Update(const std::shared_ptr<const TFragment>& frag)
+void TParsingDiagnosticsData::Update(const std::shared_ptr<TFragment>& frag)
 {
    UInt_t channelId = frag->GetChannelId();
    auto   timeStamp = frag->GetTimeStampNs();
@@ -110,7 +110,7 @@ void TParsingDiagnostics::Print(Option_t*) const
    }
 }
 
-void TParsingDiagnostics::GoodFragment(const std::shared_ptr<const TFragment>& frag)
+void TParsingDiagnostics::GoodFragment(const std::shared_ptr<TFragment>& frag)
 {
    /// increment the counter of good fragments for this detector type and check if any trigger ids have been lost
    fNumberOfGoodFragments[frag->GetDetectorType()]++;
