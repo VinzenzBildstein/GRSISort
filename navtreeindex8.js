@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"class_arg_parser.html#a4582615b15fbeb7e070d4cef74a78515":[10,0,11,13],
 "class_arg_parser.html#a567d5eb2eec447472fb310dfa083ae5d":[10,0,11,11],
 "class_arg_parser.html#a7db5560f2a6cd1a4f89970449b556b29":[10,0,11,12],
 "class_arg_parser.html#a9c46f5b4d0821aa8c02635a5c90ab7d7":[10,0,11,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "class_example_event_helper.html#ae5c188f3fc54bc1e7ee607421a46b678":[10,0,23,19],
 "class_example_event_helper.html#ae95111fa334deef7e49ea2050899e972":[10,0,23,32],
 "class_example_event_helper.html#af70ba099fb02f24961d985d47f7a568d":[10,0,23,27],
-"class_example_event_helper.html#afc04623bddc6272dce189c6aafa9d31e":[10,0,23,1],
-"class_example_event_selector.html":[10,0,24]
+"class_example_event_helper.html#afc04623bddc6272dce189c6aafa9d31e":[10,0,23,1]
 };

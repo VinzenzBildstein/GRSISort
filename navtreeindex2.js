@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"_gain_match_g_r_i_f_f_i_n_8cxx.html#a5e0fdad1f05981c1d67b18f12d863edb":[11,0,2,3,5,3],
-"_gain_match_g_r_i_f_f_i_n_8cxx.html#a60cb4cbdb2abf6bfbf5560947248da9c":[11,0,2,3,5,23],
-"_gain_match_g_r_i_f_f_i_n_8cxx.html#a658ce92d13bc7a302faa3836d3992ac7":[11,0,2,3,5,6],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#a6653f6d3c8af0567eba5ae8599bf0018":[11,0,2,3,5,26],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#a72fef6bd95e86299ca0070c35dbf11e5":[11,0,2,3,5,1],
 "_gain_match_g_r_i_f_f_i_n_8cxx.html#a7b13417a888110679109acd44cba52e7":[11,0,2,3,5,5],
@@ -249,5 +246,8 @@ var NAVTREEINDEX2 =
 "_t_cal_point_8cxx_source.html":[11,0,9,1,2,5],
 "_t_cal_point_8h.html":[11,0,7,42],
 "_t_cal_point_8h_source.html":[11,0,7,42],
-"_t_calibrate_descant_8cxx.html":[11,0,9,6,2]
+"_t_calibrate_descant_8cxx.html":[11,0,9,6,2],
+"_t_calibrate_descant_8cxx_source.html":[11,0,9,6,2],
+"_t_calibrate_descant_8h.html":[11,0,7,37],
+"_t_calibrate_descant_8h_source.html":[11,0,7,37]
 };

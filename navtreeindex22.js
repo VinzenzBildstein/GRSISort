@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"class_t_calibrator.html#acc348b917ad7cd97c009aa2ea9883dd1":[10,0,85,27],
 "class_t_calibrator.html#acc8483ebbc03603376b855e32943d535":[10,0,85,28],
 "class_t_calibrator.html#ad5b94e7229d18d31fb569375a92ce3f1":[10,0,85,14],
 "class_t_calibrator.html#ae10a6e7a863b22a831bb4bd2019ba9ed":[10,0,85,30],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "class_t_channel_tab.html#aa5f807f1ec4eedf7814238faaf8e053b":[8,1,6,16],
 "class_t_channel_tab.html#aaabcd794af52e912c0e4e203810d4744":[8,1,6,28],
 "class_t_channel_tab.html#aaef20673bad579923c18006cb552923e":[8,1,6,12],
-"class_t_channel_tab.html#ab267b870068458d6eb98280e1a62e17f":[8,1,6,23],
-"class_t_channel_tab.html#ab7a6932a59949ae7740fccad1ca793d1":[8,1,6,52]
+"class_t_channel_tab.html#ab267b870068458d6eb98280e1a62e17f":[8,1,6,23]
 };
