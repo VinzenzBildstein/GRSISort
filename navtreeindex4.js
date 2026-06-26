@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"_t_g_r_s_i_functions_8h.html#afeba76f4ea51cb86865d42d6d886cf92":[11,0,7,71,14],
+"_t_g_r_s_i_functions_8h_source.html":[11,0,7,71],
+"_t_g_r_s_i_helper_8cxx.html":[11,0,9,3,12],
+"_t_g_r_s_i_helper_8cxx_source.html":[11,0,9,3,12],
+"_t_g_r_s_i_helper_8h.html":[11,0,7,72],
+"_t_g_r_s_i_helper_8h_source.html":[11,0,7,72],
 "_t_g_r_s_i_map_8h.html":[11,0,7,74],
 "_t_g_r_s_i_map_8h_source.html":[11,0,7,74],
 "_t_g_r_s_i_mnemonic_8cxx.html":[11,0,2,1,2,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX4 =
 "_t_kinematics_8h.html":[11,0,7,84],
 "_t_kinematics_8h_source.html":[11,0,7,84],
 "_t_l_m_fitter_8cxx.html":[11,0,9,1,3,4],
-"_t_l_m_fitter_8cxx_source.html":[11,0,9,1,3,4],
-"_t_l_m_fitter_8h.html":[11,0,7,86],
-"_t_l_m_fitter_8h_source.html":[11,0,7,86],
-"_t_la_br_8cxx.html":[11,0,2,1,0,8,1],
-"_t_la_br_8cxx.html#ac15e926548188682363f95631a0e145b":[11,0,2,1,0,8,1,0],
-"_t_la_br_8cxx_source.html":[11,0,2,1,0,8,1],
-"_t_la_br_8h.html":[11,0,2,0,21]
+"_t_l_m_fitter_8cxx_source.html":[11,0,9,1,3,4]
 };
