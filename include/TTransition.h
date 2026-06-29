@@ -29,7 +29,7 @@ class TTransition : public TObject {
    friend class TNucleus;
 
 public:
-   TTransition()                       = default;
+   TTransition() = default;
    TTransition(double energy, double energyUncertainty, double intensity, double intensityUncertainty, double mixingRatio, double mixingRatioUncertainty, double conversionCoeff, double conversionCoeffUncertainty, double totalIntensity, double totalIntensityUncertainty);
    TTransition(TLevel* level, double energy, double energyUncertainty, double intensity, double intensityUncertainty, double mixingRatio, double mixingRatioUncertainty, double conversionCoeff, double conversionCoeffUncertainty, double totalIntensity, double totalIntensityUncertainty);
    TTransition(TLevel* level, double energy, double energyUncertainty, double intensity, double intensityUncertainty, double totalIntensity, double totalIntensityUncertainty);
@@ -68,7 +68,7 @@ public:
    void TotalIntensityUncertainty(double val) { fTotalIntensityUncertainty = val; }
    void FinalLevel(double val) { fFinalLevel = val; }
    void UncertainPlacement(bool val) { fUncertainPlacement = val; }
-                                                                                   
+
    double Energy() const { return fEnergy; }
    double EnergyUncertainty() const { return fEnergyUncertainty; }
    double Intensity() const { return fIntensity; }
@@ -80,8 +80,8 @@ public:
    double TotalIntensity() const { return fTotalIntensity; }
    double TotalIntensityUncertainty() const { return fTotalIntensityUncertainty; }
    double FinalLevel() const { return fFinalLevel; }
-   bool UncertainPlacement() const { return fUncertainPlacement; }
-                                                                                   
+   bool   UncertainPlacement() const { return fUncertainPlacement; }
+
    void Clear(Option_t* opt = "") override;
    void Print(Option_t* opt = "") const override;
 
@@ -90,7 +90,7 @@ public:
    bool operator>(const TTransition& rhs) const { return GetEnergy() > rhs.GetEnergy(); }
    bool operator<(const TTransition& rhs) const { return GetEnergy() < rhs.GetEnergy(); }
 
-   static void Verbosity(EVerbosity val) { fVerbosity = val; }
+   static void       Verbosity(EVerbosity val) { fVerbosity = val; }
    static EVerbosity Verbosity() { return fVerbosity; }
 
 private:

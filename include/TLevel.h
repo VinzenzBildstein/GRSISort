@@ -6,7 +6,7 @@
 /// \class TLevel
 ///
 /// This class represents a level in a nucleus. Probably not of
-/// much use on it's own, but it is part of the framework to 
+/// much use on it's own, but it is part of the framework to
 /// provide information about a nucleus (see also TNucleus).
 ///
 /////////////////////////////////////////////////////////////////
@@ -28,11 +28,11 @@ public:
    TLevel(TLevel&& rhs) noexcept = default;
    TLevel& operator=(const TLevel& rhs);
    TLevel& operator=(TLevel&& rhs) noexcept = default;
-   ~TLevel() = default;
+   ~TLevel()                                = default;
 
    TTransition* AddTransition(double levelEnergy, double br = 100., double ts = 1.);
    TTransition* AddTransition(double levelEnergy, double energyUncertainty, double br = 100., double ts = 1.);
-   TLevel* AddTransition(TTransition* transition, bool quiet = false);
+   TLevel*      AddTransition(TTransition* transition, bool quiet = false);
 
    void Energy(const double val) { fEnergy = val; }
    void EnergyUncertainty(const double val) { fEnergyUncertainty = val; }
@@ -70,7 +70,7 @@ public:
 
    void Print(Option_t* option = "") const override;
 
-   static void Verbosity(EVerbosity val) { fVerbosity = val; }
+   static void       Verbosity(EVerbosity val) { fVerbosity = val; }
    static EVerbosity Verbosity() { return fVerbosity; }
 
 private:

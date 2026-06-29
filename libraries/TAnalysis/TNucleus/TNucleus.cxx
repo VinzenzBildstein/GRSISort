@@ -62,7 +62,7 @@ TNucleus::TNucleus(const char* name, bool loadTransitions, bool quiet)
       return;
    }
    if(fVerbosity >= EVerbosity::kBasicFlow) {
-      std::cout << "After we " << (found ? "found":"didn't find") << " symbol \"" << symbol << "\"/\"" << GetSymbol() << "\", we got Z = " << z << ", N = " << n << ", and set name to \"" << GetName() << "\" (A = " << GetA() << ")" << std::endl;
+      std::cout << "After we " << (found ? "found" : "didn't find") << " symbol \"" << symbol << "\"/\"" << GetSymbol() << "\", we got Z = " << z << ", N = " << n << ", and set name to \"" << GetName() << "\" (A = " << GetA() << ")" << std::endl;
    }
    if(!found) {
       if(!quiet) {
@@ -498,4 +498,3 @@ TLevel* TNucleus::FindLevel(Double_t levelEnergy, Double_t energyUncertainty, in
    }
    return &((low->second)[index]);
 }
-
