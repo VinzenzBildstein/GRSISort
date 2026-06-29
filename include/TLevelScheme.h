@@ -31,14 +31,14 @@
 
 class TLevelScheme;
 
-class TGamma : public TArrow {
+class TLsGamma : public TArrow {
 public:
-   explicit TGamma(TLevelScheme* levelScheme = nullptr, std::string label = "", const double& br = 100., const double& ts = 1.);
-   TGamma(const TGamma& rhs);
-   TGamma(TGamma&& rhs) noexcept = default;
-   TGamma& operator=(const TGamma& rhs);
-   TGamma& operator=(TGamma&& rhs) noexcept = default;
-   ~TGamma()                                = default;
+   explicit TLsGamma(TLevelScheme* levelScheme = nullptr, std::string label = "", const double& br = 100., const double& ts = 1.);
+   TLsGamma(const TLsGamma& rhs);
+   TLsGamma(TLsGamma&& rhs) noexcept = default;
+   TLsGamma& operator=(const TLsGamma& rhs);
+   TLsGamma& operator=(TLsGamma&& rhs) noexcept = default;
+   ~TLsGamma()                                = default;
 
    // setters
    void Energy(const double val) { fEnergy = val; }
@@ -135,21 +135,21 @@ private:
    static float fTextSize;
 
    /// \cond CLASSIMP
-   ClassDefOverride(TGamma, 2)   // NOLINT(readability-else-after-return)
+   ClassDefOverride(TLsGamma, 2)   // NOLINT(readability-else-after-return)
    /// \endcond
 };
 
-class TLevel : public TPolyLine {
+class TLsLevel : public TPolyLine {
 public:
-   explicit TLevel(TLevelScheme* levelScheme = nullptr, const double& energy = -1., const std::string& label = "");
-   TLevel(const TLevel& rhs);
-   TLevel(TLevel&& rhs) noexcept = default;
-   TLevel& operator=(const TLevel& rhs);
-   TLevel& operator=(TLevel&& rhs) noexcept = default;
-   ~TLevel();
+   explicit TLsLevel(TLevelScheme* levelScheme = nullptr, const double& energy = -1., const std::string& label = "");
+   TLsLevel(const TLsLevel& rhs);
+   TLsLevel(TLsLevel&& rhs) noexcept = default;
+   TLsLevel& operator=(const TLsLevel& rhs);
+   TLsLevel& operator=(TLsLevel&& rhs) noexcept = default;
+   ~TLsLevel();
 
-   TGamma* AddGamma(double levelEnergy, const char* label = "", double br = 100., double ts = 1.);   // *MENU*
-   TGamma* AddGamma(double levelEnergy, double energyUncertainty, const char* label = "", double br = 100., double ts = 1.);
+   TLsGamma* AddGamma(double levelEnergy, const char* label = "", double br = 100., double ts = 1.);   // *MENU*
+   TLsGamma* AddGamma(double levelEnergy, double energyUncertainty, const char* label = "", double br = 100., double ts = 1.);
 
    void Energy(const double val) { fEnergy = val; }                         // *MENU*
    void EnergyUncertainty(const double val) { fEnergyUncertainty = val; }   // *MENU*
@@ -173,26 +173,26 @@ public:
    double DrawLabel(const double& pos);
    double DrawEnergy(const double& pos);
 
-   std::map<double, TGamma>::iterator       begin() { return fGammas.begin(); }
-   std::map<double, TGamma>::iterator       end() { return fGammas.end(); }
-   std::map<double, TGamma>::const_iterator begin() const { return fGammas.begin(); }
-   std::map<double, TGamma>::const_iterator end() const { return fGammas.end(); }
+   std::map<double, TLsGamma>::iterator       begin() { return fGammas.begin(); }
+   std::map<double, TLsGamma>::iterator       end() { return fGammas.end(); }
+   std::map<double, TLsGamma>::const_iterator begin() const { return fGammas.begin(); }
+   std::map<double, TLsGamma>::const_iterator end() const { return fGammas.end(); }
 
    // comparison operators (level-level, level-double, and double-level)
-   friend bool operator<(const TLevel& lhs, const TLevel& rhs) { return lhs.fEnergy < rhs.fEnergy; }
-   friend bool operator>(const TLevel& lhs, const TLevel& rhs) { return rhs < lhs; }
-   friend bool operator<=(const TLevel& lhs, const TLevel& rhs) { return !(rhs < lhs); }
-   friend bool operator>=(const TLevel& lhs, const TLevel& rhs) { return !(lhs < rhs); }
+   friend bool operator<(const TLsLevel& lhs, const TLsLevel& rhs) { return lhs.fEnergy < rhs.fEnergy; }
+   friend bool operator>(const TLsLevel& lhs, const TLsLevel& rhs) { return rhs < lhs; }
+   friend bool operator<=(const TLsLevel& lhs, const TLsLevel& rhs) { return !(rhs < lhs); }
+   friend bool operator>=(const TLsLevel& lhs, const TLsLevel& rhs) { return !(lhs < rhs); }
 
-   friend bool operator<(const TLevel& lhs, const double& rhs) { return lhs.fEnergy < rhs; }
-   friend bool operator>(const TLevel& lhs, const double& rhs) { return rhs < lhs; }
-   friend bool operator<=(const TLevel& lhs, const double& rhs) { return !(rhs < lhs); }
-   friend bool operator>=(const TLevel& lhs, const double& rhs) { return !(lhs < rhs); }
+   friend bool operator<(const TLsLevel& lhs, const double& rhs) { return lhs.fEnergy < rhs; }
+   friend bool operator>(const TLsLevel& lhs, const double& rhs) { return rhs < lhs; }
+   friend bool operator<=(const TLsLevel& lhs, const double& rhs) { return !(rhs < lhs); }
+   friend bool operator>=(const TLsLevel& lhs, const double& rhs) { return !(lhs < rhs); }
 
-   friend bool operator<(const double& lhs, const TLevel& rhs) { return lhs < rhs.fEnergy; }
-   friend bool operator>(const double& lhs, const TLevel& rhs) { return rhs < lhs; }
-   friend bool operator<=(const double& lhs, const TLevel& rhs) { return !(rhs < lhs); }
-   friend bool operator>=(const double& lhs, const TLevel& rhs) { return !(lhs < rhs); }
+   friend bool operator<(const double& lhs, const TLsLevel& rhs) { return lhs < rhs.fEnergy; }
+   friend bool operator>(const double& lhs, const TLsLevel& rhs) { return rhs < lhs; }
+   friend bool operator<=(const double& lhs, const TLsLevel& rhs) { return !(rhs < lhs); }
+   friend bool operator>=(const double& lhs, const TLsLevel& rhs) { return !(lhs < rhs); }
 
    void Print(Option_t* option = "") const override;
 
@@ -210,7 +210,7 @@ private:
    double                   fEnergy{0.};              ///< energy of this level
    double                   fEnergyUncertainty{0.};   ///< energy uncertainty of this level
    std::string              fLabel;                   ///< label for this level
-   std::map<double, TGamma> fGammas;                  ///< gamma rays draining this level, each pointing to a level
+   std::map<double, TLsGamma> fGammas;                  ///< gamma rays draining this level, each pointing to a level
    size_t                   fNofFeeding{0};           ///< counter for gammas feeding this level
    TLevelScheme*            fLevelScheme{nullptr};
 
@@ -223,7 +223,7 @@ private:
    static float fTextSize;
 
    /// \cond CLASSIMP
-   ClassDefOverride(TLevel, 1)   // NOLINT(readability-else-after-return)
+   ClassDefOverride(TLsLevel, 1)   // NOLINT(readability-else-after-return)
    /// \endcond
 };
 
@@ -236,26 +236,26 @@ public:
    TBand& operator=(TBand&& rhs) noexcept = default;
    ~TBand()                               = default;
 
-   TLevel* AddLevel(double energy, const std::string& label);   // *MENU*
-   TLevel* AddLevel(const double energy, const char* label)
+   TLsLevel* AddLevel(double energy, const std::string& label);   // *MENU*
+   TLsLevel* AddLevel(const double energy, const char* label)
    {
       std::string tmp(label);
       return AddLevel(energy, tmp);
    }   // *MENU*
-   void AddLevel(TLevel* level);
-   void RemoveLevel(TLevel* level);
+   void AddLevel(TLsLevel* level);
+   void RemoveLevel(TLsLevel* level);
 
    size_t                    NofLevels() const { return fLevels.size(); }
-   TLevel*                   GetLevel(double energy);
-   TLevel*                   FindLevel(double energy, double energyUncertainty);
+   TLsLevel*                   GetLevel(double energy);
+   TLsLevel*                   FindLevel(double energy, double energyUncertainty);
    std::pair<double, double> GetMinMaxLevelEnergy() const { return std::make_pair(fLevels.begin()->second.Energy(), fLevels.rbegin()->second.Energy()); }
    std::pair<double, double> GetMinMaxGamma() const;
    double                    Width(double distance) const;   ///< return width of this band using provided distance between gammas
 
-   std::map<double, TLevel>::iterator       begin() { return fLevels.begin(); }
-   std::map<double, TLevel>::iterator       end() { return fLevels.end(); }
-   std::map<double, TLevel>::const_iterator begin() const { return fLevels.begin(); }
-   std::map<double, TLevel>::const_iterator end() const { return fLevels.end(); }
+   std::map<double, TLsLevel>::iterator       begin() { return fLevels.begin(); }
+   std::map<double, TLsLevel>::iterator       end() { return fLevels.end(); }
+   std::map<double, TLsLevel>::const_iterator begin() const { return fLevels.begin(); }
+   std::map<double, TLsLevel>::const_iterator end() const { return fLevels.end(); }
 
    void Print(Option_t* option = "") const override;
 
@@ -267,7 +267,7 @@ public:
 
 private:
    bool                     fDebug{false};
-   std::map<double, TLevel> fLevels;
+   std::map<double, TLsLevel> fLevels;
    TLevelScheme*            fLevelScheme{nullptr};
 
    /// \cond CLASSIMP
@@ -292,20 +292,20 @@ public:
    static void          ListLevelSchemes();
    static TLevelScheme* GetLevelScheme(const char* name);
 
-   TLevel* AddLevel(double energy, const std::string& bandName, const std::string& label);
-   TLevel* AddLevel(const double energy, const char* bandName, const char* label) { return AddLevel(energy, std::string(bandName), std::string(label)); }   // *MENU*
-   TLevel* GetLevel(double energy);
-   TLevel* FindLevel(double energy, double energyUncertainty);
+   TLsLevel* AddLevel(double energy, const std::string& bandName, const std::string& label);
+   TLsLevel* AddLevel(const double energy, const char* bandName, const char* label) { return AddLevel(energy, std::string(bandName), std::string(label)); }   // *MENU*
+   TLsLevel* GetLevel(double energy);
+   TLsLevel* FindLevel(double energy, double energyUncertainty);
 
-   TGamma*              FindGamma(double energy, double energyUncertainty = 0.);
-   std::vector<TGamma*> FindGammas(double lowEnergy, double highEnergy);
+   TLsGamma*              FindGamma(double energy, double energyUncertainty = 0.);
+   std::vector<TLsGamma*> FindGammas(double lowEnergy, double highEnergy);
 
    std::map<double, double>                             FeedingGammas(double levelEnergy, double factor = 1.);
    std::map<double, double>                             DrainingGammas(double levelEnergy, double factor = 1.);
    void                                                 ResetGammaMap() { fGammaMap.clear(); }
    std::vector<std::tuple<double, std::vector<double>>> ParallelGammas(double initialEnergy, double finalEnergy, double factor = 1.);
 
-   void MoveToBand(const char* bandName, TLevel* level);
+   void MoveToBand(const char* bandName, TLsLevel* level);
 
    void UseGlobalGammaWidth(const int val)
    {
@@ -370,7 +370,7 @@ private:
 
    std::vector<TBand>             fBands;
    std::multimap<double, TLine>   fAuxillaryLevels;
-   std::multimap<double, TGamma*> fGammaMap;
+   std::multimap<double, TLsGamma*> fGammaMap;
 
    // nuclide information
    double fQValue{0.};

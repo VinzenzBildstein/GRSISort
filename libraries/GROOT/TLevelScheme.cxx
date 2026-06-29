@@ -15,19 +15,19 @@
 #include "GCanvas.h"
 #include "TGRSIUtilities.h"
 
-float TGamma::fTextSize = 0.020;
-float TLevel::fTextSize = 0.025;
+float TLsGamma::fTextSize = 0.020;
+float TLsLevel::fTextSize = 0.025;
 
 std::vector<TLevelScheme*> TLevelScheme::fLevelSchemes;
 
-TGamma::TGamma(TLevelScheme* levelScheme, std::string label, const double& br, const double& ts)
+TLsGamma::TLsGamma(TLevelScheme* levelScheme, std::string label, const double& br, const double& ts)
    : fBranchingRatio(br), fTransitionStrength(ts), fLabelText(std::move(label)), fLevelScheme(levelScheme)
 {
    fLabelText.insert(0, 1, ' ');   // prepend a space to get distance from arrow
    SetArrowSize(0.01);
 }
 
-TGamma::TGamma(const TGamma& rhs)
+TLsGamma::TLsGamma(const TLsGamma& rhs)
    : TArrow(rhs)
 {
    if(fDebug || rhs.fDebug) {
@@ -53,7 +53,7 @@ TGamma::TGamma(const TGamma& rhs)
    fFinalEnergy                      = rhs.fFinalEnergy;
 }
 
-TGamma& TGamma::operator=(const TGamma& rhs)
+TLsGamma& TLsGamma::operator=(const TLsGamma& rhs)
 {
    if(fDebug || rhs.fDebug) {
       std::cout << __PRETTY_FUNCTION__ << ": copying gamma \"" << rhs.fLabel << "\" to \"" << fLabel << "\" (" << &rhs << " to " << this << ")" << std::endl;   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
@@ -82,14 +82,14 @@ TGamma& TGamma::operator=(const TGamma& rhs)
    return *this;
 }
 
-void TGamma::UpdateWidth()
+void TLsGamma::UpdateWidth()
 {
    if(fDebug) { std::cout << __PRETTY_FUNCTION__ << std::endl; }   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
    auto arrowsize = static_cast<Width_t>((fUseTransitionStrength ? fTransitionStrength : fBranchingRatio) * fScalingGain + fScalingOffset);
    SetLineWidth(arrowsize);
 }
 
-void TGamma::UpdateLabel()
+void TLsGamma::UpdateLabel()
 {
    if(fDebug) { std::cout << __PRETTY_FUNCTION__ << std::endl; }   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
    if(fLabel != nullptr) {
@@ -97,7 +97,7 @@ void TGamma::UpdateLabel()
    }
 }
 
-void TGamma::Draw(const double& x1, const double& y1, const double& x2, const double& y2)
+void TLsGamma::Draw(const double& x1, const double& y1, const double& x2, const double& y2)
 {
    UpdateWidth();
 
@@ -119,13 +119,13 @@ void TGamma::Draw(const double& x1, const double& y1, const double& x2, const do
    if(fDebug) { Print(); }
 }
 
-void TGamma::Print(Option_t*) const
+void TLsGamma::Print(Option_t*) const
 {
    TArrow::Print();
    std::cout << "Gamma with energy " << fEnergy << " +- " << fEnergyUncertainty << " (from " << fInitialEnergy << " to " << fFinalEnergy << ") " << (fUseTransitionStrength ? "using" : "not using") << " transition strength " << fTransitionStrength << ", branching " << fBranchingRatio << " = " << 100. * fBranchingRatioPercent << "%, scaling gain " << fScalingGain << ", scaling offset " << fScalingOffset << ", arrow size " << GetArrowSize() << ", line color " << GetLineColor() << ", line width " << GetLineWidth() << std::endl;
 }
 
-std::map<double, double> TGamma::CoincidentGammas()
+std::map<double, double> TLsGamma::CoincidentGammas()
 {
    /// Returns a map with the energies and relative strength of all feeding and draining gamma rays in coincidence with this gamma ray.
    if(fLevelScheme == nullptr) {
@@ -160,7 +160,7 @@ std::map<double, double> TGamma::CoincidentGammas()
    return result;
 }
 
-void TGamma::PrintCoincidentGammas()
+void TLsGamma::PrintCoincidentGammas()
 {
    auto map = CoincidentGammas();
    std::cout << map.size() << " coincident gammas for gamma " << fEnergy << " +- " << fEnergyUncertainty << " (" << fInitialEnergy << " to " << fFinalEnergy << "):";
@@ -170,7 +170,7 @@ void TGamma::PrintCoincidentGammas()
    std::cout << std::endl;
 }
 
-std::vector<std::tuple<double, std::vector<double>>> TGamma::ParallelGammas()
+std::vector<std::tuple<double, std::vector<double>>> TLsGamma::ParallelGammas()
 {
    /// Returns a map with the relative strength and energies of all gamma rays that connect the same initial and final level.
    /// Meaning these are all gamma rays that are parallel with this one and together add up to the same energy.
@@ -203,7 +203,7 @@ std::vector<std::tuple<double, std::vector<double>>> TGamma::ParallelGammas()
    return result;
 }
 
-void TGamma::PrintParallelGammas()
+void TLsGamma::PrintParallelGammas()
 {
    auto vec = ParallelGammas();
    std::cout << vec.size() << " parallel paths for gamma " << fEnergy << " +- " << fEnergyUncertainty << " (" << fInitialEnergy << " to " << fFinalEnergy << "):" << std::endl;
@@ -218,17 +218,17 @@ void TGamma::PrintParallelGammas()
    }
 }
 
-TLevel::TLevel(TLevelScheme* levelScheme, const double& energy, const std::string& label)
+TLsLevel::TLsLevel(TLevelScheme* levelScheme, const double& energy, const std::string& label)
 {
    if(fDebug && levelScheme == nullptr) {
-      std::cout << "Warning, nullptr provided to new band \"" << label << "\" for parent level scheme, some functions might no be available" << std::endl;
+      std::cout << "Warning, nullptr provided to new level \"" << label << "\" for parent level scheme, some functions might no be available" << std::endl;
    }
    fLevelScheme = levelScheme;
    fEnergy      = energy;
    fLabel       = label;
 }
 
-TLevel::TLevel(const TLevel& rhs)
+TLsLevel::TLsLevel(const TLsLevel& rhs)
    : TPolyLine(rhs)
 {
    if(fDebug || rhs.fDebug) {
@@ -250,14 +250,14 @@ TLevel::TLevel(const TLevel& rhs)
    }
 }
 
-TLevel::~TLevel()
+TLsLevel::~TLsLevel()
 {
    if(fDebug) {
       std::cout << "Deleting level \"" << fLabel << "\" at " << fEnergy << " keV (" << this << ")" << std::endl;
    }
 }
 
-TLevel& TLevel::operator=(const TLevel& rhs)
+TLsLevel& TLsLevel::operator=(const TLsLevel& rhs)
 {
    if(fDebug || rhs.fDebug) {
       std::cout << __PRETTY_FUNCTION__ << ": copying level \"" << rhs.fLabel << "\" to \"" << fLabel << "\" (" << &rhs << " to " << this << ")" << std::endl;   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
@@ -282,7 +282,7 @@ TLevel& TLevel::operator=(const TLevel& rhs)
    return *this;
 }
 
-TGamma* TLevel::AddGamma(const double levelEnergy, const char* label, double br, double ts)
+TLsGamma* TLsLevel::AddGamma(const double levelEnergy, const char* label, double br, double ts)
 {
    /// MENU function to add gamma from this level to another level at "levelEnergy"
    /// Adds a new gamma ray with specified branching ratio (default 100.), and transition strength (default 1.).
@@ -290,7 +290,7 @@ TGamma* TLevel::AddGamma(const double levelEnergy, const char* label, double br,
    return AddGamma(levelEnergy, 0., label, br, ts);
 }
 
-TGamma* TLevel::AddGamma(const double levelEnergy, const double energyUncertainty, const char* label, double br, double ts)
+TLsGamma* TLsLevel::AddGamma(const double levelEnergy, const double energyUncertainty, const char* label, double br, double ts)
 {
    /// Function to add gamma from this level to another level at "levelEnergy +- energyUncertainty".
    /// Adds a new gamma ray with specified branching ratio (default 100.), and transition strength (default 1.).
@@ -321,7 +321,7 @@ TGamma* TLevel::AddGamma(const double levelEnergy, const double energyUncertaint
    fGammas[level->Energy()].FinalEnergy(level->Energy());
    level->AddFeeding();
    // re-calculate the branching ratios in % for all gammas
-   double sum = std::accumulate(fGammas.begin(), fGammas.end(), 0., [](double r, std::pair<const double, TGamma>& g) { r += g.second.BranchingRatio(); return r; });
+   double sum = std::accumulate(fGammas.begin(), fGammas.end(), 0., [](double r, std::pair<const double, TLsGamma>& g) { r += g.second.BranchingRatio(); return r; });
    for(auto& [en, gamma] : fGammas) {
       gamma.BranchingRatioPercent(gamma.BranchingRatio() / sum);
       gamma.BranchingRatioPercentUncertainty(gamma.BranchingRatioUncertainty() / sum);
@@ -334,7 +334,7 @@ TGamma* TLevel::AddGamma(const double levelEnergy, const double energyUncertaint
    return &(fGammas[level->Energy()]);
 }
 
-void TLevel::MoveToBand(const char* val)
+void TLsLevel::MoveToBand(const char* val)
 {
    if(fLevelScheme == nullptr) {
       std::cerr << __PRETTY_FUNCTION__ << ": Parent level scheme pointer not set!" << std::endl;   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
@@ -346,7 +346,7 @@ void TLevel::MoveToBand(const char* val)
    fLevelScheme->MoveToBand(val, this);
 }
 
-std::pair<double, double> TLevel::GetMinMaxGamma() const
+std::pair<double, double> TLsLevel::GetMinMaxGamma() const
 {
    if(fGammas.empty()) { return std::make_pair(-1., -1.); }
    auto result = std::make_pair(fGammas.begin()->second.Width(), fGammas.begin()->second.Width());
@@ -358,7 +358,7 @@ std::pair<double, double> TLevel::GetMinMaxGamma() const
    return result;
 }
 
-void TLevel::Draw(const double& left, const double& right)
+void TLsLevel::Draw(const double& left, const double& right)
 {
    std::vector<double> x;
    std::vector<double> y;
@@ -392,7 +392,7 @@ void TLevel::Draw(const double& left, const double& right)
    if(fDebug) { std::cout << "Drew TPolyLine using x " << left << "-" << right << " and y " << fEnergy << " with a width of " << GetLineWidth() << " and offset " << fOffset << std::endl; }
 }
 
-double TLevel::DrawLabel(const double& pos)
+double TLsLevel::DrawLabel(const double& pos)
 {
    if(fLevelLabel == nullptr) {
       fLevelLabel = new TLatex(pos, fEnergy + fOffset, fLabel.c_str());
@@ -407,7 +407,7 @@ double TLevel::DrawLabel(const double& pos)
    return fLevelLabel->GetXsize();
 }
 
-double TLevel::DrawEnergy(const double& pos)
+double TLsLevel::DrawEnergy(const double& pos)
 {
    if(fEnergyLabel == nullptr) {
       fEnergyLabel = new TLatex(pos, fEnergy + fOffset, Form("%.0f keV", fEnergy));
@@ -422,7 +422,7 @@ double TLevel::DrawEnergy(const double& pos)
    return fEnergyLabel->GetXsize();
 }
 
-void TLevel::Print(Option_t*) const
+void TLsLevel::Print(Option_t*) const
 {
    std::cout << "Level \"" << fLabel << "\" (" << this << ") at " << fEnergy << " keV has " << fGammas.size() << " draining gammas and " << fNofFeeding << " feeding gammas, debugging" << (fDebug ? "" : " not") << " enabled" << std::endl;
    if(fDebug) {
@@ -477,7 +477,7 @@ TBand& TBand::operator=(const TBand& rhs)
    return *this;
 }
 
-TLevel* TBand::GetLevel(double energy)
+TLsLevel* TBand::GetLevel(double energy)
 {
    /// Returns level at provided energy, returns null pointer if level at this energy does not exist
    if(fLevels.count(energy) == 0) {
@@ -493,7 +493,7 @@ TLevel* TBand::GetLevel(double energy)
    return &(fLevels.find(energy)->second);
 }
 
-TLevel* TBand::FindLevel(double energy, double energyUncertainty)
+TLsLevel* TBand::FindLevel(double energy, double energyUncertainty)
 {
    /// Returns level at the provided energy +- the uncertainty. If there isn't any level in that range a null pointer is returned.
    /// If there are multiple levels in the range the one with the smallest energy difference is returned.
@@ -514,7 +514,7 @@ TLevel* TBand::FindLevel(double energy, double energyUncertainty)
    }
    // found multiple matching levels, use the one with the smallest energy difference
    double  en    = low->first;
-   TLevel* level = &(low->second);
+   TLsLevel* level = &(low->second);
    for(auto& it = ++low; it != high; ++it) {
       if(std::fabs(energy - en) > std::fabs(energy - it->first)) {
          en    = it->first;
@@ -542,7 +542,7 @@ std::pair<double, double> TBand::GetMinMaxGamma() const
    return result;
 }
 
-TLevel* TBand::AddLevel(const double energy, const std::string& label)
+TLsLevel* TBand::AddLevel(const double energy, const std::string& label)
 {
    /// Add a new level with specified energy and label.
    /// Returns pointer to new level, or, if it already exists, returns pointer to existing level.
@@ -573,7 +573,7 @@ TLevel* TBand::AddLevel(const double energy, const std::string& label)
    return &(newLevel->second);
 }
 
-void TBand::AddLevel(TLevel* level)
+void TBand::AddLevel(TLsLevel* level)
 {
    if(fDebug) {
       std::cout << __PRETTY_FUNCTION__ << " - " << this << " - \"" << GetLabel() << "\": Trying to add new level \"" << level->Label() << "\" at " << level->Energy() << " keV" << std::endl;   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
@@ -588,7 +588,7 @@ void TBand::AddLevel(TLevel* level)
    }
 }
 
-void TBand::RemoveLevel(TLevel* level)
+void TBand::RemoveLevel(TLsLevel* level)
 {
    /// Removes level that matches the energy of the provided level (if one exists).
    auto nofRemoved = fLevels.erase(level->Energy());
@@ -695,7 +695,7 @@ TLevelScheme* TLevelScheme::GetLevelScheme(const char* name)
    return nullptr;
 }
 
-TLevel* TLevelScheme::AddLevel(const double energy, const std::string& bandName, const std::string& label)
+TLsLevel* TLevelScheme::AddLevel(const double energy, const std::string& bandName, const std::string& label)
 {
    /// Add level at specified energy to specified band and give it the provided label.
    /// Can be called from context menu using const char* instead of std::string.
@@ -723,7 +723,7 @@ TLevel* TLevelScheme::AddLevel(const double energy, const std::string& bandName,
    return newBand.AddLevel(energy, label);
 }
 
-TLevel* TLevelScheme::GetLevel(double energy)
+TLsLevel* TLevelScheme::GetLevel(double energy)
 {
    for(auto& band : fBands) {
       auto* level = band.GetLevel(energy);
@@ -741,7 +741,7 @@ TLevel* TLevelScheme::GetLevel(double energy)
    return nullptr;
 }
 
-TLevel* TLevelScheme::FindLevel(double energy, double energyUncertainty)
+TLsLevel* TLevelScheme::FindLevel(double energy, double energyUncertainty)
 {
    for(auto& band : fBands) {
       auto* level = band.FindLevel(energy, energyUncertainty);
@@ -759,7 +759,7 @@ TLevel* TLevelScheme::FindLevel(double energy, double energyUncertainty)
    return nullptr;
 }
 
-TGamma* TLevelScheme::FindGamma(double energy, double energyUncertainty)
+TLsGamma* TLevelScheme::FindGamma(double energy, double energyUncertainty)
 {
    /// Finds gamma ray in range [energy - energyUncertainty, energy + energyUncertainty].
    /// If multiple gamma rays are in this range it returns the one closest to the given energy.
@@ -778,10 +778,10 @@ TGamma* TLevelScheme::FindGamma(double energy, double energyUncertainty)
    return result;
 }
 
-std::vector<TGamma*> TLevelScheme::FindGammas(double lowEnergy, double highEnergy)
+std::vector<TLsGamma*> TLevelScheme::FindGammas(double lowEnergy, double highEnergy)
 {
    /// Returns a list of all gamma-rays in the range [lowEnergy, highEnergy]
-   std::vector<TGamma*> result;
+   std::vector<TLsGamma*> result;
    // loop over all bands
    for(auto& band : fBands) {
       // loop over all levels in this band
@@ -1013,7 +1013,7 @@ std::vector<std::tuple<double, std::vector<double>>> TLevelScheme::ParallelGamma
    return result;
 }
 
-void TLevelScheme::MoveToBand(const char* bandName, TLevel* level)
+void TLevelScheme::MoveToBand(const char* bandName, TLsLevel* level)
 {
    /// Moves provided level to (new) band with provided name.
    // Try and find an existing band with this name to add the level to.
@@ -1198,7 +1198,7 @@ void TLevelScheme::Draw(Option_t*)
          scalingOffset = fMinWidth;
       }
 
-      double labelSize = TLevel::TextSize() * std::min(fX2 - fX1, fY2 - fY1);
+      double labelSize = TLsLevel::TextSize() * std::min(fX2 - fX1, fY2 - fY1);
       labelSize *= 1.5;   // we want a bit of a gap between labels ...
 
       // loop to calculate "center" for closely grouped levels
@@ -1472,7 +1472,7 @@ void TLevelScheme::ParseENSDF(const std::string& filename)
 
    std::string        line;
    std::istringstream str;
-   TLevel*            currentLevel = nullptr;
+   TLsLevel*            currentLevel = nullptr;
 
    // general identifier format of line (first 8 characters)
    // 1-3 mass
