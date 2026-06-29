@@ -513,7 +513,7 @@ TLsLevel* TBand::FindLevel(double energy, double energyUncertainty)
       return &(low->second);
    }
    // found multiple matching levels, use the one with the smallest energy difference
-   double  en    = low->first;
+   double    en    = low->first;
    TLsLevel* level = &(low->second);
    for(auto& it = ++low; it != high; ++it) {
       if(std::fabs(energy - en) > std::fabs(energy - it->first)) {
@@ -1472,7 +1472,7 @@ void TLevelScheme::ParseENSDF(const std::string& filename)
 
    std::string        line;
    std::istringstream str;
-   TLsLevel*            currentLevel = nullptr;
+   TLsLevel*          currentLevel = nullptr;
 
    // general identifier format of line (first 8 characters)
    // 1-3 mass

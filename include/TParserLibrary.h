@@ -63,11 +63,11 @@ private:
    // private  members and functions
    void* fHandle{nullptr};   ///< handle for shared object library
 
-   void ParseVersion(); ///< function to parse the library string into numbers
-   int fMajor{0};
-   int fMinorFragment{0};
-   int fMinorAnalysis{0};
-   int fPatch{0};
+   void ParseVersion();   ///< function to parse the library string into numbers
+   int  fMajor{0};
+   int  fMinorFragment{0};
+   int  fMinorAnalysis{0};
+   int  fPatch{0};
 
    // the functions provided by the shared object library
    void (*fInitLibrary)();

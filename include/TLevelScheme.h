@@ -38,7 +38,7 @@ public:
    TLsGamma(TLsGamma&& rhs) noexcept = default;
    TLsGamma& operator=(const TLsGamma& rhs);
    TLsGamma& operator=(TLsGamma&& rhs) noexcept = default;
-   ~TLsGamma()                                = default;
+   ~TLsGamma()                                  = default;
 
    // setters
    void Energy(const double val) { fEnergy = val; }
@@ -206,13 +206,13 @@ public:
    static float TextSize() { return fTextSize; }
 
 private:
-   bool                     fDebug{false};
-   double                   fEnergy{0.};              ///< energy of this level
-   double                   fEnergyUncertainty{0.};   ///< energy uncertainty of this level
-   std::string              fLabel;                   ///< label for this level
+   bool                       fDebug{false};
+   double                     fEnergy{0.};              ///< energy of this level
+   double                     fEnergyUncertainty{0.};   ///< energy uncertainty of this level
+   std::string                fLabel;                   ///< label for this level
    std::map<double, TLsGamma> fGammas;                  ///< gamma rays draining this level, each pointing to a level
-   size_t                   fNofFeeding{0};           ///< counter for gammas feeding this level
-   TLevelScheme*            fLevelScheme{nullptr};
+   size_t                     fNofFeeding{0};           ///< counter for gammas feeding this level
+   TLevelScheme*              fLevelScheme{nullptr};
 
    // graphics elements
    TLatex* fLevelLabel{nullptr};
@@ -246,8 +246,8 @@ public:
    void RemoveLevel(TLsLevel* level);
 
    size_t                    NofLevels() const { return fLevels.size(); }
-   TLsLevel*                   GetLevel(double energy);
-   TLsLevel*                   FindLevel(double energy, double energyUncertainty);
+   TLsLevel*                 GetLevel(double energy);
+   TLsLevel*                 FindLevel(double energy, double energyUncertainty);
    std::pair<double, double> GetMinMaxLevelEnergy() const { return std::make_pair(fLevels.begin()->second.Energy(), fLevels.rbegin()->second.Energy()); }
    std::pair<double, double> GetMinMaxGamma() const;
    double                    Width(double distance) const;   ///< return width of this band using provided distance between gammas
@@ -266,9 +266,9 @@ public:
    }
 
 private:
-   bool                     fDebug{false};
+   bool                       fDebug{false};
    std::map<double, TLsLevel> fLevels;
-   TLevelScheme*            fLevelScheme{nullptr};
+   TLevelScheme*              fLevelScheme{nullptr};
 
    /// \cond CLASSIMP
    ClassDefOverride(TBand, 1)   // NOLINT(readability-else-after-return)
@@ -368,8 +368,8 @@ private:
    bool                              fDebug{false};
    static std::vector<TLevelScheme*> fLevelSchemes;
 
-   std::vector<TBand>             fBands;
-   std::multimap<double, TLine>   fAuxillaryLevels;
+   std::vector<TBand>               fBands;
+   std::multimap<double, TLine>     fAuxillaryLevels;
    std::multimap<double, TLsGamma*> fGammaMap;
 
    // nuclide information

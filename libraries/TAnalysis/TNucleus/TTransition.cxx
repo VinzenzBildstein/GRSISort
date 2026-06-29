@@ -9,21 +9,21 @@ EVerbosity TTransition::fVerbosity = EVerbosity::kQuiet;
 
 TTransition::TTransition(TLevel* level, double energy, double energyUncertainty, double intensity, double intensityUncertainty, double mixingRatio, double mixingRatioUncertainty, double conversionCoeff, double conversionCoeffUncertainty, double totalIntensity, double totalIntensityUncertainty)
    : fLevel(level), fEnergy(energy), fEnergyUncertainty(energyUncertainty), fIntensity(intensity), fIntensityUncertainty(intensityUncertainty),
-   fMixingRatio(mixingRatio), fMixingRatioUncertainty(mixingRatioUncertainty), fConversionCoeff(conversionCoeff), fConversionCoeffUncertainty(conversionCoeffUncertainty),
-   fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
+     fMixingRatio(mixingRatio), fMixingRatioUncertainty(mixingRatioUncertainty), fConversionCoeff(conversionCoeff), fConversionCoeffUncertainty(conversionCoeffUncertainty),
+     fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
 {
 }
 
 TTransition::TTransition(TLevel* level, double energy, double energyUncertainty, double intensity, double intensityUncertainty, double totalIntensity, double totalIntensityUncertainty)
    : fLevel(level), fEnergy(energy), fEnergyUncertainty(energyUncertainty), fIntensity(intensity), fIntensityUncertainty(intensityUncertainty),
-   fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
+     fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
 {
 }
 
 TTransition::TTransition(double energy, double energyUncertainty, double intensity, double intensityUncertainty, double mixingRatio, double mixingRatioUncertainty, double conversionCoeff, double conversionCoeffUncertainty, double totalIntensity, double totalIntensityUncertainty)
    : fEnergy(energy), fEnergyUncertainty(energyUncertainty), fIntensity(intensity), fIntensityUncertainty(intensityUncertainty),
-   fMixingRatio(mixingRatio), fMixingRatioUncertainty(mixingRatioUncertainty), fConversionCoeff(conversionCoeff), fConversionCoeffUncertainty(conversionCoeffUncertainty),
-   fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
+     fMixingRatio(mixingRatio), fMixingRatioUncertainty(mixingRatioUncertainty), fConversionCoeff(conversionCoeff), fConversionCoeffUncertainty(conversionCoeffUncertainty),
+     fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
 {
 }
 
