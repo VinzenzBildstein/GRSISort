@@ -71,13 +71,13 @@
 
 #pragma link C++ class GSnapshot + ;
 
-#pragma link C++ class TGamma + ;
-#pragma link C++ class TLevel + ;
+#pragma link C++ class TLsGamma + ;
+#pragma link C++ class TLsLevel + ;
 #pragma link C++ class TBand + ;
 #pragma link C++ class TLevelScheme + ;
 
-#pragma link C++ class std::map < TLevel*, std::tuple < double, double, TColor*, std::string>> + ;
-#pragma link C++ class std::map < double, TLevel> + ;
+#pragma link C++ class std::map < TLsLevel*, std::tuple < double, double, TColor*, std::string>> + ;
+#pragma link C++ class std::map < double, TLsLevel> + ;
 #pragma link C++ class std::map < std::string, TBand> + ;
 
 #endif
