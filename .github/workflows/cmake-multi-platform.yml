@@ -40,7 +40,7 @@ jobs:
 
     steps:
     - name: Check out repository code
-      uses: actions/checkout@v5
+      uses: actions/checkout@v7
 
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
@@ -51,13 +51,18 @@ jobs:
         
     - name: Linux - Cache ROOT
       if: ${{runner.os == 'Linux'}}
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       id: cache-root
       with:
         path: root_v${{matrix.config.root}}
         key: ${{runner.os}}-root_v${{matrix.config.root}}-${{hashFiles('**/root')}}
         restore-keys: ${{runner.os}}-root_v${{matrix.config.root}}-
 
+    - name: Linux - Update packages
+      if: ${{runner.os == 'Linux'}}
+      run: |
+        sudo apt update
+        
     - name: Linux - Install packages
       if: ${{runner.os == 'Linux'}}
       run: |

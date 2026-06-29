@@ -10,7 +10,6 @@
 TReaction::TReaction(const char* beam, const char* targ, const char* ejec, const char* reco, double eBeam, double ex3, bool inverse)
    : fTBeam(eBeam), fInverse(inverse), fExc(ex3)
 {
-   Clear();
    // I THINK INVERSE KINEMATICS NECESSITATES THE BEAM<->TARGET ENTIRELY ?
    fNuc[0] = new TNucleus(beam);
    fNuc[1] = new TNucleus(targ);
@@ -221,7 +220,7 @@ double TReaction::GetRutherfordLab(double theta_lab, int part, bool Units_mb) co
 // Conversion from LAB frame to CM frame
 double TReaction::ConvertThetaLabToCm(double theta_lab, int part) const
 {
-   theta_lab = std::max(theta_lab, fThetaMax[part]);
+   theta_lab = std::min(theta_lab, fThetaMax[part]);
 
    // Uses the particle velocity in the CM frame, which makes it more complex
    double gtan2    = pow(tan(theta_lab) * fCmG, 2);

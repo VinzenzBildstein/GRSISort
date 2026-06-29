@@ -113,6 +113,7 @@ TGRSIFrame::TGRSIFrame()
    /// To handle all that we use the class TDataFrameLibrary (very similar to TParserLibrary)
    auto* helper  = TDataFrameLibrary::Get()->CreateHelper(inputList);
    fOutputPrefix = helper->Prefix();
+   helper->ColumnNames(fDataFrame->GetColumnNames());
    // this actually moves the helper to the data frame, so from here on "helper" doesn't refer to the object we created anymore
    // aka don't use helper after this!
    fOutput = helper->Book(fDataFrame);
@@ -177,7 +178,7 @@ void TGRSIFrame::Run(TRedirect*& redirect)
                   std::cout << "Error, failed to find or create path " << list.first << ", writing into " << gDirectory->GetPath() << std::endl;
                }
             }
-            // switch back to topmost directory
+            // switch back to topmost directory (could we replace this by outputFile.cd()?)
             while(gDirectory->GetDirectory("..")) { gDirectory->cd(".."); }
          }
 #if ROOT_VERSION_CODE < ROOT_VERSION(6, 30, 0)

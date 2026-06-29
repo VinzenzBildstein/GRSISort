@@ -1,5 +1,7 @@
 #ifndef TGRSIHELPER_H
 #define TGRSIHELPER_H
+#include <utility>
+
 #include "RVersion.h"   // IWYU pragma: keep
 #if ROOT_VERSION_CODE >= ROOT_VERSION(6, 14, 0)
 #include "ROOT/RDataFrame.hxx"
@@ -33,7 +35,9 @@
 
 class TGRSIHelper : public TObject {
 public:
-   std::string& Prefix() { return fPrefix; }
+   std::string&             Prefix() { return fPrefix; }
+   void                     ColumnNames(ROOT::RDF::ColumnNames_t names) { fColumnNames = std::move(names); }
+   ROOT::RDF::ColumnNames_t ColumnNames() const { return fColumnNames; }
 
 protected:
    TPPG*          Ppg() { return fPpg; }
@@ -53,6 +57,7 @@ protected:
    TRunInfo*                                                  fRunInfo{nullptr};        // NOLINT(cppcoreguidelines-non-private-member-variables-in-classes) //!<! pointer to the run info
    TUserSettings*                                             fUserSettings{nullptr};   // NOLINT(cppcoreguidelines-non-private-member-variables-in-classes) //!<! pointer to the user settings
    std::string                                                fPrefix{"TGRSIHelper"};   // NOLINT(cppcoreguidelines-non-private-member-variables-in-classes) //!<! name of this action (used as prefix)
+   ROOT::RDF::ColumnNames_t                                   fColumnNames;             // NOLINT(cppcoreguidelines-non-private-member-variables-in-classes) //!<! vector of names of available columns
 
 private:
    static constexpr int fSizeLimit = 1073741822;   //!<! 1 GiB size limit for objects in ROOT

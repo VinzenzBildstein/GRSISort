@@ -55,8 +55,7 @@ std::map<double, std::tuple<double, double, double, double>> RoughCal(std::vecto
    std::sort(peaks.begin(), peaks.end());
    std::sort(sources.begin(), sources.end(), [](const std::tuple<double, double, double, double>& a, const std::tuple<double, double, double, double>& b) { return std::get<2>(a) > std::get<2>(b); });
 
-   auto maxSize = peaks.size();
-   if(sources.size() > maxSize) { maxSize = sources.size(); }
+   auto maxSize = std::max(peaks.size(), sources.size());
 
    // Peaks are the fitted points.
    // source are the known values
@@ -191,8 +190,7 @@ std::map<TGauss*, std::tuple<double, double, double, double>> Match(std::vector<
    std::sort(peaks.begin(), peaks.end(), [](const TGauss* a, const TGauss* b) { return a->Centroid() < b->Centroid(); });
    std::sort(sources.begin(), sources.end());
 
-   auto maxSize = peaks.size();
-   if(sources.size() > maxSize) { maxSize = sources.size(); }
+   auto maxSize = std::max(peaks.size(), sources.size());
 
    // Peaks are the fitted points.
    // source are the known values
@@ -333,8 +331,7 @@ std::map<TGauss*, std::tuple<double, double, double, double>> SmartMatch(std::ve
    std::sort(peaks.begin(), peaks.end(), [](const TGauss* a, const TGauss* b) { return a->Centroid() < b->Centroid(); });
    std::sort(sources.begin(), sources.end(), [](const std::tuple<double, double, double, double>& a, const std::tuple<double, double, double, double>& b) { return std::get<2>(a) > std::get<2>(b); });
 
-   auto maxSize = peaks.size();
-   if(sources.size() > maxSize) { maxSize = sources.size(); }
+   auto maxSize = std::max(peaks.size(), sources.size());
 
    // Peaks are the fitted points.
    // source are the known values
@@ -467,10 +464,12 @@ TSourceTab::TSourceTab(TSourceCalibration* sourceCal, TChannelTab* channel, TGCo
    : fSourceCalibration(sourceCal), fChannelTab(channel), fSourceFrame(frame), fProjection(projection), fSourceName(sourceName), fSourceEnergy(std::move(sourceEnergy))
 {
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << __PRETTY_FUNCTION__ << RESET_COLOR << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": const. 1 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    // default sorting of tuples is by the first entry, which is the source energy here, so no need for a custom sort condition
    std::sort(fSourceEnergy.begin(), fSourceEnergy.end());
    BuildInterface();
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << "interface built, finding peaks ... " << RESET_COLOR << std::endl; }
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": const. 2 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
 }
 
 TSourceTab::TSourceTab(const TSourceTab& rhs)
@@ -481,9 +480,11 @@ TSourceTab::TSourceTab(const TSourceTab& rhs)
    fProjectionCanvas = rhs.fProjectionCanvas;
    fSourceStatusBar  = rhs.fSourceStatusBar;
 
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": copy const. 1 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    fProjection = rhs.fProjection;
-   fData       = rhs.fData;
-   fFwhm       = rhs.fFwhm;
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": copy const. 2 fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
+   fData = rhs.fData;
+   fFwhm = rhs.fFwhm;
    // ? not sure what to do here, clearing the vectors seems unnecessary since we never filled them
    // but we also can't just simply copy them, we would need a deep copy, which might not make sense?
    // does is make sense in general to have assignment constructors for this class?
@@ -521,9 +522,10 @@ void TSourceTab::BuildInterface()
                                                                                                                                                 //std::unique_lock<std::mutex> graphicsLock(fSourceCalibration->GraphicsMutex());
                                                                                                                                                 //if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Got unique lock on graphics mutex!" << std::endl; }
    // frame with canvas and status bar
+
    fProjectionCanvas = new TRootEmbeddedCanvas(Form("ProjectionCanvas%s", fProjection->GetName()), fSourceFrame, TSourceCalibration::PanelWidth(), TSourceCalibration::PanelHeight());
 
-   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Created projection canvas!" << std::endl; }
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Created projection canvas " << fProjectionCanvas->GetName() << "!" << std::endl; }
 
    fSourceFrame->AddFrame(fProjectionCanvas, new TGLayoutHints(kLHintsTop | kLHintsExpandX | kLHintsExpandY, 2, 2, 2, 2));
 
@@ -537,6 +539,7 @@ void TSourceTab::BuildInterface()
 
    fSourceFrame->AddFrame(fSourceStatusBar, new TGLayoutHints(kLHintsBottom | kLHintsExpandX, 2, 2, 2, 2));
 
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": buildinterface fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Releasing unique lock on graphics mutex after building interface" << std::endl; }
 }
 
@@ -596,6 +599,7 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
    //   kMouseMotion   = 51, kMouseEnter    = 52, kMouseLeave    = 53,
    //   kButton1Double = 61, kButton2Double = 62, kButton3Double = 63
    //};
+   if(selected == nullptr) { return; }
    Status(selected->GetName(), 0);
    Status(selected->GetObjectInfo(px, py), 1);
    //auto key = static_cast<char>(px);
@@ -610,13 +614,13 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
             }
             std::cout << std::endl;
          }
-         auto* polym = static_cast<TPolyMarker*>(fProjection->GetListOfFunctions()->FindObject("TPolyMarker"));
-         if(polym == nullptr) {
-            std::cerr << "No peaks defined yet?" << std::endl;
-            return;
-         }
-         polym->SetNextPoint(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px), fProjectionCanvas->GetCanvas()->AbsPixeltoX(py));
-         double range = 4 * fSourceCalibration->Sigma();   // * fProjection->GetXaxis()->GetBinWidth(1);
+         //auto* polym = static_cast<TPolyMarker*>(fProjection->GetListOfFunctions()->FindObject("TPolyMarker"));
+         //if(polym == nullptr) {
+         //   std::cerr << "No peaks defined yet?" << std::endl;
+         //   return;
+         //}
+         //polym->SetNextPoint(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px), fProjectionCanvas->GetCanvas()->AbsPixeltoX(py));
+         double range = fSourceCalibration->FitRange();   // * fProjection->GetXaxis()->GetBinWidth(1);
          auto*  pf    = new TPeakFitter(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px) - range, fProjectionCanvas->GetCanvas()->AbsPixeltoX(px) + range);
          auto*  peak  = new TGauss(fProjectionCanvas->GetCanvas()->AbsPixeltoX(px));
          pf->AddPeak(peak);
@@ -634,6 +638,11 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
          std::sort(fPeaks.begin(), fPeaks.end(), [](const TGauss* a, const TGauss* b) { return a->Centroid() < b->Centroid(); });
 
          auto map = Match(fPeaks, fSourceEnergy, this);
+
+         SetLineColors();
+
+         UpdateFits();
+
          Add(map);
 
          // update status
@@ -643,6 +652,11 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
          fChannelTab->UpdateData();
          fChannelTab->UpdateFwhm();
          fChannelTab->Calibrate();
+      } else if(selected->IsA() == GH1D::Class() && fProjection != nullptr) {
+         std::cout << "selected object " << selected << " is a histogram called " << selected->GetName() << " and not the projection " << fProjection << " called " << fProjection->GetName() << ", going to redraw the projection" << std::endl;
+         Draw();
+      } else if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
+         std::cout << DCYAN << "Selected object " << selected << " (" << selected->ClassName() << " called " << selected->GetName() << ") does not match projection " << fProjection << " (" << fProjection->ClassName() << " called " << fProjection->GetName() << ")" << std::endl;
       }
       break;
    case kArrowKeyPress:
@@ -692,7 +706,7 @@ void TSourceTab::ProjectionStatus(Int_t event, Int_t px, Int_t py, TObject* sele
       break;
    default:
       if(TSourceCalibration::VerboseLevel() > EVerbosity::kLoops) {
-         std::cout << "unprocessed event " << event << " with px, py " << px << ", " << py << " selected object is a " << selected->ClassName() << " with name " << selected->GetName() << " and title " << selected->GetTitle() << " object info is " << selected->GetObjectInfo(px, py) << std::endl;
+         std::cout << "unprocessed event " << event << " with px, py " << px << ", " << py << " selected object is a " << selected->ClassName() << " with name \"" << selected->GetName() << "\" and title \"" << selected->GetTitle() << "\" object info is " << selected->GetObjectInfo(px, py) << std::endl;
       }
       break;
    }
@@ -772,13 +786,14 @@ void TSourceTab::UpdateFits()
       fProjection->SetTitle(Form("%lu of %lu source peaks used, channel ???? - ????", fFits.size(), fSourceEnergy.size()));
    }
    fProjectionCanvas->GetCanvas()->Modified();
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << DCYAN << this << ": updatefits fProjection = " << fProjection << " called " << fProjection->GetName() << RESET_COLOR << std::endl; }
 }
 
 void TSourceTab::Draw()
 {
    fProjectionCanvas->GetCanvas()->cd();
-   fProjection->Draw();                                                                                                                                                                                                                           // seems like hist + samefunc does not work. Could use hist + loop over list of functions (with same)
-   if(TSourceCalibration::VerboseLevel() > EVerbosity::kSubroutines) { std::cout << __PRETTY_FUNCTION__ << ": drew " << fProjection->GetName() << " on " << fProjectionCanvas->GetCanvas()->GetName() << "/" << gPad->GetName() << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   fProjection->Draw();                                                                                                                                                                                                                                                   // seems like hist + samefunc does not work. Could use hist + loop over list of functions (with same)
+   if(TSourceCalibration::VerboseLevel() > EVerbosity::kSubroutines) { std::cout << __PRETTY_FUNCTION__ << ": drew " << fProjection << " = " << fProjection->GetName() << " on " << fProjectionCanvas->GetCanvas()->GetName() << "/" << gPad->GetName() << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
 }
 
 void TSourceTab::InitialCalibration(const bool& force)
@@ -890,8 +905,8 @@ void TSourceTab::FindCalibratedPeaks(const TF1* calibration)
    }
    // loop over channel positions and fit the peaks
    for(size_t i = 0; i < channelPos.size(); ++i) {
-      double lowRange  = TSourceCalibration::FitRange() * fSourceCalibration->Sigma();
-      double highRange = TSourceCalibration::FitRange() * fSourceCalibration->Sigma();
+      double lowRange  = fSourceCalibration->FitRange();
+      double highRange = fSourceCalibration->FitRange();
       // if the range for this peaks overlaps with the previous/next one, reduce the range but not more than half
       // also check if the previous/next one is above the minimum intensity, because otherwise we would have skipped that one anyway
       if(i > 0) {
@@ -970,7 +985,7 @@ void TSourceTab::FindCalibratedPeaks(const TF1* calibration)
 void TSourceTab::Add(std::map<double, std::tuple<double, double, double, double>> map)
 {
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
-      std::cout << DCYAN << "Adding map with " << map.size() << " data points, fData = " << fData << std::endl;
+      std::cout << DCYAN << "Adding map (double->tuple) with " << map.size() << " data points, fData = " << fData << std::endl;
    }
    if(fData == nullptr) {
       fData = new TGraphErrors(map.size());
@@ -1000,7 +1015,7 @@ void TSourceTab::Add(std::map<double, std::tuple<double, double, double, double>
 void TSourceTab::Add(std::map<TGauss*, std::tuple<double, double, double, double>> map)
 {
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
-      std::cout << DCYAN << "Adding map with " << map.size() << " data points, fData = " << fData << std::endl;
+      std::cout << DCYAN << "Adding map (TGauss*->tuple) with " << map.size() << " data points, fData = " << fData << std::endl;
    }
    if(fData == nullptr) {
       fData = new TGraphErrors(map.size());
@@ -1162,7 +1177,7 @@ void TSourceTab::ReplacePeak(const size_t& index, const double& channel)
    if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Replacing old peak at index " << index << ", centroid " << fPeaks.at(index)->Centroid() << " with new peak at channel " << channel << std::endl; }
 
    // calculate the fitting range (low to high) and adjust it so we ignore the old peak
-   double range = TSourceCalibration::FitRange() * fSourceCalibration->Sigma();
+   double range = fSourceCalibration->FitRange();
    double low   = channel - range;
    double high  = channel + range;
    if(fPeaks.at(index)->Centroid() < channel) {
@@ -1325,11 +1340,13 @@ void TSourceTab::Print() const
 
 void TSourceTab::PrintCanvases() const
 {
-   std::cout << "TSourceTab " << fSourceName << " projection canvas:" << std::endl;
+   std::cout << this << ": TSourceTab " << fSourceName << " projection canvas:" << std::endl;
    fProjectionCanvas->GetCanvas()->Print();
    for(auto* obj : *(fProjectionCanvas->GetCanvas()->GetListOfPrimitives())) {
+      std::cout << obj << ": " << obj->ClassName() << " called " << obj->GetName() << std::endl;
       obj->Print();
    }
+   std::cout << "--------------------" << std::endl;
 }
 
 void TSourceTab::PrintLayout() const
@@ -1478,6 +1495,9 @@ void TChannelTab::CreateSourceTab(size_t source)
          tmpTab = fSourceTab->AddTab(Form("%s_%s", fNuclei[source]->GetName(), fName.c_str()));
          //if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Releasing unique lock on graphics mutex after adding tab" << std::endl; }
       }
+      if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) {
+         std::cout << DYELLOW << "Creating source tab " << source << " = " << fProjections[source]->GetName() << ", tab name " << tmpTab->GetName() << std::endl;
+      }
       fSources[source] = new TSourceTab(fSourceCalibration, this, tmpTab, fProjections[source], fNuclei[source]->GetName(), fSourceEnergies[source]);
       {
          //if(TSourceCalibration::VerboseLevel() > EVerbosity::kBasicFlow) { std::cout << "Creating unique lock on graphics mutex to increment status bar" << std::endl; }
@@ -1571,7 +1591,8 @@ void TChannelTab::RemovePoint(Int_t oldGraph, Int_t oldPoint)
    }
    if(0 <= oldGraph && oldGraph < static_cast<int>(fSources.size())) {
       if(oldPoint >= 0) {
-         return fSources[oldGraph]->RemovePoint(oldPoint);
+         fSources[oldGraph]->RemovePoint(oldPoint);
+         return;
       }
       std::cout << "Can't remove negative point " << oldPoint << " from graph " << oldGraph << std::endl;
    }
@@ -1758,7 +1779,7 @@ void TChannelTab::Calibrate(int degree)
    fInfoLabel->Draw();
 
    fResidualPad->cd();
-   fData->DrawResidual("*");
+   fData->DrawResidual("*r0");
 
    fCalibrationCanvas->GetCanvas()->Modified();
 
@@ -2113,13 +2134,35 @@ void TChannelTab::ZoomY()
    hist2->SetMinimum(hist1->GetMinimum());
    hist2->SetMaximum(hist1->GetMaximum());
 
+   // update residual line
+   TLine* resLine = nullptr;
+   for(const auto&& obj : *(gPad->GetListOfPrimitives())) {
+      if(obj->IsA() == TLine::Class()) {
+         if(resLine != nullptr) { std::cout << "ZoomY found residual line, old was " << resLine << std::endl; }
+         resLine = static_cast<TLine*>(obj);
+      }
+   }
+   for(const auto&& obj : *(pad2->GetListOfPrimitives())) {
+      if(obj->IsA() == TLine::Class()) {
+         if(resLine != nullptr) { std::cout << "ZoomY found residual line, old was " << resLine << std::endl; }
+         resLine = static_cast<TLine*>(obj);
+      }
+   }
+
+   // update the y-limits of the line at zero residual
+   if(resLine != nullptr) {
+      resLine->SetY1(hist1->GetMinimum());
+      resLine->SetY2(hist1->GetMaximum());
+   }
+
    pad2->Modified();
    pad2->Update();
 }
 
 void TChannelTab::PrintCanvases() const
 {
-   std::cout << "TChannelTab " << Name() << " calibration canvas:" << std::endl;
+   std::cout << "----------------------------------------" << std::endl;
+   std::cout << this << ": TChannelTab " << Name() << " calibration canvas:" << std::endl;
    fCalibrationCanvas->GetCanvas()->Print();
    for(auto* obj : *(fCalibrationCanvas->GetCanvas()->GetListOfPrimitives())) {
       obj->Print();
@@ -2132,6 +2175,7 @@ void TChannelTab::PrintCanvases() const
    for(auto* sourceTab : fSources) {
       sourceTab->PrintCanvases();
    }
+   std::cout << "----------------------------------------" << std::endl;
 }
 
 void TChannelTab::PrintLayout() const
@@ -2157,7 +2201,7 @@ int              TSourceCalibration::fSourceboxWidth     = 100;
 int              TSourceCalibration::fParameterHeight    = 200;
 int              TSourceCalibration::fDigitWidth         = 5;
 int              TSourceCalibration::fMaxIterations      = 50;
-int              TSourceCalibration::fFitRange           = 10;
+int              TSourceCalibration::fFitRange           = 20;
 bool             TSourceCalibration::fAcceptBadFits      = false;
 bool             TSourceCalibration::fFast               = false;
 bool             TSourceCalibration::fUseCalibratedPeaks = false;
@@ -2166,7 +2210,7 @@ size_t           TSourceCalibration::fNumberOfThreads    = 4;
 std::vector<int> TSourceCalibration::fBadBins;
 
 TSourceCalibration::TSourceCalibration(double sigma, double threshold, int degree, int count...)
-   : TGMainFrame(nullptr, 2 * fPanelWidth, fPanelHeight + 2 * fStatusbarHeight), fDefaultSigma(sigma), fDefaultThreshold(threshold), fDefaultDegree(degree)
+   : TGMainFrame(nullptr, 2 * fPanelWidth, fPanelHeight + 2 * fStatusbarHeight), fDefaultSigma(sigma), fThreshold(threshold), fDefaultDegree(degree)
 {
    TH1::AddDirectory(false);   // turns off warnings about multiple histograms with the same name because ROOT doesn't manage them anymore
 
@@ -2181,7 +2225,7 @@ TSourceCalibration::TSourceCalibration(double sigma, double threshold, int degre
    }
    va_end(args);   // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
    if(fVerboseLevel > EVerbosity::kQuiet) {
-      std::cout << DGREEN << __PRETTY_FUNCTION__ << ": verbose level " << static_cast<std::underlying_type<EVerbosity>::type>(fVerboseLevel) << std::endl   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+      std::cout << DGREEN << __PRETTY_FUNCTION__ << ": verbose level " << static_cast<std::underlying_type_t<EVerbosity>>(fVerboseLevel) << std::endl   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
                 << "using " << count << "/" << fMatrices.size() << " matrices:" << std::endl;
       for(auto* mat : fMatrices) {
          std::cout << mat << std::flush << " = " << mat->GetName() << std::endl;
@@ -2217,9 +2261,9 @@ TSourceCalibration::TSourceCalibration(double sigma, double threshold, int degre
    for(size_t i = 1; i < fMatrices.size(); ++i) {
       int tmpBins = 0;
       for(int bin = 1; bin <= fMatrices[i]->GetNbinsX(); ++bin) {
-         if(FilledBin(fMatrices[i], bin)) {                                                            // good bin in the current matrix
-                                                                                                       // current index is tmpBins, so we check if the bin agrees with what we have
-            if(channelToIndex.find(bin) == channelToIndex.end() || tmpBins != channelToIndex[bin]) {   // found a full bin, but the corresponding bin in the first matrix isn't full or a different bin
+         if(FilledBin(fMatrices[i], bin) && std::find(fBadBins.begin(), fBadBins.end(), bin) == fBadBins.end()) {   // good bin in the current matrix
+                                                                                                                    // current index is tmpBins, so we check if the bin agrees with what we have
+            if(channelToIndex.find(bin) == channelToIndex.end() || tmpBins != channelToIndex[bin]) {                // found a full bin, but the corresponding bin in the first matrix isn't full or a different bin
                std::ostringstream error;
                error << "Mismatch in " << i << ". matrix (" << fMatrices[i]->GetName() << "), bin " << bin << " is " << tmpBins << ". filled bin, but should be " << (channelToIndex.find(bin) == channelToIndex.end() ? "not filled" : Form("%d", channelToIndex[bin])) << std::endl;
                throw std::invalid_argument(error.str());
@@ -2282,6 +2326,8 @@ void TSourceCalibration::BuildFirstInterface()
    if(fVerboseLevel > EVerbosity::kBasicFlow) { std::cout << "created table layout manager with 2 columns, " << fMatrices.size() + 1 << " rows" << std::endl; }
    SetLayoutManager(layoutManager);
 
+   // find the path for the .sou files
+   std::string path = TNucleus::SourceDirectory();
    // The matrices and source selection boxes
    size_t i = 0;
    for(i = 0; i < fMatrices.size(); ++i) {
@@ -2292,14 +2338,11 @@ void TSourceCalibration::BuildFirstInterface()
       fSourceBox.push_back(new TGComboBox(this, "Select source", kSourceBox + fSourceBox.size()));
 
       int index = 0;
+      // convert name to lower-case
+      std::string name = fMatrices[i]->GetName();
+      std::transform(name.begin(), name.end(), name.begin(), ::tolower);
+      fMatrices[i]->SetName(name.c_str());
 #if __cplusplus >= 201703L
-      // For some reasons getenv("GRSISYS") with strcat does not work (adds the "sub"-path twice).
-      // Have to do this by copying the getenv result into a c++-string.
-      if(std::getenv("GRSISYS") == nullptr) {
-         throw std::runtime_error("Failed to get environment variable $GRSISYS");
-      }
-      std::string path(std::getenv("GRSISYS"));
-      path += "/libraries/TAnalysis/SourceData/";
       for(const auto& file : std::filesystem::directory_iterator(path)) {
          if(file.is_regular_file() && file.path().extension().compare(".sou") == 0) {
             fSourceBox.back()->AddEntry(file.path().stem().c_str(), index);
@@ -2317,37 +2360,37 @@ void TSourceCalibration::BuildFirstInterface()
       if(fVerboseLevel > EVerbosity::kSubroutines) { std::cout << i << ": created list with " << index << " sources" << std::endl; }
 #else
       fSourceBox.back()->AddEntry("22Na", index);
-      if(std::strstr(fMatrices[i]->GetName(), "22Na") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "22na") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("56Co", index);
-      if(std::strstr(fMatrices[i]->GetName(), "56Co") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "56co") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("60Co", index);
-      if(std::strstr(fMatrices[i]->GetName(), "60Co") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "60co") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("133Ba", index);
-      if(std::strstr(fMatrices[i]->GetName(), "133Ba") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "133ba") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("152Eu", index);
-      if(std::strstr(fMatrices[i]->GetName(), "152Eu") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "152eu") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
       ++index;
       fSourceBox.back()->AddEntry("241Am", index);
-      if(std::strstr(fMatrices[i]->GetName(), "241Am") != nullptr) {
+      if(std::strstr(fMatrices[i]->GetName(), "241am") != nullptr) {
          fSourceBox.back()->Select(index);
          SetSource(kSourceBox + fSourceBox.size() - 1, index);
       }
@@ -2423,7 +2466,7 @@ void TSourceCalibration::SetSource(Int_t windowId, Int_t entryId)
    TIter iter(nucleus->GetTransitionList());
    fSourceEnergy[index].clear();
    while(auto* transition = static_cast<TTransition*>(iter.Next())) {
-      fSourceEnergy[index].push_back(std::make_tuple(transition->GetEnergy(), transition->GetEnergyUncertainty(), transition->GetIntensity(), transition->GetIntensityUncertainty()));
+      fSourceEnergy[index].emplace_back(transition->GetEnergy(), transition->GetEnergyUncertainty(), transition->GetIntensity(), transition->GetIntensityUncertainty());
    }
    fSource[index] = nucleus;
 }
@@ -2436,7 +2479,6 @@ void TSourceCalibration::HandleTimer()
    } else if(fEmitter == fAcceptAllButton) {
       for(auto& channelTab : fChannelTab) {
          if(channelTab == nullptr) { continue; }
-         channelTab->UpdateChannel();
          channelTab->Write(fOutput);
       }
       WriteCalibration();
@@ -2515,6 +2557,12 @@ void TSourceCalibration::SecondWindow()
 
    // Map main frame
    MapWindow();
+   // re-draw to try and fix issue with last source histogram being on the wrong tab
+   for(auto* channelTab : fChannelTab) {
+      if(channelTab != nullptr) {
+         channelTab->Draw();
+      }
+   }
    if(fVerboseLevel > EVerbosity::kSubroutines) { std::cout << DGREEN << __PRETTY_FUNCTION__ << " done" << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
 }
 
@@ -2538,8 +2586,8 @@ void TSourceCalibration::BuildSecondInterface()
       fChannelTab[bin - 1] = new TChannelTab(this, fSource, projections, fMatrices[0]->GetXaxis()->GetBinLabel(bin), frame, fSourceEnergy, fProgressBar);
       //// right now the lambda uses copies of all variables, not sure if that is neccesary, or if we only need that for projections?
       //fFutures.emplace(std::make_pair(bin - 1, std::async(std::launch::async, [=] {
-      //				std::cout << "creating channel tab with these arguments: " << this << ", fSource vector of size " << fSource.size() << ", projection vector of size " << projections.size() << ", " << fMatrices[0]->GetXaxis()->GetBinLabel(bin) << ", " << frame << ", " << fDefaultSigma << ", " << fDefaultThreshold << ", " << fDefaultDegree << ", " << fSourceEnergy.size() << " source energy vectors, " << fProgressBar << "."<< std::endl;
-      //				auto* newTab = new TChannelTab(this, fSource, projections, fMatrices[0]->GetXaxis()->GetBinLabel(bin), frame, fDefaultSigma, fDefaultThreshold, fDefaultDegree, fSourceEnergy, fProgressBar);
+      //				std::cout << "creating channel tab with these arguments: " << this << ", fSource vector of size " << fSource.size() << ", projection vector of size " << projections.size() << ", " << fMatrices[0]->GetXaxis()->GetBinLabel(bin) << ", " << frame << ", " << fDefaultSigma << ", " << fThreshold << ", " << fDefaultDegree << ", " << fSourceEnergy.size() << " source energy vectors, " << fProgressBar << "."<< std::endl;
+      //				auto* newTab = new TChannelTab(this, fSource, projections, fMatrices[0]->GetXaxis()->GetBinLabel(bin), frame, fDefaultSigma, fThreshold, fDefaultDegree, fSourceEnergy, fProgressBar);
       //				std::cout << "created new tab " << newTab << std::endl;
       //				return newTab;
       //				})));
@@ -2604,10 +2652,10 @@ void TSourceCalibration::BuildSecondInterface()
    fRightFrame     = new TGVerticalFrame(fBottomFrame, fPanelWidth, fParameterHeight);
    fParameterFrame = new TGGroupFrame(fRightFrame, "Parameters", kHorizontalFrame);
    fParameterFrame->SetLayoutManager(new TGMatrixLayout(fParameterFrame, 0, 4, 2));
-   fSigmaLabel       = new TGLabel(fParameterFrame, "Sigma");
+   fSigmaLabel       = new TGLabel(fParameterFrame, "Sigma (in channels)");
    fSigmaEntry       = new TGNumberEntry(fParameterFrame, fDefaultSigma, fDigitWidth, kSigmaEntry, TGNumberFormat::EStyle::kNESRealTwo, TGNumberFormat::EAttribute::kNEAPositive);
-   fThresholdLabel   = new TGLabel(fParameterFrame, "Threshold");
-   fThresholdEntry   = new TGNumberEntry(fParameterFrame, fDefaultThreshold, fDigitWidth, kThresholdEntry, TGNumberFormat::EStyle::kNESRealThree, TGNumberFormat::EAttribute::kNEAPositive, TGNumberFormat::ELimit::kNELLimitMinMax, 0., 1.);
+   fFitRangeLabel    = new TGLabel(fParameterFrame, "Fit range (in channels)");
+   fFitRangeEntry    = new TGNumberEntry(fParameterFrame, fFitRange, fDigitWidth, kFitRangeEntry, TGNumberFormat::EStyle::kNESInteger, TGNumberFormat::EAttribute::kNEAPositive);
    fDegreeLabel      = new TGLabel(fParameterFrame, "Degree of polynomial");
    fDegreeEntry      = new TGNumberEntry(fParameterFrame, fDefaultDegree, 2, kDegreeEntry, TGNumberFormat::EStyle::kNESInteger, TGNumberFormat::EAttribute::kNEAPositive);
    fMaxResidualLabel = new TGLabel(fParameterFrame, "Max. residual (in keV)");
@@ -2615,8 +2663,8 @@ void TSourceCalibration::BuildSecondInterface()
 
    fParameterFrame->AddFrame(fSigmaLabel);
    fParameterFrame->AddFrame(fSigmaEntry);
-   fParameterFrame->AddFrame(fThresholdLabel);
-   fParameterFrame->AddFrame(fThresholdEntry);
+   fParameterFrame->AddFrame(fFitRangeLabel);
+   fParameterFrame->AddFrame(fFitRangeEntry);
    fParameterFrame->AddFrame(fDegreeLabel);
    fParameterFrame->AddFrame(fDegreeEntry);
    fParameterFrame->AddFrame(fMaxResidualLabel);
@@ -2960,6 +3008,10 @@ void TSourceCalibration::RecursiveRemove()
 void TSourceCalibration::WriteCalibration()
 {
    if(fVerboseLevel > EVerbosity::kBasicFlow) { std::cout << DGREEN << __PRETTY_FUNCTION__ << std::endl; }   // NOLINT(cppcoreguidelines-pro-type-const-cast, cppcoreguidelines-pro-bounds-array-to-pointer-decay)
+   for(auto& channelTab : fChannelTab) {
+      if(channelTab == nullptr) { continue; }
+      channelTab->UpdateChannel();
+   }
    std::ostringstream fileName;
    for(auto* source : fSource) {
       fileName << source->GetName();

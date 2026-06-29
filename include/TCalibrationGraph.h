@@ -10,6 +10,7 @@
 #include "TList.h"
 #include "TLegend.h"
 #include "TQObject.h"
+#include "TLine.h"
 
 #include "Globals.h"
 
@@ -160,6 +161,8 @@ public:
 
    void ResetTotalGraph();   ///< reset the total graph and add the individual ones again (used e.g. after scaling of individual graphs is done)
 
+   void RefreshResidualLine();
+
    static void       VerboseLevel(EVerbosity val) { fVerboseLevel = val; }
    static EVerbosity VerboseLevel() { return fVerboseLevel; }
 
@@ -180,6 +183,7 @@ private:
    double                         fMaximumY{0.};                  ///< Maximum y-value
    std::string                    fXAxisLabel;                    ///< The label of the x-axis.
    std::string                    fYAxisLabel;                    ///< The label of the y-axis.
+   TLine*                         fZeroResidual{nullptr};         //!<! The line denoting zero residual
 
    static EVerbosity fVerboseLevel;   ///< Changes verbosity
 

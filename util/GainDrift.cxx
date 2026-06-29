@@ -246,6 +246,11 @@ int main(int argc, char** argv)
          continue;
       }
 
+      if(!hist->GetXaxis()->IsAlphanumeric()) {
+         std::cerr << "histogram \"" << histogramName << "\" in \"" << fileName << "\" has no bin labels on the x-axis, skipping it!" << std::endl;
+         continue;
+      }
+
       // fill list with bins to excluded if we only have a list of bins to include
       if(!includedBins.empty()) {
          excludedBins.clear();
@@ -342,45 +347,63 @@ void FindGainDrift(TH2* hist, std::vector<double> energies, std::vector<double> 
             ++graphIndex;
          } else {
             static_cast<TF1*>(proj->GetListOfFunctions()->Last())->SetLineColor(kGray);
+            delete redirect;
+            redirect = new TRedirect(Form("%s.log", prefix.c_str()), true);
             std::cout << "Not using bad fit with centroid " << peak.Centroid() << " +- " << peak.CentroidErr() << ", area " << peak.Area() << " +- " << peak.AreaErr() << ", fwhm " << peak.FWHM() << " in range " << energies[i] - range << " - " << energies[i] + range << std::endl;
+            delete redirect;
+            redirect = new TRedirect("/dev/null", true);
          }
       }
 
-      // reset the parameters of the polynomial function and fit the graph
-      polynomial->SetParameter(1, 0.);
-      polynomial->SetParameter(2, 1.);
-      for(int i = 3; i < degree + 2; ++i) {
-         polynomial->SetParameter(i, 0.);
+      if(graph->GetN() > degree) {
+         // reset the parameters of the polynomial function and fit the graph
+         polynomial->SetParameter(1, 0.);
+         polynomial->SetParameter(2, 1.);
+         for(int i = 3; i < degree + 2; ++i) {
+            polynomial->SetParameter(i, 0.);
+         }
+         graph->Fit(polynomial, "q");
       }
-      graph->Fit(polynomial, "q");
       delete redirect;
-
       redirect = new TRedirect(Form("%s.log", prefix.c_str()), true);
 
       std::cout << "bin " << bin << ":" << std::endl;
       graph->Print();
-      std::cout << "polynomial fit " << degree << ". degree: " << polynomial->GetParameter(1) << " + " << polynomial->GetParameter(2) << " * x";
-      for(int i = 3; i < degree + 2; ++i) {
-         std::cout << " + " << polynomial->GetParameter(i) << " * x^" << i - 1;
-      }
-      std::cout << std::endl;
-      std::cout << "========================================" << std::endl;
+      if(graph->GetN() > degree) {
+         std::cout << "polynomial fit " << degree << ". degree: " << polynomial->GetParameter(1) << " + " << polynomial->GetParameter(2) << " * x";
+         for(int i = 3; i < degree + 2; ++i) {
+            std::cout << " + " << polynomial->GetParameter(i) << " * x^" << i - 1;
+         }
+         std::cout << std::endl;
+         std::cout << "========================================" << std::endl;
 
-      // get the channel belonging to this bin
-      unsigned int      address = 0;
-      std::stringstream str(hist->GetXaxis()->GetBinLabel(bin));
-      str >> std::hex >> address;
-      if(TChannel::GetChannel(address) == nullptr) {
-         std::cout << "Failed to find channel for address " << address << " (from bin label \"" << hist->GetXaxis()->GetBinLabel(bin) << "\"), can't write gain drift factors for this channel!" << std::endl;
-         continue;
-      }
+         if(hist->GetXaxis()->GetBinLabel(bin) != nullptr && hist->GetXaxis()->GetBinLabel(bin)[0] != '\0') {
+            // get the channel belonging to this bin
+            unsigned int      address = 0;
+            std::stringstream str(hist->GetXaxis()->GetBinLabel(bin));
+            str >> std::hex >> address;
+            auto* channel = TChannel::GetChannel(address);
+            if(channel == nullptr) {
+               std::cout << "Failed to find channel for address " << address << " (from bin label \"" << hist->GetXaxis()->GetBinLabel(bin) << "\"), can't write gain drift factors for this channel!" << std::endl;
+               continue;
+            }
 
-      // update the energy drift coefficents
-      std::vector<Float_t> coeff(degree + 1);
-      for(int i = 0; i < degree + 1; ++i) {
-         coeff[i] = static_cast<Float_t>(polynomial->GetParameter(i + 1));
+            std::cout << "Original channel:" << std::endl;
+            channel->Print();
+            // update the energy drift coefficents
+            std::vector<Float_t> coeff(degree + 1);
+            for(int i = 0; i < degree + 1; ++i) {
+               coeff[i] = static_cast<Float_t>(polynomial->GetParameter(i + 1));
+            }
+            channel->SetENGDriftCoefficents(TPriorityValue<std::vector<Float_t>>(coeff, EPriority::kForce));
+            std::cout << "Updated channel:" << std::endl;
+            channel->Print();
+         } else {
+            std::cout << "Failed to get bin label for bin " << bin << ", bin label is \"" << hist->GetXaxis()->GetBinLabel(bin) << "\"" << std::endl;
+         }
+      } else {
+         std::cout << "Graph has only " << graph->GetN() << " points, can't fit polynomial of " << degree << " to it!" << std::endl;
       }
-      TChannel::GetChannel(address)->SetENGDriftCoefficents(TPriorityValue<std::vector<Float_t>>(coeff, EPriority::kForce));
 
       // write spectrum and graph to output file
       output->cd();

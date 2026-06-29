@@ -35,7 +35,16 @@ public:
 
    ~TNucleus();
 
-   enum class EFlag : uint8_t { kDefault, kUnobserved, kInferred, kTentative, kObserved};
+   enum class EFlag : uint8_t { kDefault,
+                                kUnobserved,
+                                kInferred,
+                                kTentative,
+                                kObserved };
+
+   void SetObserved() { fFlag = EFlag::kObserved; }
+   void SetUnobserved() { fFlag = EFlag::kUnobserved; }
+   void SetInferred() { fFlag = EFlag::kInferred; }
+   void SetTentative() { fFlag = EFlag::kTentative; }
 
    void Observed(bool val) { if(val) { fFlag = EFlag::kObserved; } else { fFlag = EFlag::kDefault; } }
    void Unobserved(bool val) { if(val) { fFlag = EFlag::kUnobserved; } else { fFlag = EFlag::kDefault; } }
@@ -136,6 +145,7 @@ private:
    static std::string fSourceDirectory;          //!<! path of directory with .sou files
    static bool        fSourceDirectoryChecked;   //!<! flag to indicate whetehr the source directory path has been checked
 
+   int         fA{0};                    ///< Number of nucleons (Z + N)
    int         fN{0};                    ///< Number of neutrons (N)
    int         fZ{0};                    ///< Number of protons (Z)
    double      fMass{0.};                ///< Mass (in MeV)

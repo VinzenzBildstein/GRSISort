@@ -7,15 +7,36 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#if __cplusplus >= 201703L
+#include <filesystem>
+#endif
 
 static double amu = 931.494043;
 
 EVerbosity TNucleus::fVerbosity = EVerbosity::kQuiet;
+bool        TNucleus::fSourceDirectoryChecked = false;
+std::string TNucleus::fSourceDirectory;
+
+std::string& TNucleus::SourceDirectory()
+{
+   if(fSourceDirectoryChecked) {
+      return fSourceDirectory;
+   }
+   fSourceDirectory = std::string(getenv("GRSISYS")) + "/libraries/TAnalysis/SourceData/";
+#if __cplusplus >= 201703L
+   if(!std::filesystem::exists(fSourceDirectory)) {
+      fSourceDirectory = std::string(getenv("GRSISYS")) + "/SourceData/";
+   }
+#endif
+   fSourceDirectoryChecked = true;
+
+   return fSourceDirectory;
+}
 
 std::string& TNucleus::Massfile()
 {
-   static std::string output = std::string(getenv("GRSISYS")) + "/libraries/TAnalysis/SourceData/mass.dat";
-   return output;
+   static auto result = SourceDirectory() + "mass.dat";
+   return result;
 }
 
 TNucleus::TNucleus(const char* name, bool loadTransitions, bool quiet)
@@ -31,7 +52,7 @@ TNucleus::TNucleus(const char* name, bool loadTransitions, bool quiet)
    bool          found = false;
    std::string   line;
    std::ifstream infile;
-   std::string   massFile;
+   std::string   massFile = Massfile();
    ParseName(name, symbol, number, element);
    SetSymbol(symbol.c_str());
    z = GetZFromSymbol(symbol);
@@ -40,7 +61,6 @@ TNucleus::TNucleus(const char* name, bool loadTransitions, bool quiet)
    SetN(n);
    SetName();
    try {
-      massFile = Massfile();
       infile.open(massFile.c_str());
       while(!getline(infile, line).fail()) {
          if(line.empty()) {
@@ -395,9 +415,8 @@ bool TNucleus::LoadTransitionFile()
    if(fTransitionListByIntensity.GetSize() != 0) {
       return false;
    }
-   std::string filename;
-   filename           = std::string(getenv("GRSISYS")) + "/libraries/TAnalysis/SourceData/";
-   std::string symbol = GetSymbol();
+   std::string filename = SourceDirectory();
+   std::string symbol   = GetSymbol();
    std::transform(symbol.begin(), symbol.end(), symbol.begin(), ::tolower);
    filename.append(symbol);
    filename.append(std::to_string(GetA()));
