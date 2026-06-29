@@ -43,8 +43,8 @@ bool AllFilesExist(const std::vector<std::string>& filenames)
 
 void trim(std::string& line, const std::string& trimChars)
 {
-   /// Removes the string "trimCars" from  the string 'line'
-   if(line.length() == 0) {
+   /// Removes the string "trimCars" from the beginning and end of string 'line'
+   if(line.empty()) {
       return;
    }
    std::size_t found = line.find_first_not_of(trimChars);
@@ -59,14 +59,14 @@ void trim(std::string& line, const std::string& trimChars)
 
 void trimWS(std::string& line)
 {
-   /// Removes whitespace from the string 'line'
+   /// Removes whitespace from the beginning and end of string 'line'
    line.erase(line.begin(), std::find_if(line.begin(), line.end(), [](int ch) { return std::isspace(ch) == 0; }));
    line.erase(std::find_if(line.rbegin(), line.rend(), [](int ch) { return std::isspace(ch) == 0; }).base(), line.end());
 }
 
 int GetRunNumber(const std::string& fileName)
 {
-   if(fileName.length() == 0) {
+   if(fileName.empty()) {
       return 0;
    }
    std::size_t found = fileName.rfind(".root");
@@ -89,7 +89,7 @@ int GetRunNumber(const std::string& fileName)
 
 int GetSubRunNumber(const std::string& fileName)
 {
-   if(fileName.length() == 0) {
+   if(fileName.empty()) {
       return -1;
    }
 
