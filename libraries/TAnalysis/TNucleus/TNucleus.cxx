@@ -10,15 +10,17 @@
 
 static double amu = 931.494043;
 
+EVerbosity TNucleus::fVerbosity = EVerbosity::kQuiet;
+
 std::string& TNucleus::Massfile()
 {
    static std::string output = std::string(getenv("GRSISYS")) + "/libraries/TAnalysis/SourceData/mass.dat";
    return output;
 }
 
-TNucleus::TNucleus(const char* name)
+TNucleus::TNucleus(const char* name, bool loadTransitions, bool quiet)
 {
-   // Creates a nucleus based on symbol (ex. 26Na OR Na26) and sets all parameters from mass.dat
+   /// Creates a nucleus based on symbol (ex. 26Na OR Na26) and sets all parameters from mass.dat
    int           number = 0;
    std::string   symbol;
    std::string   element;
@@ -31,6 +33,12 @@ TNucleus::TNucleus(const char* name)
    std::ifstream infile;
    std::string   massFile;
    ParseName(name, symbol, number, element);
+   SetSymbol(symbol.c_str());
+   z = GetZFromSymbol(symbol);
+   n = number - z;
+   SetZ(z);
+   SetN(n);
+   SetName();
    try {
       massFile = Massfile();
       infile.open(massFile.c_str());
@@ -50,12 +58,16 @@ TNucleus::TNucleus(const char* name)
       }
    } catch(std::out_of_range&) {
       std::cout << "Could not parse element " << name << std::endl
-                << "Nucleus not Set!" << std::endl;
+                << "Nucleus not set!" << std::endl;
       return;
    }
+   if(fVerbosity >= EVerbosity::kBasicFlow) {
+      std::cout << "After we " << (found ? "found":"didn't find") << " symbol \"" << symbol << "\"/\"" << GetSymbol() << "\", we got Z = " << z << ", N = " << n << ", and set name to \"" << GetName() << "\" (A = " << GetA() << ")" << std::endl;
+   }
    if(!found) {
-      std::cout << "Warning: Element " << element << " not found in the mass table " << massFile << "." << std::endl
-                << "Nucleus not set!" << std::endl;
+      if(!quiet) {
+         std::cout << "Warning: Element " << element << " not found in the mass table " << massFile << ", Z, N, and mass excess not set!" << std::endl;
+      }
       return;
    }
    infile.close();
@@ -63,9 +75,9 @@ TNucleus::TNucleus(const char* name)
    SetN(n);
    SetMassExcess(mass / 1000.0);
    SetMass();
-   SetSymbol(symbol.c_str());
-   SetName();
-   LoadTransitionFile();
+   if(loadTransitions) {
+      LoadTransitionFile();
+   }
 }
 
 TNucleus::TNucleus(int charge, int neutrons, double mass, const char* symbol)
@@ -168,6 +180,11 @@ void TNucleus::ParseName(std::string name, std::string& symbol, int& number, std
 
    size_t firstDigit  = name.find_first_of("0123456789");
    size_t firstLetter = name.find_first_not_of("0123456789");
+   if(firstDigit == std::string::npos || firstLetter == std::string::npos) {
+      std::cout << "Failed to find either first digit (" << firstDigit << ") or first letter (" << firstLetter << ") in name \"" << name << "\", using name as symbol!" << std::endl;
+      element = name;
+      return;
+   }
    if(firstDigit > firstLetter) {
       number = atoi(name.substr(firstDigit).c_str());
       symbol.append(name.substr(firstLetter, firstDigit - firstLetter));
@@ -180,6 +197,10 @@ void TNucleus::ParseName(std::string name, std::string& symbol, int& number, std
    symbol[0] = toupper(symbol[0]);
    element.append(std::to_string(number));
    element.append(symbol);
+
+   if(fVerbosity >= EVerbosity::kBasicFlow) {
+      std::cout << "parsed \"" << name << "\" to symbol \"" << symbol << "\", element \"" << element << "\", number " << number << std::endl;
+   }
 }
 
 std::string TNucleus::SortName(std::string input)
@@ -232,7 +253,7 @@ void TNucleus::SetSymbol(const char* symbol)
 int TNucleus::GetZfromSymbol(char* symbol)
 {
    // Figures out the Z of the nucleus based on the atomic symbol
-   std::array<std::array<char, 3>, 105> symbols = {{{"H"}, {"HE"}, {"LI"}, {"BE"}, {"B"}, {"C"}, {"N"}, {"O"}, {"F"}, {"NE"}, {"NA"}, {"MG"}, {"AL"}, {"SI"}, {"P"}, {"S"}, {"CL"}, {"AR"}, {"K"}, {"CA"}, {"SC"}, {"TI"}, {"V"}, {"CR"}, {"MN"}, {"FE"}, {"CO"}, {"NI"}, {"CU"}, {"ZN"}, {"GA"}, {"GE"}, {"AS"}, {"SE"}, {"BR"}, {"KR"}, {"RB"}, {"SR"}, {"Y"}, {"ZR"}, {"NB"}, {"MO"}, {"TC"}, {"RU"}, {"RH"}, {"PD"}, {"AG"}, {"CD"}, {"IN"}, {"SN"}, {"SB"}, {"TE"}, {"F"}, {"XE"}, {"CS"}, {"BA"}, {"LA"}, {"CE"}, {"PR"}, {"ND"}, {"PM"}, {"SM"}, {"EU"}, {"GD"}, {"TB"}, {"DY"}, {"HO"}, {"ER"}, {"TM"}, {"YB"}, {"LU"}, {"HF"}, {"TA"}, {"W"}, {"RE"}, {"OS"}, {"IR"}, {"PT"}, {"AU"}, {"HG"}, {"TI"}, {"PB"}, {"BI"}, {"PO"}, {"AT"}, {"RN"}, {"FR"}, {"RA"}, {"AC"}, {"TH"}, {"PA"}, {"U"}, {"NP"}, {"PU"}, {"AM"}, {"CM"}, {"BK"}, {"CF"}, {"ES"}, {"FM"}, {"MD"}, {"NO"}, {"LR"}, {"RF"}, {"HA"}}};
+   std::array<std::array<char, 3>, 118> symbols = {{{"H"}, {"HE"}, {"LI"}, {"BE"}, {"B"}, {"C"}, {"N"}, {"O"}, {"F"}, {"NE"}, {"NA"}, {"MG"}, {"AL"}, {"SI"}, {"P"}, {"S"}, {"CL"}, {"AR"}, {"K"}, {"CA"}, {"SC"}, {"TI"}, {"V"}, {"CR"}, {"MN"}, {"FE"}, {"CO"}, {"NI"}, {"CU"}, {"ZN"}, {"GA"}, {"GE"}, {"AS"}, {"SE"}, {"BR"}, {"KR"}, {"RB"}, {"SR"}, {"Y"}, {"ZR"}, {"NB"}, {"MO"}, {"TC"}, {"RU"}, {"RH"}, {"PD"}, {"AG"}, {"CD"}, {"IN"}, {"SN"}, {"SB"}, {"TE"}, {"F"}, {"XE"}, {"CS"}, {"BA"}, {"LA"}, {"CE"}, {"PR"}, {"ND"}, {"PM"}, {"SM"}, {"EU"}, {"GD"}, {"TB"}, {"DY"}, {"HO"}, {"ER"}, {"TM"}, {"YB"}, {"LU"}, {"HF"}, {"TA"}, {"W"}, {"RE"}, {"OS"}, {"IR"}, {"PT"}, {"AU"}, {"HG"}, {"TI"}, {"PB"}, {"BI"}, {"PO"}, {"AT"}, {"RN"}, {"FR"}, {"RA"}, {"AC"}, {"TH"}, {"PA"}, {"U"}, {"NP"}, {"PU"}, {"AM"}, {"CM"}, {"BK"}, {"CF"}, {"ES"}, {"FM"}, {"MD"}, {"NO"}, {"LR"}, {"RF"}, {"DB"}, {"SG"}, {"BH"}, {"HS"}, {"MT"}, {"DS"}, {"RG"}, {"CN"}, {"NH"}, {"FL"}, {"MC"}, {"LV"}, {"TS"}, {"OG"}}};
    size_t                               length  = strlen(symbol);
    auto*                                search  = new char[length + 1];
    for(size_t i = 0; i < length; i++) {
@@ -249,6 +270,21 @@ int TNucleus::GetZfromSymbol(char* symbol)
 
    delete[] search;
    SetZ(0);
+   return 0;
+}
+
+int TNucleus::GetZFromSymbol(std::string symbol)
+{
+   /// Return the Z of the nucleus based on the atomic symbol
+   std::transform(symbol.begin(), symbol.end(), symbol.begin(), ::toupper);
+   std::array<std::string, 118> symbols = {{{"H"}, {"HE"}, {"LI"}, {"BE"}, {"B"}, {"C"}, {"N"}, {"O"}, {"F"}, {"NE"}, {"NA"}, {"MG"}, {"AL"}, {"SI"}, {"P"}, {"S"}, {"CL"}, {"AR"}, {"K"}, {"CA"}, {"SC"}, {"TI"}, {"V"}, {"CR"}, {"MN"}, {"FE"}, {"CO"}, {"NI"}, {"CU"}, {"ZN"}, {"GA"}, {"GE"}, {"AS"}, {"SE"}, {"BR"}, {"KR"}, {"RB"}, {"SR"}, {"Y"}, {"ZR"}, {"NB"}, {"MO"}, {"TC"}, {"RU"}, {"RH"}, {"PD"}, {"AG"}, {"CD"}, {"IN"}, {"SN"}, {"SB"}, {"TE"}, {"F"}, {"XE"}, {"CS"}, {"BA"}, {"LA"}, {"CE"}, {"PR"}, {"ND"}, {"PM"}, {"SM"}, {"EU"}, {"GD"}, {"TB"}, {"DY"}, {"HO"}, {"ER"}, {"TM"}, {"YB"}, {"LU"}, {"HF"}, {"TA"}, {"W"}, {"RE"}, {"OS"}, {"IR"}, {"PT"}, {"AU"}, {"HG"}, {"TI"}, {"PB"}, {"BI"}, {"PO"}, {"AT"}, {"RN"}, {"FR"}, {"RA"}, {"AC"}, {"TH"}, {"PA"}, {"U"}, {"NP"}, {"PU"}, {"AM"}, {"CM"}, {"BK"}, {"CF"}, {"ES"}, {"FM"}, {"MD"}, {"NO"}, {"LR"}, {"RF"}, {"DB"}, {"SG"}, {"BH"}, {"HS"}, {"MT"}, {"DS"}, {"RG"}, {"CN"}, {"NH"}, {"FL"}, {"MC"}, {"LV"}, {"TS"}, {"OG"}}};
+
+   auto* it = std::find(symbols.begin(), symbols.end(), symbol);
+
+   if(it != symbols.end()) {
+      return std::distance(symbols.begin(), it) + 1;
+   }
+
    return 0;
 }
 
@@ -303,6 +339,34 @@ void TNucleus::Print(Option_t*) const
 {
    // Prints out the Name of the nucleus, as well as the numerated transition list
    std::cout << "Nucleus: " << GetName() << std::endl;
+   std::cout << "\tA = " << GetA() << ", N = " << fN << ", Z = " << fZ << std::endl;
+   std::cout << "\tMass = " << fMass << " MeV, mass excess = " << fMassExcess << " MeV" << std::endl;
+   if(!std::isnan(fQValue)) {
+      std::cout << "\tQ value = " << fQValue << " +- " << fQValueUncertainty << std::endl;
+   }
+   if(!std::isnan(fAlphaQValue)) {
+      std::cout << "\tAlpha Q value = " << fAlphaQValue << " +- " << fAlphaQValueUncertainty << std::endl;
+   }
+   if(!std::isnan(fNeutronSeparation)) {
+      std::cout << "\tS_n = " << fNeutronSeparation << " +- " << fNeutronSeparationUncertainty << std::endl;
+   }
+   if(!std::isnan(fProtonSeparation)) {
+      std::cout << "\tS_p = " << fProtonSeparation << " +- " << fProtonSeparationUncertainty << std::endl;
+   }
+   if(!fLevels.empty()) {
+      std::cout << fLevels.size() << " levels:" << std::endl;
+      for(const auto& [energy, level] : fLevels) {
+         std::cout << energy << " keV: ";
+         if(level.size() == 1) {
+            level[0].Print("g");
+         } else {
+            std::cout << level.size() << " levels at this energy" << std::endl;
+            for(const auto& l : level) {
+               l.Print("g");
+            }
+         }
+      }
+   }
    TIter next(&fTransitionListByIntensity);
    int   counter = 0;
    while(auto* tran = static_cast<TTransition*>(next())) {
@@ -392,3 +456,46 @@ double TNucleus::GetBetaFromEnergy(double energy_MeV) const
    double beta  = std::sqrt(1 - 1 / (gamma * gamma));
    return beta;
 }
+
+TLevel* TNucleus::AddLevel(Double_t energy, Double_t energyUncertainty)
+{
+   /// Add a new level at provided energy. Since we have a vector of levels for each energy, we can have multiple levels with the same energy.
+   /// Returns the newly created level.
+   // The [] operator either returns the existing vector for that key, or (if that key doesn't exist yet), creates a new key-vector pair and returns the empty vector.
+   // Either way, we simply add the given level to this key.
+   fLevels[energy].emplace_back(this, energy, energyUncertainty);
+   return &(fLevels[energy].back());
+}
+
+TLevel* TNucleus::FindLevel(Double_t levelEnergy, Double_t energyUncertainty, int index)
+{
+   /// Returns level at the provided energy +- the uncertainty. If there isn't any level in that range a null pointer is returned.
+   /// If there are multiple levels in the range the one with the smallest energy difference is returned.
+   auto low  = fLevels.lower_bound(levelEnergy - energyUncertainty);
+   auto high = fLevels.upper_bound(levelEnergy + energyUncertainty);
+   if(low == high) {
+      if(fVerbosity >= EVerbosity::kBasicFlow) {
+         std::cout << this << ": failed to find level with " << levelEnergy << " +- " << energyUncertainty << " keV" << std::endl;
+         Print();
+      }
+      return nullptr;
+   }
+   // if we found multiple matching levels, use the one with the smallest energy difference
+   // if there is only one matching level, the loop won't executre and level is already set correctly
+   double en    = low->first;
+   auto   level = low->second;
+   for(auto& it = ++low; it != high; ++it) {
+      if(std::fabs(levelEnergy - en) > std::fabs(levelEnergy - it->first)) {
+         en    = it->first;
+         level = it->second;
+      }
+   }
+   if(index < 0) {
+      if(level.size() > 1) {
+         std::cout << "Warning, found " << level.size() << " levels with energy " << en << " keV (best match for requested energy " << levelEnergy << " keV), but no index has been provided, going to return the first one!" << std::endl;
+      }
+      index = 0;
+   }
+   return &((low->second)[index]);
+}
+

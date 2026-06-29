@@ -5,36 +5,75 @@
 
 #include "TString.h"
 
-TTransition::TTransition()
+EVerbosity TTransition::fVerbosity = EVerbosity::kQuiet;
+
+TTransition::TTransition(TLevel* level, double energy, double energyUncertainty, double intensity, double intensityUncertainty, double mixingRatio, double mixingRatioUncertainty, double conversionCoeff, double conversionCoeffUncertainty, double totalIntensity, double totalIntensityUncertainty)
+   : fLevel(level), fEnergy(energy), fEnergyUncertainty(energyUncertainty), fIntensity(intensity), fIntensityUncertainty(intensityUncertainty),
+   fMixingRatio(mixingRatio), fMixingRatioUncertainty(mixingRatioUncertainty), fConversionCoeff(conversionCoeff), fConversionCoeffUncertainty(conversionCoeffUncertainty),
+   fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
 {
-   Clear();
 }
 
-TTransition::~TTransition() = default;
+TTransition::TTransition(TLevel* level, double energy, double energyUncertainty, double intensity, double intensityUncertainty, double totalIntensity, double totalIntensityUncertainty)
+   : fLevel(level), fEnergy(energy), fEnergyUncertainty(energyUncertainty), fIntensity(intensity), fIntensityUncertainty(intensityUncertainty),
+   fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
+{
+}
+
+TTransition::TTransition(double energy, double energyUncertainty, double intensity, double intensityUncertainty, double mixingRatio, double mixingRatioUncertainty, double conversionCoeff, double conversionCoeffUncertainty, double totalIntensity, double totalIntensityUncertainty)
+   : fEnergy(energy), fEnergyUncertainty(energyUncertainty), fIntensity(intensity), fIntensityUncertainty(intensityUncertainty),
+   fMixingRatio(mixingRatio), fMixingRatioUncertainty(mixingRatioUncertainty), fConversionCoeff(conversionCoeff), fConversionCoeffUncertainty(conversionCoeffUncertainty),
+   fTotalIntensity(totalIntensity), fTotalIntensityUncertainty(totalIntensityUncertainty)
+{
+}
 
 void TTransition::Clear(Option_t*)
 {
-   fEnergy         = 0;
-   fEngUncertainty = 0;
-   fIntensity      = 0;
-   fIntUncertainty = 0;
+   fEnergy                     = 0.;
+   fEnergyUncertainty          = std::numeric_limits<double>::quiet_NaN();
+   fIntensity                  = 0.;
+   fIntensityUncertainty       = std::numeric_limits<double>::quiet_NaN();
+   fMixingRatio                = 0.;
+   fMixingRatioUncertainty     = std::numeric_limits<double>::quiet_NaN();
+   fConversionCoeff            = 0.;
+   fConversionCoeffUncertainty = std::numeric_limits<double>::quiet_NaN();
+   fTotalIntensity             = 0.;
+   fTotalIntensityUncertainty  = std::numeric_limits<double>::quiet_NaN();
 }
 
 void TTransition::Print(Option_t*) const
 {
-
-   if(!std::isnan(fEngUncertainty)) {
-      std::cout << "Energy:    " << fEnergy << " +/- " << fEngUncertainty << std::endl;
-   } else {
-      std::cout << "Energy:    " << fEnergy << std::endl;
+   std::cout << "Energy:    " << fEnergy;
+   if(!std::isnan(fEnergyUncertainty)) {
+      std::cout << " +/- " << fEnergyUncertainty;
    }
+   std::cout << std::endl;
    if(!std::isnan(fIntensity)) {
-      if(!std::isnan(fIntUncertainty)) {
-         std::cout << "\tIntensity: " << fIntensity << " +/- " << fIntUncertainty << std::endl;
-      } else {
-         std::cout << "\tIntensity: " << fEnergy << std::endl;
+      std::cout << "\tIntensity: " << fIntensity;
+      if(!std::isnan(fIntensityUncertainty)) {
+         std::cout << " +/- " << fIntensityUncertainty;
       }
-   } else {
+      std::cout << std::endl;
+   }
+   if(!std::isnan(fTotalIntensity)) {
+      std::cout << "\tTotal intensity (including conversion electrons): " << fTotalIntensity;
+      if(!std::isnan(fTotalIntensityUncertainty)) {
+         std::cout << " +/- " << fTotalIntensityUncertainty;
+      }
+      std::cout << std::endl;
+   }
+   if(!std::isnan(fMixingRatio)) {
+      std::cout << "\tMixing ratio: " << fMixingRatio;
+      if(!std::isnan(fMixingRatioUncertainty)) {
+         std::cout << " +/- " << fMixingRatioUncertainty;
+      }
+      std::cout << std::endl;
+   }
+   if(!std::isnan(fConversionCoeff)) {
+      std::cout << "\tConversion coefficent: " << fConversionCoeff;
+      if(!std::isnan(fConversionCoeffUncertainty)) {
+         std::cout << " +/- " << fConversionCoeffUncertainty;
+      }
       std::cout << std::endl;
    }
 }
@@ -43,9 +82,9 @@ std::string TTransition::PrintToString() const
 {
    std::string toString;
    toString.append(Form("%f\t", fEnergy));
-   toString.append(Form("%f\t", fEngUncertainty));
+   toString.append(Form("%f\t", fEnergyUncertainty));
    toString.append(Form("%f\t", fIntensity));
-   toString.append(Form("%f\t", fIntUncertainty));
+   toString.append(Form("%f\t", fIntensityUncertainty));
 
    return toString;
 }

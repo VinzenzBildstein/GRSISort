@@ -1,4 +1,4 @@
-// TNucleus.h TTransition.h TGRSITransition.h
+// TNucleus.h TTransition.h TLevel.h TGRSITransition.h
 
 #ifdef __CINT__
 
@@ -10,6 +10,8 @@
 #pragma link C++ class TTransition + ;
 //#pragma link C++ class TPeakFinder+;
 #pragma link C++ class TGRSITransition + ;
+
+#pragma link C++ class TLevel + ;
 
 #pragma link C++ class TNucleus + ;
 
