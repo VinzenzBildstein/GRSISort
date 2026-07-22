@@ -74,8 +74,8 @@ public:
    void               SetMass();                ///< Sets the mass based on the A and mass excess of nucleus (in MeV)
    void               SetSymbol(const char*);   ///< Sets the atomic symbol for the nucleus
 
-   TLevel* AddLevel(Double_t energy, Double_t energyUncertainty);
-   TLevel* FindLevel(Double_t levelEnergy, Double_t energyUncertainty, int index = -1);
+   TLevel* AddLevel(Double_t energy, Double_t energyUncertainty, char identifier = '\0');
+   TLevel* FindLevel(Double_t levelEnergy, Double_t energyUncertainty, char identifier = '\0');
 
    void AddTransition(Double_t energy, Double_t intensity, Double_t energy_uncertainty = 0.0, Double_t intensity_uncertainty = 0.0);
    void AddTransition(TTransition* tran);
@@ -161,7 +161,7 @@ private:
    double fProtonSeparation{std::numeric_limits<double>::quiet_NaN()};
    double fProtonSeparationUncertainty{std::numeric_limits<double>::quiet_NaN()};
 
-   std::map<double, std::vector<TLevel>> fLevels;
+   std::map<double, std::map<char, TLevel>> fLevels; ///< map of levels using the level energy (double) and an identifier (char)
 
    TSortedList fTransitionListByIntensity;
    TSortedList fTransitionListByEnergy;

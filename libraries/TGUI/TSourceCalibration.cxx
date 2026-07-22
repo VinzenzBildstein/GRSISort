@@ -2193,7 +2193,7 @@ void TChannelTab::PrintLayout() const
 
 //////////////////////////////////////// TSourceCalibration ////////////////////////////////////////
 std::string      TSourceCalibration::fLogFile;
-EVerbosity       TSourceCalibration::fVerboseLevel       = EVerbosity::kQuiet;
+EVerbosity       TSourceCalibration::fVerboseLevel       = EVerbosity::kDefault;
 int              TSourceCalibration::fPanelWidth         = 600;
 int              TSourceCalibration::fPanelHeight        = 400;
 int              TSourceCalibration::fStatusbarHeight    = 50;

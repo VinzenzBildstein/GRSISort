@@ -717,7 +717,7 @@ void TEfficiencyDatatypeTab::ReadValues()
 }
 
 //////////////////////////////////////// TEfficiencyCalibrator ////////////////////////////////////////
-EVerbosity TEfficiencyCalibrator::fVerboseLevel = EVerbosity::kQuiet;
+EVerbosity TEfficiencyCalibrator::fVerboseLevel = EVerbosity::kDefault;
 
 double                    TEfficiencyCalibrator::fRange                  = 20.;
 double                    TEfficiencyCalibrator::fThreshold              = 100.;

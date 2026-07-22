@@ -5,7 +5,7 @@
 
 #include "TString.h"
 
-EVerbosity TTransition::fVerbosity = EVerbosity::kQuiet;
+EVerbosity TTransition::fVerbosity = EVerbosity::kDefault;
 
 TTransition::TTransition(TLevel* level, double energy, double energyUncertainty, double intensity, double intensityUncertainty, double mixingRatio, double mixingRatioUncertainty, double conversionCoeff, double conversionCoeffUncertainty, double totalIntensity, double totalIntensityUncertainty)
    : fLevel(level), fEnergy(energy), fEnergyUncertainty(energyUncertainty), fIntensity(intensity), fIntensityUncertainty(intensityUncertainty),

@@ -8,7 +8,7 @@
 #include "Globals.h"
 #include "TGRSIFunctions.h"
 
-EVerbosity TPeakFitter::fVerboseLevel = EVerbosity::kQuiet;
+EVerbosity TPeakFitter::fVerboseLevel = EVerbosity::kDefault;
 
 TPeakFitter::TPeakFitter(const Double_t& rangeLow, const Double_t& rangeHigh)
    : fRangeLow(rangeLow), fRangeHigh(rangeHigh)

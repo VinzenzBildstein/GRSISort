@@ -19,7 +19,7 @@
 #include "GH2I.h"
 #include "GH2D.h"
 
-EVerbosity GH1D::fVerboseLevel = EVerbosity::kQuiet;
+EVerbosity GH1D::fVerboseLevel = EVerbosity::kDefault;
 
 GH1D::GH1D(const TH1& source) : fParent(nullptr), fProjectionAxis(-1)
 {

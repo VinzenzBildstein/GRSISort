@@ -23,7 +23,7 @@ class TNucleus;
 class TLevel : public TObject {
 public:
    explicit TLevel(TNucleus* nucleus = nullptr, const double& energy = -1., std::string label = "");
-   TLevel(TNucleus* nucleus, const double& energy, const double& energyUncertainty = 0.);
+   TLevel(TNucleus* nucleus, const double& energy, const double& energyUncertainty = 0., const char& identifier = '\0');
    TLevel(const TLevel& rhs);
    TLevel(TLevel&& rhs) noexcept = default;
    TLevel& operator=(const TLevel& rhs);
@@ -42,6 +42,7 @@ public:
    double      Energy() const { return fEnergy; }
    double      EnergyUncertainty() const { return fEnergyUncertainty; }
    std::string Label() const { return fLabel; }
+   char        Identifier() const { return fIdentifier; }
 
    std::pair<double, double> GetMinMaxTransition() const;
    size_t                    NofDrainingTransitions() const { return fTransitions.size(); }
@@ -81,6 +82,7 @@ private:
    std::map<double, TTransition> fTransitions;             ///< transitions draining this level, each pointing to a level
    size_t                        fNofFeeding{0};           ///< counter for gammas feeding this level
    TNucleus*                     fNucleus{nullptr};        ///< pointer to the nucleus this level belongs to
+   char                          fIdentifier{'\0'};        ///< identifier for this level, used by nucleus if multiple levels with the same energy exist, if alphanumeric character (X, Y, Z, and so on) it could be added to a label for the energy
 
    /// \cond CLASSIMP
    ClassDefOverride(TLevel, 1)   // NOLINT(readability-else-after-return)

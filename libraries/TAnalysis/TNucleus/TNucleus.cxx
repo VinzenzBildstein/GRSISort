@@ -13,7 +13,7 @@
 
 static double amu = 931.494043;
 
-EVerbosity TNucleus::fVerbosity = EVerbosity::kQuiet;
+EVerbosity  TNucleus::fVerbosity              = EVerbosity::kDefault;
 bool        TNucleus::fSourceDirectoryChecked = false;
 std::string TNucleus::fSourceDirectory;
 
@@ -378,11 +378,11 @@ void TNucleus::Print(Option_t*) const
       for(const auto& [energy, level] : fLevels) {
          std::cout << energy << " keV: ";
          if(level.size() == 1) {
-            level[0].Print("g");
+            level.begin()->second.Print("g");
          } else {
             std::cout << level.size() << " levels at this energy" << std::endl;
             for(const auto& l : level) {
-               l.Print("g");
+               l.second.Print("g");
             }
          }
       }
@@ -476,17 +476,42 @@ double TNucleus::GetBetaFromEnergy(double energy_MeV) const
    return beta;
 }
 
-TLevel* TNucleus::AddLevel(Double_t energy, Double_t energyUncertainty)
+TLevel* TNucleus::AddLevel(Double_t energy, Double_t energyUncertainty, char identifier)
 {
-   /// Add a new level at provided energy. Since we have a vector of levels for each energy, we can have multiple levels with the same energy.
+   /// Add a new level at provided energy.
+   /// Since we have a map of levels for each energy, we can have multiple levels with the same energy, identified by their identifier character (default is '\0').
+   /// If the identifier is the default and the level already exists, we find the next available identifier by incrementing it until we find one that isn't taken yet.
    /// Returns the newly created level.
-   // The [] operator either returns the existing vector for that key, or (if that key doesn't exist yet), creates a new key-vector pair and returns the empty vector.
+   // The [] operator either returns the existing map for that key, or (if that key doesn't exist yet), creates a new key-map pair and returns the empty map.
    // Either way, we simply add the given level to this key.
-   fLevels[energy].emplace_back(this, energy, energyUncertainty);
-   return &(fLevels[energy].back());
+   if(fVerbosity >= EVerbosity::kBasicFlow) {
+      std::cout << "Adding level at " << energy << " +- " << energyUncertainty << " and identifier '" << identifier << "' (" << static_cast<int>(identifier) << "), which " << (fLevels[energy].find(identifier) == fLevels[energy].end() ? "does not exist yet" : "exists already") << std::endl;
+   }
+   if(fLevels[energy].find(identifier) == fLevels[energy].end()) {
+      fLevels[energy].emplace(std::piecewise_construct, std::forward_as_tuple(identifier), std::forward_as_tuple(this, energy, energyUncertainty, identifier));
+   } else {
+      if(identifier == '\0') {
+         while(fLevels[energy].find(++identifier) != fLevels[energy].end()) {
+           if(std::isalpha(identifier) != 0) {
+              break;
+           }
+         }
+      }
+      // we've now either incremented the identifier until we found an unused one or until it became an alphanumeric character, or it already was an alphanumeric character
+      // so we can check and if the identifier isn't an alphanumeric character we can add a new level, otherwise we were either provided with an alphanumeric identifier or failed to find an empty one
+      if(std::isalpha(identifier) == 0) {
+         if(fVerbosity >= EVerbosity::kBasicFlow) {
+            std::cout << "Incremented identifier up to '" << static_cast<int>(identifier) << "' for level at " << energy << " +- " << energyUncertainty << " keV" << std::endl;
+         }
+         fLevels[energy].emplace(std::piecewise_construct, std::forward_as_tuple(identifier), std::forward_as_tuple(this, energy, energyUncertainty, identifier));
+      } else {
+         std::cout << DYELLOW << "Warning, trying to add level at " << energy << " keV with identifier '" << identifier << "' which already exists. Returning existing level" << RESET_COLOR << std::endl;
+      }
+   }
+   return &(fLevels[energy][identifier]);
 }
 
-TLevel* TNucleus::FindLevel(Double_t levelEnergy, Double_t energyUncertainty, int index)
+TLevel* TNucleus::FindLevel(Double_t levelEnergy, Double_t energyUncertainty, char identifier)
 {
    /// Returns level at the provided energy +- the uncertainty. If there isn't any level in that range a null pointer is returned.
    /// If there are multiple levels in the range the one with the smallest energy difference is returned.
@@ -499,22 +524,60 @@ TLevel* TNucleus::FindLevel(Double_t levelEnergy, Double_t energyUncertainty, in
       }
       return nullptr;
    }
-   // if we found multiple matching levels, use the one with the smallest energy difference
-   // if there is only one matching level, the loop won't executre and level is already set correctly
+   // if we found multiple matching levels, use the "best matching one"
+   // "best matching one" is difficult, we have different situations:
+   // ideally we want the smallest energy difference and matching identifiers
+   // so for each level energy we check if either the energy difference is better (and the identifiers are the same or a better match than before)
+   // or if the identifiers didn't match yet, we accept worse energy matches
+   // if there is only one matching level, the loop won't execute and level is already set correctly
    double en    = low->first;
-   auto   level = low->second;
+   auto*  level = &(low->second);
+   if(fVerbosity >= EVerbosity::kBasicFlow) {
+      std::cout << this << ": searching level at " << levelEnergy << " +- " << energyUncertainty << ", identifier " << identifier << " got first " << level->size() << " level at " << en << " got " << std::distance(low, high) << " energies to check (identifiers";
+      for(const auto& it2 : low->second) {
+         std::cout << " '" << it2.first << "'";
+      }
+      std::cout << ")" << std::endl;
+   }
    for(auto& it = ++low; it != high; ++it) {
-      if(std::fabs(levelEnergy - en) > std::fabs(levelEnergy - it->first)) {
+      if(fVerbosity >= EVerbosity::kBasicFlow) {
+         std::cout << this << ": checking next levels agreement (" << it->second.size() << " levels at " << it->first << " keV, identifiers";
+         for(const auto& it2 : it->second) {
+            std::cout << " '" << it2.first << "'";
+         }
+         std::cout << ")" << std::flush;
+      }
+      // if the energy match of this is better and either the old identifier did not match or the new matches
+      // or the energy difference is not better, but we now have a matching identifier
+      if((std::fabs(levelEnergy - it->first) < std::fabs(levelEnergy - en) && (level->find(identifier) == level->end() || it->second.find(identifier) != it->second.end())) ||
+         (level->find(identifier) == level->end() && it->second.find(identifier) != it->second.end())) {
          en    = it->first;
-         level = it->second;
+         level = &(it->second);
+         if(fVerbosity >= EVerbosity::kBasicFlow) {
+            std::cout << " it's better, " << level->size() << " level at " << en << std::endl;
+         }
+      } else if(fVerbosity >= EVerbosity::kBasicFlow) {
+         std::cout << " it's not better, still " << level->size() << " level at " << en << std::endl;
       }
    }
-   if(index < 0) {
-      if(level.size() > 1) {
-         std::cout << "Warning, found " << level.size() << " levels with energy " << en << " keV (best match for requested energy " << levelEnergy << " keV), but no index has been provided, going to return the first one!" << std::endl;
+   if(level->find(identifier) == level->end()) {
+      if(level->size() == 1) {
+         // we don't print warning's unless the identifier is alphanumeric or the verbosity level was set high enough
+         if(fVerbosity >= EVerbosity::kBasicFlow || (std::isalpha(identifier) != 0)) {
+            std::cout << DYELLOW << "Warning, couldn't find identifier '" << identifier << "' (" << static_cast<int>(identifier) << ") in map of levels at " << en << " keV, using the only available level at that energy with identifier '" << level->begin()->first << "' (" << static_cast<int>(level->begin()->first) << ")" << RESET_COLOR << std::endl;
+         }
+         return &(level->begin()->second);
       }
-      index = 0;
+      std::cout << DRED << "Error, couldn't find identifier '" << identifier << "' in map of levels at " << en << " keV, idenfifiers available are" << std::flush;
+      for(const auto& it : *level) {
+         std::cout << " '" << it.first << "'";
+      }
+      std::cout << RESET_COLOR << std::endl;
+      return nullptr;
    }
-   return &((low->second)[index]);
+   if(fVerbosity >= EVerbosity::kBasicFlow) {
+      std::cout << "Found " << level->size() << " level at " << en << " keV, using identifier " << identifier << " gives level " << &(level->at(identifier)) << " at " << level->at(identifier).Energy() << std::endl;
+   }
+   return &(level->at(identifier));
 }
 

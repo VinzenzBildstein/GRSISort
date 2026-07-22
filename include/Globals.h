@@ -140,12 +140,15 @@ inline std::string hex(T val, int width = -1)
    return str.str();
 }
 
-enum class EVerbosity : std::uint8_t {
-   kQuiet       = 0,
-   kBasicFlow   = 1,
-   kSubroutines = 2,
-   kLoops       = 3,
-   kAll         = 4
+enum class EVerbosity : std::int8_t {
+   // setting the quiet mode to default should make default be zero
+   // this might make it so uninitialized instances of this type get initialized to the default state?
+   kQuiet       = -1,
+   kDefault,
+   kBasicFlow,
+   kSubroutines,
+   kLoops,
+   kAll,
 };
 
 static inline std::string getexepath()

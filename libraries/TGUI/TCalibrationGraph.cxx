@@ -32,7 +32,7 @@ void TCalibrationGraph::Scale(const double& scale)
 }
 #endif
 
-EVerbosity TCalibrationGraphSet::fVerboseLevel = EVerbosity::kQuiet;
+EVerbosity TCalibrationGraphSet::fVerboseLevel = EVerbosity::kDefault;
 
 TCalibrationGraphSet::TCalibrationGraphSet(TGraphErrors* graph, const std::string& label)
    : fTotalGraph(new TGraphErrors), fTotalResidualGraph(new TGraphErrors)

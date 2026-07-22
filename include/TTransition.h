@@ -66,7 +66,11 @@ public:
    void ConversionCoefficentUncertainty(double val) { fConversionCoeffUncertainty = val; }
    void TotalIntensity(double val) { fTotalIntensity = val; }
    void TotalIntensityUncertainty(double val) { fTotalIntensityUncertainty = val; }
-   void FinalLevel(double val) { fFinalLevel = val; }
+   void FinalLevel(double val, const char& identifier = '\0')
+   {
+      fFinalLevel = val;
+      fFinalLevelIdentifier = identifier;
+   }
    void UncertainPlacement(bool val) { fUncertainPlacement = val; }
                                                                                    
    double Energy() const { return fEnergy; }
@@ -80,6 +84,7 @@ public:
    double TotalIntensity() const { return fTotalIntensity; }
    double TotalIntensityUncertainty() const { return fTotalIntensityUncertainty; }
    double FinalLevel() const { return fFinalLevel; }
+   char FinalLevelIdentifier() const { return fFinalLevelIdentifier; }
    bool UncertainPlacement() const { return fUncertainPlacement; }
                                                                                    
    void Clear(Option_t* opt = "") override;
@@ -107,6 +112,7 @@ private:
    double            fTotalIntensity{0.};                                                     ///< Total intensity of the transition (includes conversion electrons for gamma-rays)
    double            fTotalIntensityUncertainty{std::numeric_limits<double>::quiet_NaN()};    ///< Uncertainty in the total intensity
    double            fFinalLevel{std::numeric_limits<double>::quiet_NaN()};                   ///< Final level for this transition
+   char              fFinalLevelIdentifier{'\0'};                                             ///< Identifier for final level (if there are multiple levels etc.)
    bool              fUncertainPlacement{false};                                              ///< Flag to indicate placement of this transition in the level scheme is uncertain
 
    bool fCompareIntensity{true};   ///< Whether to sort by intensity or energy
