@@ -46,10 +46,38 @@ public:
    void SetInferred() { fFlag = EFlag::kInferred; }
    void SetTentative() { fFlag = EFlag::kTentative; }
 
-   void Observed(bool val) { if(val) { fFlag = EFlag::kObserved; } else { fFlag = EFlag::kDefault; } }
-   void Unobserved(bool val) { if(val) { fFlag = EFlag::kUnobserved; } else { fFlag = EFlag::kDefault; } }
-   void Inferred(bool val) { if(val) { fFlag = EFlag::kInferred; } else { fFlag = EFlag::kDefault; } }
-   void Tentative(bool val) { if(val) { fFlag = EFlag::kTentative; } else { fFlag = EFlag::kDefault; } }
+   void Observed(bool val)
+   {
+      if(val) {
+         fFlag = EFlag::kObserved;
+      } else {
+         fFlag = EFlag::kDefault;
+      }
+   }
+   void Unobserved(bool val)
+   {
+      if(val) {
+         fFlag = EFlag::kUnobserved;
+      } else {
+         fFlag = EFlag::kDefault;
+      }
+   }
+   void Inferred(bool val)
+   {
+      if(val) {
+         fFlag = EFlag::kInferred;
+      } else {
+         fFlag = EFlag::kDefault;
+      }
+   }
+   void Tentative(bool val)
+   {
+      if(val) {
+         fFlag = EFlag::kTentative;
+      } else {
+         fFlag = EFlag::kDefault;
+      }
+   }
 
    bool Observed() { return fFlag == EFlag::kObserved; }
    bool Unobserved() { return fFlag == EFlag::kUnobserved; }
@@ -131,13 +159,13 @@ public:
 
    static std::string& SourceDirectory();   /// < Returns the directory with the .sou files and the mass file
 
-   static void Verbosity(EVerbosity val) { fVerbosity = val; }
+   static void       Verbosity(EVerbosity val) { fVerbosity = val; }
    static EVerbosity Verbosity() { return fVerbosity; }
 
 private:
-   bool        LoadTransitionFile();
+   bool LoadTransitionFile();
 
-   static EVerbosity             fVerbosity;               ///< verbosity of the class
+   static EVerbosity fVerbosity;   ///< verbosity of the class
 
    static std::string& Massfile();   ///< Returns the massfile to be used, which includes Z, N, atomic symbol, and mass excess
    void                SetName(const char* name = "") override;
@@ -152,16 +180,16 @@ private:
    double      fMassExcess{0.};          ///< Mass excess (in MeV)
    std::string fSymbol;                  ///< Atomic symbol (ex. Ba, C, O, N)
    EFlag       fFlag{EFlag::kDefault};   ///< Flag indicating if nucleus is observed, unobserved, inferred, or tentative
-   double fQValue{std::numeric_limits<double>::quiet_NaN()};
-   double fQValueUncertainty{std::numeric_limits<double>::quiet_NaN()};
-   double fAlphaQValue{std::numeric_limits<double>::quiet_NaN()};
-   double fAlphaQValueUncertainty{std::numeric_limits<double>::quiet_NaN()};
-   double fNeutronSeparation{std::numeric_limits<double>::quiet_NaN()};
-   double fNeutronSeparationUncertainty{std::numeric_limits<double>::quiet_NaN()};
-   double fProtonSeparation{std::numeric_limits<double>::quiet_NaN()};
-   double fProtonSeparationUncertainty{std::numeric_limits<double>::quiet_NaN()};
+   double      fQValue{std::numeric_limits<double>::quiet_NaN()};
+   double      fQValueUncertainty{std::numeric_limits<double>::quiet_NaN()};
+   double      fAlphaQValue{std::numeric_limits<double>::quiet_NaN()};
+   double      fAlphaQValueUncertainty{std::numeric_limits<double>::quiet_NaN()};
+   double      fNeutronSeparation{std::numeric_limits<double>::quiet_NaN()};
+   double      fNeutronSeparationUncertainty{std::numeric_limits<double>::quiet_NaN()};
+   double      fProtonSeparation{std::numeric_limits<double>::quiet_NaN()};
+   double      fProtonSeparationUncertainty{std::numeric_limits<double>::quiet_NaN()};
 
-   std::map<double, std::map<char, TLevel>> fLevels; ///< map of levels using the level energy (double) and an identifier (char)
+   std::map<double, std::map<char, TLevel>> fLevels;   ///< map of levels using the level energy (double) and an identifier (char)
 
    TSortedList fTransitionListByIntensity;
    TSortedList fTransitionListByEnergy;
