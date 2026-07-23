@@ -82,7 +82,7 @@ TNucleus::TNucleus(const char* name, bool loadTransitions, bool quiet)
       return;
    }
    if(fVerbosity >= EVerbosity::kBasicFlow) {
-      std::cout << "After we " << (found ? "found":"didn't find") << " symbol \"" << symbol << "\"/\"" << GetSymbol() << "\", we got Z = " << z << ", N = " << n << ", and set name to \"" << GetName() << "\" (A = " << GetA() << ")" << std::endl;
+      std::cout << "After we " << (found ? "found" : "didn't find") << " symbol \"" << symbol << "\"/\"" << GetSymbol() << "\", we got Z = " << z << ", N = " << n << ", and set name to \"" << GetName() << "\" (A = " << GetA() << ")" << std::endl;
    }
    if(!found) {
       if(!quiet) {
@@ -492,9 +492,9 @@ TLevel* TNucleus::AddLevel(Double_t energy, Double_t energyUncertainty, char ide
    } else {
       if(identifier == '\0') {
          while(fLevels[energy].find(++identifier) != fLevels[energy].end()) {
-           if(std::isalpha(identifier) != 0) {
-              break;
-           }
+            if(std::isalpha(identifier) != 0) {
+               break;
+            }
          }
       }
       // we've now either incremented the identifier until we found an unused one or until it became an alphanumeric character, or it already was an alphanumeric character
@@ -580,4 +580,3 @@ TLevel* TNucleus::FindLevel(Double_t levelEnergy, Double_t energyUncertainty, ch
    }
    return &(level->at(identifier));
 }
-

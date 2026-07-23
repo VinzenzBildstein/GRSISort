@@ -104,7 +104,7 @@ TLevel* TLevel::AddTransition(TTransition* transition, bool quiet)
    } else {
       // not sure what the right uncertainty is here, if a level is given can we assume it's exact?
       // for now we just use the transition's energy uncertainty and the function should return the best matching one anyways
-      level = fNucleus->FindLevel(transition->FinalLevel(), transition->EnergyUncertainty(), transition->FinalLevelIdentifier());//(std::isalpha(transition->FinalLevelIdentifier()) != 0) ? transition->FinalLevelIdentifier() : fIdentifier);
+      level = fNucleus->FindLevel(transition->FinalLevel(), transition->EnergyUncertainty(), transition->FinalLevelIdentifier());   //(std::isalpha(transition->FinalLevelIdentifier()) != 0) ? transition->FinalLevelIdentifier() : fIdentifier);
       if(fVerbosity >= EVerbosity::kBasicFlow) { std::cout << "Finding final level in \"" << fNucleus->GetName() << "\" with energy " << transition->FinalLevel() << " +- " << transition->EnergyUncertainty() << " returned " << level << std::endl; }
    }
    if(level == nullptr) {

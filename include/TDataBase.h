@@ -10,7 +10,14 @@
 
 class TDataBase {
 public:
-   enum class EUncertainty : std::uint8_t { kLessThan, kGreaterThan, kLessOrEqual, kGreaterOrEqual, kApproximate, kCalculated, kSystematic, kDefault };
+   enum class EUncertainty : std::uint8_t { kLessThan,
+                                            kGreaterThan,
+                                            kLessOrEqual,
+                                            kGreaterOrEqual,
+                                            kApproximate,
+                                            kCalculated,
+                                            kSystematic,
+                                            kDefault };
 
    explicit TDataBase(const std::string& path);
 
@@ -20,9 +27,13 @@ public:
 
    void ListNuclei(bool print = false) const;
 
-   TNucleus* Nucleus(std::string label) const { std::transform(label.begin(), label.end(), label.begin(), ::toupper); return fNuclei.at(label); }
+   TNucleus* Nucleus(std::string label) const
+   {
+      std::transform(label.begin(), label.end(), label.begin(), ::toupper);
+      return fNuclei.at(label);
+   }
 
-   static void Verbosity(EVerbosity val) { fVerbosity = val; }
+   static void       Verbosity(EVerbosity val) { fVerbosity = val; }
    static EVerbosity Verbosity() { return fVerbosity; }
 
 private:
@@ -30,7 +41,7 @@ private:
    bool ReadEnergy(std::istringstream& str, double& energy, char& identifier);
    bool ReadUncertainty(std::istringstream& str, double& uncertainty, EUncertainty& uncertaintyLabel);
 
-   static EVerbosity fVerbosity;
+   static EVerbosity                fVerbosity;
    std::map<std::string, TNucleus*> fNuclei;
 };
 
